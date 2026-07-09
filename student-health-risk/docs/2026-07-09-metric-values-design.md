@@ -37,18 +37,25 @@ health findings are the payoff of the values choice.
 
 ## The demonstration (proving ground)
 
-Two models, same `HistGradientBoostingClassifier` family, same features, same data. The
-only difference is what each is told to care about:
+Two models, same `HistGradientBoostingClassifier` family, same features, same
+hyperparameters, same data. The only difference is the fit-time sample weights.
 
-- **Model A (accuracy-tuned):** default class weights. Leans on the majority, scores
-  ~86% accuracy but low balanced accuracy (~0.33-0.45); largely ignores the rare classes.
-- **Model B (balanced-accuracy-tuned):** balanced class weights (per-sample weights).
-  Sacrifices raw accuracy, catches the tails, scores far higher balanced accuracy.
+ACTUAL RESULTS (framing confirmed with Jonathan: honest "error allocation", not
+"Model A is useless"):
 
-Both are submitted to the live leaderboard. The board rewards B and punishes A even
-though A is "more accurate": that contrast on the real board is the argument. Validation
-is a single stratified holdout reporting balanced accuracy, accuracy, and the confusion
-matrix for each model. Model B is a clean, solid entry, not a leaderboard grind.
+- **Model A (accuracy):** no weights. Validation accuracy 0.967, balanced accuracy
+  0.873; leaderboard balanced accuracy **0.87241**. Per-class recall: fit 0.83,
+  at-risk 0.99, unhealthy 0.80 (it protects the majority, lets the tails leak).
+- **Model B (balanced):** balanced sample weights. Validation accuracy 0.937, balanced
+  accuracy 0.950; leaderboard **0.94991**. Per-class recall: fit 0.95, at-risk 0.93,
+  unhealthy 0.97 (it spreads its attention across classes).
+- **All-at-risk baseline:** accuracy 0.859, balanced accuracy 0.333 (the hook).
+
+The signal in this synthetic data is strong, so even Model A does well on balanced
+accuracy. The point is not that A is blind; it is that the metric decides how a real
+model spends its errors. On the balanced-accuracy leaderboard, B (3 points "less
+accurate") beats A by 0.077. Validation matched the leaderboard almost exactly (no
+overfitting). Both submitted via the Kaggle MCP (refs 54508037 A, 54508038 B).
 
 Signal that B learns (mean by class, from profiling): `fit` = ~11,600 steps, ~50 min
 exercise, ~8h sleep, BMI 21.8; `unhealthy` = 5.4h sleep, BMI 24.1; `at-risk` = the

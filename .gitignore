@@ -10,3 +10,5 @@ __pycache__/
 .DS_Store
 # internal writing/review artifacts (essay lives on the blog)
 */draft/
+# large derived competition submissions (regenerate from the model script)
+*/model/submission_*.csv
