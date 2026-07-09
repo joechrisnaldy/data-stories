@@ -72,7 +72,7 @@ def chart1(m):
     ax2.annotate("Dec 2014\nruble crash", (CRASH, 12), xytext=(-72, 4),
                  textcoords="offset points", color=INK2, fontsize=9)
     fig.text(0.125, 0.015, "Source: Sberbank Russian Housing Market (Kaggle) — "
-             "28,357 cleaned transactions. Mix-adjusted (district fixed effects), "
+             "28,357 cleaned transactions. Same-district (mix-adjusted) price level, "
              "anchored to the Jan 2014 median.", fontsize=8, color=MUTED)
     save(fig, "01_stable_prices.png")
 
@@ -149,7 +149,7 @@ def chart5(m):
     w = m.loc[WINDOW]
     fig, ax = plt.subplots(figsize=(9, 4.6))
     ax.bar(w.index, w.n_sales, width=22, color=BLUE, linewidth=0)
-    ax.set_title("Prices held — because the market froze instead")
+    ax.set_title("Panic buying, then paralysis")
     ax.set_ylabel("recorded transactions per month")
     peak = w.n_sales.idxmax()
     ax.annotate(f"Dec 2014: {w.n_sales.max():,.0f} sales —\npanic buying as the "
@@ -157,13 +157,13 @@ def chart5(m):
                 textcoords="offset points", color=INK2, fontsize=9,
                 arrowprops={"arrowstyle": "-", "color": MUTED, "lw": 0.8})
     h1_2015 = w.n_sales.loc["2015"].mean()
-    ax.annotate(f"2015: ~{h1_2015:,.0f}/month,\nhalf the 2014 pace",
-                (pd.Timestamp("2015-04-15"), h1_2015), xytext=(-10, 60),
+    ax.annotate("H1 2015: −53% vs H1 2014;\ninvestment buyers −64%",
+                (pd.Timestamp("2015-04-15"), h1_2015), xytext=(-30, 60),
                 textcoords="offset points", color=INK2, fontsize=9)
     style_time_axis(ax)
-    fig.text(0.125, -0.03, "Transactions in the dataset by month. Stable prices on "
-             "collapsing volume are a frozen market, not a stable one.",
-             fontsize=8, color=MUTED)
+    fig.text(0.125, -0.03, "Transactions in the dataset by month. Coverage grew over "
+             "time, so compare year-on-year; the 2015 collapse is steepest among "
+             "investment buyers.", fontsize=8, color=MUTED)
     save(fig, "05_volume.png")
 
 
