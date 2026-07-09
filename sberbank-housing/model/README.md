@@ -35,12 +35,18 @@ slice only and mapped outward.
 
 ## Result
 
-Time-based holdout **RMSLE ≈ 0.265** (from 0.271 baseline). Treat that as
-optimistic: the holdout sits just before the test window, while the actual
-leaderboard test period runs further into 2016, so the live score will be
-somewhat higher. What was tried and honestly rejected (see the variant notes):
-symmetric price-per-m² trimming, month-level macro deltas and rent series, and
-deeper trees all made the holdout worse.
+Time-based holdout **RMSLE ≈ 0.265** (from 0.271 baseline). What was tried and
+honestly rejected (see the variant notes): symmetric price-per-m² trimming,
+month-level macro deltas and rent series, and deeper trees all made the holdout
+worse.
+
+Submitted as a late submission to the (closed) competition: **private-leaderboard
+RMSLE 0.331** (public 0.331). That is higher than the holdout, exactly as
+expected: the holdout sits just before the test window, while the leaderboard
+test period runs further into 2016 and its macro drift is not in the training
+data. For reference, the winning private score was 0.30087 and the top ten
+clustered around 0.309 to 0.312, so a single tuned model at 0.331 is a
+respectable baseline against 3,264 teams that ensembled heavily.
 
 ## Run it
 
