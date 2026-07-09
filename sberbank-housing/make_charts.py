@@ -54,7 +54,7 @@ def chart1(m):
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(9, 6.4), sharex=True,
                                    gridspec_kw={"hspace": 0.35})
     ax1.plot(w.index, w.psqm_adj / 1000, color=BLUE, lw=2)
-    ax1.set_title("Moscow apartment prices held — even rose…")
+    ax1.set_title("Moscow apartment prices held, even rose…")
     ax1.set_ylabel("price, thousand ₽ per m²")
     ax1.set_ylim(0, 180)
     end_label(ax1, w.index[-1], w.psqm_adj.iloc[-1] / 1000,
@@ -71,7 +71,7 @@ def chart1(m):
         style_time_axis(ax)
     ax2.annotate("Dec 2014\nruble crash", (CRASH, 12), xytext=(-72, 4),
                  textcoords="offset points", color=INK2, fontsize=9)
-    fig.text(0.125, 0.015, "Source: Sberbank Russian Housing Market (Kaggle) — "
+    fig.text(0.125, 0.015, "Source: Sberbank Russian Housing Market (Kaggle). "
              "28,357 cleaned transactions. Same-district (mix-adjusted) price level, "
              "anchored to the Jan 2014 median.", fontsize=8, color=MUTED)
     save(fig, "01_stable_prices.png")
@@ -113,7 +113,7 @@ def chart3(m):
               f"{w.sqm_per_salary.iloc[-1]:.2f} m²", BLUE)
     style_time_axis(ax)
     fig.text(0.125, -0.03, "Average monthly wage (macro dataset, annual series) ÷ "
-             "mix-adjusted price/m². Salaries are nominal — inflation ate them too.",
+             "mix-adjusted price/m². Salaries are nominal; inflation ate them too.",
              fontsize=8, color=MUTED)
     save(fig, "03_affordability.png")
 
@@ -152,7 +152,7 @@ def chart5(m):
     ax.set_title("Panic buying, then paralysis")
     ax.set_ylabel("recorded transactions per month")
     peak = w.n_sales.idxmax()
-    ax.annotate(f"Dec 2014: {w.n_sales.max():,.0f} sales —\npanic buying as the "
+    ax.annotate(f"Dec 2014: {w.n_sales.max():,.0f} sales,\npanic buying as the "
                 "ruble fell", (peak, w.n_sales.max()), xytext=(-150, -14),
                 textcoords="offset points", color=INK2, fontsize=9,
                 arrowprops={"arrowstyle": "-", "color": MUTED, "lw": 0.8})

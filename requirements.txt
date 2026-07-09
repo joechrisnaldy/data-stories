@@ -1,0 +1,11 @@
+# Core analysis
+pandas>=2.2
+numpy>=1.26
+matplotlib>=3.8
+
+# Word-document export of drafts (md_to_docx.py)
+python-docx>=1.1
+
+# Notebook (analysis.ipynb)
+nbformat>=5.9
+jupyter>=1.0

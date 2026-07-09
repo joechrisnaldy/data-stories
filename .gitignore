@@ -1,7 +1,12 @@
-# data is from Kaggle competitions — not redistributable, download locally
-*/data/
+# data is from Kaggle competitions, not redistributable; download locally
+# (keep the folder's README, ignore the datasets themselves)
+*/data/*
+!*/data/README.md
 .venv/
 */.venv/
 __pycache__/
 .ipynb_checkpoints/
+.Rhistory
 .DS_Store
+# internal writing/review artifacts (essay lives on the blog)
+*/draft/

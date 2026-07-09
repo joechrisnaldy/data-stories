@@ -6,7 +6,7 @@ Cleaning rules (see docs/2026-07-09-money-illusion-design.md):
   3. psqm = price_doc / full_sq, trimmed to 1st-99th percentile
 
 Headline price series (user decision 2026-07-09): district fixed-effects
-index — within-district demeaned log psqm averaged by month — which controls
+index (within-district demeaned log psqm averaged by month) which controls
 for the New Moscow composition artifact. Anchored to the Jan 2014 citywide
 median so charts read in rubles. Raw median kept for robustness/affordability.
 """
