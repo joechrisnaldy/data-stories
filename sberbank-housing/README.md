@@ -76,9 +76,13 @@ python make_charts.py      # writes charts/*.png
 
 Or open [`analysis.ipynb`](analysis.ipynb) to run the whole thing with narration and inline output.
 
+## Bonus: the competition submission
+
+The essay is descriptive; the original Kaggle task was predictive. [`model/`](model/) closes that loop with a clean baseline that predicts `price_doc` for the 7,662 test apartments (scored on RMSLE): a `HistGradientBoostingRegressor` on a log-price target, light cleaning, macro features joined by month, and a time-based holdout (RMSLE ≈ 0.27). See [`model/README.md`](model/README.md) for the approach and how to submit.
+
 ## Data
 
-Not included in this repository (Kaggle's competition rules). Download instructions are in [`data/README.md`](data/README.md). You need `train.csv` and `macro.csv`.
+Not included in this repository (Kaggle's competition rules). Download instructions are in [`data/README.md`](data/README.md). You need `train.csv` and `macro.csv` (the model also uses `test.csv`).
 
 ## Method and caveats
 
