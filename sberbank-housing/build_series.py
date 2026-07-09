@@ -4,7 +4,13 @@ Cleaning rules (see docs/2026-07-09-money-illusion-design.md):
   1. drop declared-price fakes: price_doc exactly 1M or 2M RUB
   2. drop absurd areas: full_sq <= 10 or >= 1000
   3. psqm = price_doc / full_sq, trimmed to 1st-99th percentile
+
+Headline price series (user decision 2026-07-09): district fixed-effects
+index — within-district demeaned log psqm averaged by month — which controls
+for the New Moscow composition artifact. Anchored to the Jan 2014 citywide
+median so charts read in rubles. Raw median kept for robustness/affordability.
 """
+import numpy as np
 import pandas as pd
 
 CPI_BASE_MONTH = "2014-01"
@@ -13,7 +19,8 @@ INDEX_BASE = "2014-01"
 
 def load_clean_train(path="data/train.csv"):
     df = pd.read_csv(path, parse_dates=["timestamp"],
-                     usecols=["timestamp", "price_doc", "full_sq", "product_type"])
+                     usecols=["timestamp", "price_doc", "full_sq", "product_type",
+                              "sub_area"])
     n0 = len(df)
     df = df[~df.price_doc.isin([1_000_000, 2_000_000])]
     n1 = len(df)
@@ -31,6 +38,11 @@ def load_clean_train(path="data/train.csv"):
 def monthly_housing(df):
     m = df.set_index("timestamp").resample("MS").agg(
         psqm=("psqm", "median"), n_sales=("psqm", "size"))
+    # district fixed-effects index: within-district demeaned log psqm by month
+    lp_dm = np.log(df.psqm) - df.groupby("sub_area").psqm.transform(
+        lambda s: np.log(s).mean())
+    fe = np.exp(lp_dm.groupby(df.timestamp.dt.to_period("M").dt.to_timestamp()).mean())
+    m["fe_raw"] = fe
     return m
 
 
@@ -44,12 +56,16 @@ def build(train_path="data/train.csv", macro_path="data/macro.csv"):
     df = load_clean_train(train_path)
     m = monthly_housing(df).join(monthly_macro(macro_path), how="left")
 
-    m["psqm_usd"] = m.psqm / m.usdrub
-    m["psqm_real"] = m.psqm / (m.cpi / m.loc[CPI_BASE_MONTH, "cpi"].iloc[0])
-    m["sqm_per_salary"] = m.salary / m.psqm
+    base = m.loc[INDEX_BASE].iloc[0]
+    # headline: mix-adjusted price level, FE index anchored to Jan 2014 median
+    m["psqm_adj"] = m.fe_raw / base.fe_raw * base.psqm
+    m["psqm_usd"] = m.psqm_adj / m.usdrub
+    m["psqm_real"] = m.psqm_adj / (m.cpi / m.loc[CPI_BASE_MONTH, "cpi"].iloc[0])
+    # affordability on the same mix-adjusted level for cross-chart consistency
+    m["sqm_per_salary"] = m.salary / m.psqm_adj
 
     base = m.loc[INDEX_BASE].iloc[0]
-    for col in ["psqm", "psqm_usd", "psqm_real"]:
+    for col in ["psqm", "psqm_adj", "psqm_usd", "psqm_real"]:
         m[f"idx_{col}"] = m[col] / base[col] * 100
     return m
 
@@ -58,7 +74,7 @@ def counterfactual(m, start="2014-01", capital=1_000_000):
     """Value of 1M RUB placed in housing / USD cash / ruble deposit at `start`."""
     cf = m.loc[start:].copy()
     s = cf.iloc[0]
-    cf["housing"] = capital * cf.psqm / s.psqm
+    cf["housing"] = capital * cf.psqm_adj / s.psqm_adj
     cf["usd_cash"] = capital * cf.usdrub / s.usdrub
     monthly_rate = cf.deposits_rate.shift(1).fillna(s.deposits_rate) / 100 / 12
     cf["deposit"] = capital * (1 + monthly_rate).cumprod()
@@ -70,18 +86,14 @@ if __name__ == "__main__":
     pd.set_option("display.width", 200)
     m = build()
 
-    print("\n--- quarterly view of the story ---")
-    q = m[["psqm", "psqm_usd", "psqm_real", "sqm_per_salary", "n_sales", "usdrub", "deposits_rate"]]
+    print("\n--- quarterly view of the story (psqm_adj = mix-adjusted level) ---")
+    q = m[["psqm", "psqm_adj", "psqm_usd", "psqm_real", "sqm_per_salary", "n_sales",
+           "usdrub", "deposits_rate"]]
     print(q.resample("QS").mean().round(1).to_string())
 
     print("\n--- indexed (Jan 2014 = 100): where each series ends (Jun 2015) ---")
-    print(m[["idx_psqm", "idx_psqm_usd", "idx_psqm_real"]].iloc[-1].round(1).to_string())
-
-    print("\n--- peak-to-end for USD series ---")
-    peak = m.idx_psqm_usd.idxmax()
-    print(f"USD-terms peak: {peak:%Y-%m} at {m.idx_psqm_usd.max():.1f}; "
-          f"Jun 2015: {m.idx_psqm_usd.iloc[-1]:.1f} "
-          f"({(m.idx_psqm_usd.iloc[-1] / m.idx_psqm_usd.max() - 1) * 100:+.1f}%)")
+    print(m[["idx_psqm", "idx_psqm_adj", "idx_psqm_usd", "idx_psqm_real"]]
+          .iloc[-1].round(1).to_string())
 
     print("\n--- counterfactual: 1M RUB from Jan 2014 (values in RUB) ---")
     cf = counterfactual(m)

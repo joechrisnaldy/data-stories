@@ -53,12 +53,12 @@ def chart1(m):
     w = m.loc[WINDOW]
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(9, 6.4), sharex=True,
                                    gridspec_kw={"hspace": 0.35})
-    ax1.plot(w.index, w.psqm / 1000, color=BLUE, lw=2)
-    ax1.set_title("Moscow apartment prices barely moved…")
-    ax1.set_ylabel("median price, thousand ₽ per m²")
+    ax1.plot(w.index, w.psqm_adj / 1000, color=BLUE, lw=2)
+    ax1.set_title("Moscow apartment prices held — even rose…")
+    ax1.set_ylabel("price, thousand ₽ per m²")
     ax1.set_ylim(0, 180)
-    end_label(ax1, w.index[-1], w.psqm.iloc[-1] / 1000,
-              f"{w.psqm.iloc[-1]/1000:,.0f}k ₽", BLUE)
+    end_label(ax1, w.index[-1], w.psqm_adj.iloc[-1] / 1000,
+              f"{w.psqm_adj.iloc[-1]/1000:,.0f}k ₽", BLUE)
 
     ax2.plot(w.index, w.usdrub, color=AQUA, lw=2)
     ax2.set_title("…while the ruble collapsed")
@@ -72,8 +72,8 @@ def chart1(m):
     ax2.annotate("Dec 2014\nruble crash", (CRASH, 12), xytext=(-72, 4),
                  textcoords="offset points", color=INK2, fontsize=9)
     fig.text(0.125, 0.015, "Source: Sberbank Russian Housing Market (Kaggle) — "
-             "28,357 cleaned Moscow transactions; monthly medians.",
-             fontsize=8, color=MUTED)
+             "28,357 cleaned transactions. Mix-adjusted (district fixed effects), "
+             "anchored to the Jan 2014 median.", fontsize=8, color=MUTED)
     save(fig, "01_stable_prices.png")
 
 
@@ -81,7 +81,7 @@ def chart2(m):
     """Same asset, three measuring sticks, one axis (indexed Jan 2014 = 100)."""
     w = m.loc[WINDOW]
     fig, ax = plt.subplots(figsize=(9, 5.2))
-    series = [("idx_psqm", BLUE, "in rubles", 4),
+    series = [("idx_psqm_adj", BLUE, "in rubles", 4),
               ("idx_psqm_real", YELLOW, "inflation-adjusted", 0),
               ("idx_psqm_usd", AQUA, "in US dollars", 0)]
     for col, color, label, dy in series:
@@ -94,8 +94,8 @@ def chart2(m):
     ax.set_ylim(40, 130)
     style_time_axis(ax)
     ax.legend(loc="lower left", frameon=False, fontsize=9)
-    fig.text(0.125, -0.02, "Median price/m² re-denominated. Inflation-adjusted uses "
-             "Russian CPI; dollar series uses monthly average USD/RUB.",
+    fig.text(0.125, -0.02, "Mix-adjusted price/m² re-denominated. Inflation-adjusted "
+             "uses Russian CPI; dollar series uses monthly average USD/RUB.",
              fontsize=8, color=MUTED)
     save(fig, "02_redenominated.png")
 
@@ -105,7 +105,7 @@ def chart3(m):
     w = m.loc[WINDOW]
     fig, ax = plt.subplots(figsize=(9, 4.6))
     ax.plot(w.index, w.sqm_per_salary, color=BLUE, lw=2)
-    ax.set_title("For ruble earners, 'affordability' even improved a little")
+    ax.set_title("For ruble earners, nothing looked wrong")
     ax.set_ylabel("m² per average monthly Moscow salary")
     ax.set_ylim(0, 0.6)
     ax.axvline(CRASH, color=MUTED, lw=0.8, ls=(0, (4, 3)))
@@ -113,7 +113,7 @@ def chart3(m):
               f"{w.sqm_per_salary.iloc[-1]:.2f} m²", BLUE)
     style_time_axis(ax)
     fig.text(0.125, -0.03, "Average monthly wage (macro dataset, annual series) ÷ "
-             "median price/m². Salaries are nominal — and inflation ate them too.",
+             "mix-adjusted price/m². Salaries are nominal — inflation ate them too.",
              fontsize=8, color=MUTED)
     save(fig, "03_affordability.png")
 
@@ -138,8 +138,8 @@ def chart4(m):
     ax.set_ylim(0.8, 2.0)
     style_time_axis(ax)
     ax.legend(loc="upper left", frameon=False, fontsize=9)
-    fig.text(0.125, -0.02, "Housing tracks the median price/m² index (excludes rent "
-             "income and transaction costs). Deposit compounds at the average "
+    fig.text(0.125, -0.02, "Housing tracks the mix-adjusted price/m² index (excludes "
+             "rent income and transaction costs). Deposit compounds at the average "
              "reported deposit rate.", fontsize=8, color=MUTED)
     save(fig, "04_counterfactual.png")
 
