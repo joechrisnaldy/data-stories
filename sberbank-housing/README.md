@@ -78,7 +78,7 @@ Or open [`analysis.ipynb`](analysis.ipynb) to run the whole thing with narration
 
 ## Bonus: the competition submission
 
-The essay is descriptive; the original Kaggle task was predictive. [`model/`](model/) closes that loop with a clean baseline that predicts `price_doc` for the 7,662 test apartments (scored on RMSLE): a `HistGradientBoostingRegressor` on a log-price target, light cleaning, macro features joined by month, and a time-based holdout (RMSLE ≈ 0.27). See [`model/README.md`](model/README.md) for the approach and how to submit.
+The essay is descriptive; the original Kaggle task was predictive. [`model/`](model/) closes that loop by predicting `price_doc` for the 7,662 test apartments (scored on RMSLE): a `HistGradientBoostingRegressor` on a log-price target, with robust cleaning and target de-noising, leak-free `sub_area` encodings, engineered property features, and light tuning. Each improvement was validated in isolation on a time-based holdout (0.271 baseline down to **RMSLE ≈ 0.265**). See [`model/README.md`](model/README.md) for the breakdown and how to submit.
 
 ## Data
 

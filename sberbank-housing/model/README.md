@@ -5,9 +5,6 @@ prediction model for the original Kaggle task, which is to estimate the sale
 price of 7,662 held-out Moscow apartments (July 2015 to May 2016), scored on
 **RMSLE** (root mean squared log error).
 
-It is a deliberately clean baseline, not a leaderboard-grind. The point is a
-correct, readable end-to-end pipeline.
-
 ## Approach
 
 - **Target:** `log1p(price_doc)`. RMSLE on prices equals RMSE on `log1p`, so a
@@ -15,22 +12,35 @@ correct, readable end-to-end pipeline.
 - **Model:** scikit-learn `HistGradientBoostingRegressor`. It is strong on tabular
   data and handles this dataset's heavy missingness natively, so there is no
   imputation step to get wrong.
-- **Cleaning:** light and defensible only. Fix `full_sq` errors (0/1 values fall
-  back to `life_sq`), blank impossible `life_sq`/`kitch_sq`/`build_year`/`state`,
-  and drop the 1,504 declared-price fakes (exactly 1M or 2M ₽) from training.
-- **Features:** all numeric columns plus ordinal-encoded categoricals, with six
-  macro indicators (USD/RUB, CPI, oil, mortgage rate, salary, deposit rate)
-  joined by month.
 - **Validation:** time-based. The newest ~15% of sales are held out, because the
   real test set is the future and a random split would flatter the score.
 
+It began as a plain baseline (RMSLE 0.2709) and folds in four improvements, each
+validated on its own before being combined. Each was built and scored as a
+separate experiment in [`variants/`](variants/), against a byte-identical baseline
+reproduction, so the numbers below are directly comparable.
+
+| Improvement | Alone | What it does |
+|---|---|---|
+| Robust cleaning + de-noising | 0.2665 | Fix swapped `life_sq`/`full_sq`, blank more impossible attributes, and drop the cheapest ~1% price-per-m² rows from **training only** (residual mislabeled sales). One-sided on purpose: dropping the expensive-per-m² tail removes real luxury flats and hurts. |
+| Leak-free `sub_area` encodings | 0.2678 | Frequency (count) encoding plus a smoothed mean-log-price encoding fit on the training slice only, then mapped onto the holdout and test. |
+| Property features | 0.2688 | 11 deterministic ratios from existing size/floor/room/year columns (age, area ratios, floor position). |
+| Hyperparameter tuning | 0.2695 | `max_features=0.8` (per-split column subsampling) and `max_iter=1000`. |
+| **Combined (this model)** | **0.2651** | All four together. |
+
+**Leakage control when combined:** the time split is taken before any row is
+dropped, so the holdout is byte-identical to the baseline and the CV stays
+comparable; both the de-noising and the target encoding are fit on the training
+slice only and mapped outward.
+
 ## Result
 
-Time-based holdout **RMSLE ≈ 0.27**. Treat that as optimistic: the holdout sits
-just before the test window, while the actual leaderboard test period runs
-further into 2016, so the live score will be somewhat higher. This is a
-respectable baseline; the obvious next steps (engineered size/age features,
-target de-noising, light tuning) are left as a follow-up.
+Time-based holdout **RMSLE ≈ 0.265** (from 0.271 baseline). Treat that as
+optimistic: the holdout sits just before the test window, while the actual
+leaderboard test period runs further into 2016, so the live score will be
+somewhat higher. What was tried and honestly rejected (see the variant notes):
+symmetric price-per-m² trimming, month-level macro deltas and rent series, and
+deeper trees all made the holdout worse.
 
 ## Run it
 
@@ -38,6 +48,9 @@ target de-noising, light tuning) are left as a follow-up.
 pip install -r ../../requirements.txt      # needs scikit-learn
 python train_predict.py                    # writes submission.csv
 ```
+
+The [`variants/`](variants/) scripts are the individual experiments (each runs
+standalone and prints its own CV); they are kept as a record of what helped.
 
 ## Submit it
 
@@ -49,4 +62,4 @@ practice score.
   connected and authenticated, submit `submission.csv` to the
   `sberbank-russian-housing-market` competition from the assistant.
 - **Kaggle CLI** (alternative): `kaggle competitions submit -c
-  sberbank-russian-housing-market -f submission.csv -m "HGBR clean baseline"`.
+  sberbank-russian-housing-market -f submission.csv -m "HGBR tuned"`.
