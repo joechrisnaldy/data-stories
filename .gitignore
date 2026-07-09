@@ -1,0 +1,7 @@
+# data is from Kaggle competitions — not redistributable, download locally
+*/data/
+.venv/
+*/.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
