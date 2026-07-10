@@ -10,6 +10,7 @@ Every post lives in its own folder with the full pipeline: the cleaning code, th
 |---|------|----------|------|------|
 | 01 | [Property Isn't the Hedge You Think](sberbank-housing/) | When a currency collapses, does property protect your wealth, or just hide the loss? | [Sberbank Russian Housing Market](https://www.kaggle.com/c/sberbank-russian-housing-market) (Kaggle) | [Live essay](https://joechrisnaldy.app/blog/property-isnt-the-hedge-you-think) · [Notebook](sberbank-housing/analysis.ipynb) |
 | 02 | [A Model Can Be 86% Right and Useless](student-health-risk/) | If 86% of people share one label, what does a "good" model even mean? | [Playground Series S6E7](https://www.kaggle.com/competitions/playground-series-s6e7) (Kaggle) | [Live essay](https://joechrisnaldy.app/blog/a-model-can-be-86-percent-right-and-useless) · [Model](student-health-risk/model/) |
+| 03 | [The Dataset That Already Knew the Answer](gaming-mental-health/) | What happens when a dataset's outcome is built from its own inputs? | [Gaming Addiction & Mental Health](https://www.kaggle.com/datasets/dreamtensor/gaming-addiction-and-mental-health-analysis) (Kaggle) | Essay forthcoming · [Analysis](gaming-mental-health/) |
 
 ## How these are built
 
