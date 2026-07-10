@@ -1,0 +1,14 @@
+{
+  "baseline_oof": 0.9495826000976014,
+  "prior_tuned_oof": 0.9496485583779926,
+  "prior_weights": [
+    1.0,
+    0.8500000000000001,
+    1.0
+  ],
+  "classes": [
+    "at-risk",
+    "fit",
+    "unhealthy"
+  ]
+}

@@ -12,3 +12,4 @@ __pycache__/
 */draft/
 # large derived competition submissions (regenerate from the model script)
 */model/submission_*.csv
+*/model/final_push_oof.npz
