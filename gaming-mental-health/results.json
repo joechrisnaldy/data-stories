@@ -1,0 +1,137 @@
+{
+  "n": 250,
+  "n_cols": 49,
+  "r2_clean_cv": 0.91,
+  "r2_all_cv": 0.935,
+  "r2_playtime_cv": 0.746,
+  "r2_daily_playtime_cv": 0.737,
+  "r2_nonplaytime_clean_cv": 0.6,
+  "corr_playtime": {
+    "daily_playtime_hours": 0.86,
+    "screen_time_total_hours": 0.82,
+    "consecutive_hours_max": 0.8,
+    "late_night_sessions_hours": 0.76,
+    "weekly_play_sessions": 0.75,
+    "weekend_playtime_hours": 0.74
+  },
+  "corr_impairment": {
+    "missed_deadlines": 0.47,
+    "impulsiveness_score": 0.35,
+    "self_control_score": -0.34
+  },
+  "corr_mentalhealth": {
+    "anxiety_level": 0.14,
+    "depression_indicator": 0.13,
+    "loneliness_score": -0.12,
+    "emotional_stability": -0.17
+  },
+  "impulse_vs_playtime": {
+    "impulsiveness_score": 0.02,
+    "self_control_score": 0.03
+  },
+  "playtime_vs_wellbeing": {
+    "sleep_hours": {
+      "r": -0.399,
+      "p": 0.0,
+      "ci": [
+        -0.5,
+        -0.29
+      ],
+      "n": 250
+    },
+    "stress_score": {
+      "r": 0.333,
+      "p": 0.0,
+      "ci": [
+        0.22,
+        0.44
+      ],
+      "n": 250
+    },
+    "anxiety_level": {
+      "r": 0.14,
+      "p": 0.0269,
+      "ci": [
+        0.02,
+        0.26
+      ],
+      "n": 250
+    },
+    "emotional_stability": {
+      "r": -0.194,
+      "p": 0.002,
+      "ci": [
+        -0.31,
+        -0.07
+      ],
+      "n": 250
+    },
+    "depression_indicator": {
+      "r": 0.115,
+      "p": 0.0761,
+      "ci": [
+        -0.01,
+        0.24
+      ],
+      "n": 239
+    },
+    "loneliness_score": {
+      "r": -0.073,
+      "p": 0.2516,
+      "ci": [
+        -0.2,
+        0.05
+      ],
+      "n": 250
+    },
+    "self_control_score": {
+      "r": 0.035,
+      "p": 0.5851,
+      "ci": [
+        -0.09,
+        0.16
+      ],
+      "n": 250
+    },
+    "impulsiveness_score": {
+      "r": 0.022,
+      "p": 0.7245,
+      "ci": [
+        -0.1,
+        0.15
+      ],
+      "n": 250
+    },
+    "social_interaction_hours": {
+      "r": 0.065,
+      "p": 0.3042,
+      "ci": [
+        -0.06,
+        0.19
+      ],
+      "n": 250
+    },
+    "gpa_or_performance_score": {
+      "r": 0.008,
+      "p": 0.9048,
+      "ci": [
+        -0.12,
+        0.13
+      ],
+      "n": 240
+    }
+  },
+  "tells": {
+    "burnout_prob_eq_1_share": 0.988,
+    "gpa_eq_4_share": 0.708
+  },
+  "cluster_score_means": {
+    "Binge Player": 47.4,
+    "Casual Enjoyer": 24.7,
+    "Competitive Grinder": 44.1,
+    "Escape Seeker": 37.7,
+    "Social Gamer": 31.0,
+    "Streamer/Creator": 50.4,
+    "Toxic Competitor": 40.9
+  }
+}
