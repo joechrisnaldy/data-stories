@@ -1,0 +1,33 @@
+# OECD employment rate, ages 15-64, percent of the working-age population, latest available (2024-2025).
+# Source: OECD employment rate indicator (working-age 15-64), compiled via OECD/Eurostat/ILO. Accessed 2026-07-11.
+# Economy-wide, not new-graduate specific. Sweden from Eurostat 2024 (omitted in the primary table).
+country,employment_rate
+Iceland,86.2
+Netherlands,82.4
+Switzerland,79.8
+Japan,79.3
+New Zealand,78.6
+Germany,77.1
+Denmark,77.1
+Australia,77.1
+Sweden,77.1
+Norway,77.0
+Czech Republic,76.0
+Hungary,75.4
+Austria,75.0
+Canada,74.7
+Ireland,74.7
+United Kingdom,74.5
+Portugal,74.5
+Poland,73.3
+Finland,72.3
+Slovakia,72.2
+United States,71.9
+South Korea,69.9
+France,69.6
+Luxembourg,69.5
+Belgium,67.4
+Spain,67.4
+Greece,65.6
+Mexico,63.1
+Italy,62.5

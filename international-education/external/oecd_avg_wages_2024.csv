@@ -1,0 +1,38 @@
+# OECD average annual wages, 2024, in USD (PPP-adjusted), per full-time-equivalent dependent employee.
+# Source: OECD, "Average annual wages" (dataset AV_AN_WAGE), 2024 prices, USD PPP.
+# Accessed 2026-07-11 via the OECD-sourced compilation; economy-wide, not by field or new-graduate.
+country,avg_annual_wage_usd_ppp
+Luxembourg,94447
+Iceland,89947
+Switzerland,87468
+United States,82933
+Belgium,76109
+Austria,75767
+Netherlands,75370
+Norway,74864
+Denmark,74022
+Australia,70763
+Germany,69433
+Canada,69417
+United Kingdom,63691
+New Zealand,62437
+Slovenia,61776
+France,60608
+Ireland,60431
+Finland,59597
+Sweden,59058
+Israel,54736
+Spain,54564
+Lithuania,52898
+Italy,51019
+South Korea,50947
+Japan,49446
+Latvia,45567
+Poland,44211
+Portugal,40002
+Estonia,38975
+Czech Republic,38489
+Slovakia,36105
+Hungary,34996
+Greece,32257
+Mexico,20433
