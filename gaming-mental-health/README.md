@@ -4,7 +4,7 @@
 
 This is a data story about a Kaggle dataset, [Gaming Addiction and Mental Health Analysis](https://www.kaggle.com/datasets/dreamtensor/gaming-addiction-and-mental-health-analysis) (250 gamers, 49 columns). It looks like proof that gaming addiction is real, measurable, and harmful. It is really a lesson about circular targets: outcomes quietly assembled from their own inputs, so any analysis just recovers the recipe.
 
-*(The blog essay is in progress; this README carries the full argument.)*
+*The blog essay, an Indonesia-focused version of this argument, is now live: [The Gaming-Addiction Number Nobody Checked](https://joechrisnaldy.com/blog/the-gaming-addiction-number-nobody-checked). This README carries the methods-focused version.*
 
 ---
 

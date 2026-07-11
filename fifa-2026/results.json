@@ -1,0 +1,464 @@
+{
+  "n_players_total": 1035,
+  "n_played": 627,
+  "n_club_known": 556,
+  "n_unmapped": 0,
+  "unmapped_clubs": [],
+  "n_nations": 40,
+  "overall_foreign_share": 0.804,
+  "n_fully_foreign": 19,
+  "by_nation": [
+    {
+      "team": "Algeria",
+      "nation_country": "Algeria",
+      "n": 15,
+      "abroad": 15,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Egypt",
+      "nation_country": "Egypt",
+      "n": 3,
+      "abroad": 3,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Tunisia",
+      "nation_country": "Tunisia",
+      "n": 12,
+      "abroad": 12,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Switzerland",
+      "nation_country": "Switzerland",
+      "n": 16,
+      "abroad": 16,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Senegal",
+      "nation_country": "Senegal",
+      "n": 16,
+      "abroad": 16,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Qatar",
+      "nation_country": "Qatar",
+      "n": 1,
+      "abroad": 1,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "New Zealand",
+      "nation_country": "New Zealand",
+      "n": 16,
+      "abroad": 16,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Netherlands",
+      "nation_country": "Netherlands",
+      "n": 16,
+      "abroad": 16,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Morocco",
+      "nation_country": "Morocco",
+      "n": 15,
+      "abroad": 15,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Japan",
+      "nation_country": "Japan",
+      "n": 16,
+      "abroad": 16,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Iraq",
+      "nation_country": "Iraq",
+      "n": 8,
+      "abroad": 8,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Haiti",
+      "nation_country": "Haiti",
+      "n": 13,
+      "abroad": 13,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Jordan",
+      "nation_country": "Jordan",
+      "n": 3,
+      "abroad": 3,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Ecuador",
+      "nation_country": "Ecuador",
+      "n": 15,
+      "abroad": 15,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Cura\u00e7ao",
+      "nation_country": "Cura\u00e7ao",
+      "n": 12,
+      "abroad": 12,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Bosnia & Herz.",
+      "nation_country": "Bosnia and Herzegovina",
+      "n": 14,
+      "abroad": 14,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Cape Verde",
+      "nation_country": "Cape Verde",
+      "n": 12,
+      "abroad": 12,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Uruguay",
+      "nation_country": "Uruguay",
+      "n": 16,
+      "abroad": 16,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "C\u00f4te d'Ivoire",
+      "nation_country": "C\u00f4te d'Ivoire",
+      "n": 16,
+      "abroad": 16,
+      "home": 0,
+      "foreign_share": 1.0
+    },
+    {
+      "team": "Norway",
+      "nation_country": "Norway",
+      "n": 16,
+      "abroad": 15,
+      "home": 1,
+      "foreign_share": 0.938
+    },
+    {
+      "team": "Argentina",
+      "nation_country": "Argentina",
+      "n": 16,
+      "abroad": 15,
+      "home": 1,
+      "foreign_share": 0.938
+    },
+    {
+      "team": "Paraguay",
+      "nation_country": "Paraguay",
+      "n": 15,
+      "abroad": 14,
+      "home": 1,
+      "foreign_share": 0.933
+    },
+    {
+      "team": "Sweden",
+      "nation_country": "Sweden",
+      "n": 16,
+      "abroad": 14,
+      "home": 2,
+      "foreign_share": 0.875
+    },
+    {
+      "team": "Korea Republic",
+      "nation_country": "South Korea",
+      "n": 16,
+      "abroad": 14,
+      "home": 2,
+      "foreign_share": 0.875
+    },
+    {
+      "team": "Canada",
+      "nation_country": "Canada",
+      "n": 16,
+      "abroad": 14,
+      "home": 2,
+      "foreign_share": 0.875
+    },
+    {
+      "team": "Austria",
+      "nation_country": "Austria",
+      "n": 16,
+      "abroad": 14,
+      "home": 2,
+      "foreign_share": 0.875
+    },
+    {
+      "team": "Belgium",
+      "nation_country": "Belgium",
+      "n": 16,
+      "abroad": 14,
+      "home": 2,
+      "foreign_share": 0.875
+    },
+    {
+      "team": "United States",
+      "nation_country": "USA",
+      "n": 15,
+      "abroad": 13,
+      "home": 2,
+      "foreign_share": 0.867
+    },
+    {
+      "team": "Brazil",
+      "nation_country": "Brazil",
+      "n": 16,
+      "abroad": 13,
+      "home": 3,
+      "foreign_share": 0.812
+    },
+    {
+      "team": "Scotland",
+      "nation_country": "Scotland",
+      "n": 16,
+      "abroad": 13,
+      "home": 3,
+      "foreign_share": 0.812
+    },
+    {
+      "team": "France",
+      "nation_country": "France",
+      "n": 13,
+      "abroad": 10,
+      "home": 3,
+      "foreign_share": 0.769
+    },
+    {
+      "team": "Australia",
+      "nation_country": "Australia",
+      "n": 15,
+      "abroad": 11,
+      "home": 4,
+      "foreign_share": 0.733
+    },
+    {
+      "team": "Czechia",
+      "nation_country": "Czechia",
+      "n": 15,
+      "abroad": 8,
+      "home": 7,
+      "foreign_share": 0.533
+    },
+    {
+      "team": "T\u00fcrkiye",
+      "nation_country": "Turkey",
+      "n": 16,
+      "abroad": 8,
+      "home": 8,
+      "foreign_share": 0.5
+    },
+    {
+      "team": "Mexico",
+      "nation_country": "Mexico",
+      "n": 16,
+      "abroad": 7,
+      "home": 9,
+      "foreign_share": 0.438
+    },
+    {
+      "team": "Spain",
+      "nation_country": "Spain",
+      "n": 15,
+      "abroad": 4,
+      "home": 11,
+      "foreign_share": 0.267
+    },
+    {
+      "team": "South Africa",
+      "nation_country": "South Africa",
+      "n": 15,
+      "abroad": 4,
+      "home": 11,
+      "foreign_share": 0.267
+    },
+    {
+      "team": "Germany",
+      "nation_country": "Germany",
+      "n": 16,
+      "abroad": 4,
+      "home": 12,
+      "foreign_share": 0.25
+    },
+    {
+      "team": "IR Iran",
+      "nation_country": "Iran",
+      "n": 11,
+      "abroad": 2,
+      "home": 9,
+      "foreign_share": 0.182
+    },
+    {
+      "team": "Saudi Arabia",
+      "nation_country": "Saudi Arabia",
+      "n": 15,
+      "abroad": 1,
+      "home": 14,
+      "foreign_share": 0.067
+    }
+  ],
+  "league_concentration": {
+    "England": 113,
+    "Germany": 69,
+    "Spain": 44,
+    "France": 43,
+    "Italy": 42,
+    "Saudi Arabia": 30,
+    "Netherlands": 23,
+    "USA": 18,
+    "Turkey": 18,
+    "Brazil": 17,
+    "Mexico": 16,
+    "Portugal": 15,
+    "South Africa": 11,
+    "Scotland": 9,
+    "Czechia": 9,
+    "Iran": 9,
+    "Australia": 8,
+    "Belgium": 8,
+    "Russia": 7,
+    "Austria": 5,
+    "Switzerland": 5,
+    "Denmark": 5,
+    "Argentina": 4,
+    "Canada": 4,
+    "South Korea": 3,
+    "Japan": 2,
+    "Serbia": 2,
+    "Romania": 2,
+    "Hungary": 2,
+    "Greece": 2,
+    "Poland": 2,
+    "Norway": 2,
+    "Sweden": 2,
+    "Bulgaria": 1,
+    "Ireland": 1,
+    "Ecuador": 1,
+    "China": 1,
+    "Paraguay": 1
+  },
+  "home_based_examples": [
+    {
+      "team": "Saudi Arabia",
+      "foreign_share": 0.067,
+      "home": 14,
+      "n": 15
+    },
+    {
+      "team": "IR Iran",
+      "foreign_share": 0.182,
+      "home": 9,
+      "n": 11
+    },
+    {
+      "team": "Germany",
+      "foreign_share": 0.25,
+      "home": 12,
+      "n": 16
+    },
+    {
+      "team": "South Africa",
+      "foreign_share": 0.267,
+      "home": 11,
+      "n": 15
+    },
+    {
+      "team": "Spain",
+      "foreign_share": 0.267,
+      "home": 11,
+      "n": 15
+    },
+    {
+      "team": "Mexico",
+      "foreign_share": 0.438,
+      "home": 9,
+      "n": 16
+    },
+    {
+      "team": "T\u00fcrkiye",
+      "foreign_share": 0.5,
+      "home": 8,
+      "n": 16
+    },
+    {
+      "team": "Czechia",
+      "foreign_share": 0.533,
+      "home": 7,
+      "n": 15
+    }
+  ],
+  "top_league_by_nation": {
+    "Algeria": "France",
+    "Argentina": "England",
+    "Australia": "Australia",
+    "Austria": "Germany",
+    "Belgium": "England",
+    "Bosnia & Herz.": "Germany",
+    "Brazil": "England",
+    "Canada": "England",
+    "Cape Verde": "Portugal",
+    "Cura\u00e7ao": "Netherlands",
+    "Czechia": "Czechia",
+    "C\u00f4te d'Ivoire": "Turkey",
+    "Ecuador": "Brazil",
+    "Egypt": "England",
+    "France": "Spain",
+    "Germany": "Germany",
+    "Haiti": "France",
+    "IR Iran": "Iran",
+    "Iraq": "Poland",
+    "Japan": "Germany",
+    "Jordan": "Saudi Arabia",
+    "Korea Republic": "England",
+    "Mexico": "Mexico",
+    "Morocco": "England",
+    "Netherlands": "England",
+    "New Zealand": "England",
+    "Norway": "England",
+    "Paraguay": "Brazil",
+    "Qatar": "Spain",
+    "Saudi Arabia": "Saudi Arabia",
+    "Scotland": "England",
+    "Senegal": "France",
+    "South Africa": "South Africa",
+    "Spain": "Spain",
+    "Sweden": "England",
+    "Switzerland": "Germany",
+    "Tunisia": "Germany",
+    "T\u00fcrkiye": "Turkey",
+    "United States": "England",
+    "Uruguay": "Brazil"
+  }
+}
