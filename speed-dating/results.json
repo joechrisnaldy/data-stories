@@ -1,0 +1,144 @@
+{
+  "n_rows": 8378,
+  "n_subjects": 551,
+  "n_waves": 21,
+  "n_stated_rows": 6742,
+  "attrs": [
+    "attr",
+    "sinc",
+    "intel",
+    "fun",
+    "amb",
+    "shar"
+  ],
+  "stated_by_gender": {
+    "Female": {
+      "attr": 18.8,
+      "sinc": 18.4,
+      "intel": 21.6,
+      "fun": 17.0,
+      "amb": 12.0,
+      "shar": 12.3
+    },
+    "Male": {
+      "attr": 29.1,
+      "sinc": 16.2,
+      "intel": 19.6,
+      "fun": 17.7,
+      "amb": 7.5,
+      "shar": 10.3
+    }
+  },
+  "revealed_corr_by_gender": {
+    "Female": {
+      "attr": 0.445,
+      "sinc": 0.222,
+      "intel": 0.233,
+      "fun": 0.417,
+      "amb": 0.175,
+      "shar": 0.413
+    },
+    "Male": {
+      "attr": 0.515,
+      "sinc": 0.191,
+      "intel": 0.217,
+      "fun": 0.407,
+      "amb": 0.22,
+      "shar": 0.387
+    }
+  },
+  "stated_share_by_gender": {
+    "Female": {
+      "attr": 0.188,
+      "sinc": 0.184,
+      "intel": 0.216,
+      "fun": 0.17,
+      "amb": 0.12,
+      "shar": 0.123
+    },
+    "Male": {
+      "attr": 0.29,
+      "sinc": 0.162,
+      "intel": 0.195,
+      "fun": 0.176,
+      "amb": 0.075,
+      "shar": 0.102
+    }
+  },
+  "revealed_share_by_gender": {
+    "Female": {
+      "attr": 0.234,
+      "sinc": 0.117,
+      "intel": 0.122,
+      "fun": 0.219,
+      "amb": 0.092,
+      "shar": 0.217
+    },
+    "Male": {
+      "attr": 0.266,
+      "sinc": 0.099,
+      "intel": 0.112,
+      "fun": 0.21,
+      "amb": 0.114,
+      "shar": 0.2
+    }
+  },
+  "ranks_by_gender": {
+    "Female": {
+      "attr": {
+        "stated": 2,
+        "revealed": 1
+      },
+      "sinc": {
+        "stated": 3,
+        "revealed": 5
+      },
+      "intel": {
+        "stated": 1,
+        "revealed": 4
+      },
+      "fun": {
+        "stated": 4,
+        "revealed": 2
+      },
+      "amb": {
+        "stated": 6,
+        "revealed": 6
+      },
+      "shar": {
+        "stated": 5,
+        "revealed": 3
+      }
+    },
+    "Male": {
+      "attr": {
+        "stated": 1,
+        "revealed": 1
+      },
+      "sinc": {
+        "stated": 4,
+        "revealed": 6
+      },
+      "intel": {
+        "stated": 2,
+        "revealed": 5
+      },
+      "fun": {
+        "stated": 3,
+        "revealed": 2
+      },
+      "amb": {
+        "stated": 6,
+        "revealed": 4
+      },
+      "shar": {
+        "stated": 5,
+        "revealed": 3
+      }
+    }
+  },
+  "yes_rate_by_gender": {
+    "Female": 0.365,
+    "Male": 0.474
+  }
+}
