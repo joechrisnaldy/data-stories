@@ -1,0 +1,2175 @@
+{
+  "n_rows": 500,
+  "distress": {
+    "levers": [
+      {
+        "lever": "work_life_balance",
+        "raw_corr": -0.81,
+        "std_beta": -0.294,
+        "perm_imp": 0.2713
+      },
+      {
+        "lever": "social_support",
+        "raw_corr": -0.724,
+        "std_beta": -0.183,
+        "perm_imp": 0.1811
+      },
+      {
+        "lever": "academic_work_pressure",
+        "raw_corr": 0.653,
+        "std_beta": 0.129,
+        "perm_imp": 0.1078
+      },
+      {
+        "lever": "sleep_hours",
+        "raw_corr": -0.323,
+        "std_beta": -0.114,
+        "perm_imp": 0.1054
+      },
+      {
+        "lever": "physical_activity_days",
+        "raw_corr": -0.642,
+        "std_beta": -0.099,
+        "perm_imp": 0.039
+      },
+      {
+        "lever": "sleep_quality",
+        "raw_corr": -0.661,
+        "std_beta": -0.08,
+        "perm_imp": 0.0302
+      },
+      {
+        "lever": "social_media_hours",
+        "raw_corr": 0.511,
+        "std_beta": 0.069,
+        "perm_imp": 0.1678
+      }
+    ],
+    "ols_r2": 0.793,
+    "n_listwise": 319,
+    "n_perm": 432
+  },
+  "concentration": {
+    "levers": [
+      {
+        "lever": "work_life_balance",
+        "raw_corr": 0.706,
+        "std_beta": 0.664,
+        "perm_imp": 0.3752
+      },
+      {
+        "lever": "social_support",
+        "raw_corr": 0.642,
+        "std_beta": 0.552,
+        "perm_imp": 0.1571
+      },
+      {
+        "lever": "academic_work_pressure",
+        "raw_corr": -0.555,
+        "std_beta": -0.347,
+        "perm_imp": 0.1065
+      },
+      {
+        "lever": "sleep_quality",
+        "raw_corr": 0.612,
+        "std_beta": 0.316,
+        "perm_imp": 0.0631
+      },
+      {
+        "lever": "physical_activity_days",
+        "raw_corr": 0.568,
+        "std_beta": 0.194,
+        "perm_imp": 0.0672
+      },
+      {
+        "lever": "sleep_hours",
+        "raw_corr": 0.24,
+        "std_beta": 0.188,
+        "perm_imp": 0.1482
+      },
+      {
+        "lever": "social_media_hours",
+        "raw_corr": -0.445,
+        "std_beta": -0.105,
+        "perm_imp": 0.2278
+      }
+    ],
+    "ols_r2": 0.598,
+    "n_listwise": 355,
+    "n_perm": 479
+  },
+  "bridge_corr": -0.758,
+  "bridge_n": 414,
+  "scatter": [
+    {
+      "d": -1.588,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.916,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.498,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.475,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.172,
+      "c": 2.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.98,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.718,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.148,
+      "c": 6.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.326,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.457,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.457,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.588,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.041,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.599,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.451,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.195,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.594,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.239,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.058,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.178,
+      "c": 7.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.582,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.119,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 1.128,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.172,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.314,
+      "c": 5.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.73,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.469,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.314,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.09,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.107,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.326,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.588,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.232,
+      "c": 6.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -1.73,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.457,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.338,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.058,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.035,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -1.047,
+      "c": 10.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.314,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.57,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.73,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.064,
+      "c": 6.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -1.303,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.308,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.041,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.576,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.457,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.91,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.035,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.463,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.154,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -1.207,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.611,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.707,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.189,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.245,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.352,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.047,
+      "c": 7.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.005,
+      "c": 6.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.785,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.332,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.575,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.309,
+      "c": 6.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.742,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.707,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.184,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.177,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.195,
+      "c": 2.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.613,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.314,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.724,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.724,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.338,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.166,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.791,
+      "c": 1.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.588,
+      "c": 1.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 1.122,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.855,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.189,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.445,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.189,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.428,
+      "c": 6.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.587,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.059,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.463,
+      "c": 10.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.09,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.587,
+      "c": 7.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.227,
+      "c": 7.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.207,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.98,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 1.134,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.844,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.07,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.053,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.558,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.102,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.736,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.849,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -1.041,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.468,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.084,
+      "c": 2.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.712,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.183,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.713,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.457,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.599,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.762,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.084,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.363,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.148,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.172,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.713,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.837,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.16,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.326,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.439,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.09,
+      "c": 6.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.332,
+      "c": 8.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.114,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.468,
+      "c": 7.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.047,
+      "c": 6.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.303,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.285,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.25,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.052,
+      "c": 6.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.518,
+      "c": 6.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.154,
+      "c": 1.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.047,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.861,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.843,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.32,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.974,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.451,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.178,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.73,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.998,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -1.593,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.343,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.884,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.986,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.849,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.059,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.326,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.227,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.047,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.09,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.564,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.053,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.024,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -1.189,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.314,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.16,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -1.32,
+      "c": 10.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.73,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.302,
+      "c": 2.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.474,
+      "c": 6.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.178,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.617,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.518,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.439,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.992,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 1.408,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.849,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.457,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.184,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.058,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.457,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.189,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 1.015,
+      "c": 2.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.48,
+      "c": 1.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.445,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.332,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.451,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.375,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.344,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.177,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 1.004,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.445,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.189,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.195,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.463,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.07,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.928,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.314,
+      "c": 6.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.227,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.078,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.451,
+      "c": 1.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.047,
+      "c": 1.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.102,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.564,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -1.457,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.791,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.457,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.184,
+      "c": 10.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.064,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.171,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.184,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.832,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.588,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 1.295,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.457,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.558,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -0.084,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.029,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.576,
+      "c": 1.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.102,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -1.035,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.171,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.171,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.885,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.475,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.326,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.706,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.73,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.832,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 1.129,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.314,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.593,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.183,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.451,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.451,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.748,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.867,
+      "c": 1.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.189,
+      "c": 1.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.992,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.439,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 1.134,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.707,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.457,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.457,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.314,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.445,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.718,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.581,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -0.91,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.326,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.855,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.724,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.837,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -0.922,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.09,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.04,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.232,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.599,
+      "c": 6.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.178,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.195,
+      "c": 6.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.017,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 1.135,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.427,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.314,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.195,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.427,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.427,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.19,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.209,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.57,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.059,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.195,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.32,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.207,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.142,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.113,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.855,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.332,
+      "c": 7.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.303,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -1.184,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.922,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.462,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 1.003,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.736,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.713,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.427,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.582,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -0.916,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.922,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.724,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.297,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 1.14,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.998,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.047,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.73,
+      "c": 9.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.201,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.297,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.593,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.189,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.201,
+      "c": 7.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.177,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.32,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.332,
+      "c": 10.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.599,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.605,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.352,
+      "c": 6.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.32,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.564,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 1.289,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.861,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.849,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.178,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.16,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.599,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.488,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.701,
+      "c": 6.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.244,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.855,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.576,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.184,
+      "c": 10.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.474,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -1.059,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.183,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.32,
+      "c": 6.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.047,
+      "c": 1.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 1.254,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 1.146,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 1.283,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.047,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.594,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.457,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.177,
+      "c": 8.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.73,
+      "c": 6.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.878,
+      "c": 6.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.172,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.012,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 1.117,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -0.78,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.16,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.233,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.463,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.701,
+      "c": 6.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.221,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.326,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.041,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.564,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.428,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.582,
+      "c": 4.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.172,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.079,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.713,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.457,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.308,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.308,
+      "c": 5.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.718,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.422,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.291,
+      "c": 6.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.712,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.599,
+      "c": 7.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.575,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 1.289,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 1.271,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -0.393,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.797,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.303,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.861,
+      "c": 6.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.451,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.718,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.445,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -0.494,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.992,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.724,
+      "c": 5.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.285,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.308,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.861,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.178,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.32,
+      "c": 4.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.643,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.308,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.297,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -0.91,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -0.108,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.25,
+      "c": 1.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.992,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 1.265,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.724,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.837,
+      "c": 6.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.201,
+      "c": 6.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.058,
+      "c": 8.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": -0.209,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.707,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.707,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.469,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.058,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.166,
+      "c": 2.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.724,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 1.004,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.445,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.457,
+      "c": 1.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.582,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.059,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -1.332,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": -1.195,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.047,
+      "c": 3.0,
+      "cond": "Anxiety"
+    },
+    {
+      "d": 0.463,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.184,
+      "c": 6.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.843,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.582,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 1.146,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.599,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.047,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.57,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.154,
+      "c": 3.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.605,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.879,
+      "c": 7.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.872,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": -1.593,
+      "c": 7.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.189,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.16,
+      "c": 3.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.297,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": -0.898,
+      "c": 8.0,
+      "cond": "Normal"
+    },
+    {
+      "d": 0.718,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 1.146,
+      "c": 1.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.713,
+      "c": 4.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.439,
+      "c": 5.0,
+      "cond": "Depression"
+    },
+    {
+      "d": 0.576,
+      "c": 2.0,
+      "cond": "Burnout"
+    },
+    {
+      "d": 0.172,
+      "c": 2.0,
+      "cond": "Depression"
+    }
+  ]
+}
