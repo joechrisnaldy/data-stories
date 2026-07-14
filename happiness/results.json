@@ -1,0 +1,1022 @@
+{
+  "indonesia": {
+    "ladder_2024": 5.57,
+    "n_2024": 143,
+    "ladder_rank_2024": 80,
+    "generosity": 0.59,
+    "generosity_rank": 1,
+    "positive_affect": 0.814,
+    "positive_affect_rank": 5,
+    "ladder_panel": 5.7,
+    "ladder_rank_panel": 79,
+    "n_panel": 150
+  },
+  "corr": {
+    "generosity_ladder": 0.055,
+    "posaff_ladder": 0.461,
+    "negaff_ladder": -0.553,
+    "social_ladder": 0.788,
+    "loggdp_ladder_r2": 0.615
+  },
+  "n_panel": 150,
+  "scatter": [
+    {
+      "country": "Guyana",
+      "ladder": 5.99,
+      "posaff": 0.761,
+      "region": "Other"
+    },
+    {
+      "country": "Djibouti",
+      "ladder": 4.37,
+      "posaff": 0.543,
+      "region": "Other"
+    },
+    {
+      "country": "Suriname",
+      "ladder": 6.27,
+      "posaff": 0.73,
+      "region": "Other"
+    },
+    {
+      "country": "Sudan",
+      "ladder": 4.14,
+      "posaff": 0.461,
+      "region": "Other"
+    },
+    {
+      "country": "Belize",
+      "ladder": 5.96,
+      "posaff": 0.735,
+      "region": "Other"
+    },
+    {
+      "country": "Angola",
+      "ladder": 3.79,
+      "posaff": 0.595,
+      "region": "Other"
+    },
+    {
+      "country": "Syria",
+      "ladder": 3.46,
+      "posaff": 0.363,
+      "region": "Other"
+    },
+    {
+      "country": "Bhutan",
+      "ladder": 5.08,
+      "posaff": 0.723,
+      "region": "Other"
+    },
+    {
+      "country": "Somalia",
+      "ladder": 4.67,
+      "posaff": 0.773,
+      "region": "Other"
+    },
+    {
+      "country": "Trinidad and Tobago",
+      "ladder": 6.19,
+      "posaff": 0.763,
+      "region": "Other"
+    },
+    {
+      "country": "Central African Republic",
+      "ladder": 3.48,
+      "posaff": 0.602,
+      "region": "Other"
+    },
+    {
+      "country": "Haiti",
+      "ladder": 3.62,
+      "posaff": 0.581,
+      "region": "Other"
+    },
+    {
+      "country": "Burundi",
+      "ladder": 3.77,
+      "posaff": 0.636,
+      "region": "Other"
+    },
+    {
+      "country": "Belarus",
+      "ladder": 5.82,
+      "posaff": 0.559,
+      "region": "Other"
+    },
+    {
+      "country": "Turkmenistan",
+      "ladder": 5.47,
+      "posaff": 0.494,
+      "region": "Other"
+    },
+    {
+      "country": "Rwanda",
+      "ladder": 3.27,
+      "posaff": 0.717,
+      "region": "Other"
+    },
+    {
+      "country": "Jamaica",
+      "ladder": 5.87,
+      "posaff": 0.718,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Eswatini",
+      "ladder": 3.5,
+      "posaff": 0.661,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Algeria",
+      "ladder": 5.54,
+      "posaff": 0.583,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Hong Kong S.A.R. of China",
+      "ladder": 5.31,
+      "posaff": 0.549,
+      "region": "East Asia"
+    },
+    {
+      "country": "Lesotho",
+      "ladder": 3.19,
+      "posaff": 0.709,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Congo (Kinshasa)",
+      "ladder": 3.38,
+      "posaff": 0.546,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Gabon",
+      "ladder": 5.1,
+      "posaff": 0.62,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Germany",
+      "ladder": 6.79,
+      "posaff": 0.706,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Bolivia",
+      "ladder": 5.86,
+      "posaff": 0.753,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Austria",
+      "ladder": 6.64,
+      "posaff": 0.712,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Nigeria",
+      "ladder": 4.87,
+      "posaff": 0.721,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Pakistan",
+      "ladder": 4.55,
+      "posaff": 0.504,
+      "region": "South Asia"
+    },
+    {
+      "country": "France",
+      "ladder": 6.56,
+      "posaff": 0.676,
+      "region": "Western Europe"
+    },
+    {
+      "country": "North Macedonia",
+      "ladder": 5.4,
+      "posaff": 0.517,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Sri Lanka",
+      "ladder": 3.6,
+      "posaff": 0.709,
+      "region": "South Asia"
+    },
+    {
+      "country": "Norway",
+      "ladder": 7.25,
+      "posaff": 0.756,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Georgia",
+      "ladder": 5.35,
+      "posaff": 0.542,
+      "region": "Commonwealth of Independent States"
+    },
+    {
+      "country": "Gambia",
+      "ladder": 4.69,
+      "posaff": 0.719,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Kosovo",
+      "ladder": 6.88,
+      "posaff": 0.682,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Costa Rica",
+      "ladder": 7.38,
+      "posaff": 0.806,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Ecuador",
+      "ladder": 5.85,
+      "posaff": 0.763,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "South Africa",
+      "ladder": 5.08,
+      "posaff": 0.708,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Saudi Arabia",
+      "ladder": 6.95,
+      "posaff": 0.737,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Zambia",
+      "ladder": 3.69,
+      "posaff": 0.653,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Dominican Republic",
+      "ladder": 5.92,
+      "posaff": 0.73,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Senegal",
+      "ladder": 5.09,
+      "posaff": 0.825,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Serbia",
+      "ladder": 6.44,
+      "posaff": 0.526,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Bangladesh",
+      "ladder": 4.11,
+      "posaff": 0.435,
+      "region": "South Asia"
+    },
+    {
+      "country": "Bahrain",
+      "ladder": 5.96,
+      "posaff": 0.671,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Denmark",
+      "ladder": 7.5,
+      "posaff": 0.757,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Sierra Leone",
+      "ladder": 3.47,
+      "posaff": 0.504,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Czechia",
+      "ladder": 6.83,
+      "posaff": 0.75,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Slovenia",
+      "ladder": 6.75,
+      "posaff": 0.615,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Croatia",
+      "ladder": 5.96,
+      "posaff": 0.61,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Panama",
+      "ladder": 6.54,
+      "posaff": 0.829,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Russia",
+      "ladder": 5.87,
+      "posaff": 0.616,
+      "region": "Commonwealth of Independent States"
+    },
+    {
+      "country": "Belgium",
+      "ladder": 6.94,
+      "posaff": 0.725,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Finland",
+      "ladder": 7.7,
+      "posaff": 0.717,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Paraguay",
+      "ladder": 6.21,
+      "posaff": 0.833,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Spain",
+      "ladder": 6.46,
+      "posaff": 0.655,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Peru",
+      "ladder": 5.94,
+      "posaff": 0.765,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Vietnam",
+      "ladder": 6.33,
+      "posaff": 0.71,
+      "region": "Southeast Asia"
+    },
+    {
+      "country": "Benin",
+      "ladder": 4.42,
+      "posaff": 0.573,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Ethiopia",
+      "ladder": 4.09,
+      "posaff": 0.538,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Philippines",
+      "ladder": 6.18,
+      "posaff": 0.8,
+      "region": "Southeast Asia"
+    },
+    {
+      "country": "Azerbaijan",
+      "ladder": 5.21,
+      "posaff": 0.509,
+      "region": "Commonwealth of Independent States"
+    },
+    {
+      "country": "Poland",
+      "ladder": 6.68,
+      "posaff": 0.556,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "El Salvador",
+      "ladder": 6.48,
+      "posaff": 0.812,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "South Korea",
+      "ladder": 6.11,
+      "posaff": 0.603,
+      "region": "East Asia"
+    },
+    {
+      "country": "Portugal",
+      "ladder": 5.95,
+      "posaff": 0.661,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Romania",
+      "ladder": 6.49,
+      "posaff": 0.628,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Egypt",
+      "ladder": 3.88,
+      "posaff": 0.436,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Estonia",
+      "ladder": 6.43,
+      "posaff": 0.765,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Switzerland",
+      "ladder": 6.97,
+      "posaff": 0.745,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Bosnia and Herzegovina",
+      "ladder": 6.01,
+      "posaff": 0.579,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Togo",
+      "ladder": 4.37,
+      "posaff": 0.546,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Italy",
+      "ladder": 6.25,
+      "posaff": 0.636,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Lithuania",
+      "ladder": 6.55,
+      "posaff": 0.493,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Luxembourg",
+      "ladder": 7.02,
+      "posaff": 0.751,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Ukraine",
+      "ladder": 4.67,
+      "posaff": 0.49,
+      "region": "Commonwealth of Independent States"
+    },
+    {
+      "country": "Madagascar",
+      "ladder": 4.43,
+      "posaff": 0.718,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Thailand",
+      "ladder": 6.28,
+      "posaff": 0.811,
+      "region": "Southeast Asia"
+    },
+    {
+      "country": "Israel",
+      "ladder": 6.78,
+      "posaff": 0.484,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Malawi",
+      "ladder": 3.27,
+      "posaff": 0.52,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Chile",
+      "ladder": 6.23,
+      "posaff": 0.779,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Ireland",
+      "ladder": 6.82,
+      "posaff": 0.742,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Malaysia",
+      "ladder": 5.87,
+      "posaff": 0.761,
+      "region": "Southeast Asia"
+    },
+    {
+      "country": "Iraq",
+      "ladder": 5.47,
+      "posaff": 0.587,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Armenia",
+      "ladder": 5.68,
+      "posaff": 0.575,
+      "region": "Commonwealth of Independent States"
+    },
+    {
+      "country": "Mali",
+      "ladder": 4.37,
+      "posaff": 0.66,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "United Arab Emirates",
+      "ladder": 6.73,
+      "posaff": 0.655,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Burkina Faso",
+      "ladder": 4.46,
+      "posaff": 0.639,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Cambodia",
+      "ladder": 4.22,
+      "posaff": 0.683,
+      "region": "Southeast Asia"
+    },
+    {
+      "country": "Tanzania",
+      "ladder": 4.04,
+      "posaff": 0.702,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Ivory Coast",
+      "ladder": 5.34,
+      "posaff": 0.67,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Liberia",
+      "ladder": 4.49,
+      "posaff": 0.608,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Canada",
+      "ladder": 6.84,
+      "posaff": 0.726,
+      "region": "North America and ANZ"
+    },
+    {
+      "country": "Kenya",
+      "ladder": 4.5,
+      "posaff": 0.756,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Argentina",
+      "ladder": 6.39,
+      "posaff": 0.72,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Kuwait",
+      "ladder": 7.13,
+      "posaff": 0.729,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "T\u00fcrkiye",
+      "ladder": 5.46,
+      "posaff": 0.344,
+      "region": "Other"
+    },
+    {
+      "country": "Kyrgyzstan",
+      "ladder": 5.91,
+      "posaff": 0.681,
+      "region": "Commonwealth of Independent States"
+    },
+    {
+      "country": "Laos",
+      "ladder": 5.49,
+      "posaff": 0.679,
+      "region": "Southeast Asia"
+    },
+    {
+      "country": "Kazakhstan",
+      "ladder": 6.3,
+      "posaff": 0.626,
+      "region": "Commonwealth of Independent States"
+    },
+    {
+      "country": "Cameroon",
+      "ladder": 4.95,
+      "posaff": 0.588,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Tunisia",
+      "ladder": 4.5,
+      "posaff": 0.461,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Jordan",
+      "ladder": 4.29,
+      "posaff": 0.518,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Latvia",
+      "ladder": 6.3,
+      "posaff": 0.671,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Slovakia",
+      "ladder": 6.26,
+      "posaff": 0.647,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Chad",
+      "ladder": 4.54,
+      "posaff": 0.541,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Japan",
+      "ladder": 5.91,
+      "posaff": 0.638,
+      "region": "East Asia"
+    },
+    {
+      "country": "Uganda",
+      "ladder": 4.47,
+      "posaff": 0.726,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Lebanon",
+      "ladder": 3.59,
+      "posaff": 0.373,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Uzbekistan",
+      "ladder": 6.38,
+      "posaff": 0.752,
+      "region": "Commonwealth of Independent States"
+    },
+    {
+      "country": "Mauritania",
+      "ladder": 4.29,
+      "posaff": 0.708,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Honduras",
+      "ladder": 5.86,
+      "posaff": 0.767,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Namibia",
+      "ladder": 5.05,
+      "posaff": 0.635,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Brazil",
+      "ladder": 6.55,
+      "posaff": 0.694,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Comoros",
+      "ladder": 3.59,
+      "posaff": 0.535,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Guinea",
+      "ladder": 4.83,
+      "posaff": 0.652,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Guatemala",
+      "ladder": 6.42,
+      "posaff": 0.843,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Nepal",
+      "ladder": 5.39,
+      "posaff": 0.461,
+      "region": "South Asia"
+    },
+    {
+      "country": "Uruguay",
+      "ladder": 6.66,
+      "posaff": 0.753,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Sweden",
+      "ladder": 7.16,
+      "posaff": 0.739,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Netherlands",
+      "ladder": 7.25,
+      "posaff": 0.693,
+      "region": "Western Europe"
+    },
+    {
+      "country": "New Zealand",
+      "ladder": 6.98,
+      "posaff": 0.738,
+      "region": "North America and ANZ"
+    },
+    {
+      "country": "Congo (Brazzaville)",
+      "ladder": 4.95,
+      "posaff": 0.585,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Greece",
+      "ladder": 5.8,
+      "posaff": 0.608,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Botswana",
+      "ladder": 3.33,
+      "posaff": 0.657,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Ghana",
+      "ladder": 4.3,
+      "posaff": 0.638,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Nicaragua",
+      "ladder": 6.36,
+      "posaff": 0.772,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Niger",
+      "ladder": 4.61,
+      "posaff": 0.747,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "Albania",
+      "ladder": 5.45,
+      "posaff": 0.597,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Iran",
+      "ladder": 5.0,
+      "posaff": 0.533,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Myanmar",
+      "ladder": 4.39,
+      "posaff": 0.634,
+      "region": "Southeast Asia"
+    },
+    {
+      "country": "Colombia",
+      "ladder": 5.9,
+      "posaff": 0.754,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Mauritius",
+      "ladder": 5.76,
+      "posaff": 0.664,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "China",
+      "ladder": 6.14,
+      "posaff": 0.708,
+      "region": "East Asia"
+    },
+    {
+      "country": "Indonesia",
+      "ladder": 5.7,
+      "posaff": 0.814,
+      "region": "Southeast Asia"
+    },
+    {
+      "country": "Tajikistan",
+      "ladder": 5.38,
+      "posaff": 0.638,
+      "region": "Commonwealth of Independent States"
+    },
+    {
+      "country": "Mexico",
+      "ladder": 7.01,
+      "posaff": 0.809,
+      "region": "Latin America and Caribbean"
+    },
+    {
+      "country": "Bulgaria",
+      "ladder": 5.59,
+      "posaff": 0.539,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "United Kingdom",
+      "ladder": 6.66,
+      "posaff": 0.719,
+      "region": "Western Europe"
+    },
+    {
+      "country": "India",
+      "ladder": 4.68,
+      "posaff": 0.699,
+      "region": "South Asia"
+    },
+    {
+      "country": "Moldova",
+      "ladder": 5.8,
+      "posaff": 0.578,
+      "region": "Commonwealth of Independent States"
+    },
+    {
+      "country": "Iceland",
+      "ladder": 7.56,
+      "posaff": 0.793,
+      "region": "Western Europe"
+    },
+    {
+      "country": "Mongolia",
+      "ladder": 5.58,
+      "posaff": 0.545,
+      "region": "East Asia"
+    },
+    {
+      "country": "Hungary",
+      "ladder": 5.96,
+      "posaff": 0.673,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Montenegro",
+      "ladder": 5.81,
+      "posaff": 0.481,
+      "region": "Central and Eastern Europe"
+    },
+    {
+      "country": "Morocco",
+      "ladder": 4.49,
+      "posaff": 0.549,
+      "region": "Middle East and North Africa"
+    },
+    {
+      "country": "Mozambique",
+      "ladder": 5.7,
+      "posaff": 0.625,
+      "region": "Sub-Saharan Africa"
+    },
+    {
+      "country": "United States",
+      "ladder": 6.52,
+      "posaff": 0.706,
+      "region": "North America and ANZ"
+    },
+    {
+      "country": "Australia",
+      "ladder": 7.03,
+      "posaff": 0.731,
+      "region": "North America and ANZ"
+    },
+    {
+      "country": "Zimbabwe",
+      "ladder": 3.57,
+      "posaff": 0.61,
+      "region": "Sub-Saharan Africa"
+    }
+  ],
+  "generosity_top": [
+    {
+      "country": "Indonesia",
+      "generosity": 0.59,
+      "ladder": 5.7
+    },
+    {
+      "country": "Myanmar",
+      "generosity": 0.548,
+      "ladder": 4.39
+    },
+    {
+      "country": "Gambia",
+      "generosity": 0.43,
+      "ladder": 4.69
+    },
+    {
+      "country": "Haiti",
+      "generosity": 0.374,
+      "ladder": 3.62
+    },
+    {
+      "country": "Ukraine",
+      "generosity": 0.37,
+      "ladder": 4.67
+    },
+    {
+      "country": "Thailand",
+      "generosity": 0.338,
+      "ladder": 6.28
+    },
+    {
+      "country": "Kenya",
+      "generosity": 0.316,
+      "ladder": 4.5
+    },
+    {
+      "country": "Iceland",
+      "generosity": 0.299,
+      "ladder": 7.56
+    },
+    {
+      "country": "Kosovo",
+      "generosity": 0.285,
+      "ladder": 6.88
+    },
+    {
+      "country": "Turkmenistan",
+      "generosity": 0.282,
+      "ladder": 5.47
+    }
+  ],
+  "curated": [
+    {
+      "country": "Indonesia",
+      "ladder_rank": 79,
+      "posaff_rank": 5,
+      "ladder": 5.7,
+      "posaff": 0.814
+    },
+    {
+      "country": "Finland",
+      "ladder_rank": 1,
+      "posaff_rank": 52,
+      "ladder": 7.7,
+      "posaff": 0.717
+    },
+    {
+      "country": "Costa Rica",
+      "ladder_rank": 4,
+      "posaff_rank": 9,
+      "ladder": 7.38,
+      "posaff": 0.806
+    },
+    {
+      "country": "Poland",
+      "ladder_rank": 24,
+      "posaff_rank": 118,
+      "ladder": 6.68,
+      "posaff": 0.556
+    }
+  ],
+  "feel_more": [
+    "Rwanda",
+    "Somalia",
+    "Lesotho",
+    "Senegal",
+    "Kenya",
+    "Sri Lanka"
+  ],
+  "rate_more": [
+    "Israel",
+    "Lithuania",
+    "Serbia",
+    "Poland",
+    "Slovenia",
+    "Montenegro"
+  ]
+}
