@@ -1,0 +1,10220 @@
+{
+  "n": 20000,
+  "approval_rate": 0.239,
+  "corr_approval": [
+    {
+      "feature": "AnnualIncome",
+      "nice": "annual income",
+      "corr": 0.598
+    },
+    {
+      "feature": "TotalDebtToIncomeRatio",
+      "nice": "debt-to-income",
+      "corr": -0.41
+    },
+    {
+      "feature": "InterestRate",
+      "nice": "loan interest rate",
+      "corr": -0.302
+    },
+    {
+      "feature": "LoanAmount",
+      "nice": "loan amount",
+      "corr": -0.239
+    },
+    {
+      "feature": "NetWorth",
+      "nice": "net worth",
+      "corr": 0.188
+    },
+    {
+      "feature": "CreditScore",
+      "nice": "credit score",
+      "corr": 0.142
+    },
+    {
+      "feature": "Age",
+      "nice": "age",
+      "corr": 0.141
+    },
+    {
+      "feature": "LengthOfCreditHistory",
+      "nice": "credit-history length",
+      "corr": 0.106
+    },
+    {
+      "feature": "PreviousLoanDefaults",
+      "nice": "past defaults",
+      "corr": -0.065
+    }
+  ],
+  "importance": [
+    {
+      "feature": "TotalDebtToIncomeRatio",
+      "imp": 0.145
+    },
+    {
+      "feature": "InterestRate",
+      "imp": 0.1141
+    },
+    {
+      "feature": "MonthlyIncome",
+      "imp": 0.0859
+    },
+    {
+      "feature": "LengthOfCreditHistory",
+      "imp": 0.0342
+    },
+    {
+      "feature": "NetWorth",
+      "imp": 0.0311
+    },
+    {
+      "feature": "CreditScore",
+      "imp": 0.0248
+    },
+    {
+      "feature": "LoanAmount",
+      "imp": 0.0145
+    },
+    {
+      "feature": "TotalAssets",
+      "imp": 0.0139
+    }
+  ],
+  "credit_rate_corr": -0.599,
+  "credit_approval_corr": 0.142,
+  "credit_rate_scatter": [
+    {
+      "credit": 580,
+      "rate": 0.2613
+    },
+    {
+      "credit": 612,
+      "rate": 0.2144
+    },
+    {
+      "credit": 560,
+      "rate": 0.2033
+    },
+    {
+      "credit": 621,
+      "rate": 0.2281
+    },
+    {
+      "credit": 634,
+      "rate": 0.195
+    },
+    {
+      "credit": 537,
+      "rate": 0.226
+    },
+    {
+      "credit": 592,
+      "rate": 0.2095
+    },
+    {
+      "credit": 501,
+      "rate": 0.2716
+    },
+    {
+      "credit": 620,
+      "rate": 0.1963
+    },
+    {
+      "credit": 605,
+      "rate": 0.2117
+    },
+    {
+      "credit": 557,
+      "rate": 0.2015
+    },
+    {
+      "credit": 595,
+      "rate": 0.272
+    },
+    {
+      "credit": 551,
+      "rate": 0.2191
+    },
+    {
+      "credit": 613,
+      "rate": 0.256
+    },
+    {
+      "credit": 629,
+      "rate": 0.1911
+    },
+    {
+      "credit": 633,
+      "rate": 0.1972
+    },
+    {
+      "credit": 602,
+      "rate": 0.213
+    },
+    {
+      "credit": 596,
+      "rate": 0.2518
+    },
+    {
+      "credit": 606,
+      "rate": 0.221
+    },
+    {
+      "credit": 606,
+      "rate": 0.246
+    },
+    {
+      "credit": 657,
+      "rate": 0.1694
+    },
+    {
+      "credit": 606,
+      "rate": 0.2629
+    },
+    {
+      "credit": 524,
+      "rate": 0.2441
+    },
+    {
+      "credit": 626,
+      "rate": 0.2605
+    },
+    {
+      "credit": 461,
+      "rate": 0.2636
+    },
+    {
+      "credit": 537,
+      "rate": 0.2494
+    },
+    {
+      "credit": 566,
+      "rate": 0.2437
+    },
+    {
+      "credit": 637,
+      "rate": 0.2143
+    },
+    {
+      "credit": 543,
+      "rate": 0.228
+    },
+    {
+      "credit": 607,
+      "rate": 0.1776
+    },
+    {
+      "credit": 530,
+      "rate": 0.2572
+    },
+    {
+      "credit": 575,
+      "rate": 0.2389
+    },
+    {
+      "credit": 589,
+      "rate": 0.204
+    },
+    {
+      "credit": 596,
+      "rate": 0.1742
+    },
+    {
+      "credit": 539,
+      "rate": 0.2107
+    },
+    {
+      "credit": 523,
+      "rate": 0.3205
+    },
+    {
+      "credit": 488,
+      "rate": 0.3093
+    },
+    {
+      "credit": 476,
+      "rate": 0.3423
+    },
+    {
+      "credit": 620,
+      "rate": 0.1723
+    },
+    {
+      "credit": 525,
+      "rate": 0.2923
+    },
+    {
+      "credit": 652,
+      "rate": 0.1728
+    },
+    {
+      "credit": 628,
+      "rate": 0.2403
+    },
+    {
+      "credit": 596,
+      "rate": 0.216
+    },
+    {
+      "credit": 516,
+      "rate": 0.2414
+    },
+    {
+      "credit": 587,
+      "rate": 0.2248
+    },
+    {
+      "credit": 540,
+      "rate": 0.2195
+    },
+    {
+      "credit": 526,
+      "rate": 0.2317
+    },
+    {
+      "credit": 590,
+      "rate": 0.2025
+    },
+    {
+      "credit": 620,
+      "rate": 0.2277
+    },
+    {
+      "credit": 649,
+      "rate": 0.1919
+    },
+    {
+      "credit": 606,
+      "rate": 0.2192
+    },
+    {
+      "credit": 512,
+      "rate": 0.2962
+    },
+    {
+      "credit": 587,
+      "rate": 0.2368
+    },
+    {
+      "credit": 582,
+      "rate": 0.2213
+    },
+    {
+      "credit": 636,
+      "rate": 0.1583
+    },
+    {
+      "credit": 586,
+      "rate": 0.21
+    },
+    {
+      "credit": 609,
+      "rate": 0.2268
+    },
+    {
+      "credit": 579,
+      "rate": 0.321
+    },
+    {
+      "credit": 600,
+      "rate": 0.1636
+    },
+    {
+      "credit": 593,
+      "rate": 0.2313
+    },
+    {
+      "credit": 567,
+      "rate": 0.21
+    },
+    {
+      "credit": 618,
+      "rate": 0.2166
+    },
+    {
+      "credit": 646,
+      "rate": 0.256
+    },
+    {
+      "credit": 562,
+      "rate": 0.2237
+    },
+    {
+      "credit": 487,
+      "rate": 0.2836
+    },
+    {
+      "credit": 606,
+      "rate": 0.2267
+    },
+    {
+      "credit": 582,
+      "rate": 0.1751
+    },
+    {
+      "credit": 599,
+      "rate": 0.3101
+    },
+    {
+      "credit": 520,
+      "rate": 0.2412
+    },
+    {
+      "credit": 561,
+      "rate": 0.2238
+    },
+    {
+      "credit": 616,
+      "rate": 0.2506
+    },
+    {
+      "credit": 619,
+      "rate": 0.1648
+    },
+    {
+      "credit": 554,
+      "rate": 0.236
+    },
+    {
+      "credit": 599,
+      "rate": 0.2061
+    },
+    {
+      "credit": 617,
+      "rate": 0.205
+    },
+    {
+      "credit": 623,
+      "rate": 0.199
+    },
+    {
+      "credit": 546,
+      "rate": 0.1987
+    },
+    {
+      "credit": 609,
+      "rate": 0.1949
+    },
+    {
+      "credit": 545,
+      "rate": 0.2554
+    },
+    {
+      "credit": 602,
+      "rate": 0.2392
+    },
+    {
+      "credit": 517,
+      "rate": 0.2342
+    },
+    {
+      "credit": 544,
+      "rate": 0.2618
+    },
+    {
+      "credit": 561,
+      "rate": 0.1875
+    },
+    {
+      "credit": 609,
+      "rate": 0.1908
+    },
+    {
+      "credit": 564,
+      "rate": 0.2515
+    },
+    {
+      "credit": 584,
+      "rate": 0.2174
+    },
+    {
+      "credit": 557,
+      "rate": 0.1935
+    },
+    {
+      "credit": 521,
+      "rate": 0.2863
+    },
+    {
+      "credit": 577,
+      "rate": 0.2763
+    },
+    {
+      "credit": 595,
+      "rate": 0.188
+    },
+    {
+      "credit": 584,
+      "rate": 0.2487
+    },
+    {
+      "credit": 588,
+      "rate": 0.207
+    },
+    {
+      "credit": 454,
+      "rate": 0.3006
+    },
+    {
+      "credit": 540,
+      "rate": 0.2201
+    },
+    {
+      "credit": 638,
+      "rate": 0.2597
+    },
+    {
+      "credit": 642,
+      "rate": 0.1809
+    },
+    {
+      "credit": 518,
+      "rate": 0.2903
+    },
+    {
+      "credit": 559,
+      "rate": 0.276
+    },
+    {
+      "credit": 581,
+      "rate": 0.2159
+    },
+    {
+      "credit": 518,
+      "rate": 0.2441
+    },
+    {
+      "credit": 525,
+      "rate": 0.2889
+    },
+    {
+      "credit": 479,
+      "rate": 0.2827
+    },
+    {
+      "credit": 611,
+      "rate": 0.2157
+    },
+    {
+      "credit": 600,
+      "rate": 0.247
+    },
+    {
+      "credit": 658,
+      "rate": 0.18
+    },
+    {
+      "credit": 605,
+      "rate": 0.2709
+    },
+    {
+      "credit": 554,
+      "rate": 0.2716
+    },
+    {
+      "credit": 409,
+      "rate": 0.3616
+    },
+    {
+      "credit": 511,
+      "rate": 0.2946
+    },
+    {
+      "credit": 596,
+      "rate": 0.2172
+    },
+    {
+      "credit": 603,
+      "rate": 0.1854
+    },
+    {
+      "credit": 565,
+      "rate": 0.2034
+    },
+    {
+      "credit": 616,
+      "rate": 0.1754
+    },
+    {
+      "credit": 552,
+      "rate": 0.2593
+    },
+    {
+      "credit": 507,
+      "rate": 0.2808
+    },
+    {
+      "credit": 494,
+      "rate": 0.2695
+    },
+    {
+      "credit": 566,
+      "rate": 0.2356
+    },
+    {
+      "credit": 606,
+      "rate": 0.2385
+    },
+    {
+      "credit": 561,
+      "rate": 0.2528
+    },
+    {
+      "credit": 573,
+      "rate": 0.2308
+    },
+    {
+      "credit": 570,
+      "rate": 0.2895
+    },
+    {
+      "credit": 668,
+      "rate": 0.1625
+    },
+    {
+      "credit": 567,
+      "rate": 0.2513
+    },
+    {
+      "credit": 564,
+      "rate": 0.2027
+    },
+    {
+      "credit": 580,
+      "rate": 0.2248
+    },
+    {
+      "credit": 486,
+      "rate": 0.2877
+    },
+    {
+      "credit": 638,
+      "rate": 0.2181
+    },
+    {
+      "credit": 530,
+      "rate": 0.2905
+    },
+    {
+      "credit": 575,
+      "rate": 0.2113
+    },
+    {
+      "credit": 556,
+      "rate": 0.3089
+    },
+    {
+      "credit": 609,
+      "rate": 0.2193
+    },
+    {
+      "credit": 526,
+      "rate": 0.2408
+    },
+    {
+      "credit": 627,
+      "rate": 0.212
+    },
+    {
+      "credit": 537,
+      "rate": 0.3044
+    },
+    {
+      "credit": 517,
+      "rate": 0.2662
+    },
+    {
+      "credit": 501,
+      "rate": 0.2561
+    },
+    {
+      "credit": 620,
+      "rate": 0.1846
+    },
+    {
+      "credit": 509,
+      "rate": 0.2558
+    },
+    {
+      "credit": 582,
+      "rate": 0.279
+    },
+    {
+      "credit": 590,
+      "rate": 0.2017
+    },
+    {
+      "credit": 604,
+      "rate": 0.1982
+    },
+    {
+      "credit": 591,
+      "rate": 0.2358
+    },
+    {
+      "credit": 495,
+      "rate": 0.3058
+    },
+    {
+      "credit": 653,
+      "rate": 0.1993
+    },
+    {
+      "credit": 521,
+      "rate": 0.2854
+    },
+    {
+      "credit": 577,
+      "rate": 0.2149
+    },
+    {
+      "credit": 609,
+      "rate": 0.1949
+    },
+    {
+      "credit": 612,
+      "rate": 0.1871
+    },
+    {
+      "credit": 573,
+      "rate": 0.2245
+    },
+    {
+      "credit": 660,
+      "rate": 0.2371
+    },
+    {
+      "credit": 458,
+      "rate": 0.279
+    },
+    {
+      "credit": 599,
+      "rate": 0.2064
+    },
+    {
+      "credit": 529,
+      "rate": 0.2001
+    },
+    {
+      "credit": 587,
+      "rate": 0.2748
+    },
+    {
+      "credit": 648,
+      "rate": 0.1886
+    },
+    {
+      "credit": 541,
+      "rate": 0.2446
+    },
+    {
+      "credit": 583,
+      "rate": 0.2534
+    },
+    {
+      "credit": 566,
+      "rate": 0.2365
+    },
+    {
+      "credit": 626,
+      "rate": 0.2866
+    },
+    {
+      "credit": 588,
+      "rate": 0.2666
+    },
+    {
+      "credit": 529,
+      "rate": 0.3122
+    },
+    {
+      "credit": 542,
+      "rate": 0.2432
+    },
+    {
+      "credit": 619,
+      "rate": 0.2435
+    },
+    {
+      "credit": 573,
+      "rate": 0.2538
+    },
+    {
+      "credit": 545,
+      "rate": 0.2095
+    },
+    {
+      "credit": 561,
+      "rate": 0.1894
+    },
+    {
+      "credit": 627,
+      "rate": 0.231
+    },
+    {
+      "credit": 636,
+      "rate": 0.1992
+    },
+    {
+      "credit": 582,
+      "rate": 0.2957
+    },
+    {
+      "credit": 570,
+      "rate": 0.2284
+    },
+    {
+      "credit": 553,
+      "rate": 0.2598
+    },
+    {
+      "credit": 518,
+      "rate": 0.2839
+    },
+    {
+      "credit": 569,
+      "rate": 0.2171
+    },
+    {
+      "credit": 508,
+      "rate": 0.2279
+    },
+    {
+      "credit": 515,
+      "rate": 0.292
+    },
+    {
+      "credit": 646,
+      "rate": 0.2202
+    },
+    {
+      "credit": 527,
+      "rate": 0.25
+    },
+    {
+      "credit": 468,
+      "rate": 0.3367
+    },
+    {
+      "credit": 601,
+      "rate": 0.2121
+    },
+    {
+      "credit": 510,
+      "rate": 0.2142
+    },
+    {
+      "credit": 450,
+      "rate": 0.2657
+    },
+    {
+      "credit": 535,
+      "rate": 0.3436
+    },
+    {
+      "credit": 565,
+      "rate": 0.2097
+    },
+    {
+      "credit": 547,
+      "rate": 0.3065
+    },
+    {
+      "credit": 530,
+      "rate": 0.2298
+    },
+    {
+      "credit": 538,
+      "rate": 0.2822
+    },
+    {
+      "credit": 585,
+      "rate": 0.2618
+    },
+    {
+      "credit": 609,
+      "rate": 0.2825
+    },
+    {
+      "credit": 603,
+      "rate": 0.2138
+    },
+    {
+      "credit": 626,
+      "rate": 0.2172
+    },
+    {
+      "credit": 547,
+      "rate": 0.3095
+    },
+    {
+      "credit": 589,
+      "rate": 0.1946
+    },
+    {
+      "credit": 486,
+      "rate": 0.2847
+    },
+    {
+      "credit": 553,
+      "rate": 0.2415
+    },
+    {
+      "credit": 496,
+      "rate": 0.2225
+    },
+    {
+      "credit": 579,
+      "rate": 0.211
+    },
+    {
+      "credit": 615,
+      "rate": 0.1987
+    },
+    {
+      "credit": 614,
+      "rate": 0.1757
+    },
+    {
+      "credit": 601,
+      "rate": 0.1976
+    },
+    {
+      "credit": 485,
+      "rate": 0.2734
+    },
+    {
+      "credit": 472,
+      "rate": 0.3024
+    },
+    {
+      "credit": 593,
+      "rate": 0.2427
+    },
+    {
+      "credit": 527,
+      "rate": 0.2434
+    },
+    {
+      "credit": 501,
+      "rate": 0.283
+    },
+    {
+      "credit": 545,
+      "rate": 0.2507
+    },
+    {
+      "credit": 610,
+      "rate": 0.2144
+    },
+    {
+      "credit": 605,
+      "rate": 0.2055
+    },
+    {
+      "credit": 518,
+      "rate": 0.2835
+    },
+    {
+      "credit": 515,
+      "rate": 0.2444
+    },
+    {
+      "credit": 576,
+      "rate": 0.223
+    },
+    {
+      "credit": 635,
+      "rate": 0.2291
+    },
+    {
+      "credit": 608,
+      "rate": 0.1887
+    },
+    {
+      "credit": 599,
+      "rate": 0.2047
+    },
+    {
+      "credit": 521,
+      "rate": 0.2593
+    },
+    {
+      "credit": 538,
+      "rate": 0.2241
+    },
+    {
+      "credit": 606,
+      "rate": 0.2454
+    },
+    {
+      "credit": 541,
+      "rate": 0.2179
+    },
+    {
+      "credit": 460,
+      "rate": 0.2598
+    },
+    {
+      "credit": 442,
+      "rate": 0.2638
+    },
+    {
+      "credit": 577,
+      "rate": 0.2436
+    },
+    {
+      "credit": 638,
+      "rate": 0.2448
+    },
+    {
+      "credit": 551,
+      "rate": 0.2192
+    },
+    {
+      "credit": 516,
+      "rate": 0.2733
+    },
+    {
+      "credit": 532,
+      "rate": 0.2217
+    },
+    {
+      "credit": 621,
+      "rate": 0.2271
+    },
+    {
+      "credit": 551,
+      "rate": 0.1991
+    },
+    {
+      "credit": 544,
+      "rate": 0.2832
+    },
+    {
+      "credit": 609,
+      "rate": 0.1745
+    },
+    {
+      "credit": 592,
+      "rate": 0.2269
+    },
+    {
+      "credit": 542,
+      "rate": 0.2614
+    },
+    {
+      "credit": 559,
+      "rate": 0.2158
+    },
+    {
+      "credit": 523,
+      "rate": 0.2577
+    },
+    {
+      "credit": 518,
+      "rate": 0.2984
+    },
+    {
+      "credit": 490,
+      "rate": 0.2123
+    },
+    {
+      "credit": 560,
+      "rate": 0.2201
+    },
+    {
+      "credit": 561,
+      "rate": 0.2296
+    },
+    {
+      "credit": 589,
+      "rate": 0.2034
+    },
+    {
+      "credit": 573,
+      "rate": 0.2121
+    },
+    {
+      "credit": 542,
+      "rate": 0.3229
+    },
+    {
+      "credit": 618,
+      "rate": 0.1795
+    },
+    {
+      "credit": 525,
+      "rate": 0.2868
+    },
+    {
+      "credit": 481,
+      "rate": 0.2762
+    },
+    {
+      "credit": 536,
+      "rate": 0.2596
+    },
+    {
+      "credit": 616,
+      "rate": 0.2023
+    },
+    {
+      "credit": 568,
+      "rate": 0.238
+    },
+    {
+      "credit": 523,
+      "rate": 0.2887
+    },
+    {
+      "credit": 504,
+      "rate": 0.2928
+    },
+    {
+      "credit": 536,
+      "rate": 0.2486
+    },
+    {
+      "credit": 566,
+      "rate": 0.2216
+    },
+    {
+      "credit": 607,
+      "rate": 0.2497
+    },
+    {
+      "credit": 606,
+      "rate": 0.2202
+    },
+    {
+      "credit": 616,
+      "rate": 0.2395
+    },
+    {
+      "credit": 603,
+      "rate": 0.2366
+    },
+    {
+      "credit": 581,
+      "rate": 0.2012
+    },
+    {
+      "credit": 569,
+      "rate": 0.2965
+    },
+    {
+      "credit": 426,
+      "rate": 0.3272
+    },
+    {
+      "credit": 585,
+      "rate": 0.2842
+    },
+    {
+      "credit": 598,
+      "rate": 0.2108
+    },
+    {
+      "credit": 597,
+      "rate": 0.2749
+    },
+    {
+      "credit": 440,
+      "rate": 0.3834
+    },
+    {
+      "credit": 615,
+      "rate": 0.1917
+    },
+    {
+      "credit": 540,
+      "rate": 0.2265
+    },
+    {
+      "credit": 556,
+      "rate": 0.3213
+    },
+    {
+      "credit": 613,
+      "rate": 0.1591
+    },
+    {
+      "credit": 620,
+      "rate": 0.1759
+    },
+    {
+      "credit": 615,
+      "rate": 0.2765
+    },
+    {
+      "credit": 546,
+      "rate": 0.1859
+    },
+    {
+      "credit": 565,
+      "rate": 0.1954
+    },
+    {
+      "credit": 548,
+      "rate": 0.2444
+    },
+    {
+      "credit": 676,
+      "rate": 0.2553
+    },
+    {
+      "credit": 603,
+      "rate": 0.2125
+    },
+    {
+      "credit": 551,
+      "rate": 0.2551
+    },
+    {
+      "credit": 631,
+      "rate": 0.1807
+    },
+    {
+      "credit": 560,
+      "rate": 0.1915
+    },
+    {
+      "credit": 446,
+      "rate": 0.3809
+    },
+    {
+      "credit": 581,
+      "rate": 0.2248
+    },
+    {
+      "credit": 492,
+      "rate": 0.2416
+    },
+    {
+      "credit": 615,
+      "rate": 0.2681
+    },
+    {
+      "credit": 595,
+      "rate": 0.2124
+    },
+    {
+      "credit": 574,
+      "rate": 0.2484
+    },
+    {
+      "credit": 541,
+      "rate": 0.2617
+    },
+    {
+      "credit": 594,
+      "rate": 0.293
+    },
+    {
+      "credit": 592,
+      "rate": 0.2317
+    },
+    {
+      "credit": 623,
+      "rate": 0.1738
+    },
+    {
+      "credit": 609,
+      "rate": 0.2124
+    },
+    {
+      "credit": 534,
+      "rate": 0.2407
+    },
+    {
+      "credit": 522,
+      "rate": 0.3252
+    },
+    {
+      "credit": 546,
+      "rate": 0.3062
+    },
+    {
+      "credit": 569,
+      "rate": 0.2232
+    },
+    {
+      "credit": 573,
+      "rate": 0.2212
+    },
+    {
+      "credit": 551,
+      "rate": 0.2783
+    },
+    {
+      "credit": 601,
+      "rate": 0.1844
+    },
+    {
+      "credit": 569,
+      "rate": 0.2629
+    },
+    {
+      "credit": 622,
+      "rate": 0.2066
+    },
+    {
+      "credit": 546,
+      "rate": 0.3073
+    },
+    {
+      "credit": 608,
+      "rate": 0.1592
+    },
+    {
+      "credit": 519,
+      "rate": 0.2388
+    },
+    {
+      "credit": 600,
+      "rate": 0.2152
+    },
+    {
+      "credit": 504,
+      "rate": 0.2544
+    },
+    {
+      "credit": 652,
+      "rate": 0.2278
+    },
+    {
+      "credit": 604,
+      "rate": 0.2449
+    },
+    {
+      "credit": 590,
+      "rate": 0.2257
+    },
+    {
+      "credit": 511,
+      "rate": 0.2372
+    },
+    {
+      "credit": 579,
+      "rate": 0.2912
+    },
+    {
+      "credit": 508,
+      "rate": 0.3163
+    },
+    {
+      "credit": 564,
+      "rate": 0.1886
+    },
+    {
+      "credit": 542,
+      "rate": 0.2176
+    },
+    {
+      "credit": 517,
+      "rate": 0.2039
+    },
+    {
+      "credit": 526,
+      "rate": 0.2248
+    },
+    {
+      "credit": 542,
+      "rate": 0.2315
+    },
+    {
+      "credit": 569,
+      "rate": 0.2479
+    },
+    {
+      "credit": 585,
+      "rate": 0.2461
+    },
+    {
+      "credit": 600,
+      "rate": 0.224
+    },
+    {
+      "credit": 476,
+      "rate": 0.2758
+    },
+    {
+      "credit": 552,
+      "rate": 0.2031
+    },
+    {
+      "credit": 565,
+      "rate": 0.2746
+    },
+    {
+      "credit": 635,
+      "rate": 0.2604
+    },
+    {
+      "credit": 518,
+      "rate": 0.2391
+    },
+    {
+      "credit": 608,
+      "rate": 0.2525
+    },
+    {
+      "credit": 587,
+      "rate": 0.207
+    },
+    {
+      "credit": 588,
+      "rate": 0.2881
+    },
+    {
+      "credit": 533,
+      "rate": 0.2387
+    },
+    {
+      "credit": 494,
+      "rate": 0.2499
+    },
+    {
+      "credit": 599,
+      "rate": 0.1891
+    },
+    {
+      "credit": 606,
+      "rate": 0.1793
+    },
+    {
+      "credit": 584,
+      "rate": 0.2384
+    },
+    {
+      "credit": 554,
+      "rate": 0.1849
+    },
+    {
+      "credit": 520,
+      "rate": 0.2486
+    },
+    {
+      "credit": 623,
+      "rate": 0.1915
+    },
+    {
+      "credit": 537,
+      "rate": 0.2154
+    },
+    {
+      "credit": 590,
+      "rate": 0.2462
+    },
+    {
+      "credit": 555,
+      "rate": 0.2383
+    },
+    {
+      "credit": 574,
+      "rate": 0.2052
+    },
+    {
+      "credit": 456,
+      "rate": 0.2612
+    },
+    {
+      "credit": 594,
+      "rate": 0.2376
+    },
+    {
+      "credit": 655,
+      "rate": 0.1713
+    },
+    {
+      "credit": 602,
+      "rate": 0.2222
+    },
+    {
+      "credit": 611,
+      "rate": 0.2399
+    },
+    {
+      "credit": 620,
+      "rate": 0.1968
+    },
+    {
+      "credit": 518,
+      "rate": 0.2997
+    },
+    {
+      "credit": 625,
+      "rate": 0.1818
+    },
+    {
+      "credit": 586,
+      "rate": 0.2436
+    },
+    {
+      "credit": 531,
+      "rate": 0.2647
+    },
+    {
+      "credit": 492,
+      "rate": 0.2678
+    },
+    {
+      "credit": 572,
+      "rate": 0.2294
+    },
+    {
+      "credit": 615,
+      "rate": 0.2156
+    },
+    {
+      "credit": 501,
+      "rate": 0.2785
+    },
+    {
+      "credit": 564,
+      "rate": 0.269
+    },
+    {
+      "credit": 564,
+      "rate": 0.2409
+    },
+    {
+      "credit": 566,
+      "rate": 0.2713
+    },
+    {
+      "credit": 619,
+      "rate": 0.2129
+    },
+    {
+      "credit": 576,
+      "rate": 0.2727
+    },
+    {
+      "credit": 621,
+      "rate": 0.1659
+    },
+    {
+      "credit": 556,
+      "rate": 0.2584
+    },
+    {
+      "credit": 595,
+      "rate": 0.2212
+    },
+    {
+      "credit": 548,
+      "rate": 0.2391
+    },
+    {
+      "credit": 599,
+      "rate": 0.2293
+    },
+    {
+      "credit": 463,
+      "rate": 0.2439
+    },
+    {
+      "credit": 571,
+      "rate": 0.2155
+    },
+    {
+      "credit": 590,
+      "rate": 0.2083
+    },
+    {
+      "credit": 579,
+      "rate": 0.2233
+    },
+    {
+      "credit": 604,
+      "rate": 0.2552
+    },
+    {
+      "credit": 604,
+      "rate": 0.2191
+    },
+    {
+      "credit": 501,
+      "rate": 0.2697
+    },
+    {
+      "credit": 540,
+      "rate": 0.217
+    },
+    {
+      "credit": 586,
+      "rate": 0.3107
+    },
+    {
+      "credit": 547,
+      "rate": 0.2898
+    },
+    {
+      "credit": 613,
+      "rate": 0.1734
+    },
+    {
+      "credit": 630,
+      "rate": 0.1983
+    },
+    {
+      "credit": 583,
+      "rate": 0.2475
+    },
+    {
+      "credit": 525,
+      "rate": 0.252
+    },
+    {
+      "credit": 490,
+      "rate": 0.3111
+    },
+    {
+      "credit": 538,
+      "rate": 0.1966
+    },
+    {
+      "credit": 504,
+      "rate": 0.2654
+    },
+    {
+      "credit": 575,
+      "rate": 0.228
+    },
+    {
+      "credit": 645,
+      "rate": 0.2028
+    },
+    {
+      "credit": 556,
+      "rate": 0.2925
+    },
+    {
+      "credit": 550,
+      "rate": 0.2339
+    },
+    {
+      "credit": 631,
+      "rate": 0.157
+    },
+    {
+      "credit": 472,
+      "rate": 0.272
+    },
+    {
+      "credit": 553,
+      "rate": 0.2688
+    },
+    {
+      "credit": 604,
+      "rate": 0.1803
+    },
+    {
+      "credit": 605,
+      "rate": 0.2367
+    },
+    {
+      "credit": 535,
+      "rate": 0.2712
+    },
+    {
+      "credit": 538,
+      "rate": 0.2236
+    },
+    {
+      "credit": 591,
+      "rate": 0.2206
+    },
+    {
+      "credit": 604,
+      "rate": 0.1561
+    },
+    {
+      "credit": 604,
+      "rate": 0.2366
+    },
+    {
+      "credit": 557,
+      "rate": 0.2395
+    },
+    {
+      "credit": 650,
+      "rate": 0.1869
+    },
+    {
+      "credit": 517,
+      "rate": 0.267
+    },
+    {
+      "credit": 566,
+      "rate": 0.2316
+    },
+    {
+      "credit": 571,
+      "rate": 0.2286
+    },
+    {
+      "credit": 616,
+      "rate": 0.2366
+    },
+    {
+      "credit": 584,
+      "rate": 0.2242
+    },
+    {
+      "credit": 472,
+      "rate": 0.2773
+    },
+    {
+      "credit": 558,
+      "rate": 0.1988
+    },
+    {
+      "credit": 596,
+      "rate": 0.2095
+    },
+    {
+      "credit": 624,
+      "rate": 0.249
+    },
+    {
+      "credit": 638,
+      "rate": 0.197
+    },
+    {
+      "credit": 661,
+      "rate": 0.1978
+    },
+    {
+      "credit": 636,
+      "rate": 0.2305
+    },
+    {
+      "credit": 599,
+      "rate": 0.1914
+    },
+    {
+      "credit": 545,
+      "rate": 0.2628
+    },
+    {
+      "credit": 598,
+      "rate": 0.2223
+    },
+    {
+      "credit": 609,
+      "rate": 0.2413
+    },
+    {
+      "credit": 537,
+      "rate": 0.2267
+    },
+    {
+      "credit": 604,
+      "rate": 0.1919
+    },
+    {
+      "credit": 527,
+      "rate": 0.2088
+    },
+    {
+      "credit": 528,
+      "rate": 0.247
+    },
+    {
+      "credit": 635,
+      "rate": 0.1546
+    },
+    {
+      "credit": 577,
+      "rate": 0.1914
+    },
+    {
+      "credit": 644,
+      "rate": 0.1622
+    },
+    {
+      "credit": 541,
+      "rate": 0.2347
+    },
+    {
+      "credit": 535,
+      "rate": 0.2265
+    },
+    {
+      "credit": 647,
+      "rate": 0.2185
+    },
+    {
+      "credit": 467,
+      "rate": 0.3755
+    },
+    {
+      "credit": 619,
+      "rate": 0.2014
+    },
+    {
+      "credit": 565,
+      "rate": 0.2829
+    },
+    {
+      "credit": 599,
+      "rate": 0.268
+    },
+    {
+      "credit": 489,
+      "rate": 0.3465
+    },
+    {
+      "credit": 548,
+      "rate": 0.2204
+    },
+    {
+      "credit": 578,
+      "rate": 0.203
+    },
+    {
+      "credit": 496,
+      "rate": 0.322
+    },
+    {
+      "credit": 564,
+      "rate": 0.2282
+    },
+    {
+      "credit": 553,
+      "rate": 0.2394
+    },
+    {
+      "credit": 612,
+      "rate": 0.1817
+    },
+    {
+      "credit": 575,
+      "rate": 0.2487
+    },
+    {
+      "credit": 600,
+      "rate": 0.2464
+    },
+    {
+      "credit": 504,
+      "rate": 0.339
+    },
+    {
+      "credit": 637,
+      "rate": 0.1985
+    },
+    {
+      "credit": 611,
+      "rate": 0.1602
+    },
+    {
+      "credit": 497,
+      "rate": 0.3399
+    },
+    {
+      "credit": 524,
+      "rate": 0.2506
+    },
+    {
+      "credit": 587,
+      "rate": 0.2267
+    },
+    {
+      "credit": 530,
+      "rate": 0.2629
+    },
+    {
+      "credit": 472,
+      "rate": 0.3399
+    },
+    {
+      "credit": 494,
+      "rate": 0.2589
+    },
+    {
+      "credit": 580,
+      "rate": 0.1857
+    },
+    {
+      "credit": 620,
+      "rate": 0.2801
+    },
+    {
+      "credit": 600,
+      "rate": 0.2319
+    },
+    {
+      "credit": 644,
+      "rate": 0.2389
+    },
+    {
+      "credit": 552,
+      "rate": 0.2245
+    },
+    {
+      "credit": 595,
+      "rate": 0.2528
+    },
+    {
+      "credit": 534,
+      "rate": 0.249
+    },
+    {
+      "credit": 620,
+      "rate": 0.1584
+    },
+    {
+      "credit": 505,
+      "rate": 0.3299
+    },
+    {
+      "credit": 605,
+      "rate": 0.2223
+    },
+    {
+      "credit": 542,
+      "rate": 0.2604
+    },
+    {
+      "credit": 545,
+      "rate": 0.2874
+    },
+    {
+      "credit": 570,
+      "rate": 0.22
+    },
+    {
+      "credit": 545,
+      "rate": 0.2445
+    },
+    {
+      "credit": 526,
+      "rate": 0.309
+    },
+    {
+      "credit": 606,
+      "rate": 0.1856
+    },
+    {
+      "credit": 455,
+      "rate": 0.2902
+    },
+    {
+      "credit": 492,
+      "rate": 0.2265
+    },
+    {
+      "credit": 495,
+      "rate": 0.2764
+    },
+    {
+      "credit": 511,
+      "rate": 0.2885
+    },
+    {
+      "credit": 529,
+      "rate": 0.2097
+    },
+    {
+      "credit": 591,
+      "rate": 0.2529
+    },
+    {
+      "credit": 601,
+      "rate": 0.1819
+    },
+    {
+      "credit": 648,
+      "rate": 0.2781
+    },
+    {
+      "credit": 616,
+      "rate": 0.1908
+    },
+    {
+      "credit": 480,
+      "rate": 0.3693
+    },
+    {
+      "credit": 585,
+      "rate": 0.2466
+    },
+    {
+      "credit": 586,
+      "rate": 0.2105
+    },
+    {
+      "credit": 459,
+      "rate": 0.3333
+    },
+    {
+      "credit": 505,
+      "rate": 0.2592
+    },
+    {
+      "credit": 511,
+      "rate": 0.2328
+    },
+    {
+      "credit": 593,
+      "rate": 0.2817
+    },
+    {
+      "credit": 513,
+      "rate": 0.2915
+    },
+    {
+      "credit": 585,
+      "rate": 0.2729
+    },
+    {
+      "credit": 568,
+      "rate": 0.2546
+    },
+    {
+      "credit": 574,
+      "rate": 0.1958
+    },
+    {
+      "credit": 478,
+      "rate": 0.2281
+    },
+    {
+      "credit": 572,
+      "rate": 0.263
+    },
+    {
+      "credit": 591,
+      "rate": 0.1772
+    },
+    {
+      "credit": 640,
+      "rate": 0.1977
+    },
+    {
+      "credit": 394,
+      "rate": 0.3102
+    },
+    {
+      "credit": 552,
+      "rate": 0.2176
+    },
+    {
+      "credit": 618,
+      "rate": 0.2171
+    },
+    {
+      "credit": 596,
+      "rate": 0.277
+    },
+    {
+      "credit": 663,
+      "rate": 0.1557
+    },
+    {
+      "credit": 607,
+      "rate": 0.2246
+    },
+    {
+      "credit": 598,
+      "rate": 0.2252
+    },
+    {
+      "credit": 488,
+      "rate": 0.252
+    },
+    {
+      "credit": 481,
+      "rate": 0.2839
+    },
+    {
+      "credit": 635,
+      "rate": 0.2095
+    },
+    {
+      "credit": 491,
+      "rate": 0.2991
+    },
+    {
+      "credit": 573,
+      "rate": 0.2686
+    },
+    {
+      "credit": 658,
+      "rate": 0.1888
+    },
+    {
+      "credit": 601,
+      "rate": 0.181
+    },
+    {
+      "credit": 534,
+      "rate": 0.2493
+    },
+    {
+      "credit": 598,
+      "rate": 0.2
+    },
+    {
+      "credit": 620,
+      "rate": 0.2346
+    },
+    {
+      "credit": 656,
+      "rate": 0.1654
+    },
+    {
+      "credit": 641,
+      "rate": 0.1933
+    },
+    {
+      "credit": 527,
+      "rate": 0.2779
+    },
+    {
+      "credit": 506,
+      "rate": 0.3312
+    },
+    {
+      "credit": 601,
+      "rate": 0.2376
+    },
+    {
+      "credit": 524,
+      "rate": 0.2781
+    },
+    {
+      "credit": 546,
+      "rate": 0.2571
+    },
+    {
+      "credit": 649,
+      "rate": 0.1425
+    },
+    {
+      "credit": 621,
+      "rate": 0.2269
+    },
+    {
+      "credit": 596,
+      "rate": 0.2492
+    },
+    {
+      "credit": 604,
+      "rate": 0.2123
+    },
+    {
+      "credit": 648,
+      "rate": 0.1422
+    },
+    {
+      "credit": 577,
+      "rate": 0.2658
+    },
+    {
+      "credit": 570,
+      "rate": 0.2751
+    },
+    {
+      "credit": 579,
+      "rate": 0.1982
+    },
+    {
+      "credit": 591,
+      "rate": 0.2152
+    },
+    {
+      "credit": 617,
+      "rate": 0.2074
+    },
+    {
+      "credit": 597,
+      "rate": 0.2396
+    },
+    {
+      "credit": 624,
+      "rate": 0.2263
+    },
+    {
+      "credit": 526,
+      "rate": 0.2631
+    },
+    {
+      "credit": 616,
+      "rate": 0.2206
+    },
+    {
+      "credit": 602,
+      "rate": 0.1949
+    },
+    {
+      "credit": 580,
+      "rate": 0.241
+    },
+    {
+      "credit": 632,
+      "rate": 0.1668
+    },
+    {
+      "credit": 535,
+      "rate": 0.2414
+    },
+    {
+      "credit": 586,
+      "rate": 0.2605
+    },
+    {
+      "credit": 593,
+      "rate": 0.204
+    },
+    {
+      "credit": 661,
+      "rate": 0.207
+    },
+    {
+      "credit": 595,
+      "rate": 0.2222
+    },
+    {
+      "credit": 620,
+      "rate": 0.2217
+    },
+    {
+      "credit": 546,
+      "rate": 0.2151
+    },
+    {
+      "credit": 570,
+      "rate": 0.296
+    },
+    {
+      "credit": 475,
+      "rate": 0.3469
+    },
+    {
+      "credit": 527,
+      "rate": 0.2199
+    },
+    {
+      "credit": 601,
+      "rate": 0.1848
+    },
+    {
+      "credit": 580,
+      "rate": 0.3098
+    },
+    {
+      "credit": 418,
+      "rate": 0.3379
+    },
+    {
+      "credit": 586,
+      "rate": 0.2531
+    },
+    {
+      "credit": 657,
+      "rate": 0.2188
+    },
+    {
+      "credit": 540,
+      "rate": 0.3222
+    },
+    {
+      "credit": 621,
+      "rate": 0.2461
+    },
+    {
+      "credit": 684,
+      "rate": 0.186
+    },
+    {
+      "credit": 630,
+      "rate": 0.1946
+    },
+    {
+      "credit": 572,
+      "rate": 0.2066
+    },
+    {
+      "credit": 486,
+      "rate": 0.318
+    },
+    {
+      "credit": 573,
+      "rate": 0.2496
+    },
+    {
+      "credit": 601,
+      "rate": 0.2344
+    },
+    {
+      "credit": 602,
+      "rate": 0.1812
+    },
+    {
+      "credit": 481,
+      "rate": 0.3222
+    },
+    {
+      "credit": 605,
+      "rate": 0.2013
+    },
+    {
+      "credit": 662,
+      "rate": 0.1982
+    },
+    {
+      "credit": 538,
+      "rate": 0.2205
+    },
+    {
+      "credit": 621,
+      "rate": 0.1812
+    },
+    {
+      "credit": 666,
+      "rate": 0.1674
+    },
+    {
+      "credit": 558,
+      "rate": 0.2063
+    },
+    {
+      "credit": 594,
+      "rate": 0.1877
+    },
+    {
+      "credit": 530,
+      "rate": 0.2438
+    },
+    {
+      "credit": 638,
+      "rate": 0.1904
+    },
+    {
+      "credit": 490,
+      "rate": 0.2498
+    },
+    {
+      "credit": 472,
+      "rate": 0.247
+    },
+    {
+      "credit": 590,
+      "rate": 0.2899
+    },
+    {
+      "credit": 426,
+      "rate": 0.3054
+    },
+    {
+      "credit": 485,
+      "rate": 0.3431
+    },
+    {
+      "credit": 460,
+      "rate": 0.3248
+    },
+    {
+      "credit": 563,
+      "rate": 0.2783
+    },
+    {
+      "credit": 624,
+      "rate": 0.1927
+    },
+    {
+      "credit": 652,
+      "rate": 0.1858
+    },
+    {
+      "credit": 515,
+      "rate": 0.2479
+    },
+    {
+      "credit": 581,
+      "rate": 0.2311
+    },
+    {
+      "credit": 563,
+      "rate": 0.2199
+    },
+    {
+      "credit": 435,
+      "rate": 0.3106
+    },
+    {
+      "credit": 583,
+      "rate": 0.1938
+    },
+    {
+      "credit": 549,
+      "rate": 0.2294
+    },
+    {
+      "credit": 618,
+      "rate": 0.2192
+    },
+    {
+      "credit": 531,
+      "rate": 0.2446
+    },
+    {
+      "credit": 531,
+      "rate": 0.2393
+    },
+    {
+      "credit": 531,
+      "rate": 0.2638
+    },
+    {
+      "credit": 639,
+      "rate": 0.226
+    },
+    {
+      "credit": 600,
+      "rate": 0.2309
+    },
+    {
+      "credit": 620,
+      "rate": 0.1752
+    },
+    {
+      "credit": 641,
+      "rate": 0.2225
+    },
+    {
+      "credit": 550,
+      "rate": 0.2341
+    },
+    {
+      "credit": 484,
+      "rate": 0.2867
+    },
+    {
+      "credit": 581,
+      "rate": 0.1685
+    },
+    {
+      "credit": 540,
+      "rate": 0.323
+    },
+    {
+      "credit": 607,
+      "rate": 0.2848
+    },
+    {
+      "credit": 619,
+      "rate": 0.2452
+    },
+    {
+      "credit": 549,
+      "rate": 0.273
+    },
+    {
+      "credit": 583,
+      "rate": 0.2583
+    },
+    {
+      "credit": 643,
+      "rate": 0.2307
+    },
+    {
+      "credit": 583,
+      "rate": 0.23
+    },
+    {
+      "credit": 643,
+      "rate": 0.2714
+    },
+    {
+      "credit": 617,
+      "rate": 0.2054
+    },
+    {
+      "credit": 565,
+      "rate": 0.2166
+    },
+    {
+      "credit": 639,
+      "rate": 0.1918
+    },
+    {
+      "credit": 591,
+      "rate": 0.2057
+    },
+    {
+      "credit": 611,
+      "rate": 0.2301
+    },
+    {
+      "credit": 551,
+      "rate": 0.251
+    },
+    {
+      "credit": 541,
+      "rate": 0.2835
+    },
+    {
+      "credit": 499,
+      "rate": 0.3103
+    },
+    {
+      "credit": 626,
+      "rate": 0.2425
+    },
+    {
+      "credit": 571,
+      "rate": 0.2289
+    },
+    {
+      "credit": 622,
+      "rate": 0.3044
+    },
+    {
+      "credit": 506,
+      "rate": 0.2719
+    },
+    {
+      "credit": 595,
+      "rate": 0.2477
+    },
+    {
+      "credit": 521,
+      "rate": 0.2741
+    },
+    {
+      "credit": 657,
+      "rate": 0.1551
+    },
+    {
+      "credit": 482,
+      "rate": 0.3393
+    },
+    {
+      "credit": 512,
+      "rate": 0.3054
+    },
+    {
+      "credit": 518,
+      "rate": 0.3116
+    },
+    {
+      "credit": 557,
+      "rate": 0.2148
+    },
+    {
+      "credit": 568,
+      "rate": 0.2255
+    },
+    {
+      "credit": 611,
+      "rate": 0.2326
+    },
+    {
+      "credit": 522,
+      "rate": 0.2693
+    },
+    {
+      "credit": 581,
+      "rate": 0.1835
+    },
+    {
+      "credit": 533,
+      "rate": 0.2575
+    },
+    {
+      "credit": 564,
+      "rate": 0.2604
+    },
+    {
+      "credit": 633,
+      "rate": 0.1759
+    },
+    {
+      "credit": 643,
+      "rate": 0.1943
+    },
+    {
+      "credit": 633,
+      "rate": 0.2274
+    },
+    {
+      "credit": 604,
+      "rate": 0.2013
+    },
+    {
+      "credit": 646,
+      "rate": 0.2123
+    },
+    {
+      "credit": 549,
+      "rate": 0.2476
+    },
+    {
+      "credit": 589,
+      "rate": 0.2277
+    },
+    {
+      "credit": 603,
+      "rate": 0.2368
+    },
+    {
+      "credit": 516,
+      "rate": 0.2795
+    },
+    {
+      "credit": 456,
+      "rate": 0.3401
+    },
+    {
+      "credit": 526,
+      "rate": 0.2366
+    },
+    {
+      "credit": 542,
+      "rate": 0.3226
+    },
+    {
+      "credit": 675,
+      "rate": 0.1922
+    },
+    {
+      "credit": 660,
+      "rate": 0.2181
+    },
+    {
+      "credit": 426,
+      "rate": 0.3578
+    },
+    {
+      "credit": 505,
+      "rate": 0.3319
+    },
+    {
+      "credit": 614,
+      "rate": 0.1785
+    },
+    {
+      "credit": 522,
+      "rate": 0.2798
+    },
+    {
+      "credit": 625,
+      "rate": 0.214
+    },
+    {
+      "credit": 611,
+      "rate": 0.2766
+    },
+    {
+      "credit": 620,
+      "rate": 0.1901
+    },
+    {
+      "credit": 557,
+      "rate": 0.2464
+    },
+    {
+      "credit": 544,
+      "rate": 0.2459
+    },
+    {
+      "credit": 421,
+      "rate": 0.4294
+    },
+    {
+      "credit": 546,
+      "rate": 0.2692
+    },
+    {
+      "credit": 536,
+      "rate": 0.2531
+    },
+    {
+      "credit": 559,
+      "rate": 0.1823
+    },
+    {
+      "credit": 606,
+      "rate": 0.2616
+    },
+    {
+      "credit": 588,
+      "rate": 0.2007
+    },
+    {
+      "credit": 566,
+      "rate": 0.2537
+    },
+    {
+      "credit": 646,
+      "rate": 0.2473
+    },
+    {
+      "credit": 632,
+      "rate": 0.19
+    },
+    {
+      "credit": 583,
+      "rate": 0.1952
+    },
+    {
+      "credit": 574,
+      "rate": 0.2549
+    },
+    {
+      "credit": 590,
+      "rate": 0.286
+    },
+    {
+      "credit": 610,
+      "rate": 0.2631
+    },
+    {
+      "credit": 566,
+      "rate": 0.2203
+    },
+    {
+      "credit": 557,
+      "rate": 0.2354
+    },
+    {
+      "credit": 600,
+      "rate": 0.1898
+    },
+    {
+      "credit": 568,
+      "rate": 0.3154
+    },
+    {
+      "credit": 583,
+      "rate": 0.1963
+    },
+    {
+      "credit": 509,
+      "rate": 0.2903
+    },
+    {
+      "credit": 485,
+      "rate": 0.2313
+    },
+    {
+      "credit": 573,
+      "rate": 0.2807
+    },
+    {
+      "credit": 603,
+      "rate": 0.1976
+    },
+    {
+      "credit": 564,
+      "rate": 0.2201
+    },
+    {
+      "credit": 568,
+      "rate": 0.1834
+    },
+    {
+      "credit": 626,
+      "rate": 0.2029
+    },
+    {
+      "credit": 598,
+      "rate": 0.2281
+    },
+    {
+      "credit": 515,
+      "rate": 0.2216
+    },
+    {
+      "credit": 590,
+      "rate": 0.2458
+    },
+    {
+      "credit": 661,
+      "rate": 0.1769
+    },
+    {
+      "credit": 603,
+      "rate": 0.2331
+    },
+    {
+      "credit": 625,
+      "rate": 0.1636
+    },
+    {
+      "credit": 500,
+      "rate": 0.2672
+    },
+    {
+      "credit": 519,
+      "rate": 0.2374
+    },
+    {
+      "credit": 505,
+      "rate": 0.2879
+    },
+    {
+      "credit": 523,
+      "rate": 0.2577
+    },
+    {
+      "credit": 558,
+      "rate": 0.3425
+    },
+    {
+      "credit": 565,
+      "rate": 0.2627
+    },
+    {
+      "credit": 545,
+      "rate": 0.2855
+    },
+    {
+      "credit": 578,
+      "rate": 0.1869
+    },
+    {
+      "credit": 652,
+      "rate": 0.1791
+    },
+    {
+      "credit": 509,
+      "rate": 0.2005
+    },
+    {
+      "credit": 616,
+      "rate": 0.2071
+    },
+    {
+      "credit": 481,
+      "rate": 0.3158
+    },
+    {
+      "credit": 623,
+      "rate": 0.2444
+    },
+    {
+      "credit": 544,
+      "rate": 0.2806
+    },
+    {
+      "credit": 641,
+      "rate": 0.2074
+    },
+    {
+      "credit": 617,
+      "rate": 0.2086
+    },
+    {
+      "credit": 595,
+      "rate": 0.2911
+    },
+    {
+      "credit": 630,
+      "rate": 0.1626
+    },
+    {
+      "credit": 645,
+      "rate": 0.2232
+    },
+    {
+      "credit": 587,
+      "rate": 0.2182
+    },
+    {
+      "credit": 416,
+      "rate": 0.3584
+    },
+    {
+      "credit": 590,
+      "rate": 0.2418
+    },
+    {
+      "credit": 588,
+      "rate": 0.2512
+    },
+    {
+      "credit": 589,
+      "rate": 0.2136
+    },
+    {
+      "credit": 612,
+      "rate": 0.2367
+    },
+    {
+      "credit": 628,
+      "rate": 0.2044
+    },
+    {
+      "credit": 652,
+      "rate": 0.1765
+    },
+    {
+      "credit": 578,
+      "rate": 0.23
+    },
+    {
+      "credit": 609,
+      "rate": 0.2638
+    },
+    {
+      "credit": 622,
+      "rate": 0.2292
+    },
+    {
+      "credit": 547,
+      "rate": 0.245
+    },
+    {
+      "credit": 466,
+      "rate": 0.2892
+    },
+    {
+      "credit": 526,
+      "rate": 0.269
+    },
+    {
+      "credit": 611,
+      "rate": 0.2202
+    },
+    {
+      "credit": 620,
+      "rate": 0.2191
+    },
+    {
+      "credit": 619,
+      "rate": 0.2727
+    },
+    {
+      "credit": 533,
+      "rate": 0.2584
+    },
+    {
+      "credit": 606,
+      "rate": 0.2222
+    },
+    {
+      "credit": 537,
+      "rate": 0.2916
+    },
+    {
+      "credit": 583,
+      "rate": 0.2364
+    },
+    {
+      "credit": 581,
+      "rate": 0.2396
+    },
+    {
+      "credit": 593,
+      "rate": 0.2544
+    },
+    {
+      "credit": 672,
+      "rate": 0.1855
+    },
+    {
+      "credit": 437,
+      "rate": 0.2873
+    },
+    {
+      "credit": 570,
+      "rate": 0.2889
+    },
+    {
+      "credit": 500,
+      "rate": 0.247
+    },
+    {
+      "credit": 570,
+      "rate": 0.1666
+    },
+    {
+      "credit": 559,
+      "rate": 0.2127
+    },
+    {
+      "credit": 612,
+      "rate": 0.2162
+    },
+    {
+      "credit": 604,
+      "rate": 0.2242
+    },
+    {
+      "credit": 596,
+      "rate": 0.2312
+    },
+    {
+      "credit": 580,
+      "rate": 0.2232
+    },
+    {
+      "credit": 621,
+      "rate": 0.2536
+    },
+    {
+      "credit": 563,
+      "rate": 0.2187
+    },
+    {
+      "credit": 567,
+      "rate": 0.2042
+    },
+    {
+      "credit": 570,
+      "rate": 0.2231
+    },
+    {
+      "credit": 589,
+      "rate": 0.2504
+    },
+    {
+      "credit": 515,
+      "rate": 0.2543
+    },
+    {
+      "credit": 582,
+      "rate": 0.2487
+    },
+    {
+      "credit": 534,
+      "rate": 0.2417
+    },
+    {
+      "credit": 598,
+      "rate": 0.1882
+    },
+    {
+      "credit": 507,
+      "rate": 0.2832
+    },
+    {
+      "credit": 582,
+      "rate": 0.1871
+    },
+    {
+      "credit": 528,
+      "rate": 0.2319
+    },
+    {
+      "credit": 566,
+      "rate": 0.1818
+    },
+    {
+      "credit": 616,
+      "rate": 0.2077
+    },
+    {
+      "credit": 558,
+      "rate": 0.2664
+    },
+    {
+      "credit": 462,
+      "rate": 0.3089
+    },
+    {
+      "credit": 621,
+      "rate": 0.2074
+    },
+    {
+      "credit": 587,
+      "rate": 0.1942
+    },
+    {
+      "credit": 525,
+      "rate": 0.2713
+    },
+    {
+      "credit": 613,
+      "rate": 0.2164
+    },
+    {
+      "credit": 563,
+      "rate": 0.2348
+    },
+    {
+      "credit": 555,
+      "rate": 0.2599
+    },
+    {
+      "credit": 575,
+      "rate": 0.206
+    },
+    {
+      "credit": 564,
+      "rate": 0.2105
+    },
+    {
+      "credit": 577,
+      "rate": 0.2959
+    },
+    {
+      "credit": 639,
+      "rate": 0.2399
+    },
+    {
+      "credit": 549,
+      "rate": 0.1745
+    },
+    {
+      "credit": 507,
+      "rate": 0.2823
+    },
+    {
+      "credit": 498,
+      "rate": 0.2142
+    },
+    {
+      "credit": 625,
+      "rate": 0.3067
+    },
+    {
+      "credit": 483,
+      "rate": 0.343
+    },
+    {
+      "credit": 509,
+      "rate": 0.246
+    },
+    {
+      "credit": 442,
+      "rate": 0.2998
+    },
+    {
+      "credit": 627,
+      "rate": 0.1816
+    },
+    {
+      "credit": 608,
+      "rate": 0.1771
+    },
+    {
+      "credit": 622,
+      "rate": 0.1674
+    },
+    {
+      "credit": 596,
+      "rate": 0.2188
+    },
+    {
+      "credit": 634,
+      "rate": 0.1927
+    },
+    {
+      "credit": 626,
+      "rate": 0.1693
+    },
+    {
+      "credit": 470,
+      "rate": 0.2761
+    },
+    {
+      "credit": 600,
+      "rate": 0.1982
+    },
+    {
+      "credit": 498,
+      "rate": 0.2851
+    },
+    {
+      "credit": 653,
+      "rate": 0.1993
+    },
+    {
+      "credit": 510,
+      "rate": 0.26
+    },
+    {
+      "credit": 423,
+      "rate": 0.3758
+    },
+    {
+      "credit": 667,
+      "rate": 0.196
+    },
+    {
+      "credit": 564,
+      "rate": 0.2308
+    },
+    {
+      "credit": 587,
+      "rate": 0.1957
+    },
+    {
+      "credit": 495,
+      "rate": 0.2771
+    },
+    {
+      "credit": 439,
+      "rate": 0.2816
+    },
+    {
+      "credit": 624,
+      "rate": 0.245
+    },
+    {
+      "credit": 575,
+      "rate": 0.26
+    },
+    {
+      "credit": 579,
+      "rate": 0.217
+    },
+    {
+      "credit": 531,
+      "rate": 0.2366
+    },
+    {
+      "credit": 590,
+      "rate": 0.2348
+    },
+    {
+      "credit": 518,
+      "rate": 0.28
+    },
+    {
+      "credit": 626,
+      "rate": 0.2405
+    },
+    {
+      "credit": 609,
+      "rate": 0.2022
+    },
+    {
+      "credit": 642,
+      "rate": 0.1571
+    },
+    {
+      "credit": 482,
+      "rate": 0.2406
+    },
+    {
+      "credit": 558,
+      "rate": 0.2415
+    },
+    {
+      "credit": 580,
+      "rate": 0.2456
+    },
+    {
+      "credit": 492,
+      "rate": 0.206
+    },
+    {
+      "credit": 631,
+      "rate": 0.2279
+    },
+    {
+      "credit": 419,
+      "rate": 0.3032
+    },
+    {
+      "credit": 623,
+      "rate": 0.2066
+    },
+    {
+      "credit": 526,
+      "rate": 0.3011
+    },
+    {
+      "credit": 593,
+      "rate": 0.2033
+    },
+    {
+      "credit": 534,
+      "rate": 0.2408
+    },
+    {
+      "credit": 587,
+      "rate": 0.2303
+    },
+    {
+      "credit": 631,
+      "rate": 0.1953
+    },
+    {
+      "credit": 607,
+      "rate": 0.2401
+    },
+    {
+      "credit": 549,
+      "rate": 0.2313
+    },
+    {
+      "credit": 562,
+      "rate": 0.2505
+    },
+    {
+      "credit": 488,
+      "rate": 0.262
+    },
+    {
+      "credit": 522,
+      "rate": 0.2816
+    },
+    {
+      "credit": 464,
+      "rate": 0.3086
+    },
+    {
+      "credit": 569,
+      "rate": 0.2249
+    },
+    {
+      "credit": 538,
+      "rate": 0.2901
+    },
+    {
+      "credit": 584,
+      "rate": 0.264
+    },
+    {
+      "credit": 551,
+      "rate": 0.2198
+    },
+    {
+      "credit": 603,
+      "rate": 0.2212
+    },
+    {
+      "credit": 615,
+      "rate": 0.2537
+    },
+    {
+      "credit": 573,
+      "rate": 0.21
+    },
+    {
+      "credit": 530,
+      "rate": 0.2573
+    },
+    {
+      "credit": 615,
+      "rate": 0.2771
+    },
+    {
+      "credit": 592,
+      "rate": 0.2287
+    },
+    {
+      "credit": 586,
+      "rate": 0.1942
+    },
+    {
+      "credit": 559,
+      "rate": 0.254
+    },
+    {
+      "credit": 580,
+      "rate": 0.2206
+    },
+    {
+      "credit": 542,
+      "rate": 0.2101
+    },
+    {
+      "credit": 549,
+      "rate": 0.3011
+    },
+    {
+      "credit": 593,
+      "rate": 0.1768
+    },
+    {
+      "credit": 660,
+      "rate": 0.2042
+    },
+    {
+      "credit": 602,
+      "rate": 0.2305
+    },
+    {
+      "credit": 603,
+      "rate": 0.1934
+    },
+    {
+      "credit": 567,
+      "rate": 0.2203
+    },
+    {
+      "credit": 637,
+      "rate": 0.1921
+    },
+    {
+      "credit": 615,
+      "rate": 0.2842
+    },
+    {
+      "credit": 608,
+      "rate": 0.2144
+    },
+    {
+      "credit": 634,
+      "rate": 0.2003
+    },
+    {
+      "credit": 590,
+      "rate": 0.2185
+    },
+    {
+      "credit": 563,
+      "rate": 0.2724
+    },
+    {
+      "credit": 613,
+      "rate": 0.2248
+    },
+    {
+      "credit": 581,
+      "rate": 0.268
+    },
+    {
+      "credit": 547,
+      "rate": 0.2038
+    },
+    {
+      "credit": 545,
+      "rate": 0.2693
+    },
+    {
+      "credit": 564,
+      "rate": 0.2168
+    },
+    {
+      "credit": 470,
+      "rate": 0.2572
+    },
+    {
+      "credit": 545,
+      "rate": 0.2462
+    },
+    {
+      "credit": 667,
+      "rate": 0.1434
+    },
+    {
+      "credit": 613,
+      "rate": 0.2108
+    },
+    {
+      "credit": 618,
+      "rate": 0.2448
+    },
+    {
+      "credit": 601,
+      "rate": 0.2217
+    },
+    {
+      "credit": 593,
+      "rate": 0.1892
+    },
+    {
+      "credit": 614,
+      "rate": 0.237
+    },
+    {
+      "credit": 627,
+      "rate": 0.2112
+    },
+    {
+      "credit": 619,
+      "rate": 0.244
+    },
+    {
+      "credit": 570,
+      "rate": 0.2426
+    },
+    {
+      "credit": 532,
+      "rate": 0.2489
+    },
+    {
+      "credit": 587,
+      "rate": 0.268
+    },
+    {
+      "credit": 551,
+      "rate": 0.2588
+    },
+    {
+      "credit": 589,
+      "rate": 0.2009
+    },
+    {
+      "credit": 622,
+      "rate": 0.3308
+    },
+    {
+      "credit": 589,
+      "rate": 0.3145
+    },
+    {
+      "credit": 585,
+      "rate": 0.2644
+    },
+    {
+      "credit": 484,
+      "rate": 0.2928
+    },
+    {
+      "credit": 643,
+      "rate": 0.2762
+    },
+    {
+      "credit": 646,
+      "rate": 0.165
+    },
+    {
+      "credit": 618,
+      "rate": 0.23
+    },
+    {
+      "credit": 642,
+      "rate": 0.1641
+    },
+    {
+      "credit": 621,
+      "rate": 0.2167
+    },
+    {
+      "credit": 571,
+      "rate": 0.1887
+    },
+    {
+      "credit": 506,
+      "rate": 0.2502
+    },
+    {
+      "credit": 669,
+      "rate": 0.2136
+    },
+    {
+      "credit": 621,
+      "rate": 0.1914
+    },
+    {
+      "credit": 573,
+      "rate": 0.2305
+    },
+    {
+      "credit": 630,
+      "rate": 0.1982
+    },
+    {
+      "credit": 486,
+      "rate": 0.2215
+    },
+    {
+      "credit": 559,
+      "rate": 0.2341
+    },
+    {
+      "credit": 628,
+      "rate": 0.1446
+    },
+    {
+      "credit": 618,
+      "rate": 0.1842
+    },
+    {
+      "credit": 586,
+      "rate": 0.2159
+    },
+    {
+      "credit": 644,
+      "rate": 0.1754
+    },
+    {
+      "credit": 639,
+      "rate": 0.2061
+    },
+    {
+      "credit": 543,
+      "rate": 0.2479
+    },
+    {
+      "credit": 412,
+      "rate": 0.3824
+    },
+    {
+      "credit": 578,
+      "rate": 0.2577
+    },
+    {
+      "credit": 510,
+      "rate": 0.2651
+    },
+    {
+      "credit": 552,
+      "rate": 0.3268
+    },
+    {
+      "credit": 589,
+      "rate": 0.2667
+    },
+    {
+      "credit": 599,
+      "rate": 0.2444
+    },
+    {
+      "credit": 559,
+      "rate": 0.2453
+    },
+    {
+      "credit": 627,
+      "rate": 0.2637
+    },
+    {
+      "credit": 558,
+      "rate": 0.2574
+    },
+    {
+      "credit": 624,
+      "rate": 0.284
+    },
+    {
+      "credit": 554,
+      "rate": 0.29
+    },
+    {
+      "credit": 584,
+      "rate": 0.2422
+    },
+    {
+      "credit": 601,
+      "rate": 0.2128
+    },
+    {
+      "credit": 638,
+      "rate": 0.2224
+    },
+    {
+      "credit": 577,
+      "rate": 0.1998
+    },
+    {
+      "credit": 649,
+      "rate": 0.2153
+    },
+    {
+      "credit": 664,
+      "rate": 0.271
+    },
+    {
+      "credit": 587,
+      "rate": 0.2148
+    },
+    {
+      "credit": 574,
+      "rate": 0.1924
+    },
+    {
+      "credit": 625,
+      "rate": 0.2116
+    },
+    {
+      "credit": 560,
+      "rate": 0.2486
+    },
+    {
+      "credit": 607,
+      "rate": 0.2507
+    },
+    {
+      "credit": 585,
+      "rate": 0.2615
+    },
+    {
+      "credit": 685,
+      "rate": 0.178
+    },
+    {
+      "credit": 565,
+      "rate": 0.2357
+    },
+    {
+      "credit": 550,
+      "rate": 0.1911
+    },
+    {
+      "credit": 631,
+      "rate": 0.2171
+    },
+    {
+      "credit": 562,
+      "rate": 0.2069
+    },
+    {
+      "credit": 553,
+      "rate": 0.2307
+    },
+    {
+      "credit": 496,
+      "rate": 0.2819
+    },
+    {
+      "credit": 607,
+      "rate": 0.2597
+    },
+    {
+      "credit": 565,
+      "rate": 0.2119
+    },
+    {
+      "credit": 609,
+      "rate": 0.2106
+    },
+    {
+      "credit": 646,
+      "rate": 0.1755
+    },
+    {
+      "credit": 407,
+      "rate": 0.2888
+    },
+    {
+      "credit": 611,
+      "rate": 0.2026
+    },
+    {
+      "credit": 470,
+      "rate": 0.3269
+    },
+    {
+      "credit": 577,
+      "rate": 0.3035
+    },
+    {
+      "credit": 574,
+      "rate": 0.1948
+    },
+    {
+      "credit": 571,
+      "rate": 0.2309
+    },
+    {
+      "credit": 555,
+      "rate": 0.247
+    },
+    {
+      "credit": 510,
+      "rate": 0.2477
+    },
+    {
+      "credit": 580,
+      "rate": 0.2148
+    },
+    {
+      "credit": 583,
+      "rate": 0.1751
+    },
+    {
+      "credit": 598,
+      "rate": 0.1888
+    },
+    {
+      "credit": 599,
+      "rate": 0.2244
+    },
+    {
+      "credit": 638,
+      "rate": 0.2219
+    },
+    {
+      "credit": 625,
+      "rate": 0.1929
+    },
+    {
+      "credit": 543,
+      "rate": 0.2946
+    },
+    {
+      "credit": 514,
+      "rate": 0.2342
+    },
+    {
+      "credit": 517,
+      "rate": 0.2477
+    },
+    {
+      "credit": 472,
+      "rate": 0.2733
+    },
+    {
+      "credit": 644,
+      "rate": 0.2088
+    },
+    {
+      "credit": 537,
+      "rate": 0.2356
+    },
+    {
+      "credit": 570,
+      "rate": 0.2369
+    },
+    {
+      "credit": 593,
+      "rate": 0.2268
+    },
+    {
+      "credit": 522,
+      "rate": 0.2487
+    },
+    {
+      "credit": 520,
+      "rate": 0.2637
+    },
+    {
+      "credit": 608,
+      "rate": 0.246
+    },
+    {
+      "credit": 482,
+      "rate": 0.28
+    },
+    {
+      "credit": 597,
+      "rate": 0.2755
+    },
+    {
+      "credit": 444,
+      "rate": 0.331
+    },
+    {
+      "credit": 563,
+      "rate": 0.2757
+    },
+    {
+      "credit": 590,
+      "rate": 0.254
+    },
+    {
+      "credit": 435,
+      "rate": 0.3517
+    },
+    {
+      "credit": 601,
+      "rate": 0.2886
+    },
+    {
+      "credit": 594,
+      "rate": 0.2007
+    },
+    {
+      "credit": 526,
+      "rate": 0.2973
+    },
+    {
+      "credit": 573,
+      "rate": 0.2428
+    },
+    {
+      "credit": 573,
+      "rate": 0.2038
+    },
+    {
+      "credit": 432,
+      "rate": 0.3228
+    },
+    {
+      "credit": 626,
+      "rate": 0.1996
+    },
+    {
+      "credit": 605,
+      "rate": 0.2276
+    },
+    {
+      "credit": 581,
+      "rate": 0.2445
+    },
+    {
+      "credit": 501,
+      "rate": 0.2689
+    },
+    {
+      "credit": 519,
+      "rate": 0.2911
+    },
+    {
+      "credit": 608,
+      "rate": 0.2136
+    },
+    {
+      "credit": 553,
+      "rate": 0.2367
+    },
+    {
+      "credit": 525,
+      "rate": 0.2326
+    },
+    {
+      "credit": 585,
+      "rate": 0.1948
+    },
+    {
+      "credit": 602,
+      "rate": 0.2088
+    },
+    {
+      "credit": 504,
+      "rate": 0.2705
+    },
+    {
+      "credit": 593,
+      "rate": 0.236
+    },
+    {
+      "credit": 667,
+      "rate": 0.155
+    },
+    {
+      "credit": 580,
+      "rate": 0.2168
+    },
+    {
+      "credit": 566,
+      "rate": 0.2078
+    },
+    {
+      "credit": 663,
+      "rate": 0.1864
+    },
+    {
+      "credit": 487,
+      "rate": 0.2793
+    },
+    {
+      "credit": 528,
+      "rate": 0.3095
+    },
+    {
+      "credit": 531,
+      "rate": 0.2421
+    },
+    {
+      "credit": 638,
+      "rate": 0.1991
+    },
+    {
+      "credit": 612,
+      "rate": 0.1947
+    },
+    {
+      "credit": 548,
+      "rate": 0.2884
+    },
+    {
+      "credit": 552,
+      "rate": 0.2726
+    },
+    {
+      "credit": 527,
+      "rate": 0.323
+    },
+    {
+      "credit": 597,
+      "rate": 0.2665
+    },
+    {
+      "credit": 658,
+      "rate": 0.2257
+    },
+    {
+      "credit": 604,
+      "rate": 0.2256
+    },
+    {
+      "credit": 497,
+      "rate": 0.2802
+    },
+    {
+      "credit": 551,
+      "rate": 0.2796
+    },
+    {
+      "credit": 609,
+      "rate": 0.2015
+    },
+    {
+      "credit": 666,
+      "rate": 0.171
+    },
+    {
+      "credit": 614,
+      "rate": 0.2087
+    },
+    {
+      "credit": 442,
+      "rate": 0.3528
+    },
+    {
+      "credit": 535,
+      "rate": 0.3125
+    },
+    {
+      "credit": 539,
+      "rate": 0.308
+    },
+    {
+      "credit": 579,
+      "rate": 0.2008
+    },
+    {
+      "credit": 625,
+      "rate": 0.1557
+    },
+    {
+      "credit": 484,
+      "rate": 0.326
+    },
+    {
+      "credit": 490,
+      "rate": 0.2337
+    },
+    {
+      "credit": 596,
+      "rate": 0.2481
+    },
+    {
+      "credit": 579,
+      "rate": 0.2371
+    },
+    {
+      "credit": 572,
+      "rate": 0.222
+    },
+    {
+      "credit": 622,
+      "rate": 0.1904
+    },
+    {
+      "credit": 612,
+      "rate": 0.254
+    },
+    {
+      "credit": 605,
+      "rate": 0.2171
+    },
+    {
+      "credit": 614,
+      "rate": 0.2231
+    },
+    {
+      "credit": 606,
+      "rate": 0.1999
+    },
+    {
+      "credit": 611,
+      "rate": 0.2267
+    },
+    {
+      "credit": 651,
+      "rate": 0.1632
+    },
+    {
+      "credit": 684,
+      "rate": 0.1811
+    },
+    {
+      "credit": 550,
+      "rate": 0.2903
+    },
+    {
+      "credit": 594,
+      "rate": 0.2137
+    },
+    {
+      "credit": 497,
+      "rate": 0.3753
+    },
+    {
+      "credit": 667,
+      "rate": 0.1602
+    },
+    {
+      "credit": 641,
+      "rate": 0.2269
+    },
+    {
+      "credit": 595,
+      "rate": 0.2613
+    },
+    {
+      "credit": 660,
+      "rate": 0.2762
+    },
+    {
+      "credit": 585,
+      "rate": 0.2581
+    },
+    {
+      "credit": 574,
+      "rate": 0.2794
+    },
+    {
+      "credit": 579,
+      "rate": 0.2342
+    },
+    {
+      "credit": 545,
+      "rate": 0.2239
+    },
+    {
+      "credit": 595,
+      "rate": 0.1761
+    },
+    {
+      "credit": 565,
+      "rate": 0.3124
+    },
+    {
+      "credit": 536,
+      "rate": 0.1726
+    },
+    {
+      "credit": 612,
+      "rate": 0.2332
+    },
+    {
+      "credit": 549,
+      "rate": 0.2412
+    },
+    {
+      "credit": 599,
+      "rate": 0.2128
+    },
+    {
+      "credit": 578,
+      "rate": 0.2581
+    },
+    {
+      "credit": 556,
+      "rate": 0.257
+    },
+    {
+      "credit": 535,
+      "rate": 0.2035
+    },
+    {
+      "credit": 655,
+      "rate": 0.1995
+    },
+    {
+      "credit": 634,
+      "rate": 0.1787
+    },
+    {
+      "credit": 555,
+      "rate": 0.1587
+    },
+    {
+      "credit": 561,
+      "rate": 0.3108
+    },
+    {
+      "credit": 470,
+      "rate": 0.298
+    },
+    {
+      "credit": 555,
+      "rate": 0.2649
+    },
+    {
+      "credit": 626,
+      "rate": 0.331
+    },
+    {
+      "credit": 604,
+      "rate": 0.2277
+    },
+    {
+      "credit": 568,
+      "rate": 0.1882
+    },
+    {
+      "credit": 547,
+      "rate": 0.2666
+    },
+    {
+      "credit": 599,
+      "rate": 0.2374
+    },
+    {
+      "credit": 582,
+      "rate": 0.2173
+    },
+    {
+      "credit": 629,
+      "rate": 0.2489
+    },
+    {
+      "credit": 600,
+      "rate": 0.1906
+    },
+    {
+      "credit": 508,
+      "rate": 0.2627
+    },
+    {
+      "credit": 555,
+      "rate": 0.2036
+    },
+    {
+      "credit": 563,
+      "rate": 0.2153
+    },
+    {
+      "credit": 565,
+      "rate": 0.236
+    },
+    {
+      "credit": 591,
+      "rate": 0.2547
+    },
+    {
+      "credit": 445,
+      "rate": 0.2981
+    },
+    {
+      "credit": 573,
+      "rate": 0.2547
+    },
+    {
+      "credit": 607,
+      "rate": 0.206
+    },
+    {
+      "credit": 507,
+      "rate": 0.2576
+    },
+    {
+      "credit": 508,
+      "rate": 0.373
+    },
+    {
+      "credit": 555,
+      "rate": 0.2497
+    },
+    {
+      "credit": 572,
+      "rate": 0.2355
+    },
+    {
+      "credit": 521,
+      "rate": 0.2633
+    },
+    {
+      "credit": 622,
+      "rate": 0.2824
+    },
+    {
+      "credit": 503,
+      "rate": 0.334
+    },
+    {
+      "credit": 606,
+      "rate": 0.199
+    },
+    {
+      "credit": 552,
+      "rate": 0.2779
+    },
+    {
+      "credit": 621,
+      "rate": 0.1897
+    },
+    {
+      "credit": 571,
+      "rate": 0.228
+    },
+    {
+      "credit": 530,
+      "rate": 0.2085
+    },
+    {
+      "credit": 571,
+      "rate": 0.2565
+    },
+    {
+      "credit": 466,
+      "rate": 0.3306
+    },
+    {
+      "credit": 617,
+      "rate": 0.2345
+    },
+    {
+      "credit": 501,
+      "rate": 0.3335
+    },
+    {
+      "credit": 587,
+      "rate": 0.1821
+    },
+    {
+      "credit": 570,
+      "rate": 0.2446
+    },
+    {
+      "credit": 385,
+      "rate": 0.3666
+    },
+    {
+      "credit": 400,
+      "rate": 0.3091
+    },
+    {
+      "credit": 552,
+      "rate": 0.2272
+    },
+    {
+      "credit": 540,
+      "rate": 0.2609
+    },
+    {
+      "credit": 624,
+      "rate": 0.2714
+    },
+    {
+      "credit": 449,
+      "rate": 0.3837
+    },
+    {
+      "credit": 634,
+      "rate": 0.2349
+    },
+    {
+      "credit": 530,
+      "rate": 0.2614
+    },
+    {
+      "credit": 535,
+      "rate": 0.2193
+    },
+    {
+      "credit": 557,
+      "rate": 0.2752
+    },
+    {
+      "credit": 596,
+      "rate": 0.2503
+    },
+    {
+      "credit": 615,
+      "rate": 0.2307
+    },
+    {
+      "credit": 630,
+      "rate": 0.2147
+    },
+    {
+      "credit": 659,
+      "rate": 0.1793
+    },
+    {
+      "credit": 680,
+      "rate": 0.1671
+    },
+    {
+      "credit": 605,
+      "rate": 0.2978
+    },
+    {
+      "credit": 502,
+      "rate": 0.2185
+    },
+    {
+      "credit": 639,
+      "rate": 0.2042
+    },
+    {
+      "credit": 604,
+      "rate": 0.1871
+    },
+    {
+      "credit": 668,
+      "rate": 0.1969
+    },
+    {
+      "credit": 583,
+      "rate": 0.2867
+    },
+    {
+      "credit": 512,
+      "rate": 0.2304
+    },
+    {
+      "credit": 599,
+      "rate": 0.2203
+    },
+    {
+      "credit": 594,
+      "rate": 0.2283
+    },
+    {
+      "credit": 503,
+      "rate": 0.2185
+    },
+    {
+      "credit": 460,
+      "rate": 0.3284
+    },
+    {
+      "credit": 553,
+      "rate": 0.2417
+    },
+    {
+      "credit": 592,
+      "rate": 0.2413
+    },
+    {
+      "credit": 587,
+      "rate": 0.2152
+    },
+    {
+      "credit": 483,
+      "rate": 0.2583
+    },
+    {
+      "credit": 543,
+      "rate": 0.2962
+    },
+    {
+      "credit": 596,
+      "rate": 0.2072
+    },
+    {
+      "credit": 570,
+      "rate": 0.2658
+    },
+    {
+      "credit": 618,
+      "rate": 0.2236
+    },
+    {
+      "credit": 602,
+      "rate": 0.1976
+    },
+    {
+      "credit": 578,
+      "rate": 0.2057
+    },
+    {
+      "credit": 622,
+      "rate": 0.2189
+    },
+    {
+      "credit": 570,
+      "rate": 0.2252
+    },
+    {
+      "credit": 637,
+      "rate": 0.2506
+    },
+    {
+      "credit": 592,
+      "rate": 0.2114
+    },
+    {
+      "credit": 617,
+      "rate": 0.1829
+    },
+    {
+      "credit": 497,
+      "rate": 0.2785
+    },
+    {
+      "credit": 555,
+      "rate": 0.2598
+    },
+    {
+      "credit": 587,
+      "rate": 0.2405
+    },
+    {
+      "credit": 501,
+      "rate": 0.2765
+    },
+    {
+      "credit": 530,
+      "rate": 0.2448
+    },
+    {
+      "credit": 580,
+      "rate": 0.2298
+    },
+    {
+      "credit": 443,
+      "rate": 0.269
+    },
+    {
+      "credit": 530,
+      "rate": 0.3268
+    },
+    {
+      "credit": 480,
+      "rate": 0.3059
+    },
+    {
+      "credit": 528,
+      "rate": 0.2681
+    },
+    {
+      "credit": 553,
+      "rate": 0.2526
+    },
+    {
+      "credit": 592,
+      "rate": 0.2214
+    },
+    {
+      "credit": 513,
+      "rate": 0.271
+    },
+    {
+      "credit": 467,
+      "rate": 0.3515
+    },
+    {
+      "credit": 597,
+      "rate": 0.2419
+    },
+    {
+      "credit": 563,
+      "rate": 0.2473
+    },
+    {
+      "credit": 623,
+      "rate": 0.2366
+    },
+    {
+      "credit": 549,
+      "rate": 0.2383
+    },
+    {
+      "credit": 487,
+      "rate": 0.2727
+    },
+    {
+      "credit": 623,
+      "rate": 0.1707
+    },
+    {
+      "credit": 659,
+      "rate": 0.2189
+    },
+    {
+      "credit": 626,
+      "rate": 0.2081
+    },
+    {
+      "credit": 597,
+      "rate": 0.2264
+    },
+    {
+      "credit": 609,
+      "rate": 0.1944
+    },
+    {
+      "credit": 497,
+      "rate": 0.2592
+    },
+    {
+      "credit": 581,
+      "rate": 0.2075
+    },
+    {
+      "credit": 659,
+      "rate": 0.222
+    },
+    {
+      "credit": 592,
+      "rate": 0.2188
+    },
+    {
+      "credit": 509,
+      "rate": 0.2682
+    },
+    {
+      "credit": 615,
+      "rate": 0.2437
+    },
+    {
+      "credit": 482,
+      "rate": 0.2731
+    },
+    {
+      "credit": 579,
+      "rate": 0.202
+    },
+    {
+      "credit": 535,
+      "rate": 0.2809
+    },
+    {
+      "credit": 546,
+      "rate": 0.2821
+    },
+    {
+      "credit": 535,
+      "rate": 0.2228
+    },
+    {
+      "credit": 526,
+      "rate": 0.2865
+    },
+    {
+      "credit": 645,
+      "rate": 0.1788
+    },
+    {
+      "credit": 618,
+      "rate": 0.2275
+    },
+    {
+      "credit": 629,
+      "rate": 0.2396
+    },
+    {
+      "credit": 549,
+      "rate": 0.2162
+    },
+    {
+      "credit": 551,
+      "rate": 0.2647
+    },
+    {
+      "credit": 634,
+      "rate": 0.2218
+    },
+    {
+      "credit": 481,
+      "rate": 0.2857
+    },
+    {
+      "credit": 610,
+      "rate": 0.199
+    },
+    {
+      "credit": 614,
+      "rate": 0.1917
+    },
+    {
+      "credit": 566,
+      "rate": 0.2504
+    },
+    {
+      "credit": 562,
+      "rate": 0.2239
+    },
+    {
+      "credit": 550,
+      "rate": 0.1959
+    },
+    {
+      "credit": 591,
+      "rate": 0.2212
+    },
+    {
+      "credit": 538,
+      "rate": 0.2921
+    },
+    {
+      "credit": 571,
+      "rate": 0.2294
+    },
+    {
+      "credit": 516,
+      "rate": 0.3078
+    },
+    {
+      "credit": 575,
+      "rate": 0.2628
+    },
+    {
+      "credit": 606,
+      "rate": 0.1901
+    },
+    {
+      "credit": 582,
+      "rate": 0.2823
+    },
+    {
+      "credit": 555,
+      "rate": 0.3083
+    },
+    {
+      "credit": 573,
+      "rate": 0.2502
+    },
+    {
+      "credit": 652,
+      "rate": 0.2264
+    },
+    {
+      "credit": 549,
+      "rate": 0.2748
+    },
+    {
+      "credit": 586,
+      "rate": 0.2659
+    },
+    {
+      "credit": 507,
+      "rate": 0.338
+    },
+    {
+      "credit": 574,
+      "rate": 0.2428
+    },
+    {
+      "credit": 601,
+      "rate": 0.2758
+    },
+    {
+      "credit": 508,
+      "rate": 0.2479
+    },
+    {
+      "credit": 418,
+      "rate": 0.3032
+    },
+    {
+      "credit": 533,
+      "rate": 0.2514
+    },
+    {
+      "credit": 483,
+      "rate": 0.2672
+    },
+    {
+      "credit": 602,
+      "rate": 0.2492
+    },
+    {
+      "credit": 607,
+      "rate": 0.1936
+    },
+    {
+      "credit": 549,
+      "rate": 0.2628
+    },
+    {
+      "credit": 542,
+      "rate": 0.3013
+    },
+    {
+      "credit": 520,
+      "rate": 0.2209
+    },
+    {
+      "credit": 516,
+      "rate": 0.2778
+    },
+    {
+      "credit": 576,
+      "rate": 0.1924
+    },
+    {
+      "credit": 573,
+      "rate": 0.176
+    },
+    {
+      "credit": 601,
+      "rate": 0.2328
+    },
+    {
+      "credit": 581,
+      "rate": 0.3072
+    },
+    {
+      "credit": 592,
+      "rate": 0.2883
+    },
+    {
+      "credit": 527,
+      "rate": 0.2233
+    },
+    {
+      "credit": 504,
+      "rate": 0.2342
+    },
+    {
+      "credit": 560,
+      "rate": 0.2295
+    },
+    {
+      "credit": 624,
+      "rate": 0.2081
+    },
+    {
+      "credit": 561,
+      "rate": 0.2272
+    },
+    {
+      "credit": 581,
+      "rate": 0.1733
+    },
+    {
+      "credit": 462,
+      "rate": 0.2704
+    },
+    {
+      "credit": 619,
+      "rate": 0.2402
+    },
+    {
+      "credit": 522,
+      "rate": 0.3499
+    },
+    {
+      "credit": 545,
+      "rate": 0.2042
+    },
+    {
+      "credit": 566,
+      "rate": 0.2629
+    },
+    {
+      "credit": 620,
+      "rate": 0.2293
+    },
+    {
+      "credit": 535,
+      "rate": 0.2984
+    },
+    {
+      "credit": 600,
+      "rate": 0.1984
+    },
+    {
+      "credit": 627,
+      "rate": 0.1686
+    },
+    {
+      "credit": 593,
+      "rate": 0.2183
+    },
+    {
+      "credit": 581,
+      "rate": 0.1984
+    },
+    {
+      "credit": 565,
+      "rate": 0.2133
+    },
+    {
+      "credit": 587,
+      "rate": 0.2299
+    },
+    {
+      "credit": 615,
+      "rate": 0.2565
+    },
+    {
+      "credit": 550,
+      "rate": 0.2602
+    },
+    {
+      "credit": 521,
+      "rate": 0.2601
+    },
+    {
+      "credit": 554,
+      "rate": 0.2203
+    },
+    {
+      "credit": 611,
+      "rate": 0.2451
+    },
+    {
+      "credit": 600,
+      "rate": 0.2422
+    },
+    {
+      "credit": 574,
+      "rate": 0.2287
+    },
+    {
+      "credit": 511,
+      "rate": 0.2928
+    },
+    {
+      "credit": 653,
+      "rate": 0.1865
+    },
+    {
+      "credit": 572,
+      "rate": 0.1986
+    },
+    {
+      "credit": 574,
+      "rate": 0.3599
+    },
+    {
+      "credit": 584,
+      "rate": 0.2267
+    },
+    {
+      "credit": 503,
+      "rate": 0.2562
+    },
+    {
+      "credit": 561,
+      "rate": 0.2187
+    },
+    {
+      "credit": 604,
+      "rate": 0.1961
+    },
+    {
+      "credit": 539,
+      "rate": 0.2705
+    },
+    {
+      "credit": 616,
+      "rate": 0.2397
+    },
+    {
+      "credit": 547,
+      "rate": 0.2699
+    },
+    {
+      "credit": 573,
+      "rate": 0.2156
+    },
+    {
+      "credit": 552,
+      "rate": 0.2574
+    },
+    {
+      "credit": 610,
+      "rate": 0.1947
+    },
+    {
+      "credit": 574,
+      "rate": 0.2523
+    },
+    {
+      "credit": 478,
+      "rate": 0.2862
+    },
+    {
+      "credit": 590,
+      "rate": 0.2738
+    },
+    {
+      "credit": 606,
+      "rate": 0.2063
+    },
+    {
+      "credit": 607,
+      "rate": 0.2456
+    },
+    {
+      "credit": 451,
+      "rate": 0.2652
+    },
+    {
+      "credit": 621,
+      "rate": 0.2258
+    },
+    {
+      "credit": 558,
+      "rate": 0.2358
+    },
+    {
+      "credit": 511,
+      "rate": 0.1967
+    },
+    {
+      "credit": 645,
+      "rate": 0.2029
+    },
+    {
+      "credit": 645,
+      "rate": 0.2111
+    },
+    {
+      "credit": 499,
+      "rate": 0.2715
+    },
+    {
+      "credit": 617,
+      "rate": 0.2898
+    },
+    {
+      "credit": 627,
+      "rate": 0.221
+    },
+    {
+      "credit": 586,
+      "rate": 0.2656
+    },
+    {
+      "credit": 623,
+      "rate": 0.1964
+    },
+    {
+      "credit": 564,
+      "rate": 0.3202
+    },
+    {
+      "credit": 563,
+      "rate": 0.3054
+    },
+    {
+      "credit": 650,
+      "rate": 0.1718
+    },
+    {
+      "credit": 603,
+      "rate": 0.1738
+    },
+    {
+      "credit": 606,
+      "rate": 0.1692
+    },
+    {
+      "credit": 551,
+      "rate": 0.2471
+    },
+    {
+      "credit": 560,
+      "rate": 0.2434
+    },
+    {
+      "credit": 557,
+      "rate": 0.2272
+    },
+    {
+      "credit": 574,
+      "rate": 0.2866
+    },
+    {
+      "credit": 582,
+      "rate": 0.1918
+    },
+    {
+      "credit": 568,
+      "rate": 0.2031
+    },
+    {
+      "credit": 526,
+      "rate": 0.2481
+    },
+    {
+      "credit": 533,
+      "rate": 0.3587
+    },
+    {
+      "credit": 609,
+      "rate": 0.266
+    },
+    {
+      "credit": 626,
+      "rate": 0.1812
+    },
+    {
+      "credit": 597,
+      "rate": 0.1935
+    },
+    {
+      "credit": 622,
+      "rate": 0.1797
+    },
+    {
+      "credit": 539,
+      "rate": 0.1984
+    },
+    {
+      "credit": 521,
+      "rate": 0.2873
+    },
+    {
+      "credit": 468,
+      "rate": 0.3254
+    },
+    {
+      "credit": 632,
+      "rate": 0.1641
+    },
+    {
+      "credit": 521,
+      "rate": 0.2327
+    },
+    {
+      "credit": 617,
+      "rate": 0.2056
+    },
+    {
+      "credit": 572,
+      "rate": 0.2261
+    },
+    {
+      "credit": 632,
+      "rate": 0.2674
+    },
+    {
+      "credit": 603,
+      "rate": 0.1786
+    },
+    {
+      "credit": 550,
+      "rate": 0.2803
+    },
+    {
+      "credit": 591,
+      "rate": 0.2633
+    },
+    {
+      "credit": 620,
+      "rate": 0.1994
+    },
+    {
+      "credit": 526,
+      "rate": 0.2413
+    },
+    {
+      "credit": 613,
+      "rate": 0.1813
+    },
+    {
+      "credit": 671,
+      "rate": 0.171
+    },
+    {
+      "credit": 550,
+      "rate": 0.2653
+    },
+    {
+      "credit": 612,
+      "rate": 0.2087
+    },
+    {
+      "credit": 558,
+      "rate": 0.2512
+    },
+    {
+      "credit": 567,
+      "rate": 0.2778
+    },
+    {
+      "credit": 615,
+      "rate": 0.2065
+    },
+    {
+      "credit": 581,
+      "rate": 0.2287
+    },
+    {
+      "credit": 617,
+      "rate": 0.2453
+    },
+    {
+      "credit": 599,
+      "rate": 0.1995
+    },
+    {
+      "credit": 541,
+      "rate": 0.2485
+    },
+    {
+      "credit": 620,
+      "rate": 0.2
+    },
+    {
+      "credit": 481,
+      "rate": 0.2612
+    },
+    {
+      "credit": 512,
+      "rate": 0.3028
+    },
+    {
+      "credit": 645,
+      "rate": 0.1855
+    },
+    {
+      "credit": 488,
+      "rate": 0.2571
+    },
+    {
+      "credit": 570,
+      "rate": 0.3013
+    },
+    {
+      "credit": 547,
+      "rate": 0.2064
+    },
+    {
+      "credit": 666,
+      "rate": 0.2317
+    },
+    {
+      "credit": 612,
+      "rate": 0.2408
+    },
+    {
+      "credit": 591,
+      "rate": 0.1805
+    },
+    {
+      "credit": 561,
+      "rate": 0.2423
+    },
+    {
+      "credit": 482,
+      "rate": 0.2673
+    },
+    {
+      "credit": 660,
+      "rate": 0.2139
+    },
+    {
+      "credit": 498,
+      "rate": 0.3009
+    },
+    {
+      "credit": 532,
+      "rate": 0.2229
+    },
+    {
+      "credit": 562,
+      "rate": 0.2533
+    },
+    {
+      "credit": 628,
+      "rate": 0.2231
+    },
+    {
+      "credit": 565,
+      "rate": 0.2843
+    },
+    {
+      "credit": 593,
+      "rate": 0.2275
+    },
+    {
+      "credit": 526,
+      "rate": 0.2453
+    },
+    {
+      "credit": 609,
+      "rate": 0.1796
+    },
+    {
+      "credit": 596,
+      "rate": 0.2354
+    },
+    {
+      "credit": 558,
+      "rate": 0.2608
+    },
+    {
+      "credit": 522,
+      "rate": 0.294
+    },
+    {
+      "credit": 521,
+      "rate": 0.2232
+    },
+    {
+      "credit": 614,
+      "rate": 0.1627
+    },
+    {
+      "credit": 525,
+      "rate": 0.2366
+    },
+    {
+      "credit": 624,
+      "rate": 0.2126
+    },
+    {
+      "credit": 609,
+      "rate": 0.2219
+    },
+    {
+      "credit": 588,
+      "rate": 0.2534
+    },
+    {
+      "credit": 436,
+      "rate": 0.4468
+    },
+    {
+      "credit": 562,
+      "rate": 0.2471
+    },
+    {
+      "credit": 518,
+      "rate": 0.2993
+    },
+    {
+      "credit": 484,
+      "rate": 0.3395
+    },
+    {
+      "credit": 547,
+      "rate": 0.3299
+    },
+    {
+      "credit": 536,
+      "rate": 0.2113
+    },
+    {
+      "credit": 585,
+      "rate": 0.3218
+    },
+    {
+      "credit": 548,
+      "rate": 0.2447
+    },
+    {
+      "credit": 564,
+      "rate": 0.2209
+    },
+    {
+      "credit": 566,
+      "rate": 0.3147
+    },
+    {
+      "credit": 598,
+      "rate": 0.1761
+    },
+    {
+      "credit": 545,
+      "rate": 0.3203
+    },
+    {
+      "credit": 647,
+      "rate": 0.1753
+    },
+    {
+      "credit": 585,
+      "rate": 0.2334
+    },
+    {
+      "credit": 578,
+      "rate": 0.2139
+    },
+    {
+      "credit": 578,
+      "rate": 0.2341
+    },
+    {
+      "credit": 542,
+      "rate": 0.2863
+    },
+    {
+      "credit": 586,
+      "rate": 0.2123
+    },
+    {
+      "credit": 565,
+      "rate": 0.3108
+    },
+    {
+      "credit": 629,
+      "rate": 0.2117
+    },
+    {
+      "credit": 637,
+      "rate": 0.2343
+    },
+    {
+      "credit": 547,
+      "rate": 0.2162
+    },
+    {
+      "credit": 474,
+      "rate": 0.2291
+    },
+    {
+      "credit": 440,
+      "rate": 0.3209
+    },
+    {
+      "credit": 635,
+      "rate": 0.1902
+    },
+    {
+      "credit": 530,
+      "rate": 0.2714
+    },
+    {
+      "credit": 579,
+      "rate": 0.1898
+    },
+    {
+      "credit": 580,
+      "rate": 0.2333
+    },
+    {
+      "credit": 557,
+      "rate": 0.2909
+    },
+    {
+      "credit": 492,
+      "rate": 0.2548
+    },
+    {
+      "credit": 439,
+      "rate": 0.2317
+    },
+    {
+      "credit": 489,
+      "rate": 0.2721
+    },
+    {
+      "credit": 486,
+      "rate": 0.2555
+    },
+    {
+      "credit": 608,
+      "rate": 0.2533
+    },
+    {
+      "credit": 477,
+      "rate": 0.2925
+    },
+    {
+      "credit": 590,
+      "rate": 0.2666
+    },
+    {
+      "credit": 534,
+      "rate": 0.2038
+    },
+    {
+      "credit": 619,
+      "rate": 0.2434
+    },
+    {
+      "credit": 484,
+      "rate": 0.3561
+    },
+    {
+      "credit": 561,
+      "rate": 0.3145
+    },
+    {
+      "credit": 558,
+      "rate": 0.2152
+    },
+    {
+      "credit": 547,
+      "rate": 0.1963
+    },
+    {
+      "credit": 535,
+      "rate": 0.2937
+    },
+    {
+      "credit": 438,
+      "rate": 0.3427
+    },
+    {
+      "credit": 618,
+      "rate": 0.2076
+    },
+    {
+      "credit": 626,
+      "rate": 0.1924
+    },
+    {
+      "credit": 591,
+      "rate": 0.2461
+    },
+    {
+      "credit": 625,
+      "rate": 0.2155
+    },
+    {
+      "credit": 530,
+      "rate": 0.208
+    },
+    {
+      "credit": 619,
+      "rate": 0.2376
+    },
+    {
+      "credit": 618,
+      "rate": 0.1789
+    },
+    {
+      "credit": 495,
+      "rate": 0.2663
+    },
+    {
+      "credit": 616,
+      "rate": 0.2332
+    },
+    {
+      "credit": 580,
+      "rate": 0.2469
+    },
+    {
+      "credit": 672,
+      "rate": 0.2029
+    },
+    {
+      "credit": 549,
+      "rate": 0.2696
+    },
+    {
+      "credit": 448,
+      "rate": 0.3691
+    },
+    {
+      "credit": 513,
+      "rate": 0.3477
+    },
+    {
+      "credit": 529,
+      "rate": 0.2567
+    },
+    {
+      "credit": 621,
+      "rate": 0.1653
+    },
+    {
+      "credit": 623,
+      "rate": 0.2278
+    },
+    {
+      "credit": 525,
+      "rate": 0.281
+    },
+    {
+      "credit": 624,
+      "rate": 0.2187
+    },
+    {
+      "credit": 538,
+      "rate": 0.2873
+    },
+    {
+      "credit": 539,
+      "rate": 0.2989
+    },
+    {
+      "credit": 527,
+      "rate": 0.2796
+    },
+    {
+      "credit": 607,
+      "rate": 0.1721
+    },
+    {
+      "credit": 539,
+      "rate": 0.2313
+    },
+    {
+      "credit": 551,
+      "rate": 0.2978
+    },
+    {
+      "credit": 651,
+      "rate": 0.2036
+    },
+    {
+      "credit": 601,
+      "rate": 0.2006
+    },
+    {
+      "credit": 584,
+      "rate": 0.2269
+    },
+    {
+      "credit": 640,
+      "rate": 0.2059
+    },
+    {
+      "credit": 668,
+      "rate": 0.1851
+    },
+    {
+      "credit": 611,
+      "rate": 0.2545
+    },
+    {
+      "credit": 602,
+      "rate": 0.2344
+    },
+    {
+      "credit": 632,
+      "rate": 0.1901
+    },
+    {
+      "credit": 628,
+      "rate": 0.1356
+    },
+    {
+      "credit": 607,
+      "rate": 0.2376
+    },
+    {
+      "credit": 614,
+      "rate": 0.2076
+    },
+    {
+      "credit": 589,
+      "rate": 0.2215
+    },
+    {
+      "credit": 627,
+      "rate": 0.1728
+    },
+    {
+      "credit": 574,
+      "rate": 0.2316
+    },
+    {
+      "credit": 573,
+      "rate": 0.219
+    },
+    {
+      "credit": 672,
+      "rate": 0.1569
+    },
+    {
+      "credit": 474,
+      "rate": 0.3265
+    },
+    {
+      "credit": 606,
+      "rate": 0.2771
+    },
+    {
+      "credit": 523,
+      "rate": 0.2025
+    },
+    {
+      "credit": 579,
+      "rate": 0.2135
+    },
+    {
+      "credit": 600,
+      "rate": 0.2311
+    },
+    {
+      "credit": 629,
+      "rate": 0.2267
+    },
+    {
+      "credit": 642,
+      "rate": 0.1504
+    },
+    {
+      "credit": 561,
+      "rate": 0.2122
+    },
+    {
+      "credit": 652,
+      "rate": 0.2326
+    },
+    {
+      "credit": 585,
+      "rate": 0.2575
+    },
+    {
+      "credit": 462,
+      "rate": 0.2638
+    },
+    {
+      "credit": 554,
+      "rate": 0.2048
+    },
+    {
+      "credit": 509,
+      "rate": 0.243
+    },
+    {
+      "credit": 566,
+      "rate": 0.2063
+    },
+    {
+      "credit": 632,
+      "rate": 0.2495
+    },
+    {
+      "credit": 602,
+      "rate": 0.2315
+    },
+    {
+      "credit": 661,
+      "rate": 0.2325
+    },
+    {
+      "credit": 536,
+      "rate": 0.2212
+    },
+    {
+      "credit": 577,
+      "rate": 0.2205
+    },
+    {
+      "credit": 579,
+      "rate": 0.2137
+    },
+    {
+      "credit": 546,
+      "rate": 0.3308
+    },
+    {
+      "credit": 552,
+      "rate": 0.2093
+    },
+    {
+      "credit": 619,
+      "rate": 0.199
+    },
+    {
+      "credit": 570,
+      "rate": 0.2229
+    },
+    {
+      "credit": 615,
+      "rate": 0.1761
+    },
+    {
+      "credit": 620,
+      "rate": 0.2374
+    },
+    {
+      "credit": 619,
+      "rate": 0.2056
+    },
+    {
+      "credit": 547,
+      "rate": 0.2521
+    },
+    {
+      "credit": 551,
+      "rate": 0.2678
+    },
+    {
+      "credit": 608,
+      "rate": 0.1601
+    },
+    {
+      "credit": 467,
+      "rate": 0.2548
+    },
+    {
+      "credit": 579,
+      "rate": 0.2063
+    },
+    {
+      "credit": 428,
+      "rate": 0.3392
+    },
+    {
+      "credit": 570,
+      "rate": 0.2303
+    },
+    {
+      "credit": 560,
+      "rate": 0.2054
+    },
+    {
+      "credit": 603,
+      "rate": 0.1884
+    },
+    {
+      "credit": 607,
+      "rate": 0.1871
+    },
+    {
+      "credit": 618,
+      "rate": 0.1873
+    },
+    {
+      "credit": 562,
+      "rate": 0.2199
+    },
+    {
+      "credit": 559,
+      "rate": 0.2193
+    },
+    {
+      "credit": 563,
+      "rate": 0.2403
+    },
+    {
+      "credit": 503,
+      "rate": 0.2165
+    },
+    {
+      "credit": 619,
+      "rate": 0.1872
+    },
+    {
+      "credit": 432,
+      "rate": 0.3003
+    },
+    {
+      "credit": 580,
+      "rate": 0.1976
+    },
+    {
+      "credit": 547,
+      "rate": 0.2063
+    },
+    {
+      "credit": 518,
+      "rate": 0.2579
+    },
+    {
+      "credit": 579,
+      "rate": 0.2865
+    },
+    {
+      "credit": 545,
+      "rate": 0.2446
+    },
+    {
+      "credit": 604,
+      "rate": 0.1928
+    },
+    {
+      "credit": 633,
+      "rate": 0.2252
+    },
+    {
+      "credit": 492,
+      "rate": 0.2208
+    },
+    {
+      "credit": 626,
+      "rate": 0.2103
+    },
+    {
+      "credit": 688,
+      "rate": 0.1133
+    },
+    {
+      "credit": 623,
+      "rate": 0.1691
+    },
+    {
+      "credit": 573,
+      "rate": 0.2295
+    },
+    {
+      "credit": 594,
+      "rate": 0.2727
+    },
+    {
+      "credit": 616,
+      "rate": 0.167
+    },
+    {
+      "credit": 478,
+      "rate": 0.3151
+    },
+    {
+      "credit": 630,
+      "rate": 0.231
+    },
+    {
+      "credit": 591,
+      "rate": 0.2483
+    },
+    {
+      "credit": 536,
+      "rate": 0.257
+    },
+    {
+      "credit": 576,
+      "rate": 0.22
+    },
+    {
+      "credit": 534,
+      "rate": 0.2798
+    },
+    {
+      "credit": 431,
+      "rate": 0.3455
+    },
+    {
+      "credit": 421,
+      "rate": 0.2938
+    },
+    {
+      "credit": 550,
+      "rate": 0.2017
+    },
+    {
+      "credit": 567,
+      "rate": 0.2575
+    },
+    {
+      "credit": 624,
+      "rate": 0.2987
+    },
+    {
+      "credit": 555,
+      "rate": 0.2647
+    },
+    {
+      "credit": 605,
+      "rate": 0.2417
+    },
+    {
+      "credit": 602,
+      "rate": 0.2291
+    },
+    {
+      "credit": 609,
+      "rate": 0.2041
+    },
+    {
+      "credit": 549,
+      "rate": 0.2795
+    },
+    {
+      "credit": 460,
+      "rate": 0.2547
+    },
+    {
+      "credit": 634,
+      "rate": 0.1971
+    },
+    {
+      "credit": 585,
+      "rate": 0.2328
+    },
+    {
+      "credit": 641,
+      "rate": 0.256
+    },
+    {
+      "credit": 612,
+      "rate": 0.2417
+    },
+    {
+      "credit": 528,
+      "rate": 0.2871
+    },
+    {
+      "credit": 552,
+      "rate": 0.2147
+    },
+    {
+      "credit": 578,
+      "rate": 0.2331
+    },
+    {
+      "credit": 606,
+      "rate": 0.2239
+    },
+    {
+      "credit": 636,
+      "rate": 0.1718
+    },
+    {
+      "credit": 541,
+      "rate": 0.2287
+    },
+    {
+      "credit": 582,
+      "rate": 0.1907
+    },
+    {
+      "credit": 545,
+      "rate": 0.3069
+    },
+    {
+      "credit": 637,
+      "rate": 0.2288
+    },
+    {
+      "credit": 561,
+      "rate": 0.236
+    },
+    {
+      "credit": 590,
+      "rate": 0.279
+    },
+    {
+      "credit": 519,
+      "rate": 0.2612
+    },
+    {
+      "credit": 525,
+      "rate": 0.3029
+    },
+    {
+      "credit": 601,
+      "rate": 0.2043
+    },
+    {
+      "credit": 485,
+      "rate": 0.3153
+    },
+    {
+      "credit": 467,
+      "rate": 0.2856
+    },
+    {
+      "credit": 572,
+      "rate": 0.2316
+    },
+    {
+      "credit": 650,
+      "rate": 0.1692
+    },
+    {
+      "credit": 594,
+      "rate": 0.2391
+    },
+    {
+      "credit": 505,
+      "rate": 0.1924
+    },
+    {
+      "credit": 463,
+      "rate": 0.2609
+    },
+    {
+      "credit": 549,
+      "rate": 0.2622
+    },
+    {
+      "credit": 573,
+      "rate": 0.2487
+    },
+    {
+      "credit": 505,
+      "rate": 0.2774
+    },
+    {
+      "credit": 602,
+      "rate": 0.1649
+    },
+    {
+      "credit": 508,
+      "rate": 0.282
+    },
+    {
+      "credit": 609,
+      "rate": 0.1907
+    },
+    {
+      "credit": 454,
+      "rate": 0.2973
+    },
+    {
+      "credit": 629,
+      "rate": 0.262
+    },
+    {
+      "credit": 593,
+      "rate": 0.2508
+    },
+    {
+      "credit": 581,
+      "rate": 0.2478
+    },
+    {
+      "credit": 544,
+      "rate": 0.2064
+    },
+    {
+      "credit": 495,
+      "rate": 0.262
+    },
+    {
+      "credit": 521,
+      "rate": 0.2268
+    },
+    {
+      "credit": 619,
+      "rate": 0.1708
+    },
+    {
+      "credit": 598,
+      "rate": 0.2241
+    },
+    {
+      "credit": 597,
+      "rate": 0.1952
+    },
+    {
+      "credit": 558,
+      "rate": 0.2391
+    },
+    {
+      "credit": 609,
+      "rate": 0.2369
+    },
+    {
+      "credit": 540,
+      "rate": 0.2868
+    },
+    {
+      "credit": 511,
+      "rate": 0.2773
+    },
+    {
+      "credit": 568,
+      "rate": 0.2271
+    },
+    {
+      "credit": 560,
+      "rate": 0.2283
+    },
+    {
+      "credit": 581,
+      "rate": 0.2335
+    },
+    {
+      "credit": 517,
+      "rate": 0.2393
+    },
+    {
+      "credit": 667,
+      "rate": 0.1794
+    },
+    {
+      "credit": 582,
+      "rate": 0.2221
+    },
+    {
+      "credit": 565,
+      "rate": 0.2563
+    },
+    {
+      "credit": 478,
+      "rate": 0.4005
+    },
+    {
+      "credit": 574,
+      "rate": 0.3157
+    },
+    {
+      "credit": 410,
+      "rate": 0.331
+    },
+    {
+      "credit": 612,
+      "rate": 0.2319
+    },
+    {
+      "credit": 592,
+      "rate": 0.2989
+    },
+    {
+      "credit": 507,
+      "rate": 0.258
+    },
+    {
+      "credit": 660,
+      "rate": 0.1689
+    },
+    {
+      "credit": 640,
+      "rate": 0.2266
+    },
+    {
+      "credit": 613,
+      "rate": 0.2172
+    },
+    {
+      "credit": 586,
+      "rate": 0.2214
+    },
+    {
+      "credit": 528,
+      "rate": 0.2419
+    },
+    {
+      "credit": 537,
+      "rate": 0.3165
+    },
+    {
+      "credit": 606,
+      "rate": 0.1696
+    },
+    {
+      "credit": 657,
+      "rate": 0.2058
+    },
+    {
+      "credit": 595,
+      "rate": 0.2099
+    },
+    {
+      "credit": 568,
+      "rate": 0.2248
+    },
+    {
+      "credit": 603,
+      "rate": 0.1918
+    },
+    {
+      "credit": 524,
+      "rate": 0.312
+    },
+    {
+      "credit": 602,
+      "rate": 0.2194
+    },
+    {
+      "credit": 585,
+      "rate": 0.265
+    },
+    {
+      "credit": 590,
+      "rate": 0.2001
+    },
+    {
+      "credit": 618,
+      "rate": 0.2154
+    },
+    {
+      "credit": 603,
+      "rate": 0.2957
+    },
+    {
+      "credit": 601,
+      "rate": 0.22
+    },
+    {
+      "credit": 593,
+      "rate": 0.2154
+    },
+    {
+      "credit": 608,
+      "rate": 0.2478
+    },
+    {
+      "credit": 477,
+      "rate": 0.2978
+    },
+    {
+      "credit": 527,
+      "rate": 0.2277
+    },
+    {
+      "credit": 625,
+      "rate": 0.1719
+    },
+    {
+      "credit": 615,
+      "rate": 0.2018
+    },
+    {
+      "credit": 522,
+      "rate": 0.1979
+    },
+    {
+      "credit": 646,
+      "rate": 0.2597
+    },
+    {
+      "credit": 587,
+      "rate": 0.2128
+    },
+    {
+      "credit": 573,
+      "rate": 0.1703
+    },
+    {
+      "credit": 614,
+      "rate": 0.2276
+    },
+    {
+      "credit": 584,
+      "rate": 0.2541
+    },
+    {
+      "credit": 608,
+      "rate": 0.226
+    },
+    {
+      "credit": 600,
+      "rate": 0.1789
+    },
+    {
+      "credit": 572,
+      "rate": 0.2133
+    },
+    {
+      "credit": 587,
+      "rate": 0.2149
+    },
+    {
+      "credit": 570,
+      "rate": 0.2095
+    },
+    {
+      "credit": 625,
+      "rate": 0.1785
+    },
+    {
+      "credit": 595,
+      "rate": 0.2805
+    },
+    {
+      "credit": 560,
+      "rate": 0.2103
+    },
+    {
+      "credit": 612,
+      "rate": 0.2464
+    },
+    {
+      "credit": 523,
+      "rate": 0.2918
+    },
+    {
+      "credit": 613,
+      "rate": 0.2705
+    },
+    {
+      "credit": 628,
+      "rate": 0.1807
+    },
+    {
+      "credit": 506,
+      "rate": 0.2383
+    },
+    {
+      "credit": 505,
+      "rate": 0.3297
+    },
+    {
+      "credit": 488,
+      "rate": 0.2633
+    },
+    {
+      "credit": 612,
+      "rate": 0.2319
+    },
+    {
+      "credit": 570,
+      "rate": 0.2025
+    },
+    {
+      "credit": 541,
+      "rate": 0.2059
+    },
+    {
+      "credit": 528,
+      "rate": 0.2508
+    },
+    {
+      "credit": 565,
+      "rate": 0.2234
+    },
+    {
+      "credit": 590,
+      "rate": 0.197
+    },
+    {
+      "credit": 651,
+      "rate": 0.1896
+    },
+    {
+      "credit": 603,
+      "rate": 0.2458
+    },
+    {
+      "credit": 570,
+      "rate": 0.2114
+    },
+    {
+      "credit": 585,
+      "rate": 0.2659
+    },
+    {
+      "credit": 597,
+      "rate": 0.2172
+    },
+    {
+      "credit": 610,
+      "rate": 0.1891
+    },
+    {
+      "credit": 539,
+      "rate": 0.2576
+    },
+    {
+      "credit": 552,
+      "rate": 0.1928
+    },
+    {
+      "credit": 507,
+      "rate": 0.3016
+    },
+    {
+      "credit": 466,
+      "rate": 0.3262
+    },
+    {
+      "credit": 563,
+      "rate": 0.2725
+    },
+    {
+      "credit": 573,
+      "rate": 0.2557
+    },
+    {
+      "credit": 586,
+      "rate": 0.1961
+    },
+    {
+      "credit": 495,
+      "rate": 0.2483
+    },
+    {
+      "credit": 581,
+      "rate": 0.217
+    },
+    {
+      "credit": 557,
+      "rate": 0.2173
+    },
+    {
+      "credit": 664,
+      "rate": 0.2653
+    },
+    {
+      "credit": 631,
+      "rate": 0.2861
+    },
+    {
+      "credit": 550,
+      "rate": 0.3166
+    },
+    {
+      "credit": 523,
+      "rate": 0.2691
+    },
+    {
+      "credit": 529,
+      "rate": 0.2653
+    },
+    {
+      "credit": 588,
+      "rate": 0.1671
+    },
+    {
+      "credit": 539,
+      "rate": 0.3065
+    },
+    {
+      "credit": 599,
+      "rate": 0.2623
+    },
+    {
+      "credit": 623,
+      "rate": 0.2053
+    },
+    {
+      "credit": 594,
+      "rate": 0.1866
+    },
+    {
+      "credit": 623,
+      "rate": 0.2226
+    },
+    {
+      "credit": 587,
+      "rate": 0.2413
+    },
+    {
+      "credit": 594,
+      "rate": 0.2581
+    },
+    {
+      "credit": 658,
+      "rate": 0.17
+    },
+    {
+      "credit": 567,
+      "rate": 0.194
+    },
+    {
+      "credit": 620,
+      "rate": 0.231
+    },
+    {
+      "credit": 497,
+      "rate": 0.2234
+    },
+    {
+      "credit": 588,
+      "rate": 0.1947
+    },
+    {
+      "credit": 553,
+      "rate": 0.2348
+    },
+    {
+      "credit": 557,
+      "rate": 0.2295
+    },
+    {
+      "credit": 467,
+      "rate": 0.2896
+    },
+    {
+      "credit": 519,
+      "rate": 0.3133
+    },
+    {
+      "credit": 599,
+      "rate": 0.2058
+    },
+    {
+      "credit": 605,
+      "rate": 0.1909
+    },
+    {
+      "credit": 480,
+      "rate": 0.3406
+    },
+    {
+      "credit": 652,
+      "rate": 0.1762
+    },
+    {
+      "credit": 532,
+      "rate": 0.2573
+    },
+    {
+      "credit": 665,
+      "rate": 0.1719
+    },
+    {
+      "credit": 557,
+      "rate": 0.2962
+    },
+    {
+      "credit": 621,
+      "rate": 0.1775
+    },
+    {
+      "credit": 635,
+      "rate": 0.2124
+    },
+    {
+      "credit": 593,
+      "rate": 0.2209
+    },
+    {
+      "credit": 579,
+      "rate": 0.1776
+    },
+    {
+      "credit": 639,
+      "rate": 0.2218
+    },
+    {
+      "credit": 577,
+      "rate": 0.2809
+    },
+    {
+      "credit": 571,
+      "rate": 0.2065
+    },
+    {
+      "credit": 415,
+      "rate": 0.3078
+    },
+    {
+      "credit": 606,
+      "rate": 0.1862
+    },
+    {
+      "credit": 648,
+      "rate": 0.1694
+    },
+    {
+      "credit": 584,
+      "rate": 0.1782
+    },
+    {
+      "credit": 592,
+      "rate": 0.264
+    },
+    {
+      "credit": 626,
+      "rate": 0.1945
+    },
+    {
+      "credit": 599,
+      "rate": 0.2371
+    },
+    {
+      "credit": 621,
+      "rate": 0.2476
+    },
+    {
+      "credit": 532,
+      "rate": 0.258
+    },
+    {
+      "credit": 650,
+      "rate": 0.198
+    },
+    {
+      "credit": 584,
+      "rate": 0.2269
+    },
+    {
+      "credit": 580,
+      "rate": 0.2328
+    },
+    {
+      "credit": 591,
+      "rate": 0.2295
+    },
+    {
+      "credit": 638,
+      "rate": 0.207
+    },
+    {
+      "credit": 574,
+      "rate": 0.2297
+    },
+    {
+      "credit": 570,
+      "rate": 0.228
+    },
+    {
+      "credit": 533,
+      "rate": 0.3164
+    },
+    {
+      "credit": 452,
+      "rate": 0.2927
+    },
+    {
+      "credit": 530,
+      "rate": 0.2996
+    },
+    {
+      "credit": 516,
+      "rate": 0.342
+    },
+    {
+      "credit": 579,
+      "rate": 0.2295
+    },
+    {
+      "credit": 540,
+      "rate": 0.2139
+    },
+    {
+      "credit": 664,
+      "rate": 0.2058
+    },
+    {
+      "credit": 548,
+      "rate": 0.255
+    },
+    {
+      "credit": 534,
+      "rate": 0.2974
+    },
+    {
+      "credit": 567,
+      "rate": 0.2357
+    },
+    {
+      "credit": 613,
+      "rate": 0.1641
+    },
+    {
+      "credit": 581,
+      "rate": 0.25
+    },
+    {
+      "credit": 593,
+      "rate": 0.2053
+    },
+    {
+      "credit": 579,
+      "rate": 0.2651
+    },
+    {
+      "credit": 452,
+      "rate": 0.3533
+    },
+    {
+      "credit": 525,
+      "rate": 0.2768
+    },
+    {
+      "credit": 578,
+      "rate": 0.2292
+    },
+    {
+      "credit": 631,
+      "rate": 0.2056
+    },
+    {
+      "credit": 557,
+      "rate": 0.3278
+    },
+    {
+      "credit": 584,
+      "rate": 0.2469
+    },
+    {
+      "credit": 597,
+      "rate": 0.2408
+    },
+    {
+      "credit": 585,
+      "rate": 0.215
+    },
+    {
+      "credit": 587,
+      "rate": 0.213
+    },
+    {
+      "credit": 652,
+      "rate": 0.212
+    },
+    {
+      "credit": 648,
+      "rate": 0.206
+    },
+    {
+      "credit": 625,
+      "rate": 0.2074
+    },
+    {
+      "credit": 507,
+      "rate": 0.2381
+    },
+    {
+      "credit": 587,
+      "rate": 0.2148
+    },
+    {
+      "credit": 562,
+      "rate": 0.2887
+    },
+    {
+      "credit": 455,
+      "rate": 0.3445
+    },
+    {
+      "credit": 618,
+      "rate": 0.2251
+    },
+    {
+      "credit": 551,
+      "rate": 0.3462
+    },
+    {
+      "credit": 615,
+      "rate": 0.2857
+    },
+    {
+      "credit": 631,
+      "rate": 0.2162
+    },
+    {
+      "credit": 628,
+      "rate": 0.2096
+    },
+    {
+      "credit": 504,
+      "rate": 0.3303
+    },
+    {
+      "credit": 554,
+      "rate": 0.2357
+    },
+    {
+      "credit": 616,
+      "rate": 0.2219
+    },
+    {
+      "credit": 559,
+      "rate": 0.3073
+    },
+    {
+      "credit": 539,
+      "rate": 0.2568
+    },
+    {
+      "credit": 533,
+      "rate": 0.2854
+    },
+    {
+      "credit": 542,
+      "rate": 0.2276
+    },
+    {
+      "credit": 628,
+      "rate": 0.1823
+    },
+    {
+      "credit": 607,
+      "rate": 0.1826
+    },
+    {
+      "credit": 601,
+      "rate": 0.1681
+    },
+    {
+      "credit": 567,
+      "rate": 0.2008
+    },
+    {
+      "credit": 517,
+      "rate": 0.2727
+    },
+    {
+      "credit": 555,
+      "rate": 0.2207
+    },
+    {
+      "credit": 492,
+      "rate": 0.256
+    },
+    {
+      "credit": 569,
+      "rate": 0.2366
+    },
+    {
+      "credit": 561,
+      "rate": 0.2139
+    },
+    {
+      "credit": 569,
+      "rate": 0.2269
+    },
+    {
+      "credit": 585,
+      "rate": 0.2703
+    },
+    {
+      "credit": 562,
+      "rate": 0.2954
+    },
+    {
+      "credit": 609,
+      "rate": 0.1907
+    },
+    {
+      "credit": 645,
+      "rate": 0.208
+    },
+    {
+      "credit": 642,
+      "rate": 0.2277
+    },
+    {
+      "credit": 528,
+      "rate": 0.2688
+    },
+    {
+      "credit": 537,
+      "rate": 0.2466
+    },
+    {
+      "credit": 582,
+      "rate": 0.2505
+    },
+    {
+      "credit": 453,
+      "rate": 0.4191
+    },
+    {
+      "credit": 565,
+      "rate": 0.2406
+    },
+    {
+      "credit": 579,
+      "rate": 0.1844
+    },
+    {
+      "credit": 568,
+      "rate": 0.1902
+    },
+    {
+      "credit": 576,
+      "rate": 0.2425
+    },
+    {
+      "credit": 591,
+      "rate": 0.2484
+    },
+    {
+      "credit": 580,
+      "rate": 0.2139
+    },
+    {
+      "credit": 552,
+      "rate": 0.3222
+    },
+    {
+      "credit": 529,
+      "rate": 0.2315
+    },
+    {
+      "credit": 584,
+      "rate": 0.2482
+    },
+    {
+      "credit": 599,
+      "rate": 0.1911
+    },
+    {
+      "credit": 566,
+      "rate": 0.2483
+    },
+    {
+      "credit": 629,
+      "rate": 0.1623
+    },
+    {
+      "credit": 562,
+      "rate": 0.2216
+    },
+    {
+      "credit": 556,
+      "rate": 0.2564
+    },
+    {
+      "credit": 610,
+      "rate": 0.2022
+    },
+    {
+      "credit": 520,
+      "rate": 0.2596
+    },
+    {
+      "credit": 499,
+      "rate": 0.2894
+    },
+    {
+      "credit": 588,
+      "rate": 0.1552
+    },
+    {
+      "credit": 587,
+      "rate": 0.2128
+    },
+    {
+      "credit": 514,
+      "rate": 0.2612
+    },
+    {
+      "credit": 634,
+      "rate": 0.1835
+    },
+    {
+      "credit": 555,
+      "rate": 0.2202
+    },
+    {
+      "credit": 503,
+      "rate": 0.2759
+    },
+    {
+      "credit": 596,
+      "rate": 0.2356
+    },
+    {
+      "credit": 560,
+      "rate": 0.2659
+    },
+    {
+      "credit": 629,
+      "rate": 0.1849
+    },
+    {
+      "credit": 583,
+      "rate": 0.2065
+    },
+    {
+      "credit": 541,
+      "rate": 0.2444
+    },
+    {
+      "credit": 609,
+      "rate": 0.3026
+    },
+    {
+      "credit": 608,
+      "rate": 0.2125
+    },
+    {
+      "credit": 546,
+      "rate": 0.245
+    },
+    {
+      "credit": 505,
+      "rate": 0.3791
+    },
+    {
+      "credit": 640,
+      "rate": 0.2293
+    },
+    {
+      "credit": 648,
+      "rate": 0.1803
+    },
+    {
+      "credit": 625,
+      "rate": 0.1886
+    },
+    {
+      "credit": 561,
+      "rate": 0.2084
+    },
+    {
+      "credit": 628,
+      "rate": 0.2374
+    },
+    {
+      "credit": 563,
+      "rate": 0.2329
+    },
+    {
+      "credit": 643,
+      "rate": 0.2182
+    },
+    {
+      "credit": 489,
+      "rate": 0.2213
+    },
+    {
+      "credit": 632,
+      "rate": 0.2947
+    },
+    {
+      "credit": 594,
+      "rate": 0.2572
+    },
+    {
+      "credit": 596,
+      "rate": 0.2007
+    },
+    {
+      "credit": 527,
+      "rate": 0.3251
+    },
+    {
+      "credit": 604,
+      "rate": 0.2476
+    },
+    {
+      "credit": 564,
+      "rate": 0.2518
+    },
+    {
+      "credit": 591,
+      "rate": 0.2242
+    },
+    {
+      "credit": 598,
+      "rate": 0.2803
+    },
+    {
+      "credit": 582,
+      "rate": 0.2056
+    },
+    {
+      "credit": 561,
+      "rate": 0.2167
+    },
+    {
+      "credit": 646,
+      "rate": 0.2497
+    },
+    {
+      "credit": 613,
+      "rate": 0.1931
+    },
+    {
+      "credit": 629,
+      "rate": 0.1978
+    },
+    {
+      "credit": 577,
+      "rate": 0.2474
+    },
+    {
+      "credit": 537,
+      "rate": 0.2522
+    },
+    {
+      "credit": 612,
+      "rate": 0.2032
+    },
+    {
+      "credit": 514,
+      "rate": 0.261
+    },
+    {
+      "credit": 511,
+      "rate": 0.3
+    },
+    {
+      "credit": 576,
+      "rate": 0.1982
+    },
+    {
+      "credit": 588,
+      "rate": 0.2283
+    },
+    {
+      "credit": 549,
+      "rate": 0.2361
+    },
+    {
+      "credit": 580,
+      "rate": 0.2356
+    },
+    {
+      "credit": 579,
+      "rate": 0.2514
+    },
+    {
+      "credit": 611,
+      "rate": 0.233
+    },
+    {
+      "credit": 553,
+      "rate": 0.2747
+    },
+    {
+      "credit": 567,
+      "rate": 0.2393
+    },
+    {
+      "credit": 508,
+      "rate": 0.3163
+    },
+    {
+      "credit": 477,
+      "rate": 0.2229
+    },
+    {
+      "credit": 587,
+      "rate": 0.2357
+    },
+    {
+      "credit": 604,
+      "rate": 0.2244
+    },
+    {
+      "credit": 562,
+      "rate": 0.2153
+    },
+    {
+      "credit": 592,
+      "rate": 0.2318
+    },
+    {
+      "credit": 568,
+      "rate": 0.2017
+    },
+    {
+      "credit": 568,
+      "rate": 0.2602
+    },
+    {
+      "credit": 472,
+      "rate": 0.3326
+    },
+    {
+      "credit": 507,
+      "rate": 0.2889
+    },
+    {
+      "credit": 618,
+      "rate": 0.1662
+    },
+    {
+      "credit": 613,
+      "rate": 0.275
+    },
+    {
+      "credit": 642,
+      "rate": 0.1787
+    },
+    {
+      "credit": 561,
+      "rate": 0.2374
+    },
+    {
+      "credit": 580,
+      "rate": 0.2554
+    },
+    {
+      "credit": 582,
+      "rate": 0.2267
+    },
+    {
+      "credit": 549,
+      "rate": 0.2289
+    },
+    {
+      "credit": 623,
+      "rate": 0.2373
+    },
+    {
+      "credit": 544,
+      "rate": 0.2776
+    },
+    {
+      "credit": 614,
+      "rate": 0.2175
+    },
+    {
+      "credit": 589,
+      "rate": 0.2678
+    },
+    {
+      "credit": 607,
+      "rate": 0.2521
+    },
+    {
+      "credit": 598,
+      "rate": 0.2381
+    },
+    {
+      "credit": 463,
+      "rate": 0.2492
+    },
+    {
+      "credit": 568,
+      "rate": 0.2891
+    },
+    {
+      "credit": 603,
+      "rate": 0.2436
+    },
+    {
+      "credit": 569,
+      "rate": 0.2259
+    },
+    {
+      "credit": 509,
+      "rate": 0.3206
+    },
+    {
+      "credit": 641,
+      "rate": 0.2047
+    },
+    {
+      "credit": 625,
+      "rate": 0.1777
+    },
+    {
+      "credit": 605,
+      "rate": 0.2199
+    },
+    {
+      "credit": 556,
+      "rate": 0.2505
+    },
+    {
+      "credit": 609,
+      "rate": 0.2374
+    },
+    {
+      "credit": 609,
+      "rate": 0.1749
+    },
+    {
+      "credit": 602,
+      "rate": 0.2347
+    },
+    {
+      "credit": 541,
+      "rate": 0.2928
+    },
+    {
+      "credit": 629,
+      "rate": 0.2004
+    },
+    {
+      "credit": 536,
+      "rate": 0.2889
+    },
+    {
+      "credit": 596,
+      "rate": 0.2628
+    },
+    {
+      "credit": 593,
+      "rate": 0.2501
+    },
+    {
+      "credit": 520,
+      "rate": 0.3184
+    },
+    {
+      "credit": 476,
+      "rate": 0.2937
+    },
+    {
+      "credit": 618,
+      "rate": 0.2211
+    },
+    {
+      "credit": 586,
+      "rate": 0.2782
+    },
+    {
+      "credit": 507,
+      "rate": 0.3314
+    },
+    {
+      "credit": 547,
+      "rate": 0.3078
+    },
+    {
+      "credit": 610,
+      "rate": 0.2306
+    },
+    {
+      "credit": 581,
+      "rate": 0.1971
+    },
+    {
+      "credit": 615,
+      "rate": 0.2128
+    },
+    {
+      "credit": 627,
+      "rate": 0.222
+    },
+    {
+      "credit": 627,
+      "rate": 0.1865
+    },
+    {
+      "credit": 624,
+      "rate": 0.1996
+    },
+    {
+      "credit": 636,
+      "rate": 0.2058
+    },
+    {
+      "credit": 585,
+      "rate": 0.2081
+    },
+    {
+      "credit": 589,
+      "rate": 0.2682
+    },
+    {
+      "credit": 511,
+      "rate": 0.3568
+    },
+    {
+      "credit": 593,
+      "rate": 0.2891
+    },
+    {
+      "credit": 628,
+      "rate": 0.2508
+    },
+    {
+      "credit": 549,
+      "rate": 0.2839
+    },
+    {
+      "credit": 609,
+      "rate": 0.1863
+    },
+    {
+      "credit": 564,
+      "rate": 0.2256
+    },
+    {
+      "credit": 597,
+      "rate": 0.2317
+    },
+    {
+      "credit": 486,
+      "rate": 0.2525
+    },
+    {
+      "credit": 621,
+      "rate": 0.211
+    },
+    {
+      "credit": 599,
+      "rate": 0.188
+    },
+    {
+      "credit": 502,
+      "rate": 0.2857
+    },
+    {
+      "credit": 579,
+      "rate": 0.2761
+    },
+    {
+      "credit": 489,
+      "rate": 0.2522
+    },
+    {
+      "credit": 589,
+      "rate": 0.2167
+    },
+    {
+      "credit": 548,
+      "rate": 0.2838
+    },
+    {
+      "credit": 543,
+      "rate": 0.2146
+    },
+    {
+      "credit": 551,
+      "rate": 0.2127
+    },
+    {
+      "credit": 532,
+      "rate": 0.3117
+    },
+    {
+      "credit": 493,
+      "rate": 0.3021
+    },
+    {
+      "credit": 525,
+      "rate": 0.2073
+    },
+    {
+      "credit": 617,
+      "rate": 0.2159
+    },
+    {
+      "credit": 585,
+      "rate": 0.2434
+    },
+    {
+      "credit": 569,
+      "rate": 0.2443
+    },
+    {
+      "credit": 633,
+      "rate": 0.1738
+    },
+    {
+      "credit": 632,
+      "rate": 0.1912
+    },
+    {
+      "credit": 477,
+      "rate": 0.2532
+    },
+    {
+      "credit": 452,
+      "rate": 0.233
+    },
+    {
+      "credit": 608,
+      "rate": 0.1925
+    },
+    {
+      "credit": 616,
+      "rate": 0.2534
+    },
+    {
+      "credit": 641,
+      "rate": 0.195
+    },
+    {
+      "credit": 621,
+      "rate": 0.2344
+    },
+    {
+      "credit": 599,
+      "rate": 0.2209
+    },
+    {
+      "credit": 556,
+      "rate": 0.1898
+    },
+    {
+      "credit": 566,
+      "rate": 0.2084
+    },
+    {
+      "credit": 567,
+      "rate": 0.2467
+    },
+    {
+      "credit": 601,
+      "rate": 0.3119
+    },
+    {
+      "credit": 552,
+      "rate": 0.2344
+    },
+    {
+      "credit": 563,
+      "rate": 0.2993
+    },
+    {
+      "credit": 637,
+      "rate": 0.181
+    },
+    {
+      "credit": 603,
+      "rate": 0.2278
+    },
+    {
+      "credit": 604,
+      "rate": 0.1754
+    },
+    {
+      "credit": 514,
+      "rate": 0.2356
+    },
+    {
+      "credit": 538,
+      "rate": 0.2584
+    },
+    {
+      "credit": 490,
+      "rate": 0.3241
+    },
+    {
+      "credit": 549,
+      "rate": 0.21
+    },
+    {
+      "credit": 547,
+      "rate": 0.2668
+    },
+    {
+      "credit": 610,
+      "rate": 0.208
+    },
+    {
+      "credit": 535,
+      "rate": 0.2304
+    },
+    {
+      "credit": 581,
+      "rate": 0.2684
+    },
+    {
+      "credit": 607,
+      "rate": 0.2765
+    },
+    {
+      "credit": 613,
+      "rate": 0.2059
+    },
+    {
+      "credit": 527,
+      "rate": 0.2539
+    },
+    {
+      "credit": 623,
+      "rate": 0.1615
+    },
+    {
+      "credit": 537,
+      "rate": 0.2403
+    },
+    {
+      "credit": 514,
+      "rate": 0.3241
+    },
+    {
+      "credit": 631,
+      "rate": 0.2099
+    },
+    {
+      "credit": 547,
+      "rate": 0.2578
+    },
+    {
+      "credit": 566,
+      "rate": 0.3321
+    },
+    {
+      "credit": 628,
+      "rate": 0.2107
+    },
+    {
+      "credit": 591,
+      "rate": 0.2342
+    },
+    {
+      "credit": 661,
+      "rate": 0.2091
+    },
+    {
+      "credit": 636,
+      "rate": 0.1332
+    },
+    {
+      "credit": 508,
+      "rate": 0.2673
+    },
+    {
+      "credit": 589,
+      "rate": 0.2353
+    },
+    {
+      "credit": 623,
+      "rate": 0.1908
+    },
+    {
+      "credit": 616,
+      "rate": 0.2594
+    },
+    {
+      "credit": 571,
+      "rate": 0.2525
+    },
+    {
+      "credit": 620,
+      "rate": 0.2
+    },
+    {
+      "credit": 591,
+      "rate": 0.2624
+    },
+    {
+      "credit": 567,
+      "rate": 0.1897
+    },
+    {
+      "credit": 509,
+      "rate": 0.2421
+    },
+    {
+      "credit": 594,
+      "rate": 0.2025
+    },
+    {
+      "credit": 517,
+      "rate": 0.2503
+    },
+    {
+      "credit": 605,
+      "rate": 0.2149
+    },
+    {
+      "credit": 485,
+      "rate": 0.2652
+    },
+    {
+      "credit": 468,
+      "rate": 0.2511
+    },
+    {
+      "credit": 545,
+      "rate": 0.2183
+    },
+    {
+      "credit": 522,
+      "rate": 0.2516
+    },
+    {
+      "credit": 562,
+      "rate": 0.2442
+    },
+    {
+      "credit": 598,
+      "rate": 0.2667
+    },
+    {
+      "credit": 572,
+      "rate": 0.2048
+    },
+    {
+      "credit": 536,
+      "rate": 0.3071
+    },
+    {
+      "credit": 613,
+      "rate": 0.1636
+    },
+    {
+      "credit": 536,
+      "rate": 0.2744
+    },
+    {
+      "credit": 568,
+      "rate": 0.2423
+    },
+    {
+      "credit": 642,
+      "rate": 0.2213
+    },
+    {
+      "credit": 657,
+      "rate": 0.1949
+    },
+    {
+      "credit": 604,
+      "rate": 0.1951
+    },
+    {
+      "credit": 488,
+      "rate": 0.2552
+    },
+    {
+      "credit": 612,
+      "rate": 0.2324
+    },
+    {
+      "credit": 570,
+      "rate": 0.2653
+    },
+    {
+      "credit": 572,
+      "rate": 0.1898
+    },
+    {
+      "credit": 602,
+      "rate": 0.2113
+    },
+    {
+      "credit": 642,
+      "rate": 0.233
+    },
+    {
+      "credit": 558,
+      "rate": 0.2208
+    },
+    {
+      "credit": 574,
+      "rate": 0.2325
+    },
+    {
+      "credit": 643,
+      "rate": 0.1963
+    },
+    {
+      "credit": 544,
+      "rate": 0.237
+    },
+    {
+      "credit": 584,
+      "rate": 0.2628
+    },
+    {
+      "credit": 533,
+      "rate": 0.2615
+    },
+    {
+      "credit": 645,
+      "rate": 0.1711
+    },
+    {
+      "credit": 582,
+      "rate": 0.2474
+    },
+    {
+      "credit": 666,
+      "rate": 0.1565
+    },
+    {
+      "credit": 631,
+      "rate": 0.2093
+    },
+    {
+      "credit": 583,
+      "rate": 0.257
+    },
+    {
+      "credit": 603,
+      "rate": 0.254
+    },
+    {
+      "credit": 615,
+      "rate": 0.2086
+    },
+    {
+      "credit": 552,
+      "rate": 0.2943
+    },
+    {
+      "credit": 643,
+      "rate": 0.238
+    },
+    {
+      "credit": 466,
+      "rate": 0.2721
+    },
+    {
+      "credit": 462,
+      "rate": 0.3218
+    },
+    {
+      "credit": 556,
+      "rate": 0.2141
+    },
+    {
+      "credit": 633,
+      "rate": 0.1854
+    },
+    {
+      "credit": 614,
+      "rate": 0.2329
+    },
+    {
+      "credit": 623,
+      "rate": 0.2109
+    },
+    {
+      "credit": 583,
+      "rate": 0.236
+    },
+    {
+      "credit": 622,
+      "rate": 0.178
+    },
+    {
+      "credit": 584,
+      "rate": 0.3148
+    },
+    {
+      "credit": 566,
+      "rate": 0.2099
+    },
+    {
+      "credit": 551,
+      "rate": 0.2473
+    },
+    {
+      "credit": 627,
+      "rate": 0.1949
+    },
+    {
+      "credit": 498,
+      "rate": 0.3036
+    },
+    {
+      "credit": 525,
+      "rate": 0.2563
+    },
+    {
+      "credit": 632,
+      "rate": 0.1806
+    },
+    {
+      "credit": 610,
+      "rate": 0.2362
+    },
+    {
+      "credit": 626,
+      "rate": 0.2034
+    },
+    {
+      "credit": 501,
+      "rate": 0.2237
+    },
+    {
+      "credit": 552,
+      "rate": 0.2652
+    },
+    {
+      "credit": 624,
+      "rate": 0.2693
+    },
+    {
+      "credit": 498,
+      "rate": 0.2508
+    },
+    {
+      "credit": 606,
+      "rate": 0.2146
+    },
+    {
+      "credit": 532,
+      "rate": 0.2355
+    },
+    {
+      "credit": 555,
+      "rate": 0.2596
+    },
+    {
+      "credit": 514,
+      "rate": 0.2684
+    },
+    {
+      "credit": 610,
+      "rate": 0.2463
+    },
+    {
+      "credit": 525,
+      "rate": 0.288
+    },
+    {
+      "credit": 589,
+      "rate": 0.2429
+    },
+    {
+      "credit": 515,
+      "rate": 0.2032
+    },
+    {
+      "credit": 544,
+      "rate": 0.2901
+    },
+    {
+      "credit": 652,
+      "rate": 0.2165
+    },
+    {
+      "credit": 508,
+      "rate": 0.2855
+    },
+    {
+      "credit": 580,
+      "rate": 0.2136
+    },
+    {
+      "credit": 586,
+      "rate": 0.2506
+    },
+    {
+      "credit": 525,
+      "rate": 0.3073
+    },
+    {
+      "credit": 554,
+      "rate": 0.2643
+    },
+    {
+      "credit": 633,
+      "rate": 0.21
+    },
+    {
+      "credit": 614,
+      "rate": 0.2013
+    },
+    {
+      "credit": 618,
+      "rate": 0.1817
+    },
+    {
+      "credit": 574,
+      "rate": 0.1882
+    },
+    {
+      "credit": 579,
+      "rate": 0.2145
+    },
+    {
+      "credit": 606,
+      "rate": 0.1734
+    },
+    {
+      "credit": 639,
+      "rate": 0.2177
+    },
+    {
+      "credit": 549,
+      "rate": 0.211
+    },
+    {
+      "credit": 652,
+      "rate": 0.2025
+    },
+    {
+      "credit": 522,
+      "rate": 0.2706
+    },
+    {
+      "credit": 541,
+      "rate": 0.2323
+    },
+    {
+      "credit": 530,
+      "rate": 0.2599
+    },
+    {
+      "credit": 622,
+      "rate": 0.1763
+    },
+    {
+      "credit": 595,
+      "rate": 0.2117
+    },
+    {
+      "credit": 482,
+      "rate": 0.2204
+    },
+    {
+      "credit": 567,
+      "rate": 0.2088
+    },
+    {
+      "credit": 493,
+      "rate": 0.2994
+    },
+    {
+      "credit": 624,
+      "rate": 0.1888
+    },
+    {
+      "credit": 571,
+      "rate": 0.2304
+    },
+    {
+      "credit": 556,
+      "rate": 0.248
+    },
+    {
+      "credit": 501,
+      "rate": 0.2519
+    },
+    {
+      "credit": 469,
+      "rate": 0.2988
+    },
+    {
+      "credit": 531,
+      "rate": 0.2228
+    },
+    {
+      "credit": 621,
+      "rate": 0.203
+    },
+    {
+      "credit": 553,
+      "rate": 0.2596
+    },
+    {
+      "credit": 619,
+      "rate": 0.2272
+    },
+    {
+      "credit": 573,
+      "rate": 0.2199
+    },
+    {
+      "credit": 603,
+      "rate": 0.2432
+    },
+    {
+      "credit": 560,
+      "rate": 0.2689
+    },
+    {
+      "credit": 575,
+      "rate": 0.2069
+    },
+    {
+      "credit": 483,
+      "rate": 0.2947
+    },
+    {
+      "credit": 586,
+      "rate": 0.1882
+    },
+    {
+      "credit": 596,
+      "rate": 0.2421
+    },
+    {
+      "credit": 502,
+      "rate": 0.2518
+    },
+    {
+      "credit": 621,
+      "rate": 0.1973
+    },
+    {
+      "credit": 607,
+      "rate": 0.2103
+    },
+    {
+      "credit": 564,
+      "rate": 0.2084
+    },
+    {
+      "credit": 627,
+      "rate": 0.1692
+    },
+    {
+      "credit": 546,
+      "rate": 0.2581
+    },
+    {
+      "credit": 568,
+      "rate": 0.2156
+    },
+    {
+      "credit": 590,
+      "rate": 0.2797
+    },
+    {
+      "credit": 595,
+      "rate": 0.2298
+    },
+    {
+      "credit": 566,
+      "rate": 0.2127
+    },
+    {
+      "credit": 557,
+      "rate": 0.2715
+    },
+    {
+      "credit": 675,
+      "rate": 0.1902
+    },
+    {
+      "credit": 639,
+      "rate": 0.2308
+    },
+    {
+      "credit": 663,
+      "rate": 0.2119
+    },
+    {
+      "credit": 530,
+      "rate": 0.2538
+    },
+    {
+      "credit": 610,
+      "rate": 0.2462
+    },
+    {
+      "credit": 578,
+      "rate": 0.2624
+    },
+    {
+      "credit": 616,
+      "rate": 0.2258
+    },
+    {
+      "credit": 585,
+      "rate": 0.2623
+    },
+    {
+      "credit": 567,
+      "rate": 0.2359
+    },
+    {
+      "credit": 444,
+      "rate": 0.3995
+    },
+    {
+      "credit": 563,
+      "rate": 0.2025
+    },
+    {
+      "credit": 578,
+      "rate": 0.2304
+    },
+    {
+      "credit": 623,
+      "rate": 0.192
+    },
+    {
+      "credit": 635,
+      "rate": 0.1907
+    },
+    {
+      "credit": 571,
+      "rate": 0.2448
+    },
+    {
+      "credit": 441,
+      "rate": 0.2589
+    },
+    {
+      "credit": 625,
+      "rate": 0.1981
+    },
+    {
+      "credit": 602,
+      "rate": 0.3047
+    },
+    {
+      "credit": 598,
+      "rate": 0.2731
+    },
+    {
+      "credit": 552,
+      "rate": 0.2481
+    },
+    {
+      "credit": 571,
+      "rate": 0.2837
+    },
+    {
+      "credit": 609,
+      "rate": 0.2782
+    },
+    {
+      "credit": 591,
+      "rate": 0.2427
+    },
+    {
+      "credit": 562,
+      "rate": 0.3021
+    },
+    {
+      "credit": 540,
+      "rate": 0.2016
+    },
+    {
+      "credit": 607,
+      "rate": 0.2131
+    },
+    {
+      "credit": 631,
+      "rate": 0.2251
+    },
+    {
+      "credit": 596,
+      "rate": 0.2152
+    },
+    {
+      "credit": 635,
+      "rate": 0.2125
+    },
+    {
+      "credit": 438,
+      "rate": 0.3468
+    },
+    {
+      "credit": 603,
+      "rate": 0.2915
+    },
+    {
+      "credit": 508,
+      "rate": 0.2652
+    },
+    {
+      "credit": 562,
+      "rate": 0.2965
+    },
+    {
+      "credit": 577,
+      "rate": 0.2726
+    },
+    {
+      "credit": 609,
+      "rate": 0.2644
+    },
+    {
+      "credit": 640,
+      "rate": 0.2251
+    },
+    {
+      "credit": 472,
+      "rate": 0.3527
+    },
+    {
+      "credit": 519,
+      "rate": 0.2488
+    },
+    {
+      "credit": 626,
+      "rate": 0.2243
+    },
+    {
+      "credit": 562,
+      "rate": 0.2575
+    },
+    {
+      "credit": 638,
+      "rate": 0.2556
+    },
+    {
+      "credit": 475,
+      "rate": 0.2904
+    },
+    {
+      "credit": 514,
+      "rate": 0.2831
+    },
+    {
+      "credit": 560,
+      "rate": 0.2736
+    },
+    {
+      "credit": 643,
+      "rate": 0.2367
+    },
+    {
+      "credit": 543,
+      "rate": 0.3186
+    },
+    {
+      "credit": 605,
+      "rate": 0.2303
+    },
+    {
+      "credit": 606,
+      "rate": 0.2063
+    },
+    {
+      "credit": 522,
+      "rate": 0.2321
+    },
+    {
+      "credit": 607,
+      "rate": 0.3065
+    },
+    {
+      "credit": 570,
+      "rate": 0.1594
+    },
+    {
+      "credit": 597,
+      "rate": 0.2419
+    },
+    {
+      "credit": 606,
+      "rate": 0.2481
+    },
+    {
+      "credit": 574,
+      "rate": 0.2492
+    },
+    {
+      "credit": 528,
+      "rate": 0.2347
+    },
+    {
+      "credit": 599,
+      "rate": 0.1493
+    },
+    {
+      "credit": 454,
+      "rate": 0.366
+    },
+    {
+      "credit": 593,
+      "rate": 0.2055
+    },
+    {
+      "credit": 497,
+      "rate": 0.2649
+    },
+    {
+      "credit": 612,
+      "rate": 0.1885
+    },
+    {
+      "credit": 591,
+      "rate": 0.1999
+    },
+    {
+      "credit": 467,
+      "rate": 0.2543
+    },
+    {
+      "credit": 570,
+      "rate": 0.2727
+    },
+    {
+      "credit": 598,
+      "rate": 0.2427
+    },
+    {
+      "credit": 474,
+      "rate": 0.3017
+    },
+    {
+      "credit": 507,
+      "rate": 0.2607
+    },
+    {
+      "credit": 589,
+      "rate": 0.2614
+    },
+    {
+      "credit": 531,
+      "rate": 0.2763
+    },
+    {
+      "credit": 501,
+      "rate": 0.2739
+    },
+    {
+      "credit": 484,
+      "rate": 0.2322
+    },
+    {
+      "credit": 576,
+      "rate": 0.2377
+    },
+    {
+      "credit": 559,
+      "rate": 0.2883
+    },
+    {
+      "credit": 558,
+      "rate": 0.2359
+    },
+    {
+      "credit": 613,
+      "rate": 0.2346
+    },
+    {
+      "credit": 605,
+      "rate": 0.1882
+    },
+    {
+      "credit": 521,
+      "rate": 0.2766
+    },
+    {
+      "credit": 457,
+      "rate": 0.3086
+    },
+    {
+      "credit": 620,
+      "rate": 0.2222
+    },
+    {
+      "credit": 667,
+      "rate": 0.1891
+    },
+    {
+      "credit": 526,
+      "rate": 0.2429
+    },
+    {
+      "credit": 593,
+      "rate": 0.2312
+    },
+    {
+      "credit": 531,
+      "rate": 0.2739
+    },
+    {
+      "credit": 543,
+      "rate": 0.2221
+    },
+    {
+      "credit": 616,
+      "rate": 0.242
+    },
+    {
+      "credit": 462,
+      "rate": 0.2731
+    },
+    {
+      "credit": 664,
+      "rate": 0.2035
+    },
+    {
+      "credit": 516,
+      "rate": 0.2426
+    },
+    {
+      "credit": 558,
+      "rate": 0.2954
+    },
+    {
+      "credit": 575,
+      "rate": 0.188
+    },
+    {
+      "credit": 616,
+      "rate": 0.2145
+    },
+    {
+      "credit": 606,
+      "rate": 0.2272
+    },
+    {
+      "credit": 594,
+      "rate": 0.1718
+    },
+    {
+      "credit": 549,
+      "rate": 0.2283
+    },
+    {
+      "credit": 633,
+      "rate": 0.1816
+    },
+    {
+      "credit": 598,
+      "rate": 0.1986
+    },
+    {
+      "credit": 479,
+      "rate": 0.2712
+    },
+    {
+      "credit": 605,
+      "rate": 0.1529
+    },
+    {
+      "credit": 550,
+      "rate": 0.308
+    },
+    {
+      "credit": 480,
+      "rate": 0.2909
+    },
+    {
+      "credit": 553,
+      "rate": 0.2519
+    },
+    {
+      "credit": 565,
+      "rate": 0.2055
+    },
+    {
+      "credit": 618,
+      "rate": 0.2046
+    },
+    {
+      "credit": 618,
+      "rate": 0.1839
+    },
+    {
+      "credit": 651,
+      "rate": 0.209
+    },
+    {
+      "credit": 544,
+      "rate": 0.2052
+    },
+    {
+      "credit": 551,
+      "rate": 0.2421
+    },
+    {
+      "credit": 683,
+      "rate": 0.1599
+    },
+    {
+      "credit": 548,
+      "rate": 0.286
+    },
+    {
+      "credit": 621,
+      "rate": 0.2471
+    },
+    {
+      "credit": 626,
+      "rate": 0.2438
+    },
+    {
+      "credit": 575,
+      "rate": 0.2101
+    },
+    {
+      "credit": 603,
+      "rate": 0.2348
+    },
+    {
+      "credit": 607,
+      "rate": 0.2271
+    },
+    {
+      "credit": 631,
+      "rate": 0.2177
+    },
+    {
+      "credit": 538,
+      "rate": 0.2638
+    },
+    {
+      "credit": 540,
+      "rate": 0.2756
+    },
+    {
+      "credit": 541,
+      "rate": 0.2296
+    },
+    {
+      "credit": 615,
+      "rate": 0.1962
+    },
+    {
+      "credit": 609,
+      "rate": 0.168
+    },
+    {
+      "credit": 504,
+      "rate": 0.2578
+    },
+    {
+      "credit": 464,
+      "rate": 0.3078
+    },
+    {
+      "credit": 570,
+      "rate": 0.2327
+    },
+    {
+      "credit": 581,
+      "rate": 0.2303
+    },
+    {
+      "credit": 412,
+      "rate": 0.291
+    },
+    {
+      "credit": 620,
+      "rate": 0.1739
+    },
+    {
+      "credit": 610,
+      "rate": 0.1816
+    },
+    {
+      "credit": 565,
+      "rate": 0.233
+    },
+    {
+      "credit": 500,
+      "rate": 0.2603
+    },
+    {
+      "credit": 575,
+      "rate": 0.2305
+    },
+    {
+      "credit": 540,
+      "rate": 0.3522
+    },
+    {
+      "credit": 557,
+      "rate": 0.2653
+    },
+    {
+      "credit": 612,
+      "rate": 0.2305
+    },
+    {
+      "credit": 626,
+      "rate": 0.1553
+    },
+    {
+      "credit": 521,
+      "rate": 0.2212
+    },
+    {
+      "credit": 568,
+      "rate": 0.2487
+    },
+    {
+      "credit": 583,
+      "rate": 0.1933
+    },
+    {
+      "credit": 584,
+      "rate": 0.244
+    },
+    {
+      "credit": 643,
+      "rate": 0.1518
+    },
+    {
+      "credit": 540,
+      "rate": 0.1959
+    },
+    {
+      "credit": 611,
+      "rate": 0.2291
+    },
+    {
+      "credit": 569,
+      "rate": 0.2834
+    },
+    {
+      "credit": 648,
+      "rate": 0.1842
+    },
+    {
+      "credit": 564,
+      "rate": 0.2496
+    },
+    {
+      "credit": 487,
+      "rate": 0.3229
+    },
+    {
+      "credit": 474,
+      "rate": 0.2627
+    },
+    {
+      "credit": 581,
+      "rate": 0.2496
+    },
+    {
+      "credit": 515,
+      "rate": 0.2481
+    },
+    {
+      "credit": 638,
+      "rate": 0.2148
+    },
+    {
+      "credit": 570,
+      "rate": 0.2423
+    },
+    {
+      "credit": 585,
+      "rate": 0.1836
+    },
+    {
+      "credit": 615,
+      "rate": 0.1724
+    },
+    {
+      "credit": 611,
+      "rate": 0.1978
+    },
+    {
+      "credit": 507,
+      "rate": 0.2626
+    },
+    {
+      "credit": 660,
+      "rate": 0.1965
+    },
+    {
+      "credit": 523,
+      "rate": 0.3201
+    },
+    {
+      "credit": 537,
+      "rate": 0.2495
+    },
+    {
+      "credit": 457,
+      "rate": 0.2382
+    },
+    {
+      "credit": 628,
+      "rate": 0.1511
+    },
+    {
+      "credit": 496,
+      "rate": 0.3841
+    },
+    {
+      "credit": 583,
+      "rate": 0.2636
+    },
+    {
+      "credit": 491,
+      "rate": 0.2982
+    },
+    {
+      "credit": 614,
+      "rate": 0.201
+    },
+    {
+      "credit": 596,
+      "rate": 0.1449
+    },
+    {
+      "credit": 545,
+      "rate": 0.2945
+    },
+    {
+      "credit": 475,
+      "rate": 0.2551
+    },
+    {
+      "credit": 612,
+      "rate": 0.1902
+    },
+    {
+      "credit": 473,
+      "rate": 0.2576
+    },
+    {
+      "credit": 625,
+      "rate": 0.2114
+    },
+    {
+      "credit": 542,
+      "rate": 0.2629
+    },
+    {
+      "credit": 664,
+      "rate": 0.1721
+    },
+    {
+      "credit": 488,
+      "rate": 0.2472
+    },
+    {
+      "credit": 547,
+      "rate": 0.2544
+    },
+    {
+      "credit": 482,
+      "rate": 0.2587
+    },
+    {
+      "credit": 528,
+      "rate": 0.2729
+    },
+    {
+      "credit": 607,
+      "rate": 0.2043
+    },
+    {
+      "credit": 543,
+      "rate": 0.213
+    },
+    {
+      "credit": 585,
+      "rate": 0.2799
+    },
+    {
+      "credit": 585,
+      "rate": 0.228
+    },
+    {
+      "credit": 533,
+      "rate": 0.2652
+    },
+    {
+      "credit": 488,
+      "rate": 0.2403
+    },
+    {
+      "credit": 577,
+      "rate": 0.2167
+    },
+    {
+      "credit": 572,
+      "rate": 0.2546
+    },
+    {
+      "credit": 543,
+      "rate": 0.2748
+    },
+    {
+      "credit": 638,
+      "rate": 0.1602
+    },
+    {
+      "credit": 582,
+      "rate": 0.2548
+    },
+    {
+      "credit": 499,
+      "rate": 0.3525
+    },
+    {
+      "credit": 615,
+      "rate": 0.2765
+    },
+    {
+      "credit": 528,
+      "rate": 0.2331
+    },
+    {
+      "credit": 577,
+      "rate": 0.2236
+    },
+    {
+      "credit": 572,
+      "rate": 0.2053
+    },
+    {
+      "credit": 592,
+      "rate": 0.2283
+    },
+    {
+      "credit": 459,
+      "rate": 0.2671
+    },
+    {
+      "credit": 483,
+      "rate": 0.3421
+    },
+    {
+      "credit": 519,
+      "rate": 0.268
+    },
+    {
+      "credit": 458,
+      "rate": 0.2763
+    },
+    {
+      "credit": 593,
+      "rate": 0.2523
+    },
+    {
+      "credit": 666,
+      "rate": 0.2051
+    },
+    {
+      "credit": 593,
+      "rate": 0.2088
+    },
+    {
+      "credit": 527,
+      "rate": 0.2513
+    },
+    {
+      "credit": 652,
+      "rate": 0.2006
+    },
+    {
+      "credit": 646,
+      "rate": 0.2
+    },
+    {
+      "credit": 593,
+      "rate": 0.1988
+    },
+    {
+      "credit": 564,
+      "rate": 0.2931
+    },
+    {
+      "credit": 577,
+      "rate": 0.2264
+    },
+    {
+      "credit": 596,
+      "rate": 0.2448
+    },
+    {
+      "credit": 566,
+      "rate": 0.1765
+    },
+    {
+      "credit": 674,
+      "rate": 0.2085
+    },
+    {
+      "credit": 607,
+      "rate": 0.2179
+    },
+    {
+      "credit": 586,
+      "rate": 0.1941
+    },
+    {
+      "credit": 629,
+      "rate": 0.2447
+    },
+    {
+      "credit": 489,
+      "rate": 0.2271
+    },
+    {
+      "credit": 599,
+      "rate": 0.2191
+    },
+    {
+      "credit": 402,
+      "rate": 0.3418
+    },
+    {
+      "credit": 444,
+      "rate": 0.2592
+    },
+    {
+      "credit": 590,
+      "rate": 0.2707
+    },
+    {
+      "credit": 609,
+      "rate": 0.2185
+    },
+    {
+      "credit": 593,
+      "rate": 0.1854
+    },
+    {
+      "credit": 559,
+      "rate": 0.2541
+    },
+    {
+      "credit": 607,
+      "rate": 0.2646
+    },
+    {
+      "credit": 619,
+      "rate": 0.1948
+    },
+    {
+      "credit": 678,
+      "rate": 0.165
+    },
+    {
+      "credit": 609,
+      "rate": 0.2556
+    },
+    {
+      "credit": 525,
+      "rate": 0.2879
+    },
+    {
+      "credit": 546,
+      "rate": 0.2053
+    },
+    {
+      "credit": 587,
+      "rate": 0.2285
+    },
+    {
+      "credit": 576,
+      "rate": 0.1914
+    },
+    {
+      "credit": 500,
+      "rate": 0.2606
+    },
+    {
+      "credit": 639,
+      "rate": 0.1531
+    },
+    {
+      "credit": 635,
+      "rate": 0.2116
+    },
+    {
+      "credit": 531,
+      "rate": 0.2715
+    },
+    {
+      "credit": 504,
+      "rate": 0.2539
+    },
+    {
+      "credit": 587,
+      "rate": 0.2121
+    },
+    {
+      "credit": 532,
+      "rate": 0.2351
+    },
+    {
+      "credit": 481,
+      "rate": 0.2438
+    },
+    {
+      "credit": 524,
+      "rate": 0.3136
+    },
+    {
+      "credit": 561,
+      "rate": 0.2171
+    },
+    {
+      "credit": 571,
+      "rate": 0.1775
+    },
+    {
+      "credit": 552,
+      "rate": 0.223
+    },
+    {
+      "credit": 625,
+      "rate": 0.2106
+    },
+    {
+      "credit": 537,
+      "rate": 0.2042
+    },
+    {
+      "credit": 573,
+      "rate": 0.3003
+    },
+    {
+      "credit": 510,
+      "rate": 0.2526
+    },
+    {
+      "credit": 524,
+      "rate": 0.3425
+    },
+    {
+      "credit": 575,
+      "rate": 0.1808
+    },
+    {
+      "credit": 599,
+      "rate": 0.2226
+    },
+    {
+      "credit": 614,
+      "rate": 0.2288
+    },
+    {
+      "credit": 582,
+      "rate": 0.2269
+    },
+    {
+      "credit": 537,
+      "rate": 0.2628
+    },
+    {
+      "credit": 590,
+      "rate": 0.2108
+    },
+    {
+      "credit": 591,
+      "rate": 0.1716
+    },
+    {
+      "credit": 494,
+      "rate": 0.2602
+    },
+    {
+      "credit": 548,
+      "rate": 0.2407
+    },
+    {
+      "credit": 551,
+      "rate": 0.1921
+    },
+    {
+      "credit": 656,
+      "rate": 0.2477
+    },
+    {
+      "credit": 531,
+      "rate": 0.2764
+    },
+    {
+      "credit": 530,
+      "rate": 0.2462
+    },
+    {
+      "credit": 532,
+      "rate": 0.2886
+    },
+    {
+      "credit": 635,
+      "rate": 0.2476
+    },
+    {
+      "credit": 565,
+      "rate": 0.3061
+    },
+    {
+      "credit": 656,
+      "rate": 0.1966
+    },
+    {
+      "credit": 682,
+      "rate": 0.2246
+    },
+    {
+      "credit": 669,
+      "rate": 0.1562
+    },
+    {
+      "credit": 513,
+      "rate": 0.2499
+    },
+    {
+      "credit": 638,
+      "rate": 0.2179
+    },
+    {
+      "credit": 613,
+      "rate": 0.2158
+    },
+    {
+      "credit": 592,
+      "rate": 0.1562
+    },
+    {
+      "credit": 554,
+      "rate": 0.2544
+    },
+    {
+      "credit": 592,
+      "rate": 0.2079
+    },
+    {
+      "credit": 563,
+      "rate": 0.2246
+    },
+    {
+      "credit": 558,
+      "rate": 0.2333
+    },
+    {
+      "credit": 493,
+      "rate": 0.3092
+    },
+    {
+      "credit": 614,
+      "rate": 0.2241
+    },
+    {
+      "credit": 544,
+      "rate": 0.2272
+    },
+    {
+      "credit": 628,
+      "rate": 0.1717
+    },
+    {
+      "credit": 560,
+      "rate": 0.1792
+    },
+    {
+      "credit": 561,
+      "rate": 0.2341
+    },
+    {
+      "credit": 634,
+      "rate": 0.3307
+    },
+    {
+      "credit": 655,
+      "rate": 0.2142
+    },
+    {
+      "credit": 576,
+      "rate": 0.2495
+    },
+    {
+      "credit": 599,
+      "rate": 0.1895
+    },
+    {
+      "credit": 544,
+      "rate": 0.2832
+    },
+    {
+      "credit": 584,
+      "rate": 0.2032
+    },
+    {
+      "credit": 609,
+      "rate": 0.1841
+    },
+    {
+      "credit": 489,
+      "rate": 0.238
+    },
+    {
+      "credit": 435,
+      "rate": 0.2714
+    },
+    {
+      "credit": 531,
+      "rate": 0.2231
+    },
+    {
+      "credit": 655,
+      "rate": 0.1999
+    },
+    {
+      "credit": 592,
+      "rate": 0.2441
+    },
+    {
+      "credit": 575,
+      "rate": 0.2971
+    },
+    {
+      "credit": 650,
+      "rate": 0.1479
+    },
+    {
+      "credit": 546,
+      "rate": 0.1751
+    },
+    {
+      "credit": 615,
+      "rate": 0.2077
+    },
+    {
+      "credit": 621,
+      "rate": 0.248
+    },
+    {
+      "credit": 589,
+      "rate": 0.2183
+    },
+    {
+      "credit": 531,
+      "rate": 0.2809
+    },
+    {
+      "credit": 627,
+      "rate": 0.211
+    },
+    {
+      "credit": 606,
+      "rate": 0.249
+    },
+    {
+      "credit": 632,
+      "rate": 0.2186
+    },
+    {
+      "credit": 605,
+      "rate": 0.1955
+    },
+    {
+      "credit": 531,
+      "rate": 0.2862
+    },
+    {
+      "credit": 570,
+      "rate": 0.2494
+    },
+    {
+      "credit": 580,
+      "rate": 0.197
+    },
+    {
+      "credit": 571,
+      "rate": 0.198
+    },
+    {
+      "credit": 504,
+      "rate": 0.2615
+    },
+    {
+      "credit": 497,
+      "rate": 0.2374
+    },
+    {
+      "credit": 522,
+      "rate": 0.2538
+    },
+    {
+      "credit": 550,
+      "rate": 0.2342
+    },
+    {
+      "credit": 602,
+      "rate": 0.2251
+    },
+    {
+      "credit": 541,
+      "rate": 0.3219
+    },
+    {
+      "credit": 624,
+      "rate": 0.2271
+    },
+    {
+      "credit": 509,
+      "rate": 0.298
+    },
+    {
+      "credit": 538,
+      "rate": 0.2606
+    },
+    {
+      "credit": 618,
+      "rate": 0.2399
+    },
+    {
+      "credit": 578,
+      "rate": 0.2519
+    },
+    {
+      "credit": 577,
+      "rate": 0.194
+    },
+    {
+      "credit": 588,
+      "rate": 0.2008
+    },
+    {
+      "credit": 616,
+      "rate": 0.2162
+    },
+    {
+      "credit": 619,
+      "rate": 0.2437
+    },
+    {
+      "credit": 585,
+      "rate": 0.2126
+    },
+    {
+      "credit": 637,
+      "rate": 0.1991
+    },
+    {
+      "credit": 470,
+      "rate": 0.2827
+    },
+    {
+      "credit": 523,
+      "rate": 0.3201
+    },
+    {
+      "credit": 660,
+      "rate": 0.189
+    },
+    {
+      "credit": 612,
+      "rate": 0.2165
+    },
+    {
+      "credit": 539,
+      "rate": 0.1991
+    },
+    {
+      "credit": 619,
+      "rate": 0.176
+    },
+    {
+      "credit": 600,
+      "rate": 0.2209
+    },
+    {
+      "credit": 551,
+      "rate": 0.3552
+    },
+    {
+      "credit": 620,
+      "rate": 0.1973
+    },
+    {
+      "credit": 651,
+      "rate": 0.1779
+    },
+    {
+      "credit": 496,
+      "rate": 0.2917
+    },
+    {
+      "credit": 554,
+      "rate": 0.2463
+    },
+    {
+      "credit": 528,
+      "rate": 0.3408
+    },
+    {
+      "credit": 566,
+      "rate": 0.2344
+    },
+    {
+      "credit": 595,
+      "rate": 0.193
+    },
+    {
+      "credit": 597,
+      "rate": 0.2148
+    },
+    {
+      "credit": 648,
+      "rate": 0.2151
+    },
+    {
+      "credit": 591,
+      "rate": 0.2136
+    },
+    {
+      "credit": 488,
+      "rate": 0.281
+    },
+    {
+      "credit": 559,
+      "rate": 0.208
+    },
+    {
+      "credit": 624,
+      "rate": 0.2626
+    },
+    {
+      "credit": 626,
+      "rate": 0.1622
+    },
+    {
+      "credit": 563,
+      "rate": 0.1987
+    },
+    {
+      "credit": 536,
+      "rate": 0.355
+    },
+    {
+      "credit": 582,
+      "rate": 0.1806
+    },
+    {
+      "credit": 527,
+      "rate": 0.2879
+    },
+    {
+      "credit": 577,
+      "rate": 0.2089
+    },
+    {
+      "credit": 526,
+      "rate": 0.2758
+    },
+    {
+      "credit": 638,
+      "rate": 0.2547
+    },
+    {
+      "credit": 613,
+      "rate": 0.224
+    },
+    {
+      "credit": 647,
+      "rate": 0.198
+    },
+    {
+      "credit": 537,
+      "rate": 0.2937
+    },
+    {
+      "credit": 543,
+      "rate": 0.3055
+    },
+    {
+      "credit": 585,
+      "rate": 0.2022
+    },
+    {
+      "credit": 596,
+      "rate": 0.2265
+    },
+    {
+      "credit": 590,
+      "rate": 0.2143
+    },
+    {
+      "credit": 594,
+      "rate": 0.2781
+    },
+    {
+      "credit": 574,
+      "rate": 0.2321
+    },
+    {
+      "credit": 599,
+      "rate": 0.2297
+    },
+    {
+      "credit": 591,
+      "rate": 0.1889
+    },
+    {
+      "credit": 557,
+      "rate": 0.2634
+    },
+    {
+      "credit": 487,
+      "rate": 0.2759
+    },
+    {
+      "credit": 532,
+      "rate": 0.2487
+    },
+    {
+      "credit": 540,
+      "rate": 0.2602
+    },
+    {
+      "credit": 625,
+      "rate": 0.1634
+    },
+    {
+      "credit": 546,
+      "rate": 0.2525
+    },
+    {
+      "credit": 467,
+      "rate": 0.2925
+    },
+    {
+      "credit": 581,
+      "rate": 0.1784
+    },
+    {
+      "credit": 552,
+      "rate": 0.2405
+    },
+    {
+      "credit": 514,
+      "rate": 0.2597
+    },
+    {
+      "credit": 575,
+      "rate": 0.2425
+    },
+    {
+      "credit": 564,
+      "rate": 0.274
+    },
+    {
+      "credit": 614,
+      "rate": 0.258
+    },
+    {
+      "credit": 471,
+      "rate": 0.2269
+    },
+    {
+      "credit": 563,
+      "rate": 0.2012
+    },
+    {
+      "credit": 620,
+      "rate": 0.1778
+    },
+    {
+      "credit": 522,
+      "rate": 0.3767
+    },
+    {
+      "credit": 617,
+      "rate": 0.2192
+    },
+    {
+      "credit": 567,
+      "rate": 0.2206
+    },
+    {
+      "credit": 595,
+      "rate": 0.258
+    },
+    {
+      "credit": 609,
+      "rate": 0.2626
+    },
+    {
+      "credit": 446,
+      "rate": 0.369
+    },
+    {
+      "credit": 499,
+      "rate": 0.2672
+    },
+    {
+      "credit": 535,
+      "rate": 0.2155
+    },
+    {
+      "credit": 480,
+      "rate": 0.277
+    },
+    {
+      "credit": 447,
+      "rate": 0.3118
+    },
+    {
+      "credit": 575,
+      "rate": 0.2354
+    },
+    {
+      "credit": 551,
+      "rate": 0.2823
+    },
+    {
+      "credit": 602,
+      "rate": 0.1748
+    },
+    {
+      "credit": 546,
+      "rate": 0.2452
+    },
+    {
+      "credit": 603,
+      "rate": 0.2438
+    },
+    {
+      "credit": 595,
+      "rate": 0.1991
+    },
+    {
+      "credit": 603,
+      "rate": 0.2266
+    },
+    {
+      "credit": 574,
+      "rate": 0.2324
+    },
+    {
+      "credit": 637,
+      "rate": 0.1891
+    },
+    {
+      "credit": 671,
+      "rate": 0.1699
+    },
+    {
+      "credit": 527,
+      "rate": 0.315
+    },
+    {
+      "credit": 675,
+      "rate": 0.1616
+    },
+    {
+      "credit": 644,
+      "rate": 0.2025
+    },
+    {
+      "credit": 697,
+      "rate": 0.1987
+    },
+    {
+      "credit": 573,
+      "rate": 0.2349
+    },
+    {
+      "credit": 565,
+      "rate": 0.2537
+    },
+    {
+      "credit": 635,
+      "rate": 0.1892
+    },
+    {
+      "credit": 530,
+      "rate": 0.2702
+    },
+    {
+      "credit": 585,
+      "rate": 0.1812
+    },
+    {
+      "credit": 567,
+      "rate": 0.2783
+    },
+    {
+      "credit": 579,
+      "rate": 0.1748
+    },
+    {
+      "credit": 694,
+      "rate": 0.1526
+    },
+    {
+      "credit": 610,
+      "rate": 0.2426
+    },
+    {
+      "credit": 623,
+      "rate": 0.171
+    },
+    {
+      "credit": 524,
+      "rate": 0.2592
+    },
+    {
+      "credit": 567,
+      "rate": 0.2312
+    },
+    {
+      "credit": 616,
+      "rate": 0.208
+    },
+    {
+      "credit": 596,
+      "rate": 0.2896
+    },
+    {
+      "credit": 510,
+      "rate": 0.2649
+    },
+    {
+      "credit": 605,
+      "rate": 0.2218
+    },
+    {
+      "credit": 628,
+      "rate": 0.2189
+    },
+    {
+      "credit": 456,
+      "rate": 0.268
+    },
+    {
+      "credit": 543,
+      "rate": 0.2114
+    },
+    {
+      "credit": 477,
+      "rate": 0.2501
+    },
+    {
+      "credit": 572,
+      "rate": 0.2288
+    },
+    {
+      "credit": 549,
+      "rate": 0.2976
+    },
+    {
+      "credit": 564,
+      "rate": 0.2604
+    },
+    {
+      "credit": 586,
+      "rate": 0.2613
+    },
+    {
+      "credit": 543,
+      "rate": 0.2504
+    },
+    {
+      "credit": 517,
+      "rate": 0.3059
+    },
+    {
+      "credit": 468,
+      "rate": 0.2381
+    },
+    {
+      "credit": 571,
+      "rate": 0.2535
+    },
+    {
+      "credit": 567,
+      "rate": 0.1997
+    },
+    {
+      "credit": 594,
+      "rate": 0.2277
+    },
+    {
+      "credit": 545,
+      "rate": 0.2538
+    },
+    {
+      "credit": 553,
+      "rate": 0.2968
+    },
+    {
+      "credit": 535,
+      "rate": 0.2554
+    },
+    {
+      "credit": 602,
+      "rate": 0.1717
+    },
+    {
+      "credit": 611,
+      "rate": 0.1838
+    },
+    {
+      "credit": 511,
+      "rate": 0.1865
+    },
+    {
+      "credit": 468,
+      "rate": 0.3175
+    },
+    {
+      "credit": 559,
+      "rate": 0.2105
+    },
+    {
+      "credit": 570,
+      "rate": 0.2325
+    },
+    {
+      "credit": 497,
+      "rate": 0.3103
+    },
+    {
+      "credit": 576,
+      "rate": 0.2519
+    },
+    {
+      "credit": 584,
+      "rate": 0.1903
+    },
+    {
+      "credit": 606,
+      "rate": 0.1901
+    },
+    {
+      "credit": 581,
+      "rate": 0.2229
+    },
+    {
+      "credit": 609,
+      "rate": 0.1933
+    },
+    {
+      "credit": 521,
+      "rate": 0.2174
+    },
+    {
+      "credit": 529,
+      "rate": 0.2399
+    },
+    {
+      "credit": 606,
+      "rate": 0.1799
+    },
+    {
+      "credit": 579,
+      "rate": 0.2462
+    },
+    {
+      "credit": 606,
+      "rate": 0.209
+    },
+    {
+      "credit": 588,
+      "rate": 0.2349
+    },
+    {
+      "credit": 624,
+      "rate": 0.167
+    },
+    {
+      "credit": 559,
+      "rate": 0.2099
+    },
+    {
+      "credit": 537,
+      "rate": 0.3171
+    },
+    {
+      "credit": 567,
+      "rate": 0.2845
+    },
+    {
+      "credit": 603,
+      "rate": 0.2293
+    },
+    {
+      "credit": 543,
+      "rate": 0.2712
+    },
+    {
+      "credit": 449,
+      "rate": 0.396
+    },
+    {
+      "credit": 582,
+      "rate": 0.1931
+    },
+    {
+      "credit": 628,
+      "rate": 0.1823
+    },
+    {
+      "credit": 519,
+      "rate": 0.3196
+    },
+    {
+      "credit": 573,
+      "rate": 0.2192
+    },
+    {
+      "credit": 566,
+      "rate": 0.2236
+    },
+    {
+      "credit": 494,
+      "rate": 0.2894
+    },
+    {
+      "credit": 592,
+      "rate": 0.2125
+    },
+    {
+      "credit": 616,
+      "rate": 0.2332
+    },
+    {
+      "credit": 509,
+      "rate": 0.2751
+    },
+    {
+      "credit": 564,
+      "rate": 0.2524
+    },
+    {
+      "credit": 594,
+      "rate": 0.1869
+    },
+    {
+      "credit": 583,
+      "rate": 0.2365
+    },
+    {
+      "credit": 534,
+      "rate": 0.3094
+    },
+    {
+      "credit": 568,
+      "rate": 0.2867
+    },
+    {
+      "credit": 534,
+      "rate": 0.2588
+    },
+    {
+      "credit": 566,
+      "rate": 0.2753
+    },
+    {
+      "credit": 486,
+      "rate": 0.2415
+    },
+    {
+      "credit": 513,
+      "rate": 0.2207
+    },
+    {
+      "credit": 589,
+      "rate": 0.2358
+    },
+    {
+      "credit": 587,
+      "rate": 0.2017
+    },
+    {
+      "credit": 605,
+      "rate": 0.2437
+    },
+    {
+      "credit": 566,
+      "rate": 0.2737
+    },
+    {
+      "credit": 636,
+      "rate": 0.2304
+    },
+    {
+      "credit": 585,
+      "rate": 0.1793
+    },
+    {
+      "credit": 499,
+      "rate": 0.2524
+    },
+    {
+      "credit": 525,
+      "rate": 0.299
+    },
+    {
+      "credit": 573,
+      "rate": 0.2332
+    },
+    {
+      "credit": 674,
+      "rate": 0.2342
+    },
+    {
+      "credit": 569,
+      "rate": 0.2478
+    },
+    {
+      "credit": 551,
+      "rate": 0.2132
+    },
+    {
+      "credit": 632,
+      "rate": 0.2159
+    },
+    {
+      "credit": 586,
+      "rate": 0.2454
+    },
+    {
+      "credit": 616,
+      "rate": 0.2242
+    },
+    {
+      "credit": 587,
+      "rate": 0.2319
+    },
+    {
+      "credit": 569,
+      "rate": 0.2557
+    },
+    {
+      "credit": 504,
+      "rate": 0.2802
+    },
+    {
+      "credit": 526,
+      "rate": 0.2467
+    },
+    {
+      "credit": 574,
+      "rate": 0.2751
+    },
+    {
+      "credit": 557,
+      "rate": 0.2718
+    },
+    {
+      "credit": 613,
+      "rate": 0.2117
+    },
+    {
+      "credit": 478,
+      "rate": 0.2472
+    },
+    {
+      "credit": 617,
+      "rate": 0.2391
+    },
+    {
+      "credit": 630,
+      "rate": 0.1802
+    }
+  ],
+  "approval_by_age": [
+    {
+      "band": "under 25",
+      "rate": 0.116,
+      "n": 2382
+    },
+    {
+      "band": "25-35",
+      "rate": 0.195,
+      "n": 4962
+    },
+    {
+      "band": "35-45",
+      "rate": 0.255,
+      "n": 6470
+    },
+    {
+      "band": "45-55",
+      "rate": 0.302,
+      "n": 4318
+    },
+    {
+      "band": "55-65",
+      "rate": 0.307,
+      "n": 1565
+    },
+    {
+      "band": "65+",
+      "rate": 0.323,
+      "n": 303
+    }
+  ],
+  "approval_by_edu": [
+    {
+      "edu": "Associate",
+      "rate": 0.204,
+      "n": 4034
+    },
+    {
+      "edu": "Bachelor",
+      "rate": 0.266,
+      "n": 6054
+    },
+    {
+      "edu": "Doctorate",
+      "rate": 0.44,
+      "n": 954
+    },
+    {
+      "edu": "High School",
+      "rate": 0.144,
+      "n": 5908
+    },
+    {
+      "edu": "Master",
+      "rate": 0.351,
+      "n": 3050
+    }
+  ],
+  "season": {
+    "spring_summer_rate": 0.255,
+    "rest_rate": 0.222
+  },
+  "approval_by_month": [
+    {
+      "month": 1,
+      "rate": 0.234,
+      "n": 1705
+    },
+    {
+      "month": 2,
+      "rate": 0.214,
+      "n": 1554
+    },
+    {
+      "month": 3,
+      "rate": 0.243,
+      "n": 1705
+    },
+    {
+      "month": 4,
+      "rate": 0.255,
+      "n": 1650
+    },
+    {
+      "month": 5,
+      "rate": 0.256,
+      "n": 1705
+    },
+    {
+      "month": 6,
+      "rate": 0.256,
+      "n": 1650
+    },
+    {
+      "month": 7,
+      "rate": 0.242,
+      "n": 1705
+    },
+    {
+      "month": 8,
+      "rate": 0.278,
+      "n": 1705
+    },
+    {
+      "month": 9,
+      "rate": 0.224,
+      "n": 1650
+    },
+    {
+      "month": 10,
+      "rate": 0.226,
+      "n": 1677
+    },
+    {
+      "month": 11,
+      "rate": 0.225,
+      "n": 1620
+    },
+    {
+      "month": 12,
+      "rate": 0.211,
+      "n": 1674
+    }
+  ],
+  "legible": {
+    "n": 20000,
+    "with_credit_score": 20000,
+    "with_accounts": 20000
+  },
+  "findex_unbanked_millions": 1300
+}
