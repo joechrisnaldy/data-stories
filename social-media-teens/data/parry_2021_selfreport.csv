@@ -1,0 +1,6 @@
+metric,category,value,ci_low,ci_high
+accuracy_of_49_comparisons,Over-reported,46.94,,
+accuracy_of_49_comparisons,Under-reported,46.94,,
+accuracy_of_49_comparisons,Accurate (within 5%),6.12,,
+correlation,General media use,0.38,0.33,0.42
+correlation,Problematic media use,0.25,0.20,0.29

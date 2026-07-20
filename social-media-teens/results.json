@@ -1,0 +1,235 @@
+{
+  "certainty": {
+    "peers_2022": 32,
+    "peers_2025": 48,
+    "self_2025": 14
+  },
+  "crisis": {
+    "Total": [
+      {
+        "year": 2011,
+        "pct": 28.5,
+        "lo": 27.2,
+        "hi": 29.7
+      },
+      {
+        "year": 2013,
+        "pct": 29.9,
+        "lo": 28.3,
+        "hi": 31.6
+      },
+      {
+        "year": 2015,
+        "pct": 29.9,
+        "lo": 28.0,
+        "hi": 31.8
+      },
+      {
+        "year": 2017,
+        "pct": 31.5,
+        "lo": 29.6,
+        "hi": 33.4
+      },
+      {
+        "year": 2019,
+        "pct": 36.7,
+        "lo": 35.1,
+        "hi": 38.3
+      },
+      {
+        "year": 2021,
+        "pct": 42.3,
+        "lo": 41.0,
+        "hi": 43.7
+      },
+      {
+        "year": 2023,
+        "pct": 39.7,
+        "lo": 37.7,
+        "hi": 41.7
+      }
+    ],
+    "Female": [
+      {
+        "year": 2011,
+        "pct": 35.9,
+        "lo": 34.1,
+        "hi": 37.8
+      },
+      {
+        "year": 2013,
+        "pct": 39.1,
+        "lo": 36.8,
+        "hi": 41.4
+      },
+      {
+        "year": 2015,
+        "pct": 39.8,
+        "lo": 36.5,
+        "hi": 43.2
+      },
+      {
+        "year": 2017,
+        "pct": 41.1,
+        "lo": 37.4,
+        "hi": 44.8
+      },
+      {
+        "year": 2019,
+        "pct": 46.6,
+        "lo": 44.4,
+        "hi": 48.9
+      },
+      {
+        "year": 2021,
+        "pct": 56.6,
+        "lo": 54.6,
+        "hi": 58.5
+      },
+      {
+        "year": 2023,
+        "pct": 52.6,
+        "lo": 50.1,
+        "hi": 55.0
+      }
+    ],
+    "Male": [
+      {
+        "year": 2011,
+        "pct": 21.5,
+        "lo": 19.9,
+        "hi": 23.1
+      },
+      {
+        "year": 2013,
+        "pct": 20.8,
+        "lo": 19.4,
+        "hi": 22.3
+      },
+      {
+        "year": 2015,
+        "pct": 20.3,
+        "lo": 18.9,
+        "hi": 21.8
+      },
+      {
+        "year": 2017,
+        "pct": 21.4,
+        "lo": 19.7,
+        "hi": 23.2
+      },
+      {
+        "year": 2019,
+        "pct": 26.8,
+        "lo": 25.2,
+        "hi": 28.4
+      },
+      {
+        "year": 2021,
+        "pct": 28.6,
+        "lo": 27.1,
+        "hi": 30.0
+      },
+      {
+        "year": 2023,
+        "pct": 27.7,
+        "lo": 25.9,
+        "hi": 29.6
+      }
+    ]
+  },
+  "crisis_summary": {
+    "total_2011": 28.5,
+    "total_2021": 42.3,
+    "total_2023": 39.7,
+    "female_2011": 35.9,
+    "female_2021": 56.6,
+    "female_2023": 52.6,
+    "male_2011": 21.5,
+    "male_2021": 28.6,
+    "male_2023": 27.7,
+    "female_male_gap_2023": 24.9
+  },
+  "contested": {
+    "variance_explained_pct": 0.4,
+    "tech_beta_yrbs": -0.049,
+    "bars": [
+      {
+        "behavior": "Being bullied",
+        "beta": -0.212,
+        "is_tech": 0
+      },
+      {
+        "behavior": "Binge-drinking",
+        "beta": -0.144,
+        "is_tech": 0
+      },
+      {
+        "behavior": "Smoking marijuana",
+        "beta": -0.132,
+        "is_tech": 0
+      },
+      {
+        "behavior": "Digital technology use",
+        "beta": -0.049,
+        "is_tech": 1
+      },
+      {
+        "behavior": "Eating potatoes",
+        "beta": -0.042,
+        "is_tech": 0
+      },
+      {
+        "behavior": "Eating fruit",
+        "beta": -0.005,
+        "is_tech": 0
+      },
+      {
+        "behavior": "Drinking milk",
+        "beta": 0.014,
+        "is_tech": 0
+      },
+      {
+        "behavior": "Eating breakfast",
+        "beta": 0.116,
+        "is_tech": 0
+      },
+      {
+        "behavior": "Getting enough sleep",
+        "beta": 0.15,
+        "is_tech": 0
+      }
+    ],
+    "glasses_mcs_beta": -0.061
+  },
+  "ruler": {
+    "accuracy": [
+      {
+        "category": "Over-reported",
+        "pct": 46.94
+      },
+      {
+        "category": "Under-reported",
+        "pct": 46.94
+      },
+      {
+        "category": "Accurate (within 5%)",
+        "pct": 6.12
+      }
+    ],
+    "correlations": [
+      {
+        "measure": "General media use",
+        "r": 0.38,
+        "lo": 0.33,
+        "hi": 0.42
+      },
+      {
+        "measure": "Problematic media use",
+        "r": 0.25,
+        "lo": 0.2,
+        "hi": 0.29
+      }
+    ]
+  }
+}

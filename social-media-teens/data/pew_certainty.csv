@@ -1,0 +1,5 @@
+metric,target,year,pct,confidence
+mostly_negative_effect,people their age (peers),2022,32,high
+mostly_negative_effect,people their age (peers),2025,48,high
+mostly_negative_effect,them personally,2025,14,high
+mostly_negative_effect,them personally,2022,9,medium
