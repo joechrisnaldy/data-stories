@@ -1,0 +1,75 @@
+{
+  "by_year": [
+    {
+      "fy": 2013,
+      "net": 4497220043.0,
+      "rebates": 1876618096.0,
+      "gross": 6373838139.0,
+      "rebate_share_of_gross": 0.2944,
+      "participation": 8662751.833333336
+    },
+    {
+      "fy": 2014,
+      "net": 4324323274.0,
+      "rebates": 1812350251.0,
+      "gross": 6136673525.0,
+      "rebate_share_of_gross": 0.2953,
+      "participation": 8258413.0
+    },
+    {
+      "fy": 2015,
+      "net": 4175839669.0,
+      "rebates": 1799247396.0,
+      "gross": 5975087065.0,
+      "rebate_share_of_gross": 0.3011,
+      "participation": 8023742.333333334
+    },
+    {
+      "fy": 2016,
+      "net": 3949338425.0,
+      "rebates": 1712525664.0,
+      "gross": 5661864089.0,
+      "rebate_share_of_gross": 0.3025,
+      "participation": 7696438.916666667
+    }
+  ],
+  "fy2016": {
+    "net": 3949338425.0,
+    "rebates": 1712525664.0,
+    "gross": 5661864089.0,
+    "rebate_share_of_gross": 0.3025,
+    "participation": 7696438.916666667,
+    "per_person_gross_month": 61.3,
+    "per_person_net_month": 42.76
+  },
+  "breastfeeding": {
+    "fully_bf_pct": 13.2,
+    "partial_bf_pct": 18.5,
+    "formula_only_pct": 68.3,
+    "dataset_check": {
+      "fully": 13.2,
+      "partial": 18.5,
+      "formula": 68.3
+    }
+  },
+  "context": {
+    "usda_fy2016_net_foodcost_m": 3949.6,
+    "usda_fy2016_rebate_b": 1.72,
+    "usda_fy2016_participation_m": 7.7,
+    "usda_fy2016_pp_net_month": 42.77,
+    "usda_fy2024_net_foodcost_b": 4.91,
+    "usda_fy2024_rebate_b": 1.6,
+    "usda_fy2024_participation_m": 6.7,
+    "usda_fy2024_pp_net_month": 61.06,
+    "rebate_share_of_wholesale_2023_pct": 90,
+    "rebate_share_of_wholesale_2020_pct": 124,
+    "rebate_funds_caseload_pct_2023": 19.3,
+    "gao_rebate_share_of_foodcost_low_2023_pct": 27,
+    "gao_rebate_share_high_2020_pct": 39,
+    "wic_formula_market_share": "over half (57-68% in 2004-06)",
+    "indonesia_mbg_launch": "2025-01-06",
+    "indonesia_mbg_target_m": 82.9,
+    "indonesia_mbg_firststage_budget_rp_t": 71,
+    "indonesia_mbg_firststage_usd_b": 4.39
+  }
+}
