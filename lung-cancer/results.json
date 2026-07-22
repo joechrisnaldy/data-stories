@@ -1,0 +1,120 @@
+{
+  "foil": {
+    "n": 309,
+    "dupes": 33,
+    "cancer_rate": 0.8738,
+    "n_cancer": 270,
+    "n_nocancer": 39,
+    "p_cancer_smoker": 0.8908,
+    "p_cancer_nonsmoker": 0.8519,
+    "n_smoker": 174,
+    "n_nonsmoker": 135,
+    "fisher_or": 1.419,
+    "fisher_p": 0.388,
+    "smoking_rank": 15,
+    "n_features": 15
+  },
+  "ranking": [
+    {
+      "feature": "Allergy",
+      "corr": 0.3278,
+      "is_smoking": false
+    },
+    {
+      "feature": "Alcohol",
+      "corr": 0.2885,
+      "is_smoking": false
+    },
+    {
+      "feature": "Swallowing difficulty",
+      "corr": 0.2597,
+      "is_smoking": false
+    },
+    {
+      "feature": "Wheezing",
+      "corr": 0.2493,
+      "is_smoking": false
+    },
+    {
+      "feature": "Coughing",
+      "corr": 0.2486,
+      "is_smoking": false
+    },
+    {
+      "feature": "Chest pain",
+      "corr": 0.1905,
+      "is_smoking": false
+    },
+    {
+      "feature": "Peer pressure",
+      "corr": 0.1864,
+      "is_smoking": false
+    },
+    {
+      "feature": "Yellow fingers",
+      "corr": 0.1813,
+      "is_smoking": false
+    },
+    {
+      "feature": "Fatigue",
+      "corr": 0.1507,
+      "is_smoking": false
+    },
+    {
+      "feature": "Anxiety",
+      "corr": 0.1449,
+      "is_smoking": false
+    },
+    {
+      "feature": "Chronic disease",
+      "corr": 0.1109,
+      "is_smoking": false
+    },
+    {
+      "feature": "Age",
+      "corr": 0.0895,
+      "is_smoking": false
+    },
+    {
+      "feature": "Male",
+      "corr": 0.0673,
+      "is_smoking": false
+    },
+    {
+      "feature": "Shortness of breath",
+      "corr": 0.0607,
+      "is_smoking": false
+    },
+    {
+      "feature": "Smoking",
+      "corr": 0.0582,
+      "is_smoking": true
+    }
+  ],
+  "real": {
+    "share_men_cases": "9 out of 10",
+    "share_women_cases": "8 out of 10",
+    "share_band_low": 80,
+    "share_band_high": 90,
+    "rr_never": 1.0,
+    "rr_lt1_cig": 9.1,
+    "rr_1to10_cig": 11.6,
+    "rr_regular": 25.0,
+    "rr_britdoctors": 15.9,
+    "file_or": 1.42,
+    "us_lung_deaths_2026est": 124990,
+    "die_years_younger": 10,
+    "id_men_pct": 65.5,
+    "id_overall_pct": 34.5,
+    "id_women_pct": 3.3,
+    "id_users_m": 70.2,
+    "id_daily_men_pct": 52.3,
+    "id_init_age": 15.9
+  },
+  "robustness": {
+    "adj_or_raw": 2.51,
+    "adj_p_raw": 0.029,
+    "adj_or_dedup": 2.16,
+    "adj_p_dedup": 0.07
+  }
+}
