@@ -1,0 +1,194 @@
+{
+  "mandate": [
+    {
+      "year": 2007,
+      "share": 11.8,
+      "status": "struck down",
+      "label": "11.8%",
+      "note": "Putusan 026/PUU-IV/2006: the 11.8% ceiling (Rp54.07T) held unconstitutional"
+    },
+    {
+      "year": 2008,
+      "share": 15.6,
+      "status": "struck down",
+      "label": "15.6%",
+      "note": "Putusan 13/PUU-VI/2008: the entire revised budget law held unconstitutional"
+    },
+    {
+      "year": 2009,
+      "share": 20.0,
+      "status": "met",
+      "label": "20%",
+      "note": "Kemenkeu: the 20% mandate has been met since 2009"
+    },
+    {
+      "year": 2024,
+      "share": 20.0,
+      "status": "met",
+      "label": "20.00%",
+      "note": "Rp665.0T of Rp3,325.1T"
+    },
+    {
+      "year": 2025,
+      "share": 20.0,
+      "status": "met",
+      "label": "20.00%",
+      "note": "Rp724.3T of Rp3,621.3T"
+    }
+  ],
+  "fiscal": {
+    "educ_2024_t": 665.0,
+    "belanja_2024_t": 3325.1,
+    "gdp_2024_t": 22138.99,
+    "educ_2025_t": 724.3,
+    "belanja_2025_t": 3621.3,
+    "educ_2026_t": 769.1,
+    "belanja_2026_t": 3842.7,
+    "tax_gdp_id_2023": 12.0,
+    "tax_gdp_asiapac_2023": 19.5,
+    "tax_gdp_oecd_2023": 33.9,
+    "tax_gdp_id_2007": 12.2,
+    "belanja_share_gdp_2024": 15.02,
+    "educ_share_belanja_2024": 20.0,
+    "educ_share_gdp_2024": 3.0,
+    "financing_2024_t": 77.0,
+    "financing_2025_t": 80.0,
+    "educ_ex_fin_share_belanja_2024": 17.68,
+    "educ_ex_fin_share_belanja_2025": 17.79,
+    "educ_ex_fin_share_gdp_2024": 2.66
+  },
+  "peers": [
+    {
+      "country": "OECD members",
+      "pct": 5.06,
+      "year": 2022,
+      "src": "World Bank/UIS"
+    },
+    {
+      "country": "Philippines",
+      "pct": 3.93,
+      "year": 2024,
+      "src": "World Bank/UIS"
+    },
+    {
+      "country": "Malaysia",
+      "pct": 3.51,
+      "year": 2023,
+      "src": "World Bank/UIS"
+    },
+    {
+      "country": "Indonesia",
+      "pct": 3.0,
+      "year": 2024,
+      "src": "Kemenkeu APBN (budget-based)"
+    },
+    {
+      "country": "Viet Nam",
+      "pct": 2.89,
+      "year": 2022,
+      "src": "World Bank/UIS"
+    },
+    {
+      "country": "Thailand",
+      "pct": 2.52,
+      "year": 2023,
+      "src": "World Bank/UIS"
+    }
+  ],
+  "pisa": {
+    "reading": {
+      "2000": 371,
+      "2003": 382,
+      "2006": 393,
+      "2009": 402,
+      "2012": 396,
+      "2015": 397,
+      "2018": 371,
+      "2022": 359
+    },
+    "maths": {
+      "2003": 360,
+      "2006": 391,
+      "2009": 371,
+      "2012": 375,
+      "2015": 386,
+      "2018": 379,
+      "2022": 366
+    },
+    "science": {
+      "2006": 393,
+      "2009": 383,
+      "2012": 382,
+      "2015": 403,
+      "2018": 396,
+      "2022": 383
+    }
+  },
+  "oecd_avg_2022": {
+    "reading": 476,
+    "maths": 472,
+    "science": 485
+  },
+  "coverage": {
+    "2000": 46,
+    "2018": 85
+  },
+  "baseline_2022": {
+    "maths": 18,
+    "reading": 25,
+    "science": 34
+  },
+  "baseline_oecd_2022": {
+    "maths": 69,
+    "reading": 74,
+    "science": 76
+  },
+  "access": {
+    "upper_sec_ner_2001": 40.1,
+    "upper_sec_ner_2009": 56.6,
+    "upper_sec_ner_2018": 81.5,
+    "lower_sec_ner_2001": 73.7,
+    "lower_sec_ner_2023": 94.9,
+    "sec_ger_2000": 55.6,
+    "sec_ger_2023": 96.0,
+    "literacy_2004": 90.4,
+    "literacy_2020": 96.0,
+    "mys_2006": 7.57,
+    "mys_2020": 8.56,
+    "extra_15yos_in_school_m": 1.1
+  },
+  "learning_poverty": {
+    "indonesia": 53,
+    "gap_vs_eap_pp": 18,
+    "gap_vs_umic_pp": 20
+  },
+  "budget26": {
+    "total_draft_t": 757.8,
+    "educators_pay_t": 274.7,
+    "mbg_inside_educ_t": 223.0,
+    "total_enacted_t": 769.1,
+    "mbg_total_2026_t": 335.0,
+    "mbg_after_cut_t": 268.0,
+    "mbg_beneficiaries_m": 82.9,
+    "other_t": 260.1,
+    "educators_pay_pct": 36.2,
+    "mbg_pct": 29.4,
+    "other_pct": 34.3
+  },
+  "spend_threshold": {
+    "oecd_threshold_usd": 75000,
+    "indonesia_cumulative_usd": 19700
+  },
+  "subnational": {
+    "districts_noncompliant_pct": 22,
+    "districts_n": 112,
+    "districts_total": 508,
+    "provinces_noncompliant_pct": 35,
+    "provinces_n": 12,
+    "provinces_total": 34
+  },
+  "definition_drift": {
+    "sisdiknas_excluded_salaries": "Law No. 20/2003 Art. 49(1) set the 20% on education funds OTHER THAN educator salaries and official-service education",
+    "ruling_that_let_salaries_in": "Putusan 24/PUU-V/2007"
+  }
+}
