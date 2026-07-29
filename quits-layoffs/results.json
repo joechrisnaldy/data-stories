@@ -1,0 +1,207 @@
+{
+  "computed": {
+    "n_months": 582,
+    "start": "1978-01-01",
+    "end": "2026-06-01",
+    "prime": {
+      "mean_layoff": 1.262,
+      "mean_quit": 0.846,
+      "mean_share_layoff_to_nilf": 0.3491,
+      "min_share_layoff_to_nilf": 0.1428,
+      "max_share_layoff_to_nilf": 0.6158,
+      "mean_share_quit_to_nilf": 0.8473
+    },
+    "all": {
+      "mean_layoff": 1.663,
+      "mean_quit": 1.916,
+      "mean_share_layoff_to_nilf": 0.445,
+      "mean_share_quit_to_nilf": 0.9093
+    },
+    "months_layoffs_exceed_quits": 514,
+    "months_layoffs_exceed_quits_all": 131,
+    "covid_apr2020_layoff": 10.711,
+    "covid_apr2020_quit": 0.316,
+    "covid_feb2020_layoff": 0.749,
+    "covid_feb2020_quit": 1.03,
+    "eras": {
+      "2019": {
+        "quits": 0.938,
+        "layoffs": 0.969,
+        "share_layoff_to_nilf": 0.4317
+      },
+      "great_resignation_2021_22": {
+        "quits": 0.924,
+        "layoffs": 0.962,
+        "share_layoff_to_nilf": 0.404
+      },
+      "last_12m": {
+        "quits": 0.813,
+        "layoffs": 0.953,
+        "share_layoff_to_nilf": 0.3822
+      }
+    },
+    "recessions": {
+      "1980": {
+        "start": "1980-01",
+        "end": "1980-07",
+        "n_months": 7,
+        "peak_layoff": 1.669,
+        "min_quits": 0.962,
+        "share_to_nilf_at_peak": 0.3102,
+        "mean_share_to_nilf": 0.328,
+        "wtd_share_to_nilf": 0.3233
+      },
+      "1981-82": {
+        "start": "1981-07",
+        "end": "1982-11",
+        "n_months": 17,
+        "peak_layoff": 2.262,
+        "min_quits": 0.671,
+        "share_to_nilf_at_peak": 0.2848,
+        "mean_share_to_nilf": 0.2913,
+        "wtd_share_to_nilf": 0.2883
+      },
+      "1990-91": {
+        "start": "1990-07",
+        "end": "1991-03",
+        "n_months": 9,
+        "peak_layoff": 1.668,
+        "min_quits": 0.85,
+        "share_to_nilf_at_peak": 0.2501,
+        "mean_share_to_nilf": 0.3139,
+        "wtd_share_to_nilf": 0.3115
+      },
+      "2001": {
+        "start": "2001-03",
+        "end": "2001-11",
+        "n_months": 9,
+        "peak_layoff": 1.555,
+        "min_quits": 0.677,
+        "share_to_nilf_at_peak": 0.3538,
+        "mean_share_to_nilf": 0.3614,
+        "wtd_share_to_nilf": 0.362
+      },
+      "2008-09": {
+        "start": "2007-12",
+        "end": "2009-06",
+        "n_months": 19,
+        "peak_layoff": 2.397,
+        "min_quits": 0.414,
+        "share_to_nilf_at_peak": 0.382,
+        "mean_share_to_nilf": 0.3159,
+        "wtd_share_to_nilf": 0.318
+      },
+      "COVID": {
+        "start": "2020-02",
+        "end": "2020-04",
+        "n_months": 3,
+        "peak_layoff": 10.711,
+        "min_quits": 0.316,
+        "share_to_nilf_at_peak": 0.1428,
+        "mean_share_to_nilf": 0.2706,
+        "wtd_share_to_nilf": 0.1787
+      }
+    },
+    "covid_multiple": 8.49,
+    "share_months_layoffs_exceed_quits": 0.8832,
+    "corr_quits_layoffs": {
+      "prime_monthly": -0.2993,
+      "prime_6m_avg": -0.4356,
+      "prime_6m_avg_1978_2024": -0.453,
+      "all_monthly": -0.1458
+    },
+    "headline_robustness": {
+      "prime": {
+        "q_2019": 0.9377,
+        "q_nov2021": 0.9934,
+        "q_2021_22": 0.9241,
+        "pct_2019_to_nov2021": 5.9,
+        "pct_2019_to_2021_22": -1.5
+      },
+      "all": {
+        "q_2019": 1.8744,
+        "q_nov2021": 2.0103,
+        "q_2021_22": 1.9272,
+        "pct_2019_to_nov2021": 7.3,
+        "pct_2019_to_2021_22": 2.8
+      }
+    },
+    "last12_oct2025_sensitivity": {
+      "quits_with_oct_nov_2025": 0.8128,
+      "quits_without": 0.8149,
+      "n_without": 10
+    },
+    "vanishing": {
+      "share_in_recession": 0.3147,
+      "share_in_expansion": 0.3534,
+      "level_in_recession": 0.498,
+      "level_in_expansion": 0.425
+    }
+  },
+  "verified": {
+    "jolts_quits_rate_2019_avg": 2.3,
+    "jolts_quits_rate_record": 3.0,
+    "jolts_quits_record_month": "November 2021",
+    "jolts_quits_rate_record_note": "matched the September 2021 high; never exceeded since",
+    "jolts_quits_level_nov2021_k": 4453,
+    "jolts_quits_level_record_k": 4499,
+    "jolts_quits_rate_may2026": 1.9,
+    "jolts_quits_level_may2026_m": 3.1,
+    "jolts_quits_rate_pct_below_peak": 36.7,
+    "jolts_quits_level_pct_below_peak": 31.9,
+    "jolts_layoffs_rate_may2026": 1.1,
+    "jolts_hires_rate_may2026": 3.3,
+    "jolts_openings_rate_may2026": 4.6,
+    "jolts_start": "December 2000",
+    "empsit_release_time": "8:30 a.m. ET",
+    "jolts_release_time": "10:00 a.m. ET",
+    "u1_jun2026": 1.8,
+    "u2_jun2026": 1.9,
+    "u3_jun2026": 4.2,
+    "u4_jun2026": 4.5,
+    "u5_jun2026": 5.2,
+    "u6_jun2026": 7.9,
+    "want_a_job_not_in_lf_m": 6.0,
+    "marginally_attached_k": 1761,
+    "discouraged_k": 477,
+    "lfpr_jun2026": 61.5,
+    "unemployed_jun2026_m": 7.1,
+    "long_term_share_jun2026": 27.3,
+    "jun2026_labor_force_change_k": -720,
+    "jun2026_nilf_change_k": 832,
+    "jun2026_employed_change_k": -507,
+    "jun2026_unemployed_change_k": -213,
+    "may2026_labor_force_k": 170078,
+    "jun2026_labor_force_k": 169358,
+    "may2026_unemployed_k": 7307,
+    "jun2026_unemployed_k": 7094,
+    "u3_may2026": 4.3,
+    "flow_out_found_work_pct": 23.7,
+    "flow_out_left_lf_pct": 22.4,
+    "flow_stayed_unemployed_pct": 53.9,
+    "em_layoffs_vs_eu_pct": 20,
+    "em_quits_vs_en_pct": 45,
+    "em_layoff_contribution_pct": 45,
+    "em_corr_quits_layoffs": -0.46,
+    "em_corr_specification": "IWP 94 Table 6; reproduces on 6-month centred averages, not raw monthly",
+    "em_share_layoff_exit_lf_pct": 40,
+    "em_prime_age_range": "25 to 55",
+    "em_lf_attachment_amplification_pct": 25,
+    "payrolls_jun2026_k": 57,
+    "payrolls_12m_avg_k": 36,
+    "unrate_longrun_mean": 5.66,
+    "richmond_implied_unrate": "6 to 10 percent",
+    "richmond_hiring_rate": 3.3,
+    "challenger_ai_attributed_ytd": 101743,
+    "challenger_total_cuts_ytd": 443604,
+    "challenger_report_date": "July 1, 2026",
+    "yale_ai_finding": "no clear labour-market effect of AI detectable as of May 2026",
+    "u3_jun2026_exact": 4.19,
+    "u3_may2026_exact": 4.3,
+    "u3_if_labor_force_held": 4.17,
+    "u3_if_unemployed_held": 4.31,
+    "u3_if_job_losers_had_searched": 4.47,
+    "jolts_quits_pct_change_2019_to_peak": 30.4,
+    "cps_quits_pct_change_2019_to_gr": -1.5
+  }
+}
