@@ -1,0 +1,1575 @@
+{
+  "sakernas_share_of_employment": {
+    "2013": {
+      "owners_pct": 37.6,
+      "with_family_pct": 53.7
+    },
+    "2022": {
+      "owners_pct": 39.6,
+      "with_family_pct": 53.4
+    }
+  },
+  "divergence": [
+    {
+      "year": 2013,
+      "sakernas_owners_m": 42.99,
+      "sakernas_pct_1564": 25.21,
+      "gem_screen_pct": 46.45,
+      "gem_ebo_pct": 21.2,
+      "gem_tea_pct": 25.52,
+      "gem_sample_n": 4500,
+      "distance_pts": 4.01,
+      "screen_vs_sakernas_pts": 21.24
+    },
+    {
+      "year": 2014,
+      "sakernas_owners_m": 44.07,
+      "sakernas_pct_1564": 25.48,
+      "gem_screen_pct": 40.89,
+      "gem_ebo_pct": 11.9,
+      "gem_tea_pct": 14.2,
+      "gem_sample_n": 5520,
+      "distance_pts": 13.58,
+      "screen_vs_sakernas_pts": 15.41
+    },
+    {
+      "year": 2015,
+      "sakernas_owners_m": 43.23,
+      "sakernas_pct_1564": 24.66,
+      "gem_screen_pct": 40.34,
+      "gem_ebo_pct": 17.15,
+      "gem_tea_pct": 17.67,
+      "gem_sample_n": 5620,
+      "distance_pts": 7.51,
+      "screen_vs_sakernas_pts": 15.68
+    },
+    {
+      "year": 2016,
+      "sakernas_owners_m": 44.63,
+      "sakernas_pct_1564": 25.14,
+      "gem_screen_pct": 33.7,
+      "gem_ebo_pct": 15.33,
+      "gem_tea_pct": 14.08,
+      "gem_sample_n": 3464,
+      "distance_pts": 9.81,
+      "screen_vs_sakernas_pts": 8.56
+    },
+    {
+      "year": 2017,
+      "sakernas_owners_m": 46.35,
+      "sakernas_pct_1564": 25.8,
+      "gem_screen_pct": 31.15,
+      "gem_ebo_pct": 10.38,
+      "gem_tea_pct": 7.47,
+      "gem_sample_n": 2500,
+      "distance_pts": 15.42,
+      "screen_vs_sakernas_pts": 5.35
+    },
+    {
+      "year": 2018,
+      "sakernas_owners_m": 48.92,
+      "sakernas_pct_1564": 26.92,
+      "gem_screen_pct": 25.85,
+      "gem_ebo_pct": 11.78,
+      "gem_tea_pct": 14.09,
+      "gem_sample_n": 3090,
+      "distance_pts": 15.14,
+      "screen_vs_sakernas_pts": -1.07
+    },
+    {
+      "year": 2020,
+      "sakernas_owners_m": 51.31,
+      "sakernas_pct_1564": 27.63,
+      "gem_screen_pct": 18.0,
+      "gem_ebo_pct": 11.39,
+      "gem_tea_pct": 9.57,
+      "gem_sample_n": 2500,
+      "distance_pts": 16.24,
+      "screen_vs_sakernas_pts": -9.63
+    },
+    {
+      "year": 2022,
+      "sakernas_owners_m": 53.56,
+      "sakernas_pct_1564": 28.29,
+      "gem_screen_pct": 28.93,
+      "gem_ebo_pct": 5.69,
+      "gem_tea_pct": 8.07,
+      "gem_sample_n": 2600,
+      "distance_pts": 22.6,
+      "screen_vs_sakernas_pts": 0.64
+    }
+  ],
+  "classification_path": [
+    {
+      "year": 2013,
+      "screen_pct": 46.45,
+      "established_pct": 21.2,
+      "conversion_pct": 45.6,
+      "screen_var_used": "ownmge",
+      "n_screened": 1978.0,
+      "payment_year_missing_pct": 24.1,
+      "pass_rate_if_answered_pct": 57.6
+    },
+    {
+      "year": 2014,
+      "screen_pct": 40.89,
+      "established_pct": 11.9,
+      "conversion_pct": 29.1,
+      "screen_var_used": NaN,
+      "n_screened": NaN,
+      "payment_year_missing_pct": NaN,
+      "pass_rate_if_answered_pct": NaN
+    },
+    {
+      "year": 2015,
+      "screen_pct": 40.34,
+      "established_pct": 17.15,
+      "conversion_pct": 42.5,
+      "screen_var_used": NaN,
+      "n_screened": NaN,
+      "payment_year_missing_pct": NaN,
+      "pass_rate_if_answered_pct": NaN
+    },
+    {
+      "year": 2016,
+      "screen_pct": 33.7,
+      "established_pct": 15.33,
+      "conversion_pct": 45.5,
+      "screen_var_used": "ownmge",
+      "n_screened": 1221.0,
+      "payment_year_missing_pct": 49.1,
+      "pass_rate_if_answered_pct": 69.3
+    },
+    {
+      "year": 2017,
+      "screen_pct": 31.15,
+      "established_pct": 10.38,
+      "conversion_pct": 33.3,
+      "screen_var_used": NaN,
+      "n_screened": NaN,
+      "payment_year_missing_pct": NaN,
+      "pass_rate_if_answered_pct": NaN
+    },
+    {
+      "year": 2018,
+      "screen_pct": 25.85,
+      "established_pct": 11.78,
+      "conversion_pct": 45.6,
+      "screen_var_used": "ownmge",
+      "n_screened": 706.0,
+      "payment_year_missing_pct": 41.6,
+      "pass_rate_if_answered_pct": 68.7
+    },
+    {
+      "year": 2020,
+      "screen_pct": 18.0,
+      "established_pct": 11.39,
+      "conversion_pct": 63.3,
+      "screen_var_used": "ownmgeyy",
+      "n_screened": 438.0,
+      "payment_year_missing_pct": 26.9,
+      "pass_rate_if_answered_pct": 80.3
+    },
+    {
+      "year": 2022,
+      "screen_pct": 28.93,
+      "established_pct": 5.69,
+      "conversion_pct": 19.7,
+      "screen_var_used": "ownmgeyy",
+      "n_screened": 770.0,
+      "payment_year_missing_pct": 83.0,
+      "pass_rate_if_answered_pct": 64.1
+    }
+  ],
+  "decomposition": {
+    "total_fall_pts": 15.51,
+    "ordering_a_hold_2013_conversion": {
+      "screen": {
+        "pts": 7.99,
+        "share": 51.5
+      },
+      "classification": {
+        "pts": 7.49,
+        "share": 48.3
+      }
+    },
+    "ordering_b_hold_2022_conversion": {
+      "screen": {
+        "pts": 3.45,
+        "share": 22.3
+      },
+      "classification": {
+        "pts": 12.03,
+        "share": 77.6
+      }
+    },
+    "symmetric_shapley": {
+      "screen": {
+        "pts": 5.72,
+        "share": 36.9
+      },
+      "classification": {
+        "pts": 9.76,
+        "share": 62.9
+      }
+    },
+    "quoted": {
+      "screen": {
+        "pts": 5.72,
+        "share": 36.9
+      },
+      "classification": {
+        "pts": 9.76,
+        "share": 62.9
+      }
+    },
+    "note": "the split is order-dependent; the symmetric average makes the classification step the larger term, and the conversion rate is volatile across all eight rounds rather than flat"
+  },
+  "nonresponse_2022": {
+    "median_pct": 55.3,
+    "n_economies": 49,
+    "indonesia_pct": 83.0,
+    "indonesia_rank": 1,
+    "all": [
+      {
+        "country": "Indonesia",
+        "n_owners": 770,
+        "pct_missing": 83.0
+      },
+      {
+        "country": "Mexico",
+        "n_owners": 255,
+        "pct_missing": 82.7
+      },
+      {
+        "country": "Oman",
+        "n_owners": 301,
+        "pct_missing": 81.7
+      },
+      {
+        "country": "China",
+        "n_owners": 496,
+        "pct_missing": 80.8
+      },
+      {
+        "country": "Croatia",
+        "n_owners": 282,
+        "pct_missing": 74.8
+      },
+      {
+        "country": "Canada",
+        "n_owners": 415,
+        "pct_missing": 74.2
+      },
+      {
+        "country": "United Arab Emirates",
+        "n_owners": 499,
+        "pct_missing": 73.3
+      },
+      {
+        "country": "Germany",
+        "n_owners": 516,
+        "pct_missing": 72.5
+      },
+      {
+        "country": "Serbia",
+        "n_owners": 219,
+        "pct_missing": 71.7
+      },
+      {
+        "country": "South Africa",
+        "n_owners": 269,
+        "pct_missing": 71.0
+      },
+      {
+        "country": "Qatar",
+        "n_owners": 442,
+        "pct_missing": 70.4
+      },
+      {
+        "country": "Colombia",
+        "n_owners": 598,
+        "pct_missing": 69.2
+      },
+      {
+        "country": "Puerto Rico",
+        "n_owners": 369,
+        "pct_missing": 67.8
+      },
+      {
+        "country": "Israel",
+        "n_owners": 233,
+        "pct_missing": 67.8
+      },
+      {
+        "country": "India",
+        "n_owners": 405,
+        "pct_missing": 65.2
+      },
+      {
+        "country": "United States",
+        "n_owners": 487,
+        "pct_missing": 64.9
+      },
+      {
+        "country": "Slovakia",
+        "n_owners": 367,
+        "pct_missing": 63.8
+      },
+      {
+        "country": "Uruguay",
+        "n_owners": 383,
+        "pct_missing": 63.2
+      },
+      {
+        "country": "Sweden",
+        "n_owners": 738,
+        "pct_missing": 62.5
+      },
+      {
+        "country": "Chile",
+        "n_owners": 2475,
+        "pct_missing": 61.1
+      },
+      {
+        "country": "Luxembourg",
+        "n_owners": 252,
+        "pct_missing": 60.7
+      },
+      {
+        "country": "Tunisia",
+        "n_owners": 429,
+        "pct_missing": 59.9
+      },
+      {
+        "country": "Japan",
+        "n_owners": 278,
+        "pct_missing": 55.8
+      },
+      {
+        "country": "Netherlands",
+        "n_owners": 354,
+        "pct_missing": 55.4
+      },
+      {
+        "country": "France",
+        "n_owners": 311,
+        "pct_missing": 55.3
+      },
+      {
+        "country": "Saudi Arabia",
+        "n_owners": 858,
+        "pct_missing": 53.8
+      },
+      {
+        "country": "Romania",
+        "n_owners": 305,
+        "pct_missing": 53.8
+      },
+      {
+        "country": "Iran",
+        "n_owners": 805,
+        "pct_missing": 53.0
+      },
+      {
+        "country": "Switzerland",
+        "n_owners": 327,
+        "pct_missing": 52.6
+      },
+      {
+        "country": "Austria",
+        "n_owners": 786,
+        "pct_missing": 52.5
+      },
+      {
+        "country": "Egypt",
+        "n_owners": 254,
+        "pct_missing": 52.4
+      },
+      {
+        "country": "Venezuela",
+        "n_owners": 141,
+        "pct_missing": 50.4
+      },
+      {
+        "country": "Norway",
+        "n_owners": 221,
+        "pct_missing": 49.3
+      },
+      {
+        "country": "Lithuania",
+        "n_owners": 406,
+        "pct_missing": 47.5
+      },
+      {
+        "country": "Brazil",
+        "n_owners": 556,
+        "pct_missing": 46.8
+      },
+      {
+        "country": "Slovenia",
+        "n_owners": 297,
+        "pct_missing": 44.1
+      },
+      {
+        "country": "United Kingdom",
+        "n_owners": 293,
+        "pct_missing": 43.7
+      },
+      {
+        "country": "Togo",
+        "n_owners": 779,
+        "pct_missing": 43.3
+      },
+      {
+        "country": "Hungary",
+        "n_owners": 308,
+        "pct_missing": 38.0
+      },
+      {
+        "country": "Cyprus",
+        "n_owners": 231,
+        "pct_missing": 37.2
+      },
+      {
+        "country": "Panama",
+        "n_owners": 386,
+        "pct_missing": 35.2
+      },
+      {
+        "country": "Spain",
+        "n_owners": 4326,
+        "pct_missing": 34.0
+      },
+      {
+        "country": "Latvia",
+        "n_owners": 399,
+        "pct_missing": 33.8
+      },
+      {
+        "country": "Taiwan",
+        "n_owners": 294,
+        "pct_missing": 23.1
+      },
+      {
+        "country": "Morocco",
+        "n_owners": 262,
+        "pct_missing": 22.5
+      },
+      {
+        "country": "South Korea",
+        "n_owners": 477,
+        "pct_missing": 22.0
+      },
+      {
+        "country": "Greece",
+        "n_owners": 358,
+        "pct_missing": 20.4
+      },
+      {
+        "country": "Poland",
+        "n_owners": 903,
+        "pct_missing": 12.5
+      },
+      {
+        "country": "Guatemala",
+        "n_owners": 905,
+        "pct_missing": 7.6
+      }
+    ]
+  },
+  "suspects": {
+    "sample_size": {
+      "n_rounds": 8,
+      "raw_r": 0.667,
+      "raw_p": 0.071,
+      "partial": {
+        "r": 0.158,
+        "p": 0.735,
+        "ci": [
+          -0.68,
+          0.81
+        ]
+      },
+      "verdict": "no association survives once the shared time trend is removed, but with eight rounds the interval is far too wide to rule one out either"
+    },
+    "composition": {
+      "teayy": {
+        "n_2013_complete": 4464,
+        "n_2022_complete": 2530,
+        "pct_2013": 24.75,
+        "pct_2022": 8.14,
+        "pct_2022_reweighted": 8.9,
+        "share_of_fall_explained": 4.6
+      },
+      "estbbuso": {
+        "n_2013_complete": 4464,
+        "n_2022_complete": 2530,
+        "pct_2013": 19.53,
+        "pct_2022": 6.72,
+        "pct_2022_reweighted": 7.09,
+        "share_of_fall_explained": 2.9
+      },
+      "composition_profile": {
+        "2013": {
+          "household_income": {
+            "33": 50.5,
+            "3467": 36.6,
+            "68100": 13.0
+          },
+          "working_status": {
+            "10": 76.4,
+            "20": 18.6,
+            "30": 4.9
+          },
+          "education": {
+            "0": 15.4,
+            "111": 19.6,
+            "1212": 53.4,
+            "1316": 11.4,
+            "1720": 0.2
+          }
+        },
+        "2022": {
+          "household_income": {
+            "33": 37.0,
+            "3467": 37.2,
+            "68100": 25.8
+          },
+          "working_status": {
+            "10": 68.5,
+            "20": 25.2,
+            "30": 6.2
+          },
+          "education": {
+            "0": 15.9,
+            "111": 27.2,
+            "1212": 41.3,
+            "1316": 15.2,
+            "1720": 0.4
+          }
+        }
+      },
+      "verdict": "composition explains a small single-digit share of the fall on either measure"
+    },
+    "weighting": {
+      "teayy": {
+        "unweighted_2013": 24.6,
+        "unweighted_2022": 8.12,
+        "weighted_2013": 25.52,
+        "weighted_2022": 8.07,
+        "unweighted_fall_pts": 16.48,
+        "weighted_fall_pts": 17.44,
+        "weighting_share_of_fall": 5.5
+      },
+      "estbbuso": {
+        "unweighted_2013": 19.4,
+        "unweighted_2022": 6.62,
+        "weighted_2013": 21.2,
+        "weighted_2022": 5.69,
+        "unweighted_fall_pts": 12.78,
+        "weighted_fall_pts": 15.51,
+        "weighting_share_of_fall": 17.6
+      },
+      "verdict": "weighting makes the fall LOOK STEEPER, not shallower, so it cannot be the explanation; the published figures already use the weights"
+    }
+  },
+  "cross_country": {
+    "agreement_by_year": [
+      {
+        "year": 2013,
+        "n": 68,
+        "pearson_r": 0.652,
+        "p": 1.76e-09
+      },
+      {
+        "year": 2014,
+        "n": 67,
+        "pearson_r": 0.507,
+        "p": 1.17e-05
+      },
+      {
+        "year": 2015,
+        "n": 58,
+        "pearson_r": 0.535,
+        "p": 1.51e-05
+      },
+      {
+        "year": 2016,
+        "n": 62,
+        "pearson_r": 0.561,
+        "p": 2.11e-06
+      },
+      {
+        "year": 2017,
+        "n": 52,
+        "pearson_r": 0.532,
+        "p": 4.87e-05
+      },
+      {
+        "year": 2018,
+        "n": 47,
+        "pearson_r": 0.539,
+        "p": 9.27e-05
+      },
+      {
+        "year": 2019,
+        "n": 48,
+        "pearson_r": 0.472,
+        "p": 0.000709
+      },
+      {
+        "year": 2020,
+        "n": 42,
+        "pearson_r": 0.499,
+        "p": 0.000775
+      },
+      {
+        "year": 2021,
+        "n": 47,
+        "pearson_r": 0.232,
+        "p": 0.116
+      },
+      {
+        "year": 2022,
+        "n": 47,
+        "pearson_r": 0.281,
+        "p": 0.0555
+      }
+    ],
+    "constant_panel": [
+      {
+        "year": 2013,
+        "n": 30,
+        "r": 0.468,
+        "p": 0.009
+      },
+      {
+        "year": 2014,
+        "n": 28,
+        "r": 0.188,
+        "p": 0.339
+      },
+      {
+        "year": 2015,
+        "n": 32,
+        "r": 0.207,
+        "p": 0.256
+      },
+      {
+        "year": 2016,
+        "n": 33,
+        "r": 0.315,
+        "p": 0.075
+      },
+      {
+        "year": 2017,
+        "n": 33,
+        "r": 0.393,
+        "p": 0.024
+      },
+      {
+        "year": 2018,
+        "n": 31,
+        "r": 0.209,
+        "p": 0.258
+      },
+      {
+        "year": 2019,
+        "n": 31,
+        "r": 0.296,
+        "p": 0.106
+      },
+      {
+        "year": 2020,
+        "n": 30,
+        "r": 0.208,
+        "p": 0.271
+      },
+      {
+        "year": 2021,
+        "n": 31,
+        "r": 0.154,
+        "p": 0.41
+      },
+      {
+        "year": 2022,
+        "n": 31,
+        "r": 0.15,
+        "p": 0.42
+      }
+    ],
+    "constant_slope_p": 0.082,
+    "constant_mean_r": 0.259,
+    "decay_test": {
+      "n_economies": 35,
+      "r_2013": 0.465,
+      "r_2022": 0.149,
+      "fisher_z": 1.41,
+      "p": 0.157,
+      "verdict": "the apparent decay is the changing country roster, not decay"
+    },
+    "unmatched_gem_names": [
+      "Hong Kong",
+      "Kosovo",
+      "Puerto Rico",
+      "Taiwan"
+    ],
+    "indonesia_z": -1.5,
+    "divergence_median": 2.8,
+    "within": {
+      "median_r": 0.061,
+      "n_economies": 47,
+      "share_above_0_5": 0.17,
+      "share_below_minus_0_5": 0.17,
+      "indonesia_r": -0.018,
+      "all_r": [
+        {
+          "country": "Korea",
+          "n_years": 9,
+          "r": -0.904
+        },
+        {
+          "country": "Ecuador",
+          "n_years": 6,
+          "r": -0.893
+        },
+        {
+          "country": "Slovenia",
+          "n_years": 10,
+          "r": -0.89
+        },
+        {
+          "country": "Netherlands",
+          "n_years": 10,
+          "r": -0.779
+        },
+        {
+          "country": "United States",
+          "n_years": 10,
+          "r": -0.727
+        },
+        {
+          "country": "Argentina",
+          "n_years": 6,
+          "r": -0.629
+        },
+        {
+          "country": "Brazil",
+          "n_years": 10,
+          "r": -0.576
+        },
+        {
+          "country": "Poland",
+          "n_years": 10,
+          "r": -0.568
+        },
+        {
+          "country": "Latvia",
+          "n_years": 8,
+          "r": -0.49
+        },
+        {
+          "country": "Greece",
+          "n_years": 10,
+          "r": -0.447
+        },
+        {
+          "country": "Croatia",
+          "n_years": 10,
+          "r": -0.427
+        },
+        {
+          "country": "Switzerland",
+          "n_years": 10,
+          "r": -0.334
+        },
+        {
+          "country": "India",
+          "n_years": 10,
+          "r": -0.315
+        },
+        {
+          "country": "France",
+          "n_years": 7,
+          "r": -0.257
+        },
+        {
+          "country": "Mexico",
+          "n_years": 7,
+          "r": -0.249
+        },
+        {
+          "country": "Israel",
+          "n_years": 9,
+          "r": -0.221
+        },
+        {
+          "country": "Chile",
+          "n_years": 10,
+          "r": -0.213
+        },
+        {
+          "country": "Italy",
+          "n_years": 9,
+          "r": -0.038
+        },
+        {
+          "country": "Japan",
+          "n_years": 7,
+          "r": -0.024
+        },
+        {
+          "country": "Indonesia",
+          "n_years": 8,
+          "r": -0.018
+        },
+        {
+          "country": "Uruguay",
+          "n_years": 9,
+          "r": 0.018
+        },
+        {
+          "country": "Kazakhstan",
+          "n_years": 6,
+          "r": 0.02
+        },
+        {
+          "country": "Russia",
+          "n_years": 7,
+          "r": 0.025
+        },
+        {
+          "country": "Guatemala",
+          "n_years": 10,
+          "r": 0.061
+        },
+        {
+          "country": "Slovakia",
+          "n_years": 10,
+          "r": 0.096
+        },
+        {
+          "country": "Iran",
+          "n_years": 10,
+          "r": 0.132
+        },
+        {
+          "country": "United Kingdom",
+          "n_years": 10,
+          "r": 0.159
+        },
+        {
+          "country": "Luxembourg",
+          "n_years": 10,
+          "r": 0.2
+        },
+        {
+          "country": "Ireland",
+          "n_years": 8,
+          "r": 0.206
+        },
+        {
+          "country": "Germany",
+          "n_years": 10,
+          "r": 0.246
+        },
+        {
+          "country": "Colombia",
+          "n_years": 10,
+          "r": 0.295
+        },
+        {
+          "country": "South Africa",
+          "n_years": 8,
+          "r": 0.296
+        },
+        {
+          "country": "United Arab Emirates",
+          "n_years": 7,
+          "r": 0.337
+        },
+        {
+          "country": "Morocco",
+          "n_years": 8,
+          "r": 0.351
+        },
+        {
+          "country": "Canada",
+          "n_years": 10,
+          "r": 0.364
+        },
+        {
+          "country": "Cyprus",
+          "n_years": 7,
+          "r": 0.429
+        },
+        {
+          "country": "Thailand",
+          "n_years": 6,
+          "r": 0.433
+        },
+        {
+          "country": "Egypt",
+          "n_years": 8,
+          "r": 0.437
+        },
+        {
+          "country": "Peru",
+          "n_years": 6,
+          "r": 0.454
+        },
+        {
+          "country": "Spain",
+          "n_years": 10,
+          "r": 0.546
+        },
+        {
+          "country": "Panama",
+          "n_years": 10,
+          "r": 0.565
+        },
+        {
+          "country": "China",
+          "n_years": 8,
+          "r": 0.567
+        },
+        {
+          "country": "Sweden",
+          "n_years": 10,
+          "r": 0.617
+        },
+        {
+          "country": "Qatar",
+          "n_years": 8,
+          "r": 0.631
+        },
+        {
+          "country": "Hungary",
+          "n_years": 6,
+          "r": 0.647
+        },
+        {
+          "country": "Norway",
+          "n_years": 7,
+          "r": 0.666
+        },
+        {
+          "country": "Saudi Arabia",
+          "n_years": 7,
+          "r": 0.809
+        }
+      ]
+    },
+    "divergence_ranking": [
+      {
+        "country": "Indonesia",
+        "n_years": 8,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -73.2,
+        "ilo_pct_change": -1.3,
+        "divergence": -71.9
+      },
+      {
+        "country": "Qatar",
+        "n_years": 8,
+        "first_year": 2014,
+        "last_year": 2022,
+        "ebo_pct_change": 8.9,
+        "ilo_pct_change": 74.2,
+        "divergence": -65.3
+      },
+      {
+        "country": "Mexico",
+        "n_years": 7,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -62.2,
+        "ilo_pct_change": 1.9,
+        "divergence": -64.1
+      },
+      {
+        "country": "China",
+        "n_years": 8,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -71.2,
+        "ilo_pct_change": -8.8,
+        "divergence": -62.4
+      },
+      {
+        "country": "South Africa",
+        "n_years": 8,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -35.6,
+        "ilo_pct_change": 14.0,
+        "divergence": -49.6
+      },
+      {
+        "country": "France",
+        "n_years": 7,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -28.1,
+        "ilo_pct_change": 16.3,
+        "divergence": -44.4
+      },
+      {
+        "country": "Brazil",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -32.9,
+        "ilo_pct_change": 9.0,
+        "divergence": -41.9
+      },
+      {
+        "country": "Israel",
+        "n_years": 9,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -41.8,
+        "ilo_pct_change": -0.1,
+        "divergence": -41.7
+      },
+      {
+        "country": "Netherlands",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -21.7,
+        "ilo_pct_change": 13.8,
+        "divergence": -35.5
+      },
+      {
+        "country": "Australia",
+        "n_years": 5,
+        "first_year": 2014,
+        "last_year": 2019,
+        "ebo_pct_change": -33.4,
+        "ilo_pct_change": 1.3,
+        "divergence": -34.7
+      },
+      {
+        "country": "Malaysia",
+        "n_years": 5,
+        "first_year": 2013,
+        "last_year": 2017,
+        "ebo_pct_change": -36.6,
+        "ilo_pct_change": -2.4,
+        "divergence": -34.2
+      },
+      {
+        "country": "Ecuador",
+        "n_years": 6,
+        "first_year": 2013,
+        "last_year": 2019,
+        "ebo_pct_change": -18.3,
+        "ilo_pct_change": 12.8,
+        "divergence": -31.1
+      },
+      {
+        "country": "Switzerland",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -17.4,
+        "ilo_pct_change": 6.3,
+        "divergence": -23.7
+      },
+      {
+        "country": "Chile",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -13.5,
+        "ilo_pct_change": 7.8,
+        "divergence": -21.3
+      },
+      {
+        "country": "Thailand",
+        "n_years": 6,
+        "first_year": 2013,
+        "last_year": 2018,
+        "ebo_pct_change": -30.1,
+        "ilo_pct_change": -11.4,
+        "divergence": -18.7
+      },
+      {
+        "country": "Morocco",
+        "n_years": 8,
+        "first_year": 2015,
+        "last_year": 2022,
+        "ebo_pct_change": -20.1,
+        "ilo_pct_change": -3.6,
+        "divergence": -16.5
+      },
+      {
+        "country": "Canada",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -26.4,
+        "ilo_pct_change": -11.3,
+        "divergence": -15.1
+      },
+      {
+        "country": "Argentina",
+        "n_years": 6,
+        "first_year": 2013,
+        "last_year": 2018,
+        "ebo_pct_change": -5.9,
+        "ilo_pct_change": 8.4,
+        "divergence": -14.3
+      },
+      {
+        "country": "Hungary",
+        "n_years": 6,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -3.6,
+        "ilo_pct_change": 9.8,
+        "divergence": -13.4
+      },
+      {
+        "country": "Sweden",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -20.6,
+        "ilo_pct_change": -8.2,
+        "divergence": -12.4
+      },
+      {
+        "country": "India",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -15.1,
+        "ilo_pct_change": -4.6,
+        "divergence": -10.5
+      },
+      {
+        "country": "Colombia",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -13.5,
+        "ilo_pct_change": -3.2,
+        "divergence": -10.3
+      },
+      {
+        "country": "Cyprus",
+        "n_years": 7,
+        "first_year": 2016,
+        "last_year": 2022,
+        "ebo_pct_change": -30.5,
+        "ilo_pct_change": -23.6,
+        "divergence": -6.9
+      },
+      {
+        "country": "Germany",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -29.4,
+        "ilo_pct_change": -24.0,
+        "divergence": -5.4
+      },
+      {
+        "country": "Spain",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -16.5,
+        "ilo_pct_change": -12.1,
+        "divergence": -4.4
+      },
+      {
+        "country": "Austria",
+        "n_years": 5,
+        "first_year": 2014,
+        "last_year": 2022,
+        "ebo_pct_change": -15.4,
+        "ilo_pct_change": -11.7,
+        "divergence": -3.7
+      },
+      {
+        "country": "Egypt",
+        "n_years": 8,
+        "first_year": 2015,
+        "last_year": 2022,
+        "ebo_pct_change": -10.5,
+        "ilo_pct_change": -13.2,
+        "divergence": 2.7
+      },
+      {
+        "country": "Norway",
+        "n_years": 7,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": -9.6,
+        "ilo_pct_change": -12.4,
+        "divergence": 2.8
+      },
+      {
+        "country": "Iran",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 1.7,
+        "ilo_pct_change": -5.3,
+        "divergence": 7.0
+      },
+      {
+        "country": "Russia",
+        "n_years": 7,
+        "first_year": 2013,
+        "last_year": 2021,
+        "ebo_pct_change": 0.5,
+        "ilo_pct_change": -8.3,
+        "divergence": 8.8
+      },
+      {
+        "country": "Ireland",
+        "n_years": 8,
+        "first_year": 2013,
+        "last_year": 2021,
+        "ebo_pct_change": -7.5,
+        "ilo_pct_change": -16.8,
+        "divergence": 9.3
+      },
+      {
+        "country": "United Kingdom",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 4.3,
+        "ilo_pct_change": -7.7,
+        "divergence": 12.0
+      },
+      {
+        "country": "Croatia",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 3.7,
+        "ilo_pct_change": -20.1,
+        "divergence": 23.8
+      },
+      {
+        "country": "Greece",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 5.9,
+        "ilo_pct_change": -18.3,
+        "divergence": 24.2
+      },
+      {
+        "country": "Uruguay",
+        "n_years": 9,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 29.7,
+        "ilo_pct_change": 4.9,
+        "divergence": 24.8
+      },
+      {
+        "country": "Japan",
+        "n_years": 7,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 11.0,
+        "ilo_pct_change": -15.9,
+        "divergence": 26.9
+      },
+      {
+        "country": "Slovakia",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 21.8,
+        "ilo_pct_change": -5.6,
+        "divergence": 27.4
+      },
+      {
+        "country": "Finland",
+        "n_years": 5,
+        "first_year": 2013,
+        "last_year": 2021,
+        "ebo_pct_change": 33.6,
+        "ilo_pct_change": 2.5,
+        "divergence": 31.1
+      },
+      {
+        "country": "United States",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 22.5,
+        "ilo_pct_change": -10.8,
+        "divergence": 33.3
+      },
+      {
+        "country": "Italy",
+        "n_years": 9,
+        "first_year": 2013,
+        "last_year": 2021,
+        "ebo_pct_change": 21.8,
+        "ilo_pct_change": -12.0,
+        "divergence": 33.8
+      },
+      {
+        "country": "Panama",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 67.1,
+        "ilo_pct_change": 28.9,
+        "divergence": 38.2
+      },
+      {
+        "country": "Latvia",
+        "n_years": 8,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 39.6,
+        "ilo_pct_change": -4.5,
+        "divergence": 44.1
+      },
+      {
+        "country": "Peru",
+        "n_years": 6,
+        "first_year": 2013,
+        "last_year": 2018,
+        "ebo_pct_change": 54.5,
+        "ilo_pct_change": 1.4,
+        "divergence": 53.1
+      },
+      {
+        "country": "Slovenia",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 42.5,
+        "ilo_pct_change": -22.3,
+        "divergence": 64.8
+      },
+      {
+        "country": "Portugal",
+        "n_years": 5,
+        "first_year": 2013,
+        "last_year": 2019,
+        "ebo_pct_change": 41.9,
+        "ilo_pct_change": -23.7,
+        "divergence": 65.6
+      },
+      {
+        "country": "Poland",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 51.2,
+        "ilo_pct_change": -17.3,
+        "divergence": 68.5
+      },
+      {
+        "country": "Kazakhstan",
+        "n_years": 6,
+        "first_year": 2014,
+        "last_year": 2021,
+        "ebo_pct_change": 62.8,
+        "ilo_pct_change": -8.1,
+        "divergence": 70.9
+      },
+      {
+        "country": "Romania",
+        "n_years": 5,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 61.0,
+        "ilo_pct_change": -39.7,
+        "divergence": 100.7
+      },
+      {
+        "country": "Luxembourg",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 120.5,
+        "ilo_pct_change": 17.3,
+        "divergence": 103.2
+      },
+      {
+        "country": "United Arab Emirates",
+        "n_years": 7,
+        "first_year": 2016,
+        "last_year": 2022,
+        "ebo_pct_change": 143.7,
+        "ilo_pct_change": 36.7,
+        "divergence": 107.0
+      },
+      {
+        "country": "Guatemala",
+        "n_years": 10,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 127.7,
+        "ilo_pct_change": 7.4,
+        "divergence": 120.3
+      },
+      {
+        "country": "Estonia",
+        "n_years": 5,
+        "first_year": 2013,
+        "last_year": 2017,
+        "ebo_pct_change": 127.1,
+        "ilo_pct_change": -1.0,
+        "divergence": 128.1
+      },
+      {
+        "country": "Korea",
+        "n_years": 9,
+        "first_year": 2013,
+        "last_year": 2022,
+        "ebo_pct_change": 120.9,
+        "ilo_pct_change": -11.4,
+        "divergence": 132.3
+      },
+      {
+        "country": "Saudi Arabia",
+        "n_years": 7,
+        "first_year": 2016,
+        "last_year": 2022,
+        "ebo_pct_change": 322.3,
+        "ilo_pct_change": 104.3,
+        "divergence": 218.0
+      }
+    ]
+  },
+  "sakernas": {
+    "2012": {
+      "employers_k": 3987.6,
+      "own_account_k": 39382.1,
+      "employees_k": 51265.3,
+      "family_workers_k": 18901.7,
+      "total_employed_k": 113536.8,
+      "owners_k": 43369.7,
+      "owners_pct_employed": 38.2,
+      "with_family_pct_employed": 54.8
+    },
+    "2013": {
+      "employers_k": 3996.0,
+      "own_account_k": 38998.4,
+      "employees_k": 52994.8,
+      "family_workers_k": 18356.2,
+      "total_employed_k": 114345.3,
+      "owners_k": 42994.4,
+      "owners_pct_employed": 37.6,
+      "with_family_pct_employed": 53.7
+    },
+    "2014": {
+      "employers_k": 4160.1,
+      "own_account_k": 39908.7,
+      "employees_k": 54360.7,
+      "family_workers_k": 17969.4,
+      "total_employed_k": 116399.0,
+      "owners_k": 44068.9,
+      "owners_pct_employed": 37.9,
+      "with_family_pct_employed": 53.3
+    },
+    "2015": {
+      "employers_k": 4141.4,
+      "own_account_k": 39084.7,
+      "employees_k": 57733.1,
+      "family_workers_k": 16873.7,
+      "total_employed_k": 117833.0,
+      "owners_k": 43226.1,
+      "owners_pct_employed": 36.7,
+      "with_family_pct_employed": 51.0
+    },
+    "2016": {
+      "employers_k": 4201.8,
+      "own_account_k": 40428.2,
+      "employees_k": 58418.7,
+      "family_workers_k": 16481.1,
+      "total_employed_k": 119529.8,
+      "owners_k": 44630.0,
+      "owners_pct_employed": 37.3,
+      "with_family_pct_employed": 51.1
+    },
+    "2017": {
+      "employers_k": 4200.3,
+      "own_account_k": 42148.8,
+      "employees_k": 59928.1,
+      "family_workers_k": 16503.5,
+      "total_employed_k": 122780.6,
+      "owners_k": 46349.1,
+      "owners_pct_employed": 37.7,
+      "with_family_pct_employed": 51.2
+    },
+    "2018": {
+      "employers_k": 4527.6,
+      "own_account_k": 44390.3,
+      "employees_k": 60839.3,
+      "family_workers_k": 16917.8,
+      "total_employed_k": 126675.0,
+      "owners_k": 48918.0,
+      "owners_pct_employed": 38.6,
+      "with_family_pct_employed": 52.0
+    },
+    "2019": {
+      "employers_k": 4630.7,
+      "own_account_k": 46643.1,
+      "employees_k": 63407.7,
+      "family_workers_k": 17214.5,
+      "total_employed_k": 131895.9,
+      "owners_k": 51273.8,
+      "owners_pct_employed": 38.9,
+      "with_family_pct_employed": 51.9
+    },
+    "2020": {
+      "employers_k": 4470.5,
+      "own_account_k": 46836.1,
+      "employees_k": 61662.7,
+      "family_workers_k": 18217.8,
+      "total_employed_k": 131187.2,
+      "owners_k": 51306.7,
+      "owners_pct_employed": 39.1,
+      "with_family_pct_employed": 53.0
+    },
+    "2021": {
+      "employers_k": 4205.5,
+      "own_account_k": 46580.2,
+      "employees_k": 61180.0,
+      "family_workers_k": 18552.5,
+      "total_employed_k": 130518.2,
+      "owners_k": 50785.7,
+      "owners_pct_employed": 38.9,
+      "with_family_pct_employed": 53.1
+    },
+    "2022": {
+      "employers_k": 4278.2,
+      "own_account_k": 49277.6,
+      "employees_k": 62946.5,
+      "family_workers_k": 18706.1,
+      "total_employed_k": 135208.4,
+      "owners_k": 53555.8,
+      "owners_pct_employed": 39.6,
+      "with_family_pct_employed": 53.4
+    },
+    "2023": {
+      "employers_k": 4698.0,
+      "own_account_k": 51507.0,
+      "employees_k": 63988.0,
+      "family_workers_k": 19049.5,
+      "total_employed_k": 139242.4,
+      "owners_k": 56205.0,
+      "owners_pct_employed": 40.4,
+      "with_family_pct_employed": 54.0
+    }
+  }
+}
