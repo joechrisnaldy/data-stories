@@ -1,0 +1,2365 @@
+{
+ "measurement": {
+  "series_used": "age-standardised",
+  "why": "the crude estimate partly measures age structure, because obesity rises with age and populations differ in how old they are",
+  "n": 199,
+  "correlation_crude_vs_standardised": 0.9909,
+  "mean_gap_pts": 0.41,
+  "gap_range_pts": [
+   -4.25,
+   6.06
+  ],
+  "crude_most_overstates": [
+   {
+    "entity": "Greece",
+    "crude": 33.3,
+    "standardised": 27.2,
+    "gap": 6.1
+   },
+   {
+    "entity": "Croatia",
+    "crude": 35.7,
+    "standardised": 30.1,
+    "gap": 5.6
+   },
+   {
+    "entity": "Latvia",
+    "crude": 27.7,
+    "standardised": 22.3,
+    "gap": 5.5
+   }
+  ],
+  "crude_most_understates": [
+   {
+    "entity": "Palestine",
+    "crude": 33.0,
+    "standardised": 37.2,
+    "gap": -4.3
+   },
+   {
+    "entity": "Syria",
+    "crude": 29.8,
+    "standardised": 32.8,
+    "gap": -2.9
+   },
+   {
+    "entity": "Iraq",
+    "crude": 36.4,
+    "standardised": 39.3,
+    "gap": -2.9
+   }
+  ]
+ },
+ "meta": {
+  "year": 2023,
+  "n_countries": 168,
+  "n_pacific": 11,
+  "n_excluding_pacific": 157,
+  "obesity_source": "WHO Global Health Observatory (2026), via Our World in Data",
+  "diet_source": "FAO Food Balance Sheets (2025), via Our World in Data",
+  "gdp_source": "Eurostat, OECD, IMF and World Bank (2026), via Our World in Data",
+  "sample_rule": {
+   "requires": [
+    "WHO age-standardised obesity",
+    "FAO daily calorie supply",
+    "World Bank income per person"
+   ],
+   "n_obesity_and_calories_only": 172,
+   "n_final": 168,
+   "macronutrients_add_no_constraint": true,
+   "dropped_for_missing_income": [
+    "French Polynesia",
+    "Syria",
+    "Venezuela",
+    "Yemen"
+   ],
+   "note": "the macronutrient file has the same 2023 country coverage as the calorie file, so requiring it changes nothing; income is the binding constraint"
+  }
+ },
+ "explains": {
+  "calories": {
+   "all": {
+    "r": 0.2378,
+    "r2": 0.0565,
+    "n": 168
+   },
+   "excluding_pacific": {
+    "r": 0.2787,
+    "r2": 0.0777,
+    "n": 157
+   }
+  },
+  "log_gdp": {
+   "all": {
+    "r": 0.2683,
+    "r2": 0.072,
+    "n": 168
+   },
+   "excluding_pacific": {
+    "r": 0.4827,
+    "r2": 0.233,
+    "n": 157
+   }
+  },
+  "fat_share": {
+   "all": {
+    "r": 0.4583,
+    "r2": 0.21,
+    "n": 168
+   },
+   "excluding_pacific": {
+    "r": 0.4527,
+    "r2": 0.2049,
+    "n": 157
+   }
+  },
+  "animal_protein_share": {
+   "all": {
+    "r": 0.4725,
+    "r2": 0.2233,
+    "n": 168
+   },
+   "excluding_pacific": {
+    "r": 0.4528,
+    "r2": 0.205,
+    "n": 157
+   }
+  },
+  "carb_share": {
+   "all": {
+    "r": -0.4742,
+    "r2": 0.2248,
+    "n": 168
+   },
+   "excluding_pacific": {
+    "r": -0.464,
+    "r2": 0.2153,
+    "n": 157
+   }
+  },
+  "joint_three_factor": {
+   "all": {
+    "r2": 0.2353,
+    "n": 168,
+    "unexplained": 0.7647
+   },
+   "excluding_pacific": {
+    "r2": 0.2728,
+    "n": 157,
+    "unexplained": 0.7272
+   }
+  }
+ },
+ "residuals": {
+  "model": "obesity ~ kcal + log(gdp) + animal protein share",
+  "rmse_pts": 11.0,
+  "mae_pts": 8.55,
+  "median_abs_error_pts": 7.42,
+  "most_above_prediction": [
+   {
+    "entity": "Nauru",
+    "actual": 71.1,
+    "predicted": 32.8,
+    "resid": 38.3
+   },
+   {
+    "entity": "Tuvalu",
+    "actual": 64.6,
+    "predicted": 30.6,
+    "resid": 34.0
+   },
+   {
+    "entity": "Tonga",
+    "actual": 73.0,
+    "predicted": 39.7,
+    "resid": 33.3
+   },
+   {
+    "entity": "Samoa",
+    "actual": 63.6,
+    "predicted": 33.1,
+    "resid": 30.5
+   },
+   {
+    "entity": "Egypt",
+    "actual": 43.5,
+    "predicted": 17.0,
+    "resid": 26.5
+   },
+   {
+    "entity": "Iraq",
+    "actual": 39.3,
+    "predicted": 14.1,
+    "resid": 25.2
+   }
+  ],
+  "most_below_prediction": [
+   {
+    "entity": "Vietnam",
+    "actual": 2.2,
+    "predicted": 23.7,
+    "resid": -21.5
+   },
+   {
+    "entity": "Mongolia",
+    "actual": 24.4,
+    "predicted": 43.8,
+    "resid": -19.4
+   },
+   {
+    "entity": "France",
+    "actual": 11.3,
+    "predicted": 29.7,
+    "resid": -18.4
+   },
+   {
+    "entity": "South Korea",
+    "actual": 7.9,
+    "predicted": 26.1,
+    "resid": -18.2
+   },
+   {
+    "entity": "East Timor",
+    "actual": 3.3,
+    "predicted": 21.4,
+    "resid": -18.1
+   },
+   {
+    "entity": "Denmark",
+    "actual": 14.1,
+    "predicted": 31.2,
+    "resid": -17.1
+   }
+  ]
+ },
+ "hook_high_calorie_group": {
+  "threshold_kcal": 3700,
+  "n": 10,
+  "obesity_min_pct": 14.1,
+  "obesity_max_pct": 40.7,
+  "obesity_ratio": 2.9,
+  "kcal_min": 3730.0,
+  "kcal_max": 3947.0,
+  "kcal_spread_pct": 5.8,
+  "countries": [
+   {
+    "entity": "United States",
+    "kcal": 3947.0,
+    "obesity": 40.7
+   },
+   {
+    "entity": "Belgium",
+    "kcal": 3921.0,
+    "obesity": 20.5
+   },
+   {
+    "entity": "Ireland",
+    "kcal": 3921.0,
+    "obesity": 27.6
+   },
+   {
+    "entity": "Turkey",
+    "kcal": 3892.0,
+    "obesity": 28.9
+   },
+   {
+    "entity": "Serbia",
+    "kcal": 3879.0,
+    "obesity": 21.5
+   },
+   {
+    "entity": "Austria",
+    "kcal": 3756.0,
+    "obesity": 16.3
+   },
+   {
+    "entity": "Israel",
+    "kcal": 3754.0,
+    "obesity": 22.3
+   },
+   {
+    "entity": "Italy",
+    "kcal": 3753.0,
+    "obesity": 14.2
+   },
+   {
+    "entity": "Denmark",
+    "kcal": 3734.0,
+    "obesity": 14.1
+   },
+   {
+    "entity": "Poland",
+    "kcal": 3730.0,
+    "obesity": 21.8
+   }
+  ]
+ },
+ "near_identical_pairs": {
+  "rule": "within 30 kcal of each other, more than 25 points apart on obesity",
+  "n_pairs": 69,
+  "n_pairs_no_pacific": 34,
+  "top": [
+   {
+    "a": "Tonga",
+    "a_kcal": 3059.0,
+    "a_obesity": 73.0,
+    "b": "Vietnam",
+    "b_kcal": 3086.0,
+    "b_obesity": 2.2,
+    "kcal_apart": 27.0,
+    "obesity_apart": 70.8,
+    "either_pacific": true
+   },
+   {
+    "a": "Nauru",
+    "a_kcal": 3082.0,
+    "a_obesity": 71.1,
+    "b": "Vietnam",
+    "b_kcal": 3086.0,
+    "b_obesity": 2.2,
+    "kcal_apart": 4.0,
+    "obesity_apart": 68.9,
+    "either_pacific": true
+   },
+   {
+    "a": "Nauru",
+    "a_kcal": 3082.0,
+    "a_obesity": 71.1,
+    "b": "Bhutan",
+    "b_kcal": 3107.0,
+    "b_obesity": 12.5,
+    "kcal_apart": 25.0,
+    "obesity_apart": 58.6,
+    "either_pacific": true
+   },
+   {
+    "a": "Bhutan",
+    "a_kcal": 3107.0,
+    "a_obesity": 12.5,
+    "b": "Samoa",
+    "b_kcal": 3116.0,
+    "b_obesity": 63.6,
+    "kcal_apart": 10.0,
+    "obesity_apart": 51.2,
+    "either_pacific": true
+   },
+   {
+    "a": "Samoa",
+    "a_kcal": 3116.0,
+    "a_obesity": 63.6,
+    "b": "Ghana",
+    "b_kcal": 3125.0,
+    "b_obesity": 14.1,
+    "kcal_apart": 9.0,
+    "obesity_apart": 49.5,
+    "either_pacific": true
+   },
+   {
+    "a": "Mongolia",
+    "a_kcal": 3031.0,
+    "a_obesity": 24.4,
+    "b": "Tonga",
+    "b_kcal": 3059.0,
+    "b_obesity": 73.0,
+    "kcal_apart": 28.0,
+    "obesity_apart": 48.6,
+    "either_pacific": true
+   }
+  ],
+  "top_no_pacific": [
+   {
+    "a": "Cambodia",
+    "a_kcal": 2643.0,
+    "a_obesity": 4.6,
+    "b": "Bahamas",
+    "b_kcal": 2672.0,
+    "b_obesity": 47.6,
+    "kcal_apart": 29.0,
+    "obesity_apart": 43.0,
+    "either_pacific": false
+   },
+   {
+    "a": "Vietnam",
+    "a_kcal": 3086.0,
+    "a_obesity": 2.2,
+    "b": "Egypt",
+    "b_kcal": 3094.0,
+    "b_obesity": 43.5,
+    "kcal_apart": 8.0,
+    "obesity_apart": 41.3,
+    "either_pacific": false
+   },
+   {
+    "a": "Niger",
+    "a_kcal": 2654.0,
+    "a_obesity": 6.4,
+    "b": "Bahamas",
+    "b_kcal": 2672.0,
+    "b_obesity": 47.6,
+    "kcal_apart": 18.0,
+    "obesity_apart": 41.2,
+    "either_pacific": false
+   },
+   {
+    "a": "India",
+    "a_kcal": 2668.0,
+    "a_obesity": 7.6,
+    "b": "Bahamas",
+    "b_kcal": 2672.0,
+    "b_obesity": 47.6,
+    "kcal_apart": 4.0,
+    "obesity_apart": 40.0,
+    "either_pacific": false
+   },
+   {
+    "a": "Chile",
+    "a_kcal": 3057.0,
+    "a_obesity": 39.5,
+    "b": "Vietnam",
+    "b_kcal": 3086.0,
+    "b_obesity": 2.2,
+    "kcal_apart": 29.0,
+    "obesity_apart": 37.3,
+    "either_pacific": false
+   },
+   {
+    "a": "Bahamas",
+    "a_kcal": 2672.0,
+    "a_obesity": 47.6,
+    "b": "Sri Lanka",
+    "b_kcal": 2675.0,
+    "b_obesity": 10.7,
+    "kcal_apart": 3.0,
+    "obesity_apart": 36.9,
+    "either_pacific": false
+   }
+  ]
+ },
+ "extremes": {
+  "highest_obesity": [
+   {
+    "entity": "Tonga",
+    "obesity": 73.0,
+    "kcal": 3059.0
+   },
+   {
+    "entity": "Nauru",
+    "obesity": 71.1,
+    "kcal": 3082.0
+   },
+   {
+    "entity": "Tuvalu",
+    "obesity": 64.6,
+    "kcal": 3295.0
+   },
+   {
+    "entity": "Samoa",
+    "obesity": 63.6,
+    "kcal": 3116.0
+   },
+   {
+    "entity": "Micronesia (country)",
+    "obesity": 48.2,
+    "kcal": 2633.0
+   },
+   {
+    "entity": "Bahamas",
+    "obesity": 47.6,
+    "kcal": 2672.0
+   }
+  ],
+  "lowest_obesity": [
+   {
+    "entity": "Vietnam",
+    "obesity": 2.2,
+    "kcal": 3086.0
+   },
+   {
+    "entity": "Ethiopia",
+    "obesity": 2.7,
+    "kcal": 2558.0
+   },
+   {
+    "entity": "East Timor",
+    "obesity": 3.3,
+    "kcal": 2277.0
+   },
+   {
+    "entity": "Madagascar",
+    "obesity": 4.3,
+    "kcal": 1978.0
+   },
+   {
+    "entity": "Cambodia",
+    "obesity": 4.6,
+    "kcal": 2643.0
+   },
+   {
+    "entity": "Rwanda",
+    "obesity": 5.3,
+    "kcal": 2405.0
+   }
+  ],
+  "obesity_median_pct": 22.3,
+  "kcal_median": 2982.0,
+  "kcal_range": [
+   1873.0,
+   3947.0
+  ]
+ },
+ "composition_is_not_independent": {
+  "max_abs_difference_kcal": 0.077,
+  "n_country_years": 10187,
+  "meaning": "the macronutrient components sum to the calorie series itself, so diet composition is the same FAO number cut differently, not a second source"
+ },
+ "scatter": [
+  {
+   "entity": "Afghanistan",
+   "code": "AFG",
+   "obesity": 19.62,
+   "kcal": 2314.6,
+   "gdp": 1983.8,
+   "animal_protein_share": 1.51,
+   "fat_share": 16.85,
+   "carb_share": 72.34,
+   "is_pacific": false
+  },
+  {
+   "entity": "Albania",
+   "code": "ALB",
+   "obesity": 23.54,
+   "kcal": 3237.8,
+   "gdp": 20501.6,
+   "animal_protein_share": 7.86,
+   "fat_share": 32.09,
+   "carb_share": 53.83,
+   "is_pacific": false
+  },
+  {
+   "entity": "Algeria",
+   "code": "DZA",
+   "obesity": 23.21,
+   "kcal": 3396.0,
+   "gdp": 15159.3,
+   "animal_protein_share": 3.27,
+   "fat_share": 26.98,
+   "carb_share": 62.0,
+   "is_pacific": false
+  },
+  {
+   "entity": "Angola",
+   "code": "AGO",
+   "obesity": 12.26,
+   "kcal": 2399.3,
+   "gdp": 8597.5,
+   "animal_protein_share": 2.39,
+   "fat_share": 18.58,
+   "carb_share": 73.5,
+   "is_pacific": false
+  },
+  {
+   "entity": "Antigua and Barbuda",
+   "code": "ATG",
+   "obesity": 33.91,
+   "kcal": 2544.0,
+   "gdp": 28712.4,
+   "animal_protein_share": 10.7,
+   "fat_share": 37.03,
+   "carb_share": 47.55,
+   "is_pacific": false
+  },
+  {
+   "entity": "Argentina",
+   "code": "ARG",
+   "obesity": 36.23,
+   "kcal": 3360.4,
+   "gdp": 27230.4,
+   "animal_protein_share": 9.0,
+   "fat_share": 36.62,
+   "carb_share": 48.91,
+   "is_pacific": false
+  },
+  {
+   "entity": "Armenia",
+   "code": "ARM",
+   "obesity": 24.53,
+   "kcal": 3129.2,
+   "gdp": 19402.8,
+   "animal_protein_share": 6.41,
+   "fat_share": 31.33,
+   "carb_share": 55.48,
+   "is_pacific": false
+  },
+  {
+   "entity": "Australia",
+   "code": "AUS",
+   "obesity": 30.19,
+   "kcal": 3561.9,
+   "gdp": 60685.0,
+   "animal_protein_share": 9.09,
+   "fat_share": 40.19,
+   "carb_share": 45.77,
+   "is_pacific": false
+  },
+  {
+   "entity": "Austria",
+   "code": "AUT",
+   "obesity": 16.27,
+   "kcal": 3755.9,
+   "gdp": 64536.2,
+   "animal_protein_share": 6.97,
+   "fat_share": 44.78,
+   "carb_share": 43.67,
+   "is_pacific": false
+  },
+  {
+   "entity": "Azerbaijan",
+   "code": "AZE",
+   "obesity": 26.99,
+   "kcal": 3339.2,
+   "gdp": 21310.7,
+   "animal_protein_share": 4.63,
+   "fat_share": 25.57,
+   "carb_share": 62.22,
+   "is_pacific": false
+  },
+  {
+   "entity": "Bahamas",
+   "code": "BHS",
+   "obesity": 47.61,
+   "kcal": 2672.3,
+   "gdp": 35221.3,
+   "animal_protein_share": 10.95,
+   "fat_share": 39.54,
+   "carb_share": 44.77,
+   "is_pacific": false
+  },
+  {
+   "entity": "Bahrain",
+   "code": "BHR",
+   "obesity": 34.75,
+   "kcal": 3422.8,
+   "gdp": 57819.9,
+   "animal_protein_share": 6.54,
+   "fat_share": 35.56,
+   "carb_share": 52.78,
+   "is_pacific": false
+  },
+  {
+   "entity": "Bangladesh",
+   "code": "BGD",
+   "obesity": 5.43,
+   "kcal": 2587.7,
+   "gdp": 8242.4,
+   "animal_protein_share": 2.84,
+   "fat_share": 14.87,
+   "carb_share": 74.62,
+   "is_pacific": false
+  },
+  {
+   "entity": "Barbados",
+   "code": "BRB",
+   "obesity": 38.69,
+   "kcal": 3117.9,
+   "gdp": 20865.0,
+   "animal_protein_share": 7.41,
+   "fat_share": 29.54,
+   "carb_share": 56.52,
+   "is_pacific": false
+  },
+  {
+   "entity": "Belarus",
+   "code": "BLR",
+   "obesity": 20.76,
+   "kcal": 3396.3,
+   "gdp": 27782.4,
+   "animal_protein_share": 10.09,
+   "fat_share": 33.22,
+   "carb_share": 51.71,
+   "is_pacific": false
+  },
+  {
+   "entity": "Belgium",
+   "code": "BEL",
+   "obesity": 20.53,
+   "kcal": 3921.3,
+   "gdp": 63042.0,
+   "animal_protein_share": 8.26,
+   "fat_share": 39.04,
+   "carb_share": 48.69,
+   "is_pacific": false
+  },
+  {
+   "entity": "Belize",
+   "code": "BLZ",
+   "obesity": 42.73,
+   "kcal": 2831.8,
+   "gdp": 12371.0,
+   "animal_protein_share": 5.66,
+   "fat_share": 31.61,
+   "carb_share": 55.87,
+   "is_pacific": false
+  },
+  {
+   "entity": "Bhutan",
+   "code": "BTN",
+   "obesity": 12.48,
+   "kcal": 3106.7,
+   "gdp": 14610.3,
+   "animal_protein_share": 1.96,
+   "fat_share": 23.33,
+   "carb_share": 67.43,
+   "is_pacific": false
+  },
+  {
+   "entity": "Bolivia",
+   "code": "BOL",
+   "obesity": 28.97,
+   "kcal": 2373.7,
+   "gdp": 11616.2,
+   "animal_protein_share": 7.42,
+   "fat_share": 21.69,
+   "carb_share": 64.69,
+   "is_pacific": false
+  },
+  {
+   "entity": "Bosnia and Herzegovina",
+   "code": "BIH",
+   "obesity": 20.65,
+   "kcal": 3457.8,
+   "gdp": 19804.9,
+   "animal_protein_share": 4.98,
+   "fat_share": 25.17,
+   "carb_share": 61.68,
+   "is_pacific": false
+  },
+  {
+   "entity": "Botswana",
+   "code": "BWA",
+   "obesity": 19.3,
+   "kcal": 2713.9,
+   "gdp": 18932.5,
+   "animal_protein_share": 3.92,
+   "fat_share": 21.6,
+   "carb_share": 67.64,
+   "is_pacific": false
+  },
+  {
+   "entity": "Brazil",
+   "code": "BRA",
+   "obesity": 29.14,
+   "kcal": 3423.4,
+   "gdp": 19079.8,
+   "animal_protein_share": 7.94,
+   "fat_share": 37.15,
+   "carb_share": 50.4,
+   "is_pacific": false
+  },
+  {
+   "entity": "Bulgaria",
+   "code": "BGR",
+   "obesity": 20.13,
+   "kcal": 2999.6,
+   "gdp": 33073.7,
+   "animal_protein_share": 7.04,
+   "fat_share": 41.9,
+   "carb_share": 46.56,
+   "is_pacific": false
+  },
+  {
+   "entity": "Burkina Faso",
+   "code": "BFA",
+   "obesity": 7.23,
+   "kcal": 2790.9,
+   "gdp": 2486.2,
+   "animal_protein_share": 2.33,
+   "fat_share": 20.67,
+   "carb_share": 66.07,
+   "is_pacific": false
+  },
+  {
+   "entity": "Cambodia",
+   "code": "KHM",
+   "obesity": 4.63,
+   "kcal": 2642.9,
+   "gdp": 6695.3,
+   "animal_protein_share": 3.31,
+   "fat_share": 11.79,
+   "carb_share": 78.46,
+   "is_pacific": false
+  },
+  {
+   "entity": "Cameroon",
+   "code": "CMR",
+   "obesity": 15.61,
+   "kcal": 2901.0,
+   "gdp": 4875.3,
+   "animal_protein_share": 1.93,
+   "fat_share": 18.78,
+   "carb_share": 71.39,
+   "is_pacific": false
+  },
+  {
+   "entity": "Canada",
+   "code": "CAN",
+   "obesity": 25.88,
+   "kcal": 3590.0,
+   "gdp": 58088.4,
+   "animal_protein_share": 7.88,
+   "fat_share": 40.89,
+   "carb_share": 46.53,
+   "is_pacific": false
+  },
+  {
+   "entity": "Cape Verde",
+   "code": "CPV",
+   "obesity": 16.16,
+   "kcal": 2793.6,
+   "gdp": 9228.5,
+   "animal_protein_share": 4.81,
+   "fat_share": 27.15,
+   "carb_share": 61.01,
+   "is_pacific": false
+  },
+  {
+   "entity": "Chile",
+   "code": "CHL",
+   "obesity": 39.54,
+   "kcal": 3057.5,
+   "gdp": 29600.4,
+   "animal_protein_share": 7.84,
+   "fat_share": 27.84,
+   "carb_share": 58.4,
+   "is_pacific": false
+  },
+  {
+   "entity": "China",
+   "code": "CHN",
+   "obesity": 8.74,
+   "kcal": 3526.9,
+   "gdp": 22687.3,
+   "animal_protein_share": 6.13,
+   "fat_share": 25.62,
+   "carb_share": 59.46,
+   "is_pacific": false
+  },
+  {
+   "entity": "Colombia",
+   "code": "COL",
+   "obesity": 24.33,
+   "kcal": 3126.3,
+   "gdp": 18406.6,
+   "animal_protein_share": 5.95,
+   "fat_share": 29.82,
+   "carb_share": 59.54,
+   "is_pacific": false
+  },
+  {
+   "entity": "Comoros",
+   "code": "COM",
+   "obesity": 16.19,
+   "kcal": 2390.2,
+   "gdp": 3508.2,
+   "animal_protein_share": 3.28,
+   "fat_share": 22.17,
+   "carb_share": 67.28,
+   "is_pacific": false
+  },
+  {
+   "entity": "Congo",
+   "code": "COG",
+   "obesity": 11.78,
+   "kcal": 2187.1,
+   "gdp": 6172.3,
+   "animal_protein_share": 6.36,
+   "fat_share": 22.51,
+   "carb_share": 66.72,
+   "is_pacific": false
+  },
+  {
+   "entity": "Costa Rica",
+   "code": "CRI",
+   "obesity": 32.04,
+   "kcal": 3061.1,
+   "gdp": 26378.5,
+   "animal_protein_share": 7.19,
+   "fat_share": 31.7,
+   "carb_share": 56.3,
+   "is_pacific": false
+  },
+  {
+   "entity": "Cote d'Ivoire",
+   "code": "CIV",
+   "obesity": 12.29,
+   "kcal": 2937.7,
+   "gdp": 6520.9,
+   "animal_protein_share": 2.25,
+   "fat_share": 17.25,
+   "carb_share": 73.9,
+   "is_pacific": false
+  },
+  {
+   "entity": "Croatia",
+   "code": "HRV",
+   "obesity": 30.12,
+   "kcal": 3447.6,
+   "gdp": 41320.3,
+   "animal_protein_share": 8.53,
+   "fat_share": 36.48,
+   "carb_share": 50.15,
+   "is_pacific": false
+  },
+  {
+   "entity": "Cyprus",
+   "code": "CYP",
+   "obesity": 21.58,
+   "kcal": 2876.5,
+   "gdp": 51674.9,
+   "animal_protein_share": 7.96,
+   "fat_share": 34.22,
+   "carb_share": 52.05,
+   "is_pacific": false
+  },
+  {
+   "entity": "Czechia",
+   "code": "CZE",
+   "obesity": 25.95,
+   "kcal": 3384.3,
+   "gdp": 47558.4,
+   "animal_protein_share": 7.3,
+   "fat_share": 42.3,
+   "carb_share": 46.35,
+   "is_pacific": false
+  },
+  {
+   "entity": "Democratic Republic of Congo",
+   "code": "COD",
+   "obesity": 6.43,
+   "kcal": 2014.8,
+   "gdp": 1559.3,
+   "animal_protein_share": 0.72,
+   "fat_share": 9.09,
+   "carb_share": 85.41,
+   "is_pacific": false
+  },
+  {
+   "entity": "Denmark",
+   "code": "DNK",
+   "obesity": 14.14,
+   "kcal": 3733.9,
+   "gdp": 68993.9,
+   "animal_protein_share": 9.29,
+   "fat_share": 36.34,
+   "carb_share": 50.12,
+   "is_pacific": false
+  },
+  {
+   "entity": "Djibouti",
+   "code": "DJI",
+   "obesity": 11.19,
+   "kcal": 2720.9,
+   "gdp": 6510.7,
+   "animal_protein_share": 2.24,
+   "fat_share": 22.27,
+   "carb_share": 66.72,
+   "is_pacific": false
+  },
+  {
+   "entity": "Dominican Republic",
+   "code": "DOM",
+   "obesity": 30.04,
+   "kcal": 3313.4,
+   "gdp": 23282.5,
+   "animal_protein_share": 5.83,
+   "fat_share": 31.51,
+   "carb_share": 57.63,
+   "is_pacific": false
+  },
+  {
+   "entity": "East Timor",
+   "code": "TLS",
+   "obesity": 3.32,
+   "kcal": 2276.5,
+   "gdp": 4331.1,
+   "animal_protein_share": 4.17,
+   "fat_share": 24.26,
+   "carb_share": 64.25,
+   "is_pacific": false
+  },
+  {
+   "entity": "Ecuador",
+   "code": "ECU",
+   "obesity": 28.18,
+   "kcal": 2620.9,
+   "gdp": 14321.2,
+   "animal_protein_share": 6.18,
+   "fat_share": 35.83,
+   "carb_share": 53.54,
+   "is_pacific": false
+  },
+  {
+   "entity": "Egypt",
+   "code": "EGY",
+   "obesity": 43.51,
+   "kcal": 3094.0,
+   "gdp": 16691.4,
+   "animal_protein_share": 3.41,
+   "fat_share": 15.84,
+   "carb_share": 72.55,
+   "is_pacific": false
+  },
+  {
+   "entity": "El Salvador",
+   "code": "SLV",
+   "obesity": 31.59,
+   "kcal": 2896.3,
+   "gdp": 11404.3,
+   "animal_protein_share": 5.11,
+   "fat_share": 23.53,
+   "carb_share": 64.2,
+   "is_pacific": false
+  },
+  {
+   "entity": "Estonia",
+   "code": "EST",
+   "obesity": 20.38,
+   "kcal": 3286.5,
+   "gdp": 41284.8,
+   "animal_protein_share": 9.12,
+   "fat_share": 37.12,
+   "carb_share": 49.23,
+   "is_pacific": false
+  },
+  {
+   "entity": "Eswatini",
+   "code": "SWZ",
+   "obesity": 28.99,
+   "kcal": 2573.8,
+   "gdp": 10181.5,
+   "animal_protein_share": 2.49,
+   "fat_share": 20.29,
+   "carb_share": 70.58,
+   "is_pacific": false
+  },
+  {
+   "entity": "Ethiopia",
+   "code": "ETH",
+   "obesity": 2.74,
+   "kcal": 2558.4,
+   "gdp": 2758.0,
+   "animal_protein_share": 1.08,
+   "fat_share": 15.46,
+   "carb_share": 72.05,
+   "is_pacific": false
+  },
+  {
+   "entity": "Fiji",
+   "code": "FJI",
+   "obesity": 38.17,
+   "kcal": 2938.0,
+   "gdp": 13194.8,
+   "animal_protein_share": 6.34,
+   "fat_share": 28.93,
+   "carb_share": 59.22,
+   "is_pacific": true
+  },
+  {
+   "entity": "Finland",
+   "code": "FIN",
+   "obesity": 23.71,
+   "kcal": 3345.6,
+   "gdp": 56051.8,
+   "animal_protein_share": 9.28,
+   "fat_share": 33.3,
+   "carb_share": 51.62,
+   "is_pacific": false
+  },
+  {
+   "entity": "France",
+   "code": "FRA",
+   "obesity": 11.34,
+   "kcal": 3489.5,
+   "gdp": 54296.7,
+   "animal_protein_share": 8.65,
+   "fat_share": 38.46,
+   "carb_share": 48.24,
+   "is_pacific": false
+  },
+  {
+   "entity": "Gabon",
+   "code": "GAB",
+   "obesity": 21.99,
+   "kcal": 2686.5,
+   "gdp": 18701.4,
+   "animal_protein_share": 6.16,
+   "fat_share": 21.52,
+   "carb_share": 65.86,
+   "is_pacific": false
+  },
+  {
+   "entity": "Gambia",
+   "code": "GMB",
+   "obesity": 11.91,
+   "kcal": 2402.3,
+   "gdp": 2963.6,
+   "animal_protein_share": 3.19,
+   "fat_share": 17.23,
+   "carb_share": 73.09,
+   "is_pacific": false
+  },
+  {
+   "entity": "Georgia",
+   "code": "GEO",
+   "obesity": 35.0,
+   "kcal": 2999.8,
+   "gdp": 22590.5,
+   "animal_protein_share": 5.72,
+   "fat_share": 27.54,
+   "carb_share": 60.43,
+   "is_pacific": false
+  },
+  {
+   "entity": "Germany",
+   "code": "DEU",
+   "obesity": 20.61,
+   "kcal": 3534.5,
+   "gdp": 63140.2,
+   "animal_protein_share": 8.33,
+   "fat_share": 41.32,
+   "carb_share": 46.32,
+   "is_pacific": false
+  },
+  {
+   "entity": "Ghana",
+   "code": "GHA",
+   "obesity": 14.1,
+   "kcal": 3125.0,
+   "gdp": 6808.5,
+   "animal_protein_share": 2.21,
+   "fat_share": 14.03,
+   "carb_share": 77.28,
+   "is_pacific": false
+  },
+  {
+   "entity": "Greece",
+   "code": "GRC",
+   "obesity": 27.2,
+   "kcal": 3381.7,
+   "gdp": 36700.5,
+   "animal_protein_share": 8.31,
+   "fat_share": 41.56,
+   "carb_share": 45.19,
+   "is_pacific": false
+  },
+  {
+   "entity": "Grenada",
+   "code": "GRD",
+   "obesity": 30.83,
+   "kcal": 2826.5,
+   "gdp": 17093.2,
+   "animal_protein_share": 8.39,
+   "fat_share": 36.7,
+   "carb_share": 49.38,
+   "is_pacific": false
+  },
+  {
+   "entity": "Guatemala",
+   "code": "GTM",
+   "obesity": 27.24,
+   "kcal": 2823.2,
+   "gdp": 12380.4,
+   "animal_protein_share": 4.81,
+   "fat_share": 24.54,
+   "carb_share": 64.92,
+   "is_pacific": false
+  },
+  {
+   "entity": "Guinea",
+   "code": "GIN",
+   "obesity": 10.09,
+   "kcal": 2947.6,
+   "gdp": 3904.8,
+   "animal_protein_share": 1.74,
+   "fat_share": 20.13,
+   "carb_share": 71.96,
+   "is_pacific": false
+  },
+  {
+   "entity": "Guinea-Bissau",
+   "code": "GNB",
+   "obesity": 12.19,
+   "kcal": 2559.6,
+   "gdp": 2660.8,
+   "animal_protein_share": 1.4,
+   "fat_share": 29.59,
+   "carb_share": 62.26,
+   "is_pacific": false
+  },
+  {
+   "entity": "Guyana",
+   "code": "GUY",
+   "obesity": 29.36,
+   "kcal": 3318.0,
+   "gdp": 49312.4,
+   "animal_protein_share": 7.24,
+   "fat_share": 20.89,
+   "carb_share": 65.34,
+   "is_pacific": false
+  },
+  {
+   "entity": "Haiti",
+   "code": "HTI",
+   "obesity": 10.83,
+   "kcal": 1958.8,
+   "gdp": 2939.1,
+   "animal_protein_share": 2.45,
+   "fat_share": 17.01,
+   "carb_share": 73.59,
+   "is_pacific": false
+  },
+  {
+   "entity": "Honduras",
+   "code": "HND",
+   "obesity": 31.01,
+   "kcal": 2628.1,
+   "gdp": 6467.9,
+   "animal_protein_share": 3.89,
+   "fat_share": 29.71,
+   "carb_share": 60.69,
+   "is_pacific": false
+  },
+  {
+   "entity": "Hungary",
+   "code": "HUN",
+   "obesity": 30.87,
+   "kcal": 3549.1,
+   "gdp": 40333.3,
+   "animal_protein_share": 6.06,
+   "fat_share": 38.72,
+   "carb_share": 50.73,
+   "is_pacific": false
+  },
+  {
+   "entity": "Iceland",
+   "code": "ISL",
+   "obesity": 21.88,
+   "kcal": 3681.1,
+   "gdp": 69268.1,
+   "animal_protein_share": 11.57,
+   "fat_share": 39.91,
+   "carb_share": 43.61,
+   "is_pacific": false
+  },
+  {
+   "entity": "India",
+   "code": "IND",
+   "obesity": 7.62,
+   "kcal": 2668.5,
+   "gdp": 8870.5,
+   "animal_protein_share": 3.0,
+   "fat_share": 22.17,
+   "carb_share": 66.65,
+   "is_pacific": false
+  },
+  {
+   "entity": "Indonesia",
+   "code": "IDN",
+   "obesity": 11.16,
+   "kcal": 2900.3,
+   "gdp": 13889.9,
+   "animal_protein_share": 4.13,
+   "fat_share": 24.93,
+   "carb_share": 64.34,
+   "is_pacific": false
+  },
+  {
+   "entity": "Iran",
+   "code": "IRN",
+   "obesity": 24.27,
+   "kcal": 2875.2,
+   "gdp": 17044.8,
+   "animal_protein_share": 3.45,
+   "fat_share": 26.07,
+   "carb_share": 62.86,
+   "is_pacific": false
+  },
+  {
+   "entity": "Iraq",
+   "code": "IRQ",
+   "obesity": 39.35,
+   "kcal": 2370.6,
+   "gdp": 13202.3,
+   "animal_protein_share": 2.37,
+   "fat_share": 19.35,
+   "carb_share": 69.87,
+   "is_pacific": false
+  },
+  {
+   "entity": "Ireland",
+   "code": "IRL",
+   "obesity": 27.64,
+   "kcal": 3920.9,
+   "gdp": 117659.7,
+   "animal_protein_share": 9.58,
+   "fat_share": 35.34,
+   "carb_share": 50.7,
+   "is_pacific": false
+  },
+  {
+   "entity": "Israel",
+   "code": "ISR",
+   "obesity": 22.28,
+   "kcal": 3753.9,
+   "gdp": 47671.2,
+   "animal_protein_share": 8.48,
+   "fat_share": 37.29,
+   "carb_share": 48.78,
+   "is_pacific": false
+  },
+  {
+   "entity": "Italy",
+   "code": "ITA",
+   "obesity": 14.17,
+   "kcal": 3752.7,
+   "gdp": 52842.6,
+   "animal_protein_share": 7.37,
+   "fat_share": 38.56,
+   "carb_share": 49.01,
+   "is_pacific": false
+  },
+  {
+   "entity": "Jamaica",
+   "code": "JAM",
+   "obesity": 34.44,
+   "kcal": 2892.1,
+   "gdp": 11398.8,
+   "animal_protein_share": 6.73,
+   "fat_share": 27.43,
+   "carb_share": 59.89,
+   "is_pacific": false
+  },
+  {
+   "entity": "Jordan",
+   "code": "JOR",
+   "obesity": 35.55,
+   "kcal": 2556.0,
+   "gdp": 10308.8,
+   "animal_protein_share": 4.45,
+   "fat_share": 29.74,
+   "carb_share": 59.13,
+   "is_pacific": false
+  },
+  {
+   "entity": "Kazakhstan",
+   "code": "KAZ",
+   "obesity": 20.67,
+   "kcal": 3135.9,
+   "gdp": 34703.2,
+   "animal_protein_share": 6.75,
+   "fat_share": 33.58,
+   "carb_share": 52.81,
+   "is_pacific": false
+  },
+  {
+   "entity": "Kenya",
+   "code": "KEN",
+   "obesity": 10.92,
+   "kcal": 2146.0,
+   "gdp": 5691.8,
+   "animal_protein_share": 2.71,
+   "fat_share": 20.38,
+   "carb_share": 69.22,
+   "is_pacific": false
+  },
+  {
+   "entity": "Kiribati",
+   "code": "KIR",
+   "obesity": 45.4,
+   "kcal": 3125.5,
+   "gdp": 3175.0,
+   "animal_protein_share": 5.8,
+   "fat_share": 37.59,
+   "carb_share": 51.74,
+   "is_pacific": true
+  },
+  {
+   "entity": "Kuwait",
+   "code": "KWT",
+   "obesity": 40.53,
+   "kcal": 3135.6,
+   "gdp": 47790.2,
+   "animal_protein_share": 6.06,
+   "fat_share": 31.21,
+   "carb_share": 56.61,
+   "is_pacific": false
+  },
+  {
+   "entity": "Kyrgyzstan",
+   "code": "KGZ",
+   "obesity": 21.36,
+   "kcal": 2763.2,
+   "gdp": 6575.8,
+   "animal_protein_share": 6.15,
+   "fat_share": 27.25,
+   "carb_share": 59.32,
+   "is_pacific": false
+  },
+  {
+   "entity": "Laos",
+   "code": "LAO",
+   "obesity": 8.72,
+   "kcal": 3188.1,
+   "gdp": 8372.2,
+   "animal_protein_share": 3.18,
+   "fat_share": 11.9,
+   "carb_share": 77.86,
+   "is_pacific": false
+  },
+  {
+   "entity": "Latvia",
+   "code": "LVA",
+   "obesity": 22.26,
+   "kcal": 3342.2,
+   "gdp": 37277.7,
+   "animal_protein_share": 8.58,
+   "fat_share": 40.78,
+   "carb_share": 45.95,
+   "is_pacific": false
+  },
+  {
+   "entity": "Lebanon",
+   "code": "LBN",
+   "obesity": 30.45,
+   "kcal": 2827.7,
+   "gdp": 11330.3,
+   "animal_protein_share": 4.23,
+   "fat_share": 28.59,
+   "carb_share": 60.15,
+   "is_pacific": false
+  },
+  {
+   "entity": "Lesotho",
+   "code": "LSO",
+   "obesity": 21.71,
+   "kcal": 1872.7,
+   "gdp": 2592.5,
+   "animal_protein_share": 3.66,
+   "fat_share": 20.21,
+   "carb_share": 68.99,
+   "is_pacific": false
+  },
+  {
+   "entity": "Liberia",
+   "code": "LBR",
+   "obesity": 16.66,
+   "kcal": 2135.1,
+   "gdp": 1616.9,
+   "animal_protein_share": 2.1,
+   "fat_share": 18.64,
+   "carb_share": 72.93,
+   "is_pacific": false
+  },
+  {
+   "entity": "Libya",
+   "code": "LBY",
+   "obesity": 33.56,
+   "kcal": 2867.2,
+   "gdp": 12476.6,
+   "animal_protein_share": 5.7,
+   "fat_share": 34.85,
+   "carb_share": 53.08,
+   "is_pacific": false
+  },
+  {
+   "entity": "Lithuania",
+   "code": "LTU",
+   "obesity": 21.42,
+   "kcal": 3347.5,
+   "gdp": 46333.9,
+   "animal_protein_share": 9.96,
+   "fat_share": 34.42,
+   "carb_share": 50.79,
+   "is_pacific": false
+  },
+  {
+   "entity": "Luxembourg",
+   "code": "LUX",
+   "obesity": 18.93,
+   "kcal": 3521.8,
+   "gdp": 130048.9,
+   "animal_protein_share": 9.06,
+   "fat_share": 33.31,
+   "carb_share": 52.78,
+   "is_pacific": false
+  },
+  {
+   "entity": "Madagascar",
+   "code": "MDG",
+   "obesity": 4.26,
+   "kcal": 1978.0,
+   "gdp": 1629.6,
+   "animal_protein_share": 1.01,
+   "fat_share": 9.94,
+   "carb_share": 82.07,
+   "is_pacific": false
+  },
+  {
+   "entity": "Malawi",
+   "code": "MWI",
+   "obesity": 7.65,
+   "kcal": 2618.3,
+   "gdp": 1649.3,
+   "animal_protein_share": 2.44,
+   "fat_share": 15.9,
+   "carb_share": 74.06,
+   "is_pacific": false
+  },
+  {
+   "entity": "Malaysia",
+   "code": "MYS",
+   "obesity": 22.66,
+   "kcal": 2926.5,
+   "gdp": 32857.7,
+   "animal_protein_share": 7.47,
+   "fat_share": 31.04,
+   "carb_share": 56.2,
+   "is_pacific": false
+  },
+  {
+   "entity": "Maldives",
+   "code": "MDV",
+   "obesity": 17.18,
+   "kcal": 2671.3,
+   "gdp": 22333.0,
+   "animal_protein_share": 7.94,
+   "fat_share": 26.44,
+   "carb_share": 58.97,
+   "is_pacific": false
+  },
+  {
+   "entity": "Malta",
+   "code": "MLT",
+   "obesity": 30.65,
+   "kcal": 3406.6,
+   "gdp": 60459.8,
+   "animal_protein_share": 7.15,
+   "fat_share": 33.7,
+   "carb_share": 53.87,
+   "is_pacific": false
+  },
+  {
+   "entity": "Marshall Islands",
+   "code": "MHL",
+   "obesity": 41.83,
+   "kcal": 3320.8,
+   "gdp": 6774.8,
+   "animal_protein_share": 9.02,
+   "fat_share": 43.81,
+   "carb_share": 41.86,
+   "is_pacific": true
+  },
+  {
+   "entity": "Mauritania",
+   "code": "MRT",
+   "obesity": 23.45,
+   "kcal": 2909.4,
+   "gdp": 6276.5,
+   "animal_protein_share": 4.43,
+   "fat_share": 23.05,
+   "carb_share": 65.51,
+   "is_pacific": false
+  },
+  {
+   "entity": "Mauritius",
+   "code": "MUS",
+   "obesity": 20.57,
+   "kcal": 3255.5,
+   "gdp": 26471.0,
+   "animal_protein_share": 6.48,
+   "fat_share": 31.09,
+   "carb_share": 56.02,
+   "is_pacific": false
+  },
+  {
+   "entity": "Mexico",
+   "code": "MEX",
+   "obesity": 36.7,
+   "kcal": 3304.6,
+   "gdp": 21864.9,
+   "animal_protein_share": 6.97,
+   "fat_share": 29.92,
+   "carb_share": 57.94,
+   "is_pacific": false
+  },
+  {
+   "entity": "Micronesia (country)",
+   "code": "FSM",
+   "obesity": 48.16,
+   "kcal": 2632.8,
+   "gdp": 3841.3,
+   "animal_protein_share": 6.83,
+   "fat_share": 42.42,
+   "carb_share": 46.65,
+   "is_pacific": true
+  },
+  {
+   "entity": "Moldova",
+   "code": "MDA",
+   "obesity": 22.43,
+   "kcal": 2503.6,
+   "gdp": 15980.6,
+   "animal_protein_share": 5.59,
+   "fat_share": 26.15,
+   "carb_share": 61.4,
+   "is_pacific": false
+  },
+  {
+   "entity": "Mongolia",
+   "code": "MNG",
+   "obesity": 24.41,
+   "kcal": 3031.1,
+   "gdp": 16222.9,
+   "animal_protein_share": 12.84,
+   "fat_share": 38.23,
+   "carb_share": 44.33,
+   "is_pacific": false
+  },
+  {
+   "entity": "Montenegro",
+   "code": "MNE",
+   "obesity": 16.88,
+   "kcal": 3669.4,
+   "gdp": 27243.4,
+   "animal_protein_share": 8.97,
+   "fat_share": 35.24,
+   "carb_share": 50.11,
+   "is_pacific": false
+  },
+  {
+   "entity": "Morocco",
+   "code": "MAR",
+   "obesity": 21.2,
+   "kcal": 3353.9,
+   "gdp": 8915.4,
+   "animal_protein_share": 3.43,
+   "fat_share": 20.19,
+   "carb_share": 68.11,
+   "is_pacific": false
+  },
+  {
+   "entity": "Mozambique",
+   "code": "MOZ",
+   "obesity": 10.18,
+   "kcal": 2186.1,
+   "gdp": 1512.7,
+   "animal_protein_share": 1.59,
+   "fat_share": 16.51,
+   "carb_share": 75.31,
+   "is_pacific": false
+  },
+  {
+   "entity": "Myanmar",
+   "code": "MMR",
+   "obesity": 7.85,
+   "kcal": 2809.0,
+   "gdp": 5364.1,
+   "animal_protein_share": 3.28,
+   "fat_share": 18.82,
+   "carb_share": 70.01,
+   "is_pacific": false
+  },
+  {
+   "entity": "Namibia",
+   "code": "NAM",
+   "obesity": 17.87,
+   "kcal": 2581.1,
+   "gdp": 10126.2,
+   "animal_protein_share": 3.26,
+   "fat_share": 21.87,
+   "carb_share": 68.18,
+   "is_pacific": false
+  },
+  {
+   "entity": "Nauru",
+   "code": "NRU",
+   "obesity": 71.09,
+   "kcal": 3082.2,
+   "gdp": 11858.5,
+   "animal_protein_share": 8.72,
+   "fat_share": 36.39,
+   "carb_share": 49.21,
+   "is_pacific": true
+  },
+  {
+   "entity": "Nepal",
+   "code": "NPL",
+   "obesity": 7.49,
+   "kcal": 2919.8,
+   "gdp": 4861.2,
+   "animal_protein_share": 2.21,
+   "fat_share": 19.2,
+   "carb_share": 69.6,
+   "is_pacific": false
+  },
+  {
+   "entity": "Netherlands",
+   "code": "NLD",
+   "obesity": 14.58,
+   "kcal": 3467.0,
+   "gdp": 70198.9,
+   "animal_protein_share": 9.4,
+   "fat_share": 36.93,
+   "carb_share": 49.56,
+   "is_pacific": false
+  },
+  {
+   "entity": "New Zealand",
+   "code": "NZL",
+   "obesity": 33.65,
+   "kcal": 3121.5,
+   "gdp": 49592.6,
+   "animal_protein_share": 6.84,
+   "fat_share": 30.28,
+   "carb_share": 56.79,
+   "is_pacific": false
+  },
+  {
+   "entity": "Nicaragua",
+   "code": "NIC",
+   "obesity": 34.3,
+   "kcal": 2760.2,
+   "gdp": 7496.5,
+   "animal_protein_share": 4.44,
+   "fat_share": 21.4,
+   "carb_share": 67.91,
+   "is_pacific": false
+  },
+  {
+   "entity": "Niger",
+   "code": "NER",
+   "obesity": 6.43,
+   "kcal": 2654.0,
+   "gdp": 1713.0,
+   "animal_protein_share": 1.43,
+   "fat_share": 20.18,
+   "carb_share": 65.88,
+   "is_pacific": false
+  },
+  {
+   "entity": "Nigeria",
+   "code": "NGA",
+   "obesity": 13.16,
+   "kcal": 2470.1,
+   "gdp": 7843.0,
+   "animal_protein_share": 1.07,
+   "fat_share": 22.83,
+   "carb_share": 67.93,
+   "is_pacific": false
+  },
+  {
+   "entity": "North Macedonia",
+   "code": "MKD",
+   "obesity": 26.44,
+   "kcal": 3475.6,
+   "gdp": 23455.2,
+   "animal_protein_share": 4.99,
+   "fat_share": 30.04,
+   "carb_share": 58.09,
+   "is_pacific": false
+  },
+  {
+   "entity": "Norway",
+   "code": "NOR",
+   "obesity": 19.86,
+   "kcal": 3475.6,
+   "gdp": 94365.0,
+   "animal_protein_share": 7.93,
+   "fat_share": 35.55,
+   "carb_share": 50.01,
+   "is_pacific": false
+  },
+  {
+   "entity": "Oman",
+   "code": "OMN",
+   "obesity": 30.1,
+   "kcal": 2981.3,
+   "gdp": 37793.6,
+   "animal_protein_share": 5.52,
+   "fat_share": 29.42,
+   "carb_share": 59.09,
+   "is_pacific": false
+  },
+  {
+   "entity": "Pakistan",
+   "code": "PAK",
+   "obesity": 23.44,
+   "kcal": 2513.8,
+   "gdp": 5418.8,
+   "animal_protein_share": 5.18,
+   "fat_share": 30.87,
+   "carb_share": 57.45,
+   "is_pacific": false
+  },
+  {
+   "entity": "Panama",
+   "code": "PAN",
+   "obesity": 36.79,
+   "kcal": 3104.6,
+   "gdp": 35873.0,
+   "animal_protein_share": 6.75,
+   "fat_share": 29.53,
+   "carb_share": 58.41,
+   "is_pacific": false
+  },
+  {
+   "entity": "Papua New Guinea",
+   "code": "PNG",
+   "obesity": 27.46,
+   "kcal": 2177.1,
+   "gdp": 4206.4,
+   "animal_protein_share": 5.82,
+   "fat_share": 26.61,
+   "carb_share": 61.97,
+   "is_pacific": true
+  },
+  {
+   "entity": "Paraguay",
+   "code": "PRY",
+   "obesity": 33.84,
+   "kcal": 3067.1,
+   "gdp": 15831.6,
+   "animal_protein_share": 3.4,
+   "fat_share": 27.88,
+   "carb_share": 63.45,
+   "is_pacific": false
+  },
+  {
+   "entity": "Peru",
+   "code": "PER",
+   "obesity": 28.24,
+   "kcal": 2810.5,
+   "gdp": 15342.3,
+   "animal_protein_share": 6.17,
+   "fat_share": 21.49,
+   "carb_share": 65.91,
+   "is_pacific": false
+  },
+  {
+   "entity": "Philippines",
+   "code": "PHL",
+   "obesity": 9.23,
+   "kcal": 2982.9,
+   "gdp": 9898.5,
+   "animal_protein_share": 3.83,
+   "fat_share": 17.48,
+   "carb_share": 72.12,
+   "is_pacific": false
+  },
+  {
+   "entity": "Poland",
+   "code": "POL",
+   "obesity": 21.78,
+   "kcal": 3730.1,
+   "gdp": 43672.8,
+   "animal_protein_share": 7.77,
+   "fat_share": 34.05,
+   "carb_share": 53.33,
+   "is_pacific": false
+  },
+  {
+   "entity": "Portugal",
+   "code": "PRT",
+   "obesity": 18.18,
+   "kcal": 3552.9,
+   "gdp": 41768.3,
+   "animal_protein_share": 9.31,
+   "fat_share": 35.82,
+   "carb_share": 49.96,
+   "is_pacific": false
+  },
+  {
+   "entity": "Qatar",
+   "code": "QAT",
+   "obesity": 41.73,
+   "kcal": 3251.1,
+   "gdp": 116159.1,
+   "animal_protein_share": 6.11,
+   "fat_share": 30.17,
+   "carb_share": 56.9,
+   "is_pacific": false
+  },
+  {
+   "entity": "Romania",
+   "code": "ROU",
+   "obesity": 31.55,
+   "kcal": 3648.9,
+   "gdp": 40116.7,
+   "animal_protein_share": 6.91,
+   "fat_share": 33.93,
+   "carb_share": 53.75,
+   "is_pacific": false
+  },
+  {
+   "entity": "Russia",
+   "code": "RUS",
+   "obesity": 17.87,
+   "kcal": 3528.4,
+   "gdp": 39881.4,
+   "animal_protein_share": 7.97,
+   "fat_share": 32.42,
+   "carb_share": 54.22,
+   "is_pacific": false
+  },
+  {
+   "entity": "Rwanda",
+   "code": "RWA",
+   "obesity": 5.25,
+   "kcal": 2404.9,
+   "gdp": 3168.0,
+   "animal_protein_share": 1.06,
+   "fat_share": 13.74,
+   "carb_share": 76.77,
+   "is_pacific": false
+  },
+  {
+   "entity": "Saint Kitts and Nevis",
+   "code": "KNA",
+   "obesity": 46.1,
+   "kcal": 2852.1,
+   "gdp": 30616.6,
+   "animal_protein_share": 8.05,
+   "fat_share": 37.77,
+   "carb_share": 49.48,
+   "is_pacific": false
+  },
+  {
+   "entity": "Saint Lucia",
+   "code": "LCA",
+   "obesity": 34.02,
+   "kcal": 2654.2,
+   "gdp": 23636.0,
+   "animal_protein_share": 8.36,
+   "fat_share": 30.88,
+   "carb_share": 55.1,
+   "is_pacific": false
+  },
+  {
+   "entity": "Saint Vincent and the Grenadines",
+   "code": "VCT",
+   "obesity": 33.9,
+   "kcal": 3042.6,
+   "gdp": 17858.2,
+   "animal_protein_share": 9.11,
+   "fat_share": 31.53,
+   "carb_share": 53.48,
+   "is_pacific": false
+  },
+  {
+   "entity": "Samoa",
+   "code": "WSM",
+   "obesity": 63.64,
+   "kcal": 3116.3,
+   "gdp": 7384.7,
+   "animal_protein_share": 8.5,
+   "fat_share": 32.06,
+   "carb_share": 54.42,
+   "is_pacific": true
+  },
+  {
+   "entity": "Sao Tome and Principe",
+   "code": "STP",
+   "obesity": 17.28,
+   "kcal": 2279.3,
+   "gdp": 5541.3,
+   "animal_protein_share": 3.74,
+   "fat_share": 26.28,
+   "carb_share": 64.17,
+   "is_pacific": false
+  },
+  {
+   "entity": "Saudi Arabia",
+   "code": "SAU",
+   "obesity": 39.8,
+   "kcal": 3659.8,
+   "gdp": 64481.8,
+   "animal_protein_share": 4.9,
+   "fat_share": 26.81,
+   "carb_share": 61.84,
+   "is_pacific": false
+  },
+  {
+   "entity": "Senegal",
+   "code": "SEN",
+   "obesity": 11.12,
+   "kcal": 2847.8,
+   "gdp": 4304.8,
+   "animal_protein_share": 2.31,
+   "fat_share": 22.68,
+   "carb_share": 67.26,
+   "is_pacific": false
+  },
+  {
+   "entity": "Serbia",
+   "code": "SRB",
+   "obesity": 21.49,
+   "kcal": 3878.9,
+   "gdp": 25735.1,
+   "animal_protein_share": 6.43,
+   "fat_share": 26.42,
+   "carb_share": 59.6,
+   "is_pacific": false
+  },
+  {
+   "entity": "Seychelles",
+   "code": "SYC",
+   "obesity": 32.98,
+   "kcal": 2888.4,
+   "gdp": 28713.7,
+   "animal_protein_share": 7.8,
+   "fat_share": 26.71,
+   "carb_share": 58.84,
+   "is_pacific": false
+  },
+  {
+   "entity": "Sierra Leone",
+   "code": "SLE",
+   "obesity": 7.92,
+   "kcal": 2437.3,
+   "gdp": 3034.9,
+   "animal_protein_share": 2.3,
+   "fat_share": 13.94,
+   "carb_share": 76.61,
+   "is_pacific": false
+  },
+  {
+   "entity": "Slovakia",
+   "code": "SVK",
+   "obesity": 25.6,
+   "kcal": 2980.0,
+   "gdp": 39501.9,
+   "animal_protein_share": 6.55,
+   "fat_share": 42.1,
+   "carb_share": 46.99,
+   "is_pacific": false
+  },
+  {
+   "entity": "Slovenia",
+   "code": "SVN",
+   "obesity": 19.3,
+   "kcal": 3200.3,
+   "gdp": 47986.4,
+   "animal_protein_share": 6.85,
+   "fat_share": 31.13,
+   "carb_share": 56.18,
+   "is_pacific": false
+  },
+  {
+   "entity": "Solomon Islands",
+   "code": "SLB",
+   "obesity": 21.47,
+   "kcal": 2165.6,
+   "gdp": 2339.9,
+   "animal_protein_share": 3.37,
+   "fat_share": 22.13,
+   "carb_share": 67.8,
+   "is_pacific": true
+  },
+  {
+   "entity": "South Africa",
+   "code": "ZAF",
+   "obesity": 31.45,
+   "kcal": 2693.9,
+   "gdp": 13695.4,
+   "animal_protein_share": 5.42,
+   "fat_share": 31.93,
+   "carb_share": 56.31,
+   "is_pacific": false
+  },
+  {
+   "entity": "South Korea",
+   "code": "KOR",
+   "obesity": 7.87,
+   "kcal": 3430.3,
+   "gdp": 54029.3,
+   "animal_protein_share": 7.38,
+   "fat_share": 33.15,
+   "carb_share": 53.94,
+   "is_pacific": false
+  },
+  {
+   "entity": "Spain",
+   "code": "ESP",
+   "obesity": 15.7,
+   "kcal": 3377.2,
+   "gdp": 47322.6,
+   "animal_protein_share": 9.28,
+   "fat_share": 40.72,
+   "carb_share": 45.35,
+   "is_pacific": false
+  },
+  {
+   "entity": "Sri Lanka",
+   "code": "LKA",
+   "obesity": 10.7,
+   "kcal": 2675.1,
+   "gdp": 13065.1,
+   "animal_protein_share": 2.68,
+   "fat_share": 13.33,
+   "carb_share": 76.57,
+   "is_pacific": false
+  },
+  {
+   "entity": "Suriname",
+   "code": "SUR",
+   "obesity": 30.11,
+   "kcal": 2539.1,
+   "gdp": 19020.9,
+   "animal_protein_share": 5.09,
+   "fat_share": 24.64,
+   "carb_share": 64.6,
+   "is_pacific": false
+  },
+  {
+   "entity": "Sweden",
+   "code": "SWE",
+   "obesity": 17.24,
+   "kcal": 3366.8,
+   "gdp": 62122.5,
+   "animal_protein_share": 8.64,
+   "fat_share": 39.18,
+   "carb_share": 47.42,
+   "is_pacific": false
+  },
+  {
+   "entity": "Switzerland",
+   "code": "CHE",
+   "obesity": 11.15,
+   "kcal": 3402.4,
+   "gdp": 85383.4,
+   "animal_protein_share": 7.47,
+   "fat_share": 42.94,
+   "carb_share": 45.14,
+   "is_pacific": false
+  },
+  {
+   "entity": "Tajikistan",
+   "code": "TJK",
+   "obesity": 22.5,
+   "kcal": 2711.7,
+   "gdp": 4472.3,
+   "animal_protein_share": 4.21,
+   "fat_share": 28.62,
+   "carb_share": 59.12,
+   "is_pacific": false
+  },
+  {
+   "entity": "Tanzania",
+   "code": "TZA",
+   "obesity": 11.03,
+   "kcal": 2518.3,
+   "gdp": 3620.8,
+   "animal_protein_share": 2.19,
+   "fat_share": 19.46,
+   "carb_share": 70.94,
+   "is_pacific": false
+  },
+  {
+   "entity": "Thailand",
+   "code": "THA",
+   "obesity": 15.62,
+   "kcal": 2855.3,
+   "gdp": 21245.3,
+   "animal_protein_share": 3.81,
+   "fat_share": 18.06,
+   "carb_share": 72.33,
+   "is_pacific": false
+  },
+  {
+   "entity": "Tonga",
+   "code": "TON",
+   "obesity": 72.97,
+   "kcal": 3058.7,
+   "gdp": 7031.3,
+   "animal_protein_share": 10.78,
+   "fat_share": 36.52,
+   "carb_share": 46.58,
+   "is_pacific": true
+  },
+  {
+   "entity": "Trinidad and Tobago",
+   "code": "TTO",
+   "obesity": 30.39,
+   "kcal": 2945.7,
+   "gdp": 31196.6,
+   "animal_protein_share": 5.97,
+   "fat_share": 32.8,
+   "carb_share": 55.33,
+   "is_pacific": false
+  },
+  {
+   "entity": "Tunisia",
+   "code": "TUN",
+   "obesity": 25.79,
+   "kcal": 3431.5,
+   "gdp": 12651.0,
+   "animal_protein_share": 3.98,
+   "fat_share": 26.22,
+   "carb_share": 61.54,
+   "is_pacific": false
+  },
+  {
+   "entity": "Turkey",
+   "code": "TUR",
+   "obesity": 28.93,
+   "kcal": 3892.2,
+   "gdp": 35069.2,
+   "animal_protein_share": 4.99,
+   "fat_share": 32.68,
+   "carb_share": 55.02,
+   "is_pacific": false
+  },
+  {
+   "entity": "Turkmenistan",
+   "code": "TKM",
+   "obesity": 21.79,
+   "kcal": 2814.2,
+   "gdp": 17685.9,
+   "animal_protein_share": 7.81,
+   "fat_share": 25.85,
+   "carb_share": 59.27,
+   "is_pacific": false
+  },
+  {
+   "entity": "Tuvalu",
+   "code": "TUV",
+   "obesity": 64.61,
+   "kcal": 3295.2,
+   "gdp": 5315.2,
+   "animal_protein_share": 7.35,
+   "fat_share": 31.9,
+   "carb_share": 55.61,
+   "is_pacific": true
+  },
+  {
+   "entity": "Uganda",
+   "code": "UGA",
+   "obesity": 8.94,
+   "kcal": 2377.7,
+   "gdp": 2791.1,
+   "animal_protein_share": 2.48,
+   "fat_share": 19.85,
+   "carb_share": 70.66,
+   "is_pacific": false
+  },
+  {
+   "entity": "Ukraine",
+   "code": "UKR",
+   "obesity": 22.8,
+   "kcal": 2785.8,
+   "gdp": 15917.0,
+   "animal_protein_share": 6.58,
+   "fat_share": 25.33,
+   "carb_share": 61.68,
+   "is_pacific": false
+  },
+  {
+   "entity": "United Arab Emirates",
+   "code": "ARE",
+   "obesity": 31.71,
+   "kcal": 3125.1,
+   "gdp": 70239.8,
+   "animal_protein_share": 6.07,
+   "fat_share": 36.25,
+   "carb_share": 51.38,
+   "is_pacific": false
+  },
+  {
+   "entity": "United Kingdom",
+   "code": "GBR",
+   "obesity": 27.18,
+   "kcal": 3434.6,
+   "gdp": 53423.4,
+   "animal_protein_share": 7.58,
+   "fat_share": 37.66,
+   "carb_share": 49.53,
+   "is_pacific": false
+  },
+  {
+   "entity": "United States",
+   "code": "USA",
+   "obesity": 40.7,
+   "kcal": 3947.3,
+   "gdp": 74351.7,
+   "animal_protein_share": 8.4,
+   "fat_share": 41.92,
+   "carb_share": 45.61,
+   "is_pacific": false
+  },
+  {
+   "entity": "Uruguay",
+   "code": "URY",
+   "obesity": 34.07,
+   "kcal": 3322.7,
+   "gdp": 31101.0,
+   "animal_protein_share": 7.58,
+   "fat_share": 33.23,
+   "carb_share": 54.19,
+   "is_pacific": false
+  },
+  {
+   "entity": "Uzbekistan",
+   "code": "UZB",
+   "obesity": 30.34,
+   "kcal": 3297.2,
+   "gdp": 10514.1,
+   "animal_protein_share": 6.67,
+   "fat_share": 28.8,
+   "carb_share": 57.68,
+   "is_pacific": false
+  },
+  {
+   "entity": "Vanuatu",
+   "code": "VUT",
+   "obesity": 22.16,
+   "kcal": 2909.0,
+   "gdp": 3782.8,
+   "animal_protein_share": 4.18,
+   "fat_share": 34.56,
+   "carb_share": 55.18,
+   "is_pacific": true
+  },
+  {
+   "entity": "Vietnam",
+   "code": "VNM",
+   "obesity": 2.21,
+   "kcal": 3086.0,
+   "gdp": 13534.8,
+   "animal_protein_share": 5.6,
+   "fat_share": 21.51,
+   "carb_share": 65.24,
+   "is_pacific": false
+  },
+  {
+   "entity": "Zambia",
+   "code": "ZMB",
+   "obesity": 11.1,
+   "kcal": 2169.8,
+   "gdp": 3673.5,
+   "animal_protein_share": 2.45,
+   "fat_share": 20.12,
+   "carb_share": 70.99,
+   "is_pacific": false
+  },
+  {
+   "entity": "Zimbabwe",
+   "code": "ZWE",
+   "obesity": 14.27,
+   "kcal": 2393.4,
+   "gdp": 5218.0,
+   "animal_protein_share": 5.23,
+   "fat_share": 32.08,
+   "carb_share": 56.37,
+   "is_pacific": false
+  }
+ ]
+}
