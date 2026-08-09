@@ -1,0 +1,3077 @@
+{
+  "vintages": {
+    "thresholds": 2025,
+    "revenue": 2021,
+    "life_expectancy": 2023,
+    "note": "Five time bases: thresholds 2025, revenue 2021, life expectancy 2023, a 2017-2021 mean tax level, and income-distribution data at the latest year per country (2019 to 2025). Every figure in the post states its own."
+  },
+  "idd_choices": {
+    "age": "_T",
+    "methodology": "METH2012",
+    "definition": "D_CUR",
+    "poverty_line": "PL_50"
+  },
+  "oecd_members_n": 38,
+  "flat_tax_excluded": {
+    "reason": "Top rate applies from the first unit of income, so a multiple of the average wage is not defined. Excluded from the threshold chart and named there.",
+    "countries": [
+      {
+        "code": "HUN",
+        "country": "Hungary",
+        "top_rate_pct": 15.0
+      }
+    ]
+  },
+  "unusable_excluded": {
+    "reason": "Both the threshold and the top rate are reported as zero in the analysis year, which is a missing-value placeholder rather than a flat tax. Excluded from the threshold chart for a different reason and must be described differently.",
+    "countries": [
+      {
+        "code": "LVA",
+        "country": "Latvia",
+        "prior_year_threshold": 3.91,
+        "prior_year_top_rate_pct": 31.2
+      }
+    ]
+  },
+  "implausible_top_rate": [],
+  "thresholds": [
+    {
+      "rank": 1,
+      "code": "EST",
+      "country": "Estonia",
+      "threshold_x_avg_wage": 0.31,
+      "top_rate_pct": 22.0,
+      "rate_plus_employee_ssc_pct": 10.3
+    },
+    {
+      "rank": 2,
+      "code": "BEL",
+      "country": "Belgium",
+      "threshold_x_avg_wage": 1.03,
+      "top_rate_pct": 52.7,
+      "rate_plus_employee_ssc_pct": 60.0
+    },
+    {
+      "rank": 3,
+      "code": "SWE",
+      "country": "Sweden",
+      "threshold_x_avg_wage": 1.15,
+      "top_rate_pct": 52.4,
+      "rate_plus_employee_ssc_pct": 52.4
+    },
+    {
+      "rank": 4,
+      "code": "IRL",
+      "country": "Ireland",
+      "threshold_x_avg_wage": 1.16,
+      "top_rate_pct": 48.0,
+      "rate_plus_employee_ssc_pct": 52.1
+    },
+    {
+      "rank": 5,
+      "code": "NLD",
+      "country": "Netherlands",
+      "threshold_x_avg_wage": 1.17,
+      "top_rate_pct": 49.5,
+      "rate_plus_employee_ssc_pct": 52.5
+    },
+    {
+      "rank": 6,
+      "code": "DNK",
+      "country": "Denmark",
+      "threshold_x_avg_wage": 1.24,
+      "top_rate_pct": 55.9,
+      "rate_plus_employee_ssc_pct": 55.9
+    },
+    {
+      "rank": 7,
+      "code": "ISL",
+      "country": "Iceland",
+      "threshold_x_avg_wage": 1.33,
+      "top_rate_pct": 46.3,
+      "rate_plus_employee_ssc_pct": 44.4
+    },
+    {
+      "rank": 8,
+      "code": "POL",
+      "country": "Poland",
+      "threshold_x_avg_wage": 1.35,
+      "top_rate_pct": 32.0,
+      "rate_plus_employee_ssc_pct": 45.4
+    },
+    {
+      "rank": 9,
+      "code": "ITA",
+      "country": "Italy",
+      "threshold_x_avg_wage": 1.51,
+      "top_rate_pct": 47.2,
+      "rate_plus_employee_ssc_pct": 52.2
+    },
+    {
+      "rank": 10,
+      "code": "GRC",
+      "country": "Greece",
+      "threshold_x_avg_wage": 1.74,
+      "top_rate_pct": 44.0,
+      "rate_plus_employee_ssc_pct": 53.2
+    },
+    {
+      "rank": 11,
+      "code": "AUS",
+      "country": "Australia",
+      "threshold_x_avg_wage": 1.75,
+      "top_rate_pct": 47.0,
+      "rate_plus_employee_ssc_pct": 47.0
+    },
+    {
+      "rank": 12,
+      "code": "NOR",
+      "country": "Norway",
+      "threshold_x_avg_wage": 1.76,
+      "top_rate_pct": 39.7,
+      "rate_plus_employee_ssc_pct": 47.4
+    },
+    {
+      "rank": 13,
+      "code": "NZL",
+      "country": "New Zealand",
+      "threshold_x_avg_wage": 2.17,
+      "top_rate_pct": 39.0,
+      "rate_plus_employee_ssc_pct": 39.0
+    },
+    {
+      "rank": 14,
+      "code": "GBR",
+      "country": "United Kingdom",
+      "threshold_x_avg_wage": 2.24,
+      "top_rate_pct": 45.0,
+      "rate_plus_employee_ssc_pct": 47.0
+    },
+    {
+      "rank": 15,
+      "code": "CAN",
+      "country": "Canada",
+      "threshold_x_avg_wage": 2.75,
+      "top_rate_pct": 53.5,
+      "rate_plus_employee_ssc_pct": 53.5
+    },
+    {
+      "rank": 16,
+      "code": "SVK",
+      "country": "Slovak Republic",
+      "threshold_x_avg_wage": 2.86,
+      "top_rate_pct": 25.0,
+      "rate_plus_employee_ssc_pct": 35.0
+    },
+    {
+      "rank": 17,
+      "code": "CZE",
+      "country": "Czechia",
+      "threshold_x_avg_wage": 2.87,
+      "top_rate_pct": 23.0,
+      "rate_plus_employee_ssc_pct": 34.6
+    },
+    {
+      "rank": 18,
+      "code": "FIN",
+      "country": "Finland",
+      "threshold_x_avg_wage": 2.97,
+      "top_rate_pct": 51.8,
+      "rate_plus_employee_ssc_pct": 56.9
+    },
+    {
+      "rank": 19,
+      "code": "CHE",
+      "country": "Switzerland",
+      "threshold_x_avg_wage": 3.08,
+      "top_rate_pct": 41.4,
+      "rate_plus_employee_ssc_pct": 41.3
+    },
+    {
+      "rank": 20,
+      "code": "LUX",
+      "country": "Luxembourg",
+      "threshold_x_avg_wage": 3.26,
+      "top_rate_pct": 45.8,
+      "rate_plus_employee_ssc_pct": 47.2
+    },
+    {
+      "rank": 21,
+      "code": "ISR",
+      "country": "Israel",
+      "threshold_x_avg_wage": 3.44,
+      "top_rate_pct": 50.0,
+      "rate_plus_employee_ssc_pct": 50.0
+    },
+    {
+      "rank": 22,
+      "code": "SVN",
+      "country": "Slovenia",
+      "threshold_x_avg_wage": 3.59,
+      "top_rate_pct": 50.0,
+      "rate_plus_employee_ssc_pct": 61.3
+    },
+    {
+      "rank": 23,
+      "code": "DEU",
+      "country": "Germany",
+      "threshold_x_avg_wage": 4.42,
+      "top_rate_pct": 47.5,
+      "rate_plus_employee_ssc_pct": 47.5
+    },
+    {
+      "rank": 24,
+      "code": "LTU",
+      "country": "Lithuania",
+      "threshold_x_avg_wage": 4.44,
+      "top_rate_pct": 32.0,
+      "rate_plus_employee_ssc_pct": 39.0
+    },
+    {
+      "rank": 25,
+      "code": "TUR",
+      "country": "T\u00fcrkiye",
+      "threshold_x_avg_wage": 5.58,
+      "top_rate_pct": 40.8,
+      "rate_plus_employee_ssc_pct": 40.8
+    },
+    {
+      "rank": 26,
+      "code": "CRI",
+      "country": "Costa Rica",
+      "threshold_x_avg_wage": 5.97,
+      "top_rate_pct": 25.0,
+      "rate_plus_employee_ssc_pct": 32.9
+    },
+    {
+      "rank": 27,
+      "code": "JPN",
+      "country": "Japan",
+      "threshold_x_avg_wage": 7.67,
+      "top_rate_pct": 55.9,
+      "rate_plus_employee_ssc_pct": 56.2
+    },
+    {
+      "rank": 28,
+      "code": "USA",
+      "country": "United States",
+      "threshold_x_avg_wage": 8.73,
+      "top_rate_pct": 43.6,
+      "rate_plus_employee_ssc_pct": 46.0
+    },
+    {
+      "rank": 29,
+      "code": "ESP",
+      "country": "Spain",
+      "threshold_x_avg_wage": 9.36,
+      "top_rate_pct": 48.6,
+      "rate_plus_employee_ssc_pct": 48.6
+    },
+    {
+      "rank": 30,
+      "code": "PRT",
+      "country": "Portugal",
+      "threshold_x_avg_wage": 11.58,
+      "top_rate_pct": 53.0,
+      "rate_plus_employee_ssc_pct": 58.2
+    },
+    {
+      "rank": 31,
+      "code": "FRA",
+      "country": "France",
+      "threshold_x_avg_wage": 12.94,
+      "top_rate_pct": 55.4,
+      "rate_plus_employee_ssc_pct": 55.6
+    },
+    {
+      "rank": 32,
+      "code": "AUT",
+      "country": "Austria",
+      "threshold_x_avg_wage": 17.44,
+      "top_rate_pct": 55.0,
+      "rate_plus_employee_ssc_pct": 55.0
+    },
+    {
+      "rank": 33,
+      "code": "CHL",
+      "country": "Chile",
+      "threshold_x_avg_wage": 18.58,
+      "top_rate_pct": 40.0,
+      "rate_plus_employee_ssc_pct": 40.0
+    },
+    {
+      "rank": 34,
+      "code": "KOR",
+      "country": "Korea",
+      "threshold_x_avg_wage": 18.99,
+      "top_rate_pct": 49.5,
+      "rate_plus_employee_ssc_pct": 52.0
+    },
+    {
+      "rank": 35,
+      "code": "MEX",
+      "country": "Mexico",
+      "threshold_x_avg_wage": 20.57,
+      "top_rate_pct": 35.0,
+      "rate_plus_employee_ssc_pct": 35.0
+    },
+    {
+      "rank": 36,
+      "code": "COL",
+      "country": "Colombia",
+      "threshold_x_avg_wage": 51.54,
+      "top_rate_pct": 39.0,
+      "rate_plus_employee_ssc_pct": 39.0
+    }
+  ],
+  "threshold_headline": {
+    "DNK": 1.24,
+    "SWE": 1.15,
+    "NOR": 1.76,
+    "FIN": 2.97,
+    "ISL": 1.33,
+    "USA": 8.73,
+    "DEU": 4.42,
+    "BEL": 1.03,
+    "IRL": 1.16,
+    "NLD": 1.17,
+    "FRA": 12.94
+  },
+  "nordics_are_not_a_bloc": {
+    "spread": {
+      "SWE": 1.15,
+      "DNK": 1.24,
+      "ISL": 1.33,
+      "NOR": 1.76,
+      "FIN": 2.97
+    },
+    "min": 1.15,
+    "max": 2.97,
+    "ratio_max_over_min": 2.58
+  },
+  "at_or_below_denmark": [
+    {
+      "code": "EST",
+      "country": "Estonia",
+      "threshold_x_avg_wage": 0.31
+    },
+    {
+      "code": "BEL",
+      "country": "Belgium",
+      "threshold_x_avg_wage": 1.03
+    },
+    {
+      "code": "SWE",
+      "country": "Sweden",
+      "threshold_x_avg_wage": 1.15
+    },
+    {
+      "code": "IRL",
+      "country": "Ireland",
+      "threshold_x_avg_wage": 1.16
+    },
+    {
+      "code": "NLD",
+      "country": "Netherlands",
+      "threshold_x_avg_wage": 1.17
+    }
+  ],
+  "denmark_2026_projection": {
+    "note": "Projection, not an OECD publication. OECD has published no 2026 threshold for Denmark. If it tracks the new top-top tier rather than the middle tax, the factor of the average wage moves from the 2025 value to roughly five.",
+    "toptop_threshold_dkk": 2592700.0,
+    "am_bidrag": 0.08,
+    "gross_equivalent_dkk": 2818152.17,
+    "mellem_threshold_2026_dkk": 641200.0,
+    "top_threshold_2026_dkk": 777900.0,
+    "capital_allowance_2026_single_dkk": 55000.0,
+    "capital_allowance_2026_couple_dkk": 110000.0,
+    "topskat_threshold_2025_dkk": 611800.0,
+    "topskat_gross_equivalent_2025_dkk": 665000.0,
+    "avg_wage_2025_dkk": 537071.12,
+    "factor_2025_published": 1.24,
+    "projected_factor_by_wage_growth": {
+      "wage_growth_2pct": 5.14,
+      "wage_growth_4pct": 5.05,
+      "wage_growth_6pct": 4.95
+    },
+    "range": [
+      4.95,
+      5.14
+    ]
+  },
+  "pit_code_choice": {
+    "used": "T_1100",
+    "reason": "T_1100 includes individuals' capital gains; T_1110 excludes them. The gap between the two codes is capital gains, not the individual-versus-corporate split, which is T_1300. T_1110 is not reported by every country, so the wider T_1100 is used. Counts are on OECD members in the revenue year.",
+    "n_reporting_T_1100": 38,
+    "n_reporting_T_1110": 33,
+    "missing_T_1110": [
+      "CHL",
+      "ESP",
+      "MEX",
+      "POL",
+      "PRT"
+    ]
+  },
+  "stack_reconciliation": {
+    "bands": [
+      "personal_income",
+      "social_contributions",
+      "vat",
+      "other_goods_services",
+      "payroll",
+      "corporate_income",
+      "property",
+      "residual"
+    ],
+    "note": "The six named bands plus a residual sum to the published total by construction. The residual is payroll taxes, income tax unallocable between individuals and corporations, and other taxes. Its size is reported so it cannot hide anything.",
+    "residual_max_pct_gdp": 2.51,
+    "residual_max_country": "DNK",
+    "residual_median_pct_gdp": 0.1,
+    "residual_negative_countries": []
+  },
+  "tax_mix": [
+    {
+      "code": "DNK",
+      "country": "Denmark",
+      "total": 47.42,
+      "personal_income": 25.05,
+      "social_contributions": 0.06,
+      "vat": 9.55,
+      "other_goods_services": 4.2,
+      "goods_and_services_all": 13.75,
+      "corporate_income": 3.95,
+      "property": 1.85,
+      "payroll": 0.26,
+      "other_taxes": 0.01,
+      "residual": 2.51
+    },
+    {
+      "code": "FRA",
+      "country": "France",
+      "total": 45.17,
+      "personal_income": 9.47,
+      "social_contributions": 14.82,
+      "vat": 7.4,
+      "other_goods_services": 4.84,
+      "goods_and_services_all": 12.24,
+      "corporate_income": 2.53,
+      "property": 3.83,
+      "payroll": 1.84,
+      "other_taxes": 0.43,
+      "residual": 0.43
+    },
+    {
+      "code": "AUT",
+      "country": "Austria",
+      "total": 43.28,
+      "personal_income": 9.7,
+      "social_contributions": 15.33,
+      "vat": 7.58,
+      "other_goods_services": 4.0,
+      "goods_and_services_all": 11.57,
+      "corporate_income": 2.75,
+      "property": 0.63,
+      "payroll": 2.79,
+      "other_taxes": 0.18,
+      "residual": 0.51
+    },
+    {
+      "code": "FIN",
+      "country": "Finland",
+      "total": 43.17,
+      "personal_income": 12.86,
+      "social_contributions": 12.03,
+      "vat": 9.39,
+      "other_goods_services": 4.61,
+      "goods_and_services_all": 13.99,
+      "corporate_income": 2.73,
+      "property": 1.51,
+      "payroll": 0.0,
+      "other_taxes": 0.04,
+      "residual": 0.04
+    },
+    {
+      "code": "SWE",
+      "country": "Sweden",
+      "total": 42.66,
+      "personal_income": 12.4,
+      "social_contributions": 8.93,
+      "vat": 9.1,
+      "other_goods_services": 2.79,
+      "goods_and_services_all": 11.89,
+      "corporate_income": 3.32,
+      "property": 0.95,
+      "payroll": 5.12,
+      "other_taxes": 0.05,
+      "residual": 0.05
+    },
+    {
+      "code": "BEL",
+      "country": "Belgium",
+      "total": 42.52,
+      "personal_income": 11.35,
+      "social_contributions": 13.03,
+      "vat": 6.82,
+      "other_goods_services": 3.91,
+      "goods_and_services_all": 10.73,
+      "corporate_income": 3.82,
+      "property": 3.58,
+      "payroll": 0.0,
+      "other_taxes": 0.0,
+      "residual": 0.02
+    },
+    {
+      "code": "NOR",
+      "country": "Norway",
+      "total": 42.45,
+      "personal_income": 10.79,
+      "social_contributions": 9.55,
+      "vat": 8.05,
+      "other_goods_services": 2.74,
+      "goods_and_services_all": 10.79,
+      "corporate_income": 10.02,
+      "property": 1.26,
+      "payroll": 0.05,
+      "other_taxes": 0.0,
+      "residual": -0.0
+    },
+    {
+      "code": "ITA",
+      "country": "Italy",
+      "total": 42.36,
+      "personal_income": 10.98,
+      "social_contributions": 13.21,
+      "vat": 6.64,
+      "other_goods_services": 5.31,
+      "goods_and_services_all": 11.95,
+      "corporate_income": 1.87,
+      "property": 2.47,
+      "payroll": 0.0,
+      "other_taxes": 1.24,
+      "residual": 1.89
+    },
+    {
+      "code": "GRC",
+      "country": "Greece",
+      "total": 39.36,
+      "personal_income": 5.96,
+      "social_contributions": 12.89,
+      "vat": 8.22,
+      "other_goods_services": 7.2,
+      "goods_and_services_all": 15.42,
+      "corporate_income": 1.79,
+      "property": 2.91,
+      "payroll": 0.0,
+      "other_taxes": 0.0,
+      "residual": 0.39
+    },
+    {
+      "code": "DEU",
+      "country": "Germany",
+      "total": 39.32,
+      "personal_income": 10.47,
+      "social_contributions": 14.77,
+      "vat": 7.18,
+      "other_goods_services": 3.28,
+      "goods_and_services_all": 10.46,
+      "corporate_income": 2.36,
+      "property": 1.24,
+      "payroll": 0.0,
+      "other_taxes": 0.01,
+      "residual": 0.01
+    },
+    {
+      "code": "NLD",
+      "country": "Netherlands",
+      "total": 39.19,
+      "personal_income": 8.55,
+      "social_contributions": 12.94,
+      "vat": 7.51,
+      "other_goods_services": 4.61,
+      "goods_and_services_all": 12.12,
+      "corporate_income": 3.84,
+      "property": 1.62,
+      "payroll": 0.0,
+      "other_taxes": 0.12,
+      "residual": 0.12
+    },
+    {
+      "code": "LUX",
+      "country": "Luxembourg",
+      "total": 38.4,
+      "personal_income": 10.11,
+      "social_contributions": 10.56,
+      "vat": 5.92,
+      "other_goods_services": 3.22,
+      "goods_and_services_all": 9.13,
+      "corporate_income": 4.53,
+      "property": 4.02,
+      "payroll": 0.0,
+      "other_taxes": 0.04,
+      "residual": 0.04
+    },
+    {
+      "code": "SVN",
+      "country": "Slovenia",
+      "total": 37.94,
+      "personal_income": 5.44,
+      "social_contributions": 16.38,
+      "vat": 8.23,
+      "other_goods_services": 4.76,
+      "goods_and_services_all": 12.99,
+      "corporate_income": 2.47,
+      "property": 0.61,
+      "payroll": 0.05,
+      "other_taxes": 0.0,
+      "residual": 0.01
+    },
+    {
+      "code": "ESP",
+      "country": "Spain",
+      "total": 37.8,
+      "personal_income": 8.63,
+      "social_contributions": 13.41,
+      "vat": 6.83,
+      "other_goods_services": 3.54,
+      "goods_and_services_all": 10.37,
+      "corporate_income": 2.64,
+      "property": 2.73,
+      "payroll": 0.0,
+      "other_taxes": 0.01,
+      "residual": 0.01
+    },
+    {
+      "code": "POL",
+      "country": "Poland",
+      "total": 36.7,
+      "personal_income": 5.35,
+      "social_contributions": 12.97,
+      "vat": 8.56,
+      "other_goods_services": 5.34,
+      "goods_and_services_all": 13.89,
+      "corporate_income": 2.61,
+      "property": 1.28,
+      "payroll": 0.55,
+      "other_taxes": 0.05,
+      "residual": 0.05
+    },
+    {
+      "code": "SVK",
+      "country": "Slovak Republic",
+      "total": 35.36,
+      "personal_income": 3.75,
+      "social_contributions": 15.21,
+      "vat": 7.47,
+      "other_goods_services": 4.56,
+      "goods_and_services_all": 12.03,
+      "corporate_income": 3.62,
+      "property": 0.46,
+      "payroll": 0.0,
+      "other_taxes": 0.0,
+      "residual": 0.29
+    },
+    {
+      "code": "PRT",
+      "country": "Portugal",
+      "total": 35.31,
+      "personal_income": 6.98,
+      "social_contributions": 10.43,
+      "vat": 8.9,
+      "other_goods_services": 4.88,
+      "goods_and_services_all": 13.78,
+      "corporate_income": 2.4,
+      "property": 1.52,
+      "payroll": 0.0,
+      "other_taxes": 0.2,
+      "residual": 0.2
+    },
+    {
+      "code": "ISL",
+      "country": "Iceland",
+      "total": 35.12,
+      "personal_income": 14.54,
+      "social_contributions": 3.0,
+      "vat": 8.56,
+      "other_goods_services": 3.23,
+      "goods_and_services_all": 11.8,
+      "corporate_income": 2.02,
+      "property": 2.09,
+      "payroll": 0.28,
+      "other_taxes": 0.41,
+      "residual": 1.41
+    },
+    {
+      "code": "CZE",
+      "country": "Czechia",
+      "total": 34.74,
+      "personal_income": 3.25,
+      "social_contributions": 16.45,
+      "vat": 7.59,
+      "other_goods_services": 3.29,
+      "goods_and_services_all": 10.88,
+      "corporate_income": 3.97,
+      "property": 0.2,
+      "payroll": 0.0,
+      "other_taxes": 0.0,
+      "residual": 0.0
+    },
+    {
+      "code": "NZL",
+      "country": "New Zealand",
+      "total": 34.57,
+      "personal_income": 14.13,
+      "social_contributions": 0.0,
+      "vat": 10.13,
+      "other_goods_services": 2.27,
+      "goods_and_services_all": 12.41,
+      "corporate_income": 5.44,
+      "property": 1.92,
+      "payroll": 0.0,
+      "other_taxes": 0.0,
+      "residual": 0.68
+    },
+    {
+      "code": "GBR",
+      "country": "United Kingdom",
+      "total": 34.39,
+      "personal_income": 10.03,
+      "social_contributions": 6.84,
+      "vat": 6.96,
+      "other_goods_services": 3.56,
+      "goods_and_services_all": 10.52,
+      "corporate_income": 2.92,
+      "property": 3.95,
+      "payroll": 0.14,
+      "other_taxes": 0.0,
+      "residual": -0.0
+    },
+    {
+      "code": "JPN",
+      "country": "Japan",
+      "total": 34.08,
+      "personal_income": 6.43,
+      "social_contributions": 13.35,
+      "vat": 5.09,
+      "other_goods_services": 1.99,
+      "goods_and_services_all": 7.07,
+      "corporate_income": 4.46,
+      "property": 2.68,
+      "payroll": 0.0,
+      "other_taxes": 0.09,
+      "residual": 0.09
+    },
+    {
+      "code": "CAN",
+      "country": "Canada",
+      "total": 33.92,
+      "personal_income": 12.32,
+      "social_contributions": 4.74,
+      "vat": 4.44,
+      "other_goods_services": 2.83,
+      "goods_and_services_all": 7.27,
+      "corporate_income": 4.57,
+      "property": 3.83,
+      "payroll": 0.75,
+      "other_taxes": 0.04,
+      "residual": 0.43
+    },
+    {
+      "code": "HUN",
+      "country": "Hungary",
+      "total": 33.74,
+      "personal_income": 4.08,
+      "social_contributions": 10.46,
+      "vat": 9.88,
+      "other_goods_services": 6.03,
+      "goods_and_services_all": 15.91,
+      "corporate_income": 1.37,
+      "property": 0.87,
+      "payroll": 1.08,
+      "other_taxes": -0.04,
+      "residual": -0.04
+    },
+    {
+      "code": "EST",
+      "country": "Estonia",
+      "total": 33.51,
+      "personal_income": 6.83,
+      "social_contributions": 11.61,
+      "vat": 9.15,
+      "other_goods_services": 4.2,
+      "goods_and_services_all": 13.35,
+      "corporate_income": 1.53,
+      "property": 0.19,
+      "payroll": 0.0,
+      "other_taxes": 0.0,
+      "residual": -0.0
+    },
+    {
+      "code": "ISR",
+      "country": "Israel",
+      "total": 32.5,
+      "personal_income": 7.16,
+      "social_contributions": 5.03,
+      "vat": 7.54,
+      "other_goods_services": 3.41,
+      "goods_and_services_all": 10.96,
+      "corporate_income": 3.57,
+      "property": 3.92,
+      "payroll": 1.02,
+      "other_taxes": 0.0,
+      "residual": 0.84
+    },
+    {
+      "code": "LTU",
+      "country": "Lithuania",
+      "total": 32.09,
+      "personal_income": 7.51,
+      "social_contributions": 10.21,
+      "vat": 8.35,
+      "other_goods_services": 3.67,
+      "goods_and_services_all": 12.02,
+      "corporate_income": 2.07,
+      "property": 0.3,
+      "payroll": 0.0,
+      "other_taxes": 0.0,
+      "residual": -0.0
+    },
+    {
+      "code": "LVA",
+      "country": "Latvia",
+      "total": 30.52,
+      "personal_income": 5.98,
+      "social_contributions": 9.5,
+      "vat": 8.57,
+      "other_goods_services": 4.73,
+      "goods_and_services_all": 13.3,
+      "corporate_income": 0.85,
+      "property": 0.88,
+      "payroll": 0.01,
+      "other_taxes": 0.0,
+      "residual": 0.0
+    },
+    {
+      "code": "KOR",
+      "country": "Korea",
+      "total": 29.76,
+      "personal_income": 6.07,
+      "social_contributions": 7.8,
+      "vat": 4.28,
+      "other_goods_services": 2.6,
+      "goods_and_services_all": 6.88,
+      "corporate_income": 3.81,
+      "property": 4.48,
+      "payroll": 0.08,
+      "other_taxes": 0.63,
+      "residual": 0.63
+    },
+    {
+      "code": "AUS",
+      "country": "Australia",
+      "total": 29.48,
+      "personal_income": 11.5,
+      "social_contributions": 0.0,
+      "vat": 3.27,
+      "other_goods_services": 3.59,
+      "goods_and_services_all": 6.86,
+      "corporate_income": 6.64,
+      "property": 3.21,
+      "payroll": 1.27,
+      "other_taxes": 0.0,
+      "residual": -0.0
+    },
+    {
+      "code": "CHE",
+      "country": "Switzerland",
+      "total": 28.48,
+      "personal_income": 8.64,
+      "social_contributions": 6.9,
+      "vat": 3.21,
+      "other_goods_services": 2.37,
+      "goods_and_services_all": 5.58,
+      "corporate_income": 3.11,
+      "property": 2.28,
+      "payroll": 0.0,
+      "other_taxes": 0.14,
+      "residual": 1.97
+    },
+    {
+      "code": "USA",
+      "country": "United States",
+      "total": 26.5,
+      "personal_income": 11.37,
+      "social_contributions": 6.06,
+      "vat": 0.0,
+      "other_goods_services": 4.39,
+      "goods_and_services_all": 4.39,
+      "corporate_income": 1.61,
+      "property": 3.06,
+      "payroll": 0.01,
+      "other_taxes": 0.0,
+      "residual": -0.0
+    },
+    {
+      "code": "CRI",
+      "country": "Costa Rica",
+      "total": 24.98,
+      "personal_income": 1.55,
+      "social_contributions": 8.99,
+      "vat": 5.09,
+      "other_goods_services": 3.61,
+      "goods_and_services_all": 8.7,
+      "corporate_income": 2.42,
+      "property": 0.52,
+      "payroll": 1.42,
+      "other_taxes": 0.21,
+      "residual": 1.38
+    },
+    {
+      "code": "TUR",
+      "country": "T\u00fcrkiye",
+      "total": 22.83,
+      "personal_income": 3.03,
+      "social_contributions": 6.53,
+      "vat": 5.32,
+      "other_goods_services": 4.29,
+      "goods_and_services_all": 9.61,
+      "corporate_income": 2.46,
+      "property": 0.97,
+      "payroll": 0.0,
+      "other_taxes": 0.24,
+      "residual": 0.24
+    },
+    {
+      "code": "CHL",
+      "country": "Chile",
+      "total": 22.24,
+      "personal_income": 2.4,
+      "social_contributions": 1.17,
+      "vat": 9.48,
+      "other_goods_services": 2.32,
+      "goods_and_services_all": 11.8,
+      "corporate_income": 3.81,
+      "property": 1.08,
+      "payroll": 0.0,
+      "other_taxes": -0.33,
+      "residual": 1.97
+    },
+    {
+      "code": "IRL",
+      "country": "Ireland",
+      "total": 20.69,
+      "personal_income": 6.78,
+      "social_contributions": 3.14,
+      "vat": 3.83,
+      "other_goods_services": 2.11,
+      "goods_and_services_all": 5.95,
+      "corporate_income": 3.53,
+      "property": 1.12,
+      "payroll": 0.18,
+      "other_taxes": 0.0,
+      "residual": 0.0
+    },
+    {
+      "code": "COL",
+      "country": "Colombia",
+      "total": 19.24,
+      "personal_income": 1.32,
+      "social_contributions": 1.92,
+      "vat": 5.86,
+      "other_goods_services": 2.46,
+      "goods_and_services_all": 8.32,
+      "corporate_income": 4.56,
+      "property": 1.68,
+      "payroll": 0.33,
+      "other_taxes": 0.85,
+      "residual": 1.11
+    },
+    {
+      "code": "MEX",
+      "country": "Mexico",
+      "total": 17.25,
+      "personal_income": 3.64,
+      "social_contributions": 2.37,
+      "vat": 4.36,
+      "other_goods_services": 2.03,
+      "goods_and_services_all": 6.39,
+      "corporate_income": 3.48,
+      "property": 0.35,
+      "payroll": 0.45,
+      "other_taxes": 0.32,
+      "residual": 0.57
+    }
+  ],
+  "tax_mix_oecd_mean": {
+    "note": "Unweighted mean across OECD members reporting each component. Computed here; the OECD row in the source file carries a total but no component breakdown.",
+    "total": 34.19,
+    "personal_income": 8.33,
+    "social_contributions": 9.02,
+    "vat": 6.96,
+    "other_goods_services": 3.76,
+    "goods_and_services_all": 10.71,
+    "corporate_income": 3.3,
+    "property": 1.9,
+    "payroll": 0.47,
+    "other_taxes": 0.13,
+    "residual": 0.47,
+    "n_by_component": {
+      "total": 38,
+      "personal_income": 38,
+      "social_contributions": 38,
+      "vat": 38,
+      "other_goods_services": 38,
+      "goods_and_services_all": 38,
+      "corporate_income": 38,
+      "property": 38,
+      "payroll": 38,
+      "other_taxes": 38,
+      "residual": 38
+    }
+  },
+  "labour_tax_correction": {
+    "note": "Denmark's social contributions are essentially zero, not missing. Comparing personal income tax lines alone compares plumbing, not burden. Payroll taxes are included in the combined figure because Sweden raises 5 percent of GDP that way and it is a tax on labour by any reading.",
+    "columns": "personal income tax, social contributions, payroll taxes, their sum, and total tax",
+    "by_country": [
+      {
+        "code": "DNK",
+        "country": "Denmark",
+        "personal_income": 25.05,
+        "social_contributions": 0.06,
+        "payroll": 0.26,
+        "labour_taxes_combined": 25.36,
+        "total": 47.42
+      },
+      {
+        "code": "SWE",
+        "country": "Sweden",
+        "personal_income": 12.4,
+        "social_contributions": 8.93,
+        "payroll": 5.12,
+        "labour_taxes_combined": 26.45,
+        "total": 42.66
+      },
+      {
+        "code": "NOR",
+        "country": "Norway",
+        "personal_income": 10.79,
+        "social_contributions": 9.55,
+        "payroll": 0.05,
+        "labour_taxes_combined": 20.39,
+        "total": 42.45
+      },
+      {
+        "code": "FIN",
+        "country": "Finland",
+        "personal_income": 12.86,
+        "social_contributions": 12.03,
+        "payroll": 0.0,
+        "labour_taxes_combined": 24.89,
+        "total": 43.17
+      },
+      {
+        "code": "ISL",
+        "country": "Iceland",
+        "personal_income": 14.54,
+        "social_contributions": 3.0,
+        "payroll": 0.28,
+        "labour_taxes_combined": 17.82,
+        "total": 35.12
+      },
+      {
+        "code": "DEU",
+        "country": "Germany",
+        "personal_income": 10.47,
+        "social_contributions": 14.77,
+        "payroll": 0.0,
+        "labour_taxes_combined": 25.25,
+        "total": 39.32
+      },
+      {
+        "code": "FRA",
+        "country": "France",
+        "personal_income": 9.47,
+        "social_contributions": 14.82,
+        "payroll": 1.84,
+        "labour_taxes_combined": 26.13,
+        "total": 45.17
+      },
+      {
+        "code": "NLD",
+        "country": "Netherlands",
+        "personal_income": 8.55,
+        "social_contributions": 12.94,
+        "payroll": 0.0,
+        "labour_taxes_combined": 21.49,
+        "total": 39.19
+      },
+      {
+        "code": "GBR",
+        "country": "United Kingdom",
+        "personal_income": 10.03,
+        "social_contributions": 6.84,
+        "payroll": 0.14,
+        "labour_taxes_combined": 17.01,
+        "total": 34.39
+      },
+      {
+        "code": "USA",
+        "country": "United States",
+        "personal_income": 11.37,
+        "social_contributions": 6.06,
+        "payroll": 0.01,
+        "labour_taxes_combined": 17.44,
+        "total": 26.5
+      }
+    ]
+  },
+  "labour_tax_spread": {
+    "note": "How close the combined labour tax burden is across the countries the post names, against how far apart their personal income tax lines look.",
+    "personal_income_min_max": [
+      8.55,
+      25.05
+    ],
+    "combined_min_max": [
+      17.01,
+      26.45
+    ]
+  },
+  "missing_personal_income_tax": [],
+  "labour_tax_convergence": {
+    "countries": [
+      "Denmark",
+      "Sweden",
+      "Finland",
+      "Germany",
+      "France"
+    ],
+    "personal_income_range": [
+      9.47,
+      25.05
+    ],
+    "personal_income_ratio": 2.64,
+    "combined_range": [
+      24.89,
+      26.45
+    ],
+    "combined_spread_pts": 1.56,
+    "detail": [
+      {
+        "code": "DNK",
+        "country": "Denmark",
+        "personal_income": 25.05,
+        "social_contributions": 0.06,
+        "payroll": 0.26,
+        "combined": 25.36
+      },
+      {
+        "code": "SWE",
+        "country": "Sweden",
+        "personal_income": 12.4,
+        "social_contributions": 8.93,
+        "payroll": 5.12,
+        "combined": 26.45
+      },
+      {
+        "code": "FIN",
+        "country": "Finland",
+        "personal_income": 12.86,
+        "social_contributions": 12.03,
+        "payroll": 0.0,
+        "combined": 24.89
+      },
+      {
+        "code": "DEU",
+        "country": "Germany",
+        "personal_income": 10.47,
+        "social_contributions": 14.77,
+        "payroll": 0.0,
+        "combined": 25.25
+      },
+      {
+        "code": "FRA",
+        "country": "France",
+        "personal_income": 9.47,
+        "social_contributions": 14.82,
+        "payroll": 1.84,
+        "combined": 26.13
+      }
+    ],
+    "selection_sensitivity": {
+      "note": "The 1.56-point spread is a property of these five countries. Swapping any of them widens it sharply, and the post must present the five as a chosen comparison rather than as a general result.",
+      "alternatives": {
+        "FRA->NOR": 6.06,
+        "FRA->ISL": 8.63,
+        "DEU->USA": 9.01
+      },
+      "five_nordics_spread": 8.63,
+      "all_oecd_pit_ratio": 18.96
+    }
+  },
+  "norway_petroleum_flag": {
+    "corporate_income_pct_gdp": 10.02,
+    "oecd_mean_corporate": 3.3,
+    "note": "Norway's corporate tax is petroleum revenue. Flagged wherever Norway appears."
+  },
+  "tax_level_volatility": {
+    "window": [
+      2017,
+      2021
+    ],
+    "note": "How much a country taxes is measured as the mean total tax revenue over the window, not a single year. Within this window Denmark's own swing is 3.25 points, sixth largest. The five-point-plus fall that motivates the averaging happens between 2021 and 2022, which is OUTSIDE the window; see denmark_2022_fall, which decomposes it rather than attributing it to one tax.",
+    "biggest_swings": [
+      {
+        "code": "KOR",
+        "country": "Korea",
+        "mean": 27.36,
+        "min": 25.36,
+        "max": 29.76,
+        "swing_pts": 4.4
+      },
+      {
+        "code": "HUN",
+        "country": "Hungary",
+        "mean": 36.13,
+        "min": 33.74,
+        "max": 37.82,
+        "swing_pts": 4.08
+      },
+      {
+        "code": "NOR",
+        "country": "Norway",
+        "mean": 39.69,
+        "min": 38.46,
+        "max": 42.45,
+        "swing_pts": 3.99
+      },
+      {
+        "code": "ESP",
+        "country": "Spain",
+        "mean": 35.56,
+        "min": 33.85,
+        "max": 37.8,
+        "swing_pts": 3.94
+      },
+      {
+        "code": "NZL",
+        "country": "New Zealand",
+        "mean": 32.63,
+        "min": 31.32,
+        "max": 34.57,
+        "swing_pts": 3.25
+      },
+      {
+        "code": "DNK",
+        "country": "Denmark",
+        "mean": 46.24,
+        "min": 44.17,
+        "max": 47.42,
+        "swing_pts": 3.25
+      },
+      {
+        "code": "JPN",
+        "country": "Japan",
+        "mean": 32.2,
+        "min": 30.92,
+        "max": 34.08,
+        "swing_pts": 3.16
+      },
+      {
+        "code": "CHL",
+        "country": "Chile",
+        "mean": 20.8,
+        "min": 19.27,
+        "max": 22.24,
+        "swing_pts": 2.97
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "code": "DNK",
+      "country": "Denmark",
+      "total_tax_pct_gdp_year": 47.42,
+      "total_tax_mean": 46.24,
+      "total_tax_swing_pts": 3.25,
+      "poverty_market_pct": 22.23,
+      "poverty_disposable_pct": 6.31,
+      "poverty_year": 2022,
+      "poverty_reduction_pts": 15.92,
+      "life_expectancy": 81.93
+    },
+    {
+      "code": "FRA",
+      "country": "France",
+      "total_tax_pct_gdp_year": 45.17,
+      "total_tax_mean": 45.47,
+      "total_tax_swing_pts": 1.18,
+      "poverty_market_pct": 36.1,
+      "poverty_disposable_pct": 8.7,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 27.4,
+      "life_expectancy": 83.33
+    },
+    {
+      "code": "SWE",
+      "country": "Sweden",
+      "total_tax_pct_gdp_year": 42.66,
+      "total_tax_mean": 43.16,
+      "total_tax_swing_pts": 1.66,
+      "poverty_market_pct": 23.55,
+      "poverty_disposable_pct": 7.88,
+      "poverty_year": 2024,
+      "poverty_reduction_pts": 15.67,
+      "life_expectancy": 83.26
+    },
+    {
+      "code": "BEL",
+      "country": "Belgium",
+      "total_tax_pct_gdp_year": 42.52,
+      "total_tax_mean": 42.96,
+      "total_tax_swing_pts": 1.56,
+      "poverty_market_pct": 32.96,
+      "poverty_disposable_pct": 6.29,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 26.67,
+      "life_expectancy": 82.11
+    },
+    {
+      "code": "FIN",
+      "country": "Finland",
+      "total_tax_pct_gdp_year": 43.17,
+      "total_tax_mean": 42.51,
+      "total_tax_swing_pts": 1.32,
+      "poverty_market_pct": 35.37,
+      "poverty_disposable_pct": 8.41,
+      "poverty_year": 2024,
+      "poverty_reduction_pts": 26.96,
+      "life_expectancy": 81.91
+    },
+    {
+      "code": "AUT",
+      "country": "Austria",
+      "total_tax_pct_gdp_year": 43.28,
+      "total_tax_mean": 42.42,
+      "total_tax_swing_pts": 1.41,
+      "poverty_market_pct": 31.35,
+      "poverty_disposable_pct": 9.31,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 22.05,
+      "life_expectancy": 81.96
+    },
+    {
+      "code": "ITA",
+      "country": "Italy",
+      "total_tax_pct_gdp_year": 42.36,
+      "total_tax_mean": 42.17,
+      "total_tax_swing_pts": 0.83,
+      "poverty_market_pct": 33.12,
+      "poverty_disposable_pct": 12.56,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 20.57,
+      "life_expectancy": 83.72
+    },
+    {
+      "code": "NOR",
+      "country": "Norway",
+      "total_tax_pct_gdp_year": 42.45,
+      "total_tax_mean": 39.69,
+      "total_tax_swing_pts": 3.99,
+      "poverty_market_pct": 26.21,
+      "poverty_disposable_pct": 7.9,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 18.31,
+      "life_expectancy": 83.31
+    },
+    {
+      "code": "GRC",
+      "country": "Greece",
+      "total_tax_pct_gdp_year": 39.36,
+      "total_tax_mean": 39.41,
+      "total_tax_swing_pts": 1.18,
+      "poverty_market_pct": 29.94,
+      "poverty_disposable_pct": 11.97,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 17.97,
+      "life_expectancy": 81.86
+    },
+    {
+      "code": "NLD",
+      "country": "Netherlands",
+      "total_tax_pct_gdp_year": 39.19,
+      "total_tax_mean": 39.19,
+      "total_tax_swing_pts": 1.3,
+      "poverty_market_pct": 25.6,
+      "poverty_disposable_pct": 7.9,
+      "poverty_year": 2024,
+      "poverty_reduction_pts": 17.7,
+      "life_expectancy": 82.16
+    },
+    {
+      "code": "LUX",
+      "country": "Luxembourg",
+      "total_tax_pct_gdp_year": 38.4,
+      "total_tax_mean": 38.43,
+      "total_tax_swing_pts": 2.85,
+      "poverty_market_pct": 25.76,
+      "poverty_disposable_pct": 9.59,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 16.17,
+      "life_expectancy": 82.23
+    },
+    {
+      "code": "DEU",
+      "country": "Germany",
+      "total_tax_pct_gdp_year": 39.32,
+      "total_tax_mean": 38.41,
+      "total_tax_swing_pts": 1.58,
+      "poverty_market_pct": 31.17,
+      "poverty_disposable_pct": 11.33,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 19.84,
+      "life_expectancy": 81.38
+    },
+    {
+      "code": "SVN",
+      "country": "Slovenia",
+      "total_tax_pct_gdp_year": 37.94,
+      "total_tax_mean": 37.33,
+      "total_tax_swing_pts": 0.87,
+      "poverty_market_pct": 26.25,
+      "poverty_disposable_pct": 8.76,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 17.48,
+      "life_expectancy": 81.6
+    },
+    {
+      "code": "HUN",
+      "country": "Hungary",
+      "total_tax_pct_gdp_year": 33.74,
+      "total_tax_mean": 36.13,
+      "total_tax_swing_pts": 4.08,
+      "poverty_market_pct": 25.22,
+      "poverty_disposable_pct": 9.7,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 15.52,
+      "life_expectancy": 77.02
+    },
+    {
+      "code": "ISL",
+      "country": "Iceland",
+      "total_tax_pct_gdp_year": 35.12,
+      "total_tax_mean": 36.04,
+      "total_tax_swing_pts": 2.01,
+      "poverty_market_pct": 18.65,
+      "poverty_disposable_pct": 5.64,
+      "poverty_year": 2019,
+      "poverty_reduction_pts": 13.01,
+      "life_expectancy": 82.69
+    },
+    {
+      "code": "ESP",
+      "country": "Spain",
+      "total_tax_pct_gdp_year": 37.8,
+      "total_tax_mean": 35.56,
+      "total_tax_swing_pts": 3.94,
+      "poverty_market_pct": 31.3,
+      "poverty_disposable_pct": 14.08,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 17.23,
+      "life_expectancy": 83.67
+    },
+    {
+      "code": "POL",
+      "country": "Poland",
+      "total_tax_pct_gdp_year": 36.7,
+      "total_tax_mean": 35.35,
+      "total_tax_swing_pts": 2.46,
+      "poverty_market_pct": 29.24,
+      "poverty_disposable_pct": 8.83,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 20.41,
+      "life_expectancy": 78.63
+    },
+    {
+      "code": "PRT",
+      "country": "Portugal",
+      "total_tax_pct_gdp_year": 35.31,
+      "total_tax_mean": 34.75,
+      "total_tax_swing_pts": 1.2,
+      "poverty_market_pct": 28.99,
+      "poverty_disposable_pct": 11.38,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 17.61,
+      "life_expectancy": 82.36
+    },
+    {
+      "code": "CZE",
+      "country": "Czechia",
+      "total_tax_pct_gdp_year": 34.74,
+      "total_tax_mean": 34.74,
+      "total_tax_swing_pts": 0.54,
+      "poverty_market_pct": 26.59,
+      "poverty_disposable_pct": 5.52,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 21.07,
+      "life_expectancy": 79.83
+    },
+    {
+      "code": "SVK",
+      "country": "Slovak Republic",
+      "total_tax_pct_gdp_year": 35.36,
+      "total_tax_mean": 34.53,
+      "total_tax_swing_pts": 1.39,
+      "poverty_market_pct": 30.93,
+      "poverty_disposable_pct": 8.31,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 22.62,
+      "life_expectancy": 78.34
+    },
+    {
+      "code": "CAN",
+      "country": "Canada",
+      "total_tax_pct_gdp_year": 33.92,
+      "total_tax_mean": 33.65,
+      "total_tax_swing_pts": 1.66,
+      "poverty_market_pct": 24.6,
+      "poverty_disposable_pct": 12.2,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 12.4,
+      "life_expectancy": 82.63
+    },
+    {
+      "code": "EST",
+      "country": "Estonia",
+      "total_tax_pct_gdp_year": 33.51,
+      "total_tax_mean": 33.14,
+      "total_tax_swing_pts": 0.96,
+      "poverty_market_pct": 30.79,
+      "poverty_disposable_pct": 14.38,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 16.4,
+      "life_expectancy": 79.15
+    },
+    {
+      "code": "GBR",
+      "country": "United Kingdom",
+      "total_tax_pct_gdp_year": 34.39,
+      "total_tax_mean": 33.03,
+      "total_tax_swing_pts": 1.9,
+      "poverty_market_pct": 29.57,
+      "poverty_disposable_pct": 12.57,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 17.0,
+      "life_expectancy": 81.3
+    },
+    {
+      "code": "NZL",
+      "country": "New Zealand",
+      "total_tax_pct_gdp_year": 34.57,
+      "total_tax_mean": 32.63,
+      "total_tax_swing_pts": 3.25,
+      "poverty_market_pct": 24.8,
+      "poverty_disposable_pct": 14.3,
+      "poverty_year": 2022,
+      "poverty_reduction_pts": 10.5,
+      "life_expectancy": 82.09
+    },
+    {
+      "code": "JPN",
+      "country": "Japan",
+      "total_tax_pct_gdp_year": 34.08,
+      "total_tax_mean": 32.2,
+      "total_tax_swing_pts": 3.16,
+      "poverty_market_pct": 33.6,
+      "poverty_disposable_pct": 15.4,
+      "poverty_year": 2021,
+      "poverty_reduction_pts": 18.2,
+      "life_expectancy": 84.71
+    },
+    {
+      "code": "ISR",
+      "country": "Israel",
+      "total_tax_pct_gdp_year": 32.5,
+      "total_tax_mean": 31.11,
+      "total_tax_swing_pts": 2.81,
+      "poverty_market_pct": 24.33,
+      "poverty_disposable_pct": 17.17,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 7.16,
+      "life_expectancy": 82.41
+    },
+    {
+      "code": "LVA",
+      "country": "Latvia",
+      "total_tax_pct_gdp_year": 30.52,
+      "total_tax_mean": 30.9,
+      "total_tax_swing_pts": 0.57,
+      "poverty_market_pct": 27.94,
+      "poverty_disposable_pct": 16.17,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 11.78,
+      "life_expectancy": 76.19
+    },
+    {
+      "code": "LTU",
+      "country": "Lithuania",
+      "total_tax_pct_gdp_year": 32.09,
+      "total_tax_mean": 30.68,
+      "total_tax_swing_pts": 2.48,
+      "poverty_market_pct": 29.62,
+      "poverty_disposable_pct": 15.62,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 14.0,
+      "life_expectancy": 76.03
+    },
+    {
+      "code": "AUS",
+      "country": "Australia",
+      "total_tax_pct_gdp_year": 29.48,
+      "total_tax_mean": 28.55,
+      "total_tax_swing_pts": 1.75,
+      "poverty_market_pct": 24.4,
+      "poverty_disposable_pct": 12.6,
+      "poverty_year": 2020,
+      "poverty_reduction_pts": 11.8,
+      "life_expectancy": 83.92
+    },
+    {
+      "code": "CHE",
+      "country": "Switzerland",
+      "total_tax_pct_gdp_year": 28.48,
+      "total_tax_mean": 27.81,
+      "total_tax_swing_pts": 1.3,
+      "poverty_market_pct": 16.12,
+      "poverty_disposable_pct": 9.77,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 6.34,
+      "life_expectancy": 83.95
+    },
+    {
+      "code": "KOR",
+      "country": "Korea",
+      "total_tax_pct_gdp_year": 29.76,
+      "total_tax_mean": 27.36,
+      "total_tax_swing_pts": 4.4,
+      "poverty_market_pct": 19.9,
+      "poverty_disposable_pct": 14.9,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 5.0,
+      "life_expectancy": 84.33
+    },
+    {
+      "code": "USA",
+      "country": "United States",
+      "total_tax_pct_gdp_year": 26.5,
+      "total_tax_mean": 25.8,
+      "total_tax_swing_pts": 1.67,
+      "poverty_market_pct": 27.09,
+      "poverty_disposable_pct": 18.09,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 9.0,
+      "life_expectancy": 79.3
+    },
+    {
+      "code": "TUR",
+      "country": "T\u00fcrkiye",
+      "total_tax_pct_gdp_year": 22.83,
+      "total_tax_mean": 23.7,
+      "total_tax_swing_pts": 1.85,
+      "poverty_market_pct": 24.98,
+      "poverty_disposable_pct": 13.15,
+      "poverty_year": 2022,
+      "poverty_reduction_pts": 11.83,
+      "life_expectancy": 77.16
+    },
+    {
+      "code": "CRI",
+      "country": "Costa Rica",
+      "total_tax_pct_gdp_year": 24.98,
+      "total_tax_mean": 23.42,
+      "total_tax_swing_pts": 2.41,
+      "poverty_market_pct": 29.92,
+      "poverty_disposable_pct": 21.35,
+      "poverty_year": 2025,
+      "poverty_reduction_pts": 8.57,
+      "life_expectancy": 80.8
+    },
+    {
+      "code": "IRL",
+      "country": "Ireland",
+      "total_tax_pct_gdp_year": 20.69,
+      "total_tax_mean": 21.4,
+      "total_tax_swing_pts": 2.74,
+      "poverty_market_pct": 25.7,
+      "poverty_disposable_pct": 6.99,
+      "poverty_year": 2023,
+      "poverty_reduction_pts": 18.71,
+      "life_expectancy": 82.41
+    },
+    {
+      "code": "CHL",
+      "country": "Chile",
+      "total_tax_pct_gdp_year": 22.24,
+      "total_tax_mean": 20.8,
+      "total_tax_swing_pts": 2.97,
+      "poverty_market_pct": 23.58,
+      "poverty_disposable_pct": 16.29,
+      "poverty_year": 2022,
+      "poverty_reduction_pts": 7.29,
+      "life_expectancy": 81.17
+    },
+    {
+      "code": "COL",
+      "country": "Colombia",
+      "total_tax_pct_gdp_year": 19.24,
+      "total_tax_mean": 19.2,
+      "total_tax_swing_pts": 0.91,
+      "poverty_market_pct": null,
+      "poverty_disposable_pct": null,
+      "poverty_year": null,
+      "poverty_reduction_pts": null,
+      "life_expectancy": 77.72
+    },
+    {
+      "code": "MEX",
+      "country": "Mexico",
+      "total_tax_pct_gdp_year": 17.25,
+      "total_tax_mean": 16.71,
+      "total_tax_swing_pts": 1.63,
+      "poverty_market_pct": 18.08,
+      "poverty_disposable_pct": 15.0,
+      "poverty_year": 2022,
+      "poverty_reduction_pts": 3.08,
+      "life_expectancy": 75.07
+    }
+  ],
+  "outcome_fits": {
+    "tax_vs_poverty_disposable": {
+      "n": 37,
+      "slope": -0.324,
+      "intercept": 22.5324,
+      "r": -0.6018,
+      "r2": 0.3621
+    },
+    "tax_vs_poverty_reduction_pts": {
+      "n": 37,
+      "slope": 0.6167,
+      "intercept": -5.3006,
+      "r": 0.7402,
+      "r2": 0.5479
+    },
+    "tax_vs_life_expectancy": {
+      "n": 38,
+      "slope": 0.1375,
+      "intercept": 76.5304,
+      "r": 0.408,
+      "r2": 0.1664
+    },
+    "note": "Cross-country association on the OECD field. Not causal, and not evidence that health spending does or does not work."
+  },
+  "poorer_rule": {
+    "rule": "The five OECD members with the lowest GDP per capita, PPP, constant 2021 international dollars, in 2021. Selected from the data, not by hand.",
+    "excluded": [
+      {
+        "code": "COL",
+        "gdp_pc": 17383
+      },
+      {
+        "code": "MEX",
+        "gdp_pc": 20783
+      },
+      {
+        "code": "CRI",
+        "gdp_pc": 24084
+      },
+      {
+        "code": "CHL",
+        "gdp_pc": 29107
+      },
+      {
+        "code": "TUR",
+        "gdp_pc": 32106
+      }
+    ],
+    "next_in_line": {
+      "code": "GRC",
+      "gdp_pc": 33528
+    },
+    "oecd_median_gdp_pc": 49014
+  },
+  "income_control": {
+    "note": "Ordinary least squares on the full OECD field. 'Income only' regresses the outcome on log GDP per capita. 'Income plus tax' adds the averaged tax level. The increment is what the tax level explains that income does not.",
+    "outcomes": {
+      "life_expectancy": {
+        "tax_only_r2": 0.1664,
+        "income_only_r2": 0.2913,
+        "income_plus_tax_r2": 0.3252,
+        "increment_from_tax": 0.0339,
+        "n": 38
+      },
+      "poverty_disposable": {
+        "tax_only_r2": 0.3621,
+        "income_only_r2": 0.2675,
+        "income_plus_tax_r2": 0.4627,
+        "increment_from_tax": 0.1952,
+        "n": 37
+      },
+      "poverty_reduction_pts": {
+        "tax_only_r2": 0.5479,
+        "income_only_r2": 0.0727,
+        "income_plus_tax_r2": 0.5479,
+        "increment_from_tax": 0.4752,
+        "n": 37
+      }
+    }
+  },
+  "outcome_robustness": {
+    "poorer_members_removed": [
+      "COL",
+      "MEX",
+      "CRI",
+      "CHL",
+      "TUR"
+    ],
+    "note": "The OECD's low-tax end is also its low-income end, so any tax-versus-outcome association across the full field may be an income association wearing a tax label. These subsets test that. Read the R-squared column, not the sign.",
+    "fits": {
+      "all_oecd": {
+        "tax_vs_life_expectancy": {
+          "n": 38,
+          "slope": 0.1375,
+          "intercept": 76.5304,
+          "r": 0.408,
+          "r2": 0.1664
+        },
+        "tax_vs_poverty_disposable": {
+          "n": 37,
+          "slope": -0.324,
+          "intercept": 22.5324,
+          "r": -0.6018,
+          "r2": 0.3621
+        },
+        "tax_vs_poverty_reduction_pts": {
+          "n": 37,
+          "slope": 0.6167,
+          "intercept": -5.3006,
+          "r": 0.7402,
+          "r2": 0.5479
+        }
+      },
+      "excl_united_states": {
+        "tax_vs_life_expectancy": {
+          "n": 37,
+          "slope": 0.1344,
+          "intercept": 76.6546,
+          "r": 0.3958,
+          "r2": 0.1567
+        },
+        "tax_vs_poverty_disposable": {
+          "n": 36,
+          "slope": -0.3058,
+          "intercept": 21.7998,
+          "r": -0.5816,
+          "r2": 0.3383
+        },
+        "tax_vs_poverty_reduction_pts": {
+          "n": 36,
+          "slope": 0.6092,
+          "intercept": -5.0,
+          "r": 0.7305,
+          "r2": 0.5337
+        }
+      },
+      "excl_poorer_members": {
+        "tax_vs_life_expectancy": {
+          "n": 33,
+          "slope": 0.0591,
+          "intercept": 79.4688,
+          "r": 0.1522,
+          "r2": 0.0232
+        },
+        "tax_vs_poverty_disposable": {
+          "n": 33,
+          "slope": -0.3016,
+          "intercept": 21.6418,
+          "r": -0.5027,
+          "r2": 0.2527
+        },
+        "tax_vs_poverty_reduction_pts": {
+          "n": 33,
+          "slope": 0.6016,
+          "intercept": -4.7598,
+          "r": 0.6396,
+          "r2": 0.4091
+        }
+      },
+      "excl_poorer_and_usa": {
+        "tax_vs_life_expectancy": {
+          "n": 32,
+          "slope": 0.0422,
+          "intercept": 80.1249,
+          "r": 0.1056,
+          "r2": 0.0111
+        },
+        "tax_vs_poverty_disposable": {
+          "n": 32,
+          "slope": -0.2594,
+          "intercept": 19.9989,
+          "r": -0.4434,
+          "r2": 0.1966
+        },
+        "tax_vs_poverty_reduction_pts": {
+          "n": 32,
+          "slope": 0.5841,
+          "intercept": -4.076,
+          "r": 0.6119,
+          "r2": 0.3744
+        }
+      }
+    }
+  },
+  "life_expectancy_ranked": [
+    {
+      "code": "JPN",
+      "country": "Japan",
+      "life_expectancy": 84.71
+    },
+    {
+      "code": "KOR",
+      "country": "Korea",
+      "life_expectancy": 84.33
+    },
+    {
+      "code": "CHE",
+      "country": "Switzerland",
+      "life_expectancy": 83.95
+    },
+    {
+      "code": "AUS",
+      "country": "Australia",
+      "life_expectancy": 83.92
+    },
+    {
+      "code": "ITA",
+      "country": "Italy",
+      "life_expectancy": 83.72
+    },
+    {
+      "code": "ESP",
+      "country": "Spain",
+      "life_expectancy": 83.67
+    },
+    {
+      "code": "FRA",
+      "country": "France",
+      "life_expectancy": 83.33
+    },
+    {
+      "code": "NOR",
+      "country": "Norway",
+      "life_expectancy": 83.31
+    },
+    {
+      "code": "SWE",
+      "country": "Sweden",
+      "life_expectancy": 83.26
+    },
+    {
+      "code": "ISL",
+      "country": "Iceland",
+      "life_expectancy": 82.69
+    },
+    {
+      "code": "CAN",
+      "country": "Canada",
+      "life_expectancy": 82.63
+    },
+    {
+      "code": "IRL",
+      "country": "Ireland",
+      "life_expectancy": 82.41
+    },
+    {
+      "code": "ISR",
+      "country": "Israel",
+      "life_expectancy": 82.41
+    },
+    {
+      "code": "PRT",
+      "country": "Portugal",
+      "life_expectancy": 82.36
+    },
+    {
+      "code": "LUX",
+      "country": "Luxembourg",
+      "life_expectancy": 82.23
+    },
+    {
+      "code": "NLD",
+      "country": "Netherlands",
+      "life_expectancy": 82.16
+    },
+    {
+      "code": "BEL",
+      "country": "Belgium",
+      "life_expectancy": 82.11
+    },
+    {
+      "code": "NZL",
+      "country": "New Zealand",
+      "life_expectancy": 82.09
+    },
+    {
+      "code": "AUT",
+      "country": "Austria",
+      "life_expectancy": 81.96
+    },
+    {
+      "code": "DNK",
+      "country": "Denmark",
+      "life_expectancy": 81.93
+    },
+    {
+      "code": "FIN",
+      "country": "Finland",
+      "life_expectancy": 81.91
+    },
+    {
+      "code": "GRC",
+      "country": "Greece",
+      "life_expectancy": 81.86
+    },
+    {
+      "code": "SVN",
+      "country": "Slovenia",
+      "life_expectancy": 81.6
+    },
+    {
+      "code": "DEU",
+      "country": "Germany",
+      "life_expectancy": 81.38
+    },
+    {
+      "code": "GBR",
+      "country": "United Kingdom",
+      "life_expectancy": 81.3
+    },
+    {
+      "code": "CHL",
+      "country": "Chile",
+      "life_expectancy": 81.17
+    },
+    {
+      "code": "CRI",
+      "country": "Costa Rica",
+      "life_expectancy": 80.8
+    },
+    {
+      "code": "CZE",
+      "country": "Czechia",
+      "life_expectancy": 79.83
+    },
+    {
+      "code": "USA",
+      "country": "United States",
+      "life_expectancy": 79.3
+    },
+    {
+      "code": "EST",
+      "country": "Estonia",
+      "life_expectancy": 79.15
+    },
+    {
+      "code": "POL",
+      "country": "Poland",
+      "life_expectancy": 78.63
+    },
+    {
+      "code": "SVK",
+      "country": "Slovak Republic",
+      "life_expectancy": 78.34
+    },
+    {
+      "code": "COL",
+      "country": "Colombia",
+      "life_expectancy": 77.72
+    },
+    {
+      "code": "TUR",
+      "country": "T\u00fcrkiye",
+      "life_expectancy": 77.16
+    },
+    {
+      "code": "HUN",
+      "country": "Hungary",
+      "life_expectancy": 77.02
+    },
+    {
+      "code": "LVA",
+      "country": "Latvia",
+      "life_expectancy": 76.19
+    },
+    {
+      "code": "LTU",
+      "country": "Lithuania",
+      "life_expectancy": 76.03
+    },
+    {
+      "code": "MEX",
+      "country": "Mexico",
+      "life_expectancy": 75.07
+    }
+  ],
+  "redistribution": {
+    "note": "Market to gross adds cash transfers. Gross to disposable removes direct taxes and employee social contributions. Latest year per country, stated per row.",
+    "n_countries": 35,
+    "by_country": [
+      {
+        "code": "FIN",
+        "country": "Finland",
+        "year": 2024,
+        "gini_market": 0.5228,
+        "gini_gross": 0.33,
+        "gini_disposable": 0.2794,
+        "transfer_effect": 0.1929,
+        "tax_effect": 0.0505,
+        "total_effect": 0.2434,
+        "transfer_share_pct": 79.2
+      },
+      {
+        "code": "BEL",
+        "country": "Belgium",
+        "year": 2023,
+        "gini_market": 0.4859,
+        "gini_gross": 0.3179,
+        "gini_disposable": 0.2541,
+        "transfer_effect": 0.168,
+        "tax_effect": 0.0638,
+        "total_effect": 0.2318,
+        "transfer_share_pct": 72.5
+      },
+      {
+        "code": "FRA",
+        "country": "France",
+        "year": 2023,
+        "gini_market": 0.517,
+        "gini_gross": 0.334,
+        "gini_disposable": 0.299,
+        "transfer_effect": 0.183,
+        "tax_effect": 0.035,
+        "total_effect": 0.218,
+        "transfer_share_pct": 83.9
+      },
+      {
+        "code": "AUT",
+        "country": "Austria",
+        "year": 2023,
+        "gini_market": 0.4916,
+        "gini_gross": 0.326,
+        "gini_disposable": 0.2882,
+        "transfer_effect": 0.1655,
+        "tax_effect": 0.0378,
+        "total_effect": 0.2033,
+        "transfer_share_pct": 81.4
+      },
+      {
+        "code": "SVK",
+        "country": "Slovak Republic",
+        "year": 2023,
+        "gini_market": 0.413,
+        "gini_gross": 0.2472,
+        "gini_disposable": 0.2134,
+        "transfer_effect": 0.1658,
+        "tax_effect": 0.0338,
+        "total_effect": 0.1996,
+        "transfer_share_pct": 83.1
+      },
+      {
+        "code": "IRL",
+        "country": "Ireland",
+        "year": 2023,
+        "gini_market": 0.4772,
+        "gini_gross": 0.3548,
+        "gini_disposable": 0.2806,
+        "transfer_effect": 0.1224,
+        "tax_effect": 0.0742,
+        "total_effect": 0.1965,
+        "transfer_share_pct": 62.3
+      },
+      {
+        "code": "DEU",
+        "country": "Germany",
+        "year": 2023,
+        "gini_market": 0.497,
+        "gini_gross": 0.359,
+        "gini_disposable": 0.307,
+        "transfer_effect": 0.138,
+        "tax_effect": 0.052,
+        "total_effect": 0.19,
+        "transfer_share_pct": 72.6
+      },
+      {
+        "code": "GRC",
+        "country": "Greece",
+        "year": 2023,
+        "gini_market": 0.5064,
+        "gini_gross": 0.3328,
+        "gini_disposable": 0.3196,
+        "transfer_effect": 0.1736,
+        "tax_effect": 0.0132,
+        "total_effect": 0.1868,
+        "transfer_share_pct": 92.9
+      },
+      {
+        "code": "CZE",
+        "country": "Czechia",
+        "year": 2023,
+        "gini_market": 0.4289,
+        "gini_gross": 0.2722,
+        "gini_disposable": 0.2424,
+        "transfer_effect": 0.1567,
+        "tax_effect": 0.0297,
+        "total_effect": 0.1864,
+        "transfer_share_pct": 84.0
+      },
+      {
+        "code": "POL",
+        "country": "Poland",
+        "year": 2023,
+        "gini_market": 0.442,
+        "gini_gross": 0.2799,
+        "gini_disposable": 0.2568,
+        "transfer_effect": 0.162,
+        "tax_effect": 0.0231,
+        "total_effect": 0.1851,
+        "transfer_share_pct": 87.5
+      },
+      {
+        "code": "ITA",
+        "country": "Italy",
+        "year": 2023,
+        "gini_market": 0.5087,
+        "gini_gross": 0.3634,
+        "gini_disposable": 0.3247,
+        "transfer_effect": 0.1454,
+        "tax_effect": 0.0386,
+        "total_effect": 0.184,
+        "transfer_share_pct": 79.0
+      },
+      {
+        "code": "PRT",
+        "country": "Portugal",
+        "year": 2023,
+        "gini_market": 0.5036,
+        "gini_gross": 0.3755,
+        "gini_disposable": 0.3199,
+        "transfer_effect": 0.1281,
+        "tax_effect": 0.0556,
+        "total_effect": 0.1837,
+        "transfer_share_pct": 69.7
+      },
+      {
+        "code": "SVN",
+        "country": "Slovenia",
+        "year": 2023,
+        "gini_market": 0.4293,
+        "gini_gross": 0.2935,
+        "gini_disposable": 0.2472,
+        "transfer_effect": 0.1358,
+        "tax_effect": 0.0463,
+        "total_effect": 0.1821,
+        "transfer_share_pct": 74.6
+      },
+      {
+        "code": "JPN",
+        "country": "Japan",
+        "year": 2021,
+        "gini_market": 0.513,
+        "gini_gross": 0.363,
+        "gini_disposable": 0.338,
+        "transfer_effect": 0.15,
+        "tax_effect": 0.025,
+        "total_effect": 0.175,
+        "transfer_share_pct": 85.7
+      },
+      {
+        "code": "NOR",
+        "country": "Norway",
+        "year": 2023,
+        "gini_market": 0.4316,
+        "gini_gross": 0.3044,
+        "gini_disposable": 0.259,
+        "transfer_effect": 0.1272,
+        "tax_effect": 0.0454,
+        "total_effect": 0.1726,
+        "transfer_share_pct": 73.7
+      },
+      {
+        "code": "DNK",
+        "country": "Denmark",
+        "year": 2022,
+        "gini_market": 0.442,
+        "gini_gross": 0.3157,
+        "gini_disposable": 0.2764,
+        "transfer_effect": 0.1263,
+        "tax_effect": 0.0393,
+        "total_effect": 0.1656,
+        "transfer_share_pct": 76.3
+      },
+      {
+        "code": "LUX",
+        "country": "Luxembourg",
+        "year": 2023,
+        "gini_market": 0.4609,
+        "gini_gross": 0.3271,
+        "gini_disposable": 0.2963,
+        "transfer_effect": 0.1338,
+        "tax_effect": 0.0309,
+        "total_effect": 0.1646,
+        "transfer_share_pct": 81.3
+      },
+      {
+        "code": "ESP",
+        "country": "Spain",
+        "year": 2023,
+        "gini_market": 0.4766,
+        "gini_gross": 0.3502,
+        "gini_disposable": 0.3124,
+        "transfer_effect": 0.1264,
+        "tax_effect": 0.0378,
+        "total_effect": 0.1642,
+        "transfer_share_pct": 77.0
+      },
+      {
+        "code": "EST",
+        "country": "Estonia",
+        "year": 2023,
+        "gini_market": 0.468,
+        "gini_gross": 0.3482,
+        "gini_disposable": 0.3112,
+        "transfer_effect": 0.1198,
+        "tax_effect": 0.037,
+        "total_effect": 0.1568,
+        "transfer_share_pct": 76.4
+      },
+      {
+        "code": "GBR",
+        "country": "United Kingdom",
+        "year": 2023,
+        "gini_market": 0.5219,
+        "gini_gross": 0.4079,
+        "gini_disposable": 0.367,
+        "transfer_effect": 0.114,
+        "tax_effect": 0.0409,
+        "total_effect": 0.1549,
+        "transfer_share_pct": 73.6
+      },
+      {
+        "code": "LTU",
+        "country": "Lithuania",
+        "year": 2023,
+        "gini_market": 0.5047,
+        "gini_gross": 0.3942,
+        "gini_disposable": 0.3548,
+        "transfer_effect": 0.1104,
+        "tax_effect": 0.0394,
+        "total_effect": 0.1498,
+        "transfer_share_pct": 73.7
+      },
+      {
+        "code": "NLD",
+        "country": "Netherlands",
+        "year": 2024,
+        "gini_market": 0.458,
+        "gini_gross": 0.359,
+        "gini_disposable": 0.311,
+        "transfer_effect": 0.099,
+        "tax_effect": 0.048,
+        "total_effect": 0.147,
+        "transfer_share_pct": 67.3
+      },
+      {
+        "code": "HUN",
+        "country": "Hungary",
+        "year": 2023,
+        "gini_market": 0.425,
+        "gini_gross": 0.301,
+        "gini_disposable": 0.2823,
+        "transfer_effect": 0.1241,
+        "tax_effect": 0.0186,
+        "total_effect": 0.1427,
+        "transfer_share_pct": 86.9
+      },
+      {
+        "code": "SWE",
+        "country": "Sweden",
+        "year": 2024,
+        "gini_market": 0.431,
+        "gini_gross": 0.32,
+        "gini_disposable": 0.289,
+        "transfer_effect": 0.111,
+        "tax_effect": 0.031,
+        "total_effect": 0.142,
+        "transfer_share_pct": 78.2
+      },
+      {
+        "code": "ISL",
+        "country": "Iceland",
+        "year": 2019,
+        "gini_market": 0.3839,
+        "gini_gross": 0.2737,
+        "gini_disposable": 0.2468,
+        "transfer_effect": 0.1101,
+        "tax_effect": 0.0269,
+        "total_effect": 0.1371,
+        "transfer_share_pct": 80.4
+      },
+      {
+        "code": "LVA",
+        "country": "Latvia",
+        "year": 2023,
+        "gini_market": 0.4727,
+        "gini_gross": 0.3714,
+        "gini_disposable": 0.3399,
+        "transfer_effect": 0.1012,
+        "tax_effect": 0.0315,
+        "total_effect": 0.1327,
+        "transfer_share_pct": 76.3
+      },
+      {
+        "code": "NZL",
+        "country": "New Zealand",
+        "year": 2022,
+        "gini_market": 0.457,
+        "gini_gross": 0.36,
+        "gini_disposable": 0.326,
+        "transfer_effect": 0.097,
+        "tax_effect": 0.034,
+        "total_effect": 0.131,
+        "transfer_share_pct": 74.0
+      },
+      {
+        "code": "CAN",
+        "country": "Canada",
+        "year": 2023,
+        "gini_market": 0.433,
+        "gini_gross": 0.35,
+        "gini_disposable": 0.306,
+        "transfer_effect": 0.083,
+        "tax_effect": 0.044,
+        "total_effect": 0.127,
+        "transfer_share_pct": 65.4
+      },
+      {
+        "code": "AUS",
+        "country": "Australia",
+        "year": 2020,
+        "gini_market": 0.441,
+        "gini_gross": 0.367,
+        "gini_disposable": 0.319,
+        "transfer_effect": 0.074,
+        "tax_effect": 0.048,
+        "total_effect": 0.122,
+        "transfer_share_pct": 60.7
+      },
+      {
+        "code": "USA",
+        "country": "United States",
+        "year": 2023,
+        "gini_market": 0.5061,
+        "gini_gross": 0.4372,
+        "gini_disposable": 0.3944,
+        "transfer_effect": 0.0689,
+        "tax_effect": 0.0428,
+        "total_effect": 0.1117,
+        "transfer_share_pct": 61.7
+      },
+      {
+        "code": "ISR",
+        "country": "Israel",
+        "year": 2023,
+        "gini_market": 0.4493,
+        "gini_gross": 0.3961,
+        "gini_disposable": 0.3415,
+        "transfer_effect": 0.0532,
+        "tax_effect": 0.0546,
+        "total_effect": 0.1078,
+        "transfer_share_pct": 49.4
+      },
+      {
+        "code": "TUR",
+        "country": "T\u00fcrkiye",
+        "year": 2022,
+        "gini_market": 0.5246,
+        "gini_gross": 0.4446,
+        "gini_disposable": 0.4271,
+        "transfer_effect": 0.08,
+        "tax_effect": 0.0175,
+        "total_effect": 0.0974,
+        "transfer_share_pct": 82.1
+      },
+      {
+        "code": "CHE",
+        "country": "Switzerland",
+        "year": 2023,
+        "gini_market": 0.3978,
+        "gini_gross": 0.3037,
+        "gini_disposable": 0.3146,
+        "transfer_effect": 0.0941,
+        "tax_effect": -0.011,
+        "total_effect": 0.0832,
+        "transfer_share_pct": 113.2
+      },
+      {
+        "code": "CRI",
+        "country": "Costa Rica",
+        "year": 2025,
+        "gini_market": 0.5218,
+        "gini_gross": 0.4655,
+        "gini_disposable": 0.4577,
+        "transfer_effect": 0.0563,
+        "tax_effect": 0.0079,
+        "total_effect": 0.0642,
+        "transfer_share_pct": 87.8
+      },
+      {
+        "code": "CHL",
+        "country": "Chile",
+        "year": 2022,
+        "gini_market": 0.4908,
+        "gini_gross": 0.4513,
+        "gini_disposable": 0.4481,
+        "transfer_effect": 0.0395,
+        "tax_effect": 0.0031,
+        "total_effect": 0.0426,
+        "transfer_share_pct": 92.7
+      }
+    ],
+    "transfer_share_median_pct": 77.0,
+    "transfer_share_gt_50_n": 34,
+    "covariance_split": {
+      "note": "How the association between the tax level and total Gini reduction divides between the transfer step and the tax step. A ratio of two R-squareds does not decompose an association; this does.",
+      "transfer_share_of_covariance_pct": 86.0,
+      "n": 35
+    }
+  },
+  "indonesia": {
+    "year": 2021,
+    "source": "OECD Revenue Statistics in Asia and the Pacific",
+    "total": 10.87,
+    "personal_income": 1.02,
+    "social_contributions": 0.57,
+    "vat": 3.17,
+    "other_goods_services": null,
+    "goods_and_services_all": 4.84,
+    "corporate_income": 3.14,
+    "property": 0.11,
+    "payroll": 0.0,
+    "other_taxes": 1.18,
+    "residual": null,
+    "total_tax_mean": 11.22,
+    "total_tax_min": 10.07,
+    "total_tax_max": 11.97,
+    "total_tax_window": [
+      2017,
+      2021
+    ],
+    "window_note": "Indonesia and Denmark are both averaged over the same window as every other tax level in this file. An earlier pass used 2018 to 2021 on the false belief that Indonesia's series started in 2018; that was a startPeriod artefact in fetch_data.py, not a property of the source.",
+    "years_available": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022
+    ],
+    "denmark_personal_income_pct_gdp": 25.05,
+    "denmark_total_tax_mean": 46.24,
+    "personal_income_mean": 1.09,
+    "denmark_personal_income_mean": 24.66,
+    "ratio_denmark_pit_to_indonesia_total_mean": 2.2,
+    "ratio_denmark_pit_to_indonesia_pit_mean": 22.7,
+    "ratio_note": "Two different ratios and they must never be run together. Denmark's personal income tax against Indonesia's ENTIRE tax take is one number; against Indonesia's own personal income tax is another."
+  },
+  "poverty_reduction_is_near_definitional": {
+    "definition": "market-income poverty rate minus disposable-income poverty rate",
+    "why": "Disposable income is market income plus transfers minus direct taxes, so the outcome IS the arithmetic output of the tax and transfer system, and the regressor is the size of that same system.",
+    "tax_only_r2": 0.5479,
+    "market_poverty_alone_r2": 0.5827,
+    "income_adds_once_tax_known": 0.0,
+    "corr_tax_vs_market_poverty": 0.4491,
+    "counterexample": "France collects slightly less of GDP than Denmark and removes far more poverty, so size is correlated with redistributive output but does not determine it.",
+    "france": {
+      "tax": 45.47,
+      "poverty_removed": 27.4
+    },
+    "denmark": {
+      "tax": 46.24,
+      "poverty_removed": 15.92
+    },
+    "tax_vs_transfer_effect_r2": 0.4972,
+    "tax_vs_tax_effect_r2": 0.066
+  },
+  "income_longevity_under_the_same_test": {
+    "note": "The post's own exclusion rule applied to the income story rather than only to the tax story. Reporting one and not the other would be a double standard.",
+    "all_oecd_r2": 0.2913,
+    "excl_five_lowest_r2": 0.1434
+  },
+  "denmark_2022_fall": {
+    "total_2021": 47.425,
+    "total_2022": 41.89,
+    "fall_pts": 5.535,
+    "pension_yield_tax_fall_pts": 2.095,
+    "pension_yield_share_of_fall_pct": 37.9,
+    "note": "The pension yield tax, which sits in the unallocable income tax category and follows investment returns, accounts for the share above. The rest is mostly the denominator: nominal GDP grew while revenue in kroner did not. The two channels are not additive shares of one decomposition, so the post says the pension tax accounts for about a third and the denominator does most of the rest, rather than quoting two percentages that sum past 100."
+  },
+  "threshold_vs_tax_level": {
+    "note": "Does collecting more require starting the top bracket lower? Across the rich members, no. Across the full field the relationship is negative, but it is carried by the same five low-income members the post excludes elsewhere, so quoting only the full-field figure would be the double standard this post criticises.",
+    "all_members": {
+      "n": 36,
+      "slope": -0.5797,
+      "intercept": 26.2158,
+      "r": -0.467,
+      "r2": 0.2181
+    },
+    "rich_members": {
+      "n": 31,
+      "slope": -0.0455,
+      "intercept": 6.1487,
+      "r": -0.0565,
+      "r2": 0.0032
+    }
+  },
+  "window_sensitivity": {
+    "note": "Denmark ranks first on either window, but its margin over France is not robust.",
+    "window_2017_2021": {
+      "DNK": 46.24,
+      "FRA": 45.47
+    },
+    "window_2018_2022": {
+      "DNK": 45.53,
+      "FRA": 45.47
+    },
+    "margin_2017_2021_pts": 0.77,
+    "margin_2018_2022_pts": 0.05
+  },
+  "tax_mix_raw3": {
+    "AUS": {
+      "total": 29.482,
+      "personal_income": 11.499,
+      "social_contributions": 0.0,
+      "payroll": 1.274,
+      "vat": 3.274,
+      "other_goods_services": 3.589,
+      "corporate_income": 6.636,
+      "property": 3.211,
+      "residual": -0.001
+    },
+    "AUT": {
+      "total": 43.284,
+      "personal_income": 9.7,
+      "social_contributions": 15.329,
+      "payroll": 2.794,
+      "vat": 7.575,
+      "other_goods_services": 4.0,
+      "corporate_income": 2.75,
+      "property": 0.63,
+      "residual": 0.506
+    },
+    "BEL": {
+      "total": 42.518,
+      "personal_income": 11.346,
+      "social_contributions": 13.025,
+      "payroll": 0.001,
+      "vat": 6.822,
+      "other_goods_services": 3.908,
+      "corporate_income": 3.819,
+      "property": 3.582,
+      "residual": 0.015
+    },
+    "CAN": {
+      "total": 33.919,
+      "personal_income": 12.319,
+      "social_contributions": 4.737,
+      "payroll": 0.75,
+      "vat": 4.441,
+      "other_goods_services": 2.832,
+      "corporate_income": 4.573,
+      "property": 3.833,
+      "residual": 0.434
+    },
+    "CHE": {
+      "total": 28.482,
+      "personal_income": 8.644,
+      "social_contributions": 6.901,
+      "payroll": 0.0,
+      "vat": 3.207,
+      "other_goods_services": 2.37,
+      "corporate_income": 3.113,
+      "property": 2.276,
+      "residual": 1.971
+    },
+    "CHL": {
+      "total": 22.242,
+      "personal_income": 2.405,
+      "social_contributions": 1.171,
+      "payroll": 0.0,
+      "vat": 9.479,
+      "other_goods_services": 2.324,
+      "corporate_income": 3.805,
+      "property": 1.085,
+      "residual": 1.973
+    },
+    "COL": {
+      "total": 19.242,
+      "personal_income": 1.321,
+      "social_contributions": 1.916,
+      "payroll": 0.329,
+      "vat": 5.86,
+      "other_goods_services": 2.464,
+      "corporate_income": 4.563,
+      "property": 1.681,
+      "residual": 1.108
+    },
+    "CRI": {
+      "total": 24.978,
+      "personal_income": 1.553,
+      "social_contributions": 8.989,
+      "payroll": 1.419,
+      "vat": 5.086,
+      "other_goods_services": 3.611,
+      "corporate_income": 2.42,
+      "property": 0.52,
+      "residual": 1.38
+    },
+    "CZE": {
+      "total": 34.742,
+      "personal_income": 3.245,
+      "social_contributions": 16.449,
+      "payroll": 0.0,
+      "vat": 7.588,
+      "other_goods_services": 3.294,
+      "corporate_income": 3.968,
+      "property": 0.195,
+      "residual": 0.003
+    },
+    "DEU": {
+      "total": 39.316,
+      "personal_income": 10.474,
+      "social_contributions": 14.772,
+      "payroll": 0.0,
+      "vat": 7.181,
+      "other_goods_services": 3.284,
+      "corporate_income": 2.358,
+      "property": 1.239,
+      "residual": 0.008
+    },
+    "DNK": {
+      "total": 47.425,
+      "personal_income": 25.045,
+      "social_contributions": 0.06,
+      "payroll": 0.259,
+      "vat": 9.555,
+      "other_goods_services": 4.195,
+      "corporate_income": 3.951,
+      "property": 1.847,
+      "residual": 2.513
+    },
+    "ESP": {
+      "total": 37.796,
+      "personal_income": 8.631,
+      "social_contributions": 13.408,
+      "payroll": 0.0,
+      "vat": 6.835,
+      "other_goods_services": 3.538,
+      "corporate_income": 2.643,
+      "property": 2.727,
+      "residual": 0.014
+    },
+    "EST": {
+      "total": 33.507,
+      "personal_income": 6.825,
+      "social_contributions": 11.613,
+      "payroll": 0.0,
+      "vat": 9.15,
+      "other_goods_services": 4.201,
+      "corporate_income": 1.53,
+      "property": 0.189,
+      "residual": -0.001
+    },
+    "FIN": {
+      "total": 43.166,
+      "personal_income": 12.861,
+      "social_contributions": 12.03,
+      "payroll": 0.0,
+      "vat": 9.386,
+      "other_goods_services": 4.609,
+      "corporate_income": 2.728,
+      "property": 1.51,
+      "residual": 0.042
+    },
+    "FRA": {
+      "total": 45.168,
+      "personal_income": 9.472,
+      "social_contributions": 14.818,
+      "payroll": 1.843,
+      "vat": 7.399,
+      "other_goods_services": 4.845,
+      "corporate_income": 2.532,
+      "property": 3.826,
+      "residual": 0.433
+    },
+    "GBR": {
+      "total": 34.39,
+      "personal_income": 10.029,
+      "social_contributions": 6.839,
+      "payroll": 0.139,
+      "vat": 6.965,
+      "other_goods_services": 3.556,
+      "corporate_income": 2.916,
+      "property": 3.947,
+      "residual": -0.001
+    },
+    "GRC": {
+      "total": 39.357,
+      "personal_income": 5.963,
+      "social_contributions": 12.89,
+      "payroll": 0.0,
+      "vat": 8.225,
+      "other_goods_services": 7.195,
+      "corporate_income": 1.786,
+      "property": 2.912,
+      "residual": 0.386
+    },
+    "HUN": {
+      "total": 33.742,
+      "personal_income": 4.081,
+      "social_contributions": 10.464,
+      "payroll": 1.083,
+      "vat": 9.882,
+      "other_goods_services": 6.027,
+      "corporate_income": 1.37,
+      "property": 0.874,
+      "residual": -0.039
+    },
+    "IRL": {
+      "total": 20.694,
+      "personal_income": 6.776,
+      "social_contributions": 3.137,
+      "payroll": 0.184,
+      "vat": 3.834,
+      "other_goods_services": 2.115,
+      "corporate_income": 3.53,
+      "property": 1.116,
+      "residual": 0.002
+    },
+    "ISL": {
+      "total": 35.125,
+      "personal_income": 14.535,
+      "social_contributions": 3.002,
+      "payroll": 0.282,
+      "vat": 8.561,
+      "other_goods_services": 3.235,
+      "corporate_income": 2.017,
+      "property": 2.088,
+      "residual": 1.405
+    },
+    "ISR": {
+      "total": 32.496,
+      "personal_income": 7.156,
+      "social_contributions": 5.032,
+      "payroll": 1.021,
+      "vat": 7.545,
+      "other_goods_services": 3.414,
+      "corporate_income": 3.57,
+      "property": 3.921,
+      "residual": 0.837
+    },
+    "ITA": {
+      "total": 42.359,
+      "personal_income": 10.977,
+      "social_contributions": 13.208,
+      "payroll": 0.0,
+      "vat": 6.639,
+      "other_goods_services": 5.308,
+      "corporate_income": 1.868,
+      "property": 2.473,
+      "residual": 1.886
+    },
+    "JPN": {
+      "total": 34.075,
+      "personal_income": 6.427,
+      "social_contributions": 13.349,
+      "payroll": 0.0,
+      "vat": 5.088,
+      "other_goods_services": 1.986,
+      "corporate_income": 4.455,
+      "property": 2.68,
+      "residual": 0.09
+    },
+    "KOR": {
+      "total": 29.761,
+      "personal_income": 6.067,
+      "social_contributions": 7.798,
+      "payroll": 0.084,
+      "vat": 4.279,
+      "other_goods_services": 2.6,
+      "corporate_income": 3.815,
+      "property": 4.483,
+      "residual": 0.635
+    },
+    "LTU": {
+      "total": 32.091,
+      "personal_income": 7.506,
+      "social_contributions": 10.206,
+      "payroll": 0.0,
+      "vat": 8.348,
+      "other_goods_services": 3.669,
+      "corporate_income": 2.067,
+      "property": 0.296,
+      "residual": -0.001
+    },
+    "LUX": {
+      "total": 38.404,
+      "personal_income": 10.114,
+      "social_contributions": 10.563,
+      "payroll": 0.0,
+      "vat": 5.917,
+      "other_goods_services": 3.217,
+      "corporate_income": 4.529,
+      "property": 4.024,
+      "residual": 0.04
+    },
+    "LVA": {
+      "total": 30.524,
+      "personal_income": 5.981,
+      "social_contributions": 9.501,
+      "payroll": 0.008,
+      "vat": 8.573,
+      "other_goods_services": 4.726,
+      "corporate_income": 0.853,
+      "property": 0.882,
+      "residual": 0.0
+    },
+    "MEX": {
+      "total": 17.255,
+      "personal_income": 3.638,
+      "social_contributions": 2.372,
+      "payroll": 0.453,
+      "vat": 4.355,
+      "other_goods_services": 2.031,
+      "corporate_income": 3.483,
+      "property": 0.35,
+      "residual": 0.573
+    },
+    "NLD": {
+      "total": 39.185,
+      "personal_income": 8.549,
+      "social_contributions": 12.941,
+      "payroll": 0.0,
+      "vat": 7.512,
+      "other_goods_services": 4.608,
+      "corporate_income": 3.838,
+      "property": 1.621,
+      "residual": 0.116
+    },
+    "NOR": {
+      "total": 42.449,
+      "personal_income": 10.786,
+      "social_contributions": 9.549,
+      "payroll": 0.053,
+      "vat": 8.047,
+      "other_goods_services": 2.743,
+      "corporate_income": 10.017,
+      "property": 1.256,
+      "residual": -0.002
+    },
+    "NZL": {
+      "total": 34.569,
+      "personal_income": 14.132,
+      "social_contributions": 0.0,
+      "payroll": 0.0,
+      "vat": 10.134,
+      "other_goods_services": 2.274,
+      "corporate_income": 5.436,
+      "property": 1.917,
+      "residual": 0.676
+    },
+    "POL": {
+      "total": 36.698,
+      "personal_income": 5.346,
+      "social_contributions": 12.968,
+      "payroll": 0.552,
+      "vat": 8.556,
+      "other_goods_services": 5.339,
+      "corporate_income": 2.607,
+      "property": 1.281,
+      "residual": 0.049
+    },
+    "PRT": {
+      "total": 35.312,
+      "personal_income": 6.978,
+      "social_contributions": 10.433,
+      "payroll": 0.0,
+      "vat": 8.898,
+      "other_goods_services": 4.882,
+      "corporate_income": 2.401,
+      "property": 1.523,
+      "residual": 0.197
+    },
+    "SVK": {
+      "total": 35.36,
+      "personal_income": 3.748,
+      "social_contributions": 15.212,
+      "payroll": 0.0,
+      "vat": 7.47,
+      "other_goods_services": 4.556,
+      "corporate_income": 3.621,
+      "property": 0.464,
+      "residual": 0.289
+    },
+    "SVN": {
+      "total": 37.941,
+      "personal_income": 5.436,
+      "social_contributions": 16.381,
+      "payroll": 0.046,
+      "vat": 8.229,
+      "other_goods_services": 4.759,
+      "corporate_income": 2.47,
+      "property": 0.615,
+      "residual": 0.005
+    },
+    "SWE": {
+      "total": 42.665,
+      "personal_income": 12.403,
+      "social_contributions": 8.929,
+      "payroll": 5.117,
+      "vat": 9.102,
+      "other_goods_services": 2.793,
+      "corporate_income": 3.322,
+      "property": 0.951,
+      "residual": 0.048
+    },
+    "TUR": {
+      "total": 22.831,
+      "personal_income": 3.03,
+      "social_contributions": 6.531,
+      "payroll": 0.0,
+      "vat": 5.316,
+      "other_goods_services": 4.29,
+      "corporate_income": 2.455,
+      "property": 0.968,
+      "residual": 0.241
+    },
+    "USA": {
+      "total": 26.498,
+      "personal_income": 11.369,
+      "social_contributions": 6.061,
+      "payroll": 0.014,
+      "vat": 0.0,
+      "other_goods_services": 4.387,
+      "corporate_income": 1.606,
+      "property": 3.062,
+      "residual": -0.001
+    }
+  }
+}
