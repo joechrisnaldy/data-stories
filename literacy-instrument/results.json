@@ -1,0 +1,2282 @@
+{
+  "method": {
+    "universe": "Women age 15-49, the DHS interview universe. NOT the same population as UNESCO's adult 15+ literacy rate, and the post must never present them as one measure.",
+    "values": "DHS's own published weighted percentages, read from its public API. Nothing here is recomputed from microdata.",
+    "surveys_classified": 221,
+    "surveys_unclassified": [
+      "ET2016DHS",
+      "MZ2011DHS",
+      "RW2013MIS",
+      "RW2019DHS",
+      "YE2013DHS"
+    ],
+    "assertions": {
+      "columns_sum_to_100": "checked on all 226 surveys, tolerance 0.35 pts",
+      "sch_equals_literate_minus_whole_minus_part": "checked on all surveys, tolerance 0.15 pts"
+    }
+  },
+  "composition": {
+    "rule": "Latest survey per country among those using the current coding rule.",
+    "n_countries": 46,
+    "countries": [
+      {
+        "country": "Albania",
+        "survey_id": "AL2017DHS",
+        "year": 2017,
+        "survey_type": "DHS",
+        "literate_published": 99.0,
+        "above_secondary_not_tested": 26.4,
+        "read_whole_sentence": 72.3,
+        "read_part_of_sentence": 0.3,
+        "cannot_read_at_all": 1.0,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 26.7
+      },
+      {
+        "country": "Maldives",
+        "survey_id": "MV2016DHS",
+        "year": 2016,
+        "survey_type": "DHS",
+        "literate_published": 98.9,
+        "above_secondary_not_tested": 21.0,
+        "read_whole_sentence": 72.6,
+        "read_part_of_sentence": 5.3,
+        "cannot_read_at_all": 0.9,
+        "no_card_in_language": 0.0,
+        "blind": 0.2,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 21.2
+      },
+      {
+        "country": "Philippines",
+        "survey_id": "PH2022DHS",
+        "year": 2022,
+        "survey_type": "DHS",
+        "literate_published": 98.8,
+        "above_secondary_not_tested": 37.3,
+        "read_whole_sentence": 56.7,
+        "read_part_of_sentence": 4.8,
+        "cannot_read_at_all": 1.2,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 37.8
+      },
+      {
+        "country": "Lesotho",
+        "survey_id": "LS2023DHS",
+        "year": 2023,
+        "survey_type": "DHS",
+        "literate_published": 98.3,
+        "above_secondary_not_tested": 17.1,
+        "read_whole_sentence": 74.4,
+        "read_part_of_sentence": 6.8,
+        "cannot_read_at_all": 1.5,
+        "no_card_in_language": 0.0,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 17.4
+      },
+      {
+        "country": "Jordan",
+        "survey_id": "JO2023DHS",
+        "year": 2023,
+        "survey_type": "DHS",
+        "literate_published": 96.7,
+        "above_secondary_not_tested": 34.6,
+        "read_whole_sentence": 58.2,
+        "read_part_of_sentence": 3.9,
+        "cannot_read_at_all": 3.2,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 35.8
+      },
+      {
+        "country": "Tajikistan",
+        "survey_id": "TJ2023DHS",
+        "year": 2023,
+        "survey_type": "DHS",
+        "literate_published": 96.4,
+        "above_secondary_not_tested": 19.6,
+        "read_whole_sentence": 63.9,
+        "read_part_of_sentence": 12.9,
+        "cannot_read_at_all": 3.4,
+        "no_card_in_language": 0.2,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 20.3
+      },
+      {
+        "country": "South Africa",
+        "survey_id": "ZA2016DHS",
+        "year": 2016,
+        "survey_type": "DHS",
+        "literate_published": 96.3,
+        "above_secondary_not_tested": 11.8,
+        "read_whole_sentence": 76.2,
+        "read_part_of_sentence": 8.2,
+        "cannot_read_at_all": 3.5,
+        "no_card_in_language": 0.1,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 12.3
+      },
+      {
+        "country": "Indonesia",
+        "survey_id": "ID2017DHS",
+        "year": 2017,
+        "survey_type": "DHS",
+        "literate_published": 95.9,
+        "above_secondary_not_tested": 15.6,
+        "read_whole_sentence": 78.1,
+        "read_part_of_sentence": 2.3,
+        "cannot_read_at_all": 3.6,
+        "no_card_in_language": 0.2,
+        "blind": 0.0,
+        "missing": 0.3,
+        "share_of_literate_never_tested_pct": 16.3
+      },
+      {
+        "country": "Zimbabwe",
+        "survey_id": "ZW2015DHS",
+        "year": 2015,
+        "survey_type": "DHS",
+        "literate_published": 94.4,
+        "above_secondary_not_tested": 7.3,
+        "read_whole_sentence": 79.7,
+        "read_part_of_sentence": 7.4,
+        "cannot_read_at_all": 5.4,
+        "no_card_in_language": 0.1,
+        "blind": 0.2,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 7.7
+      },
+      {
+        "country": "Kenya",
+        "survey_id": "KE2022DHS",
+        "year": 2022,
+        "survey_type": "DHS",
+        "literate_published": 90.9,
+        "above_secondary_not_tested": 19.1,
+        "read_whole_sentence": 63.5,
+        "read_part_of_sentence": 8.4,
+        "cannot_read_at_all": 8.9,
+        "no_card_in_language": 0.0,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 21.0
+      },
+      {
+        "country": "Gabon",
+        "survey_id": "GA2019DHS",
+        "year": 2019,
+        "survey_type": "DHS",
+        "literate_published": 90.0,
+        "above_secondary_not_tested": 15.1,
+        "read_whole_sentence": 68.3,
+        "read_part_of_sentence": 6.6,
+        "cannot_read_at_all": 9.9,
+        "no_card_in_language": 0.0,
+        "blind": 0.2,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 16.8
+      },
+      {
+        "country": "Rwanda",
+        "survey_id": "RW2025DHS",
+        "year": 2025,
+        "survey_type": "DHS",
+        "literate_published": 87.7,
+        "above_secondary_not_tested": 4.6,
+        "read_whole_sentence": 73.5,
+        "read_part_of_sentence": 9.6,
+        "cannot_read_at_all": 12.2,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 5.2
+      },
+      {
+        "country": "Cambodia",
+        "survey_id": "KH2021DHS",
+        "year": 2021,
+        "survey_type": "DHS",
+        "literate_published": 80.5,
+        "above_secondary_not_tested": 7.2,
+        "read_whole_sentence": 45.3,
+        "read_part_of_sentence": 28.0,
+        "cannot_read_at_all": 19.4,
+        "no_card_in_language": 0.1,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 8.9
+      },
+      {
+        "country": "Tanzania",
+        "survey_id": "TZ2022DHS",
+        "year": 2022,
+        "survey_type": "DHS",
+        "literate_published": 79.8,
+        "above_secondary_not_tested": 2.1,
+        "read_whole_sentence": 71.6,
+        "read_part_of_sentence": 6.1,
+        "cannot_read_at_all": 20.1,
+        "no_card_in_language": 0.0,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 2.6
+      },
+      {
+        "country": "Bangladesh",
+        "survey_id": "BD2022DHS",
+        "year": 2022,
+        "survey_type": "DHS",
+        "literate_published": 78.2,
+        "above_secondary_not_tested": 13.7,
+        "read_whole_sentence": 48.4,
+        "read_part_of_sentence": 16.1,
+        "cannot_read_at_all": 21.8,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 17.5
+      },
+      {
+        "country": "Haiti",
+        "survey_id": "HT2016DHS",
+        "year": 2016,
+        "survey_type": "DHS",
+        "literate_published": 78.1,
+        "above_secondary_not_tested": 7.3,
+        "read_whole_sentence": 59.1,
+        "read_part_of_sentence": 11.7,
+        "cannot_read_at_all": 21.8,
+        "no_card_in_language": 0.0,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 9.3
+      },
+      {
+        "country": "Malawi",
+        "survey_id": "MW2024DHS",
+        "year": 2024,
+        "survey_type": "DHS",
+        "literate_published": 76.6,
+        "above_secondary_not_tested": 2.9,
+        "read_whole_sentence": 66.6,
+        "read_part_of_sentence": 7.2,
+        "cannot_read_at_all": 23.3,
+        "no_card_in_language": 0.0,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 3.8
+      },
+      {
+        "country": "Uganda",
+        "survey_id": "UG2024MIS",
+        "year": 2024,
+        "survey_type": "MIS",
+        "literate_published": 76.6,
+        "above_secondary_not_tested": 7.2,
+        "read_whole_sentence": 48.0,
+        "read_part_of_sentence": 21.4,
+        "cannot_read_at_all": 22.6,
+        "no_card_in_language": 0.6,
+        "blind": 0.2,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 9.4
+      },
+      {
+        "country": "Madagascar",
+        "survey_id": "MD2021DHS",
+        "year": 2021,
+        "survey_type": "DHS",
+        "literate_published": 76.1,
+        "above_secondary_not_tested": 4.1,
+        "read_whole_sentence": 57.2,
+        "read_part_of_sentence": 14.8,
+        "cannot_read_at_all": 23.7,
+        "no_card_in_language": 0.0,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 5.4
+      },
+      {
+        "country": "Timor-Leste",
+        "survey_id": "TL2016DHS",
+        "year": 2016,
+        "survey_type": "DHS",
+        "literate_published": 74.6,
+        "above_secondary_not_tested": 11.0,
+        "read_whole_sentence": 49.9,
+        "read_part_of_sentence": 13.7,
+        "cannot_read_at_all": 24.9,
+        "no_card_in_language": 0.0,
+        "blind": 0.5,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 14.7
+      },
+      {
+        "country": "Nepal",
+        "survey_id": "NP2022DHS",
+        "year": 2022,
+        "survey_type": "DHS",
+        "literate_published": 74.4,
+        "above_secondary_not_tested": 4.4,
+        "read_whole_sentence": 60.9,
+        "read_part_of_sentence": 9.0,
+        "cannot_read_at_all": 25.6,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 5.9
+      },
+      {
+        "country": "India",
+        "survey_id": "IA2020DHS",
+        "year": 2020,
+        "survey_type": "DHS",
+        "literate_published": 71.5,
+        "above_secondary_not_tested": 15.7,
+        "read_whole_sentence": 44.1,
+        "read_part_of_sentence": 11.7,
+        "cannot_read_at_all": 27.8,
+        "no_card_in_language": 0.4,
+        "blind": 0.3,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 22.0
+      },
+      {
+        "country": "Zambia",
+        "survey_id": "ZM2024DHS",
+        "year": 2024,
+        "survey_type": "DHS",
+        "literate_published": 69.7,
+        "above_secondary_not_tested": 7.7,
+        "read_whole_sentence": 45.9,
+        "read_part_of_sentence": 16.1,
+        "cannot_read_at_all": 30.2,
+        "no_card_in_language": 0.0,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 11.0
+      },
+      {
+        "country": "Burundi",
+        "survey_id": "BU2016DHS",
+        "year": 2016,
+        "survey_type": "DHS",
+        "literate_published": 67.9,
+        "above_secondary_not_tested": 1.2,
+        "read_whole_sentence": 61.9,
+        "read_part_of_sentence": 4.7,
+        "cannot_read_at_all": 31.9,
+        "no_card_in_language": 0.0,
+        "blind": 0.2,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 1.8
+      },
+      {
+        "country": "Cameroon",
+        "survey_id": "CM2022MIS",
+        "year": 2022,
+        "survey_type": "MIS",
+        "literate_published": 66.7,
+        "above_secondary_not_tested": 11.6,
+        "read_whole_sentence": 45.8,
+        "read_part_of_sentence": 9.3,
+        "cannot_read_at_all": 32.9,
+        "no_card_in_language": 0.2,
+        "blind": 0.3,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 17.4
+      },
+      {
+        "country": "Papua New Guinea",
+        "survey_id": "PG2017DHS",
+        "year": 2017,
+        "survey_type": "DHS",
+        "literate_published": 66.4,
+        "above_secondary_not_tested": 4.0,
+        "read_whole_sentence": 45.3,
+        "read_part_of_sentence": 17.2,
+        "cannot_read_at_all": 32.1,
+        "no_card_in_language": 0.9,
+        "blind": 0.1,
+        "missing": 0.6,
+        "share_of_literate_never_tested_pct": 6.0
+      },
+      {
+        "country": "Angola",
+        "survey_id": "AO2023DHS",
+        "year": 2023,
+        "survey_type": "DHS",
+        "literate_published": 64.6,
+        "above_secondary_not_tested": 6.6,
+        "read_whole_sentence": 37.4,
+        "read_part_of_sentence": 20.6,
+        "cannot_read_at_all": 35.2,
+        "no_card_in_language": 0.2,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 10.2
+      },
+      {
+        "country": "Ghana",
+        "survey_id": "GH2022DHS",
+        "year": 2022,
+        "survey_type": "DHS",
+        "literate_published": 60.8,
+        "above_secondary_not_tested": 10.2,
+        "read_whole_sentence": 38.0,
+        "read_part_of_sentence": 12.6,
+        "cannot_read_at_all": 38.9,
+        "no_card_in_language": 0.3,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 16.8
+      },
+      {
+        "country": "Congo Democratic Republic",
+        "survey_id": "CD2023DHS",
+        "year": 2023,
+        "survey_type": "DHS",
+        "literate_published": 59.1,
+        "above_secondary_not_tested": 6.6,
+        "read_whole_sentence": 29.1,
+        "read_part_of_sentence": 23.4,
+        "cannot_read_at_all": 40.7,
+        "no_card_in_language": 0.1,
+        "blind": 0.2,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 11.2
+      },
+      {
+        "country": "Mauritania",
+        "survey_id": "MR2020DHS",
+        "year": 2020,
+        "survey_type": "DHS",
+        "literate_published": 57.8,
+        "above_secondary_not_tested": 2.3,
+        "read_whole_sentence": 38.9,
+        "read_part_of_sentence": 16.6,
+        "cannot_read_at_all": 41.6,
+        "no_card_in_language": 0.1,
+        "blind": 0.4,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 4.0
+      },
+      {
+        "country": "Nigeria",
+        "survey_id": "NG2024DHS",
+        "year": 2024,
+        "survey_type": "DHS",
+        "literate_published": 57.2,
+        "above_secondary_not_tested": 13.7,
+        "read_whole_sentence": 26.9,
+        "read_part_of_sentence": 16.6,
+        "cannot_read_at_all": 42.7,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 24.0
+      },
+      {
+        "country": "Ethiopia",
+        "survey_id": "ET2024DHS",
+        "year": 2024,
+        "survey_type": "DHS",
+        "literate_published": 56.7,
+        "above_secondary_not_tested": 9.2,
+        "read_whole_sentence": 31.1,
+        "read_part_of_sentence": 16.5,
+        "cannot_read_at_all": 42.1,
+        "no_card_in_language": 0.7,
+        "blind": 0.5,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 16.2
+      },
+      {
+        "country": "Liberia",
+        "survey_id": "LB2022MIS",
+        "year": 2022,
+        "survey_type": "MIS",
+        "literate_published": 53.8,
+        "above_secondary_not_tested": 6.5,
+        "read_whole_sentence": 30.7,
+        "read_part_of_sentence": 16.5,
+        "cannot_read_at_all": 45.9,
+        "no_card_in_language": 0.3,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 12.1
+      },
+      {
+        "country": "Togo",
+        "survey_id": "TG2017MIS",
+        "year": 2017,
+        "survey_type": "MIS",
+        "literate_published": 51.8,
+        "above_secondary_not_tested": 3.8,
+        "read_whole_sentence": 39.2,
+        "read_part_of_sentence": 8.8,
+        "cannot_read_at_all": 47.7,
+        "no_card_in_language": 0.4,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 7.3
+      },
+      {
+        "country": "Senegal",
+        "survey_id": "SN2023DHS",
+        "year": 2023,
+        "survey_type": "DHS",
+        "literate_published": 50.6,
+        "above_secondary_not_tested": 5.3,
+        "read_whole_sentence": 37.6,
+        "read_part_of_sentence": 7.7,
+        "cannot_read_at_all": 49.3,
+        "no_card_in_language": 0.1,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 10.5
+      },
+      {
+        "country": "Pakistan",
+        "survey_id": "PK2017DHS",
+        "year": 2017,
+        "survey_type": "DHS",
+        "literate_published": 50.4,
+        "above_secondary_not_tested": 13.1,
+        "read_whole_sentence": 31.9,
+        "read_part_of_sentence": 5.4,
+        "cannot_read_at_all": 49.6,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 26.0
+      },
+      {
+        "country": "Gambia",
+        "survey_id": "GM2019DHS",
+        "year": 2019,
+        "survey_type": "DHS",
+        "literate_published": 47.2,
+        "above_secondary_not_tested": 7.3,
+        "read_whole_sentence": 28.3,
+        "read_part_of_sentence": 11.5,
+        "cannot_read_at_all": 51.4,
+        "no_card_in_language": 1.4,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 15.5
+      },
+      {
+        "country": "Mozambique",
+        "survey_id": "MZ2022DHS",
+        "year": 2022,
+        "survey_type": "DHS",
+        "literate_published": 46.6,
+        "above_secondary_not_tested": 2.7,
+        "read_whole_sentence": 34.4,
+        "read_part_of_sentence": 9.6,
+        "cannot_read_at_all": 53.3,
+        "no_card_in_language": 0.1,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 5.8
+      },
+      {
+        "country": "Cote d'Ivoire",
+        "survey_id": "CI2021DHS",
+        "year": 2021,
+        "survey_type": "DHS",
+        "literate_published": 44.6,
+        "above_secondary_not_tested": 5.4,
+        "read_whole_sentence": 28.4,
+        "read_part_of_sentence": 10.9,
+        "cannot_read_at_all": 55.3,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 12.1
+      },
+      {
+        "country": "Sierra Leone",
+        "survey_id": "SL2019DHS",
+        "year": 2019,
+        "survey_type": "DHS",
+        "literate_published": 42.8,
+        "above_secondary_not_tested": 4.3,
+        "read_whole_sentence": 20.2,
+        "read_part_of_sentence": 18.4,
+        "cannot_read_at_all": 57.1,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 10.0
+      },
+      {
+        "country": "Burkina Faso",
+        "survey_id": "BF2021DHS",
+        "year": 2021,
+        "survey_type": "DHS",
+        "literate_published": 38.6,
+        "above_secondary_not_tested": 2.3,
+        "read_whole_sentence": 30.4,
+        "read_part_of_sentence": 5.9,
+        "cannot_read_at_all": 61.2,
+        "no_card_in_language": 0.2,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 6.0
+      },
+      {
+        "country": "Benin",
+        "survey_id": "BJ2017DHS",
+        "year": 2017,
+        "survey_type": "DHS",
+        "literate_published": 34.1,
+        "above_secondary_not_tested": 2.0,
+        "read_whole_sentence": 25.0,
+        "read_part_of_sentence": 7.1,
+        "cannot_read_at_all": 65.5,
+        "no_card_in_language": 0.4,
+        "blind": 0.1,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 5.9
+      },
+      {
+        "country": "Mali",
+        "survey_id": "ML2023DHS",
+        "year": 2023,
+        "survey_type": "DHS",
+        "literate_published": 31.9,
+        "above_secondary_not_tested": 3.3,
+        "read_whole_sentence": 19.0,
+        "read_part_of_sentence": 9.6,
+        "cannot_read_at_all": 66.5,
+        "no_card_in_language": 1.5,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 10.3
+      },
+      {
+        "country": "Guinea",
+        "survey_id": "GN2021MIS",
+        "year": 2021,
+        "survey_type": "MIS",
+        "literate_published": 26.9,
+        "above_secondary_not_tested": 3.8,
+        "read_whole_sentence": 13.1,
+        "read_part_of_sentence": 10.0,
+        "cannot_read_at_all": 73.0,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 14.1
+      },
+      {
+        "country": "Niger",
+        "survey_id": "NI2021MIS",
+        "year": 2021,
+        "survey_type": "MIS",
+        "literate_published": 19.3,
+        "above_secondary_not_tested": 1.0,
+        "read_whole_sentence": 13.2,
+        "read_part_of_sentence": 5.1,
+        "cannot_read_at_all": 80.6,
+        "no_card_in_language": 0.1,
+        "blind": 0.0,
+        "missing": 0.0,
+        "share_of_literate_never_tested_pct": 5.2
+      },
+      {
+        "country": "Afghanistan",
+        "survey_id": "AF2015DHS",
+        "year": 2015,
+        "survey_type": "DHS",
+        "literate_published": 14.8,
+        "above_secondary_not_tested": 1.9,
+        "read_whole_sentence": 8.5,
+        "read_part_of_sentence": 4.3,
+        "cannot_read_at_all": 85.1,
+        "no_card_in_language": 0.0,
+        "blind": 0.0,
+        "missing": 0.1,
+        "share_of_literate_never_tested_pct": 12.8
+      }
+    ],
+    "most_part_of_sentence": [
+      {
+        "country": "Cambodia",
+        "survey_id": "KH2021DHS",
+        "read_part_of_sentence": 28.0,
+        "literate_published": 80.5,
+        "part_share_of_literate_pct": 34.8
+      },
+      {
+        "country": "Congo Democratic Republic",
+        "survey_id": "CD2023DHS",
+        "read_part_of_sentence": 23.4,
+        "literate_published": 59.1,
+        "part_share_of_literate_pct": 39.6
+      },
+      {
+        "country": "Uganda",
+        "survey_id": "UG2024MIS",
+        "read_part_of_sentence": 21.4,
+        "literate_published": 76.6,
+        "part_share_of_literate_pct": 27.9
+      },
+      {
+        "country": "Angola",
+        "survey_id": "AO2023DHS",
+        "read_part_of_sentence": 20.6,
+        "literate_published": 64.6,
+        "part_share_of_literate_pct": 31.9
+      },
+      {
+        "country": "Sierra Leone",
+        "survey_id": "SL2019DHS",
+        "read_part_of_sentence": 18.4,
+        "literate_published": 42.8,
+        "part_share_of_literate_pct": 43.0
+      },
+      {
+        "country": "Papua New Guinea",
+        "survey_id": "PG2017DHS",
+        "read_part_of_sentence": 17.2,
+        "literate_published": 66.4,
+        "part_share_of_literate_pct": 25.9
+      }
+    ],
+    "medians": {
+      "literate_published": 68.8,
+      "above_secondary_not_tested": 7.2,
+      "read_whole_sentence": 45.5,
+      "read_part_of_sentence": 9.6,
+      "cannot_read_at_all": 31.0
+    },
+    "median_share_of_literate_pct": {
+      "above_secondary_not_tested": 11.6,
+      "read_whole_sentence": 67.8,
+      "read_part_of_sentence": 17.7
+    },
+    "medians_note": "Five independent column medians across the same set of countries, NOT the profile of any one country. They do not sum to 100 and the first three do not sum to the median published rate.",
+    "no_card_in_language": {
+      "note": "Counted as NOT literate. A respondent who reads fluently in a language the interviewer had no card for is recorded as illiterate, so the instrument errs in both directions.",
+      "max": [
+        1.5,
+        "Mali"
+      ],
+      "median": 0.05,
+      "n_countries_above_1pct": 2
+    }
+  },
+  "rule_change_all_countries": {
+    "note": "Every country with at least one survey under each rule. The four the essay walks through are worked examples chosen for readability, not the evidence base, and the essay must not imply otherwise.",
+    "n_countries_with_pairs": 39,
+    "n_headline_fell": 5,
+    "fell": [
+      {
+        "country": "Ghana",
+        "from_year": 2014,
+        "to_year": 2022,
+        "literacy_before": 67.1,
+        "literacy_after": 60.8,
+        "literacy_change_pts": -6.3,
+        "secondary_or_higher_change_pts": 7.1
+      },
+      {
+        "country": "Congo Democratic Republic",
+        "from_year": 2013,
+        "to_year": 2023,
+        "literacy_before": 63.8,
+        "literacy_after": 59.1,
+        "literacy_change_pts": -4.7,
+        "secondary_or_higher_change_pts": 14.0
+      },
+      {
+        "country": "Cameroon",
+        "from_year": 2011,
+        "to_year": 2022,
+        "literacy_before": 69.2,
+        "literacy_after": 66.7,
+        "literacy_change_pts": -2.5,
+        "secondary_or_higher_change_pts": 9.2
+      },
+      {
+        "country": "Benin",
+        "from_year": 2012,
+        "to_year": 2017,
+        "literacy_before": 35.1,
+        "literacy_after": 34.1,
+        "literacy_change_pts": -1.0,
+        "secondary_or_higher_change_pts": 2.1
+      },
+      {
+        "country": "Togo",
+        "from_year": 2013,
+        "to_year": 2017,
+        "literacy_before": 52.3,
+        "literacy_after": 51.8,
+        "literacy_change_pts": -0.5,
+        "secondary_or_higher_change_pts": 2.5
+      }
+    ],
+    "n_education_rose_over_5pts_while_literacy_fell": 3,
+    "education_rose_while_literacy_fell": [
+      "Cameroon",
+      "Congo Democratic Republic",
+      "Ghana"
+    ]
+  },
+  "rule_change": {
+    "dhs_note": "In DHS-VI and earlier surveys the question on the ability of the respondent to read a sentence was not asked to women and men with secondary education or higher than secondary. Thus estimates from earlier surveys may overestimate literacy relative to DHS-7 and DHS-8 surveys. Care should be taken in interpreting trends.",
+    "dhs_note_source": "The DHS Program, Guide to DHS Statistics, Literacy, Changes over Time",
+    "n_old_rule": 142,
+    "n_new_rule": 79,
+    "regimes_overlap_in_time": {
+      "old_rule_years": [
+        2000,
+        2016
+      ],
+      "new_rule_years": [
+        2015,
+        2025
+      ],
+      "why_it_matters": "The two regimes overlap, so a fieldwork-year cutoff misclassifies surveys. The classifier compares the never-tested column against both published education shares instead."
+    },
+    "countries": {
+      "Ghana": {
+        "last_old_rule": {
+          "survey_id": "GH2014DHS",
+          "year": 2014,
+          "literate_published": 67.1,
+          "above_secondary_not_tested": 63.1,
+          "read_whole_sentence": 2.1,
+          "read_part_of_sentence": 1.9,
+          "cannot_read_at_all": 32.8,
+          "secondary_or_higher": 63.1,
+          "share_of_literate_never_tested_pct": 94.0
+        },
+        "latest_new_rule": {
+          "survey_id": "GH2022DHS",
+          "year": 2022,
+          "literate_published": 60.8,
+          "above_secondary_not_tested": 10.2,
+          "read_whole_sentence": 38.0,
+          "read_part_of_sentence": 12.6,
+          "cannot_read_at_all": 38.9,
+          "secondary_or_higher": 70.2,
+          "share_of_literate_never_tested_pct": 16.8
+        },
+        "change_in_published_literacy_pts": -6.3,
+        "change_in_secondary_or_higher_pts": 7.1
+      },
+      "India": {
+        "last_old_rule": {
+          "survey_id": "IA2015DHS",
+          "year": 2015,
+          "literate_published": 68.4,
+          "above_secondary_not_tested": 60.1,
+          "read_whole_sentence": 2.9,
+          "read_part_of_sentence": 5.4,
+          "cannot_read_at_all": 30.8,
+          "secondary_or_higher": 60.1,
+          "share_of_literate_never_tested_pct": 87.9
+        },
+        "latest_new_rule": {
+          "survey_id": "IA2020DHS",
+          "year": 2020,
+          "literate_published": 71.5,
+          "above_secondary_not_tested": 15.7,
+          "read_whole_sentence": 44.1,
+          "read_part_of_sentence": 11.7,
+          "cannot_read_at_all": 27.8,
+          "secondary_or_higher": 65.8,
+          "share_of_literate_never_tested_pct": 22.0
+        },
+        "change_in_published_literacy_pts": 3.1,
+        "change_in_secondary_or_higher_pts": 5.7
+      },
+      "Indonesia": {
+        "last_old_rule": {
+          "survey_id": "ID2012DHS",
+          "year": 2012,
+          "literate_published": 92.6,
+          "above_secondary_not_tested": 63.5,
+          "read_whole_sentence": 24.4,
+          "read_part_of_sentence": 4.6,
+          "cannot_read_at_all": 6.5,
+          "secondary_or_higher": 63.5,
+          "share_of_literate_never_tested_pct": 68.6
+        },
+        "latest_new_rule": {
+          "survey_id": "ID2017DHS",
+          "year": 2017,
+          "literate_published": 95.9,
+          "above_secondary_not_tested": 15.6,
+          "read_whole_sentence": 78.1,
+          "read_part_of_sentence": 2.3,
+          "cannot_read_at_all": 3.6,
+          "secondary_or_higher": 71.0,
+          "share_of_literate_never_tested_pct": 16.3
+        },
+        "change_in_published_literacy_pts": 3.3,
+        "change_in_secondary_or_higher_pts": 7.5
+      },
+      "Nigeria": {
+        "last_old_rule": {
+          "survey_id": "NG2015MIS",
+          "year": 2015,
+          "literate_published": 53.5,
+          "above_secondary_not_tested": 45.7,
+          "read_whole_sentence": 2.0,
+          "read_part_of_sentence": 5.7,
+          "cannot_read_at_all": 46.4,
+          "secondary_or_higher": 45.7,
+          "share_of_literate_never_tested_pct": 85.4
+        },
+        "latest_new_rule": {
+          "survey_id": "NG2024DHS",
+          "year": 2024,
+          "literate_published": 57.2,
+          "above_secondary_not_tested": 13.7,
+          "read_whole_sentence": 26.9,
+          "read_part_of_sentence": 16.6,
+          "cannot_read_at_all": 42.7,
+          "secondary_or_higher": 54.5,
+          "share_of_literate_never_tested_pct": 24.0
+        },
+        "change_in_published_literacy_pts": 3.7,
+        "change_in_secondary_or_higher_pts": 8.8
+      }
+    },
+    "classifier_separation": {
+      "mean_distance_to_assigned_rule_pts": 0.005,
+      "mean_distance_to_other_rule_pts": 32.9,
+      "worst_distance_to_assigned_rule_pts": 0.7
+    }
+  },
+  "how_measured": {
+    "source": "UNESCO Institute for Statistics, via Our World in Data",
+    "column": "methodologies_used_for_measuring_literacy__uis__2017",
+    "n_country_years": 702,
+    "n_country_years_with_a_method": 686,
+    "n_countries": 169,
+    "years": [
+      "1975",
+      "2016"
+    ],
+    "counts": {
+      "Self-reported (head of household)": 333,
+      "Self-reported (individual)": 283,
+      "Literacy test": 52,
+      "Indirect estimate": 18,
+      "No data": 16
+    },
+    "tested_share_pct": 7.6,
+    "self_reported_share_pct": 89.8,
+    "proxy_share_pct": 48.5
+  },
+  "who_is_tested": {
+    "n_ever_tested": 40,
+    "n_never_tested": 129,
+    "ever_tested": [
+      "Bangladesh",
+      "Benin",
+      "Bosnia and Herzegovina",
+      "Central African Republic",
+      "Chad",
+      "Comoros",
+      "Congo",
+      "Cote d'Ivoire",
+      "Democratic Republic of Congo",
+      "Egypt",
+      "Eritrea",
+      "Eswatini",
+      "Gabon",
+      "Gambia",
+      "Guinea-Bissau",
+      "Guyana",
+      "Haiti",
+      "Jordan",
+      "Kenya",
+      "Laos",
+      "Lesotho",
+      "Liberia",
+      "Madagascar",
+      "Malawi",
+      "Mauritania",
+      "Myanmar",
+      "Namibia",
+      "Niger",
+      "Nigeria",
+      "Oman",
+      "Peru",
+      "Rwanda",
+      "Sao Tome and Principe",
+      "Sierra Leone",
+      "South Korea",
+      "Tanzania",
+      "Ukraine",
+      "Uzbekistan",
+      "Zambia",
+      "Zimbabwe"
+    ],
+    "note": "Membership is 'ever administered a literacy test in any year UNESCO records', which is the most generous possible reading. It is not a claim about the country's current practice.",
+    "europe": {
+      "n_in_file": 25,
+      "ever_tested": [
+        "Bosnia and Herzegovina",
+        "Ukraine"
+      ],
+      "n_self_declared_only": 22,
+      "other": {
+        "Andorra": [
+          "Indirect estimate"
+        ]
+      },
+      "methods": {
+        "Albania": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Andorra": [
+          "Indirect estimate"
+        ],
+        "Belarus": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Bosnia and Herzegovina": [
+          "Literacy test",
+          "Self-reported (individual)"
+        ],
+        "Bulgaria": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Croatia": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Cyprus": [
+          "Self-reported (head of household)"
+        ],
+        "Estonia": [
+          "Self-reported (head of household)"
+        ],
+        "Greece": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Hungary": [
+          "Self-reported (head of household)"
+        ],
+        "Italy": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Latvia": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Lithuania": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Malta": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Moldova": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Montenegro": [
+          "Self-reported (individual)"
+        ],
+        "North Macedonia": [
+          "Self-reported (head of household)"
+        ],
+        "Poland": [
+          "Self-reported (head of household)"
+        ],
+        "Portugal": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Romania": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Russia": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Serbia": [
+          "Self-reported (individual)"
+        ],
+        "Slovenia": [
+          "Self-reported (head of household)"
+        ],
+        "Spain": [
+          "Self-reported (head of household)",
+          "Self-reported (individual)"
+        ],
+        "Ukraine": [
+          "Literacy test",
+          "Self-reported (head of household)"
+        ]
+      }
+    }
+  },
+  "method_vs_level": {
+    "note": "Each country's most recently recorded reporting method against the UNESCO adult literacy rate nearest that year.",
+    "caution": "This has two readings and the data cannot separate them: testing may be applied where literacy is already doubted (selection), and testing may produce lower numbers than self-declaration (instrument). The post must state both rather than assert the second.",
+    "n_countries": 159,
+    "n_countries_with_a_method": 168,
+    "n_dropped_for_no_literacy_value": 9,
+    "dropped": [
+      "Andorra",
+      "Anguilla",
+      "French Guiana",
+      "Greenland",
+      "Guadeloupe",
+      "Martinique",
+      "Netherlands Antilles",
+      "Reunion",
+      "Serbia and Montenegro"
+    ],
+    "by_method": {
+      "Self-reported (individual)": {
+        "n": 81,
+        "median_literacy": 94.1,
+        "min": 27.9,
+        "max": 100.0,
+        "countries": [
+          {
+            "country": "Burkina Faso",
+            "method_year": 2007,
+            "literacy": 27.88,
+            "literacy_year": 2007
+          },
+          {
+            "country": "Afghanistan",
+            "method_year": 2011,
+            "literacy": 31.45,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Mali",
+            "method_year": 2015,
+            "literacy": 33.07,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Ethiopia",
+            "method_year": 2007,
+            "literacy": 39.0,
+            "literacy_year": 2007
+          },
+          {
+            "country": "Senegal",
+            "method_year": 2013,
+            "literacy": 43.53,
+            "literacy_year": 2013
+          },
+          {
+            "country": "Cote d'Ivoire",
+            "method_year": 2014,
+            "literacy": 43.91,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Mozambique",
+            "method_year": 2009,
+            "literacy": 50.58,
+            "literacy_year": 2009
+          },
+          {
+            "country": "Sudan",
+            "method_year": 2008,
+            "literacy": 53.52,
+            "literacy_year": 2008
+          },
+          {
+            "country": "East Timor",
+            "method_year": 2010,
+            "literacy": 58.31,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Togo",
+            "method_year": 2015,
+            "literacy": 63.75,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Angola",
+            "method_year": 2014,
+            "literacy": 66.03,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Rwanda",
+            "method_year": 2012,
+            "literacy": 68.33,
+            "literacy_year": 2012
+          },
+          {
+            "country": "Morocco",
+            "method_year": 2012,
+            "literacy": 69.16,
+            "literacy_year": 2012
+          },
+          {
+            "country": "Ghana",
+            "method_year": 2010,
+            "literacy": 71.5,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Bangladesh",
+            "method_year": 2016,
+            "literacy": 72.76,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Cambodia",
+            "method_year": 2009,
+            "literacy": 76.14,
+            "literacy_year": 2009
+          },
+          {
+            "country": "Democratic Republic of Congo",
+            "method_year": 2016,
+            "literacy": 77.04,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Iraq",
+            "method_year": 2013,
+            "literacy": 77.2,
+            "literacy_year": 2012
+          },
+          {
+            "country": "Tanzania",
+            "method_year": 2015,
+            "literacy": 77.89,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Nicaragua",
+            "method_year": 2005,
+            "literacy": 78.0,
+            "literacy_year": 2005
+          },
+          {
+            "country": "Tunisia",
+            "method_year": 2014,
+            "literacy": 79.04,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Jamaica",
+            "method_year": 1999,
+            "literacy": 79.92,
+            "literacy_year": 1999
+          },
+          {
+            "country": "Botswana",
+            "method_year": 2003,
+            "literacy": 81.19,
+            "literacy_year": 2003
+          },
+          {
+            "country": "Guatemala",
+            "method_year": 2014,
+            "literacy": 81.29,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Zambia",
+            "method_year": 2010,
+            "literacy": 83.14,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Iran",
+            "method_year": 2014,
+            "literacy": 84.71,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Namibia",
+            "method_year": 2011,
+            "literacy": 88.27,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Equatorial Guinea",
+            "method_year": 2014,
+            "literacy": 88.31,
+            "literacy_year": 2000
+          },
+          {
+            "country": "Honduras",
+            "method_year": 2016,
+            "literacy": 88.99,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Lebanon",
+            "method_year": 2009,
+            "literacy": 91.18,
+            "literacy_year": 2009
+          },
+          {
+            "country": "Sri Lanka",
+            "method_year": 2010,
+            "literacy": 91.18,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Mauritius",
+            "method_year": 2013,
+            "literacy": 91.49,
+            "literacy_year": 2013
+          },
+          {
+            "country": "Brazil",
+            "method_year": 2014,
+            "literacy": 91.73,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Puerto Rico",
+            "method_year": 2010,
+            "literacy": 91.97,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Dominican Republic",
+            "method_year": 2015,
+            "literacy": 91.99,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Bolivia",
+            "method_year": 2015,
+            "literacy": 92.46,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Thailand",
+            "method_year": 2015,
+            "literacy": 92.87,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Malaysia",
+            "method_year": 2010,
+            "literacy": 93.12,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Malta",
+            "method_year": 2011,
+            "literacy": 93.31,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Greece",
+            "method_year": 2011,
+            "literacy": 93.91,
+            "literacy_year": 2009
+          },
+          {
+            "country": "Panama",
+            "method_year": 2010,
+            "literacy": 94.09,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Peru",
+            "method_year": 2016,
+            "literacy": 94.17,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Colombia",
+            "method_year": 2015,
+            "literacy": 94.25,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Ecuador",
+            "method_year": 2016,
+            "literacy": 94.35,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Saudi Arabia",
+            "method_year": 2013,
+            "literacy": 94.43,
+            "literacy_year": 2013
+          },
+          {
+            "country": "Mexico",
+            "method_year": 2015,
+            "literacy": 94.47,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Portugal",
+            "method_year": 2011,
+            "literacy": 94.48,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Indonesia",
+            "method_year": 2016,
+            "literacy": 95.38,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Paraguay",
+            "method_year": 2015,
+            "literacy": 95.55,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Macao",
+            "method_year": 2011,
+            "literacy": 95.64,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Brunei",
+            "method_year": 2011,
+            "literacy": 96.09,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Palestine",
+            "method_year": 2014,
+            "literacy": 96.21,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Chile",
+            "method_year": 2013,
+            "literacy": 96.27,
+            "literacy_year": 2013
+          },
+          {
+            "country": "Palau",
+            "method_year": 2015,
+            "literacy": 96.59,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Moldova",
+            "method_year": 2000,
+            "literacy": 96.65,
+            "literacy_year": 2000
+          },
+          {
+            "country": "Aruba",
+            "method_year": 2010,
+            "literacy": 96.82,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Bosnia and Herzegovina",
+            "method_year": 2013,
+            "literacy": 96.99,
+            "literacy_year": 2013
+          },
+          {
+            "country": "Venezuela",
+            "method_year": 2016,
+            "literacy": 97.13,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Albania",
+            "method_year": 2012,
+            "literacy": 97.25,
+            "literacy_year": 2012
+          },
+          {
+            "country": "Costa Rica",
+            "method_year": 2011,
+            "literacy": 97.41,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Croatia",
+            "method_year": 2011,
+            "literacy": 98.15,
+            "literacy_year": 2001
+          },
+          {
+            "country": "Spain",
+            "method_year": 2016,
+            "literacy": 98.25,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Bulgaria",
+            "method_year": 2011,
+            "literacy": 98.35,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Montenegro",
+            "method_year": 2011,
+            "literacy": 98.44,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Uruguay",
+            "method_year": 2015,
+            "literacy": 98.52,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Romania",
+            "method_year": 2011,
+            "literacy": 98.6,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Maldives",
+            "method_year": 2014,
+            "literacy": 98.61,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Serbia",
+            "method_year": 2016,
+            "literacy": 98.84,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Italy",
+            "method_year": 2011,
+            "literacy": 98.85,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Cayman Islands",
+            "method_year": 2007,
+            "literacy": 98.87,
+            "literacy_year": 2007
+          },
+          {
+            "country": "Samoa",
+            "method_year": 2011,
+            "literacy": 98.97,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Kyrgyzstan",
+            "method_year": 2009,
+            "literacy": 99.24,
+            "literacy_year": 2009
+          },
+          {
+            "country": "Georgia",
+            "method_year": 2014,
+            "literacy": 99.59,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Belarus",
+            "method_year": 2009,
+            "literacy": 99.62,
+            "literacy_year": 2009
+          },
+          {
+            "country": "Cuba",
+            "method_year": 2012,
+            "literacy": 99.67,
+            "literacy_year": 2012
+          },
+          {
+            "country": "Russia",
+            "method_year": 2010,
+            "literacy": 99.68,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Kazakhstan",
+            "method_year": 2009,
+            "literacy": 99.73,
+            "literacy_year": 2009
+          },
+          {
+            "country": "Armenia",
+            "method_year": 2011,
+            "literacy": 99.74,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Lithuania",
+            "method_year": 2011,
+            "literacy": 99.82,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Latvia",
+            "method_year": 2011,
+            "literacy": 99.9,
+            "literacy_year": 2011
+          },
+          {
+            "country": "North Korea",
+            "method_year": 2008,
+            "literacy": 100.0,
+            "literacy_year": 2008
+          }
+        ]
+      },
+      "Self-reported (head of household)": {
+        "n": 46,
+        "median_literacy": 92.6,
+        "min": 26.8,
+        "max": 99.9,
+        "countries": [
+          {
+            "country": "South Sudan",
+            "method_year": 2008,
+            "literacy": 26.83,
+            "literacy_year": 2008
+          },
+          {
+            "country": "Guinea",
+            "method_year": 2014,
+            "literacy": 32.0,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Yemen",
+            "method_year": 1994,
+            "literacy": 37.09,
+            "literacy_year": 1994
+          },
+          {
+            "country": "Burundi",
+            "method_year": 2008,
+            "literacy": 48.08,
+            "literacy_year": 2008
+          },
+          {
+            "country": "Vanuatu",
+            "method_year": 1979,
+            "literacy": 52.87,
+            "literacy_year": 1979
+          },
+          {
+            "country": "Bhutan",
+            "method_year": 2012,
+            "literacy": 55.32,
+            "literacy_year": 2012
+          },
+          {
+            "country": "Pakistan",
+            "method_year": 2014,
+            "literacy": 56.98,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Papua New Guinea",
+            "method_year": 2000,
+            "literacy": 57.34,
+            "literacy_year": 2000
+          },
+          {
+            "country": "Nepal",
+            "method_year": 2011,
+            "literacy": 59.63,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Libya",
+            "method_year": 1984,
+            "literacy": 60.16,
+            "literacy_year": 1984
+          },
+          {
+            "country": "India",
+            "method_year": 2011,
+            "literacy": 69.3,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Uganda",
+            "method_year": 2012,
+            "literacy": 70.2,
+            "literacy_year": 2012
+          },
+          {
+            "country": "Belize",
+            "method_year": 1991,
+            "literacy": 70.3,
+            "literacy_year": 1991
+          },
+          {
+            "country": "Cameroon",
+            "method_year": 2010,
+            "literacy": 71.19,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Madagascar",
+            "method_year": 2012,
+            "literacy": 71.57,
+            "literacy_year": 2012
+          },
+          {
+            "country": "Algeria",
+            "method_year": 2008,
+            "literacy": 75.14,
+            "literacy_year": 2008
+          },
+          {
+            "country": "Syria",
+            "method_year": 2004,
+            "literacy": 80.84,
+            "literacy_year": 2004
+          },
+          {
+            "country": "Cape Verde",
+            "method_year": 2012,
+            "literacy": 85.33,
+            "literacy_year": 2012
+          },
+          {
+            "country": "Bahrain",
+            "method_year": 2010,
+            "literacy": 86.55,
+            "literacy_year": 2001
+          },
+          {
+            "country": "El Salvador",
+            "method_year": 2015,
+            "literacy": 87.97,
+            "literacy_year": 2015
+          },
+          {
+            "country": "United Arab Emirates",
+            "method_year": 2005,
+            "literacy": 90.03,
+            "literacy_year": 2005
+          },
+          {
+            "country": "Sao Tome and Principe",
+            "method_year": 2012,
+            "literacy": 90.14,
+            "literacy_year": 2012
+          },
+          {
+            "country": "Israel",
+            "method_year": 1983,
+            "literacy": 91.75,
+            "literacy_year": 1983
+          },
+          {
+            "country": "Vietnam",
+            "method_year": 2009,
+            "literacy": 93.52,
+            "literacy_year": 2009
+          },
+          {
+            "country": "Kuwait",
+            "method_year": 2008,
+            "literacy": 93.9,
+            "literacy_year": 2008
+          },
+          {
+            "country": "Seychelles",
+            "method_year": 2010,
+            "literacy": 93.95,
+            "literacy_year": 2010
+          },
+          {
+            "country": "South Africa",
+            "method_year": 2015,
+            "literacy": 94.37,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Suriname",
+            "method_year": 2008,
+            "literacy": 94.62,
+            "literacy_year": 2008
+          },
+          {
+            "country": "China",
+            "method_year": 2010,
+            "literacy": 95.12,
+            "literacy_year": 2010
+          },
+          {
+            "country": "North Macedonia",
+            "method_year": 2002,
+            "literacy": 96.13,
+            "literacy_year": 2002
+          },
+          {
+            "country": "New Caledonia",
+            "method_year": 1996,
+            "literacy": 96.14,
+            "literacy_year": 1996
+          },
+          {
+            "country": "Philippines",
+            "method_year": 2013,
+            "literacy": 96.4,
+            "literacy_year": 2013
+          },
+          {
+            "country": "Guam",
+            "method_year": 1980,
+            "literacy": 96.42,
+            "literacy_year": 1980
+          },
+          {
+            "country": "Trinidad and Tobago",
+            "method_year": 1990,
+            "literacy": 96.94,
+            "literacy_year": 1990
+          },
+          {
+            "country": "Qatar",
+            "method_year": 2014,
+            "literacy": 97.75,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Mongolia",
+            "method_year": 2010,
+            "literacy": 98.26,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Marshall Islands",
+            "method_year": 2011,
+            "literacy": 98.27,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Cyprus",
+            "method_year": 2011,
+            "literacy": 98.68,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Poland",
+            "method_year": 1978,
+            "literacy": 98.74,
+            "literacy_year": 1978
+          },
+          {
+            "country": "Turkmenistan",
+            "method_year": 1995,
+            "literacy": 98.78,
+            "literacy_year": 1995
+          },
+          {
+            "country": "Hungary",
+            "method_year": 1980,
+            "literacy": 98.86,
+            "literacy_year": 1980
+          },
+          {
+            "country": "Argentina",
+            "method_year": 2015,
+            "literacy": 99.14,
+            "literacy_year": 2020
+          },
+          {
+            "country": "Tonga",
+            "method_year": 2011,
+            "literacy": 99.39,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Tajikistan",
+            "method_year": 2000,
+            "literacy": 99.45,
+            "literacy_year": 2000
+          },
+          {
+            "country": "Slovenia",
+            "method_year": 1991,
+            "literacy": 99.52,
+            "literacy_year": 1991
+          },
+          {
+            "country": "Estonia",
+            "method_year": 2011,
+            "literacy": 99.89,
+            "literacy_year": 2011
+          }
+        ]
+      },
+      "Literacy test": {
+        "n": 28,
+        "median_literacy": 73.2,
+        "min": 22.3,
+        "max": 100.0,
+        "countries": [
+          {
+            "country": "Chad",
+            "method_year": 2016,
+            "literacy": 22.31,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Niger",
+            "method_year": 2012,
+            "literacy": 30.56,
+            "literacy_year": 2012
+          },
+          {
+            "country": "Central African Republic",
+            "method_year": 2010,
+            "literacy": 42.44,
+            "literacy_year": 2019
+          },
+          {
+            "country": "Sierra Leone",
+            "method_year": 2013,
+            "literacy": 44.369892,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Benin",
+            "method_year": 2012,
+            "literacy": 44.68812,
+            "literacy_year": 2011
+          },
+          {
+            "country": "Gambia",
+            "method_year": 2013,
+            "literacy": 50.78,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Guinea-Bissau",
+            "method_year": 2014,
+            "literacy": 54.88,
+            "literacy_year": 2019
+          },
+          {
+            "country": "Haiti",
+            "method_year": 2006,
+            "literacy": 58.74,
+            "literacy_year": 2003
+          },
+          {
+            "country": "Liberia",
+            "method_year": 2007,
+            "literacy": 59.40303,
+            "literacy_year": 2010
+          },
+          {
+            "country": "Mauritania",
+            "method_year": 2007,
+            "literacy": 62.07,
+            "literacy_year": 2013
+          },
+          {
+            "country": "Eritrea",
+            "method_year": 2008,
+            "literacy": 64.66,
+            "literacy_year": 2008
+          },
+          {
+            "country": "Nigeria",
+            "method_year": 2008,
+            "literacy": 70.2,
+            "literacy_year": 2006
+          },
+          {
+            "country": "Egypt",
+            "method_year": 2013,
+            "literacy": 72.44,
+            "literacy_year": 2013
+          },
+          {
+            "country": "Malawi",
+            "method_year": 2015,
+            "literacy": 72.826675,
+            "literacy_year": 2017
+          },
+          {
+            "country": "Comoros",
+            "method_year": 2012,
+            "literacy": 73.6495,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Congo",
+            "method_year": 2011,
+            "literacy": 76.11,
+            "literacy_year": 2005
+          },
+          {
+            "country": "Eswatini",
+            "method_year": 2010,
+            "literacy": 81.66,
+            "literacy_year": 2000
+          },
+          {
+            "country": "Kenya",
+            "method_year": 2014,
+            "literacy": 82.23,
+            "literacy_year": 2000
+          },
+          {
+            "country": "Laos",
+            "method_year": 2011,
+            "literacy": 84.66,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Myanmar",
+            "method_year": 2016,
+            "literacy": 84.78,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Guyana",
+            "method_year": 2014,
+            "literacy": 85.64,
+            "literacy_year": 2020
+          },
+          {
+            "country": "Gabon",
+            "method_year": 2012,
+            "literacy": 88.86,
+            "literacy_year": 2021
+          },
+          {
+            "country": "Zimbabwe",
+            "method_year": 2014,
+            "literacy": 93.23,
+            "literacy_year": 2019
+          },
+          {
+            "country": "Lesotho",
+            "method_year": 2014,
+            "literacy": 97.27,
+            "literacy_year": 2016
+          },
+          {
+            "country": "Jordan",
+            "method_year": 2012,
+            "literacy": 97.89,
+            "literacy_year": 2012
+          },
+          {
+            "country": "South Korea",
+            "method_year": 2008,
+            "literacy": 97.97,
+            "literacy_year": 2008
+          },
+          {
+            "country": "Ukraine",
+            "method_year": 2012,
+            "literacy": 99.43,
+            "literacy_year": 2001
+          },
+          {
+            "country": "Uzbekistan",
+            "method_year": 2014,
+            "literacy": 99.98,
+            "literacy_year": 2014
+          }
+        ]
+      },
+      "Indirect estimate": {
+        "n": 4,
+        "median_literacy": 96.1,
+        "min": 93.0,
+        "max": 99.8,
+        "countries": [
+          {
+            "country": "Oman",
+            "method_year": 2014,
+            "literacy": 93.04,
+            "literacy_year": 2015
+          },
+          {
+            "country": "Turkey",
+            "method_year": 2014,
+            "literacy": 95.44,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Singapore",
+            "method_year": 2014,
+            "literacy": 96.72,
+            "literacy_year": 2014
+          },
+          {
+            "country": "Azerbaijan",
+            "method_year": 2014,
+            "literacy": 99.79,
+            "literacy_year": 2014
+          }
+        ]
+      }
+    }
+  },
+  "tested_where_doubted": {
+    "note": "The tidy version of this pattern does not hold and the post must not assert it.",
+    "n_paired": 159,
+    "high_literacy_95_plus": {
+      "n": 60,
+      "n_never_tested": 54,
+      "ever_tested": [
+        "Bosnia and Herzegovina",
+        "Jordan",
+        "Lesotho",
+        "South Korea",
+        "Ukraine",
+        "Uzbekistan"
+      ]
+    },
+    "low_literacy_under_50": {
+      "n": 15,
+      "n_never_tested": 9,
+      "never_tested_examples": [
+        {
+          "country": "South Sudan",
+          "literacy": 26.8,
+          "literacy_year": 2008
+        },
+        {
+          "country": "Burkina Faso",
+          "literacy": 27.9,
+          "literacy_year": 2007
+        },
+        {
+          "country": "Afghanistan",
+          "literacy": 31.4,
+          "literacy_year": 2011
+        },
+        {
+          "country": "Guinea",
+          "literacy": 32.0,
+          "literacy_year": 2014
+        },
+        {
+          "country": "Mali",
+          "literacy": 33.1,
+          "literacy_year": 2015
+        },
+        {
+          "country": "Yemen",
+          "literacy": 37.1,
+          "literacy_year": 1994
+        }
+      ]
+    }
+  },
+  "two_instruments": {
+    "note": "DHS and UNESCO adult literacy for the same country-year. Different universes and different instruments, so this is a disagreement between measures, not an error in either.",
+    "n_country_years": 33,
+    "n_countries": 28,
+    "years": [
+      2000,
+      2015
+    ],
+    "mean_gap_unesco_minus_dhs_pts": 1.77,
+    "largest_unesco_higher": [
+      {
+        "country": "Pakistan",
+        "year": 2005,
+        "dhs": 33.98136,
+        "unesco": 49.87,
+        "gap_pts": 15.9
+      },
+      {
+        "country": "Ghana",
+        "year": 2010,
+        "dhs": 57.221775,
+        "unesco": 71.5,
+        "gap_pts": 14.3
+      },
+      {
+        "country": "Sierra Leone",
+        "year": 2015,
+        "dhs": 35.161858,
+        "unesco": 49.4,
+        "gap_pts": 14.2
+      },
+      {
+        "country": "Liberia",
+        "year": 2010,
+        "dhs": 47.198017,
+        "unesco": 59.40303,
+        "gap_pts": 12.2
+      },
+      {
+        "country": "Afghanistan",
+        "year": 2015,
+        "dhs": 23.258827,
+        "unesco": 33.75,
+        "gap_pts": 10.5
+      }
+    ],
+    "largest_dhs_higher": [
+      {
+        "country": "East Timor",
+        "year": 2015,
+        "dhs": 76.13968,
+        "unesco": 64.45,
+        "gap_pts": -11.7
+      },
+      {
+        "country": "Madagascar",
+        "year": 2000,
+        "dhs": 80.79598,
+        "unesco": 70.69,
+        "gap_pts": -10.1
+      },
+      {
+        "country": "Congo",
+        "year": 2005,
+        "dhs": 83.573975,
+        "unesco": 76.11,
+        "gap_pts": -7.5
+      },
+      {
+        "country": "Rwanda",
+        "year": 2000,
+        "dhs": 72.03343,
+        "unesco": 64.89,
+        "gap_pts": -7.1
+      },
+      {
+        "country": "Guinea",
+        "year": 2010,
+        "dhs": 31.978277,
+        "unesco": 25.31,
+        "gap_pts": -6.7
+      }
+    ]
+  }
+}
