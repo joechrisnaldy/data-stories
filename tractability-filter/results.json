@@ -1,0 +1,2773 @@
+{
+ "meta": {
+  "post": "Post 23: Greed You Can Regulate. Difficulty You Have to Pay For.",
+  "burden_source": "WHO Global Health Estimates 2021, July 2024 release",
+  "effort_source": "ClinicalTrials.gov API v2, study counts by condition",
+  "money_source": "NIH RePORTER API v2, FY2024 award totals by RCDC category",
+  "n_conditions": 34,
+  "caution": "RCDC categories overlap by construction and do not partition the NIH budget. Trial counts are a registry-wide stock, not an annual flow. Trials are global; DALYs are reported on high-income, global and US bases and each figure states which."
+ },
+ "totals": {
+  "hi_pop": 1365791412.0,
+  "us_pop": 340161447.0,
+  "hi_all_causes": 489671318.290938,
+  "us_all_causes": 133503359.53566301,
+  "global_all_causes": 3013734614.04409
+ },
+ "conditions": [
+  {
+   "cause": "Ischaemic heart disease",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Atherosclerotic process and lipid targets; endpoints are events and mortality.",
+   "hi_dalys": 39150862.3202674,
+   "global_dalys": 193893049.388535,
+   "us_dalys": 9592431.51945924,
+   "market_share_hi": 0.20191988544063,
+   "trials": 12622,
+   "trials_term": "coronary artery disease OR ischemic heart disease",
+   "trials_all_terms": {
+    "coronary artery disease": 12011,
+    "coronary artery disease OR ischemic heart disease": 12622,
+    "ischemic heart disease": 11006
+   },
+   "trials_per_m_hi": 322.3939206433753,
+   "trials_per_m_global": 65.0977435230659,
+   "nih_category": "Heart Disease - Coronary Heart Disease",
+   "nih_usd": 378502166.0,
+   "nih_usd_per_us_daly": 39.458417319130106,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {
+    "Heart Disease": 1758579269.0
+   }
+  },
+  {
+   "cause": "Stroke",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Thrombus or haemorrhage as target; imaging and mortality endpoints.",
+   "hi_dalys": 21499135.2707772,
+   "global_dalys": 160201661.132545,
+   "us_dalys": 3793337.7223084597,
+   "market_share_hi": 0.13420045159824903,
+   "trials": 11088,
+   "trials_term": "cerebrovascular accident",
+   "trials_all_terms": {
+    "cerebrovascular accident": 11088,
+    "stroke": 11085,
+    "stroke OR cerebrovascular accident": 11088
+   },
+   "trials_per_m_hi": 515.7416733440166,
+   "trials_per_m_global": 69.21276547080367,
+   "nih_category": "Stroke",
+   "nih_usd": 498033687.0,
+   "nih_usd_per_us_daly": 131.2916812207584,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Diabetes mellitus",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Glucose and insulin pathways; HbA1c is objective.",
+   "hi_dalys": 15988865.4209429,
+   "global_dalys": 80534041.3744431,
+   "us_dalys": 5064339.40410948,
+   "market_share_hi": 0.19853549068278664,
+   "trials": 24207,
+   "trials_term": "diabetes",
+   "trials_all_terms": {
+    "diabetes": 24207,
+    "diabetes mellitus": 24207,
+    "type 2 diabetes OR type 1 diabetes": 15119
+   },
+   "trials_per_m_hi": 1513.9911033520011,
+   "trials_per_m_global": 300.5809665933631,
+   "nih_category": "Diabetes",
+   "nih_usd": 1124080159.0,
+   "nih_usd_per_us_daly": 221.95987853575934,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Chronic obstructive pulmonary disease",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Airway obstruction; FEV1 and exacerbation counts.",
+   "hi_dalys": 11459254.3264769,
+   "global_dalys": 78067730.1276345,
+   "us_dalys": 4322808.38654854,
+   "market_share_hi": 0.1467860575392923,
+   "trials": 6373,
+   "trials_term": "chronic obstructive pulmonary disease",
+   "trials_all_terms": {
+    "COPD": 5507,
+    "chronic obstructive pulmonary disease": 6373,
+    "emphysema OR COPD": 5717
+   },
+   "trials_per_m_hi": 556.1443893670307,
+   "trials_per_m_global": 81.63424233778355,
+   "nih_category": "Chronic Obstructive Pulmonary Disease",
+   "nih_usd": 157662654.0,
+   "nih_usd_per_us_daly": 36.47227448031362,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Asthma",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Airway inflammation with defined mediators; FEV1 and exacerbations.",
+   "hi_dalys": 3550461.35896274,
+   "global_dalys": 22044134.1422245,
+   "us_dalys": 1436023.99238827,
+   "market_share_hi": 0.16106150216905085,
+   "trials": 5255,
+   "trials_term": "asthma",
+   "trials_all_terms": {
+    "asthma": 5255
+   },
+   "trials_per_m_hi": 1480.089337329174,
+   "trials_per_m_global": 238.3854120146318,
+   "nih_category": "Asthma",
+   "nih_usd": 271067982.0,
+   "nih_usd_per_us_daly": 188.76285036796867,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Cirrhosis of the liver",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Fibrosis with histological and elastography endpoints.",
+   "hi_dalys": 7410590.10168356,
+   "global_dalys": 45935988.6511091,
+   "us_dalys": 1988490.81783357,
+   "market_share_hi": 0.16132427578664152,
+   "trials": 2680,
+   "trials_term": "cirrhosis",
+   "trials_all_terms": {
+    "cirrhosis": 2680,
+    "liver cirrhosis": 2680,
+    "liver cirrhosis OR cirrhosis": 2680
+   },
+   "trials_per_m_hi": 361.64461442701435,
+   "trials_per_m_global": 58.342055514577304,
+   "nih_category": "Liver Disease",
+   "nih_usd": 940399828.0,
+   "nih_usd_per_us_daly": 472.9213831746787,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Trachea, bronchus, lung cancers",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Tumour as target; survival and response are objective.",
+   "hi_dalys": 13655914.412221,
+   "global_dalys": 45648000.743145,
+   "us_dalys": 3038672.50432345,
+   "market_share_hi": 0.29915690040974513,
+   "trials": 14425,
+   "trials_term": "lung cancer",
+   "trials_all_terms": {
+    "lung cancer": 14425,
+    "lung cancer OR lung neoplasms": 14425,
+    "lung neoplasms": 14425
+   },
+   "trials_per_m_hi": 1056.3188640879828,
+   "trials_per_m_global": 316.0050772249038,
+   "nih_category": "Lung Cancer",
+   "nih_usd": 487996111.0,
+   "nih_usd_per_us_daly": 160.5951646008824,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Breast cancer",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "As above.",
+   "hi_dalys": 5867577.0626605,
+   "global_dalys": 22944584.378482,
+   "us_dalys": 1371252.48133481,
+   "market_share_hi": 0.2557281912747681,
+   "trials": 16689,
+   "trials_term": "breast cancer",
+   "trials_all_terms": {
+    "breast cancer": 16689,
+    "breast neoplasms": 16689
+   },
+   "trials_per_m_hi": 2844.274531339995,
+   "trials_per_m_global": 727.3611813884656,
+   "nih_category": "Breast Cancer",
+   "nih_usd": 737909677.0,
+   "nih_usd_per_us_daly": 538.1282346207323,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Colon and rectum cancers",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "As above.",
+   "hi_dalys": 8213737.87729961,
+   "global_dalys": 24047739.4885504,
+   "us_dalys": 1575480.73810237,
+   "market_share_hi": 0.34155966639651647,
+   "trials": 10206,
+   "trials_term": "colorectal cancer",
+   "trials_all_terms": {
+    "colonic neoplasms OR rectal neoplasms": 9953,
+    "colorectal cancer": 10206
+   },
+   "trials_per_m_hi": 1242.5524350133483,
+   "trials_per_m_global": 424.40579518333845,
+   "nih_category": "Colorectal Cancer",
+   "nih_usd": 336658610.0,
+   "nih_usd_per_us_daly": 213.68627483538612,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Prostate cancer",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "As above.",
+   "hi_dalys": 3377903.94317618,
+   "global_dalys": 7776910.89471013,
+   "us_dalys": 837661.847029882,
+   "market_share_hi": 0.43435034667477507,
+   "trials": 7532,
+   "trials_term": "prostate cancer",
+   "trials_all_terms": {
+    "prostate cancer": 7532,
+    "prostatic neoplasms": 7532
+   },
+   "trials_per_m_hi": 2229.7851350141714,
+   "trials_per_m_global": 968.5079464036654,
+   "nih_category": "Prostate Cancer",
+   "nih_usd": 308723374.0,
+   "nih_usd_per_us_daly": 368.5537011082073,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Pancreas cancer",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "As above.",
+   "hi_dalys": 4998914.99575058,
+   "global_dalys": 11315907.9342145,
+   "us_dalys": 1086280.44768365,
+   "market_share_hi": 0.4417599564093292,
+   "trials": 5023,
+   "trials_term": "pancreatic cancer",
+   "trials_all_terms": {
+    "pancreatic cancer": 5023,
+    "pancreatic neoplasms": 5023
+   },
+   "trials_per_m_hi": 1004.8180463700411,
+   "trials_per_m_global": 443.88837636373665,
+   "nih_category": "Pancreatic Cancer",
+   "nih_usd": 289743822.0,
+   "nih_usd_per_us_daly": 266.7302192705765,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Leukaemia",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "As above.",
+   "hi_dalys": 2410239.12324469,
+   "global_dalys": 11075658.570882,
+   "us_dalys": 606583.4918355469,
+   "market_share_hi": 0.21761587429042178,
+   "trials": 9691,
+   "trials_term": "leukaemia",
+   "trials_all_terms": {
+    "leukaemia": 9691,
+    "leukemia": 9691,
+    "leukemia OR leukaemia": 9691
+   },
+   "trials_per_m_hi": 4020.7628805534746,
+   "trials_per_m_global": 874.981829566119,
+   "nih_category": null,
+   "nih_usd": null,
+   "nih_usd_per_us_daly": null,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "HIV/AIDS",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Identified pathogen; viral load is objective.",
+   "hi_dalys": 2421954.68803038,
+   "global_dalys": 40293958.276369,
+   "us_dalys": 339668.907403064,
+   "market_share_hi": 0.06010714240131558,
+   "trials": 10596,
+   "trials_term": "HIV OR AIDS",
+   "trials_all_terms": {
+    "HIV": 10107,
+    "HIV OR AIDS": 10596,
+    "HIV infections": 10097
+   },
+   "trials_per_m_hi": 4374.9786287773395,
+   "trials_per_m_global": 262.9674634426319,
+   "nih_category": "HIV/AIDS",
+   "nih_usd": 4036123083.0,
+   "nih_usd_per_us_daly": 11882.521464381734,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Tuberculosis",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Identified pathogen; culture conversion.",
+   "hi_dalys": 715953.099582198,
+   "global_dalys": 60636419.4533671,
+   "us_dalys": 20770.9123047064,
+   "market_share_hi": 0.011807311612995341,
+   "trials": 1652,
+   "trials_term": "tuberculosis",
+   "trials_all_terms": {
+    "tuberculosis": 1652
+   },
+   "trials_per_m_hi": 2307.4137132223354,
+   "trials_per_m_global": 27.244352732114784,
+   "nih_category": "Tuberculosis",
+   "nih_usd": 578016064.0,
+   "nih_usd_per_us_daly": 27828.15003600153,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Malaria",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Identified parasite; parasitaemia is objective.",
+   "hi_dalys": 2541.39282403679,
+   "global_dalys": 52059167.6292827,
+   "us_dalys": 0.0,
+   "market_share_hi": 4.8817392589413686e-05,
+   "trials": 1472,
+   "trials_term": "malaria",
+   "trials_all_terms": {
+    "malaria": 1472
+   },
+   "trials_per_m_hi": 579209.9458523893,
+   "trials_per_m_global": 28.275519318369135,
+   "nih_category": "Malaria",
+   "nih_usd": 239804819.0,
+   "nih_usd_per_us_daly": null,
+   "us_burden_is_zero": true,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Multiple sclerosis",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Autoimmune demyelination; MRI lesion count and relapse rate.",
+   "hi_dalys": 692879.104033182,
+   "global_dalys": 1009387.05257119,
+   "us_dalys": 225746.019230859,
+   "market_share_hi": 0.6864354979274064,
+   "trials": 3880,
+   "trials_term": "multiple sclerosis",
+   "trials_all_terms": {
+    "multiple sclerosis": 3880
+   },
+   "trials_per_m_hi": 5599.822504986651,
+   "trials_per_m_global": 3843.9169495156084,
+   "nih_category": "Multiple Sclerosis",
+   "nih_usd": 108226557.0,
+   "nih_usd_per_us_daly": 479.417344185025,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Epilepsy",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Ion channel and focus targets; seizure counts and EEG.",
+   "hi_dalys": 1800031.5734098,
+   "global_dalys": 14398976.0132489,
+   "us_dalys": 429262.533211483,
+   "market_share_hi": 0.12501108215983836,
+   "trials": 3052,
+   "trials_term": "epilepsy OR seizures",
+   "trials_all_terms": {
+    "epilepsy": 2511,
+    "epilepsy OR seizures": 3052,
+    "seizures": 1458
+   },
+   "trials_per_m_hi": 1695.525814704792,
+   "trials_per_m_global": 211.95951692618763,
+   "nih_category": "Epilepsy",
+   "nih_usd": 230230537.0,
+   "nih_usd_per_us_daly": 536.3396970090872,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Alzheimer disease and other dementias",
+   "tclass": "partly",
+   "t1": true,
+   "t2": false,
+   "note": "Amyloid and tau are targets, but primary endpoints remain cognitive and functional rating scales.",
+   "hi_dalys": 13321047.4164307,
+   "global_dalys": 33626770.6120328,
+   "us_dalys": 4039774.56849842,
+   "market_share_hi": 0.39614411892600765,
+   "trials": 6826,
+   "trials_term": "dementia OR alzheimer disease",
+   "trials_all_terms": {
+    "alzheimer disease": 4239,
+    "dementia": 6558,
+    "dementia OR alzheimer disease": 6826
+   },
+   "trials_per_m_hi": 512.4221682133302,
+   "trials_per_m_global": 202.9930283450242,
+   "nih_category": "Alzheimer's Disease including Alzheimer's Disease Related Dementias (AD/ADRD)",
+   "nih_usd": 3616932631.0,
+   "nih_usd_per_us_daly": 895.3303135289576,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Parkinson disease",
+   "tclass": "partly",
+   "t1": true,
+   "t2": false,
+   "note": "Dopaminergic target; UPDRS is a clinician-rated scale.",
+   "hi_dalys": 2298243.9890958,
+   "global_dalys": 6933743.22539466,
+   "us_dalys": 633945.458050173,
+   "market_share_hi": 0.3314579029518341,
+   "trials": 4964,
+   "trials_term": "parkinson disease",
+   "trials_all_terms": {
+    "parkinson disease": 4964,
+    "parkinsons disease": 3944
+   },
+   "trials_per_m_hi": 2159.909924077726,
+   "trials_per_m_global": 715.9192139996583,
+   "nih_category": "Parkinson's Disease",
+   "nih_usd": 249819026.0,
+   "nih_usd_per_us_daly": 394.0702198078187,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Migraine",
+   "tclass": "partly",
+   "t1": true,
+   "t2": false,
+   "note": "CGRP is a validated target; headache days are patient-reported.",
+   "hi_dalys": 8476403.66674438,
+   "global_dalys": 43553266.0243594,
+   "us_dalys": 2170731.7800524803,
+   "market_share_hi": 0.19462153910578178,
+   "trials": 1789,
+   "trials_term": "migraine",
+   "trials_all_terms": {
+    "migraine": 1789,
+    "migraine disorders": 1788
+   },
+   "trials_per_m_hi": 211.05648932445425,
+   "trials_per_m_global": 41.07613879058829,
+   "nih_category": "Migraine",
+   "nih_usd": 40476182.0,
+   "nih_usd_per_us_daly": 18.646330408919262,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Depressive disorders",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "No validated causal target; endpoints are rating scales.",
+   "hi_dalys": 11755507.332163,
+   "global_dalys": 56656277.6519148,
+   "us_dalys": 3495469.4345820597,
+   "market_share_hi": 0.20748816934968023,
+   "trials": 12693,
+   "trials_term": "depressive disorder",
+   "trials_all_terms": {
+    "depression": 12668,
+    "depressive disorder": 12693,
+    "major depressive disorder OR depression": 12681
+   },
+   "trials_per_m_hi": 1079.7492308368542,
+   "trials_per_m_global": 224.03519126306418,
+   "nih_category": "Depression",
+   "nih_usd": 698190464.0,
+   "nih_usd_per_us_daly": 199.74154460986728,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Anxiety disorders",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "As above.",
+   "hi_dalys": 9631625.71765042,
+   "global_dalys": 42756924.407486,
+   "us_dalys": 2873292.63871971,
+   "market_share_hi": 0.22526469925334686,
+   "trials": 10400,
+   "trials_term": "anxiety",
+   "trials_all_terms": {
+    "anxiety": 10400,
+    "anxiety OR anxiety disorders": 10400,
+    "anxiety disorder": 10386
+   },
+   "trials_per_m_hi": 1079.776177446503,
+   "trials_per_m_global": 243.235455873415,
+   "nih_category": "Anxiety Disorders",
+   "nih_usd": 270671345.0,
+   "nih_usd_per_us_daly": 94.202498329793,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Bipolar disorder",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "As above.",
+   "hi_dalys": 2173044.06427502,
+   "global_dalys": 8083282.60136148,
+   "us_dalys": 474854.152291963,
+   "market_share_hi": 0.26883188073976416,
+   "trials": 2034,
+   "trials_term": "bipolar disorder",
+   "trials_all_terms": {
+    "bipolar disorder": 2034
+   },
+   "trials_per_m_hi": 936.0141533432694,
+   "trials_per_m_global": 251.63044524230912,
+   "nih_category": "Bipolar Disorder",
+   "nih_usd": 83690542.0,
+   "nih_usd_per_us_daly": 176.24473029466753,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Schizophrenia",
+   "tclass": "partly",
+   "t1": true,
+   "t2": false,
+   "note": "Dopamine D2 is a validated drug target; PANSS is a rating scale.",
+   "hi_dalys": 2960217.21978623,
+   "global_dalys": 15102991.8064536,
+   "us_dalys": 867605.261267272,
+   "market_share_hi": 0.19600204103410235,
+   "trials": 4194,
+   "trials_term": "schizophrenia",
+   "trials_all_terms": {
+    "schizophrenia": 4194
+   },
+   "trials_per_m_hi": 1416.7879208211843,
+   "trials_per_m_global": 277.69332419341436,
+   "nih_category": "Schizophrenia",
+   "nih_usd": 253560873.0,
+   "nih_usd_per_us_daly": 292.25372910905935,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Alcohol use disorders",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "No validated causal target; drinking days are self-reported.",
+   "hi_dalys": 5780215.78694514,
+   "global_dalys": 17378721.2397989,
+   "us_dalys": 1574610.01408278,
+   "market_share_hi": 0.33260305560963277,
+   "trials": 2016,
+   "trials_term": "alcohol use disorder OR alcoholism",
+   "trials_all_terms": {
+    "alcohol use disorder": 1387,
+    "alcohol use disorder OR alcoholism": 2016,
+    "alcoholism": 1676
+   },
+   "trials_per_m_hi": 348.77590635166604,
+   "trials_per_m_global": 116.00393217558327,
+   "nih_category": "Alcoholism, Alcohol Use and Health",
+   "nih_usd": 764674457.0,
+   "nih_usd_per_us_daly": 485.6278381065851,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Drug use disorders",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "BORDERLINE, declared in advance. Coded tractable because opioid use disorder has receptor targets and urine toxicology is objective, even though measured effort is low. Cuts against the thesis and stays in.",
+   "hi_dalys": 11691844.4370878,
+   "global_dalys": 18135872.8879538,
+   "us_dalys": 8701697.96016924,
+   "market_share_hi": 0.6446805460824415,
+   "trials": 4832,
+   "trials_term": "substance use disorder OR drug abuse",
+   "trials_all_terms": {
+    "drug use disorder": 2271,
+    "opioid use disorder": 1331,
+    "substance use disorder": 4425,
+    "substance use disorder OR drug abuse": 4832
+   },
+   "trials_per_m_hi": 413.27953224149746,
+   "trials_per_m_global": 266.43327453014456,
+   "nih_category": "Substance Misuse",
+   "nih_usd": 2672049599.0,
+   "nih_usd_per_us_daly": 307.07220719805713,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {
+    "Opioids": 911916175.0,
+    "Drug Abuse (NIDA only)": 1845873413.0
+   }
+  },
+  {
+   "cause": "Back and neck pain",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "No validated target for the common presentation; pain scores are self-reported.",
+   "hi_dalys": 25179440.1684719,
+   "global_dalys": 90882026.4622991,
+   "us_dalys": 5978216.79692632,
+   "market_share_hi": 0.2770563239907197,
+   "trials": 6334,
+   "trials_term": "back pain OR neck pain",
+   "trials_all_terms": {
+    "back pain": 4476,
+    "back pain OR neck pain": 6334,
+    "chronic low back pain": 1826,
+    "low back pain": 3387,
+    "neck pain": 2142,
+    "spinal pain": 2046
+   },
+   "trials_per_m_hi": 251.5544411480218,
+   "trials_per_m_global": 69.69474874801075,
+   "nih_category": "Back Pain",
+   "nih_usd": 68804529.0,
+   "nih_usd_per_us_daly": 11.509206062144756,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {
+    "Chronic Pain": 792606283.0
+   }
+  },
+  {
+   "cause": "Osteoarthritis",
+   "tclass": "partly",
+   "t1": false,
+   "t2": true,
+   "note": "No validated disease-modifying target; radiographic joint space is objective.",
+   "hi_dalys": 6783108.52070936,
+   "global_dalys": 21271031.412659,
+   "us_dalys": 1706315.02004482,
+   "market_share_hi": 0.31888949760435864,
+   "trials": 6342,
+   "trials_term": "osteoarthritis",
+   "trials_all_terms": {
+    "osteoarthritis": 6342
+   },
+   "trials_per_m_hi": 934.9695616157958,
+   "trials_per_m_global": 298.1519737790286,
+   "nih_category": "Osteoarthritis",
+   "nih_usd": 132940458.0,
+   "nih_usd_per_us_daly": 77.91085259069456,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Rheumatoid arthritis",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "TNF and IL-6 are validated targets; inflammatory markers and radiographic progression are objective.",
+   "hi_dalys": 926177.322983388,
+   "global_dalys": 3088132.5898416,
+   "us_dalys": 220424.71151706701,
+   "market_share_hi": 0.29991501207883514,
+   "trials": 3749,
+   "trials_term": "rheumatoid arthritis",
+   "trials_all_terms": {
+    "rheumatoid arthritis": 3749
+   },
+   "trials_per_m_hi": 4047.820980893572,
+   "trials_per_m_global": 1214.002278377658,
+   "nih_category": "Rheumatoid Arthritis",
+   "nih_usd": 64487777.0,
+   "nih_usd_per_us_daly": 292.56146716112113,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Other hearing loss",
+   "tclass": "partly",
+   "t1": false,
+   "t2": true,
+   "note": "No validated target for restoring hair cells; audiometry is objective. The clearest case where an objective endpoint exists but nothing to aim at does.",
+   "hi_dalys": 8771138.774119,
+   "global_dalys": 44192975.1586393,
+   "us_dalys": 2232924.1902879598,
+   "market_share_hi": 0.19847359772980408,
+   "trials": 1503,
+   "trials_term": "hearing loss",
+   "trials_all_terms": {
+    "deafness": 1497,
+    "hearing loss": 1503,
+    "hearing loss OR deafness": 1503,
+    "sensorineural hearing loss": 571
+   },
+   "trials_per_m_hi": 171.35745297234405,
+   "trials_per_m_global": 34.00993018923683,
+   "nih_category": "Hearing Loss",
+   "nih_usd": 188587956.0,
+   "nih_usd_per_us_daly": 84.45784089771519,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Uncorrected refractive errors",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "BORDERLINE, declared in advance. Coded tractable, but the remaining problem is delivery of spectacles rather than discovery, which depresses trial counts for a reason the coding does not capture. Cuts against the thesis and stays in.",
+   "hi_dalys": 2414007.55294987,
+   "global_dalys": 18276606.2359498,
+   "us_dalys": 420634.494727839,
+   "market_share_hi": 0.13208182754419442,
+   "trials": 2117,
+   "trials_term": "refractive errors OR myopia",
+   "trials_all_terms": {
+    "myopia": 1366,
+    "refractive error": 1920,
+    "refractive errors OR myopia": 2117
+   },
+   "trials_per_m_hi": 876.9649446262367,
+   "trials_per_m_global": 115.83113257842662,
+   "nih_category": "Eye Disease and Disorders of Vision",
+   "nih_usd": 1182940716.0,
+   "nih_usd_per_us_daly": 2812.2770025444347,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Road injury",
+   "tclass": "partly",
+   "t1": false,
+   "t2": true,
+   "note": "No biological target; deaths and injuries are objectively counted.",
+   "hi_dalys": 7165578.98266341,
+   "global_dalys": 67852606.258532,
+   "us_dalys": 3128170.44538476,
+   "market_share_hi": 0.10560506630152305,
+   "trials": 338,
+   "trials_term": "road traffic accident OR motor vehicle accident",
+   "trials_all_terms": {
+    "motor vehicle accident": 336,
+    "road traffic accident": 263,
+    "road traffic accident OR motor vehicle accident": 338,
+    "road traffic injury": 18,
+    "traffic accident": 99
+   },
+   "trials_per_m_hi": 47.16994967437608,
+   "trials_per_m_global": 4.9813856628019915,
+   "nih_category": "Physical Injury - Accidents and Adverse Effects",
+   "nih_usd": 887251071.0,
+   "nih_usd_per_us_daly": 283.63258540116715,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Falls",
+   "tclass": "partly",
+   "t1": false,
+   "t2": true,
+   "note": "No biological target; falls are objectively counted.",
+   "hi_dalys": 11419572.7499231,
+   "global_dalys": 43855126.5549445,
+   "us_dalys": 2425905.48080258,
+   "market_share_hi": 0.2603931090157939,
+   "trials": 1600,
+   "trials_term": "accidental falls OR falls",
+   "trials_all_terms": {
+    "accidental falls": 888,
+    "accidental falls OR falls": 1600,
+    "fall prevention": 424,
+    "falls": 1600
+   },
+   "trials_per_m_hi": 140.11032067822103,
+   "trials_per_m_global": 36.48376200660185,
+   "nih_category": "Physical Injury - Accidents and Adverse Effects",
+   "nih_usd": 887251071.0,
+   "nih_usd_per_us_daly": 365.7401650729048,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  },
+  {
+   "cause": "Self-harm",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "No validated target; the objective endpoint is too rare to power trials, so measured outcomes are ideation scales.",
+   "hi_dalys": 8399408.93657313,
+   "global_dalys": 34146172.5159268,
+   "us_dalys": 2550515.67612649,
+   "market_share_hi": 0.2459839073517066,
+   "trials": 1418,
+   "trials_term": "suicide OR self-harm",
+   "trials_all_terms": {
+    "self-harm": 1313,
+    "suicidal ideation": 634,
+    "suicide": 1235,
+    "suicide OR self-harm": 1418
+   },
+   "trials_per_m_hi": 168.82140287582297,
+   "trials_per_m_global": 41.527348323991575,
+   "nih_category": "Suicide",
+   "nih_usd": 192180642.0,
+   "nih_usd_per_us_daly": 75.34971997971324,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {}
+  }
+ ],
+ "money_rows": [
+  {
+   "cause": "Ischaemic heart disease",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Atherosclerotic process and lipid targets; endpoints are events and mortality.",
+   "hi_dalys": 39150862.3202674,
+   "global_dalys": 193893049.388535,
+   "us_dalys": 9592431.51945924,
+   "market_share_hi": 0.20191988544063,
+   "trials": 12622,
+   "trials_term": "coronary artery disease OR ischemic heart disease",
+   "trials_all_terms": {
+    "coronary artery disease": 12011,
+    "coronary artery disease OR ischemic heart disease": 12622,
+    "ischemic heart disease": 11006
+   },
+   "trials_per_m_hi": 322.3939206433753,
+   "trials_per_m_global": 65.0977435230659,
+   "nih_category": "Heart Disease - Coronary Heart Disease",
+   "nih_usd": 378502166.0,
+   "nih_usd_per_us_daly": 39.458417319130106,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {
+    "Heart Disease": 1758579269.0
+   },
+   "merged_from": [
+    "Ischaemic heart disease"
+   ]
+  },
+  {
+   "cause": "Back and neck pain",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "No validated target for the common presentation; pain scores are self-reported.",
+   "hi_dalys": 25179440.1684719,
+   "global_dalys": 90882026.4622991,
+   "us_dalys": 5978216.79692632,
+   "market_share_hi": 0.2770563239907197,
+   "trials": 6334,
+   "trials_term": "back pain OR neck pain",
+   "trials_all_terms": {
+    "back pain": 4476,
+    "back pain OR neck pain": 6334,
+    "chronic low back pain": 1826,
+    "low back pain": 3387,
+    "neck pain": 2142,
+    "spinal pain": 2046
+   },
+   "trials_per_m_hi": 251.5544411480218,
+   "trials_per_m_global": 69.69474874801075,
+   "nih_category": "Back Pain",
+   "nih_usd": 68804529.0,
+   "nih_usd_per_us_daly": 11.509206062144756,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {
+    "Chronic Pain": 792606283.0
+   },
+   "merged_from": [
+    "Back and neck pain"
+   ]
+  },
+  {
+   "cause": "Stroke",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Thrombus or haemorrhage as target; imaging and mortality endpoints.",
+   "hi_dalys": 21499135.2707772,
+   "global_dalys": 160201661.132545,
+   "us_dalys": 3793337.7223084597,
+   "market_share_hi": 0.13420045159824903,
+   "trials": 11088,
+   "trials_term": "cerebrovascular accident",
+   "trials_all_terms": {
+    "cerebrovascular accident": 11088,
+    "stroke": 11085,
+    "stroke OR cerebrovascular accident": 11088
+   },
+   "trials_per_m_hi": 515.7416733440166,
+   "trials_per_m_global": 69.21276547080367,
+   "nih_category": "Stroke",
+   "nih_usd": 498033687.0,
+   "nih_usd_per_us_daly": 131.2916812207584,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Stroke"
+   ]
+  },
+  {
+   "cause": "Road injury and falls",
+   "tclass": "partly",
+   "t1": false,
+   "t2": true,
+   "note": "No biological target; deaths and injuries are objectively counted.",
+   "hi_dalys": 18585151.73258651,
+   "global_dalys": 111707732.8134765,
+   "us_dalys": 5554075.92618734,
+   "market_share_hi": 0.1663730098579566,
+   "trials": 1938,
+   "trials_term": "road traffic accident OR motor vehicle accident",
+   "trials_all_terms": {
+    "motor vehicle accident": 336,
+    "road traffic accident": 263,
+    "road traffic accident OR motor vehicle accident": 338,
+    "road traffic injury": 18,
+    "traffic accident": 99
+   },
+   "trials_per_m_hi": 104.27679191889422,
+   "trials_per_m_global": 4.9813856628019915,
+   "nih_category": "Physical Injury - Accidents and Adverse Effects",
+   "nih_usd": 887251071.0,
+   "nih_usd_per_us_daly": 159.74773892028225,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Road injury",
+    "Falls"
+   ]
+  },
+  {
+   "cause": "Diabetes mellitus",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Glucose and insulin pathways; HbA1c is objective.",
+   "hi_dalys": 15988865.4209429,
+   "global_dalys": 80534041.3744431,
+   "us_dalys": 5064339.40410948,
+   "market_share_hi": 0.19853549068278664,
+   "trials": 24207,
+   "trials_term": "diabetes",
+   "trials_all_terms": {
+    "diabetes": 24207,
+    "diabetes mellitus": 24207,
+    "type 2 diabetes OR type 1 diabetes": 15119
+   },
+   "trials_per_m_hi": 1513.9911033520011,
+   "trials_per_m_global": 300.5809665933631,
+   "nih_category": "Diabetes",
+   "nih_usd": 1124080159.0,
+   "nih_usd_per_us_daly": 221.95987853575934,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Diabetes mellitus"
+   ]
+  },
+  {
+   "cause": "Trachea, bronchus, lung cancers",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Tumour as target; survival and response are objective.",
+   "hi_dalys": 13655914.412221,
+   "global_dalys": 45648000.743145,
+   "us_dalys": 3038672.50432345,
+   "market_share_hi": 0.29915690040974513,
+   "trials": 14425,
+   "trials_term": "lung cancer",
+   "trials_all_terms": {
+    "lung cancer": 14425,
+    "lung cancer OR lung neoplasms": 14425,
+    "lung neoplasms": 14425
+   },
+   "trials_per_m_hi": 1056.3188640879828,
+   "trials_per_m_global": 316.0050772249038,
+   "nih_category": "Lung Cancer",
+   "nih_usd": 487996111.0,
+   "nih_usd_per_us_daly": 160.5951646008824,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Trachea, bronchus, lung cancers"
+   ]
+  },
+  {
+   "cause": "Alzheimer disease and other dementias",
+   "tclass": "partly",
+   "t1": true,
+   "t2": false,
+   "note": "Amyloid and tau are targets, but primary endpoints remain cognitive and functional rating scales.",
+   "hi_dalys": 13321047.4164307,
+   "global_dalys": 33626770.6120328,
+   "us_dalys": 4039774.56849842,
+   "market_share_hi": 0.39614411892600765,
+   "trials": 6826,
+   "trials_term": "dementia OR alzheimer disease",
+   "trials_all_terms": {
+    "alzheimer disease": 4239,
+    "dementia": 6558,
+    "dementia OR alzheimer disease": 6826
+   },
+   "trials_per_m_hi": 512.4221682133302,
+   "trials_per_m_global": 202.9930283450242,
+   "nih_category": "Alzheimer's Disease including Alzheimer's Disease Related Dementias (AD/ADRD)",
+   "nih_usd": 3616932631.0,
+   "nih_usd_per_us_daly": 895.3303135289576,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Alzheimer disease and other dementias"
+   ]
+  },
+  {
+   "cause": "Depressive disorders",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "No validated causal target; endpoints are rating scales.",
+   "hi_dalys": 11755507.332163,
+   "global_dalys": 56656277.6519148,
+   "us_dalys": 3495469.4345820597,
+   "market_share_hi": 0.20748816934968023,
+   "trials": 12693,
+   "trials_term": "depressive disorder",
+   "trials_all_terms": {
+    "depression": 12668,
+    "depressive disorder": 12693,
+    "major depressive disorder OR depression": 12681
+   },
+   "trials_per_m_hi": 1079.7492308368542,
+   "trials_per_m_global": 224.03519126306418,
+   "nih_category": "Depression",
+   "nih_usd": 698190464.0,
+   "nih_usd_per_us_daly": 199.74154460986728,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Depressive disorders"
+   ]
+  },
+  {
+   "cause": "Drug use disorders",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "BORDERLINE, declared in advance. Coded tractable because opioid use disorder has receptor targets and urine toxicology is objective, even though measured effort is low. Cuts against the thesis and stays in.",
+   "hi_dalys": 11691844.4370878,
+   "global_dalys": 18135872.8879538,
+   "us_dalys": 8701697.96016924,
+   "market_share_hi": 0.6446805460824415,
+   "trials": 4832,
+   "trials_term": "substance use disorder OR drug abuse",
+   "trials_all_terms": {
+    "drug use disorder": 2271,
+    "opioid use disorder": 1331,
+    "substance use disorder": 4425,
+    "substance use disorder OR drug abuse": 4832
+   },
+   "trials_per_m_hi": 413.27953224149746,
+   "trials_per_m_global": 266.43327453014456,
+   "nih_category": "Substance Misuse",
+   "nih_usd": 2672049599.0,
+   "nih_usd_per_us_daly": 307.07220719805713,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {
+    "Opioids": 911916175.0,
+    "Drug Abuse (NIDA only)": 1845873413.0
+   },
+   "merged_from": [
+    "Drug use disorders"
+   ]
+  },
+  {
+   "cause": "Chronic obstructive pulmonary disease",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Airway obstruction; FEV1 and exacerbation counts.",
+   "hi_dalys": 11459254.3264769,
+   "global_dalys": 78067730.1276345,
+   "us_dalys": 4322808.38654854,
+   "market_share_hi": 0.1467860575392923,
+   "trials": 6373,
+   "trials_term": "chronic obstructive pulmonary disease",
+   "trials_all_terms": {
+    "COPD": 5507,
+    "chronic obstructive pulmonary disease": 6373,
+    "emphysema OR COPD": 5717
+   },
+   "trials_per_m_hi": 556.1443893670307,
+   "trials_per_m_global": 81.63424233778355,
+   "nih_category": "Chronic Obstructive Pulmonary Disease",
+   "nih_usd": 157662654.0,
+   "nih_usd_per_us_daly": 36.47227448031362,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Chronic obstructive pulmonary disease"
+   ]
+  },
+  {
+   "cause": "Anxiety disorders",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "As above.",
+   "hi_dalys": 9631625.71765042,
+   "global_dalys": 42756924.407486,
+   "us_dalys": 2873292.63871971,
+   "market_share_hi": 0.22526469925334686,
+   "trials": 10400,
+   "trials_term": "anxiety",
+   "trials_all_terms": {
+    "anxiety": 10400,
+    "anxiety OR anxiety disorders": 10400,
+    "anxiety disorder": 10386
+   },
+   "trials_per_m_hi": 1079.776177446503,
+   "trials_per_m_global": 243.235455873415,
+   "nih_category": "Anxiety Disorders",
+   "nih_usd": 270671345.0,
+   "nih_usd_per_us_daly": 94.202498329793,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Anxiety disorders"
+   ]
+  },
+  {
+   "cause": "Other hearing loss",
+   "tclass": "partly",
+   "t1": false,
+   "t2": true,
+   "note": "No validated target for restoring hair cells; audiometry is objective. The clearest case where an objective endpoint exists but nothing to aim at does.",
+   "hi_dalys": 8771138.774119,
+   "global_dalys": 44192975.1586393,
+   "us_dalys": 2232924.1902879598,
+   "market_share_hi": 0.19847359772980408,
+   "trials": 1503,
+   "trials_term": "hearing loss",
+   "trials_all_terms": {
+    "deafness": 1497,
+    "hearing loss": 1503,
+    "hearing loss OR deafness": 1503,
+    "sensorineural hearing loss": 571
+   },
+   "trials_per_m_hi": 171.35745297234405,
+   "trials_per_m_global": 34.00993018923683,
+   "nih_category": "Hearing Loss",
+   "nih_usd": 188587956.0,
+   "nih_usd_per_us_daly": 84.45784089771519,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Other hearing loss"
+   ]
+  },
+  {
+   "cause": "Migraine",
+   "tclass": "partly",
+   "t1": true,
+   "t2": false,
+   "note": "CGRP is a validated target; headache days are patient-reported.",
+   "hi_dalys": 8476403.66674438,
+   "global_dalys": 43553266.0243594,
+   "us_dalys": 2170731.7800524803,
+   "market_share_hi": 0.19462153910578178,
+   "trials": 1789,
+   "trials_term": "migraine",
+   "trials_all_terms": {
+    "migraine": 1789,
+    "migraine disorders": 1788
+   },
+   "trials_per_m_hi": 211.05648932445425,
+   "trials_per_m_global": 41.07613879058829,
+   "nih_category": "Migraine",
+   "nih_usd": 40476182.0,
+   "nih_usd_per_us_daly": 18.646330408919262,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Migraine"
+   ]
+  },
+  {
+   "cause": "Self-harm",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "No validated target; the objective endpoint is too rare to power trials, so measured outcomes are ideation scales.",
+   "hi_dalys": 8399408.93657313,
+   "global_dalys": 34146172.5159268,
+   "us_dalys": 2550515.67612649,
+   "market_share_hi": 0.2459839073517066,
+   "trials": 1418,
+   "trials_term": "suicide OR self-harm",
+   "trials_all_terms": {
+    "self-harm": 1313,
+    "suicidal ideation": 634,
+    "suicide": 1235,
+    "suicide OR self-harm": 1418
+   },
+   "trials_per_m_hi": 168.82140287582297,
+   "trials_per_m_global": 41.527348323991575,
+   "nih_category": "Suicide",
+   "nih_usd": 192180642.0,
+   "nih_usd_per_us_daly": 75.34971997971324,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Self-harm"
+   ]
+  },
+  {
+   "cause": "Colon and rectum cancers",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "As above.",
+   "hi_dalys": 8213737.87729961,
+   "global_dalys": 24047739.4885504,
+   "us_dalys": 1575480.73810237,
+   "market_share_hi": 0.34155966639651647,
+   "trials": 10206,
+   "trials_term": "colorectal cancer",
+   "trials_all_terms": {
+    "colonic neoplasms OR rectal neoplasms": 9953,
+    "colorectal cancer": 10206
+   },
+   "trials_per_m_hi": 1242.5524350133483,
+   "trials_per_m_global": 424.40579518333845,
+   "nih_category": "Colorectal Cancer",
+   "nih_usd": 336658610.0,
+   "nih_usd_per_us_daly": 213.68627483538612,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Colon and rectum cancers"
+   ]
+  },
+  {
+   "cause": "Cirrhosis of the liver",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Fibrosis with histological and elastography endpoints.",
+   "hi_dalys": 7410590.10168356,
+   "global_dalys": 45935988.6511091,
+   "us_dalys": 1988490.81783357,
+   "market_share_hi": 0.16132427578664152,
+   "trials": 2680,
+   "trials_term": "cirrhosis",
+   "trials_all_terms": {
+    "cirrhosis": 2680,
+    "liver cirrhosis": 2680,
+    "liver cirrhosis OR cirrhosis": 2680
+   },
+   "trials_per_m_hi": 361.64461442701435,
+   "trials_per_m_global": 58.342055514577304,
+   "nih_category": "Liver Disease",
+   "nih_usd": 940399828.0,
+   "nih_usd_per_us_daly": 472.9213831746787,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Cirrhosis of the liver"
+   ]
+  },
+  {
+   "cause": "Osteoarthritis",
+   "tclass": "partly",
+   "t1": false,
+   "t2": true,
+   "note": "No validated disease-modifying target; radiographic joint space is objective.",
+   "hi_dalys": 6783108.52070936,
+   "global_dalys": 21271031.412659,
+   "us_dalys": 1706315.02004482,
+   "market_share_hi": 0.31888949760435864,
+   "trials": 6342,
+   "trials_term": "osteoarthritis",
+   "trials_all_terms": {
+    "osteoarthritis": 6342
+   },
+   "trials_per_m_hi": 934.9695616157958,
+   "trials_per_m_global": 298.1519737790286,
+   "nih_category": "Osteoarthritis",
+   "nih_usd": 132940458.0,
+   "nih_usd_per_us_daly": 77.91085259069456,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Osteoarthritis"
+   ]
+  },
+  {
+   "cause": "Breast cancer",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "As above.",
+   "hi_dalys": 5867577.0626605,
+   "global_dalys": 22944584.378482,
+   "us_dalys": 1371252.48133481,
+   "market_share_hi": 0.2557281912747681,
+   "trials": 16689,
+   "trials_term": "breast cancer",
+   "trials_all_terms": {
+    "breast cancer": 16689,
+    "breast neoplasms": 16689
+   },
+   "trials_per_m_hi": 2844.274531339995,
+   "trials_per_m_global": 727.3611813884656,
+   "nih_category": "Breast Cancer",
+   "nih_usd": 737909677.0,
+   "nih_usd_per_us_daly": 538.1282346207323,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Breast cancer"
+   ]
+  },
+  {
+   "cause": "Alcohol use disorders",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "No validated causal target; drinking days are self-reported.",
+   "hi_dalys": 5780215.78694514,
+   "global_dalys": 17378721.2397989,
+   "us_dalys": 1574610.01408278,
+   "market_share_hi": 0.33260305560963277,
+   "trials": 2016,
+   "trials_term": "alcohol use disorder OR alcoholism",
+   "trials_all_terms": {
+    "alcohol use disorder": 1387,
+    "alcohol use disorder OR alcoholism": 2016,
+    "alcoholism": 1676
+   },
+   "trials_per_m_hi": 348.77590635166604,
+   "trials_per_m_global": 116.00393217558327,
+   "nih_category": "Alcoholism, Alcohol Use and Health",
+   "nih_usd": 764674457.0,
+   "nih_usd_per_us_daly": 485.6278381065851,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Alcohol use disorders"
+   ]
+  },
+  {
+   "cause": "Pancreas cancer",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "As above.",
+   "hi_dalys": 4998914.99575058,
+   "global_dalys": 11315907.9342145,
+   "us_dalys": 1086280.44768365,
+   "market_share_hi": 0.4417599564093292,
+   "trials": 5023,
+   "trials_term": "pancreatic cancer",
+   "trials_all_terms": {
+    "pancreatic cancer": 5023,
+    "pancreatic neoplasms": 5023
+   },
+   "trials_per_m_hi": 1004.8180463700411,
+   "trials_per_m_global": 443.88837636373665,
+   "nih_category": "Pancreatic Cancer",
+   "nih_usd": 289743822.0,
+   "nih_usd_per_us_daly": 266.7302192705765,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Pancreas cancer"
+   ]
+  },
+  {
+   "cause": "Asthma",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Airway inflammation with defined mediators; FEV1 and exacerbations.",
+   "hi_dalys": 3550461.35896274,
+   "global_dalys": 22044134.1422245,
+   "us_dalys": 1436023.99238827,
+   "market_share_hi": 0.16106150216905085,
+   "trials": 5255,
+   "trials_term": "asthma",
+   "trials_all_terms": {
+    "asthma": 5255
+   },
+   "trials_per_m_hi": 1480.089337329174,
+   "trials_per_m_global": 238.3854120146318,
+   "nih_category": "Asthma",
+   "nih_usd": 271067982.0,
+   "nih_usd_per_us_daly": 188.76285036796867,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Asthma"
+   ]
+  },
+  {
+   "cause": "Prostate cancer",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "As above.",
+   "hi_dalys": 3377903.94317618,
+   "global_dalys": 7776910.89471013,
+   "us_dalys": 837661.847029882,
+   "market_share_hi": 0.43435034667477507,
+   "trials": 7532,
+   "trials_term": "prostate cancer",
+   "trials_all_terms": {
+    "prostate cancer": 7532,
+    "prostatic neoplasms": 7532
+   },
+   "trials_per_m_hi": 2229.7851350141714,
+   "trials_per_m_global": 968.5079464036654,
+   "nih_category": "Prostate Cancer",
+   "nih_usd": 308723374.0,
+   "nih_usd_per_us_daly": 368.5537011082073,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Prostate cancer"
+   ]
+  },
+  {
+   "cause": "Schizophrenia",
+   "tclass": "partly",
+   "t1": true,
+   "t2": false,
+   "note": "Dopamine D2 is a validated drug target; PANSS is a rating scale.",
+   "hi_dalys": 2960217.21978623,
+   "global_dalys": 15102991.8064536,
+   "us_dalys": 867605.261267272,
+   "market_share_hi": 0.19600204103410235,
+   "trials": 4194,
+   "trials_term": "schizophrenia",
+   "trials_all_terms": {
+    "schizophrenia": 4194
+   },
+   "trials_per_m_hi": 1416.7879208211843,
+   "trials_per_m_global": 277.69332419341436,
+   "nih_category": "Schizophrenia",
+   "nih_usd": 253560873.0,
+   "nih_usd_per_us_daly": 292.25372910905935,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Schizophrenia"
+   ]
+  },
+  {
+   "cause": "HIV/AIDS",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Identified pathogen; viral load is objective.",
+   "hi_dalys": 2421954.68803038,
+   "global_dalys": 40293958.276369,
+   "us_dalys": 339668.907403064,
+   "market_share_hi": 0.06010714240131558,
+   "trials": 10596,
+   "trials_term": "HIV OR AIDS",
+   "trials_all_terms": {
+    "HIV": 10107,
+    "HIV OR AIDS": 10596,
+    "HIV infections": 10097
+   },
+   "trials_per_m_hi": 4374.9786287773395,
+   "trials_per_m_global": 262.9674634426319,
+   "nih_category": "HIV/AIDS",
+   "nih_usd": 4036123083.0,
+   "nih_usd_per_us_daly": 11882.521464381734,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "HIV/AIDS"
+   ]
+  },
+  {
+   "cause": "Uncorrected refractive errors",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "BORDERLINE, declared in advance. Coded tractable, but the remaining problem is delivery of spectacles rather than discovery, which depresses trial counts for a reason the coding does not capture. Cuts against the thesis and stays in.",
+   "hi_dalys": 2414007.55294987,
+   "global_dalys": 18276606.2359498,
+   "us_dalys": 420634.494727839,
+   "market_share_hi": 0.13208182754419442,
+   "trials": 2117,
+   "trials_term": "refractive errors OR myopia",
+   "trials_all_terms": {
+    "myopia": 1366,
+    "refractive error": 1920,
+    "refractive errors OR myopia": 2117
+   },
+   "trials_per_m_hi": 876.9649446262367,
+   "trials_per_m_global": 115.83113257842662,
+   "nih_category": "Eye Disease and Disorders of Vision",
+   "nih_usd": 1182940716.0,
+   "nih_usd_per_us_daly": 2812.2770025444347,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Uncorrected refractive errors"
+   ]
+  },
+  {
+   "cause": "Parkinson disease",
+   "tclass": "partly",
+   "t1": true,
+   "t2": false,
+   "note": "Dopaminergic target; UPDRS is a clinician-rated scale.",
+   "hi_dalys": 2298243.9890958,
+   "global_dalys": 6933743.22539466,
+   "us_dalys": 633945.458050173,
+   "market_share_hi": 0.3314579029518341,
+   "trials": 4964,
+   "trials_term": "parkinson disease",
+   "trials_all_terms": {
+    "parkinson disease": 4964,
+    "parkinsons disease": 3944
+   },
+   "trials_per_m_hi": 2159.909924077726,
+   "trials_per_m_global": 715.9192139996583,
+   "nih_category": "Parkinson's Disease",
+   "nih_usd": 249819026.0,
+   "nih_usd_per_us_daly": 394.0702198078187,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Parkinson disease"
+   ]
+  },
+  {
+   "cause": "Bipolar disorder",
+   "tclass": "intractable",
+   "t1": false,
+   "t2": false,
+   "note": "As above.",
+   "hi_dalys": 2173044.06427502,
+   "global_dalys": 8083282.60136148,
+   "us_dalys": 474854.152291963,
+   "market_share_hi": 0.26883188073976416,
+   "trials": 2034,
+   "trials_term": "bipolar disorder",
+   "trials_all_terms": {
+    "bipolar disorder": 2034
+   },
+   "trials_per_m_hi": 936.0141533432694,
+   "trials_per_m_global": 251.63044524230912,
+   "nih_category": "Bipolar Disorder",
+   "nih_usd": 83690542.0,
+   "nih_usd_per_us_daly": 176.24473029466753,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Bipolar disorder"
+   ]
+  },
+  {
+   "cause": "Epilepsy",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Ion channel and focus targets; seizure counts and EEG.",
+   "hi_dalys": 1800031.5734098,
+   "global_dalys": 14398976.0132489,
+   "us_dalys": 429262.533211483,
+   "market_share_hi": 0.12501108215983836,
+   "trials": 3052,
+   "trials_term": "epilepsy OR seizures",
+   "trials_all_terms": {
+    "epilepsy": 2511,
+    "epilepsy OR seizures": 3052,
+    "seizures": 1458
+   },
+   "trials_per_m_hi": 1695.525814704792,
+   "trials_per_m_global": 211.95951692618763,
+   "nih_category": "Epilepsy",
+   "nih_usd": 230230537.0,
+   "nih_usd_per_us_daly": 536.3396970090872,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Epilepsy"
+   ]
+  },
+  {
+   "cause": "Rheumatoid arthritis",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "TNF and IL-6 are validated targets; inflammatory markers and radiographic progression are objective.",
+   "hi_dalys": 926177.322983388,
+   "global_dalys": 3088132.5898416,
+   "us_dalys": 220424.71151706701,
+   "market_share_hi": 0.29991501207883514,
+   "trials": 3749,
+   "trials_term": "rheumatoid arthritis",
+   "trials_all_terms": {
+    "rheumatoid arthritis": 3749
+   },
+   "trials_per_m_hi": 4047.820980893572,
+   "trials_per_m_global": 1214.002278377658,
+   "nih_category": "Rheumatoid Arthritis",
+   "nih_usd": 64487777.0,
+   "nih_usd_per_us_daly": 292.56146716112113,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Rheumatoid arthritis"
+   ]
+  },
+  {
+   "cause": "Tuberculosis",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Identified pathogen; culture conversion.",
+   "hi_dalys": 715953.099582198,
+   "global_dalys": 60636419.4533671,
+   "us_dalys": 20770.9123047064,
+   "market_share_hi": 0.011807311612995341,
+   "trials": 1652,
+   "trials_term": "tuberculosis",
+   "trials_all_terms": {
+    "tuberculosis": 1652
+   },
+   "trials_per_m_hi": 2307.4137132223354,
+   "trials_per_m_global": 27.244352732114784,
+   "nih_category": "Tuberculosis",
+   "nih_usd": 578016064.0,
+   "nih_usd_per_us_daly": 27828.15003600153,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Tuberculosis"
+   ]
+  },
+  {
+   "cause": "Multiple sclerosis",
+   "tclass": "tractable",
+   "t1": true,
+   "t2": true,
+   "note": "Autoimmune demyelination; MRI lesion count and relapse rate.",
+   "hi_dalys": 692879.104033182,
+   "global_dalys": 1009387.05257119,
+   "us_dalys": 225746.019230859,
+   "market_share_hi": 0.6864354979274064,
+   "trials": 3880,
+   "trials_term": "multiple sclerosis",
+   "trials_all_terms": {
+    "multiple sclerosis": 3880
+   },
+   "trials_per_m_hi": 5599.822504986651,
+   "trials_per_m_global": 3843.9169495156084,
+   "nih_category": "Multiple Sclerosis",
+   "nih_usd": 108226557.0,
+   "nih_usd_per_us_daly": 479.417344185025,
+   "us_burden_is_zero": false,
+   "nih_alt_usd": {},
+   "merged_from": [
+    "Multiple sclerosis"
+   ]
+  }
+ ],
+ "by_class": {
+  "tractable": {
+   "n": 20,
+   "causes": [
+    "Ischaemic heart disease",
+    "Stroke",
+    "Diabetes mellitus",
+    "Chronic obstructive pulmonary disease",
+    "Asthma",
+    "Cirrhosis of the liver",
+    "Trachea, bronchus, lung cancers",
+    "Breast cancer",
+    "Colon and rectum cancers",
+    "Prostate cancer",
+    "Pancreas cancer",
+    "Leukaemia",
+    "HIV/AIDS",
+    "Tuberculosis",
+    "Malaria",
+    "Multiple sclerosis",
+    "Epilepsy",
+    "Drug use disorders",
+    "Rheumatoid arthritis",
+    "Uncorrected refractive errors"
+   ],
+   "median_trials_per_m_hi": 1497.0402203405874,
+   "median_trials_per_m_global": 264.70036898638824,
+   "median_nih_usd_per_us_daly": 299.81683717958913,
+   "median_hi_dalys": 4274688.17735666
+  },
+  "partly": {
+   "n": 8,
+   "causes": [
+    "Alzheimer disease and other dementias",
+    "Parkinson disease",
+    "Migraine",
+    "Schizophrenia",
+    "Osteoarthritis",
+    "Other hearing loss",
+    "Road injury",
+    "Falls"
+   ],
+   "median_trials_per_m_hi": 361.7393287688922,
+   "median_trials_per_m_global": 122.03458356780624,
+   "median_nih_usd_per_us_daly": 159.74773892028225,
+   "median_hi_dalys": 7820991.324703895
+  },
+  "intractable": {
+   "n": 6,
+   "causes": [
+    "Depressive disorders",
+    "Anxiety disorders",
+    "Bipolar disorder",
+    "Alcohol use disorders",
+    "Back and neck pain",
+    "Self-harm"
+   ],
+   "median_trials_per_m_hi": 642.3950298474678,
+   "median_trials_per_m_global": 170.01956171932372,
+   "median_nih_usd_per_us_daly": 135.22361431223027,
+   "median_hi_dalys": 9015517.327111773
+  }
+ },
+ "by_target": {
+  "validated_target": {
+   "n": 24,
+   "causes": [
+    "Ischaemic heart disease",
+    "Stroke",
+    "Diabetes mellitus",
+    "Chronic obstructive pulmonary disease",
+    "Asthma",
+    "Cirrhosis of the liver",
+    "Trachea, bronchus, lung cancers",
+    "Breast cancer",
+    "Colon and rectum cancers",
+    "Prostate cancer",
+    "Pancreas cancer",
+    "Leukaemia",
+    "HIV/AIDS",
+    "Tuberculosis",
+    "Malaria",
+    "Multiple sclerosis",
+    "Epilepsy",
+    "Alzheimer disease and other dementias",
+    "Parkinson disease",
+    "Migraine",
+    "Schizophrenia",
+    "Drug use disorders",
+    "Rheumatoid arthritis",
+    "Uncorrected refractive errors"
+   ],
+   "median_trials_per_m_hi": 1448.438629075179,
+   "median_trials_per_m_global": 264.70036898638824,
+   "median_nih_usd_per_us_daly": 299.81683717958913
+  },
+  "no_validated_target": {
+   "n": 10,
+   "causes": [
+    "Depressive disorders",
+    "Anxiety disorders",
+    "Bipolar disorder",
+    "Alcohol use disorders",
+    "Back and neck pain",
+    "Osteoarthritis",
+    "Other hearing loss",
+    "Road injury",
+    "Falls",
+    "Self-harm"
+   ],
+   "median_trials_per_m_hi": 300.1651737498439,
+   "median_trials_per_m_global": 92.84934046179701,
+   "median_nih_usd_per_us_daly": 94.202498329793
+  }
+ },
+ "burden_ranking": {
+  "sheet": "HI 2021",
+  "depth": 3,
+  "n_causes_at_depth": 128,
+  "rank_of_back_and_neck_pain": 3,
+  "top": [
+   {
+    "cause": "COVID-19",
+    "dalys": 39652335.6233322
+   },
+   {
+    "cause": "Ischaemic heart disease",
+    "dalys": 39150862.3202674
+   },
+   {
+    "cause": "Back and neck pain",
+    "dalys": 25179440.1684719
+   },
+   {
+    "cause": "Stroke",
+    "dalys": 21499135.2707772
+   },
+   {
+    "cause": "Trachea, bronchus, lung cancers",
+    "dalys": 13655914.412221
+   },
+   {
+    "cause": "Alzheimer disease and other dementias",
+    "dalys": 13321047.4164307
+   },
+   {
+    "cause": "Other circulatory diseases",
+    "dalys": 12385702.3045895
+   },
+   {
+    "cause": "Depressive disorders",
+    "dalys": 11755507.332163
+   }
+  ]
+ },
+ "scorecard": {
+  "post_claims_still_true": {
+   "back_pain_ranks_third": true,
+   "road_death_count_barely_moves": true,
+   "ai_investment_rises": true
+  },
+  "full_ordering_predicted": "tractable > partly > intractable",
+  "full_ordering_holds": false,
+  "tractable_above_intractable": true,
+  "medians_trials_per_m_hi": {
+   "tractable": 1497.0402203405874,
+   "partly": 361.7393287688922,
+   "intractable": 642.3950298474678
+  },
+  "target_binary_holds": true,
+  "market_beats_tractability_on_trials": false,
+  "tractability_adds_over_burden_alone": true,
+  "market_adds_over_burden_alone": false,
+  "burden_explains_nih_dollars": false,
+  "fc1_market_beats_tractability": false,
+  "fc2_gap_vanishes_under_generous_terms": false,
+  "fc2_caveat": "Terms are already maximised for every condition in the build, so this is a live test rather than a hypothetical. It does not fire. But the maximise rule provably failed for road injury, whose candidate terms were exhaustive within crash vocabulary while the registry indexes trauma by pathology.",
+  "fc3_ordering_reverses_between_trials_and_dollars": true,
+  "fc3_detail": {
+   "order_by_trials": [
+    "tractable",
+    "intractable",
+    "partly"
+   ],
+   "order_by_dollars": [
+    "tractable",
+    "partly",
+    "intractable"
+   ],
+   "note": "PARTIAL FIRE. The top class is the same on both measures; the middle and bottom classes swap. Reported, not rounded away. Round 4 added the other half of this, which cuts against the post's own narrative and was missing: the three-step gradient the post says it abandoned is the ordering the DOLLARS produce. It holds there and fails on trials. The post abandons it because it fails on trials, which is the measure the argument rests on, and because the top two dollar medians are 47 percent apart and the bottom two 15, so on dollars the whole gradient is one step. Round 5 corrected this: it read '4 percent apart, which is nothing', which was true only on the unmerged basis where road injury and falls each carried the whole shared category."
+  },
+  "notes": "The three-class ordering FAILS: conditions coded intractable sit above those coded partly, because psychiatry runs large trial programmes with neither a validated target nor an objective endpoint. The binary target test survives and the market proxy adds nothing. The post reports all three."
+ },
+ "headline": {
+  "back_pain_vs_ms": {
+   "burden_multiple": 36.34030817483861,
+   "trials_multiple": 1.6324742268041237,
+   "money_multiple": 0.6357453374406062,
+   "money_per_daly_multiple": 41.655118658609275,
+   "back_pain": {
+    "hi_dalys": 25179440.1684719,
+    "trials": 6334,
+    "term": "back pain OR neck pain",
+    "nih_usd": 68804529.0,
+    "nih_category": "Back Pain",
+    "nih_usd_per_us_daly": 11.509206062144756,
+    "broader_category_usd": {
+     "Chronic Pain": 792606283.0
+    }
+   },
+   "multiple_sclerosis": {
+    "hi_dalys": 692879.104033182,
+    "trials": 3880,
+    "nih_usd": 108226557.0,
+    "nih_usd_per_us_daly": 479.417344185025
+   }
+  },
+  "back_pain_vs_ra": {
+   "burden_multiple": 27.186414030700167,
+   "trials_multiple": 1.6895172045878901
+  },
+  "malaria": {
+   "hi_dalys": 2541.39282403679,
+   "global_dalys": 52059167.6292827,
+   "market_share_hi": 4.8817392589413686e-05,
+   "trials": 1472,
+   "nih_usd": 239804819.0
+  },
+  "burden_rank_hi": [
+   "Ischaemic heart disease",
+   "Back and neck pain",
+   "Stroke",
+   "Diabetes mellitus",
+   "Trachea, bronchus, lung cancers",
+   "Alzheimer disease and other dementias"
+  ],
+  "effort_rank_per_burden": [
+   "Malaria",
+   "Multiple sclerosis",
+   "HIV/AIDS",
+   "Rheumatoid arthritis",
+   "Leukaemia",
+   "Breast cancer"
+  ],
+  "lowest_effort_per_burden": [
+   "Road injury",
+   "Falls",
+   "Self-harm",
+   "Other hearing loss",
+   "Migraine",
+   "Back and neck pain"
+  ],
+  "spearman_burden_vs_trials": 0.43315508021390364,
+  "spearman_burden_vs_trials_per_burden": -0.6436974789915966
+ },
+ "models": {
+  "m1_burden_only": {
+   "terms": [
+    "const",
+    "log10 HI DALYs"
+   ],
+   "beta": [
+    2.3587,
+    0.195
+   ],
+   "se": [
+    0.6228,
+    0.0931
+   ],
+   "t": [
+    3.79,
+    2.1
+   ],
+   "r2": 0.1206,
+   "adj_r2": 0.0931,
+   "n": 34
+  },
+  "m2_burden_plus_market": {
+   "terms": [
+    "const",
+    "log10 HI DALYs",
+    "high-income share"
+   ],
+   "beta": [
+    2.3747,
+    0.1802,
+    0.3282
+   ],
+   "se": [
+    0.628,
+    0.096,
+    0.4601
+   ],
+   "t": [
+    3.78,
+    1.88,
+    0.71
+   ],
+   "r2": 0.1348,
+   "adj_r2": 0.079,
+   "n": 34
+  },
+  "m3_burden_plus_tractability": {
+   "terms": [
+    "const",
+    "log10 HI DALYs",
+    "partly (vs tractable)",
+    "intractable (vs tractable)"
+   ],
+   "beta": [
+    2.1063,
+    0.2564,
+    -0.4656,
+    -0.2642
+   ],
+   "se": [
+    0.5571,
+    0.0848,
+    0.1434,
+    0.1605
+   ],
+   "t": [
+    3.78,
+    3.02,
+    -3.25,
+    -1.65
+   ],
+   "r2": 0.3582,
+   "adj_r2": 0.294,
+   "n": 34
+  },
+  "m4_all": {
+   "terms": [
+    "const",
+    "log10 HI DALYs",
+    "high-income share",
+    "partly",
+    "intractable"
+   ],
+   "beta": [
+    2.1218,
+    0.2433,
+    0.2819,
+    -0.4622,
+    -0.2623
+   ],
+   "se": [
+    0.5624,
+    0.0876,
+    0.4066,
+    0.1447,
+    0.1619
+   ],
+   "t": [
+    3.77,
+    2.78,
+    0.69,
+    -3.19,
+    -1.62
+   ],
+   "r2": 0.3686,
+   "adj_r2": 0.2815,
+   "n": 34
+  },
+  "m5_no_target_only": {
+   "terms": [
+    "const",
+    "log10 HI DALYs",
+    "no validated target"
+   ],
+   "beta": [
+    2.06,
+    0.2577,
+    -0.4021
+   ],
+   "se": [
+    0.5636,
+    0.0855,
+    0.132
+   ],
+   "t": [
+    3.65,
+    3.01,
+    -3.05
+   ],
+   "r2": 0.3233,
+   "adj_r2": 0.2797,
+   "n": 34
+  },
+  "recode_injuries_as_target": {
+   "terms": [
+    "const",
+    "log10 HI DALYs",
+    "no validated target, injuries recoded as having one"
+   ],
+   "beta": [
+    2.2651,
+    0.2149,
+    -0.1663
+   ],
+   "se": [
+    0.6279,
+    0.0948,
+    0.1572
+   ],
+   "t": [
+    3.61,
+    2.27,
+    -1.06
+   ],
+   "r2": 0.1512,
+   "adj_r2": 0.0965,
+   "n": 34
+  },
+  "drop_road_injury_hi": {
+   "terms": [
+    "const",
+    "log10 hi_dalys",
+    "no validated target"
+   ],
+   "beta": [
+    2.0852,
+    0.2538,
+    -0.3012
+   ],
+   "se": [
+    0.4969,
+    0.0753,
+    0.1207
+   ],
+   "t": [
+    4.2,
+    3.37,
+    -2.5
+   ],
+   "r2": 0.3245,
+   "adj_r2": 0.2795,
+   "n": 33
+  },
+  "drop_road_injury_global": {
+   "terms": [
+    "const",
+    "log10 global_dalys",
+    "no validated target"
+   ],
+   "beta": [
+    2.4038,
+    0.1819,
+    -0.2296
+   ],
+   "se": [
+    0.9576,
+    0.1294,
+    0.1345
+   ],
+   "t": [
+    2.51,
+    1.41,
+    -1.71
+   ],
+   "r2": 0.1265,
+   "adj_r2": 0.0682,
+   "n": 33
+  },
+  "global_m1_burden_only": {
+   "terms": [
+    "const",
+    "log10 global DALYs"
+   ],
+   "beta": [
+    3.0221,
+    0.0853
+   ],
+   "se": [
+    1.1214,
+    0.1506
+   ],
+   "t": [
+    2.69,
+    0.57
+   ],
+   "r2": 0.0099,
+   "adj_r2": -0.021,
+   "n": 34
+  },
+  "global_m3_plus_tractability": {
+   "terms": [
+    "const",
+    "log10 global DALYs",
+    "partly",
+    "intractable"
+   ],
+   "beta": [
+    2.9887,
+    0.1063,
+    -0.3916,
+    -0.1721
+   ],
+   "se": [
+    1.0565,
+    0.1423,
+    0.1597,
+    0.1781
+   ],
+   "t": [
+    2.83,
+    0.75,
+    -2.45,
+    -0.97
+   ],
+   "r2": 0.1778,
+   "adj_r2": 0.0956,
+   "n": 34
+  },
+  "global_m5_no_target_only": {
+   "terms": [
+    "const",
+    "log10 global DALYs",
+    "no validated target"
+   ],
+   "beta": [
+    2.7229,
+    0.1386,
+    -0.3294
+   ],
+   "se": [
+    1.0637,
+    0.1437,
+    0.1455
+   ],
+   "t": [
+    2.56,
+    0.96,
+    -2.26
+   ],
+   "r2": 0.1504,
+   "adj_r2": 0.0956,
+   "n": 34
+  },
+  "money_m1_burden_only": {
+   "terms": [
+    "const",
+    "log10 US DALYs"
+   ],
+   "beta": [
+    7.8004,
+    0.1244
+   ],
+   "se": [
+    0.9947,
+    0.1608
+   ],
+   "t": [
+    7.84,
+    0.77
+   ],
+   "r2": 0.0202,
+   "adj_r2": -0.0136,
+   "n": 31
+  },
+  "money_m2_plus_market": {
+   "terms": [
+    "const",
+    "log10 US DALYs",
+    "high-income share"
+   ],
+   "beta": [
+    7.8106,
+    0.1344,
+    -0.2751
+   ],
+   "se": [
+    1.0091,
+    0.1647,
+    0.6305
+   ],
+   "t": [
+    7.74,
+    0.82,
+    -0.44
+   ],
+   "r2": 0.0268,
+   "adj_r2": -0.0427,
+   "n": 31
+  },
+  "money_m3_plus_tractability": {
+   "terms": [
+    "const",
+    "log10 US DALYs",
+    "partly",
+    "intractable"
+   ],
+   "beta": [
+    7.5319,
+    0.188,
+    -0.2402,
+    -0.3569
+   ],
+   "se": [
+    0.9958,
+    0.1635,
+    0.2222,
+    0.2364
+   ],
+   "t": [
+    7.56,
+    1.15,
+    -1.08,
+    -1.51
+   ],
+   "r2": 0.1101,
+   "adj_r2": 0.0113,
+   "n": 31
+  },
+  "money_m4_no_target": {
+   "terms": [
+    "const",
+    "log10 US DALYs",
+    "no validated target"
+   ],
+   "beta": [
+    7.5118,
+    0.1853,
+    -0.2986
+   ],
+   "se": [
+    0.9926,
+    0.1626,
+    0.1989
+   ],
+   "t": [
+    7.57,
+    1.14,
+    -1.5
+   ],
+   "r2": 0.0932,
+   "adj_r2": 0.0285,
+   "n": 31
+  },
+  "money_conditions_used": [
+   "Ischaemic heart disease",
+   "Back and neck pain",
+   "Stroke",
+   "Road injury and falls",
+   "Diabetes mellitus",
+   "Trachea, bronchus, lung cancers",
+   "Alzheimer disease and other dementias",
+   "Depressive disorders",
+   "Drug use disorders",
+   "Chronic obstructive pulmonary disease",
+   "Anxiety disorders",
+   "Other hearing loss",
+   "Migraine",
+   "Self-harm",
+   "Colon and rectum cancers",
+   "Cirrhosis of the liver",
+   "Osteoarthritis",
+   "Breast cancer",
+   "Alcohol use disorders",
+   "Pancreas cancer",
+   "Asthma",
+   "Prostate cancer",
+   "Schizophrenia",
+   "HIV/AIDS",
+   "Uncorrected refractive errors",
+   "Parkinson disease",
+   "Bipolar disorder",
+   "Epilepsy",
+   "Rheumatoid arthritis",
+   "Tuberculosis",
+   "Multiple sclerosis"
+  ],
+  "money_domestic_m1_burden_only": {
+   "terms": [
+    "const",
+    "log10 US DALYs"
+   ],
+   "beta": [
+    5.931,
+    0.4152
+   ],
+   "se": [
+    1.1639,
+    0.1859
+   ],
+   "t": [
+    5.1,
+    2.23
+   ],
+   "r2": 0.1559,
+   "adj_r2": 0.1246,
+   "n": 29
+  },
+  "money_domestic_m2_plus_market": {
+   "terms": [
+    "const",
+    "log10 US DALYs",
+    "high-income share"
+   ],
+   "beta": [
+    5.6436,
+    0.4395,
+    0.4894
+   ],
+   "se": [
+    1.2244,
+    0.1896,
+    0.6065
+   ],
+   "t": [
+    4.61,
+    2.32,
+    0.81
+   ],
+   "r2": 0.1765,
+   "adj_r2": 0.1132,
+   "n": 29
+  },
+  "money_domestic_m3_plus_tractability": {
+   "terms": [
+    "const",
+    "log10 US DALYs",
+    "partly",
+    "intractable"
+   ],
+   "beta": [
+    5.7742,
+    0.4573,
+    -0.1757,
+    -0.3076
+   ],
+   "se": [
+    1.1607,
+    0.1867,
+    0.1981,
+    0.2104
+   ],
+   "t": [
+    4.97,
+    2.45,
+    -0.89,
+    -1.46
+   ],
+   "r2": 0.2288,
+   "adj_r2": 0.1362,
+   "n": 29
+  },
+  "money_domestic_m4_no_target": {
+   "terms": [
+    "const",
+    "log10 US DALYs",
+    "no validated target"
+   ],
+   "beta": [
+    5.648,
+    0.4743,
+    -0.2777
+   ],
+   "se": [
+    1.1462,
+    0.1847,
+    0.1747
+   ],
+   "t": [
+    4.93,
+    2.57,
+    -1.59
+   ],
+   "r2": 0.2307,
+   "adj_r2": 0.1715,
+   "n": 29
+  },
+  "money_domestic_conditions_used": [
+   "Ischaemic heart disease",
+   "Back and neck pain",
+   "Stroke",
+   "Road injury and falls",
+   "Diabetes mellitus",
+   "Trachea, bronchus, lung cancers",
+   "Alzheimer disease and other dementias",
+   "Depressive disorders",
+   "Drug use disorders",
+   "Chronic obstructive pulmonary disease",
+   "Anxiety disorders",
+   "Other hearing loss",
+   "Migraine",
+   "Self-harm",
+   "Colon and rectum cancers",
+   "Cirrhosis of the liver",
+   "Osteoarthritis",
+   "Breast cancer",
+   "Alcohol use disorders",
+   "Pancreas cancer",
+   "Asthma",
+   "Prostate cancer",
+   "Schizophrenia",
+   "Uncorrected refractive errors",
+   "Parkinson disease",
+   "Bipolar disorder",
+   "Epilepsy",
+   "Rheumatoid arthritis",
+   "Multiple sclerosis"
+  ],
+  "money_domestic_excluded": [
+   "HIV/AIDS",
+   "Malaria",
+   "Tuberculosis"
+  ]
+ },
+ "transport": {
+  "source": "WHO Global Health Observatory indicators RS_196, RS_198 and RS_246 fetched directly; WHO Global Health Estimates 2021 for the death count series; International Energy Agency via Our World in Data for electric car sales",
+  "deaths_first": 1184513.73872981,
+  "deaths_last": 1182759.0185386501,
+  "deaths_first_year": 2000,
+  "deaths_last_year": 2021,
+  "deaths_pct_change": -0.1481384414368736,
+  "deaths_source": "WHO Global Health Estimates 2021, deaths tables, cause code 1530 Road injury",
+  "road_deaths_by_year": {
+   "2000": 1177421.8,
+   "2001": 1196128.8,
+   "2002": 1218309.4,
+   "2003": 1218147.1,
+   "2004": 1217798.4,
+   "2005": 1234334.6,
+   "2006": 1244734.8,
+   "2007": 1255096.8,
+   "2008": 1253445.5,
+   "2009": 1243819.9,
+   "2010": 1243184.2,
+   "2011": 1254026.8,
+   "2012": 1260568.9,
+   "2013": 1243877.6,
+   "2014": 1217789.1,
+   "2015": 1205791.8,
+   "2016": 1203732.9,
+   "2017": 1197241.0,
+   "2018": 1189251.2,
+   "2019": 1188842.0,
+   "2020": 1111325.6,
+   "2021": 1174078.2
+  },
+  "owid_series_note": "Our World in Data's aggregation, used for the year-by-year shape only. Its 2021 total is 1,174,078 against WHO's own 1,182,759.",
+  "owid_deaths_first": 1177421.8,
+  "owid_deaths_last": 1174078.2,
+  "deaths_2010": 1243184.2,
+  "deaths_2021": 1174078.2,
+  "deaths_pct_change_2010_2021": -5.558790081148068,
+  "who_rate_per_100k_2021": 15.0,
+  "who_rate_year": 2021,
+  "who_gsrrs_country_sum": 1163469.0,
+  "world_pop_2000": 6158471906.0,
+  "world_pop_2021": 7939383133.0,
+  "world_pop_growth_pct": 28.918070167128885,
+  "rate_per_100k_2000": 19.233890432718816,
+  "rate_per_100k_2021_computed": 14.897366693673204,
+  "rate_change_pct_2000_2021": -22.54626412797247,
+  "user_shares_pct": {
+   "Riders of powered two and three wheelers": 30.0,
+   "Occupants of four-wheeled vehicles": 25.0,
+   "Pedestrians": 21.0,
+   "Cyclists": 5.0,
+   "Buses, heavy goods, other and unknown": 19.0
+  },
+  "user_shares_published_only": {
+   "Riders of powered two and three wheelers": 30.0,
+   "Occupants of four-wheeled vehicles": 25.0,
+   "Pedestrians": 21.0,
+   "Cyclists": 5.0
+  },
+  "user_shares_residual_pct": 19.0,
+  "user_shares_residual_note": "WHO: \"Occupants of vehicles carrying more than 10 people, heavy goods vehicles, \u201cother\u201d users and \u201cunknown\u201d user types comprise the remaining 19% of deaths.\"",
+  "vulnerable_wording": "half of all deaths",
+  "not_in_four_wheeler_pct": 75.0,
+  "user_shares_source": "World Health Organization, Global status report on road safety 2023, pages 10, 15 and 17; country-reported data for 2021",
+  "user_shares_residual_label": "Buses, heavy goods, other and unknown",
+  "user_share_year": 2021,
+  "user_split_disagreement": {
+   "published": {
+    "Riders of powered two and three wheelers": 30.0,
+    "Occupants of four-wheeled vehicles": 25.0,
+    "Pedestrians": 21.0,
+    "Cyclists": 5.0,
+    "Buses, heavy goods, other and unknown": 19.0,
+    "vulnerable_road_users": "half of all deaths"
+   },
+   "published_source": "World Health Organization, Global status report on road safety 2023, pages 10, 15 and 17; country-reported data for 2021",
+   "variants": {
+    "complete_filter": {
+     "Occupants of four-wheeled vehicles": 22.793484688889667,
+     "Riders of two or three wheelers": 35.862450600147405,
+     "Pedestrians": 17.761611854727143,
+     "Cyclists": 2.643213877805594,
+     "Other or unspecified": 20.939238978430218,
+     "vulnerable": 56.26727633268014,
+     "countries": 82,
+     "coverage_pct": 37.28797243416026
+    },
+    "all_five_no_tolerance": {
+     "Occupants of four-wheeled vehicles": 26.16947000803625,
+     "Riders of two or three wheelers": 33.76124801702366,
+     "Pedestrians": 18.23957327474704,
+     "Cyclists": 2.8243110363665527,
+     "Other or unspecified": 19.00539766382651,
+     "vulnerable": 54.82513232813726,
+     "countries": 101,
+     "coverage_pct": 46.679713855719406
+    },
+    "reporting_excluding_single_category": {
+     "Occupants of four-wheeled vehicles": 22.90071644702779,
+     "Riders of two or three wheelers": 29.021562684686927,
+     "Pedestrians": 23.092482160860303,
+     "Cyclists": 3.143959936354822,
+     "Other or unspecified": 21.841278771070183,
+     "vulnerable": 55.25800478190205,
+     "countries": 133,
+     "coverage_pct": 58.9050503279417
+    },
+    "reporting_all_WITHDRAWN_artefact": {
+     "Occupants of four-wheeled vehicles": 31.296415527971835,
+     "Riders of two or three wheelers": 25.861269930578796,
+     "Pedestrians": 20.5778345231628,
+     "Cyclists": 2.8015995364680513,
+     "Other or unspecified": 19.462880481818537,
+     "vulnerable": 49.240703990209646,
+     "countries": 139,
+     "coverage_pct": 66.10335127106953
+    }
+   },
+   "filter_steps": {
+    "reporting_anything": 139,
+    "all_five_categories": 101,
+    "and_summing_near_100": 82,
+    "tolerance": "the five shares must sum to within 12 points of 100"
+   },
+   "note": "WHO's report puts occupants of four-wheeled vehicles at 25 percent. Recomputing from country-level RS_246, whose returns are 2013 and 2016, gives 22.8 percent on the 82 countries reporting a complete five-way split that sums near 100, 26.2 on all 101 reporting five categories, and 22.9 on all countries reporting more than one. The recomputation is about two points below WHO and the discrepancy is sample coverage, not a different answer. The 31.3 percent an earlier draft quoted as an upper bound is withdrawn: it is an artefact of renormalising six countries that reported a single category."
+  },
+  "user_share_countries": 82,
+  "user_share_deaths_covered": 433834.0,
+  "user_share_coverage_pct": 37.28797243416026,
+  "ev_share_by_year": {
+   "2010": 0.012,
+   "2011": 0.072,
+   "2012": 0.17,
+   "2013": 0.29,
+   "2014": 0.44,
+   "2015": 0.68,
+   "2016": 0.95,
+   "2017": 1.4,
+   "2018": 2.4,
+   "2019": 2.7,
+   "2020": 4.4,
+   "2021": 9.3,
+   "2022": 15.0,
+   "2023": 18.0,
+   "2024": 21.0,
+   "2025": 25.0
+  },
+  "ev_first_year": 2010,
+  "ev_last_year": 2025,
+  "ev_share_first": 0.012,
+  "ev_share_last": 25.0,
+  "ev_share_2010": 0.012,
+  "ev_share_2021": 9.3
+ },
+ "ai": {
+  "source": "Stanford AI Index / Quid and Epoch AI, both via Our World in Data",
+  "private_investment_usd": {
+   "2013": 6011928538.0,
+   "2014": 10940620567.0,
+   "2015": 15258740290.0,
+   "2016": 19340762642.0,
+   "2017": 28434515011.0,
+   "2018": 46508654628.0,
+   "2019": 61663636439.0,
+   "2020": 77252637155.0,
+   "2021": 145398696899.0,
+   "2022": 104637757614.0,
+   "2023": 92792585552.0,
+   "2024": 130850813417.0,
+   "2025": 290094148769.0
+  },
+  "first_year": 2013,
+  "last_year": 2025,
+  "private_first": 6011928538.0,
+  "private_last": 290094148769.0,
+  "private_multiple": 48.25309331862188,
+  "private_pct_change": 4725.309331862188,
+  "corporate_total_last": 489591464709.0,
+  "corporate_last_year": 2025,
+  "n_models": 527,
+  "largest_model": "Grok 4",
+  "largest_model_date": "2025-07-09",
+  "largest_model_petaflop": 500000000000.0,
+  "earliest_model": "Theseus",
+  "earliest_model_date": "1950-07-02",
+  "earliest_model_petaflop": 4e-14,
+  "compute_multiple": 1.25e+25,
+  "benefit_series_available": false,
+  "consumer_surplus_usd": {
+   "2025-07": 116200000000.0,
+   "2026-03": 172300000000.0
+  },
+  "consumer_surplus_pct_change": 48.3,
+  "consumer_surplus_source": "Brynjolfsson, Collis, Eggers, Kazinnik and Nguyen, What is Generative AI Worth?, 13 April 2026: willingness-to-accept elicited from representative samples of US adults in two waves, July 2025 and March 2026; aggregate consumer surplus $116 billion to $172 billion",
+  "benefit_note": "CORRECTED TWICE. Round 1 killed 'no measure of AI's effect on people exists': randomised task-level studies exist. Round 4 killed the replacement, 'no population-level welfare series exists', which round 3 produced by dropping the word AGREED: the Stanford AI Index, the same publication this post's investment line comes from, carries a population-level US consumer-surplus estimate with two dated observations. What survives, and all the post now claims, is that there is no AGREED year-by-year welfare series to run alongside the money: what exists is one research group's stated-preference estimate, US only, two observations a year apart, first published in 2026 against a money line starting in 2013."
+ },
+ "synthesis": [
+  {
+   "domain": "Transport",
+   "window": "2010 to 2021",
+   "input_label": "Electric share of new car sales",
+   "input_first": 0.012,
+   "input_last": 9.3,
+   "input_pct_change": 77400.0,
+   "outcome_label": "People killed on the roads",
+   "outcome_first": 1243184.2,
+   "outcome_last": 1174078.2,
+   "outcome_pct_change": -5.558790081148068
+  },
+  {
+   "domain": "Medicine",
+   "window": "2010 to 2019",
+   "input_label": "Clinical trials first registered that year",
+   "input_first": 17344,
+   "input_last": 32509,
+   "input_pct_change": 87.43657749077491,
+   "outcome_label": "Healthy years lost per 100,000, high-income countries",
+   "outcome_first": 32633.432129194585,
+   "outcome_last": 31979.615404382912,
+   "outcome_pct_change": -2.003518116706926
+  },
+  {
+   "domain": "Artificial intelligence",
+   "window": "2013 to 2025",
+   "input_label": "Private investment",
+   "input_first": 6011928538.0,
+   "input_last": 290094148769.0,
+   "input_pct_change": 4725.309331862188,
+   "outcome_label": "No agreed year-by-year welfare series exists",
+   "outcome_first": null,
+   "outcome_last": null,
+   "outcome_pct_change": null
+  }
+ ]
+}
