@@ -1,0 +1,633 @@
+{
+ "meta": {
+  "source": "O*NET 31.0, onetcenter.org, CC BY 4.0",
+  "scale": "Importance (IM), 1 to 5. NOT a measure of hours.",
+  "n_occupations": 911,
+  "people_activities": {
+   "4.A.4.b.1": "Coordinating the Work and Activities of Others",
+   "4.A.4.b.2": "Developing and Building Teams",
+   "4.A.4.b.4": "Guiding, Directing, and Motivating Subordinates",
+   "4.A.4.b.5": "Coaching and Developing Others"
+  },
+  "hands_activities": {
+   "4.A.3.a.1": "Performing General Physical Activities",
+   "4.A.3.a.2": "Handling and Moving Objects",
+   "4.A.3.a.3": "Controlling Machines and Processes",
+   "4.A.3.b.1": "Working with Computers",
+   "4.A.3.b.2": "Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment",
+   "4.A.3.b.4": "Repairing and Maintaining Mechanical Equipment"
+  },
+  "excluded_from_people": {
+   "4.A.4.b.3": "teachers and instructors score high without supervising anyone",
+   "4.A.4.b.6": "consultants, doctors and lawyers advise without having subordinates"
+  }
+ },
+ "promotion": {
+  "n_comparisons": 20,
+  "mean_shift_people": 1.0190272843094499,
+  "mean_shift_hands": 0.17823933972636125,
+  "median_shift_people": 0.9832954545454546,
+  "median_shift_hands": 0.11882014590347922,
+  "n_people_rises": 20,
+  "n_hands_falls": 3,
+  "ratio_people_to_hands": 5.717185027019811,
+  "mean_shift_hands_excluding_computers": 0.08094326839048953,
+  "n_hands_excluding_computers_falls": 9
+ },
+ "hands_decomposition": {
+  "Performing General Physical Activities": {
+   "mean_shift": -0.23049266030054108,
+   "n_rising": 5,
+   "n": 20
+  },
+  "Handling and Moving Objects": {
+   "mean_shift": -0.11864489303411466,
+   "n_rising": 7,
+   "n": 20
+  },
+  "Controlling Machines and Processes": {
+   "mean_shift": 0.08819246159613084,
+   "n_rising": 10,
+   "n": 20
+  },
+  "Working with Computers": {
+   "mean_shift": 0.6647196964057207,
+   "n_rising": 18,
+   "n": 20
+  },
+  "Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment": {
+   "mean_shift": 0.4039062779265508,
+   "n_rising": 14,
+   "n": 20
+  },
+  "Repairing and Maintaining Mechanical Equipment": {
+   "mean_shift": 0.26175515576442127,
+   "n_rising": 14,
+   "n": 20
+  }
+ },
+ "context_shift": {
+  "Coordinate or Lead Others in Accomplishing Work Activities": {
+   "mean_shift": 0.8082918713219993,
+   "n_rising": 20,
+   "n": 20
+  },
+  "Conflict Situations": {
+   "mean_shift": 0.7388316869600899,
+   "n_rising": 20,
+   "n": 20
+  },
+  "Impact of Decisions on Co-workers or Company Results": {
+   "mean_shift": 0.47210654083188464,
+   "n_rising": 19,
+   "n": 20
+  },
+  "Freedom to Make Decisions": {
+   "mean_shift": 0.22122091008759126,
+   "n_rising": 16,
+   "n": 20
+  },
+  "Consequence of Error": {
+   "mean_shift": 0.14871430657168525,
+   "n_rising": 12,
+   "n": 20
+  }
+ },
+ "zone_corr": {
+  "Getting Information": {
+   "r": 0.5243464237526623,
+   "n": 911,
+   "element": "4.A.1.a.1",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Monitoring Processes, Materials, or Surroundings": {
+   "r": -0.1012735933585919,
+   "n": 911,
+   "element": "4.A.1.a.2",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Identifying Objects, Actions, and Events": {
+   "r": 0.2413280304122373,
+   "n": 911,
+   "element": "4.A.1.b.1",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Inspecting Equipment, Structures, or Materials": {
+   "r": -0.4763461581150667,
+   "n": 911,
+   "element": "4.A.1.b.2",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Estimating the Quantifiable Characteristics of Products, Events, or Information": {
+   "r": 0.08227041154616964,
+   "n": 911,
+   "element": "4.A.1.b.3",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Judging the Qualities of Objects, Services, or People": {
+   "r": 0.20551089699118383,
+   "n": 911,
+   "element": "4.A.2.a.1",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Processing Information": {
+   "r": 0.5034164627885412,
+   "n": 911,
+   "element": "4.A.2.a.2",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Evaluating Information to Determine Compliance with Standards": {
+   "r": 0.1876069101845201,
+   "n": 911,
+   "element": "4.A.2.a.3",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Analyzing Data or Information": {
+   "r": 0.662098644573235,
+   "n": 911,
+   "element": "4.A.2.a.4",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Making Decisions and Solving Problems": {
+   "r": 0.5197005220049692,
+   "n": 911,
+   "element": "4.A.2.b.1",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Thinking Creatively": {
+   "r": 0.5247369194534504,
+   "n": 911,
+   "element": "4.A.2.b.2",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Updating and Using Relevant Knowledge": {
+   "r": 0.6428878216497035,
+   "n": 911,
+   "element": "4.A.2.b.3",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Developing Objectives and Strategies": {
+   "r": 0.5759885295524978,
+   "n": 911,
+   "element": "4.A.2.b.4",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Scheduling Work and Activities": {
+   "r": 0.3592811954328456,
+   "n": 911,
+   "element": "4.A.2.b.5",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Organizing, Planning, and Prioritizing Work": {
+   "r": 0.49638208445281784,
+   "n": 911,
+   "element": "4.A.2.b.6",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Performing General Physical Activities": {
+   "r": -0.5777293534489671,
+   "n": 911,
+   "element": "4.A.3.a.1",
+   "is_people_management": false,
+   "is_hands_on": true
+  },
+  "Handling and Moving Objects": {
+   "r": -0.6202949067630765,
+   "n": 911,
+   "element": "4.A.3.a.2",
+   "is_people_management": false,
+   "is_hands_on": true
+  },
+  "Controlling Machines and Processes": {
+   "r": -0.5312675825085612,
+   "n": 911,
+   "element": "4.A.3.a.3",
+   "is_people_management": false,
+   "is_hands_on": true
+  },
+  "Operating Vehicles, Mechanized Devices, or Equipment": {
+   "r": -0.5225266187582356,
+   "n": 911,
+   "element": "4.A.3.a.4",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Working with Computers": {
+   "r": 0.6091494802229674,
+   "n": 911,
+   "element": "4.A.3.b.1",
+   "is_people_management": false,
+   "is_hands_on": true
+  },
+  "Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment": {
+   "r": -0.16244701057357347,
+   "n": 911,
+   "element": "4.A.3.b.2",
+   "is_people_management": false,
+   "is_hands_on": true
+  },
+  "Repairing and Maintaining Mechanical Equipment": {
+   "r": -0.5130312482114961,
+   "n": 911,
+   "element": "4.A.3.b.4",
+   "is_people_management": false,
+   "is_hands_on": true
+  },
+  "Repairing and Maintaining Electronic Equipment": {
+   "r": -0.32088565532742924,
+   "n": 911,
+   "element": "4.A.3.b.5",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Documenting/Recording Information": {
+   "r": 0.4681658925212092,
+   "n": 911,
+   "element": "4.A.3.b.6",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Interpreting the Meaning of Information for Others": {
+   "r": 0.6951552921418507,
+   "n": 911,
+   "element": "4.A.4.a.1",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Communicating with Supervisors, Peers, or Subordinates": {
+   "r": 0.34644593104892263,
+   "n": 911,
+   "element": "4.A.4.a.2",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Communicating with People Outside the Organization": {
+   "r": 0.46627794270819095,
+   "n": 911,
+   "element": "4.A.4.a.3",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Establishing and Maintaining Interpersonal Relationships": {
+   "r": 0.5269405670447223,
+   "n": 911,
+   "element": "4.A.4.a.4",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Assisting and Caring for Others": {
+   "r": 0.08971061472950688,
+   "n": 911,
+   "element": "4.A.4.a.5",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Selling or Influencing Others": {
+   "r": 0.17149405920305946,
+   "n": 911,
+   "element": "4.A.4.a.6",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Resolving Conflicts and Negotiating with Others": {
+   "r": 0.19019568647921298,
+   "n": 911,
+   "element": "4.A.4.a.7",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Performing for or Working Directly with the Public": {
+   "r": 0.08492264339054037,
+   "n": 911,
+   "element": "4.A.4.a.8",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Coordinating the Work and Activities of Others": {
+   "r": 0.19456068519794525,
+   "n": 911,
+   "element": "4.A.4.b.1",
+   "is_people_management": true,
+   "is_hands_on": false
+  },
+  "Developing and Building Teams": {
+   "r": 0.3196218915748672,
+   "n": 911,
+   "element": "4.A.4.b.2",
+   "is_people_management": true,
+   "is_hands_on": false
+  },
+  "Training and Teaching Others": {
+   "r": 0.3287896893562026,
+   "n": 911,
+   "element": "4.A.4.b.3",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Guiding, Directing, and Motivating Subordinates": {
+   "r": 0.28499241293070293,
+   "n": 911,
+   "element": "4.A.4.b.4",
+   "is_people_management": true,
+   "is_hands_on": false
+  },
+  "Coaching and Developing Others": {
+   "r": 0.3336899508087456,
+   "n": 911,
+   "element": "4.A.4.b.5",
+   "is_people_management": true,
+   "is_hands_on": false
+  },
+  "Providing Consultation and Advice to Others": {
+   "r": 0.6029061767573237,
+   "n": 911,
+   "element": "4.A.4.b.6",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Performing Administrative Activities": {
+   "r": 0.3495254067403668,
+   "n": 911,
+   "element": "4.A.4.c.1",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Staffing Organizational Units": {
+   "r": 0.252024028833665,
+   "n": 911,
+   "element": "4.A.4.c.2",
+   "is_people_management": false,
+   "is_hands_on": false
+  },
+  "Monitoring and Controlling Resources": {
+   "r": 0.1322606638093485,
+   "n": 911,
+   "element": "4.A.4.c.3",
+   "is_people_management": false,
+   "is_hands_on": false
+  }
+ },
+ "by_major_group": [
+  {
+   "supervisor": "First-Line Supervisors of Correctional Officers",
+   "code": "33-1011.00",
+   "major_group": "33",
+   "n_workers": 22,
+   "sup_people": 4.12,
+   "sup_hands": 2.9699999999999998,
+   "wrk_people": 3.1229545454545455,
+   "wrk_hands": 2.828409090909091,
+   "d_people": 0.9970454545454546,
+   "d_hands": 0.14159090909090866
+  },
+  {
+   "supervisor": "First-Line Supervisors of Police and Detectives",
+   "code": "33-1012.00",
+   "major_group": "33",
+   "n_workers": 22,
+   "sup_people": 3.9675000000000002,
+   "sup_hands": 3.1466666666666665,
+   "wrk_people": 3.1229545454545455,
+   "wrk_hands": 2.828409090909091,
+   "d_people": 0.8445454545454547,
+   "d_hands": 0.3182575757575754
+  },
+  {
+   "supervisor": "First-Line Supervisors of Firefighting and Prevention Workers",
+   "code": "33-1021.00",
+   "major_group": "33",
+   "n_workers": 22,
+   "sup_people": 3.6825,
+   "sup_hands": 3.171666666666667,
+   "wrk_people": 3.1229545454545455,
+   "wrk_hands": 2.828409090909091,
+   "d_people": 0.5595454545454546,
+   "d_hands": 0.34325757575757576
+  },
+  {
+   "supervisor": "First-Line Supervisors of Security Workers",
+   "code": "33-1091.00",
+   "major_group": "33",
+   "n_workers": 22,
+   "sup_people": 4.0925,
+   "sup_hands": 2.638333333333333,
+   "wrk_people": 3.1229545454545455,
+   "wrk_hands": 2.828409090909091,
+   "d_people": 0.9695454545454547,
+   "d_hands": -0.1900757575757579
+  },
+  {
+   "supervisor": "First-Line Supervisors of Food Preparation and Serving Workers",
+   "code": "35-1012.00",
+   "major_group": "35",
+   "n_workers": 15,
+   "sup_people": 3.8,
+   "sup_hands": 3.08,
+   "wrk_people": 2.8356666666666666,
+   "wrk_hands": 2.507888888888889,
+   "d_people": 0.9643333333333333,
+   "d_hands": 0.572111111111111
+  },
+  {
+   "supervisor": "First-Line Supervisors of Housekeeping and Janitorial Workers",
+   "code": "37-1011.00",
+   "major_group": "37",
+   "n_workers": 6,
+   "sup_people": 4.2725,
+   "sup_hands": 3.256666666666667,
+   "wrk_people": 2.3254166666666665,
+   "wrk_hands": 2.7577777777777777,
+   "d_people": 1.9470833333333335,
+   "d_hands": 0.49888888888888916
+  },
+  {
+   "supervisor": "First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",
+   "code": "37-1012.00",
+   "major_group": "37",
+   "n_workers": 6,
+   "sup_people": 4.0875,
+   "sup_hands": 3.5083333333333333,
+   "wrk_people": 2.3254166666666665,
+   "wrk_hands": 2.7577777777777777,
+   "d_people": 1.762083333333334,
+   "d_hands": 0.7505555555555556
+  },
+  {
+   "supervisor": "First-Line Supervisors of Gambling Services Workers",
+   "code": "39-1013.00",
+   "major_group": "39",
+   "n_workers": 27,
+   "sup_people": 3.24,
+   "sup_hands": 2.3850000000000002,
+   "wrk_people": 2.852962962962963,
+   "wrk_hands": 2.535617283950617,
+   "d_people": 0.3870370370370373,
+   "d_hands": -0.1506172839506168
+  },
+  {
+   "supervisor": "First-Line Supervisors of Entertainment and Recreation Workers, Except Gambling Services",
+   "code": "39-1014.00",
+   "major_group": "39",
+   "n_workers": 27,
+   "sup_people": 3.66,
+   "sup_hands": 2.6016666666666666,
+   "wrk_people": 2.852962962962963,
+   "wrk_hands": 2.535617283950617,
+   "d_people": 0.8070370370370372,
+   "d_hands": 0.06604938271604954
+  },
+  {
+   "supervisor": "First-Line Supervisors of Personal Service Workers",
+   "code": "39-1022.00",
+   "major_group": "39",
+   "n_workers": 27,
+   "sup_people": 3.335,
+   "sup_hands": 2.631666666666667,
+   "wrk_people": 2.852962962962963,
+   "wrk_hands": 2.535617283950617,
+   "d_people": 0.48203703703703704,
+   "d_hands": 0.09604938271604979
+  },
+  {
+   "supervisor": "First-Line Supervisors of Retail Sales Workers",
+   "code": "41-1011.00",
+   "major_group": "41",
+   "n_workers": 20,
+   "sup_people": 3.74,
+   "sup_hands": 2.3049999999999997,
+   "wrk_people": 2.6185,
+   "wrk_hands": 2.26425,
+   "d_people": 1.1215000000000002,
+   "d_hands": 0.04074999999999962
+  },
+  {
+   "supervisor": "First-Line Supervisors of Non-Retail Sales Workers",
+   "code": "41-1012.00",
+   "major_group": "41",
+   "n_workers": 20,
+   "sup_people": 4.1225000000000005,
+   "sup_hands": 2.435,
+   "wrk_people": 2.6185,
+   "wrk_hands": 2.26425,
+   "d_people": 1.5040000000000004,
+   "d_hands": 0.17074999999999996
+  },
+  {
+   "supervisor": "First-Line Supervisors of Office and Administrative Support Workers",
+   "code": "43-1011.00",
+   "major_group": "43",
+   "n_workers": 50,
+   "sup_people": 3.74,
+   "sup_hands": 2.5583333333333336,
+   "wrk_people": 2.63945,
+   "wrk_hands": 2.3603666666666667,
+   "d_people": 1.1005500000000001,
+   "d_hands": 0.19796666666666685
+  },
+  {
+   "supervisor": "First-Line Supervisors of Farming, Fishing, and Forestry Workers",
+   "code": "45-1011.00",
+   "major_group": "45",
+   "n_workers": 11,
+   "sup_people": 3.465,
+   "sup_hands": 3.2533333333333334,
+   "wrk_people": 2.7834090909090907,
+   "wrk_hands": 3.0921212121212123,
+   "d_people": 0.6815909090909091,
+   "d_hands": 0.16121212121212114
+  },
+  {
+   "supervisor": "First-Line Supervisors of Construction Trades and Extraction Workers",
+   "code": "47-1011.00",
+   "major_group": "47",
+   "n_workers": 60,
+   "sup_people": 3.4625,
+   "sup_hands": 3.385,
+   "wrk_people": 3.1275,
+   "wrk_hands": 3.3137777777777777,
+   "d_people": 0.33499999999999996,
+   "d_hands": 0.07122222222222208
+  },
+  {
+   "supervisor": "First-Line Supervisors of Mechanics, Installers, and Repairers",
+   "code": "49-1011.00",
+   "major_group": "49",
+   "n_workers": 49,
+   "sup_people": 3.8475,
+   "sup_hands": 3.5583333333333336,
+   "wrk_people": 2.7705102040816327,
+   "wrk_hands": 3.5348639455782314,
+   "d_people": 1.0769897959183674,
+   "d_hands": 0.02346938775510221
+  },
+  {
+   "supervisor": "First-Line Supervisors of Production and Operating Workers",
+   "code": "51-1011.00",
+   "major_group": "51",
+   "n_workers": 106,
+   "sup_people": 3.8575,
+   "sup_hands": 3.341666666666667,
+   "wrk_people": 2.7142216981132075,
+   "wrk_hands": 3.26248427672956,
+   "d_people": 1.1432783018867925,
+   "d_hands": 0.07918238993710691
+  },
+  {
+   "supervisor": "First-Line Supervisors of Helpers, Laborers, and Material Movers, Hand",
+   "code": "53-1042.00",
+   "major_group": "53",
+   "n_workers": 48,
+   "sup_people": 3.64,
+   "sup_hands": 2.945,
+   "wrk_people": 2.890885416666667,
+   "wrk_hands": 3.046388888888889,
+   "d_people": 0.7491145833333333,
+   "d_hands": -0.1013888888888892
+  },
+  {
+   "supervisor": "First-Line Supervisors of Material-Moving Machine and Vehicle Operators",
+   "code": "53-1043.00",
+   "major_group": "53",
+   "n_workers": 48,
+   "sup_people": 4.29,
+   "sup_hands": 3.1066666666666665,
+   "wrk_people": 2.890885416666667,
+   "wrk_hands": 3.046388888888889,
+   "d_people": 1.3991145833333332,
+   "d_hands": 0.06027777777777743
+  },
+  {
+   "supervisor": "First-Line Supervisors of Passenger Attendants",
+   "code": "53-1044.00",
+   "major_group": "53",
+   "n_workers": 48,
+   "sup_people": 4.4399999999999995,
+   "sup_hands": 3.4616666666666664,
+   "wrk_people": 2.890885416666667,
+   "wrk_hands": 3.046388888888889,
+   "d_people": 1.5491145833333326,
+   "d_hands": 0.4152777777777774
+  }
+ ],
+ "scorecard": {
+  "fc1_people_does_not_rise": false,
+  "fc2_hands_falls_as_much_as_people_rises": false,
+  "fc3_reverses_in_skilled_groups": false,
+  "fc2_note": "This is his original thesis: that the promotion swaps executing for managing. It fires if hands-on falls by at least as much as people management rises."
+ }
+}
