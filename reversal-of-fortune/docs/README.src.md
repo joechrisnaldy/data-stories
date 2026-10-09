@@ -3,19 +3,19 @@
 Post 25 of the data-stories series. Live at
 <https://joechrisnaldy.com/blog/the-map-used-to-run-the-other-way/>.
 
-Average temperature against national income is one of the tidiest charts in economics: minus 0.44 on
-log income across 196 countries and territories. This post argues it cannot mean what it looks like,
+Average temperature against national income is one of the tidiest charts in economics: {{tidy_story.r:signed2}} on
+log income across {{tidy_story.n:int}} countries and territories. This post argues it cannot mean what it looks like,
 because among former European colonies the same thermometer used to point the other way.
 
 | Finding | Figure |
 |---|---|
-| Temperature against log income today | minus 0.44 (n = 196) |
-| Temperature against population density in 1500, former colonies | plus 0.29 (n = 97) |
-| Temperature against income today, former colonies | minus 0.25 (n = 98) |
-| Density in 1500 against income today, pooled | plus 0.04 (n = 163) |
-| ... among 94 former colonies | minus 0.49 |
-| ... among the 69 not on AJR's list | plus 0.28 |
-| The interaction, which is the test the argument rests on | t = minus 5.3 (n = 163) |
+| Temperature against log income today | {{tidy_story.r:signed2}} (n = {{tidy_story.n:int}}) |
+| Temperature against population density in 1500, former colonies | {{heat_reversal.former_colonies.vs_density_1500.r:signed2}} (n = {{heat_reversal.former_colonies.vs_density_1500.n:int}}) |
+| Temperature against income today, former colonies | {{heat_reversal.former_colonies.vs_income_2023.r:signed2}} (n = {{heat_reversal.former_colonies.vs_income_2023.n:int}}) |
+| Density in 1500 against income today, pooled | {{flip.density_1500|income_2023|all.r:signed2}} (n = {{flip.density_1500|income_2023|all.n:int}}) |
+| ... among {{flip.density_1500|income_2023|former_colonies.n:int}} former colonies | {{flip.density_1500|income_2023|former_colonies.r:signed2}} |
+| ... among the {{flip.density_1500|income_2023|never_colonised.n:int}} not on AJR's list | {{flip.density_1500|income_2023|never_colonised.r:signed2}} |
+| The interaction, which is the test the argument rests on | t = {{interaction.t:signed1}} (n = {{interaction.n:int}}) |
 
 What the reversal rules out: no explanation of the ranking between countries can have an effect that
 was both constant over the period and the same whether or not Europeans arrived. The post does not

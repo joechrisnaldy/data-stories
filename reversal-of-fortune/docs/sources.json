@@ -1,0 +1,51 @@
+{
+ "ajr2002_coef": {
+  "ref": "Acemoglu 2002",
+  "aliases": [
+   "AJR"
+  ],
+  "title": "Reversal of fortune",
+  "doc": "sources/ajr2002.txt",
+  "sha256": "01f6049d5f1485e6091fc83ad52b988f751baab353417494e419c1576b9f8c8a",
+  "fetched_from": "https://economics.mit.edu/sites/default/files/publications/reversal-of-fortune.pdf (JSTOR copy of the published QJE article; PDF sha256 0385c46c9732235f8c9a37efa4611048c3f38a3154d0ebe291486cc425842f4e)",
+  "extracted_with": "pdftotext -layout",
+  "page": "1251",
+  "locator": "Table V, Panel A, column (1), base sample",
+  "quote": "Log population density -0.38",
+  "values": {
+   "coef": -0.38
+  }
+ },
+ "ajr2002_r2": {
+  "ref": "Acemoglu 2002",
+  "aliases": [
+   "AJR"
+  ],
+  "title": "Reversal of fortune",
+  "doc": "sources/ajr2002.txt",
+  "sha256": "01f6049d5f1485e6091fc83ad52b988f751baab353417494e419c1576b9f8c8a",
+  "fetched_from": "as ajr2002_coef",
+  "extracted_with": "pdftotext -layout",
+  "page": "1251",
+  "locator": "Table V, Panel A, column (1), base sample: the first cell of the R-squared row",
+  "quote": "R2 0.34",
+  "values": {
+   "r2": 0.34
+  }
+ },
+ "dell2012": {
+  "ref": "Dell 2012",
+  "title": "Temperature shocks and economic growth",
+  "doc": "sources/dell2012.txt",
+  "sha256": "e9831d3cde30a792d22b5d3a093657425dc9cd13b2289d197584ba40787f3b4d",
+  "fetched_from": "https://www3.nd.edu/~nmark/Climate/DellJonesOiken.pdf (the publisher's typeset article: first line reads 'American Economic Journal: Macroeconomics 2012, 4(3): 66-95' with DOI 10.1257/mac.4.3.66; the AEA host returns 403)",
+  "extracted_with": "pdftotext -layout",
+  "page": "67",
+  "locator": "Introduction",
+  "quote": "estimate that a 1◦ C rise in temperature in a given year reduced economic growth in that year by about 1.3 percentage points",
+  "values": {
+   "degrees": 1,
+   "growth_pp": 1.3
+  }
+ }
+}

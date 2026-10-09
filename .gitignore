@@ -13,3 +13,9 @@ __pycache__/
 # large derived competition submissions (regenerate from the model script)
 */model/submission_*.csv
 */model/*_oof.npz
+# stored copies of cited documents for the gate: copyrighted, never committed
+*/sources/
+# the defect audit is built from private working notes: kept local, never committed
+audit/defect-ledger.md
+audit/defect-classes.json
+audit/defect-records.json

@@ -5,10 +5,10 @@ login or an API key.
 
 | File | Source | How |
 |---|---|---|
-| `wb_gdp_2023.json` | World Bank, GDP per capita, PPP, constant 2021 international dollars | `api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.PP.KD?date=2023&format=json&per_page=400` |
-| `cckp_tas.json` | World Bank Climate Change Knowledge Portal, ERA5 near-surface air temperature, annual mean 1991 to 2020 | the exact request is recorded as `CCKP_REQUEST` in `build_analysis.py`; the portal's own download page 403s to curl, so use the API host |
+| `wb_gdp_2023.json` | World Bank, GDP per capita, PPP, constant {{meta.ppp_base_year:year}} international dollars | `api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.PP.KD?date=2023&format=json&per_page=400` |
+| `cckp_tas.json` | World Bank Climate Change Knowledge Portal, ERA5 near-surface air temperature, annual mean {{meta.era5_first_year:year}} to {{meta.era5_last_year:year}} | the exact request is recorded as `CCKP_REQUEST` in `build_analysis.py`; the portal's own download page 403s to curl, so use the API host |
 | `ajr_t3/maketable3.dta` | Acemoglu, Johnson and Robinson (2002) replication files, Table 3: urbanisation in 1500 | the first author's MIT data archive, "Reversal of Fortune" section |
-| `ajr_t5/maketable5.dta` | Same archive, Table 5: population density in 1500, 1995 income, the ex-colony classification | as above |
+| `ajr_t5/maketable5.dta` | Same archive, Table 5: population density in 1500, {{meta.ajr_income_year:year}} income, the ex-colony classification | as above |
 
 The AJR archive serves Dropbox links; substitute `dl.dropboxusercontent.com` for `www.dropbox.com`
 to fetch them without a browser. The URL printed inside AJR's own shipped readme is now 410 Gone.
@@ -20,7 +20,7 @@ to fetch them without a browser. The URL printed inside AJR's own shipped readme
    Table V, and Appendix 2, which names the variable "log arable land in 1500"). A fact-check round
    rewrote "arable" out of the post on the strength of the label and a later round had to put it
    back. The shipped variable is not fully consistent with the paper either: `exp(lland15)` equals
-   known total land area to within two percent for the United States, India and Brazil, while
+   known total land area to within {{land_area_check.bound_pct:words}} percent for the United States, India and Brazil, while
    desert states are cut hard (Egypt 0.040). Definition is the authors', measure is looser.
 2. **The same files carry junk rows.** Both `.dta` files hold 120 rows with an empty-string country
    code and 33 more whose code is a US state abbreviation, a bare `.`, or the literal
@@ -30,8 +30,8 @@ to fetch them without a browser. The URL printed inside AJR's own shipped readme
    carries latitude but neither density nor income, so a naive `drop_duplicates()` silently deletes
    them from every correlation that needs either. Keep the most-populated row.
 4. **`temp1` through `temp5` are withdrawn.** They are documented (Appendix 2, sourced to Parker
-   1997) but they fail a sanity check as country annual means: the United States reads 27 degrees
-   and Greenland 26, and they correlate at only 0.58 with ERA5 over 200 matched countries. All
+   1997) but they fail a sanity check as country annual means: the United States reads {{withdrawn_temp1_sanity_check.usa:int}} degrees
+   and Greenland {{withdrawn_temp1_sanity_check.grl:int}}, and they correlate at only {{withdrawn_temp1_sanity_check.r:dec2}} with ERA5 over {{withdrawn_temp1_sanity_check.n_matched:int}} matched countries. All
    temperature in this post is ERA5.
 5. **`ex2col == 0` does not mean "never colonised".** It means "absent from AJR's list", and the
    residual contains Bermuda, the Cayman Islands, Puerto Rico, Aruba and Cambodia. The post says so.

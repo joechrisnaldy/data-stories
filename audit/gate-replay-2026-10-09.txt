@@ -1,0 +1,145 @@
+Replay of every known attack on the blog gate, against throwaway copies of Post 25 (reversal-of-fortune).
+Run 2026-10-09 on the final gate, after the attack round on v1, the independent review of v2, and the
+diff-scoped review of v3. Command: python3 gate/replay/replay_audit.py reversal-of-fortune
+Baseline problems are the four real defects in the live Post 25; an attack counts as caught only when
+the expected check reports a NEW problem. Round bookkeeping is covered by gate/tests/test_rounds.py.
+
+baseline: 4 problem(s) in ['claims', 'pairs']
+
+CAUGHT                 [numbers]    figure hand-typed in place of its placeholder
+                                   unbound number '0.44' at line 18: ...itories. On log income the correlation is **minus 0.44**. Nothing in this post dispu...
+CAUGHT                 [numbers]    word quantity rewritten ('a fifth' to 'nine tenths')
+                                   unbound number word 'nine' at line 21: ...irst, accounts for about nine tenths of the variation in lo...
+CAUGHT                 [numbers]    fabricated number followed by a comma
+                                   unbound number '941' at line 65: ...**. Nothing across 941, a flat cloud. If you ran tha...
+CAUGHT                 [sources]    external figure laundered with an invented citation
+                                   src:nunn2008: stored document 'sources/nunn2008.txt' not found; fetch the cited document itself
+CAUGHT                 [numbers]    hand-typed figure hidden in the method notes
+                                   unbound number '97' at line 180: ...nsforms, both load-bearing.** Income is logged in 97 correlations. So is populatio...
+CAUGHT                 [numbers]    figure in 'r = -0.49' notation
+                                   unbound number '0.49' at line 73: ...countries. This is the test (r = -0.49) the argument rests on. This...
+CAUGHT                 [sources]    cited figure from the superseded working paper (1.1 for 1.3)
+                                   src:dell2012.values.growth_pp = 1.1 is not a number in its quote, sign included: 'estimate that a 1◦ C rise in temperature in a given year reduced economic growth in that
+CAUGHT                 [sources]    working paper stored in place of the cited article, hash updated to match
+                                   src:dell2012: title 'Temperature shocks and economic growth' does not open sources/dell2012.txt; is this the cited document or a summary, mirror or earlier version of it?
+CAUGHT                 [pairs]      round-3 defect: two eras' figures from different samples, no n
+                                   heat_reversal.never_colonised.vs_density_1500.r (n=76) is set beside 'r' figures from other samples but its n is not shown in the paragraph: **No explanation of the ranki
+CAUGHT                 [claims]     causal claim introduced by a fix
+                                   'caused' needs a [claims] entry whose phrase contains it, naming its licence: Colonisation caused the sign to flip.
+CAUGHT                 [claims]     universal introduced by a fix
+                                   'every' needs a [claims] entry whose phrase contains it, naming its licence: The sign flipped in every former colony.
+CAUGHT                 [pairs]      the same defect split across two sentences
+                                   heat_reversal.never_colonised.vs_density_1500.r (n=76) is set beside 'r' figures from other samples but its n is not shown in the paragraph: **No explanation of the ranki
+CAUGHT                 [rendered]   rendered draft hand-edited after rendering
+                                   draft/the-map-used-to-run-the-other-way.md differs from a fresh render: hand-edited or not re-rendered
+CAUGHT                 [cite]       reference entry never cited
+                                   reference entry never cited in the text: Nunn (2008) Nunn, N. (2008). The long-term effects. *QJE*.
+CAUGHT                 [cite]       narrative citation with no reference entry
+                                   in-text citation with no reference entry: ...first by 94. The sign flipped, as Nunn (2020)
+CAUGHT                 [fresh]      stale committed results.json
+                                   draft prints differently from a clean rebuild's results
+CAUGHT                 [panels]     hardcoded wrong annotation on a chart, regenerated
+                                   rf-2-the-same-heat-in-1500.png panel 1: prints n = 250 but plots 97 points
+CAUGHT                 [style]      en dash in a chart legend, regenerated
+                                   rf-4-who-actually-reversed.png text 26: forbidden character '–' in 'Income – today'
+CAUGHT                 [style]      em dash in the post README
+                                   /var/folders/s5/wp4jgcy523s8lbzn3fbx4dlr0000gn/T/replay-3_gkrl_n/reversal-of-fortune/README.md:48: forbidden character '—': An aside — here.
+CAUGHT                 [links]      broken image link
+                                   image link does not resolve: ../charts/missing.png
+CAUGHT                 [published]  hand-edited figure in a published alt text
+                                   published alt:rf-1-the-tidy-story.png differs from its rendered template: 'Scatter plot of average annual temperature against GDP per capita on a log scale' vs 'Scatter p
+CAUGHT                 [config]     exemption added without a reason
+                                   setup     FAILED: ConfigError: [allow] entry '97' has no reason; every exemption must say why
+CAUGHT                 [published]  published body drifts from the draft
+                                   published page differs from the rendered draft at paragraph 15: published 'The sign flipped, decisively.' vs draft 'The sign flipped.'
+CAUGHT                 [numbers]    sign word typed by hand beside a placeholder
+                                   a sign is typed by hand before {{tidy_story.r2_share:dec2}} at line 21: the formatter must carry the sign (use signed2)
+CAUGHT                 [numbers]    quantity written as a verb ('doubled')
+                                   unbound number word 'doubled' at line 65: ...**. Nothing. The cloud doubled. If you ran that regression y...
+CAUGHT                 [numbers]    figure hand-typed in a README nobody renders
+                                   unbound number '0.81' at docs/notes/README.md: ...The flip is minus 0.81 among colonies....
+CAUGHT                 [numbers]    figure hand-typed into a chart label, regenerated
+                                   unbound number '0.81' at make_charts.py:247: ...Income today (r = 0.81)...
+CAUGHT                 [cite]       section appended after the reference list
+                                   a section follows the reference list ('## Update'); nothing may come after the reference list, because the prose checks stop there
+CAUGHT                 [cite]       second citation of a multi-citation points at no entry
+                                   in-text citation with no reference entry: ...omplex" than that and rely on it anyway (Acemoglu et al., 2002; Dell et al., 2013)
+CAUGHT                 [claims]     causal clause appended to a registered sentence
+                                   'because' needs a [claims] entry whose phrase contains it, naming its licence: The thermometer cannot be the whole of it, and cannot have inverted the ranking unless its 
+CAUGHT                 [pairs]      new figure from a third sample inside an exempted paragraph
+                                   colonisation_vs_latitude.r (n=167) is set beside 'r' figures from other samples but its n is not shown in the paragraph: Two things worth saying before the chart gets awa
+CAUGHT                 [style]      '--' in the draft, which the site renders as a dash
+                                   /var/folders/s5/wp4jgcy523s8lbzn3fbx4dlr0000gn/T/replay-wuvw3jqx/reversal-of-fortune/draft/the-map-used-to-run-the-other-way.md:51: '--' renders as a dash on the live pag
+CAUGHT                 [sources]    cited value with its sign flipped against a signed quote
+                                   src:ajr2002_coef.values.coef = 0.38 is not a number in its quote, sign included: 'Log population density -0.38'
+CAUGHT                 [sources]    cited value matching only part of a number in the quote (3 inside 1.3)
+                                   src:dell2012.values.growth_pp = 3 is not a number in its quote, sign included: 'estimate that a 1◦ C rise in temperature in a given year reduced economic growth in that y
+CAUGHT                 [sources]    quote widened to a whole table row with several numbers
+                                   src:ajr2002_r2: the quote holds 3 numbers for 1 value(s); quote only the cell or phrase each value comes from
+CAUGHT                 [fresh]      committed chart no script produces
+                                   charts/rf-5-orphan.png: committed but no script produces it
+CAUGHT                 [fresh]      committed chart stale against its script
+                                   charts/rf-1-the-tidy-story.png: committed file differs from a fresh build (stale or hand-edited): 8329 pixels changed by up to 241/255
+CAUGHT                 [published]  single-quoted front matter field edited by hand
+                                   published metaDescription differs from its rendered template: 'Temperature correlates with national income at minus 0.48. Among former European' vs 'Temperature correlate
+CAUGHT                 [published]  published caption edited away from the chart's footnote
+                                   rf-1-the-tidy-story.png: the published caption is not the chart's own footnote
+CAUGHT                 [published]  published image is not the chart the scripts produce
+                                   published image rf-1-the-tidy-story.png differs from the chart the scripts produce: size 2551x1336 vs 2236x1440
+CAUGHT                 [rendered]   rendered README hand-edited after rendering
+                                   README.md differs from a fresh render: hand-edited or not re-rendered
+CAUGHT                 [sources]    quote shortened to a bare number found elsewhere in the paper (sign dropped)
+                                   src:ajr2002_coef: the quote occurs 4 times in sources/ajr2002.txt; quote enough of its row or sentence to locate one place: '0.38'
+CAUGHT                 [config]     source figure read from outside 'values'
+                                   setup     FAILED: RenderError: '{{src:dell2012.extra.growth_pp:dec1}}': a source placeholder is src:<id>.values.<name>, the only figures checked against the stored quote
+CAUGHT                 [sources]    quote cut inside a number ('by about 1' from 'by about 1.3')
+                                   src:dell2012: the quote starts or ends inside a number or a word in sources/dell2012.txt, which can drop a sign or a digit; quote whole tokens: 'reduced economic growth i
+CAUGHT                 [sources]    paragraph cites the working-paper year for the article's figure
+                                   src:dell2012.values.degrees is used in a paragraph that does not cite Dell (2012)
+CAUGHT                 [sources]    stored title loosened to a generic phrase
+                                   src:dell2012: title 'economic growth' is not the title of the reference entry, whole or up to its colon
+CAUGHT                 [claims]     claim appended inside the reference list
+                                   'explains' needs a [claims] entry whose phrase contains it, naming its licence: [https://climateknowledgeportal.worldbank.org/download-data](https://climateknowledgeporta
+CAUGHT                 [pairs]      mixed-sample pair added to a README template
+                                   docs/README.src.md: heat_reversal.former_colonies.vs_density_1500.r (n=97) is set beside 'r' figures from other samples but its n is not shown in the paragraph: It ran {{
+CAUGHT                 [sources]    external figure in a README paragraph that cites nobody
+                                   docs/README.src.md: src:dell2012.values.growth_pp is used in a paragraph that does not cite Dell (2012)
+CAUGHT                 [numbers]    sign word typed into a chart annotation, regenerated
+                                   rf-2-the-same-heat-in-1500.png: prints r = -0.29 with n = 97, but no single result has both: 'r = minus 0.29 n = 97'
+CAUGHT                 [panels]     single-panel footnote prints the wrong n, regenerated
+                                   rf-1-the-tidy-story.png: the figure text prints n = 195 but its one panel plots 196 points
+CAUGHT                 [numbers]    APA-style figure with a leading dot
+                                   unbound number '.44' at line 51: .... The sign flipped (r = .44). One caveat, and it is mine...
+CAUGHT                 [numbers]    hard-wrapped line that starts with a figure
+                                   unbound number '197' at line 52: .... The sign flipped across 197. countries. One caveat, and...
+CAUGHT                 [claims]     superlative outside the old word list
+                                   'hottest' needs a [claims] entry whose phrase contains it, naming its licence: The sign flipped in the hottest places.
+CAUGHT                 [claims]     one-word licence covering a new causal clause
+                                   'because' needs a [claims] entry whose phrase contains it, naming its licence: The sign flipped because of colonisers.
+CAUGHT                 [pairs]      pairs exemption keyed on a placeholder name
+                                   tidy_story.r (n=196) is set beside 'r' figures from other samples but its n is not shown in the paragraph: Two things worth saying before the chart gets away from us. Fir
+CAUGHT                 [style]      em dash in the data README template
+                                   /var/folders/s5/wp4jgcy523s8lbzn3fbx4dlr0000gn/T/replay-39fx9mc3/reversal-of-fortune/data/README.md:43: forbidden character '—': An aside — here.
+CAUGHT                 [published]  published image linked from a stale copy at another path
+                                   published image rf-1-the-tidy-story.png differs from the chart the scripts produce: size 2551x1336 vs 2236x1440
+CAUGHT                 [config]     percent formatter on a key already in percent
+                                   setup     FAILED: RenderError: '{{indonesia.density_pct:pct0}}': indonesia.density_pct is already in percent; pct0 would multiply it by 100 again. Use dec0 or dec1
+CAUGHT                 [config]     config extra entry that is not a pair of paths
+                                   setup     FAILED: ConfigError: [post] extra must be a list of [source, rendered] pairs
+CAUGHT                 [claims]     universal beside an apostrophe ('Everyone's')
+                                   'Everyone' needs a [claims] entry whose phrase contains it, naming its licence: Everyone's ranking flipped.
+CAUGHT                 [claims]     universal in underscore italics
+                                   'every' needs a [claims] entry whose phrase contains it, naming its licence: The sign flipped in _every_ colony.
+CAUGHT                 [numbers]    hard-wrapped figure inside a numbered list in a README
+                                   unbound number '197' at docs/data-README.src.md: ...Of the colonies, the count fell to 197. The rest were dropped....
+CAUGHT                 [config]     percent formatter on a key named as a percentage
+                                   setup     FAILED: RenderError: '{{indonesia.pct_density:pct0}}': indonesia.pct_density is already in percent; pct0 would multiply it by 100 again. Use dec0 or dec1
+NOT CAUGHT (expected)  [limit]      two figures' keys swapped, re-rendered and republished consistently
+                                   
+NOT CAUGHT (expected)  [limit]      forged source document carrying the cited title and the quote
+                                   
+NOT CAUGHT (expected)  [limit]      figure laundered through an [allow] entry with a plausible reason
+                                   
+
+64 of 64 attacks caught by the expected check; 3 of 3 honest-limit attacks pass, as documented
+exit 0

@@ -14,8 +14,11 @@ citing Parker (1997). They stay withdrawn on the sanity check computed in temp1_
 All temperature here is ERA5.
 """
 
+import hashlib
 import json
+import math
 import os
+import re
 
 import numpy as np
 import pandas as pd
@@ -80,6 +83,12 @@ def load():
     return gdp, tas, ajr
 
 
+def _sample_id(frame) -> str:
+    """Short hash of the entities a statistic was computed on, so the prose can tell two samples apart."""
+    col = "shortnam" if "shortnam" in frame.columns else "iso3"
+    return hashlib.sha1(",".join(sorted(frame[col].astype(str))).encode()).hexdigest()[:12]
+
+
 def corr(d, x, y):
     s = d.dropna(subset=[x, y])
     if len(s) < 5:
@@ -88,7 +97,7 @@ def corr(d, x, y):
     # two-sided t test on the correlation
     n = len(s)
     t = r * np.sqrt((n - 2) / max(1e-12, 1 - r ** 2))
-    return dict(r=r, n=n, t=float(t), slope=float(np.polyfit(s[x], s[y], 1)[0]))
+    return dict(r=r, n=n, t=float(t), slope=float(np.polyfit(s[x], s[y], 1)[0]), sample=_sample_id(s))
 
 
 def temp1_sanity(tas):
@@ -106,7 +115,8 @@ def temp1_sanity(tas):
                 raw_distinct=int(t3.temp1.dropna().nunique()), raw_rows=int(t3.temp1.notna().sum()),
                 usa=float(t[t.shortnam == "USA"].temp1.iloc[0]),
                 grl=float(t[t.shortnam == "GRL"].temp1.iloc[0]),
-                khm=float(t[t.shortnam == "KHM"].temp1.iloc[0]))
+                khm=float(t[t.shortnam == "KHM"].temp1.iloc[0]),
+                n_temperature_variables=sum(1 for c in t3.columns if re.fullmatch(r"temp\d", c)))
 
 
 def interact(d, x, y, g):
@@ -121,7 +131,7 @@ def interact(d, x, y, g):
     se = np.sqrt(np.diag(np.linalg.pinv(X.T @ X)) * (resid @ resid) / dof)
     return dict(coef=float(beta[3]), se=float(se[3]), t=float(beta[3] / se[3]),
                 n=int(X.shape[0]), dof=int(dof), slope_never_colonised=float(beta[1]),
-                slope_former_colonies=float(beta[1] + beta[3]))
+                slope_former_colonies=float(beta[1] + beta[3]), sample=_sample_id(f))
 
 
 def main():
@@ -154,7 +164,7 @@ def main():
     # temperature "on the same countries" when temperature was n=196 and latitude n=159; a
     # comparison across different samples is not a comparison. Round 2 refutation.
     common = ajr.dropna(subset=["tas", "lgdp2023", "lat_abst", "africa"])
-    rivals = dict(n=len(common), **{v: corr(common, v, "lgdp2023")
+    rivals = dict(n=len(common), sample=_sample_id(common), **{v: corr(common, v, "lgdp2023")
                                     for v in ("tas", "lat_abst", "africa")})
 
     # The collider measurement the post asserts at minus 0.74: latitude against colonisation.
@@ -192,7 +202,7 @@ def main():
     # both, the "now" figure collapses from -0.29 to -0.04 and neither is clear of chance. This is
     # the same defect round 2 fixed two paragraphs earlier and reintroduced here.
     nev = ajr[ajr.ex2col == 0].dropna(subset=["tas", "lpd1500s", "lgdp2023"])
-    never_colonised_common = dict(n=len(nev),
+    never_colonised_common = dict(n=len(nev), sample=_sample_id(nev),
                                   vs_density_1500=corr(nev, "tas", "lpd1500s"),
                                   vs_income_2023=corr(nev, "tas", "lgdp2023"))
 
@@ -267,8 +277,38 @@ def main():
         fc2_note=("AJR published on 1995 income. Nobody in this repository had checked whether the "
                   "reversal survives 28 more years, so it is tested on 2023 income too."))
 
+    tidy["r2_share"] = tidy["r"] ** 2                 # "about a fifth of the variation in log income"
+    tidy["rest_share"] = 1 - tidy["r"] ** 2           # "which leaves four fifths somewhere else"
+
+    # The two panels of chart 2 are different country lists; the prose says how far they overlap.
+    col_dens = set(ajr[(ajr.ex2col == 1)].dropna(subset=["tas", "lpd1500s"]).shortnam)
+    col_inc = set(ajr[(ajr.ex2col == 1)].dropna(subset=["tas", "lgdp2023"]).shortnam)
+    heat_reversal_overlap = dict(n=len(col_dens & col_inc), only_density=sorted(col_dens - col_inc),
+                                 only_income=sorted(col_inc - col_dens))
+
+    dens = np.exp(ajr.lpd1500s.dropna())
+    density_range = dict(min=float(dens.min()), max=float(dens.max()),
+                         orders=int(math.floor(math.log10(dens.max() / dens.min()))))
+
+    # "for the United States, India and Brazil it equals total land area to within two percent": round 4
+    # checked this against World Bank figures fetched by hand. Now a script reproduces it.
+    land = {r["countryiso3code"]: r["value"] for r in json.load(open(os.path.join(DATA, "wb_land_2020.json")))[1]}
+    t5_land = pd.read_stata(os.path.join(DATA, "ajr_t5/maketable5.dta")).dropna(subset=["lland15"])
+    ratios = {k: float(np.exp(t5_land[t5_land.shortnam == k].lland15.iloc[0]) / land[k]) for k in sorted(land)}
+    worst = max(abs(v - 1) * 100 for v in ratios.values())
+    land_area_check = dict(ratios=ratios, max_pct_off=worst, bound_pct=int(math.ceil(worst)), year=2020)
+
+    sc["n_conditions"] = sum(1 for v in sc.values() if isinstance(v, bool))
+    robustness["n_awkward"] = len(robustness["awkward_never_colonised"])
+
+    ppp = json.load(open(os.path.join(DATA, f"wb_gdp_{GDP_YEAR}.json")))[1][0]["indicator"]["value"]
+    era5 = re.search(r"climatology_annual_(\d{4})-(\d{4})", CCKP_REQUEST)
+
     out = dict(
         meta=dict(gdp_year=GDP_YEAR, gdp_indicator="NY.GDP.PCAP.PP.KD",
+                  ppp_base_year=int(re.search(r"constant (\d{4})", ppp).group(1)),
+                  era5_first_year=int(era5.group(1)), era5_last_year=int(era5.group(2)),
+                  ajr_income_year=1995, years_since_ajr=GDP_YEAR - 1995,
                   temperature="ERA5 near-surface air temperature, 1991-2020 annual mean, "
                               "World Bank Climate Change Knowledge Portal",
                   historical="Acemoglu, Johnson and Robinson, Reversal of Fortune, tables 3 and 5",
@@ -285,6 +325,8 @@ def main():
         withdrawn_temp1_sanity_check=temp1_sanity(tas),
         robustness=robustness, density_ties=density_ties,
         never_colonised_common_sample=never_colonised_common,
+        heat_reversal_overlap=heat_reversal_overlap, density_range=density_range,
+        land_area_check=land_area_check,
         indonesia=indonesia, scorecard=sc)
     with open(os.path.join(HERE, "results.json"), "w") as fh:
         json.dump(out, fh, indent=1)

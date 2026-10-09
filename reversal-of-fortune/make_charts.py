@@ -104,7 +104,8 @@ def chart1(d):
     ax.scatter(s.tas, s.gdp, s=52, color=MUTED, alpha=0.75, edgecolor=SURFACE, linewidth=0.8, zorder=3)
     fitline(ax, s.tas.values, s.lgdp.values, INK2, exp=True)
     ax.set_yscale("log")
-    ax.set_xlabel("Average annual temperature, degrees Celsius, 1991 to 2020")
+    m = R["meta"]
+    ax.set_xlabel(f"Average annual temperature, degrees Celsius, {m['era5_first_year']} to {m['era5_last_year']}")
     ax.set_ylabel("GDP per capita, PPP, log scale")
     ax.set_title("The tidy story, and it is true")
     ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"${v:,.0f}"))
@@ -119,7 +120,8 @@ def chart1(d):
     ax.text(0.015, 0.055, f"r = {t['r']:.2f} on log income   n = {t['n']} countries and territories",
             transform=ax.transAxes, ha="left", fontsize=11.6, color=INK, fontweight="bold")
     footnote(fig,
-             f"Temperature: ERA5 reanalysis, near-surface air temperature, 1991 to 2020 annual "
+             f"Temperature: ERA5 reanalysis, near-surface air temperature, {m['era5_first_year']} to "
+             f"{m['era5_last_year']} annual "
              f"mean, via the World Bank Climate Change Knowledge Portal. Income: World "
              f"Bank, GDP per capita at purchasing power parity, constant international dollars, "
              f"{R['meta']['gdp_year']}. Every entity with both, {t['n']} of them, which includes "
@@ -203,8 +205,8 @@ def chart3(d):
              f"against World Bank GDP per capita for {R['meta']['gdp_year']}. Pooled across both "
              f"panels the correlation is {al['r']:+.2f} (n={al['n']}), which is nothing: the "
              f"relationship is invisible until the sample is split, and then it points in opposite "
-             f"directions. Their paper used 1995 income and found {n95['r']:+.2f} among former "
-             f"colonies; it survives 28 more years of data at {f['density_1500|income_2023|former_colonies']['r']:+.2f}. "
+             f"directions. Their paper used {R['meta']['ajr_income_year']} income and found {n95['r']:+.2f} among former "
+             f"colonies; it survives {R['meta']['years_since_ajr']} more years of data at {f['density_1500|income_2023|former_colonies']['r']:+.2f}. "
              f"The right-hand group is AJR's residual rather than a list of untouched places, so "
              f"Bermuda, Puerto Rico and Aruba are in it. This post does not claim to know what "
              f"caused the flip.", y=-0.055)

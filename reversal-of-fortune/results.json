@@ -2,6 +2,11 @@
  "meta": {
   "gdp_year": 2023,
   "gdp_indicator": "NY.GDP.PCAP.PP.KD",
+  "ppp_base_year": 2021,
+  "era5_first_year": 1991,
+  "era5_last_year": 2020,
+  "ajr_income_year": 1995,
+  "years_since_ajr": 28,
   "temperature": "ERA5 near-surface air temperature, 1991-2020 annual mean, World Bank Climate Change Knowledge Portal",
   "historical": "Acemoglu, Johnson and Robinson, Reversal of Fortune, tables 3 and 5",
   "withdrawn": "AJR temp1..temp5, failed a sanity check as country averages; see docs/provenance-audit.md",
@@ -11,52 +16,63 @@
   "r": -0.43522897197552174,
   "n": 196,
   "t": -6.7332053702998245,
-  "slope": -0.06016564149171917
+  "slope": -0.06016564149171898,
+  "sample": "cc82ac6aa1b0",
+  "r2_share": 0.1894242580468695,
+  "rest_share": 0.8105757419531305
  },
  "heat_vs_1500_density": {
   "r": -0.1772610631338725,
   "n": 173,
   "t": -2.3552878358254166,
-  "slope": -0.03566915379375627
+  "slope": -0.03566915379375624,
+  "sample": "231b793b7259"
  },
  "heat_vs_1500_density_colonies": {
   "r": 0.294642598818592,
   "n": 97,
   "t": 3.0052304374914653,
-  "slope": 0.09004273244641088
+  "slope": 0.09004273244641078,
+  "sample": "b6414bd836a4"
  },
  "tidy_story_raw_dollars": {
   "r": -0.390022938562469,
   "n": 196,
   "t": -5.899609683280019,
-  "slope": -1253.6359115203525
+  "slope": -1253.6359115203516,
+  "sample": "cc82ac6aa1b0"
  },
  "rivals_common_sample": {
   "n": 159,
+  "sample": "9e4e85f40911",
   "tas": {
    "r": -0.46424795317586354,
    "n": 159,
    "t": -6.567658938505728,
-   "slope": -0.06596360290119996
+   "slope": -0.06596360290119974,
+   "sample": "9e4e85f40911"
   },
   "lat_abst": {
    "r": 0.5998427520119631,
    "n": 159,
    "t": 9.393625650362495,
-   "slope": 3.67568878939508
+   "slope": 3.675688789395077,
+   "sample": "9e4e85f40911"
   },
   "africa": {
    "r": -0.6821021465467785,
    "n": 159,
    "t": -11.687705560588574,
-   "slope": -1.7173977696733722
+   "slope": -1.7173977696733764,
+   "sample": "9e4e85f40911"
   }
  },
  "colonisation_vs_latitude": {
   "r": -0.7416486482161978,
   "n": 167,
   "t": -14.202164509053429,
-  "slope": -1.9234418230695425
+  "slope": -1.92344182306954,
+  "sample": "c274260442e3"
  },
  "hot_and_rich": {
   "threshold_c": 20,
@@ -106,73 +122,85 @@
    "r": 0.05169830975040806,
    "n": 156,
    "t": 0.6424182269415302,
-   "slope": 0.03367603515954632
+   "slope": 0.0336760351595469,
+   "sample": "8bafbd8f54c4"
   },
   "density_1500|income_1995|former_colonies": {
    "r": -0.5842313778904084,
    "n": 91,
    "t": -6.7911718618418435,
-   "slope": -0.3766785536605682
+   "slope": -0.3766785536605682,
+   "sample": "06ecd384ca76"
   },
   "density_1500|income_1995|never_colonised": {
    "r": 0.5034768550301586,
    "n": 65,
    "t": 4.625212207822981,
-   "slope": 0.3183422578808925
+   "slope": 0.3183422578808925,
+   "sample": "27537daff666"
   },
   "density_1500|income_2023|all": {
    "r": 0.035137588465200854,
    "n": 163,
    "t": 0.44612150286812413,
-   "slope": 0.02497686497734649
+   "slope": 0.024976864977345335,
+   "sample": "a45c443ef375"
   },
   "density_1500|income_2023|former_colonies": {
    "r": -0.48768201416232354,
    "n": 94,
    "t": -5.358038069637625,
-   "slope": -0.33481611754963353
+   "slope": -0.334816117549634,
+   "sample": "fa48ae20d922"
   },
   "density_1500|income_2023|never_colonised": {
    "r": 0.27997847783370033,
    "n": 69,
    "t": 2.3871954427991984,
-   "slope": 0.14770262849195454
+   "slope": 0.1477026284919523,
+   "sample": "efecbb65feb4"
   },
   "urbanisation_1500|income_1995|all": {
    "r": 0.054770967869163564,
    "n": 84,
    "t": 0.4967178097149005,
-   "slope": 0.009499792466750132
+   "slope": 0.009499792466750218,
+   "sample": "6fff745164a2"
   },
   "urbanisation_1500|income_1995|former_colonies": {
    "r": -0.4398312523866293,
    "n": 41,
    "t": -3.058462450418131,
-   "slope": -0.07825312575844896
+   "slope": -0.07825312575844931,
+   "sample": "86a4352e9be9"
   },
   "urbanisation_1500|income_1995|never_colonised": {
    "r": 0.42561923776007027,
    "n": 43,
    "t": 3.0116982842047006,
-   "slope": 0.0676715659021744
+   "slope": 0.06767156590217456,
+   "sample": "d041c3215e12"
   },
   "urbanisation_1500|income_2023|all": {
    "r": -0.03264488101791799,
    "n": 86,
    "t": -0.29935482861709,
-   "slope": -0.005228744228171826
+   "slope": -0.005228744228171307,
+   "sample": "03072e012fa0"
   },
   "urbanisation_1500|income_2023|former_colonies": {
    "r": -0.4238911851817543,
    "n": 43,
    "t": -2.9967854607800284,
-   "slope": -0.07271289049047398
+   "slope": -0.07271289049047346,
+   "sample": "52740a44f280"
   },
   "urbanisation_1500|income_2023|never_colonised": {
    "r": 0.2754410007316848,
    "n": 43,
    "t": 1.8346509561388418,
-   "slope": 0.027764198163360836
+   "slope": 0.027764198163360725,
+   "sample": "54319b742340"
   }
  },
  "latitude_2023": {
@@ -180,19 +208,22 @@
    "r": 0.5998427520119631,
    "n": 159,
    "t": 9.393625650362495,
-   "slope": 3.67568878939508
+   "slope": 3.675688789395077,
+   "sample": "9e4e85f40911"
   },
   "former_colonies": {
    "r": 0.27390372462416274,
    "n": 98,
    "t": 2.790410813753529,
-   "slope": 2.51071602829948
+   "slope": 2.5107160282994836,
+   "sample": "2e10641f87c5"
   },
   "never_colonised": {
    "r": 0.463381930424164,
    "n": 61,
    "t": 4.016553997865319,
-   "slope": 2.630259462997617
+   "slope": 2.630259462997617,
+   "sample": "c4dbc9eb4bc3"
   }
  },
  "heat_reversal": {
@@ -201,13 +232,15 @@
     "r": -0.1772610631338725,
     "n": 173,
     "t": -2.3552878358254166,
-    "slope": -0.03566915379375627
+    "slope": -0.03566915379375624,
+    "sample": "231b793b7259"
    },
    "vs_income_2023": {
     "r": -0.43108722732553106,
     "n": 183,
     "t": -6.427595645577216,
-    "slope": -0.059348261778850935
+    "slope": -0.05934826177885098,
+    "sample": "925c85f5a07d"
    }
   },
   "former_colonies": {
@@ -215,13 +248,15 @@
     "r": 0.294642598818592,
     "n": 97,
     "t": 3.0052304374914653,
-    "slope": 0.09004273244641088
+    "slope": 0.09004273244641078,
+    "sample": "b6414bd836a4"
    },
    "vs_income_2023": {
     "r": -0.25022995556422206,
     "n": 98,
     "t": -2.5323044756849566,
-    "slope": -0.05059782611770635
+    "slope": -0.05059782611770641,
+    "sample": "2e10641f87c5"
    }
   },
   "never_colonised": {
@@ -229,13 +264,15 @@
     "r": -0.21121755493927488,
     "n": 76,
     "t": -1.8589006281610647,
-    "slope": -0.03705382258757152
+    "slope": -0.0370538225875715,
+    "sample": "adaee25977d6"
    },
    "vs_income_2023": {
     "r": -0.2860981624379859,
     "n": 85,
     "t": -2.720181018885016,
-    "slope": -0.02934023844443245
+    "slope": -0.029340238444432582,
+    "sample": "c0b1967cced6"
    }
   }
  },
@@ -900,44 +937,49 @@
   }
  ],
  "interaction": {
-  "coef": -0.4825187460415901,
-  "se": 0.09046864891224636,
-  "t": -5.333546503050225,
+  "coef": -0.48251874604159173,
+  "se": 0.09046864891224637,
+  "t": -5.333546503050242,
   "n": 163,
   "dof": 159,
-  "slope_never_colonised": 0.14770262849195243,
-  "slope_former_colonies": -0.3348161175496377
+  "slope_never_colonised": 0.14770262849195023,
+  "slope_former_colonies": -0.33481611754964147,
+  "sample": "a45c443ef375"
  },
  "interaction_urbanisation": {
-  "coef": -0.10047708865383505,
-  "se": 0.02823091592529004,
-  "t": -3.559115436415043,
+  "coef": -0.10047708865383657,
+  "se": 0.02823091592529005,
+  "t": -3.5591154364150954,
   "n": 86,
   "dof": 82,
-  "slope_never_colonised": 0.027764198163361672,
-  "slope_former_colonies": -0.07271289049047337
+  "slope_never_colonised": 0.027764198163362203,
+  "slope_former_colonies": -0.07271289049047437,
+  "sample": "03072e012fa0"
  },
  "interaction_raw_density": {
-  "coef": -0.012668721356737377,
-  "se": 0.009226489006878415,
-  "t": -1.3730814990721554,
+  "coef": -0.012668721356737389,
+  "se": 0.009226489006878417,
+  "t": -1.3730814990721565,
   "n": 163,
   "dof": 159,
-  "slope_never_colonised": 0.003916502446234021,
-  "slope_former_colonies": -0.008752218910503356
+  "slope_never_colonised": 0.003916502446233968,
+  "slope_former_colonies": -0.008752218910503422,
+  "sample": "a45c443ef375"
  },
  "flip_raw_density": {
   "former_colonies": {
    "r": -0.09515057183826837,
    "n": 94,
    "t": -0.9168118986749737,
-   "slope": -0.008752218910502162
+   "slope": -0.008752218910502162,
+   "sample": "fa48ae20d922"
   },
   "never_colonised": {
    "r": 0.17374775555100885,
    "n": 69,
    "t": 1.444151949920173,
-   "slope": 0.003916502446233784
+   "slope": 0.003916502446233784,
+   "sample": "efecbb65feb4"
   }
  },
  "withdrawn_temp1_sanity_check": {
@@ -951,7 +993,8 @@
   "raw_rows": 323,
   "usa": 27.0,
   "grl": 26.0,
-  "khm": 7.0
+  "khm": 7.0,
+  "n_temperature_variables": 5
  },
  "robustness": {
   "awkward_never_colonised": [
@@ -966,23 +1009,26 @@
    "PRI"
   ],
   "recoded_as_colonies": {
-   "coef": -0.4527234818572344,
-   "se": 0.09640984043470076,
-   "t": -4.695822333238566,
+   "coef": -0.4527234818572331,
+   "se": 0.09640984043470077,
+   "t": -4.695822333238552,
    "n": 163,
    "dof": 159,
-   "slope_never_colonised": 0.16296256095698858,
-   "slope_former_colonies": -0.2897609209002458
+   "slope_never_colonised": 0.1629625609569897,
+   "slope_former_colonies": -0.2897609209002434,
+   "sample": "a45c443ef375"
   },
   "dropped": {
-   "coef": -0.49777867850662466,
-   "se": 0.08958411388695817,
-   "t": -5.556550786836462,
+   "coef": -0.49777867850662333,
+   "se": 0.08958411388695818,
+   "t": -5.556550786836446,
    "n": 154,
    "dof": 150,
-   "slope_never_colonised": 0.16296256095699052,
-   "slope_former_colonies": -0.33481611754963414
-  }
+   "slope_never_colonised": 0.16296256095699013,
+   "slope_former_colonies": -0.3348161175496332,
+   "sample": "8cb9e9cdb2c7"
+  },
+  "n_awkward": 9
  },
  "density_ties": {
   "largest_tied_block": 11,
@@ -1003,18 +1049,50 @@
  },
  "never_colonised_common_sample": {
   "n": 69,
+  "sample": "efecbb65feb4",
   "vs_density_1500": {
    "r": -0.15302491077919136,
    "n": 69,
    "t": -1.2674909659032103,
-   "slope": -0.02850063582194489
+   "slope": -0.02850063582194489,
+   "sample": "efecbb65feb4"
   },
   "vs_income_2023": {
    "r": -0.041155872311151614,
    "n": 69,
    "t": -0.3371609971474489,
-   "slope": -0.0040437826160487295
+   "slope": -0.0040437826160487295,
+   "sample": "efecbb65feb4"
   }
+ },
+ "heat_reversal_overlap": {
+  "n": 94,
+  "only_density": [
+   "CUB",
+   "ERI",
+   "VEN"
+  ],
+  "only_income": [
+   "BTN",
+   "DJI",
+   "FJI",
+   "MUS"
+  ]
+ },
+ "density_range": {
+  "min": 0.02168969437479973,
+  "max": 282.1895751953125,
+  "orders": 4
+ },
+ "land_area_check": {
+  "ratios": {
+   "BRA": 1.011769413948059,
+   "IND": 0.9999996423721313,
+   "USA": 1.0012785196304321
+  },
+  "max_pct_off": 1.1769413948059082,
+  "bound_pct": 2,
+  "year": 2020
  },
  "indonesia": {
   "tas": 25.15,
@@ -1030,6 +1108,7 @@
   "fc1_premise_fails": false,
   "fc2_reversal_is_a_vintage_artefact": false,
   "fc3_sign_does_not_flip": false,
-  "fc2_note": "AJR published on 1995 income. Nobody in this repository had checked whether the reversal survives 28 more years, so it is tested on 2023 income too."
+  "fc2_note": "AJR published on 1995 income. Nobody in this repository had checked whether the reversal survives 28 more years, so it is tested on 2023 income too.",
+  "n_conditions": 3
  }
 }
