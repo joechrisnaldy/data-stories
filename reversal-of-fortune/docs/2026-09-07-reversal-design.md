@@ -315,3 +315,32 @@ itself.
 
 **Not finished.** 37 of the round's 67 findings never reached a skeptic, because the run hit a usage
 limit. Five are HIGH. They are open, not refuted, and are listed in `docs/round4-scope.md`.
+
+## 6.4 Corrections after publication, 2026-10-09
+
+The post's first fact-check round under the shared gate (`../gate/`), run a month after publication,
+refuted 63 items and left 2 unverifiable; the full table is `docs/round1-findings.md`. What changed:
+
+1. **Country codes.** AJR's files use older codes for Romania (ROM), the Democratic Republic of the
+   Congo (ZAR) and the West Bank and Gaza (WBG), and the CCKP codes Kosovo KSV where the World Bank
+   uses XKX. All four silently dropped out of every join between the mismatched sources. Both scripts
+   now read the sources through the same mapping functions, and the analysis loader asserts that every
+   place with a 1500 density, 1500 urbanisation or 1995 income value finds a match in the World Bank or
+   CCKP codes, bar the defunct
+   Netherlands Antilles and Yugoslavia. Andorra (ADO) and the Isle of Man (IMY) keep older codes;
+   mapped, the withdrawn temp1 check would read 0.57 on 205 places instead of 0.58 on 203. Six correlations the post prints moved by one
+   in the second decimal (the headline from -0.44 to -0.43); the urbanisation correlation for places
+   not on AJR's list moved from +0.28 to +0.16 (n 43 to 45) and its interaction t from -3.6 to -3.1,
+   which weakens that check without reversing it. The density interaction is unchanged at -5.3, and
+   the falsification conditions still do not fire.
+2. **The heat flip is fragile.** Among former colonies the temperature correlations (positive with
+   1500 density, negative with income today) lean on the coldest members: without Canada neither is
+   clear of chance, and without Canada, Chile, the United States and New Zealand both are near zero.
+   The post no longer uses the heat flip as the reason the first chart cannot mean what it looks
+   like; that rests on the density reversal and its interaction test, and chart two says how fragile
+   the flip is.
+3. **Narrowed claims.** The filter now reads "cannot rest only on" an effect constant over time and
+   across the colonial split; density is no longer called the best 1500 measure (AJR call it an
+   additional proxy, p. 1232); the chart 3 caption no longer attributes our recomputed correlation to
+   AJR's paper; and about forty smaller precision fixes across the draft, captions, alt texts, meta
+   fields, READMEs and the gate's claims register.

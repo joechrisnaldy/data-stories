@@ -9,7 +9,7 @@
   "sha256": "01f6049d5f1485e6091fc83ad52b988f751baab353417494e419c1576b9f8c8a",
   "fetched_from": "https://economics.mit.edu/sites/default/files/publications/reversal-of-fortune.pdf (JSTOR copy of the published QJE article; PDF sha256 0385c46c9732235f8c9a37efa4611048c3f38a3154d0ebe291486cc425842f4e)",
   "extracted_with": "pdftotext -layout",
-  "page": "1251",
+  "page": "1250",
   "locator": "Table V, Panel A, column (1), base sample",
   "quote": "Log population density -0.38",
   "values": {

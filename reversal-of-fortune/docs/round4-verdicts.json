@@ -1,0 +1,85 @@
+{
+ "round": 4,
+ "date": "2026-10-09",
+ "lenses_dispatched": 2,
+ "lenses_returned": 2,
+ "lenses_errored": 0,
+ "lenses": [
+  "draft sentences",
+  "README and data README sentences"
+ ],
+ "scope": [
+  "**Selection aside, no explanation of the ranking between countries can rest only on an effect that was both constant over the period and the same whether or not Europeans arrived.** The test is on the effect, not the cause: the equator has not moved, but what it does to prosperity may have.",
+  "Among former colonies, places that were densely settled in 1500 tend to be poorer today, and an explanation whose effect never changed and never depended on whether Europeans arrived cannot by itself account for that inversion.",
+  "Both scripts now read the sources through the same functions.",
+  "[README.md] What the reversal rules out: selection aside, no explanation of the ranking between countries can rest only on an effect that was both constant over the period and the same whether or not Europeans arrived.",
+  "[README.md] | Path | What | |---|---| | `build_analysis.py` | Every result the post computes, into `results.json` | | `make_charts.py` | The four charts; every computed figure on a chart reads from `results.json` | | `gate.toml` | This post's configuration for the shared gate in `../gate/`: exemptions with reasons, the claims register, and templates for the published MDX fields | | `docs/README.src.md`, `docs/data-README.src.md` | Templates for this file and `data/README.md`, rendered by the gate like the draft | | `draft/*.src.md` (not committed) | The draft as written: every figure from `results.json` a `key:fmt` placeholder | | `docs/sources.json` | Each external figure the draft binds as a `src:` key, with its stored document, hash, page and verbatim quote | | `docs/2026-09-07-reversal-design.md` | Binding pre-registration, with amendments recorded in sections 6.1 to 6.4 | | `docs/provenance-audit.md` | What each source actually says, opened rather than assumed | | `docs/round2-scope.md`, `round3-scope.md`, `round4-scope.md` | What each fact-check round was scoped at |",
+  "[README.md] Another round, the first under that gate and run a month after publication, found a country-code join bug and a central comparison that rests on a few cold colonies.",
+  "[data/README.md] Unmatched, they silently dropped out of every join between the mismatched sources until a fact-check a month after publication. `build_analysis.py` maps them in reader functions that both scripts use, and its loader asserts that every place with a 1500 density, 1500 urbanisation or 1995 income value, bar the defunct Netherlands Antilles and Yugoslavia, finds a match."
+ ],
+ "findings": [
+  {
+   "id": "R4D0",
+   "scope_index": 0,
+   "claim": "**Selection aside, no explanation of the ranking between countries can rest only on an effect that was both constant over the period and the same whether or not Europeans arrived.** The test is on the effect, not the cause: the equator has not moved, but what it does to prosperity may have.",
+   "verdict": "CONFIRMED",
+   "evidence": "Round 3 (R3C1) found that the unqualified headline excluded the case of a constant effect plus selection. The fix landed verbatim in rendered draft :91-93, src :91, live MDX :110-112 (whitespace-normalised match, scratchpad round4/draft/mdxcheck.py) and README.md:19 / docs/README.src.md:19. The gate.toml:153 licence now reads 'cannot by itself produce an inversion'.\n\nTruth check (r4d_sim2.py, n=165, 1000 draws per cell). I simulated one constant effect, identical in both groups, with random assignment to groups. Within-group r was +0.498/+0.504 (a=b=1) and +0.266/+0.262 (a=0.3, b=2.5); median interaction t was about 0, and P(t<=-5.29) = 0.000. With 'disagree' selection on the factor and density, the same effect gives r -0.274/+0.615 (P=0.14) and -0.543/+0.655 (P=1.00). So the claim fails only through selection, and the caveat names exactly that escape. With selection set aside, the observed pattern rules out the class: colonies -0.4794 (n 95), rest +0.2806 (n 70), interaction -0.482, t -5.29 (n 165) (r4d_data.py, matches results.json).\n\nThe fix makes no neighbouring sentence false. :103 and :95 already carried 'selection aside' and 'by itself', and :105's survivor list is now scoped by the headline, as R3C5 required.\n\nResidual (clarity, not truth): this bold line is the first use of 'selection' anywhere in the post (character search of the rendered draft finds it only here and at :103). The post never names Europeans' choice of where to go (:98-101, :147-149) as 'selection', and it never shows that the setting-aside is harmless. For heat it is harmless: a shared tas control leaves the interaction at t -5.01, and within colonies density net of tas has t -4.66 (r4d_data.py). The post does not print either figure. The second sentence ('test is on the effect') is unchanged and conceptually sound.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R4D1",
+   "scope_index": 1,
+   "claim": "Among former colonies, places that were densely settled in 1500 tend to be poorer today, and an explanation whose effect never changed and never depended on whether Europeans arrived cannot by itself account for that inversion.",
+   "verdict": "CONFIRMED",
+   "evidence": "Empirical clause: r(lpd1500s, lgdp2023 | ex2col==1) = -0.4794, n 95, t -5.27 (r4d_data.py; results.json flip.density_1500|income_2023|former_colonies).\n\nLogical clause: round 3 (R3C6) found that the unqualified 'cannot account' was false under selection. The '+by itself' fix is in rendered draft :164-166, src :164-166 and live MDX :186-188 (verbatim match, mdxcheck.py). The gate.toml:155 key and its licence ('cannot by itself change a ranking within one group ... selection could, which the filter sets aside') were updated. 'That inversion' is the within-colony pattern, so producing it needs group membership. Under a constant, group-invariant effect with random assignment, the colony r stays positive (+0.27 to +0.50, r4d_sim2.py). Only adding selection turns it negative (-0.27 to -0.54). Selection is therefore a second ingredient, and 'by itself' excludes it.\n\nThe wording now matches :95 ('cannot by itself produce') and the headline's 'Selection aside'. This differs from R3C1's objection to 'only': that sentence's object is the income ranking, which selection does not move, while this sentence's object is a grouped pattern, which selection does create. No new defect.\n\nNot made false, but noted: the next sentence (:168, unchanged) still says without qualification that the thermometer 'cannot have inverted the ranking unless its effect changed'. For heat specifically this is supported by unprinted data (shared tas control t -5.01; colonies, density net of tas t -4.66, n 95), so it stays true.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R4D2",
+   "scope_index": 2,
+   "claim": "Both scripts now read the sources through the same functions.",
+   "verdict": "CONFIRMED",
+   "evidence": "Round 3 (R3D8) refuted the deleted clause ('asserts that every place with data, other than places that no longer exist, finds its match'). The deletion is applied in rendered draft :218, src :218 and live MDX :240 (verbatim, mdxcheck.py). No gate.toml key for the deleted text remains: no match for 'no longer exist' or 'finds its match' among the claims keys.\n\nThe remaining sentence is true. make_charts.py:21 imports read_ajr, read_gdp and read_tas. Its only data path is frame() at :50-51 (grep of make_charts.py finds no other .dta or .json read except results.json:25). build_analysis.py load() reads through the same functions (:78-79), and temp1_sanity joins through read_ajr(3) (:136).\n\n'Now' is accurate. At publication (git 1c5d364) and at d33bb07, make_charts.py imported only WB_AGGREGATES and opened wb_gdp/cckp_tas.json itself (:47, :55).\n\nbuild_analysis.py's other raw reads involve no code-sensitive join:\n- :135 raw maketable3 is used only for raw counts.\n- :336-337 joins raw maketable5 to wb_land_2020.json, whose only codes are BRA, IND and USA (r4d_data.py).\n- :345 reads only the indicator label.\n\nThe deletion leaves no dangling reference, and the paragraph makes no claim that the code-bug class is closed.\n\nResiduals of the round 3 fix, all on non-prose surfaces:\n(a) R3D8's companion edits were not made. The build_analysis.py:41 comment still says 'load() asserts every place with data finds its match', and :102 says 'Every place with data finds its match'. Design doc 6.4 :326-327 still says 'One loader now maps them for both scripts and asserts every place with data finds its match'. The gate.toml:152 licence still says 'load() asserts every AJR place with data finds its match'.\n(b) The escalated data issue is still open. AJR_CODE_FIXES is still {ROM, ZAR, WBG} (r4d_codes.py). AND is present in the GDP and tas data, IMN in tas, and results.json still has temp1 n 203 and r 0.5811. The sentence asserts none of this, so it remains true.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R4R3",
+   "scope_index": 3,
+   "claim": "[README.md:19-20] What the reversal rules out: selection aside, no explanation of the ranking between countries can rest only on an effect that was both constant over the period and the same whether or not Europeans arrived.",
+   "verdict": "CONFIRMED",
+   "evidence": "I could not refute it. The R3C1 fix is applied the same way on every surface: README.md:19, docs/README.src.md:19, the draft .md bold filter ('**Selection aside, no explanation ...'), and live MDX :110. gate.toml:153's licence was narrowed as R3C1 asked ('cannot by itself produce an inversion within one group (interaction.t); it may still explain part of the ranking').\n\nThe logic holds with the caveat. Simulation in scratchpad/round4/readme/sim3.py and sim3b.py, N=20000 and 200000:\n- A constant effect identical in both groups, with random group assignment, gives within-group r of +0.210 and +0.198 (same sign).\n- A time-constant effect that varies from place to place gives +0.659 and +0.675 (same sign).\n- Selection on the factor alone gives +0.145 and +0.155 (same sign).\n- Selection on the factor plus 1500 density (X+3D > 2) gives -0.050 and +0.010 (opposite signs).\nSo selection is the escape the caveat sets aside. With selection set aside, the two groups are exchangeable in 1500, so a group-specific proxy story cannot escape either. The sentence matches the data it summarises (results.json): colonies -0.4794 (n 95), rest +0.2806 (n 70), interaction t -5.29 (n 165).\n\nResidual, not a defect: 'constant over the period' already implies the second condition (R3C7), so the conjunction makes the exclusion narrower but no less true. 'Selection' is not defined in the README; the post explains it.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R4R4",
+   "scope_index": 4,
+   "claim": "[README.md:25-35] Files table: build_analysis.py, make_charts.py, gate.toml, templates, draft/*.src.md (not committed), docs/sources.json (narrowed to src: keys), design doc 6.1 to 6.4, provenance audit, round2-4 scopes.",
+   "verdict": "CONFIRMED",
+   "evidence": "R3S10's fix landed in docs/README.src.md:32 and README.md:32: 'Each external figure the draft binds as a `src:` key, with ...'.\n\nThe narrowed row is true:\n- The draft and templates use exactly three src: keys (grep of draft/*.src.md and docs/*.src.md): ajr2002_coef, ajr2002_r2 and dell2012.\n- docs/sources.json has all three, each with doc, sha256, page and quote.\n- shasum -a 256 matches: sources/ajr2002.txt 01f6049d..., sources/dell2012.txt e9831d3c...\n- Each quote occurs, whitespace-normalised, on its stated page. AJR text page 20 runs on from header 1249 and so is p.1250 (Table V, 'Log population density -0.38'). Page 21 is p.1251 ('R2 0.34'). Dell's page header reads 67.\n- The AJR N of 91 that R3S10 flagged is bound to our own flip...income_1995 n (draft src :79, :201), not a src: key, so the narrowed row no longer overclaims.\n\nThe other rows:\n- Draft not committed: git check-ignore matches .gitignore:12 */draft/.\n- Literals in draft src outside placeholders: a scan finds only years, citations and the licensed history figure 'plus 0.28' (:215).\n- make_charts.py reads every printed figure from R=results.json (:25, :94-259). It writes four PNGs.\n- gate.toml has [allow], [claims], [pairs] and [published] sections, and extra= renders both templates (:13).\n- The design doc has sections 6.1 to 6.4 (lines 147, 202, 267, 319) and no 6.5.\n- round2/3/4-scope.md are tracked and each is a scope file.\n\nThe fix created no new defect. Minor and not false: the row says 'stored document', but sources/ is gitignored (.gitignore:17), so a reader of the public repo cannot open the stored copies.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R4R5",
+   "scope_index": 5,
+   "claim": "[README.md:44-45] Another round, the first under that gate and run a month after publication, found a country-code join bug and a central comparison that rests on a few cold colonies.",
+   "verdict": "CONFIRMED",
+   "evidence": "R3S11's fix is applied: '; both are corrected in the post' is gone from README.md:45 and docs/README.src.md:45. That removes the false claim, since ADO and IMY are still unmapped.\n\nThe remaining parts hold:\n- Publication: 2026-09-07 (analytics-blog commit 1c5d364 21:31 -0400; site 8cb1520; MDX publishedAt :5).\n- Gate port: d33bb07 on 2026-10-09 12:16 -0400 (16:16 UTC).\n- Round 1 closed 2026-10-09T18:06:48Z (docs/rounds.jsonl), and round1-findings.md:3 says it ran 'after the gate passed on the corrected draft'. So it was the first round under the gate, 32 days after publication.\n- The findings: FX8 (ZAR/ROM, plus WBG from the adjudicator) is the code-join bug. FX9/LG1 is the heat flip, which LG1 shows was used in the close, the excerpt and the chart 1/2 captions, so 'central' fits the post as it stood.\n- 'Rests on a few cold colonies': without CAN, results.json shows +0.17/-0.19, and dropping CAN, CHL, USA and NZL gives +0.05/-0.03 (R3D0 recomputed, n 94/95).\n\nThe deletion leaves no dangling reference. The next sentence ('The one class no script can catch ...') does not depend on it. 'Another round' claims no exclusivity, so it is not falsified by rounds 2 and 3 also finding things.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R4R6",
+   "scope_index": 6,
+   "claim": "[data/README.md:41-45] Unmatched, they silently dropped out of every join between the mismatched sources until a fact-check a month after publication. build_analysis.py maps them in reader functions that both scripts use, and its loader asserts that every place with a 1500 density, 1500 urbanisation or 1995 income value, bar the defunct Netherlands Antilles and Yugoslavia, finds a match.",
+   "verdict": "CONFIRMED",
+   "evidence": "R3S14's narrowing is applied in docs/data-README.src.md, and the template renders to data/README.md:43-45. The gate.toml:170 claims key matches it word for word.\n\nThe code does what the sentence says:\n- build_analysis.py:104 builds with_data from lpd1500s, sjb1500 and logpgp95.\n- :105-106 assert that with_data minus gdp minus tas minus AJR_DEFUNCT is empty, with AJR_DEFUNCT = {ANT, YUG} at :44.\n- The .dta labels confirm the variables: sjb1500 is 'Bairoch-equiv urbaniz', lpd1500s is 'log population density, 1500', and logpgp95 is the 1995 income figure.\n\nIndependent checks (scratchpad/round4/readme/chk6.py, chk6b.py, mut6.py):\n- load() passes.\n- The union of places with any of the three variables across raw read_ajr(3) and read_ajr(5) is 184, identical to the loader's set, so de-duplication hides none. logpgp95 in t3 and t5 covers the same places.\n- Unmatched places are exactly ANT (lpd1500s 0.378) and YUG (lpd1500s 3.09, sjb1500 5.0), both of which no longer exist.\n- All 10 places that match only CCKP have no 2023 World Bank value (CUB, VEN, SYR and others) or no World Bank row (GLP, GUF, MTQ). None is a hidden code mismatch.\n- Mutation test: removing ROM, ZAR or WBG from AJR_CODE_FIXES makes load() raise AssertionError naming the code, and removing KSV raises ['XKX']. The assert really does guard the bug class.\n- make_charts.py:21 imports read_ajr, read_gdp and read_tas.\n\nThe first sentence was not changed, and R3S14 confirmed it.\n\nResidual outside this sentence: the same assert is still described as 'every place with data' at build_analysis.py:41/:102, design doc :327 and gate.toml:152. ADO and IMY are still unmapped, but the narrowed clause no longer claims to cover them.",
+   "fixed": false,
+   "fix": null
+  }
+ ]
+}

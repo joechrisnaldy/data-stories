@@ -1,0 +1,274 @@
+{
+ "round": 3,
+ "date": "2026-10-09",
+ "lenses_dispatched": 3,
+ "lenses_returned": 3,
+ "lenses_errored": 0,
+ "lenses": [
+  "draft sentences",
+  "README, data README and chart 2 caption",
+  "filter coherence"
+ ],
+ "scope": [
+  "Drop Canada, Chile, the United States and New Zealand, and they are plus 0.05 across 94 and minus 0.03 across 95.",
+  "If something pressed equally on prosperity in 1500 and today, and pressed equally on places Europeans reached and places they did not, it cannot by itself produce a ranking that inverted in one group and did not in the other.",
+  "Heat acting directly and identically on human productivity is a casualty as the whole explanation.",
+  "It is disqualified, selection aside, only if its effect also held steady across the five centuries.",
+  "That minus 0.74 measures how closely the split tracks latitude.",
+  "It is an easy thing to measure, and we have a habit of mistaking those for each other.",
+  "**Two of the bugs found in fact-checking, both fixed before publication.** The first: my de-duplication of the replication file kept the first row per country, and for Germany and Zimbabwe that row carries latitude but neither density nor income, so both were silently deleted from every correlation needing density or 1995 income.",
+  "**A bug found after publication.** A month after this post went up, a further fact-check found that Acemoglu, Johnson and Robinson's files use older codes for Romania, the Democratic Republic of the Congo and the West Bank and Gaza, and that the two modern sources code Kosovo differently, so all four silently dropped out of every sample that had to match those codes across sources.",
+  "Both scripts now read the sources through the same functions, and the analysis script asserts that every place with data, other than places that no longer exist, finds its match.",
+  "[README.md] | Finding | Figure | |---|---| | Temperature against log income today | minus 0.43 (n = 197) | | Temperature against log population density in 1500, former colonies | plus 0.29 (n = 98) | | Temperature against log income today, former colonies | minus 0.25 (n = 99) | | Log density in 1500 against log income today, pooled | plus 0.04 (n = 165) | | ... among 95 former colonies | minus 0.48 | | ... among the 70 not on AJR's list | plus 0.28 | | The interaction on log density, which is the test the argument rests on | t = minus 5.3 (n = 165) |",
+  "[README.md] | Path | What | |---|---| | `build_analysis.py` | Every result the post computes, into `results.json` | | `make_charts.py` | The four charts; every computed figure on a chart reads from `results.json` | | `gate.toml` | This post's configuration for the shared gate in `../gate/`: exemptions with reasons, the claims register, and templates for the published MDX fields | | `docs/README.src.md`, `docs/data-README.src.md` | Templates for this file and `data/README.md`, rendered by the gate like the draft | | `draft/*.src.md` (not committed) | The draft as written: every figure from `results.json` a `key:fmt` placeholder | | `docs/sources.json` | Each external figure with its stored document, hash, page and verbatim quote | | `docs/2026-09-07-reversal-design.md` | Binding pre-registration, with amendments recorded in sections 6.1 to 6.4 | | `docs/provenance-audit.md` | What each source actually says, opened rather than assumed | | `docs/round2-scope.md`, `round3-scope.md`, `round4-scope.md` | What each fact-check round was scoped at |",
+  "[README.md] Another round, the first under that gate and run a month after publication, found a country-code join bug and a central comparison that rests on a few cold colonies; both are corrected in the post.",
+  "[data/README.md] **`temp1` through `temp5` are withdrawn.** They are documented (Appendix 2, sourced to Parker 1997) but `temp1` fails a sanity check as a country annual mean: the United States reads 27 degrees and Greenland 26, and it correlates at only 0.58 with ERA5 over 203 matched places.",
+  "[data/README.md] **Older country codes.** AJR's files code Romania `ROM`, the Democratic Republic of the Congo `ZAR` and the West Bank and Gaza `WBG`, where the World Bank and the CCKP use `ROU`, `COD` and `PSE`; and the CCKP codes Kosovo `KSV` where the World Bank uses `XKX`.",
+  "[data/README.md] Unmatched, they silently dropped out of every join between the mismatched sources until a fact-check a month after publication. `build_analysis.py` maps them in reader functions that both scripts use, and its loader asserts that every place with data, bar the defunct Netherlands Antilles and Yugoslavia, finds a match."
+ ],
+ "findings": [
+  {
+   "id": "R3D0",
+   "scope_index": 0,
+   "claim": "Drop Canada, Chile, the United States and New Zealand, and they are plus 0.05 across 94 and minus 0.03 across 95.",
+   "verdict": "CONFIRMED",
+   "evidence": "Recomputed with build_analysis.load() (scratchpad round3/draft/r3d.py). Among former colonies with temperature, dropping CAN, CHL, USA and NZL gives tas vs lpd1500s r = +0.0547 (n 94, t 0.53) and tas vs lgdp2023 r = -0.0347 (n 95, t -0.33). These match results.json heat_reversal_robustness.without_coldest. 'They' refers to the two correlations in the previous sentence: +0.29 on 98 and -0.25 on 99 (heat_reversal.former_colonies). Round 2 found that the deleted label ('the four coldest former colonies') was false, because Bhutan (ex2col 1, tas 9.59, no lpd1500s) is colder than USA and NZL. The fix deleted the label, and the sentence now only names the four, so the Bhutan problem is gone. The names stay tied to the bound figures: build_analysis.py:233 asserts coldest == ['CAN','CHL','USA','NZL']. src.md:53 and live MDX :69 carry the same wording. The chart 2 footnote (make_charts.py:162-165) was changed the same way. No new defect. Bhutan is still in the n 95 income sample, and dropping it as well would move -0.03 to -0.01 (n 94). The sentence names its four and does not claim they are all the cold colonies, and 'It flips on a few cold places' is still true of them (tas -3.72 to 10.24).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3D1",
+   "scope_index": 1,
+   "claim": "If something pressed equally on prosperity in 1500 and today, and pressed equally on places Europeans reached and places they did not, it cannot by itself produce a ranking that inverted in one group and did not in the other.",
+   "verdict": "CONFIRMED",
+   "evidence": "Round 2 (AR7) found that a constant effect that is identical in both groups can still produce opposite signs within the groups when places are selected into them. 'By itself' excludes that route, because selection is a second ingredient. I checked both cases in a simulation (r3d_logic.py, N=20000). With a constant identical latitude effect on density and income and random assignment to groups, the within-group r is +0.087 and +0.078: same sign. With selection on latitude and density, it is +0.031 and -0.050: opposite signs. So the unqualified version was false and the qualified version holds. On real data, a shared temperature coefficient leaves the interaction at -0.468, t -5.01 (n 165; baseline -0.482, t -5.29), and a shared latitude coefficient leaves it at t -5.02 (n 156). The sentence also matches the data pattern it describes: the former colonies are inverted (r -0.48, n 95) and the rest are not (+0.28, n 70). Live MDX :113-114 is identical, and gate.toml:109 licenses the new wording. No new defect.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3D2",
+   "scope_index": 2,
+   "claim": "Heat acting directly and identically on human productivity is a casualty as the whole explanation.",
+   "verdict": "CONFIRMED",
+   "evidence": "Round 2 (AR5) found that the bare 'is a casualty' claimed more than the filter supports. 'As the whole explanation' brings it back into line with the bold filter ('cannot rest only on'), with sentence 1 ('by itself'), and with the close ('cannot be the whole of it'). My regression check: a temperature term with one coefficient shared by both groups leaves the density x ex2col interaction at t -5.01 (n 165), and the shared heat coefficient is t -0.72 (r3d_logic.py). So a direct heat effect that is identical in both groups does not account for the inversion. That supports 'not the whole explanation', and the sentence claims nothing about heat having no effect, which keeps it consistent with the Dell et al. paragraph. Under selection, heat plus European selection would not be heat as the whole explanation either. The phrasing is a little awkward but not false. Live MDX :115 is identical.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3D3",
+   "scope_index": 3,
+   "claim": "It is disqualified, selection aside, only if its effect also held steady across the five centuries.",
+   "verdict": "CONFIRMED",
+   "evidence": "Read as a necessary condition, the sentence says that if a geographic story is disqualified, its effect held steady. The filter (bold sentence) disqualifies only effects that were constant over the period and the same across the colonial split, so that holds. Selection only removes disqualifications (AR7 and my simulation: a constant identical effect plus selection can produce the opposite-sign pattern). So adding 'selection aside' cannot make the necessary-condition claim false. Its job is to block the colloquial sufficiency reading, which AR7 showed fails under selection. 'Also' stands for the second condition, that the effect was the same in both groups, which the next paragraph spells out ('anything constant that acted differently ... survives'). I found no new false statement. One minor point: the survivors paragraph after it lists only time-varying effects and group-varying effects, and does not repeat that it too sets selection aside. That text was not changed in round 2. Live MDX :122 is identical, and gate.toml:111 licenses it.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3D4",
+   "scope_index": 4,
+   "claim": "That minus 0.74 measures how closely the split tracks latitude.",
+   "verdict": "CONFIRMED",
+   "evidence": "Recomputed: corr(lat_abst, ex2col) = -0.7416 on n 167, t -14.2. That matches results.json colonisation_vs_latitude (build_analysis.py:200, corr(ajr,'lat_abst','ex2col')). 'The split' is AJR's ex2col classification, which the paragraph is about. A correlation between absolute latitude and that binary split is exactly a measure of how closely the split tracks latitude, so the sentence is literally true. It also drops round 2's DB31 defect: it no longer calls -0.74 'the latitude part of' Europeans' choice. That mattered because 37 of the 66 non-listed places with lat_abst are European states, so much of -0.74 is the colonisers' own latitude. Residual risk only: the sentence still follows 'Europeans chose where to go ... partly on things like latitude', so a careless reader could still take it as the size of that choice. The words do not say so. Live MDX :171 is identical.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3D5",
+   "scope_index": 5,
+   "claim": "It is an easy thing to measure, and we have a habit of mistaking those for each other.",
+   "verdict": "CONFIRMED",
+   "evidence": "The round 2 fix (DB34) deleted 'just'. That is applied in draft .md and live MDX :191, so the line no longer contradicts the post's concessions that heat matters (Dell et al. 2012 paragraph; 'cannot be the whole of it'). 'It' is the thermometer, meaning temperature. That it is easy to measure is uncontroversial: the post takes it from a single ERA5 download (data/cckp_tas.json). The second clause is a rhetorical generalisation with no data claim, and its loose antecedent for 'those' predates round 2. Removing the word added no new claim. Outside this sentence, but nearby: the sentence before it ('cannot have inverted the ranking unless its effect changed') leaves out the 'acted differently depending on whether Europeans arrived' survivor and the selection route that sentences 1 and 3 now allow. That text was not changed in round 2.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3D6",
+   "scope_index": 6,
+   "claim": "Two of the bugs found in fact-checking, both fixed before publication. The first: my de-duplication of the replication file kept the first row per country, and for Germany and Zimbabwe that row carries latitude but neither density nor income, so both were silently deleted from every correlation needing density or 1995 income.",
+   "verdict": "CONFIRMED",
+   "evidence": "I read the raw data/ajr_t5/maketable5.dta. DEU's first row (179) has lat_abst 0.567, ex2col 0, africa 0, lpd1500s NaN and logpgp95 NaN. Its second row (180) has lpd1500s 2.924 and logpgp95 9.935. ZWE's first row (373) has lat_abst 0.222 and nothing else, and its second row (374) has lpd1500s -0.236 and logpgp95 7.696. Table 3 has the same pattern. A keep-first row therefore carries latitude but neither density nor AJR's only income figure (1995). The Germany and Zimbabwe rows are dropped from any correlation that needs lpd1500s or logpgp95, which matches the round 2 narrowing (DB40: 'needing density or 1995 income'). That narrowing fixed the earlier 'needing either', which was false because both stayed in the 2023-income correlations. 'Fixed before publication': the keep-most-filled de-duplication is already in the first commit (1c5d364, build_analysis.py:61-72, dated 2026-09-07), and the post went live the same day (site 8cb1520). The wording matches data/README.md:32. Live MDX :218-221 is identical. No new defect.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3D7",
+   "scope_index": 7,
+   "claim": "A bug found after publication. A month after this post went up, a further fact-check found that AJR's files use older codes for Romania, the DRC and the West Bank and Gaza, and that the two modern sources code Kosovo differently, so all four silently dropped out of every sample that had to match those codes across sources.",
+   "verdict": "CONFIRMED",
+   "evidence": "Timing: publishedAt 2026-09-07 (MDX frontmatter; site commit 8cb1520), and round 1 closed 2026-10-09 (docs/rounds.jsonl). Codes: the raw AJR .dta files carry ROM, ZAR and WBG (build_analysis.py:42 maps them to ROU, COD and PSE). The World Bank API file and CCKP use ROU, COD and PSE. CCKP has KSV, and the World Bank has XKX ('Kosovo', 14240) (r3d_codes.py). 'Older': ROM and ZAR are former ISO codes (round 2), and an older World Bank code list (irows.ucr.edu/research/tsmstudy/wbcountrycodes.htm, fetched) gives 'WBG' for West Bank/Gaza and ZAR and ROM for the other two. Every one of the four dropped out of the cross-source samples it qualifies for. Diffing results-old.json against results.json: tidy story 196 to 197 (Kosovo). density|2023 all 163 to 165, former colonies 94 to 95, rest 69 to 70 (ROU, COD). urbanisation|2023 rest 43 to 45 (ROU, PSE). temp1 match 200 to 203. Every AJR-only sample is unchanged (density|1995 156/91/65, urbanisation|1995 84/41/43, colonisation vs latitude 167), so 'had to match those codes across sources' is accurate. Round 2's fixes (AR14, AR15, DB41) are applied identically in live MDX :232-235. The sentence is true as written, but it is not the complete list. AJR also codes Andorra ADO and the Isle of Man IMY, and these still match nothing (see R3D8). The sentence does not say 'only these', so that defect is booked under item 8.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3D8",
+   "scope_index": 8,
+   "claim": "Both scripts now read the sources through the same functions, and the analysis script asserts that every place with data, other than places that no longer exist, finds its match.",
+   "verdict": "REFUTED",
+   "evidence": "I re-derived this myself and the refuter's numbers reproduce exactly. Script: scratchpad/round3/draft-adjudicator/check.py, check2.py, and base/ vs fixed/ reruns of build_analysis.py with DATA pointed at the repo. The base run is byte-identical to the repo's results.json.\n\n(1) The first clause holds in substance. make_charts.py:21 imports read_ajr, read_gdp and read_tas, and :50-51 read only through them. The analysis script's other raw reads involve no code-matching join. :135 reads raw maketable3 only for raw counts. :336-337 joins wb_land_2020.json, whose only codes are BRA, IND and USA. :345 reads only the indicator label.\n\n(2) The second clause describes a check the code does not run. build_analysis.py:104 builds with_data only from rows with lpd1500s, sjb1500 or logpgp95. :105 lets a match in either the World Bank or the CCKP satisfy it.\n\n(3) Two places that still exist, have data and lack their match pass load() silently. Andorra: AJR 'ADO' has ex2col 0, africa 0, lland15 6.109 (exp is about 450 km2) and temp1 24. The World Bank has AND ($64,631) and the CCKP has AND (5.47 C). Isle of Man: AJR 'IMY' has ex2col 0, africa 0 and temp1 7. The CCKP has IMN (10.36 C).\n\nI added ADO:AND and IMY:IMN to AJR_CODE_FIXES and reran. Exactly these keys change:\n- withdrawn_temp1_sanity_check: n_matched 203 to 205, r 0.5811 to 0.5731, mae 4.71 to 4.77.\n- heat_reversal.all.vs_income_2023: n 186 to 187, r -0.4345 to -0.4403.\n- heat_reversal.never_colonised.vs_income_2023: n 87 to 88, r -0.2931 to -0.2999.\n- meta.n_code_fixes: 4 to 6.\nEverything else is identical, including the flip, interaction, never_colonised_common and the 165.\n\nThe draft prints the temp1 r through {{withdrawn_temp1_sanity_check.r:dec2}} (src :226), which would read 0.57 instead of 0.58. data/README.md:35 would read 205 instead of 203. A published figure therefore still carries the bug class this sentence says is closed. The two heat_reversal keys are not printed in the draft.\n\n(4) Even read literally, the broad claim could not pass. Channel Islands (CHI: ex2col 0, temp1) and Western Sahara (WSH: ex2col 0, temp1) both exist, have data, and match in neither source.\n\nRound 2's fix (DB45) did fix what DB45 found: 'one loader' became 'the same functions', and ANT and YUG became 'places that no longer exist'. But it kept 'every place with data', which the code never checked. The replacement prose still overclaims, and gate.toml:157's licence repeats the overclaim.",
+   "fixed": true,
+   "fix": "Draft src (method note 'A bug found after publication', :218-220) and live MDX :240-242: delete ', and the analysis script asserts that every place with data, other than places that no longer exist, finds its match' so the sentence ends 'Both scripts now read the sources through the same functions.' Then remove the gate.toml:157 licence.\n\nIf the owner prefers to keep the clause, narrow it to what build_analysis.py:104-106 checks: 'asserts that every place with a 1500 density, 1500 urbanisation or 1995 income figure, other than places that no longer exist, finds a match in at least one modern source'. Re-key gate.toml:157 to match.\n\nApply the same deletion or narrowing to:\n- docs/data-README.src.md:43-45, then re-render data/README.md, and update gate.toml:171.\n- the build_analysis.py:41/:102 comments.\n- design doc 6.4 item 1.\n\nEscalate to the owner rather than fixing this in prose: AJR_CODE_FIXES lacks ADO:AND and IMY:IMN. Adding them changes the published withdrawn-temp1 r from 0.58 to 0.57 (draft :226 via its placeholder) and the data README n from 203 to 205. That is a data correction and needs its own rebuild and gate run. gate.toml:152's licence for 'Across all 165 places with both' uses the same overstated description of the assert, though the 165 itself is unaffected."
+  },
+  {
+   "id": "R3C1",
+   "scope_index": 0,
+   "claim": "Bold filter, draft :91-92 (MDX :110-111, repeated verbatim at README.md:19-20 and docs/README.src.md:19-20): 'No explanation of the ranking between countries can rest only on an effect that was both constant over the period and the same whether or not Europeans arrived.'",
+   "verdict": "REFUTED",
+   "evidence": "Upheld on my own evidence. (1) The body and the headline now disagree. Draft :103 (MDX :122) says a geographic story with a steady effect is disqualified only 'selection aside'. The bold headline at draft :91-92 (MDX :110-111, README.md:19-20, docs/README.src.md:19-20) says no explanation of the ranking can rest only on such an effect, with no selection caveat. A steady geographic effect plus European selection is still an explanation of the income ranking that rests only on geography: selection sorts countries into groups but moves no country's income. So :103 lets that case survive and the headline excludes it. (2) 'Only' cannot carry the caveat. Read strictly ('no other factor at all', not even era-specific variation), the headline would be true but empty: the 1500 and 2023 rankings would then coincide, and the pooled +0.04 rules that out without any reversal. Read the way the post uses it (other variation allowed), selection is a logical escape. My own simulation (scratchpad/round3/coherence-adj/adj_sim.py) holds one factor's effect equal in both eras and both groups (a=b=0.2) and selects on factor and density. It gives colonies -0.068, rest +0.140, pooled +0.037, corr(D, colonised) -0.342: opposite signs within the two groups while no effect changes. That is the same standard round 2 AR7 applied to :95. (3) Magnitude. With exactly equal standardised effects, selection never reaches the observed interaction: median t -1.26, and 0 of 400 draws at n=165 reach t <= -5.29. With a weaker 1500 proxy (a=0.1, b=2.5), 95% of draws reach it. The post concedes at :152-156 that density and income are different quantities. It does not make the magnitude argument either way. (4) adj_data.py reproduces the refuter's data checks: interaction -0.482, t=-5.29 (n=165); with a shared latitude control t=-5.02 (n=156); with a shared temperature control t=-5.01 (n=165); quadratic controls -4.98 and -4.86. The post reports none of these. (5) gate.toml:153 still licenses the headline as 'cannot produce an inversion within one group', which is the step AR7 refuted.",
+   "fixed": true,
+   "fix": "Draft/src :91 and MDX :110: '**Selection aside, no explanation of the ranking between countries can rest only on ...'. In docs/README.src.md:19 (re-render README.md): 'What the reversal rules out: selection aside, no explanation ...'. The gate.toml:153 key 'can rest only on an effect that was both constant' is still a substring, so it needs no rename. Change its licence wording from 'cannot produce an inversion' to 'cannot by itself produce an inversion'."
+  },
+  {
+   "id": "R3C2",
+   "scope_index": 1,
+   "claim": "Draft :93-95 (MDX :112-114), round 2 AR7 fix: 'If something pressed equally on prosperity in 1500 and today, and pressed equally on places Europeans reached and places they did not, it cannot by itself produce a ranking that inverted in one group and did not in the other.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Without selection, the claim is true. If group membership does not depend on the factor and density, the expected within-group correlation equals the pooled one, so no inversion appears. The object here is the grouped pattern ('inverted in one group and did not in the other'). In AR7's counterexample (round2/argument-adjudicator/sim_ar7.py) that pattern needs the constant effect plus the selection rule, so 'by itself' does exclude it. The fix works, but it is less explicit than ':103 selection aside'. A reader who takes 'by itself' to mean 'as the only cause of prosperity' would still be misled, because in AR7's world latitude is the only cause. Nothing dangles after the AR6 deletion.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3C3",
+   "scope_index": 2,
+   "claim": "Draft :95-96 (MDX :114-115), round 2 AR5 fix: 'Heat acting directly and identically on human productivity is a casualty as the whole explanation.'",
+   "verdict": "CONFIRMED",
+   "evidence": "The claim holds even under selection, though the post never shows the test. Suppose heat were the whole explanation and selection ran on heat and density. Then, within each group, density and income should be uncorrelated once heat is held fixed. Observed (data_checks.py): within colonies, income on density plus tas gives density -0.31, t=-4.66, n=95, and heat -0.024, t=-1.19. The pooled interaction with a shared tas term is t=-5.01, n=165, and t=-4.86 with tas squared added. Selection on heat is real (tas against ex2col +0.418, n=206). Round 1's CA17 simulation at the data's selection strength produced the inversion in 0 of 2000 runs. 'As the whole explanation' agrees with :137 and :168. The wording is awkward but grammatical. Inside the post, its only support is the filter logic that holds 'selection aside'. The data close that gap for heat, but the post does not print those data.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3C4",
+   "scope_index": 3,
+   "claim": "Draft :102-103 (MDX :121-122), round 2 AR7 fix: 'A geographic story is not disqualified for being unable to see the colonial split. It is disqualified, selection aside, only if its effect also held steady across the five centuries.'",
+   "verdict": "CONFIRMED",
+   "evidence": "The sentence is true on either reading. Read strictly, 'disqualified only if steady' is a necessary condition. Selection can only rescue a story, never disqualify one, so that condition holds with or without selection and the caveat adds nothing. What selection actually threatens is the converse: 'steady and the same in both groups, therefore disqualified'. That is what the unqualified bold filter (:91) and close (:165) assert, so the caveat sits on the one sentence that literally did not need it. Read colloquially ('disqualified exactly when steady'), 'selection aside' is a correct narrowing. On coherence: the two sentences before it describe selection itself ('Europeans went to particular latitudes', -0.74, :99-102). This sentence sets that aside, and nothing later in the post deals with it. The 'Two problems' paragraph (:146-150) says only that selection does not invalidate the description and warns against a causal reading of the split. See R3C1 and R3C6.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3C5",
+   "scope_index": 4,
+   "claim": "Draft :105-107 (MDX :124-125): 'What survives is anything whose effect changed over those five centuries, and anything constant that acted differently depending on whether Europeans arrived.'",
+   "verdict": "REFUTED",
+   "evidence": "Upheld. Draft :105-107 (MDX :124-125) presents what survives the filter as a complete list: effects that changed, and constant effects that acted differently depending on European arrival. Two lines earlier, :103 (MDX :122) concedes that a steady-effect geographic story escapes the filter through selection ('selection aside'). That case is in neither category. In it, the factor's effect on income is identical in both groups; it is European arrival that depends on the factor. The tropical-disease example at :107-108 works through settlement and then income, so it belongs in the 'acted differently' category, not pure selection. My adj_sim.py runs (a=b, selection on factor and density: -0.068 / +0.140) are cases the list leaves out. Before round 2 there was no selection concession to contradict, so the round 2 fix at :103 created this gap.",
+   "fixed": true,
+   "fix": "Applying R3C1's 'Selection aside,' to the bold filter fixes this as well, because :105 is that filter's complement and the whole section is then scoped 'selection aside'. If R3C1 is not applied, insert 'selection aside,' after 'What survives' at draft/src :105 and MDX :124 (+2 words)."
+  },
+  {
+   "id": "R3C6",
+   "scope_index": 5,
+   "claim": "Close, draft :164-166 (MDX :186-188): 'Among former colonies, places that were densely settled in 1500 tend to be poorer today, and an explanation whose effect never changed and never depended on whether Europeans arrived cannot account for that inversion.'",
+   "verdict": "REFUTED",
+   "evidence": "Upheld for the second clause; the empirical first clause stands (adj_data.py: r=-0.479, n=95). Draft :164-166 (MDX :186-188) says an explanation whose effect never changed and never depended on European arrival 'cannot account for that inversion'. This is the same step that :95 now limits to 'cannot by itself produce', after round 2 AR7. Round 2 AR9 confirmed this sentence only with the note that 'as a general proposition it inherits AR7's selection caveat', and that caveat was never applied here. So the close is the post's only unqualified statement of the step. It has neither 'only' nor 'by itself', and it contradicts :95 and :103. In adj_sim.py, a constant effect identical in both groups, plus selection, produces a negative relationship within colonies (-0.068 at a=b=0.2). With a weaker 1500 proxy (a=0.1, b=2.5, 'disagree' rule) the result is -0.41 / +0.57, and t <= -5.29 in 95% of n=165 draws. The refuter's own qualification also checks out: at exactly equal standardised effects, selection gives 0 of 400 draws reaching the observed t. A magnitude argument might therefore rescue the clause, but the post does not make one. gate.toml:155 licenses the clause as 'cannot change a ranking within one group', the unqualified step that AR7 refuted.",
+   "fixed": true,
+   "fix": "Draft/src :165 and MDX :187: change 'cannot account for that inversion' to 'cannot by itself account for that inversion' (+2 words, matching :95). Change the gate.toml:155 key to the new wording, since the old key stops being a substring, and narrow its licence to 'cannot by itself change a ranking within one group'. If words must not be added, delete ', and an explanation whose effect never changed and never depended on whether Europeans arrived cannot account for that inversion', leaving the empirical sentence; :168 still carries the narrower thermometer conclusion."
+  },
+  {
+   "id": "R3C7",
+   "scope_index": 6,
+   "claim": "Close, draft :168 (MDX :190): 'The thermometer cannot be the whole of it, and cannot have inverted the ranking unless its effect changed.'",
+   "verdict": "CONFIRMED",
+   "evidence": "'Not the whole of it': r-squared is about 0.19 (results.json tidy_story.r2_share; round 2 AR10). 'Cannot have inverted ... unless its effect changed': this is about the actual thermometer, and the data rule out the selection route for heat. A shared tas control gives t=-5.01 (quadratic -4.86), and within colonies density is t=-4.66 net of tas (data_checks.py). A heat effect that depended on whether Europeans arrived would itself be a change over time, since nowhere had been colonised in 1500, so 'changed' does not drop the second survivor category at :105-107. Any time-constant effect, even one that differs from place to place, ranks places the same way in both eras, so it cannot invert the ranking unless selection is involved.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3C8",
+   "scope_index": 7,
+   "claim": "Close, draft :163 (MDX :185): 'The chart that started me off is true and cannot mean what it looks like.'",
+   "verdict": "CONFIRMED",
+   "evidence": "The post defines 'what it looks like' at :3-5 as 'the wealth of nations explained by a thermometer'. Two things rule that out without the general filter: r-squared of about 0.19 (four fifths of the variation lies elsewhere), and the heat-specific test, where a constant, identical heat effect leaves the density interaction at t=-5.01 (data_checks.py). So this sentence does not inherit the selection overstatement in R3C1 and R3C6. However, gate.toml:154 licenses it through 'the filter rules out reading it as a constant, identical effect'. That licence is sound for heat only because of the tas-controlled test, which neither the post nor the register cites.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3C9",
+   "scope_index": 8,
+   "claim": "Coherence of the filter paragraph after round 2's AR6 deletion of 'Among the 70 places not on AJR's list ... heat runs minus 0.15 then and minus 0.04 now, neither clear of chance' (draft :91-96, then :98).",
+   "verdict": "CONFIRMED",
+   "evidence": "The paragraph now ends on the casualty line, and the next one opens 'I want to be careful here ... a climate story cannot see the colonial split', which follows naturally from heat. A search of the draft, MDX, README and make_charts.py for 'Outside that', 'both eras', 'minus 0.04', 'heat ran' and 'other half of the contrast' finds nothing, so no reference is left pointing at the deleted text. The MDX (:110-115) matches the rendered draft word for word. The deletion leaves the casualty line resting only on the filter logic, which is the right footing, because LG6 and AR6 showed those two nulls could not support a heat claim. One leftover sits in the register, not the prose (R3C10).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3C10",
+   "scope_index": 9,
+   "claim": "gate.toml:108 claims licence for 'not the cause' (draft :92): 'the filter; licensed by interaction.t and the four-cell heat pattern; reviewed in rounds 2 to 4'",
+   "verdict": "REFUTED",
+   "evidence": "Upheld. gate.toml:108 licenses 'not the cause' (draft :92, MDX :111) with 'interaction.t and the four-cell heat pattern'. This entry is unchanged from HEAD (git diff shows no edit to :108). Round 2 AR6 deleted the non-listed places' heat cells from the post. results.json never_colonised_common_sample still holds r -0.155 and -0.042 (n=70), but grep finds no reference to it in draft/*.src.md, docs/*.src.md or gate.toml, and the rendered draft prints neither figure. Only the colonies' +0.29 / -0.25 remain (:48-49), and :53 calls them fragile. Round 1 LG6 and round 2 AR6 both found that the four-cell contrast cannot carry a heat claim. Design doc 6.4 item 2 says the post no longer leans on the heat flip. The licence therefore cites evidence the post no longer contains and that two rounds rejected. interaction.t alone backs the filter this phrase belongs to. AR6's instruction to remove gate.toml entries that bind the deleted sentence was applied only in part.",
+   "fixed": true,
+   "fix": "gate.toml:108: delete ' and the four-cell heat pattern' from the licence, leaving 'the filter; licensed by interaction.t; reviewed in rounds 2 to 4'."
+  },
+  {
+   "id": "R3C11",
+   "scope_index": 10,
+   "claim": "Draft :146-150 (MDX :168-172): 'splitting on colonisation is not innocent ... That does not invalidate the description, but it does mean nobody should read \"the split determines the sign\" as a causal statement'",
+   "verdict": "CONFIRMED",
+   "evidence": "Every part of this is true. Selection does not change the observed within-group correlations (-0.479, n=95; +0.281, n=70), and the causal disclaimer is correct. Coherence note: this is the post's only discussion of selection, and it frames selection as a threat only to a causal reading of the split. It never says that selection limits the filter, which is the point :95 ('by itself') and :103 ('selection aside') now concede. So the caveat round 2 added is raised in the filter section and never resolved anywhere. That is why the unqualified bold filter (R3C1) and close (R3C6) are overstatements rather than shorthand.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3S9",
+   "scope_index": 9,
+   "claim": "[README.md] Findings table: temperature vs log income today -0.43 (n=197); temperature vs log 1500 density, former colonies +0.29 (n=98); temperature vs log income today, former colonies -0.25 (n=99); log density 1500 vs log income today pooled +0.04 (n=165); 95 former colonies -0.48; 70 not on AJR's list +0.28; interaction on log density t=-5.3 (n=165)",
+   "verdict": "CONFIRMED",
+   "evidence": "I recomputed every figure independently with my own corr and numpy OLS on build_analysis.load() (scratchpad round3/surfaces/check1.py, check2.py). Results: tas vs lgdp -0.4336 n=197; former-colony tas vs lpd1500s +0.2945 n=98; tas vs lgdp2023 -0.2503 n=99; lpd1500s vs lgdp2023 pooled +0.0425 n=165; colonies -0.4794 n=95; not listed +0.2806 n=70; interaction t -5.292 n=165. All match results.json and round correctly. The pooled sample has no missing ex2col, so 95+70=165 and pooled equals the interaction sample. The SF55 fix landed in docs/README.src.md: rows 2, 4 and 7 now say log density and log income, and row 3 gained 'log income' too. Every label now matches the variables actually used (lpd1500s, lgdp2023). Fairness note, not a defect: rows 2 and 3 give the heat flip as a finding without its fragility. Without Canada it is +0.17/-0.19, t 1.67/-1.86. The same README's next section (sentence 11) discloses that dependence, so the table is not misleading on its own page.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3S10",
+   "scope_index": 10,
+   "claim": "[README.md] Files table (build_analysis.py, make_charts.py, gate.toml, templates, draft/*.src.md not committed with every figure from results.json a key:fmt placeholder, sources.json, design doc 6.1 to 6.4, provenance audit, round2-4 scopes)",
+   "verdict": "REFUTED",
+   "evidence": "Upheld, but only for a row round 2 did not change. That defect predates round 2 and is low severity. The rows round 2 touched are true. The draft is gitignored (.gitignore:12 '*/draft/', and git check-ignore confirms it). I masked every {{...}} in draft src.md and scanned for literal numbers. The only computed literal is 'plus 0.28' at src:215, which is the pre-correction urbanisation value and is licensed in gate.toml [allow]. Everything else is a year, a page or a citation. gate.toml has [allow], [claims] and [published] sections (lines 17, 93, 185), extra= renders both templates (gate.toml:13), and make_charts.py reads every annotated r and n from R. The sources.json row overclaims. docs/sources.json holds exactly three keys: ajr2002_coef, ajr2002_r2 and dell2012. Each has a doc, a sha256 (both match my shasum of sources/ajr2002.txt and dell2012.txt), a page and a quote. But the post states a further external figure. Draft src:79 ('They publish a regression coefficient of ... on those same 91 countries') and src:201 / MDX:223 ('on the same 91') attribute an N of 91 to AJR. That N is real: sources/ajr2002.txt:966, Table V Panel A, 'Number of observations 91' in column 1. But no sources.json entry holds it, and the 91 is bound only to our own flip.density_1500|income_1995|former_colonies.n. So 'Each external figure' is false. The narrowed wording is true: every src: key in the draft has an entry.",
+   "fixed": true,
+   "fix": "docs/README.src.md:32, the sources.json row: change 'Each external figure with its stored document, hash, page and verbatim quote' to 'Each external figure the draft binds as a `src:` key, with its stored document, hash, page and verbatim quote'. Then re-render README.md through the gate."
+  },
+  {
+   "id": "R3S11",
+   "scope_index": 11,
+   "claim": "[README.md] Another round, the first under that gate and run a month after publication, found a country-code join bug and a central comparison that rests on a few cold colonies; both are corrected in the post.",
+   "verdict": "REFUTED",
+   "evidence": "Upheld; I re-derived it independently (scratchpad round3/surfaces-adj/a1.py, a2.py, a3.py). Three parts hold. Publication was 2026-09-07 (commit 1c5d364, MDX publishedAt). The gate port, d33bb07, landed 2026-10-09 at 16:16 UTC, and round 1 closed at 18:06 UTC that day (rounds.jsonl), so it was the first round under the gate, about a month after publication. Its findings were FX8 (codes) and FX9/LG1 (the cold colonies). The claim that 'both are corrected' fails for the join bug. Round 1's FX8 waved off ADO as carrying 'no analysis values', and that is false. In both .dta files, after read_ajr, ADO has temp1 24 and ex2col 0, and IMY has temp1 7 and ex2col 0. Neither is in AJR_CODE_FIXES (build_analysis.py:42) or AJR_DEFUNCT. Their modern codes exist in read_tas(): AND 5.47 and IMN 10.36. So both still drop out of the temp1 x ERA5 join in temp1_sanity() (:136-139). As shipped that join gives r 0.5811 on 203, which results.json stores and the post prints as 0.58 (MDX:248, data README trap 4). With ADO->AND and IMY->IMN mapped it gives r 0.5731 on 205, which prints as 0.57. One correction to the refuter's root alternative: it changes more than trap 4. Andorra (ex2col 0, with World Bank GDP and CCKP temperature) would also enter heat_reversal.all.vs_income_2023 (-0.4345 on 186 becomes -0.4403 on 187) and never_colonised.vs_income_2023 (-0.2931 on 87 becomes -0.2999 on 88). Neither is printed. It would also move meta.n_code_fixes (build_analysis.py:353) from 4 to 6, and the post's method note renders that as 'all four'.",
+   "fixed": true,
+   "fix": "docs/README.src.md:45: replace '; both are corrected in the post.' with '.' and re-render README.md through the gate. If the owner instead takes the root fix (adding ADO->AND and IMY->IMN to AJR_CODE_FIXES), that needs a full re-run and re-render. Trap 4 and MDX:248 become 0.57 on 205, and the method note's 'all four' and its list of named places must change."
+  },
+  {
+   "id": "R3S12",
+   "scope_index": 12,
+   "claim": "[data/README.md] temp1 through temp5 are withdrawn. They are documented (Appendix 2, sourced to Parker 1997) but temp1 fails a sanity check as a country annual mean: the United States reads 27 degrees and Greenland 26, and it correlates at only 0.58 with ERA5 over 203 matched places.",
+   "verdict": "CONFIRMED",
+   "evidence": "The SF64 fix landed as specified: singular temp1, 'it correlates', 'matched places'. Appendix 2 (sources/ajr2002.txt:2407-2410) lists the temperature variables as average temperature, minimum and maximum monthly high, and minimum and maximum monthly low, 'all in centigrade', sourced to 'Parker [1997]'. temp1_sanity() reads only temp1 (build_analysis.py:136). results.json withdrawn_temp1_sanity_check gives usa 27.0, grl 26.0, r 0.5811 and n_matched 203, and my own rerun reproduced (203, 0.5811). No new defect: the narrowing makes no claim about temp2 to temp5 beyond their withdrawal, and none of them is used. Caveat for the adjudicator: 203 and 0.58 are true of the join as shipped, but that join still drops Andorra (ADO) and the Isle of Man (IMY) on the same older-code bug. Mapped, they give 205 and 0.573 (see R3S11 and R3S14). The draft and MDX twin (src:226, MDX:248) still read 'they correlate at only 0.58' and 'as country averages' in the plural. Round 2 narrowed only this surface, so the cross-surface drift remains, though it is outside this item's scope.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3S13",
+   "scope_index": 13,
+   "claim": "[data/README.md] Older country codes. AJR's files code Romania ROM, the Democratic Republic of the Congo ZAR and the West Bank and Gaza WBG, where the World Bank and the CCKP use ROU, COD and PSE; and the CCKP codes Kosovo KSV where the World Bank uses XKX.",
+   "verdict": "CONFIRMED",
+   "evidence": "Checked against the raw files (check2.py). Both maketable3.dta and maketable5.dta carry ROM, ZAR and WBG and none of ROU, COD or PSE. data/wb_gdp_2023.json has ROU, COD and PSE ('West Bank and Gaza') and none of the three legacy codes. data/cckp_tas.json has ROU, COD and PSE and none of the legacy codes. The CCKP has KSV and no XKX, and the World Bank has XKX ('Kosovo') and no KSV. The AR14 fix replaced 'pre-ISO' with 'older', which is correct: ROM, ZAR and WBG are the World Bank's former 3-letter codes, and the World Bank's code list names Romania, Congo Dem. Rep. and West Bank and Gaza among its ISO exceptions (eionet worldbank/country vocabulary, fetched). The sentence never calls KSV older, though the heading covers it. Notes: (1) The list is accurate but not exhaustive. AJR also codes Andorra ADO and the Isle of Man IMY on the same scheme, and both are still unmapped (see R3S14). Because the sentence makes no completeness claim, that does not falsify it. (2) I could not verify whether KSV is an 'older' code. It sits only under the heading.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "R3S14",
+   "scope_index": 14,
+   "claim": "[data/README.md] Unmatched, they silently dropped out of every join between the mismatched sources until a fact-check a month after publication. build_analysis.py maps them in reader functions that both scripts use, and its loader asserts that every place with data, bar the defunct Netherlands Antilles and Yugoslavia, finds a match.",
+   "verdict": "REFUTED",
+   "evidence": "Upheld for the final clause only. The first two sentences hold. 'They' means ROM, ZAR, WBG and KSV, and each fell out of the joins between the mismatched sources. The bug was found 2026-10-09 (FX8). read_ajr applies AJR_CODE_FIXES (build_analysis.py:64), read_tas applies TAS_CODE_FIXES (:57), and make_charts.py:21 imports read_ajr, read_gdp and read_tas. The clause 'its loader asserts that every place with data, bar the defunct Netherlands Antilles and Yugoslavia, finds a match' is false. The assertion's with_data (build_analysis.py:104) counts only lpd1500s, sjb1500 and logpgp95. My a1.py/a2.py run of read_ajr(3) and read_ajr(5) lists four places that carry other analysis data, match neither the World Bank GDP set nor the CCKP set, and are not exempt: ADO (ex2col 0, temp1 24), IMY (ex2col 0, temp1 7), CHI (ex2col 0, temp1 7) and WSH (ex2col 0, temp1 27). load() still passes. ex2col is an analysis variable: heat_reversal never_colonised vs_income_2023 is computed on ex2col==0 with tas and lgdp2023, and Andorra would join it if mapped. The narrowed wording is true. Within the three asserted columns, the unmatched set is exactly ANT (lpd1500s 0.378) and YUG (lpd1500s 3.09, sjb1500 5.0), and the assertion holds. The same overclaim appears in the gate.toml:171 licence and its twins: gate.toml:157 together with draft src:219-220 and MDX:241 ('other than places that no longer exist', which is false because Andorra, the Isle of Man, the Channel Islands and Western Sahara all still exist), the build_analysis.py:41 comment, and design doc 6.4:327.",
+   "fixed": true,
+   "fix": "docs/data-README.src.md:43-45: change 'every place with data, bar the defunct Netherlands Antilles and Yugoslavia, finds a match' to 'every place with a 1500 density, 1500 urbanisation or 1995 income value, bar the defunct Netherlands Antilles and Yugoslavia, finds a match'. Change the gate.toml:171 claims key to the same phrase and re-render data/README.md. Make the same narrowing at draft src:219-220 and MDX:241, with the gate.toml:157 key to match. The simplest version there is: 'every place with a 1500 density, 1500 urbanisation or 1995 income value, other than places that no longer exist, finds its match'. Deleting the assertion clause outright is the even smaller alternative."
+  },
+  {
+   "id": "CP2",
+   "scope_index": null,
+   "claim": "Chart 2 figcaption (live MDX :51, make_charts.py chart2): 175 places -0.18; the flip leans on its coldest members: without Canada +0.17 and -0.19, without Canada, Chile, the United States and New Zealand +0.05 and -0.03; 11 West African countries share one density value.",
+   "verdict": "CONFIRMED",
+   "evidence": "I rebuilt the chart2 footnote f-string from results.json, and the MDX:51 figcaption equals it exactly, with no en or em dashes or Unicode minus signs (check7.py). The rendered charts/rf-2 PNG is byte-identical to public/images/blog/rf-2 (same sha256 978fff92...), and its footnote text matches. Figures (check6.py): heat_reversal.all.vs_density_1500 is -0.1822 on n=175. Without CAN it is +0.1692 (n 97) and -0.1864 (n 98). Without CAN, CHL, USA and NZL it is +0.0547 (n 94) and -0.0347 (n 95). The largest tied block is 11 (BEN, BFA, CIV, GHA, GIN, GMB, GNB, NGA, SEN, SLE, TGO), all West African, at temperatures 25.7 to 28.8 C, so they sit at the hot end. Chart 2 draws 98 and 99 points under n=98 and n=99. The round-2 fix (DA11, AR2, CP2) removed the false label 'the 4 coldest former colonies'. The caption now names the dropped set, and the figures are correct for it. On the residual implicature: the colon after 'leans on its coldest members' could suggest the four named are the four coldest. Bhutan (9.59 C) is colder than the US (9.67) and New Zealand (10.24) and is plotted in the right panel. But all four named are among the five coldest in the right panel and are the four coldest in the left. 'Leans on its coldest members' holds for any reading. Dropping the true four (CAN, CHL, BTN, USA) gives +0.093 and -0.079, and dropping all five gives +0.055 and -0.013. The fix did not create a new defect.",
+   "fixed": false,
+   "fix": null
+  }
+ ]
+}

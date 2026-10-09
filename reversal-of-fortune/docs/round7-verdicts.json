@@ -1,0 +1,62 @@
+{
+ "round": 7,
+ "date": "2026-10-09",
+ "lenses_dispatched": 1,
+ "lenses_returned": 1,
+ "lenses_errored": 0,
+ "lenses": [
+  "round 6 rewordings"
+ ],
+ "scope": [],
+ "findings": [
+  {
+   "id": "R7-1a",
+   "claim": "build_analysis.py:38-43 'ADO and IMY carry only temp1'",
+   "verdict": "REFUTED",
+   "evidence": "Both also carry ex2col=0, africa=0, temp2-5 and humid1-4; ADO's t5 row has lland15.",
+   "fixed": true
+  },
+  {
+   "id": "R7-1b",
+   "claim": "build_analysis.py:38-43 'dropped out of every join'",
+   "verdict": "REFUTED",
+   "evidence": "The pre-fix t3/t5 merge (d33bb07 build_analysis.py:62) kept ROM, ZAR and WBG.",
+   "fixed": true
+  },
+  {
+   "id": "R7-1c",
+   "claim": "build_analysis.py:38-43 'Both scripts read through the functions below'",
+   "verdict": "REFUTED",
+   "evidence": "build_analysis.py:138, :339-340 and :348 read files directly (raw counts, land check, indicator label).",
+   "fixed": true
+  },
+  {
+   "id": "R7-1d",
+   "claim": "build_analysis.py:38-43 'The asserts in load() are described where they run'",
+   "verdict": "REFUTED",
+   "evidence": "The len > 150 assert at :114 has no description.",
+   "fixed": true
+  },
+  {
+   "id": "R7-2",
+   "claim": "build_analysis.py:104-106 'which caught Kosovo'",
+   "verdict": "REFUTED",
+   "evidence": "The assert is absent at d33bb07 and in every commit (git log -S); Kosovo was found by round 1 finding CB1.",
+   "fixed": true
+  },
+  {
+   "id": "R7-3",
+   "claim": "gate.toml licence for 'Across all 165 places with both'",
+   "verdict": "CONFIRMED",
+   "evidence": "flip n=165, r=+0.0425 recomputed; 177 density places; the 12 outside are ANT, YUG plus ten with no World Bank 2023 value, all ten in CCKP.",
+   "fixed": false
+  },
+  {
+   "id": "R7-x",
+   "claim": "gate.toml licence 't = -6.7 on 196' (outside the three items)",
+   "verdict": "REFUTED",
+   "evidence": "results.json tidy_story n=197, t=-6.72 after the code fix.",
+   "fixed": true
+  }
+ ]
+}

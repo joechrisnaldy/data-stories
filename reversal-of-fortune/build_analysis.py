@@ -35,6 +35,33 @@ WB_AGGREGATES = {
     "SST", "TEA", "TEC", "TLA", "TMN", "TSA", "TSS", "UMC", "WLD",
 }
 
+# Country codes mapped so the joins find these places (fact-check of 2026-10-09).
+AJR_CODE_FIXES = {"ROM": "ROU", "ZAR": "COD", "WBG": "PSE"}
+TAS_CODE_FIXES = {"KSV": "XKX"}
+AJR_DEFUNCT = {"ANT", "YUG"}   # Netherlands Antilles and Yugoslavia
+
+
+def read_gdp():
+    d = json.load(open(os.path.join(DATA, f"wb_gdp_{GDP_YEAR}.json")))[1]
+    gdp = {r["countryiso3code"]: r["value"] for r in d
+           if r["value"] and r["countryiso3code"] and r["countryiso3code"] not in WB_AGGREGATES}
+    assert not (set(gdp) & WB_AGGREGATES), sorted(set(gdp) & WB_AGGREGATES)
+    return gdp
+
+
+def read_tas():
+    raw = json.load(open(os.path.join(DATA, "cckp_tas.json")))["data"]
+    return {TAS_CODE_FIXES.get(k, k): list(v.values())[0] for k, v in raw.items() if v}
+
+
+def read_ajr(table: int):
+    """One AJR table: ISO3-shaped codes only, legacy codes mapped to the ones the other sources use."""
+    t = pd.read_stata(os.path.join(DATA, f"ajr_t{table}/maketable{table}.dta"))
+    t = t[t.shortnam.notna() & t.shortnam.str.fullmatch(r"[A-Z]{3}")].copy()
+    t["shortnam"] = t.shortnam.replace(AJR_CODE_FIXES)
+    return t
+
+
 # The exact request that produced data/cckp_tas.json. Recorded because round 1 found the series
 # could not be regenerated from this repository: the URL lived only in a shell command.
 CCKP_REQUEST = ("https://cckpapi.worldbank.org/cckp/v1/era5-x0.25_climatology_tas_climatology_"
@@ -42,23 +69,16 @@ CCKP_REQUEST = ("https://cckpapi.worldbank.org/cckp/v1/era5-x0.25_climatology_ta
 
 
 def load():
-    d = json.load(open(os.path.join(DATA, f"wb_gdp_{GDP_YEAR}.json")))[1]
     # The /indicator endpoint carries NO region field, so the old filter on region id "NA" was dead
     # code that passed all 265 rows including World, Euro area and OECD members. Round 1 caught it.
     # Aggregates are now excluded by explicit code list, and asserted gone rather than assumed.
-    gdp = {r["countryiso3code"]: r["value"] for r in d
-           if r["value"] and r["countryiso3code"] and r["countryiso3code"] not in WB_AGGREGATES}
-    assert not (set(gdp) & WB_AGGREGATES), sorted(set(gdp) & WB_AGGREGATES)
-    tas = {k: list(v.values())[0] for k, v in
-           json.load(open(os.path.join(DATA, "cckp_tas.json")))["data"].items() if v}
-    t3 = pd.read_stata(os.path.join(DATA, "ajr_t3/maketable3.dta"))
-    t5 = pd.read_stata(os.path.join(DATA, "ajr_t5/maketable5.dta"))
+    gdp, tas = read_gdp(), read_tas()
+    t3, t5 = read_ajr(3), read_ajr(5)
     # Keep only ISO3-shaped country codes. Both files carry 120 empty-string rows plus 33 rows whose
     # shortnam is a US state abbreviation, a bare ".", or the literal "notIndonesia" (leftovers from
     # AJR's own do-files). None carries an analysis value except ex2col=0 on the "." row, which was
     # sitting in the never-colonised group as a phantom member. Round 3 found these; the previous
     # assert here could not fail, so it never looked.
-    t3, t5 = (x[x.shortnam.notna() & x.shortnam.str.fullmatch(r"[A-Z]{3}")] for x in (t3, t5))
     ajr = t5[["shortnam", "lpd1500s", "lat_abst", "ex2col", "logpgp95", "africa"]].merge(
         t3[["shortnam", "sjb1500"]], on="shortnam", how="outer")
     # Keep the row with the MOST non-null fields per country, not the first. DEU, ZWE and YUG are
@@ -76,6 +96,12 @@ def load():
               .drop_duplicates("shortnam").drop(columns="_filled"))
     assert ajr.shortnam.str.fullmatch(r"[A-Z]{3}").all(), \
         sorted(ajr.shortnam[~ajr.shortnam.str.fullmatch(r"[A-Z]{3}")])
+    # Places with a density, urbanisation or 1995 income value must be in gdp or tas, bar AJR_DEFUNCT;
+    # every place in gdp must be in tas.
+    with_data = set(ajr[ajr[["lpd1500s", "sjb1500", "logpgp95"]].notna().any(axis=1)].shortnam)
+    unmatched = sorted(with_data - set(gdp) - set(tas) - AJR_DEFUNCT)
+    assert not unmatched, unmatched
+    assert not (set(gdp) - set(tas)), sorted(set(gdp) - set(tas))
     ajr["gdp2023"] = ajr.shortnam.map(gdp)
     ajr["tas"] = ajr.shortnam.map(tas)
     ajr["lgdp2023"] = np.log(ajr.gdp2023)
@@ -103,8 +129,8 @@ def corr(d, x, y):
 def temp1_sanity(tas):
     """Reproduce the reason AJR's temp1 is withdrawn. Round 2 found the post quoted 0.58 from a
     hand computation that no script produced, which is the rule this repository exists to enforce."""
-    t3 = pd.read_stata(os.path.join(DATA, "ajr_t3/maketable3.dta"))
-    t = t3[t3.shortnam.notna() & (t3.shortnam.str.len() > 0)][["shortnam", "temp1"]].dropna()
+    t3 = pd.read_stata(os.path.join(DATA, "ajr_t3/maketable3.dta"))     # raw, for the raw counts
+    t = read_ajr(3)[["shortnam", "temp1"]].dropna()
     t = t.drop_duplicates("shortnam")
     t["era5"] = t.shortnam.map(tas)
     m = t.dropna(subset=["era5"])
@@ -196,6 +222,18 @@ def main():
                      ("never_colonised", ajr[ajr.ex2col == 0])):
         heat[grp] = dict(vs_density_1500=corr(sub, "tas", "lpd1500s"),
                          vs_income_2023=corr(sub, "tas", "lgdp2023"))
+
+    # The heat flip among former colonies leans on its coldest members (round 1 of 2026-10-09 found
+    # it): reported without Canada and without the coldest four, so the post can say how much.
+    col_t = ajr[ajr.ex2col == 1].dropna(subset=["tas"])
+    coldest = list(col_t.dropna(subset=["lpd1500s"]).nsmallest(4, "tas").shortnam)
+    assert coldest == ["CAN", "CHL", "USA", "NZL"], coldest     # the post names these four
+
+    def heat_without(drop):
+        sub = col_t[~col_t.shortnam.isin(drop)]
+        return dict(vs_density_1500=corr(sub, "tas", "lpd1500s"), vs_income_2023=corr(sub, "tas", "lgdp2023"))
+    heat_robust = dict(coldest=coldest, n_coldest=len(coldest),
+                       without_canada=heat_without(["CAN"]), without_coldest=heat_without(coldest))
 
     # The never-colonised comparison the draft quotes, on ONE sample. Round 3 found the published
     # pair (-0.21 then, -0.29 now) was two different samples, n=76 and n=85; on the 69 places with
@@ -309,6 +347,7 @@ def main():
                   ppp_base_year=int(re.search(r"constant (\d{4})", ppp).group(1)),
                   era5_first_year=int(era5.group(1)), era5_last_year=int(era5.group(2)),
                   ajr_income_year=1995, years_since_ajr=GDP_YEAR - 1995,
+                  n_code_fixes=len(AJR_CODE_FIXES) + len(TAS_CODE_FIXES),
                   temperature="ERA5 near-surface air temperature, 1991-2020 annual mean, "
                               "World Bank Climate Change Knowledge Portal",
                   historical="Acemoglu, Johnson and Robinson, Reversal of Fortune, tables 3 and 5",
@@ -319,7 +358,7 @@ def main():
         tidy_story_raw_dollars=tidy_raw, rivals_common_sample=rivals,
         colonisation_vs_latitude=colonisation_vs_latitude,
         hot_and_rich=hot_and_rich, spread_24_28c=spread,
-        flip=flip, latitude_2023=lat, heat_reversal=heat, ranks=ranks,
+        flip=flip, latitude_2023=lat, heat_reversal=heat, heat_reversal_robustness=heat_robust, ranks=ranks,
         interaction=interaction, interaction_urbanisation=interaction_urbanisation,
         interaction_raw_density=interaction_raw_density, flip_raw_density=flip_raw_density,
         withdrawn_temp1_sanity_check=temp1_sanity(tas),

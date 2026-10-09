@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from build_analysis import WB_AGGREGATES
+from build_analysis import read_ajr, read_gdp, read_tas
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(BASE, "data")
@@ -44,18 +44,11 @@ C_COL, C_NEV = RED, BLUE          # former colonies, never colonised
 
 
 def frame():
-    gdp = json.load(open(os.path.join(DATA, f"wb_gdp_{R['meta']['gdp_year']}.json")))[1]
-    # Round 1 replaced the dead region filter in build_analysis.py and left this copy untouched,
-    # so 43 World Bank aggregates (WLD, EUU, OED) sat in this frame and reached no chart only
-    # because none of them has an ERA5 temperature. Round 2 caught it. Same list, same assert.
-    g = {r["countryiso3code"]: r["value"] for r in gdp
-         if r["value"] and r["countryiso3code"] and r["countryiso3code"] not in WB_AGGREGATES}
-    assert not (set(g) & WB_AGGREGATES), sorted(set(g) & WB_AGGREGATES)
-    tas = {k: list(v.values())[0] for k, v in
-           json.load(open(os.path.join(DATA, "cckp_tas.json")))["data"].items() if v}
-    t5 = pd.read_stata(os.path.join(DATA, "ajr_t5/maketable5.dta"))
-    t5 = t5[t5.shortnam.notna() & t5.shortnam.str.fullmatch(r"[A-Z]{3}")]
-    a = t5[["shortnam", "lpd1500s", "ex2col"]].copy()
+    # Round 1 replaced the dead region filter in build_analysis.py and left a copy here untouched,
+    # and a fact-check after publication found both copies dropping three places on legacy country
+    # codes. This frame now reads through build_analysis's own readers, so the two cannot drift.
+    g, tas = read_gdp(), read_tas()
+    a = read_ajr(5)[["shortnam", "lpd1500s", "ex2col"]].copy()
     # Same de-duplication as build_analysis, filter and sort included: keep the informative row,
     # not the first, or Germany and Zimbabwe are silently deleted. Round 3 found the two loaders
     # had drifted apart, so the method note's claim about both scripts was not true of this step.
@@ -107,7 +100,7 @@ def chart1(d):
     m = R["meta"]
     ax.set_xlabel(f"Average annual temperature, degrees Celsius, {m['era5_first_year']} to {m['era5_last_year']}")
     ax.set_ylabel("GDP per capita, PPP, log scale")
-    ax.set_title("The tidy story, and it is true")
+    ax.set_title("The tidy story, and its correlation is real")
     ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"${v:,.0f}"))
     for iso, lab in (("IDN", "Indonesia"), ("SGP", "Singapore"), ("NOR", "Norway"),
                      ("COD", "DR Congo"), ("QAT", "Qatar"), ("MNG", "Mongolia")):
@@ -128,10 +121,8 @@ def chart1(d):
              f"territories such as Aruba, Greenland and Hong Kong SAR alongside sovereign states. "
              f"Both r and the fitted line are computed on LOG income; on raw dollars r is "
              f"{R['tidy_story_raw_dollars']['r']:.2f}. This chart is the claim the post starts "
-             f"from. Nothing after it disputes that the relationship is real, but among former "
-             f"European colonies the same thermometer ran the OTHER way against the best measure "
-             f"of 1500 prosperity we have, population density, so this chart cannot be read as "
-             f"heat acting on prosperity in a way that never changed.", y=-0.055)
+             f"from. Nothing after it disputes that the relationship is real; what the post "
+             f"disputes is what it means.", y=-0.055)
     save(fig, "rf-1-the-tidy-story.png")
 
 
@@ -160,13 +151,18 @@ def chart2(d):
     fig.suptitle("The same thermometer, pointing opposite ways five centuries apart",
                  fontsize=14.5, fontweight="bold", x=0.0, ha="left", y=1.04)
     g = h["all"]["vs_density_1500"]
+    hr = R["heat_reversal_robustness"]
+    wc, wk = hr["without_canada"], hr["without_coldest"]
     footnote(fig,
              f"Former European colonies only, using Acemoglu, Johnson and Robinson's own ex-colony "
              f"classification. This is a narrower claim than it looks and the narrowing is "
-             f"deliberate: across ALL countries, temperature against 1500 population density is "
-             f"{g['r']:+.2f} (n={g['n']}), which is slightly negative. Hot places were not the dense "
-             f"places worldwide. The sign flip shown here exists inside the colonised world and "
-             f"the post says so rather than generalising it. Population density in 1500 is a proxy "
+             f"deliberate: across the {g['n']} places with both measures, temperature against 1500 "
+             f"population density is {g['r']:+.2f}, which is slightly negative. Hot places were not "
+             f"the dense places worldwide. The sign flip shown here exists inside the colonised world "
+             f"and leans on its coldest members: without Canada the two correlations are "
+             f"{wc['vs_density_1500']['r']:+.2f} and {wc['vs_income_2023']['r']:+.2f}, and without Canada, "
+             f"Chile, the United States and New Zealand {wk['vs_density_1500']['r']:+.2f} and "
+             f"{wk['vs_income_2023']['r']:+.2f}. Population density in 1500 is a proxy "
              f"for prosperity in a period with no income statistics, which is an assumption of the "
              f"method, not a measurement. It is also coarse: {R['density_ties']['largest_tied_block']} "
              f"West African countries share one identical density value here, so some of the dots "
@@ -196,7 +192,7 @@ def chart3(d):
                 fontsize=11.8, color=INK, fontweight="bold")
     a.set_ylabel("GDP per capita, PPP, log scale")
     a.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"${v:,.0f}"))
-    fig.suptitle("Being prosperous in 1500 predicts poverty now, but only on one side of the split",
+    fig.suptitle("Being densely settled in 1500 predicts poverty now, but only on one side of the split",
                  fontsize=14.5, fontweight="bold", x=0.0, ha="left", y=1.04)
     al = f["density_1500|income_2023|all"]
     n95 = f["density_1500|income_1995|former_colonies"]
@@ -205,8 +201,8 @@ def chart3(d):
              f"against World Bank GDP per capita for {R['meta']['gdp_year']}. Pooled across both "
              f"panels the correlation is {al['r']:+.2f} (n={al['n']}), which is nothing: the "
              f"relationship is invisible until the sample is split, and then it points in opposite "
-             f"directions. Their paper used {R['meta']['ajr_income_year']} income and found {n95['r']:+.2f} among former "
-             f"colonies; it survives {R['meta']['years_since_ajr']} more years of data at {f['density_1500|income_2023|former_colonies']['r']:+.2f}. "
+             f"directions. On their {R['meta']['ajr_income_year']} income figures their data give {n95['r']:+.2f} among "
+             f"former colonies; it survives {R['meta']['years_since_ajr']} more years of data at {f['density_1500|income_2023|former_colonies']['r']:+.2f}. "
              f"The right-hand group is AJR's residual rather than a list of untouched places, so "
              f"Bermuda, Puerto Rico and Aruba are in it. This post does not claim to know what "
              f"caused the flip.", y=-0.055)
@@ -262,7 +258,7 @@ def chart4():
              f"{i['slide']:.0f} point slide that ranks it "
              f"{[r['iso3'] for r in ranks].index('IDN') + 1}th of {len(ranks)}: the middle of the "
              f"distribution rather than a case study. This chart was chosen after the "
-             f"correlations were computed, unlike the first and third, and the method notes say so.",
+             f"correlations were computed, unlike the first, and the method notes say so.",
              y=-0.038)
     save(fig, "rf-4-who-actually-reversed.png")
 

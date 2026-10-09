@@ -1,0 +1,41 @@
+{
+ "round": 8,
+ "date": "2026-10-09",
+ "lenses_dispatched": 1,
+ "lenses_returned": 1,
+ "lenses_errored": 0,
+ "lenses": [
+  "round 7 minimal comments"
+ ],
+ "scope": [],
+ "findings": [
+  {
+   "id": "R8-1",
+   "claim": "build_analysis.py code-fix constants and comment",
+   "verdict": "CONFIRMED",
+   "fixed": true,
+   "evidence": "ROM, ZAR, WBG only in AJR files; ROU, COD, PSE in both sources; KSV only in CCKP, XKX only in World Bank; ANT, YUG absent from both. ': no modern counterpart' ambiguous given successor fragments (CUW, SXM, SRB), deleted."
+  },
+  {
+   "id": "R8-2",
+   "claim": "load() comment 'need a World Bank or CCKP code'",
+   "verdict": "REFUTED",
+   "fixed": true,
+   "evidence": "set(gdp) holds only World Bank codes with a non-null 2023 value (IMN is a World Bank code with null value); replaced by the literal 'must be in gdp or tas ... every place in gdp must be in tas'."
+  },
+  {
+   "id": "R8-3",
+   "claim": "gate.toml licence 't = -6.7 on 197'",
+   "verdict": "CONFIRMED",
+   "fixed": false,
+   "evidence": "tidy_story r=-0.4336, n=197, t=-6.719 recomputed; no section disputes the correlation."
+  },
+  {
+   "id": "R8-4",
+   "claim": "design doc 6.4 ADO/IMY sentence",
+   "verdict": "CONFIRMED",
+   "fixed": false,
+   "evidence": "temp1_sanity r=0.5811 on 203; with ADO->AND and IMY->IMN r=0.5731 on 205."
+  }
+ ]
+}

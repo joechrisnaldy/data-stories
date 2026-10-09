@@ -1,0 +1,27 @@
+{
+ "round": 9,
+ "date": "2026-10-09",
+ "lenses_dispatched": 1,
+ "lenses_returned": 1,
+ "lenses_errored": 0,
+ "lenses": [
+  "round 8 literal comments"
+ ],
+ "scope": [],
+ "findings": [
+  {
+   "id": "R9-1",
+   "claim": "build_analysis.py AJR_DEFUNCT comment 'Netherlands Antilles and Yugoslavia'",
+   "verdict": "CONFIRMED",
+   "fixed": false,
+   "evidence": "ANT lland15 6.6846 (about 800 km2, island=1, america=1); YUG lland15 11.5327 (about 102,000 km2); with AJR_DEFUNCT removed, with_data - gdp - tas is exactly ['ANT', 'YUG']."
+  },
+  {
+   "id": "R9-2",
+   "claim": "load() comment 'must be in gdp or tas, bar AJR_DEFUNCT; every place in gdp must be in tas'",
+   "verdict": "CONFIRMED",
+   "fixed": false,
+   "evidence": "build_analysis.py:101 selects rows with lpd1500s, sjb1500 or logpgp95 non-null; :102-103 assert the set minus gdp, tas and AJR_DEFUNCT is empty; :104 asserts gdp minus tas is empty (returns [])."
+  }
+ ]
+}

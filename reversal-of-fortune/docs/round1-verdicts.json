@@ -1,0 +1,1769 @@
+{
+ "round": 1,
+ "date": "2026-10-09",
+ "lenses_dispatched": 6,
+ "lenses_returned": 6,
+ "lenses_errored": 0,
+ "lenses": [
+  "claims register 1-40",
+  "claims register 41-80",
+  "allow and pairs reasons",
+  "sources",
+  "argument and hostile reader",
+  "today's corrections"
+ ],
+ "findings": [
+  {
+   "id": "FX1",
+   "claim": "Passage 1 (draft .md:54, src :54, live MDX :75): 'Across the 173 countries with both measures, temperature against 1500 density is minus 0.18.'",
+   "verdict": "REFUTED",
+   "evidence": "I reran build_analysis.load() (scratchpad round1/fixes-adjudicator/check1.py). The 173 is correct: Pearson -0.1773 with p 0.0196, Spearman -0.1771 with p 0.0197, and it matches results.json heat_vs_1500_density, sample 231b793b7259. The definite, exhaustive framing is false, though. Of the 177 AJR rows with lpd1500s, 4 have no temperature: ANT, ROM, YUG and ZAR. In maketable5.dta, ZAR has africa=1, f_belg=1, lat_abst=0, ex2col=1 and lpd1500s 0.405, so it is DR Congo. ROM has lat_abst 0.511, lpd1500s 2.16 and ex2col=0, so it is Romania. The ERA5 file and the World Bank file hold them as COD (24.09 C, $1,559) and ROU (10.04 C, $40,117). The join at build_analysis.py:79-80 maps on shortnam, so both are dropped. With them mapped the result is r = -0.1822 on n = 175, which still rounds to -0.18. Only the count and 'the ... with both measures' are wrong. The territories point is real (10 of the 173 are ABW, BMU, CYM, GLP, GUF, HKG, MTQ, PRI, PYF and VIR). However, the post calls its 163, 94 and 69 samples 'countries' as well, so that point alone is a consistency nit, not grounds for refutation.",
+   "fixed": true,
+   "fix": "src.md:54. Replace 'Across the {{heat_vs_1500_density.n:int}} countries with both measures, temperature' with 'Across {{heat_vs_1500_density.n:int}} countries, temperature'. Re-render the draft and the live MDX line 75."
+  },
+  {
+   "id": "FX2",
+   "claim": "Passage 2 (draft .md:180, live MDX :219): 'Income is logged in every correlation except the raw-dollar figure the first chart also reports, minus 0.39 on 196.'",
+   "verdict": "CONFIRMED",
+   "evidence": "I checked every statistic in build_analysis.py that involves income. Each one uses logged income: tidy :144 (lgdp); flip :152-158 (logpgp95/lgdp2023); latitude :160; rivals :167; heat :197-198; never_colonised_common :205-207; interact() :238, :242, :247 (raw density, logged income), :259-260; flip_raw_density :248. The only raw one is tidy_raw :174 = tidy_story_raw_dollars, r=-0.3900, n=196, which the sentence names. Chart 1's footnote prints it at make_charts.py:129-130 ('on raw dollars r is -0.39'), so 'also reports' holds. The raw-dollar uses at :178 (hot_and_rich threshold) and :185-188 (24-28C spread min/max) are not correlations. Chart 4's percentiles at :213 rank raw gdp2023, but they are not correlations, and a rank is unchanged by log (monotone). make_charts.py computes no correlation at all; its fitlines use lgdp at :105, :151 and :190. The gate.toml:170 licence cites line 174 correctly.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "FX3",
+   "claim": "Passage 3 (draft .md:230, live MDX :274): 'Computing it showed the opposite, minus 0.18 across the 173 countries with both measures.'",
+   "verdict": "REFUTED",
+   "evidence": "'Showed the opposite' holds. Design doc lines 100-106 show the pre-registered sentence struck through, with the corrected value -0.18 (n=173). The global Pearson is -0.177 (p=0.020) and the Spearman -0.177 (p=0.020), so the sign is opposite to the pre-registered claim. The residual defect is the same as FX1: 'the 173 countries with both measures' leaves out DR Congo (AJR code ZAR) and Romania (ROM), which have both measures but are lost in the shortnam join at build_analysis.py:79-80. Mapped, the result is n = 175 and r = -0.182. Live MDX line 274 carries the same text.",
+   "fixed": true,
+   "fix": "src.md:230. Replace 'across the {{heat_vs_1500_density.n:int}} countries with both measures.' with 'across {{heat_vs_1500_density.n:int}} countries.' and re-render the draft and the live MDX."
+  },
+  {
+   "id": "FX4",
+   "claim": "Chart 3 alt text (gate.toml:189, live MDX :81): 'Pooled across both groups, 163 countries, the relationship is plus 0.04 and invisible.'",
+   "verdict": "CONFIRMED",
+   "evidence": "flip['density_1500|income_2023|all'] gives r=+0.03514, n=163, t=+0.45. The pooled sample hash a45c443ef375 equals interaction.sample, and interaction drops null ex2col, so the pooled set is exactly the two groups: recomputed ex2col counts are {1: 94, 0: 69}, and 94+69=163. +0.0351 rounds to +0.04. 'Invisible' is licensed by t=0.45. The PNG itself carries the figure: make_charts.py:205-206 draws 'Pooled across both panels the correlation is +0.04 (n=163)'. Unlike FX1/FX3 the alt text makes no exhaustive 'with both' claim, so the ZAR/ROM omission (165 when mapped, r=+0.043, still +0.04) does not make it false. The live MDX matches the gate template exactly.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "FX5",
+   "claim": "metaDescription (gate.toml:186, live MDX :10): 'Among former European colonies, hotter places were the more densely settled in 1500.'",
+   "verdict": "REFUTED",
+   "evidence": "git diff HEAD on gate.toml shows the metaDescription was changed today. It went from 'the same thermometer ran the other way in 1500', a sign claim, to 'hotter places were the more densely settled in 1500', a categorical rank claim. Live MDX line 10 matches the new text. Recomputed on the 97 former colonies (check3.py): Pearson +0.2946 (p=0.0034), Spearman +0.1612 (p=0.115), Kendall +0.1058 (p=0.129). The densest quartile of colonies has 53.1% above the median temperature. Mean log density by temperature quartile is 0.09, 0.71, 0.39 and 0.84, so it does not rise steadily. Without CAN, CHL and USA the Pearson is +0.093 (p=0.372, n=94); among colonies at or above 12 C it is +0.020 (p=0.85, n=92). Design doc lines 279-283 (item 3) withdrew 'the hot places were the crowded ones' for exactly this reason and replaced it with 'hotter went with more crowded', which is chart 2's panel title at make_charts.py:145. The new meta sentence brings the withdrawn categorical reading back. Draft .md:229-230 also quotes it nearly word for word as the falsified pre-registration wording. Nothing in gate.toml [claims] licenses it.",
+   "fixed": true,
+   "fix": "In gate.toml [published] metaDescription, replace 'hotter places were the more densely settled in 1500.' with 'temperature and 1500 population density correlated at {{heat_reversal.former_colonies.vs_density_1500.r:signed2}}.' Then update the live MDX line 10 to match."
+  },
+  {
+   "id": "FX6",
+   "claim": "Live MDX carries exactly the five corrections and updatedAt 2026-10-09",
+   "verdict": "CONFIRMED",
+   "evidence": "site/src/content/blog/the-map-used-to-run-the-other-way.mdx:6 reads 'updatedAt: 2026-10-09'. :10 metaDescription equals the gate.toml:186 template rendered (tidy_story.r -0.435 -> 'minus 0.44'). :75 has passage 1, :219 passage 2, :274 passage 3, and :81 the chart 3 alt with the pooled n. I diffed the draft .md body against the MDX body (figures stripped, whitespace normalised, split by sentence): 222 vs 222 sentences, no differences. 'all countries', 'every correlation.' and 'ran the other way in 1500' each occur 0 times in both. The excerpt is unchanged and still matches gate.toml:185.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "FX7",
+   "claim": "New defect, incomplete correction: chart 2's footnote (PNG and live figcaption) still says 'across ALL countries, temperature against 1500 population density is -0.18 (n=173)'",
+   "verdict": "REFUTED",
+   "evidence": "make_charts.py:164-166 still writes 'across ALL countries, temperature against 1500 population density is {g['r']:+.2f} (n={g['n']})'. charts/rf-2-the-same-heat-in-1500.png has an mtime of Oct 9 08:14, after make_charts.py's mtime of 08:07. Live MDX line 55 shows 'across ALL countries ... is -0.18 (n=173)'. The gate.toml diff removed the comment flagging this exact phrase as wrong (n=173 against the post's universe of 196) and fixed the body. The footnote copy was missed, and its licence at gate.toml:137 rests only on the printed n. As established under FX1, 173 is also not every country with both measures (175 with ZAR and ROM mapped).",
+   "fixed": true,
+   "fix": "At make_charts.py:166, replace 'across ALL countries, ' with f'across {g[\"n\"]} countries, ', which binds to the n already in scope. Regenerate rf-2 and the live MDX line 55 figcaption, and rename or remove the gate.toml:137 [claims] key to match."
+  },
+  {
+   "id": "FX8",
+   "claim": "New finding (pre-existing, not introduced today): legacy AJR codes ZAR (DR Congo) and ROM (Romania) silently drop out of every temperature and 2023-income statistic, so 'Across all 163 countries with both' (draft .md:65) and the 173 / 94 / 69 counts are not the full sets",
+   "verdict": "REFUTED",
+   "evidence": "Confirmed (check1.py, check2.py). build_analysis.py:61 admits ZAR and ROM as ISO3-shaped codes, and :79-80 then maps gdp and tas by shortnam, so both come back NaN even though COD and ROU exist in both sources. With ZAR mapped to COD and ROM to ROU: former-colony flip -0.4877 (n=94) becomes -0.4794 (n=95), so 'minus 0.49' becomes 'minus 0.48'. Pooled goes from +0.035 (163) to +0.043 (165). Never-colonised goes from +0.280 (69) to +0.281 (70). Interaction t goes from -5.334 to -5.292 (n=165). Heat vs density goes from -0.177 (173) to -0.182 (175). Colonial heat r is unchanged, with n 97 to 98 and 98 to 99. Indonesia stays 47th, with a slide of 13.8 to 13.7. DR Congo enters at 46.8 to 5.3, a 41.6-point slide, ranked 22nd of 95. I found a wider class the refuter missed. AJR's WBG (West Bank and Gaza, ex2col 0, sjb1500 12.7) also fails to match the World Bank and ERA5 PSE key. With ROM and WBG mapped, the never-colonised urbanisation correlation falls from +0.275 (n=43) to +0.165 (n=45), and the urbanisation interaction t goes from -3.56 to -3.12. So draft :79 ('43 countries on each side ... plus 0.28 ... t of minus 3.6') also moves. The other unmatched legacy codes (ADO, BUR, DEN, JAP, POR, TOG and others) carry no analysis values, and YUG and ANT are dissolved entities. A grep of docs/, README.md and data/README.md finds no mention of ZAR, ROM, Congo or Romania. gate.toml:101 licenses 'Across all 163 countries with both' as 'every country with both measures', which is false by two. One nuance: the 1995 n=91 and 2023 n=94 samples were already not common before this bug (ERI, VEN and ZAR appear only in 1995; AFG, GNB, LBY, MMR, PNG and SOM only in 2023), so ZAR is one of nine differences, not the cause.",
+   "fixed": true,
+   "fix": "The root fix moves the headline figure from -0.49 to -0.48 and the urbanisation figures, so it needs an owner decision: map ZAR to COD, ROM to ROU and WBG to PSE in build_analysis.load() and make_charts.frame(), re-run, and re-bind. The minimal text fix is in src.md:65: replace 'Across all {{flip.density_1500|income_2023|all.n:int}} countries with both, the correlation' with 'Across {{flip.density_1500|income_2023|all.n:int}} countries, the correlation', then update gate.toml:101 to match. Also apply the FX1 and FX3 fixes."
+  },
+  {
+   "id": "FX9",
+   "claim": "New finding (pre-existing, bears on FX5): chart 2's 'same thermometer pointing opposite ways' among former colonies (+0.29 then, -0.25 now) is carried by three cold settler colonies",
+   "verdict": "REFUTED",
+   "evidence": "Recomputed (check3.py, scipy.stats.pearsonr), density r against income r among former colonies. Full sample: +0.295 (p=0.003, n=97) against -0.250 (p=0.013, n=98). Without CAN: +0.169 (p=0.099) against -0.186 (p=0.068). Without CAN, CHL and USA: +0.093 (p=0.372, n=94) against -0.092 (p=0.373, n=95). Also without NZL: +0.055 against -0.033. The four coldest colonies are CAN (-3.7 C), CHL (9.0 C), USA (9.7 C) and NZL (10.2 C), and all of them were sparse in 1500. On the income side Spearman is -0.202 (p=0.046), so ranks hold there on the full sample, but both sides lose significance once three cold settler colonies are dropped. Round 4 (round4-scope.md:45) did a leave-one-out on Canada for the density side only and attributed the Pearson figure to the West African tied block. A grep of the draft finds no disclosure that chart 2's framing ('The same thermometer, pointing opposite ways', the panel titles, draft :48-49) depends on the cold tail. The Pearson numbers themselves are true, but presenting them as a general sign flip without this caveat is misleading.",
+   "fixed": true,
+   "fix": "The smallest in-lens change is the FX5 fix, so the meta does not restate the reading categorically. Disclosing the cold-tail dependence in the body or footnote would add new text, so that needs an owner decision. No deletion-only edit keeps chart 2's framing."
+  },
+  {
+   "id": "FX10",
+   "claim": "Adjacent to passage 2 (pre-existing): 'So is population density in 1500' now reads as 'density is logged in every correlation except the raw-dollar figure'",
+   "verdict": "REFUTED",
+   "evidence": "Low severity. In src.md:180 / draft :180-181, 'So is population density in 1500' inherits the predicate 'logged in every correlation except the raw-dollar figure'. The raw-dollar exception concerns temperature against income only, so for density the clause reads as 'logged in every correlation'. The same paragraph (draft :185-187) then reports correlations on untransformed density: flip_raw_density -0.095 (n=94) and +0.174 (n=69), and interaction_raw_density t -1.37. These come from build_analysis.py:246-249, where pd1500 = exp(lpd1500s). The new licence at gate.toml:170 covers only the income clause. The paragraph discloses the exception itself, so a careful reader is not misled, but the sentence is literally false.",
+   "fixed": true,
+   "fix": "At src.md:180, replace 'So is population density in 1500:' with 'So is population density in 1500, outside the untransformed check below:'. This narrows the claim to the check already reported in the paragraph."
+  },
+  {
+   "id": "FX11",
+   "claim": "Adjacent to passage 4 (pre-existing, same alt text): 'slopes downward at minus 0.49 ... slopes upward at plus 0.28' gives correlations as slopes",
+   "verdict": "REFUTED",
+   "evidence": "In results.json, flip.density_1500|income_2023|former_colonies has r = -0.4877 and slope -0.3348, and never_colonised has r = +0.2800 and slope +0.1477. These slopes equal interaction.slope_former_colonies and slope_never_colonised. The chart 3 alt template (gate.toml:189, live MDX line 81) says 'slopes downward at {{...r}}' and 'slopes upward at {{...r}}', which reads as a slope of -0.49 and +0.28. The body (draft :72-73) gives the slopes as +0.15 and -0.33. Chart 3's own panels label the figure 'r =' (make_charts.py:195), and chart 2's alt says 'correlation'.",
+   "fixed": true,
+   "fix": "In the gate.toml:189 alt template and the live MDX line 81, replace 'slopes downward at ' with 'slopes downward, correlation ' and 'slopes upward at ' with 'slopes upward, correlation '."
+  },
+  {
+   "id": "FX12",
+   "claim": "Derived artifact: the Word draft was not regenerated after the corrections",
+   "verdict": "REFUTED",
+   "evidence": "draft/the-map-used-to-run-the-other-way.docx has an mtime of Sep 7 21:25; the draft .md and .src.md are Oct 9 12:43. Unzipping word/document.xml finds 'Across all countries, temperature against 1500 density is minus 0.18', 'Income is logged in every correlation. So is population density' and 'minus 0.18 across all countries'. The Word copy therefore contradicts the corrected draft and the live post. The gate did not catch it: gate/checks/fresh.py:28 skips '*.docx' in its freshness check, and gate/checks/style.py only style-scans the docx. gate.toml:11 still lists the docx as the post's Word draft. This violates the workspace rule that derived artifacts are regenerated in the same change.",
+   "fixed": true,
+   "fix": "Regenerate the docx from the corrected draft .md after the FX1, FX3, FX7, FX8, FX10 and FX11 text fixes land. Alternatively, remove the docx key from gate.toml:11 if the Word copy is no longer maintained."
+  },
+  {
+   "id": "SR1",
+   "claim": "sources.json ajr2002_coef: is the stored document the published article, and does 'Log population density -0.38' support 'They publish a regression coefficient of minus 0.38 with an R-squared of 0.34 on those same 91 countries, which is the same relationship stated a different way'?",
+   "verdict": "CONFIRMED",
+   "evidence": "Published version: sources/ajr2002.txt lines 1-4 are the JSTOR cover for QJE Vol. 117, No. 4 (Nov. 2002), pp. 1231-1294. I re-downloaded the MIT URL and its sha256 is 0385c46c...842f4e, the same as the stored PDF; the stored txt hash matches 01f6049d.... The value is in Table V, Panel A, column (1) (base sample, ajr2002.txt line 940). The dependent variable is log GDP per capita (PPP) in 1995, per the Table V header. I also ran AJR's own do-file spec (data/ajr_t5/maketable5.do: keep if ex2col==1; reg logpgp95 lpd1500s) on maketable5.dta. It gives slope -0.3767, R2 0.3413, n=91. The post's 91-country sample (build_analysis.load, ex2col==1, non-null lpd1500s and logpgp95) is the identical set: the set difference is empty. For a bivariate OLS, R2 = r^2, and (-0.5842)^2 = 0.341, so 'the same relationship stated a different way' holds. 'AJR do not publish a correlation' also holds: every 'correlat' hit in ajr2002.txt (lines 681, 1000, 1012, 1070, 1767-1770, 2166-2172) is qualitative, and none is a numeric r between 1500 prosperity and income.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "SR2",
+   "claim": "sources.json ajr2002_coef locator: page '1251' for the -0.38 coefficient",
+   "verdict": "REFUTED",
+   "evidence": "I rendered AJR PDF pages 21 and 22 myself (scratchpad round1/sources-adjudicator/ajr-21.png and ajr-22.png). Page 21 carries the printed header '1250 QUARTERLY JOURNAL OF ECONOMICS' and Table V Panel A, column (1): 'Log population density in 1500 -0.38 (0.06)'. Page 22 is headed 'REVERSAL OF FORTUNE 1251' and carries 'R2 0.34' and 'Number of observations 91'. PDF page 20 is headed 1249 (pdftotext), so the numbering holds. The coefficient is on p. 1250, so sources.json ajr2002_coef.page '1251' is wrong. ajr2002_r2.page '1251' is correct. The error is in the registry only: grep finds no page locator for the coefficient in the draft, the src template or the live MDX.",
+   "fixed": true,
+   "fix": "In docs/sources.json, change ajr2002_coef.page from \"1251\" to \"1250\"."
+  },
+  {
+   "id": "SR3",
+   "claim": "sources.json ajr2002_r2: 'R2 0.34' as support for the R-squared in the flip section and the method note ('matches to the precision AJR publish their own coefficient of minus 0.38 and R-squared of 0.34 on the same 91')",
+   "verdict": "CONFIRMED",
+   "evidence": "The quote is on p. 1251 (PDF page 22): the R2 row, first cell 0.34, with 'Number of observations 91' (ajr2002.txt lines 961-962). My recomputation (see SR1) gives r = -0.5842, r^2 = 0.3413 (0.34 to 2 dp) and slope -0.377 (-0.38). Both published figures match at the precision AJR print. The sample is the same 91 countries.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "SR4",
+   "claim": "sources.json dell2012: published version, and the sentence 'in poor countries a one degree warmer year cut growth that year by about 1.3 percentage points, with no effect in rich countries they could tell apart from zero' (plus 'use year to year weather variation within countries')",
+   "verdict": "CONFIRMED",
+   "evidence": "Published version: dell2012.txt line 1 reads 'American Economic Journal: Macroeconomics 2012, 4(3): 66-95' with DOI 10.1257/mac.4.3.66. pdfinfo shows Producer 'Atypon Systems, Inc.' and a CreationDate of 2012-06-12, which fits the AEA typeset PDF. I re-downloaded the nd.edu copy and its sha256 (67eb773d...) equals the stored PDF. The quote is at p. 67 (lines 86-87). The paraphrase is faithful: the unit is 1 degree C; the sign is a reduction; the period is 'in that year'; and 'poor' means below-median PPP GDP per capita in the first year (p. 74, Table 2 note). Table 2's poor-country effect is -1.394 / -1.347. The identification is 'year-to-year fluctuations in temperature and precipitation' (p. 67). On rich countries, p. 67 says changes 'do not have a robust, discernable effect' and p. 76 says not significant, 't-statistics are below 1.0 for all specifications except the last'. One nuance: Table 2 col (5) has 0.561* at the 10% level, and Table 4 col 6 (area weighting) reports a significant zero-lag rich-country effect. So 'robust' is the operative word, but the post's phrase is a fair plain-English version of Dell's own summary.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "SR5",
+   "claim": "Reference: Acemoglu, Johnson & Robinson (2002), QJE 117(4), 1231-1294, doi 10.1162/003355302320935025, plus the sentences that cite it fairly ('more complex' concession, urbanisation rationale, 'AJR raise that caution themselves', 'wider-coverage second of AJR's two proxies', appendix temperature variables 'average temperature and four monthly extremes, from a 1997 source', replication file carrying settler mortality and expropriation risk)",
+   "verdict": "CONFIRMED",
+   "evidence": "Crossref for the DOI returns the same title, The Quarterly Journal of Economics, vol 117, issue 4, pp 1231-1294, 2002, and authors D. Acemoglu, S. Johnson, J. A. Robinson. The DOI 302-redirects to academic.oup.com/qje. On p. 1232 (lines 92-105): 'Our main measure ... is urbanization' (the Bairoch/de Vries argument about agricultural productivity and a transportation network), and density is an 'additional proxy ... relatively more extensive data' whose relation to prosperity 'is more complex'. On p. 1243: 'more nuanced', Malthus, 'caution is required in interpreting population density as a proxy for income per capita'. Small nuance: AJR's 'more complex' compares density with urbanisation, not with the simple reasoning. The concession the post describes is still real. Appendix 2 (lines 2407-2410): 'average temperature, minimum monthly high, maximum monthly high, minimum monthly low, and maximum monthly low', sourced to Parker [1997]. maketable5.dta carries logem4 'log settler mortality' and avexpr 'average protection against expropriation risk'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "SR6",
+   "claim": "'This is Acemoglu, Johnson and Robinson's finding (Acemoglu et al., 2002).' The sentence follows directly after the density split (-0.49 on 94 vs +0.28 on 69) and the interaction test ('the test the argument actually rests on').",
+   "verdict": "CONFIRMED",
+   "evidence": "The refuter's key premise is false. They say AJR's only test on non-colonies uses urbanisation and never density. AJR Table VI (pp. 1254-1255, which I rendered and rotated as t6b-rot-25.png and t6b-rot-26.png) has columns (9) 'All countries never colonized by Europe' and (10) 'Europe'. Panel C of that table adds log population density in 1500 for those samples: 0.34 (0.07) with n = 43, and 0.37 (0.08) with n = 32. Panel D uses density as the instrument: 0.259 and 0.226. Both are positive, against negative values for former colonies. The text on p. 1253 (ajr2002.txt lines 1033-1040) asks 'Is there a similar reversal among the noncolonies?', finds a positive relationship, and ties the reversal to European colonialism. So the split itself (reversal among colonies, positive among the rest) is AJR's finding. The post's 43-country urbanisation comparison even matches their n of 43. The pooled density-by-colony interaction (t = -5.3) is the post's own construction: AJR's only interactions involve U.K. industrialisation (lines 2003-2070). But the sentence attributes 'the finding', not the test statistic. The next sentence says 'I downloaded their replication files and ran it against 2023 income', which marks the computed figures, including the 2023 interaction, as the author's. The attribution is accurate.",
+   "fixed": false,
+   "fix": "Narrow the sentence to: 'The former-colony reversal is Acemoglu, Johnson and Robinson's finding (Acemoglu et al., 2002).'"
+  },
+  {
+   "id": "SR7",
+   "claim": "Method notes: 'Acemoglu, Johnson and Robinson define it three times in the paper, on page 1243, in the note to Table V and in Appendix 2' (also in data/README.md trap 1)",
+   "verdict": "REFUTED",
+   "evidence": "grep -n -i arable sources/ajr2002.txt shows the population-divided-by-arable-land definition in at least six places. (1) Table II note, p. 1241 (line 552; pdftotext of PDF page 12 confirms the page): 'Population density is total population divided by arable land area'. (2) The text on p. 1243 (lines 634-636). (3) Table V note, p. 1251 (line 984). (4) Table VIII note, p. 1272 (line 1918): 'calculated as total population divided by arable land area'. (5) Appendix 2 (lines 2366-2368). (6) Appendix 3 note (lines 2566-2567), on land area adjusted for arable land. The three places the post names are correct, but 'three times' is a false count. The gate.toml licences (lines 48 and 80) only show that three places are named, not that there are only three. The same miscount is in docs/data-README.src.md line 19 and the rendered data/README.md.",
+   "fixed": true,
+   "fix": "Delete 'three times' in draft/the-map-used-to-run-the-other-way.src.md line 220, so it reads 'define it in the paper, on page 1243, in the note to Table V and in Appendix 2'. In docs/data-README.src.md line 19, delete 'three times' so it reads 'as **arable** land (p. 1243, the note to Table V, and Appendix 2 ...)'. Re-render both files, and remove the now-unused gate.toml [allow] entries 'three times in the paper' (line 48) and 'three times' (line 80)."
+  },
+  {
+   "id": "SR8",
+   "claim": "Live MDX, chart 3 figcaption (from make_charts.py line 208, also printed on rf-3-the-flip.png): 'Their paper used 1995 income and found -0.58 among former colonies'",
+   "verdict": "REFUTED",
+   "evidence": "Live MDX line 82 and make_charts.py line 208 both say 'Their paper used 1995 income and found -0.58 among former colonies'. grep finds no '0.58' and no published correlation in ajr2002.txt. The paper prints a coefficient of -0.38 and R2 0.34 (Table V, pp. 1250-1251, rendered). The -0.58 comes from results.json, flip['density_1500|income_1995|former_colonies'].r = -0.5842: the post's own recomputation from the replication file. It is numerically consistent with AJR, since -sqrt(0.34) = -0.583, but AJR never print it. The post's body says 'AJR do not publish a correlation' and 'Worth being precise about what is theirs and what is mine', so the caption contradicts the body by putting an unprinted figure in the paper. The gate's [published] section covers only seoTitle, excerpt, metaDescription and alt texts (gate.toml lines 183-192), not figcaptions, which is how this got through.",
+   "fixed": true,
+   "fix": "In make_charts.py line 208, replace 'Their paper used {ajr_income_year} income and found {n95[r]:+.2f} among former colonies' with 'On their {ajr_income_year} income figures it is {n95[r]:+.2f} among former colonies', keeping the same bound key. Regenerate rf-3-the-flip.png and copy the new footnote text into the live MDX figcaption at line 82."
+  },
+  {
+   "id": "SR9",
+   "claim": "Live MDX, chart 1 figcaption (make_charts.py line 132): 'against the best measure of 1500 prosperity we have, population density', licensed in gate.toml line 146 as 'density as the best 1500 measure is AJR's argument (p. 1232)'",
+   "verdict": "REFUTED",
+   "evidence": "AJR p. 1232 (ajr2002.txt lines 93-104) says urbanisation is their 'main measure' of prosperity in 1500 and treats population density only as 'an additional proxy' with more extensive data. p. 1243 (lines 638-652) calls density's link to income 'more nuanced' and says caution is required. The chart 1 footnote (make_charts.py line 132, printed on rf-1-the-tidy-story.png and in live MDX figcaption line 27) calls density 'the best measure of 1500 prosperity we have'. That contradicts the cited page, and it contradicts the post's own method note at draft line 155: 'Density is the wider-coverage second of AJR's two proxies rather than their first'. The gate.toml licence at line 146, 'density as the best 1500 measure is AJR's argument (p. 1232)', misreads that page.",
+   "fixed": true,
+   "fix": "In make_charts.py lines 132-133, delete 'the best measure of 1500 prosperity we have, ' so the caption reads 'ran the OTHER way against population density, so this chart cannot be read ...'. Make the same deletion in the gate.toml line 146 key, and delete 'density as the best 1500 measure is AJR's argument (p. 1232);' from its licence. Regenerate rf-1-the-tidy-story.png and update live MDX figcaption line 27 to match."
+  },
+  {
+   "id": "SR10",
+   "claim": "'it contains the most famous explanation in this literature, in which a fixed tropical disease environment mattered enormously because of how it shaped European settlement' (gate.toml licence: 'the settler-mortality account, described in the same sentence and attributed to AJR')",
+   "verdict": "REFUTED",
+   "evidence": "The sentence is at draft lines 106-108: 'it contains the most famous explanation in this literature, in which a fixed tropical disease environment mattered enormously because of how it shaped European settlement'. It names no author and has no in-text citation. The gate.toml licence at line 139 says it is 'attributed to AJR', which is false as written. The description itself matches AJR 2002 pp. 1270-1271 (lines 1826-1845), where they summarise their 2001a work: in high-mortality areas Europeans did not settle and were more likely to build extractive institutions, with malaria and yellow fever named. That 2001 paper is not in the reference list. The only later mention of settler mortality (draft line 248, in the method notes) refers to a data series, not this explanation. So the prominence claim ('most famous ... in this literature') is uncited and has no source in the repo, and the licence's justification is false.",
+   "fixed": true,
+   "fix": "In the draft src, replace 'the most famous explanation in this literature, in which' with 'an explanation in which'. This deletes the uncited prominence claim and keeps the logical point. Then delete or rewrite the gate.toml [claims] line 139 entry, removing 'attributed to AJR'. A second option is to keep the wording and append '(Acemoglu et al., 2002)', which uses an existing reference and describes the account at pp. 1270-1271."
+  },
+  {
+   "id": "SR11",
+   "claim": "gate.toml licence for 'better land tends to produce more people rather than richer ones': 'the Malthusian premise AJR state on p. 1232' (supports 'AJR raise that caution themselves')",
+   "verdict": "REFUTED",
+   "evidence": "p. 1232 (ajr2002.txt lines 92-104) has no Malthusian argument, only the remark on urbanisation and that density's relationship is 'more complex'. Malthus appears on p. 1243 (lines 644-652): 'Malthus [1798] argued that high productivity increases population ... So caution [...]'. Note 7 (lines 667-675) is also on p. 1243, since it sits before the 1244 header at line 676, and calls the strict total-income reading 'extreme'. AJR report and qualify Malthus rather than state the premise as their own. So the gate.toml line 142 licence has the wrong locator and wording. The post's own sentence 'AJR raise that caution themselves' (draft line 155) is accurate.",
+   "fixed": true,
+   "fix": "In gate.toml line 142, change the licence to: 'the Malthusian caution AJR raise on p. 1243 and in note 7; hedged by tends to'. No prose change is needed."
+  },
+  {
+   "id": "SR12",
+   "claim": "Reference: Dell, Jones & Olken (2012), Temperature shocks and economic growth: Evidence from the last half century, AEJ: Macroeconomics 4(3), 66-95, doi 10.1257/mac.4.3.66",
+   "verdict": "CONFIRMED",
+   "evidence": "Crossref for 10.1257/mac.4.3.66 returns the same title, American Economic Journal: Macroeconomics, vol 4, issue 3, pp 66-95, issued 2012-07, and authors Melissa Dell, Benjamin F Jones, Benjamin A Olken. The DOI 302-redirects to pubs.aeaweb.org (403 to curl, as sources.json notes). The only citing sentence is checked in SR4. The follow-on statement that it is a within-country result rather than a cross-country ranking is consistent with Dell p. 67, which uses within-country fluctuations to 'isolate its effects from time-invariant country characteristics'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "SR13",
+   "claim": "Reference: McEvedy, C., & Jones, R. (1978). Atlas of world population history. Facts on File. Citing sentence: 'how many people a place supported per unit of arable land, from Colin McEvedy and Richard Jones's population atlas (1978)'",
+   "verdict": "CONFIRMED",
+   "evidence": "AJR's bibliography (ajr2002.txt lines 2777-2778) reads 'McEvedy, Colin, and Richard Jones, Atlas of World Population History ([...])'. WorldCat OCLC 4150954 and a scanned title page found by web search agree: Facts On File, New York, 1978; a Penguin edition exists in the UK. AJR p. 1243 (lines 634-636) says the measure divides total population by arable land 'also estimated by McEvedy and Jones', which supports the sentence. Note that this is a secondary citation: the post relies on AJR's account rather than reading the atlas, which the attribution as written does not hide.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "SR14",
+   "claim": "Reference: World Bank (2026a). GDP per capita, PPP (constant 2021 international $) [Data set]. World Development Indicators. Citing sentence: NY.GDP.PCAP.PP.KD, constant 2021 international dollars, for 2023",
+   "verdict": "CONFIRMED",
+   "evidence": "data/wb_gdp_2023.json header: sourceid '2' (WDI), lastupdated '2026-07-13', which supports the year 2026. Each row carries indicator {'id': 'NY.GDP.PCAP.PP.KD', 'value': 'GDP per capita, PPP (constant 2021 international $)'} and date '2023'. The cited URL data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD returns HTTP 200.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "SR15",
+   "claim": "Reference: World Bank (2026b). Climate Change Knowledge Portal: Mean surface air temperature, ERA5 annual climatology, 1991-2020 [Data set], plus the method-note description 'near-surface air temperature from the ERA5 reanalysis, annual mean over 1991 to 2020, by country'",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.py lines 40-41 record the request: era5-x0.25_climatology_tas_climatology_annual_1991-2020_mean_historical_era5_x0.25_mean/all_countries. I re-fetched it today and got 246 country entries, identical to data/cckp_tas.json, so the description matches the series used. The cited landing URL /download-data returns 403 to curl and WebFetch. The World Bank's own data catalogue, found by web search, names that page as the CCKP route for 'pre-computed statistics for spatially aggregated data ... as API or xls', so the URL is the right venue. The bracketed title is descriptive rather than the portal's literal dataset name, which APA allows for untitled data.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG1",
+   "claim": "The heat sign flip among former colonies, used as the reason the global chart cannot mean what it looks like. Draft lines 48-51 ('plus 0.29 across 97 ... minus 0.25 across 98 ... The sign flipped'), line 55 ('The flip lives inside the colonised world'), the close at lines 163-165, the excerpt, chart 1's figcaption and chart 2's alt text ('The same thermometer points opposite ways five centuries apart').",
+   "verdict": "REFUTED",
+   "evidence": "Recomputed with build_analysis.load() (scratch round1/logic-adjudicator/adj.py, adj2.py). The base figures match results.json: heat vs 1500 density among colonies is +0.295 (n=97, t=+3.01) and heat vs income is -0.250 (n=98). Fragility check: dropping Canada alone gives +0.169 (n=96, t=+1.67) and -0.186 (n=97, t=-1.84). Leave-one-out minimum t is 1.67 (CAN); the next lowest is USA at 2.56. Dropping rich4 (USA, CAN, AUS, NZL) gives +0.064 (n=93, t=+0.61) and -0.073 (n=94, t=-0.70). Within African plus Asian colonies (AJR africa/asia dummies) the figures are -0.021 (n=61) and +0.005 (n=62). Spearman is +0.161 (n=97, t about 1.59). A direct test of 'identical across groups', the heat x ex2col interaction on 1500 density, gives t=+3.53 on 173 but only t=+1.38 on 169 without the neo-Europes. On urbanisation the never-colonised show the same heat sign pattern as the colonies: +0.256 then and -0.322 now (n=43), against +0.289 and -0.378 for the colonies (n=43). So 'the flip lives inside the colonised world' (line 55) does not hold on the per-person proxy either. AJR run exactly this exclusion for their own result: sources/ajr2002.txt lines 113-118 ('when we exclude the \"neo-Europes\"'), and Table V col 6 keeps density at -0.32 on n=87 (line 941). The density flip survives that exclusion: -0.388 (n=90, t=-3.95), interaction t=-4.48 on 159. The post therefore rests its thesis (close lines 163-165, the excerpt, the chart 1 figcaption, the chart 2 alt) on its least robust correlation, and never discloses that fragility.",
+   "fixed": true,
+   "fix": "Delete the heat-flip 'because' clauses so the conclusion rests on interaction.t. In the close (lines 163-165), delete ', because among former colonies that same thermometer used to point the other way: hotter went with more crowded'. In the excerpt, delete ', because among former colonies the same thermometer used to point the other way'. In the chart 1 figcaption (make_charts.chart1), delete 'but among former European colonies the same thermometer ran the OTHER way against the best measure of 1500 prosperity we have, population density, so', leaving 'Nothing after it disputes that the relationship is real; this chart cannot be read as heat acting on prosperity in a way that never changed.' In the chart 2 alt text, delete 'The same thermometer points opposite ways five centuries apart.' The body's figures at lines 48-49 can stay as description. Any statement that the heat flip is robust, or any disclosure of its neo-Europe sensitivity, needs a new bound key (e.g. heat vs density without rich4: +0.06, n=93), so that goes back to the drafter."
+  },
+  {
+   "id": "LG2",
+   "claim": "'Heat acting directly and identically on human productivity is the clearest casualty: it should have made the tropics poor in 1500 too, and among the colonised world it did the opposite' (lines 93-95).",
+   "verdict": "REFUTED",
+   "evidence": "'Clearest casualty' rests on '+0.29 among the colonised world', which loses significance without Canada (t=+1.67) and vanishes without the neo-Europes (+0.064, n=93, t=+0.61; adj.py). The direct test of heat acting identically across groups is the heat x ex2col interaction on 1500 density. It is t=+3.53 with the neo-Europes and t=+1.38 without them (adj2.py), so the 'identically' half is not clearly rejected for heat once AJR's own exclusion is applied. Outside the colonies, heat vs 1500 density runs the way a constant heat effect predicts: -0.177 globally (n=173, t=-2.36, results.json heat_reversal.all) and -0.211 among the never-colonised (n=76). The disqualification of heat as the sole constant cause does follow from the density interaction (t=-5.33; -4.48 without the neo-Europes), with no need for this sentence's heat correlation. The density-is-wealth sub-point is weaker, because the post carries that proxy as an explicit assumption (design doc 3.4, chart 2 figcaption), so I do not rest the ruling on it.",
+   "fixed": true,
+   "fix": "Replace 'is the clearest casualty: it should have made the tropics poor in 1500 too, and among the colonised world it did the opposite' with 'is a casualty' (lines 93-95). The following sentence and interaction.t carry the point."
+  },
+  {
+   "id": "LG3",
+   "claim": "Meta description: 'Among former European colonies, hotter places were the more densely settled in 1500.'",
+   "verdict": "REFUTED",
+   "evidence": "The live MDX metaDescription (line 10) states as a categorical fact a correlation of r=+0.295 (r squared 0.087; heat_reversal.former_colonies.vs_density_1500). Its Spearman is +0.161 (t about 1.59), and it falls to +0.064 without the four neo-Europes (adj.py, see LG1). The body calls a stronger correlation, -0.44, 'a tendency and not a law' (draft line 29). The search-facing sentence gives this weaker one no such qualification.",
+   "fixed": true,
+   "fix": "Narrow it to the bound figure: 'Among former European colonies, temperature and 1500 population density correlate at plus 0.29.' Preferably delete the sentence, in line with the LG1 fix (gate.toml [published].metaDescription and the MDX)."
+  },
+  {
+   "id": "LG4",
+   "claim": "Bold filter, lines 89-90: 'No explanation of the ranking between countries can have an effect that was both constant over the period and the same whether or not Europeans arrived.'",
+   "verdict": "REFUTED",
+   "evidence": "The bold sentence (draft lines 89-90) forbids any explanation of the cross-country ranking from having a constant, colonisation-independent effect. The counterexample holds logically: income = c*heat + e, and density1500 = c*heat + Z with Z's effect faded. The constant heat term then explains part of the ranking in both eras, and Z produces the inversion. AJR themselves leave room for this structure: sources/ajr2002.txt lines 1724-1730 say geography may have mattered in earlier periods ('the tropics were more productive than temperate areas'). The post's own concessions agree with the narrower reading: line 136 ('does not show that temperature is irrelevant to income') and line 168 ('cannot be the whole of it'). The next sentence (lines 92-93, 'it cannot produce a ranking that inverted') is the correct version. Design doc 3.4 asks 'The filter must be stated precisely'.",
+   "fixed": true,
+   "fix": "Narrow to: 'No explanation of the ranking between countries can rest only on an effect that was both constant over the period and the same whether or not Europeans arrived.'"
+  },
+  {
+   "id": "LG5",
+   "claim": "Close, lines 165-166: 'Whatever explains today's map has to explain that inversion too, and an explanation whose effect never changed and never depended on whether Europeans arrived cannot.'",
+   "verdict": "REFUTED",
+   "evidence": "'Whatever explains today's map has to explain that inversion too' (lines 165-166) does not follow. A factor can explain part of today's cross-section while a separate, faded factor accounts for 1500's different ranking: the LG4 counterexample, and AJR's own allowance at sources/ajr2002.txt lines 1724-1730. The claims register's licence for this line ('an effect constant over time and identical across the colonial split cannot invert the ranking within one group (interaction.t)') covers only the second clause. The interaction backs that clause: t=-5.33 on 163 (results.json interaction).",
+   "fixed": true,
+   "fix": "Delete 'Whatever explains today's map has to explain that inversion too, and', leaving: 'An explanation whose effect never changed and never depended on whether Europeans arrived cannot explain that inversion.'"
+  },
+  {
+   "id": "LG6",
+   "claim": "Line 96: 'Outside that world heat did not reverse: across the 69 places measurable in both eras it runs minus 0.15 then and minus 0.04 now, neither clear of chance.'",
+   "verdict": "REFUTED",
+   "evidence": "On the common 69 the figures are -0.153 (t=-1.27) and -0.041 (t=-0.34) (results.json never_colonised_common_sample, reproduced in adj.py). Two estimates indistinguishable from zero cannot establish that heat 'did not reverse'. On urbanisation, the post's own per-person check (lines 157-158), the never-colonised show the reversal pattern this sentence denies. Heat vs sjb1500 is +0.256 (n=43, t=+1.70) and heat vs income is -0.322 (n=43, t=-2.18), the same signs as the colonies on their common 43 (+0.289, -0.378). On that proxy the contrast 'inverted in one group and not in the other' does not appear for heat.",
+   "fixed": true,
+   "fix": "Delete 'heat did not reverse:', leaving: 'Outside that world, across the 69 places measurable in both eras, heat runs minus 0.15 then and minus 0.04 now, neither clear of chance.'"
+  },
+  {
+   "id": "LG7",
+   "claim": "Chart 1 figcaption: 'against the best measure of 1500 prosperity we have, population density'.",
+   "verdict": "REFUTED",
+   "evidence": "sources/ajr2002.txt lines 94-100 (p.1232) say urbanisation is AJR's main 1500 measure and density 'an additional proxy'. The draft agrees at line 155: density is 'the wider-coverage second of AJR's two proxies rather than their first'. At line 158 it calls urbanisation 'closer to a per-person measure'. Design doc 3.4 says 'Density is not wealth'. The gate.toml [claims] licence cites p.1232 for 'density as the best 1500 measure', and that page says the opposite.",
+   "fixed": true,
+   "fix": "Delete 'the best measure of 1500 prosperity we have,', leaving 'against population density in 1500' (make_charts.chart1 footnote and the MDX figcaption). If the LG1 fix is applied, this clause goes entirely."
+  },
+  {
+   "id": "LG8",
+   "claim": "Chart 3 figcaption: 'Their paper used 1995 income and found -0.58 among former colonies'.",
+   "verdict": "REFUTED",
+   "evidence": "AJR Table V Panel A col 1 prints a coefficient of -0.38 and R2 0.34 on n=91 (sources/ajr2002.txt lines 940-941, 965-966), not a correlation. Draft line 77: 'AJR do not publish a correlation.' The -0.58 is the post's recomputation from their file: results.json flip.density_1500|income_1995|former_colonies.r = -0.5842, n=91. It equals sqrt(0.34), so the relationship is the same, but the chart 3 figcaption ('Their paper ... found -0.58') attributes to the paper a number it does not print, and contradicts the body.",
+   "fixed": true,
+   "fix": "In make_charts.chart3 and the MDX figcaption, change it to 'Their paper used 1995 income; on it, their data give -0.58 among former colonies'."
+  },
+  {
+   "id": "LG9",
+   "claim": "Chart 3 alt text: 'slopes downward at minus 0.49 across 94 countries ... slopes upward at plus 0.28 across 69'.",
+   "verdict": "REFUTED",
+   "evidence": "The chart 3 alt text (MDX line 81, gate.toml [published] alt:rf-3) says 'slopes downward at minus 0.49' and 'slopes upward at plus 0.28', which are the correlations (flip.*.r). The slopes are -0.3348 and +0.1477 (results.json flip.*.slope and interaction.slope_former_colonies / slope_never_colonised), and body lines 72-73 report them as minus 0.33 and plus 0.15. The chart 2 alt uses the correct form ('sloping upward, correlation plus 0.29').",
+   "fixed": true,
+   "fix": "Change to 'slopes downward, correlation minus 0.49, across 94 countries' and 'slopes upward, correlation plus 0.28, across 69' (gate.toml [published] alt template and the MDX)."
+  },
+  {
+   "id": "LG10",
+   "claim": "Chart 3 title and draft alt text: 'Being prosperous in 1500 predicts poverty now, but only on one side of the split'.",
+   "verdict": "REFUTED",
+   "evidence": "The x variable in make_charts.chart3 is lpd1500s, log population density (axis label 'Log population density in 1500'). Design doc 3.4 (docs/2026-09-07-reversal-design.md line 88): 'Density is not wealth ... the post carries it as an assumption.' Draft lines 152-155 say density and income per head 'are not the same quantity'. The suptitle (make_charts.py line 199) and the draft's image alt (line 60) assert prosperity without the assumption, while the body says 'being densely settled in 1500 correlates' (line 70). 'Predicts' in the correlational sense is fine (r=-0.488, t=-5.36).",
+   "fixed": true,
+   "fix": "Change it to 'Being densely settled in 1500 predicts poverty now, but only on one side of the split' (make_charts.chart3 suptitle and the draft alt text). The gate.toml [claims] key changes to match."
+  },
+  {
+   "id": "LG11",
+   "claim": "Section heading, chart 1 title and draft alt text: 'The tidy story, and it is true'.",
+   "verdict": "REFUTED",
+   "evidence": "Draft line 5 defines the tidy story as 'the wealth of nations explained by a thermometer', and gate.toml [claims] licenses that phrase as 'describes the reading the post disputes'. The heading at line 13, the alt at line 15 and the PNG title (make_charts.py line 110; I viewed the rendered rf-1 PNG) all read 'The tidy story, and it is true'. The PNG travels standalone above a temperature/income scatter. The body narrows 'true' to the correlation at lines 18-19, the heading does not, and line 168 says 'The thermometer cannot be the whole of it'. This is minor and rhetorical, but it is an internal contradiction.",
+   "fixed": true,
+   "fix": "Narrow it to the correlation: 'The tidy story, and its correlation is real' (draft heading and alt, make_charts.chart1 set_title)."
+  },
+  {
+   "id": "LG12",
+   "claim": "Line 149: 'That minus 0.74 is the measurement of it.' Here 'it' is the split sitting downstream of one side of the comparison and upstream of the other.",
+   "verdict": "REFUTED",
+   "evidence": "'It' (lines 147-149) is colonisation sitting downstream of 1500 conditions and upstream of today's income. The -0.74 is lat_abst vs ex2col (results.json colonisation_vs_latitude, r=-0.7416, n=167), so it measures only selection on latitude. The 'downstream of what was already there' leg, 1500 density vs ex2col, is r=-0.350 (n=177, t=-4.94; adj.py). Nothing measures colonisation sitting upstream of income. 'The measurement of it' overclaims.",
+   "fixed": true,
+   "fix": "Narrow it to 'That minus 0.74 measures the latitude part of it.', or delete the sentence."
+  },
+  {
+   "id": "LG13",
+   "claim": "Lines 99-100: 'Climate sees it extremely well. In this data, absolute latitude correlates with whether a place was colonised at minus 0.74'.",
+   "verdict": "REFUTED",
+   "evidence": "The post's climate variable, ERA5 temperature, correlates with ex2col at +0.415 (n=203, t=+6.47; adj.py). Only absolute latitude reaches -0.74 (colonisation_vs_latitude). The post itself separates the two at line 194 ('\"The equator has not moved\" defends latitude; it does not defend the temperature series'). 'Climate sees it extremely well' lends latitude's figure to climate.",
+   "fixed": true,
+   "fix": "Change 'Climate sees it extremely well.' to 'Latitude sees it extremely well.' (line 99)."
+  },
+  {
+   "id": "LG14",
+   "claim": "Lines 148-149: 'partly on things like latitude that shape income today'.",
+   "verdict": "REFUTED",
+   "evidence": "'things like latitude that shape income today' (line 148) is causal. The only support is a correlation: lat_abst vs lgdp2023 r=+0.600 on 159 (rivals_common_sample.lat_abst; adj.py reproduces it). The post frames latitude as one of the crude variables that are not an explanation (lines 21-24), and it disclaims causal readings throughout (lines 143-150). The selection argument works with association alone.",
+   "fixed": true,
+   "fix": "Change 'that shape income today' to 'that correlate with income today'."
+  },
+  {
+   "id": "LG15",
+   "claim": "Chart 1 alt text: 'Singapore, Qatar and Indonesia sit above the line at high temperatures'.",
+   "verdict": "REFUTED",
+   "evidence": "I refit chart 1's line on all 196 entities (adj.py: slope -0.0602, intercept 10.826, matching tidy_story.slope). Residuals: Singapore +2.58 log points ($130,297 against $9,890 fitted, 100th percentile), Qatar +2.49 ($116,159 against $9,638, 99.5th), Indonesia +0.23 ($13,890 against $11,075, 55th percentile; residual SD 1.05). In the rendered rf-1 PNG, Indonesia's marker sits on the dashed line. Grouping it with two extreme outliers misleads a screen-reader user.",
+   "fixed": true,
+   "fix": "Delete 'and Indonesia', leaving 'Singapore and Qatar sit above the line at high temperatures' (gate.toml [published] alt:rf-1 and the MDX)."
+  },
+  {
+   "id": "LG16",
+   "claim": "Excerpt: 'A chart of temperature against national income is one of the tidiest things in economics, and it is real.'",
+   "verdict": "REFUTED",
+   "evidence": "The excerpt (MDX line 4, gate.toml [published].excerpt) states 'is one of the tidiest things in economics' with no undercut on tidiness. Its next sentence undercuts the meaning, not the fit. The post's own bound figures contradict the claim: r squared 0.189 (tidy_story.r2_share); incomes within 24-28 C run from $1,133 to $130,297 (spread_24_28c); on a common 159, temperature (-0.46) is beaten by latitude (+0.60) and an Africa dummy (-0.68) (rivals_common_sample). The body treats it as a first impression and undercuts it by line 21. Minor, since it is licensed as rhetorical.",
+   "fixed": true,
+   "fix": "Change 'is one of the tidiest things in economics' to 'looks like one of the tidiest things in economics' in the excerpt."
+  },
+  {
+   "id": "LG17",
+   "claim": "Excerpt: 'It is also impossible to read the way it invites you to'.",
+   "verdict": "REFUTED",
+   "evidence": "Body lines 10-11 read 'It is also, I think, impossible to read the way it invites you to'. gate.toml [claims] licenses the thesis as 'hedged \"I think\"'. The excerpt drops the hedge, and its separate register entry licenses it only by the heat reversal (+0.29 then, -0.25 now), which is not robust to dropping Canada or the neo-Europes (LG1).",
+   "fixed": true,
+   "fix": "Restore the hedge in the excerpt: 'It is also, I think, impossible to read the way it invites you to'. Combine this with the LG1 deletion of the 'because' clause."
+  },
+  {
+   "id": "LG18",
+   "claim": "Meta description: 'Temperature correlates with national income at minus 0.44.'",
+   "verdict": "REFUTED",
+   "evidence": "The -0.44 is temperature vs LOG GDP per capita on 196 (tidy_story.r = -0.435). On per-capita dollars it is -0.390 (tidy_story_raw_dollars). The method notes (draft line 180) call the income log 'load-bearing' and say that 'Both matter enormously'. 'National income' also usually means an aggregate rather than income per head. Minor imprecision in the search-facing field.",
+   "fixed": true,
+   "fix": "Change it to 'Temperature correlates with log income per head at minus 0.44.' (gate.toml [published].metaDescription template and the MDX)."
+  },
+  {
+   "id": "LG19",
+   "claim": "Chart 4 figcaption: 'This chart was chosen after the correlations were computed, unlike the first and third'.",
+   "verdict": "REFUTED",
+   "evidence": "The chart 4 figcaption (MDX line 151) says chart 4 was chosen after the correlations, 'unlike the first and third, and the method notes say so'. The method notes (draft lines 233-235) say the reverse for chart three: 'the same relationship on 1995 income was already sitting in my provenance notes, so it is not a clean case'. docs/provenance-audit.md line 1 says it ran 'before any design', and its table (lines 34-39) already holds density vs 1995 income among colonies at -0.58 (n=91).",
+   "fixed": true,
+   "fix": "Delete 'and third', leaving 'unlike the first, and the method notes say so' (make_charts.chart4 footnote and the MDX)."
+  },
+  {
+   "id": "LG20",
+   "claim": "Method notes, line 233: 'Chart one was specified before its correlation was computed.'",
+   "verdict": "REFUTED",
+   "evidence": "docs/provenance-audit.md line 1 ('run before any design') and line 55 record an exploratory 'corr(temp1, log GDP 1995) = -0.33'. That is a temperature-against-income correlation already in hand before chart one was specified. It is the same kind of prior exposure that makes chart three 'not a clean case' at draft lines 234-235, and the selection note (line 233) applies a looser standard to chart one. The draft discloses the temp1 run at lines 210-211 but does not connect it. Minor.",
+   "fixed": true,
+   "fix": "Narrow it to 'Chart one was specified before its ERA5 correlation was computed.'"
+  },
+  {
+   "id": "LG21",
+   "claim": "'163 countries' (line 73 and chart 3 alt text), '97 countries' and '94 countries' (line 48 and chart 2/3 alt texts).",
+   "verdict": "REFUTED",
+   "evidence": "Listing the samples from build_analysis.load() (adj.py, adj2.py): the 94 colonies and the 97/98 heat samples include HKG; the 69 never-colonised include ABW, BMU, CYM and PRI. The 163 therefore contains 5 territories. The draft says '163 countries' (lines 65, 73), and the chart 3 alt and the chart 2 alt ('97 countries') say the same. The post applies the distinction elsewhere: chart 1 says 'countries and territories', and build_analysis.py's hot_and_rich comment records that an earlier draft was corrected for calling territories 'countries'. Minor.",
+   "fixed": true,
+   "fix": "Change '163 countries' and '97 countries' to '163 places' and '97 places' (draft lines 65 and 73, and the gate.toml [published] alt templates for rf-2 and rf-3), or append 'countries and territories'."
+  },
+  {
+   "id": "LG22",
+   "claim": "Line 70: 'minus 0.49, which is firmly established', and line 73: 'a gap with a t statistic of minus 5.3 ... the test the argument actually rests on'.",
+   "verdict": "CONFIRMED",
+   "evidence": "r=-0.488 (n=94, t=-5.36) and interaction t=-5.33 (n=163) reproduce. It survives the hostile checks. Cluster-robust standard errors by tied density value (99 clusters, because the density values come in shared blocks) give t=-4.07, and HC1 gives -5.82 (scratch c2.py). Without the neo-Europes the former-colony figure is -0.39 (t=-3.95) and the interaction t is -4.48 (c4.py). On the common 88, 1995 to 2023 runs -0.588 to -0.498.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG23",
+   "claim": "Line 70: 'plus 0.28, which is weaker and only just clear of chance'.",
+   "verdict": "CONFIRMED",
+   "evidence": "flip.density_1500|income_2023|never_colonised: r=+0.280, n=69, t=+2.39 (two-sided p about 0.02). 'Only just clear' is accurate.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG24",
+   "claim": "Line 76: '-0.58 across 91 ... -0.49 across 94. It has weakened and it is still there.'",
+   "verdict": "CONFIRMED",
+   "evidence": "The samples differ (91 against 94), so a composition effect was possible. On the common 88 former colonies with both incomes: 1995 r=-0.588 (t=-6.74) and 2023 r=-0.498 (t=-5.33) (scratch c2.py). The weakening is real, not a sample artefact. The 2023 sample adds AFG, GNB, LBY, MMR, PNG and SOM.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG25",
+   "claim": "Line 77: 'AJR do not publish a correlation. They publish a regression coefficient of minus 0.38 with an R-squared of 0.34 on those same 91 countries'.",
+   "verdict": "CONFIRMED",
+   "evidence": "ajr2002.txt Table V Panel A column 1: 'Log population density -0.38', R2 0.34, 'Number of observations 91' (lines 940, 965, 966). A text search finds no numeric correlation coefficient in the paper (line 1767 uses the word only in prose). sqrt(0.34)=0.583 against the recomputed 0.584.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG26",
+   "claim": "Line 21: '-0.44 accounts for about a fifth of the variation in log income, which leaves four fifths somewhere else.'",
+   "verdict": "CONFIRMED",
+   "evidence": "r squared = 0.189 (tidy_story.r2_share). It is stated as variance explained, not as a causal share.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG27",
+   "claim": "Line 21: 'Between 24 and 28 degrees the countries in this chart run from about 1,100 dollars a head to about 130,000.'",
+   "verdict": "CONFIRMED",
+   "evidence": "spread_24_28c: n=77, minimum $1,133 (Central African Republic), maximum $130,297 (Singapore).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG28",
+   "claim": "Lines 21-24: 'temperature is not even the strongest crude variable available ... a continent label beats the thermometer'.",
+   "verdict": "CONFIRMED",
+   "evidence": "On the common 159 (rivals_common_sample): temperature -0.464, absolute latitude +0.600, Africa dummy -0.682. All three are on one sample.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG29",
+   "claim": "Line 27: 'seventeen places above twenty degrees with incomes over forty thousand dollars, ten of them sovereign states and the rest territories'.",
+   "verdict": "CONFIRMED",
+   "evidence": "hot_and_rich: 17 entities, 7 of them territories (ABW, BMU, CYM, HKG, MAC, PRI, SXM). Israel at 20.33 C and Australia at 22.15 C clear the threshold (scratch c3.py).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG30",
+   "claim": "Lines 100-102: '-0.74, which is tighter than any relationship elsewhere in this post ... the tropics are where they went'.",
+   "verdict": "CONFIRMED",
+   "evidence": "|r|=0.742 (n=167) exceeds every other correlation in the post. The next largest are the Africa dummy (0.68) and the 1995 former-colony figure (0.58). Of former colonies, 79.2 percent have capitals within 23.44 degrees of the equator, against 7.6 percent of the never-colonised, and 94 percent of tropical places in AJR's file were colonised (scratch c2.py).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG31",
+   "claim": "Lines 107-108: 'the most famous explanation in this literature, in which a fixed tropical disease environment mattered enormously because of how it shaped European settlement'.",
+   "verdict": "CONFIRMED",
+   "evidence": "The cited source carries it. ajr2002.txt around lines 337-340: 'we proposed the disease environment at the time Europeans arrived [...]'. Around lines 1732-1735: 'a major determinant of European settlements ... was the mortality rates faced by Europeans, which is a geographical variable.' 'Most famous' is a judgement and is registered as one.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG32",
+   "claim": "Lines 123-125: Indonesia at the 79th percentile then and the 65th now, 'A fourteen point slide, ranking 47th of 94. The middle of the distribution.'",
+   "verdict": "CONFIRMED",
+   "evidence": "indonesia: density_pct 78.72, income_pct 64.89, slide 13.83, rank_by_slide 47, n_colonies 94. 47 of 94 is the median position. 'More densely settled ... than most of the world Europeans went on to colonise' holds by country count.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG33",
+   "claim": "Line 127: Burundi 98th to 1st, Sudan 91st to 10th, Afghanistan 87th to 9th, Singapore 4th to 100th, Australia 2nd to 97th, the United States 5th to 99th.",
+   "verdict": "CONFIRMED",
+   "evidence": "ranks: BDI 98.4 to 1.06; SDN 91.5 to 9.57; AFG 87.2 to 8.51; SGP 3.7 to 100.0; AUS 2.1 to 96.8; USA 5.3 to 98.9 (scratch c3.py).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG34",
+   "claim": "Chart 4 alt text: 15 former colonies; Burundi, Sudan and Afghanistan falls; 'Singapore, Canada, Australia, Hong Kong SAR, the United States and Uruguay climb from the bottom of the distribution to the top'; Indonesia 79th to 65th.",
+   "verdict": "CONFIRMED",
+   "evidence": "chart4 draws ranks[:8], Indonesia and ranks[-6:] = URY, USA, HKG, AUS, CAN, SGP: 15 rows. Density percentiles 1.1 to 6.9 against income percentiles 88.3 to 100 (Uruguay 6.9 to 88.3 is the weakest 'top'). The other figures match the ranks.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG35",
+   "claim": "Chart 2 alt text: 'sloping upward, correlation plus 0.29 across 97 countries ... sloping downward, correlation minus 0.25 across 98'.",
+   "verdict": "CONFIRMED",
+   "evidence": "heat_reversal.former_colonies: +0.295 (n=97, t=+3.01) and -0.250 (n=98, t=-2.53). Both fitted slopes have those signs (+0.090 and -0.051). On the 94 overlap: +0.31 and -0.25. The descriptive numbers are right. Their fragility is LG1, and 'countries' is LG21.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG36",
+   "claim": "Chart 2 figcaption: '11 West African countries share one identical density value here'.",
+   "verdict": "CONFIRMED",
+   "evidence": "density_ties: BEN, BFA, CIV, GHA, GIN, GMB, GNB, NGA, SEN, SLE and TGO, with ERA5 25.7 to 28.8 C (the hot end). Collapsing the block to one point leaves heat vs density among colonies at +0.25 (n=87, t=+2.40), so the tie alone does not drive the result. Twelve other tied blocks exist, for example the seven Caribbean states (scratch c2.py).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG37",
+   "claim": "Lines 136-139: Dell et al. find that 'in poor countries a one degree warmer year cut growth that year by about 1.3 percentage points, with no effect in rich countries they could tell apart from zero.'",
+   "verdict": "CONFIRMED",
+   "evidence": "dell2012.txt lines 85-88: 'a 1 C rise in temperature in a given year [...].'",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG38",
+   "claim": "Lines 153-158: AJR raise the density-is-not-income caution; density is 'the wider-coverage second of AJR's two proxies'; urbanisation 'gives the same sign pattern'.",
+   "verdict": "CONFIRMED",
+   "evidence": "ajr2002.txt p.1243 (around lines 640-652): 'caution is required in interpreting population density as a proxy for income per capita'. p.1232: urbanisation is the 'main measure' and density the additional proxy with 'more extensive data'. Urbanisation flip: -0.42 (n=43) against +0.28 (n=43, t=+1.83), interaction t=-3.56. The scope matters: this check covers the density flip only. Applied to heat, it does not reproduce the colonial split (see LG6).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG39",
+   "claim": "Chart 1 alt text: 'downward-sloping fitted line ... Hot countries cluster at low incomes, cold countries at high ones ... Norway and Mongolia are labelled in the cold half.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Fitted slope -0.060 per degree C. Median GDP is $46,334 below 10 C (n=35) and $10,649 from 24 to 30 C (n=82). Norway (2.64 C) and Mongolia (1.49 C) are left of the -18 to 29 C midpoint, and both are labelled in the PNG. DR Congo is also labelled but is omitted from the alt text, which is not a false claim.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG40",
+   "claim": "Method note, lines 224-226: the shipped variable 'for the United States, India and Brazil ... equals total land area to within two percent'.",
+   "verdict": "CONFIRMED",
+   "evidence": "land_area_check: maximum 1.18 percent off. The reasoning step also holds: lpd1500s equals lpa1500 minus lland15 in 176 of 177 rows (scratch c2.py), so lland15 really is density's denominator. For Egypt, lland15 corresponds to about 40,000 sq km, about arable rather than total land, so the variable is mixed, as the note says.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "LG41",
+   "claim": "Lines 75-76: 'This is Acemoglu, Johnson and Robinson's finding', referring to the split with opposite signs.",
+   "verdict": "CONFIRMED",
+   "evidence": "ajr2002.txt around lines 1033-1039: for the noncolonies, 'In both cases, there is a positive relationship between urbanization [...]', besides the reversal among former colonies. The interaction test is the post's own, and lines 76-77 separate theirs from mine.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA1",
+   "claim": "the wealth of nations explained by a thermometer",
+   "verdict": "CONFIRMED",
+   "evidence": "draft .md:3-8. The phrase comes right after 'Hot countries are poor. Cold countries are rich. One variable, one line,' and is followed by 'That is what bothered me.' It describes the reading the post goes on to dispute, so the licence is accurate.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA2",
+   "claim": "every place with both",
+   "verdict": "REFUTED",
+   "evidence": "I reran this. data/wb_gdp_2023.json lists Kosovo as XKX with 2023 GDP of 14,240.20. data/cckp_tas.json has no XKX key, but it does have KSV at 10.59 C. XKX is the only non-aggregate World Bank code without a temperature: the 'gdp no tas' set is ['XKX'], and CHI drops out earlier because its GDP is null. build_analysis.py:52-53 and :141-142 join on the raw code, so Kosovo has both series but is dropped. The published tidy_story is r=-0.43523 on n=196. Mapping XKX to KSV gives n=197 and r=-0.43358, which prints minus 0.43, not minus 0.44. Raw dollars move from -0.390 to -0.386, which still prints minus 0.39. So 'every place with both' (draft .md:17, MDX:30) is false. The chart-1 figcaption carries the same defect ('Every entity with both, 196 of them': make_charts.py:127, MDX:26, gate.toml:132), because make_charts.py:55/:70 uses the same raw-code join. Script: scratchpad/round1/claimsA-adjudicator (inline check).",
+   "fixed": true,
+   "fix": "In draft .src.md:17 delete 'every place with both, ' so it reads 'Average annual temperature against GDP per capita, {{tidy_story.n:int}} countries and territories.' Make the same deletion in the chart-1 footnote (make_charts.py:127: 'Every entity with both, {n} of them' becomes '{n} entities'), then regenerate the chart and the MDX figcaption. Drop the gate.toml:93 and :132 licences. Fixing the XKX/KSV join in code would move the headline to minus 0.43, so that is a separate decision for the owner."
+  },
+  {
+   "id": "CA3",
+   "claim": "impossible to read the way it invites you to",
+   "verdict": "CONFIRMED",
+   "evidence": "draft .md:10-11 carries the hedge 'I think'. The invited reading is set out at :3-5 and :31-32 (one variable, fixed destiny). It is contradicted by tidy_story.r2_share=0.189 (results.json) and by the density interaction t=-5.33 (n=163), which still holds at t=-4.48 with the four neo-Europes dropped (my recomputation). One caveat: the published excerpt (MDX:4) repeats the phrase without 'I think', and its second leg, the heat reversal, is fragile (see CA25). The excerpt is entry 57's responsibility.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA4",
+   "claim": "Nothing in this post disputes that the correlation is real",
+   "verdict": "CONFIRMED",
+   "evidence": "tidy_story r=-0.435, t=-6.73, n=196 (results.json). No section disputes it, and :163 says 'The chart that started me off is true'. With Kosovo added (CA2) r=-0.434, which is still real.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA5",
+   "claim": "not even the strongest crude variable available",
+   "verdict": "CONFIRMED",
+   "evidence": "rivals_common_sample n=159 gives tas -0.464, lat_abst +0.600, africa -0.682, so two of the three named variables beat temperature, as the licence says. The ordering also holds on the 161-country sample you get once the ROM/ZAR code mismatch (CA10) is fixed: -0.469, +0.609, -0.689. Note that those three rounded figures would change at two decimals.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA6",
+   "claim": "Nobody measured GDP in 1500",
+   "verdict": "CONFIRMED",
+   "evidence": "True as stated: no national accounts existed. Figures for 1500 are later reconstructions. AJR (sources/ajr2002.txt:1150-1153, p. 1256) cite Maddison [2001]'s reconstructed 1500 estimates, which fits the licence's 'reconstructions, not measurements'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA7",
+   "claim": "only a relatively productive place could feed a dense population",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/ajr2002.txt:102-105 (p. 1232) reads 'Although the theoretical relationship ... is more complex, it seems clear that during preindustrial periods [...].' The licence quote and page are correct. The draft paraphrases 'prosperous' as 'productive', which is faithful.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA8",
+   "claim": "only places with high agricultural productivity",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/ajr2002.txt:94-98 (p. 1232) reads 'Bairoch [1988, Ch. 1] and de Vries [1976, p. 164] [...] developed transportation network can support large urban populations.' The draft keeps the transport condition and frames it as 'the claim is', which is neutral attribution.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA9",
+   "claim": "because I pre-registered this chart as a global claim",
+   "verdict": "CONFIRMED",
+   "evidence": "In the design doc, docs/2026-09-07-reversal-design.md:100-104, the original chart-2 specification is struck through with no subgroup restriction ('If hot places were the dense ones'), followed by the AMENDED note. heat_vs_1500_density r=-0.177, n=173, t=-2.36, so the global version is false. Caveat: git cannot date the pre-registration. The design doc first appears in commit 1c5d364 (2026-09-07 21:31) together with all its amendments, so the doc's own header is the only timing evidence. The figure in the next sentence also has the code defect from CA10: on a full join, 175 countries have both measures, r=-0.182.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA10",
+   "claim": "Across all 163 countries with both",
+   "verdict": "REFUTED",
+   "evidence": "I reran this with scratchpad/round1/claimsA-adjudicator/remap.py. After load(), AJR's ROM has lpd1500s 2.161, ex2col 0, and gdp2023/tas both NaN. ZAR has lpd1500s 0.405, ex2col 1, and also NaN. The World Bank carries ROU (40,116.69) and COD (1,559.34), and CCKP carries ROU (10.04 C) and COD (24.09 C). build_analysis.py:79-80 maps on AJR's legacy shortnam, so both are dropped. Remapped: pooled r=+0.0425 on n=165 (published +0.0351 on 163); former colonies r=-0.4794 on n=95 (published -0.4877 on 94, so it prints minus 0.48 instead of minus 0.49); never-colonised +0.2806 on n=70; interaction t=-5.29 on n=165 (still prints minus 5.3); raw-density interaction t=-1.31 (prints minus 1.3, published minus 1.4); the rivals sample becomes 161 with tas -0.469, lat +0.609, africa -0.689 (three printed figures change); Sudan moves to 92nd and 11th. Every figure the refuter gave is reproduced, so 'all 163 countries with both' (draft :65, MDX:88) is false. The same defect sits in 'the 173 countries with both measures' (draft :54 and :230, which become 175 when remapped) and in the 69 described at :96/:255 (70 once Romania is matched).",
+   "fixed": true,
+   "fix": "In draft .src.md:65 change 'Across all {{flip.density_1500|income_2023|all.n:int}} countries with both' to 'Across {{flip.density_1500|income_2023|all.n:int}} countries', and drop the gate.toml:101 licence. Apply the same deletion of 'with both measures' at .src.md:54 and :230. Mapping ROM to ROU and ZAR to COD in load() moves several printed figures, so it needs the owner's sign-off."
+  },
+  {
+   "id": "CA11",
+   "claim": "Nothing.",
+   "verdict": "CONFIRMED",
+   "evidence": "flip density_1500|income_2023|all: r=+0.035, t=+0.45, n=163. With ROM/ZAR remapped, r=+0.043, t=+0.54. A null either way.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA12",
+   "claim": "tells you nothing about where it stands now",
+   "verdict": "CONFIRMED",
+   "evidence": "draft .md:65-67 frames it as a counterfactual ('If you ran that regression you would conclude...'), and the next paragraph refutes it. This is the reading the pooled +0.04 invites, as the licence says.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA13",
+   "claim": "the nothing becomes two relationships",
+   "verdict": "CONFIRMED",
+   "evidence": "Pooled +0.035 (n=163) against former colonies -0.488 (n=94, t=-5.36) and the rest +0.280 (n=69, t=+2.39), with interaction t=-5.33 (results.json). Opposite signs, and the difference is significant.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA14",
+   "claim": "only just clear of chance",
+   "verdict": "CONFIRMED",
+   "evidence": "t=+2.387 on n=69 gives a two-sided p of 0.0198 (scipy). That clears 0.05 without being strong, so 'only just' is a fair description. With the remap it is t=+2.41, n=70.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA15",
+   "claim": "what caused the reversal",
+   "verdict": "CONFIRMED",
+   "evidence": "draft .md:84 reads 'I am not going to tell you what caused the reversal.' The only causal content in the body is the literature's explanation, described with attribution at :106-108. This is a refusal, as the licence says.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA16",
+   "claim": "not the cause",
+   "verdict": "CONFIRMED",
+   "evidence": "draft .md:90 reads 'The test is on the effect, not the cause'. This defines what the filter tests and asserts nothing about data. It matches the design doc's §6.2-1 restatement (lines 206-210). The interaction.t part of the licence holds (t=-5.33). The 'four-cell heat pattern' part is fragile (see CA25) but is not needed for this definitional phrase.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA17",
+   "claim": "it cannot produce a ranking that inverted",
+   "verdict": "CONFIRMED",
+   "evidence": "For a factor with one constant effect that is identical across groups, the logic holds. Round 4's open HIGH (round4-scope.md:35-39, Berkson selection) does not reproduce at the data's selection strength. I fitted a probit for ex2col on the post's data, Phi(0.122+0.759zT-0.447zD), n=173, and simulated one homogeneous, constant heat effect (scratchpad berkson.py, 2000 runs). The mean within-colony corr(T, D1500) was -0.02, and P(>=+0.29)=0.002. A colony-only density-income inversion (r<=-0.49) occurred in 0 of 2000 runs. The density inversion is also robust: with the neo-Europes dropped, the colonies give -0.39 (t=-3.95) and the interaction t=-4.48.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA18",
+   "claim": "that a climate story cannot see the colonial split",
+   "verdict": "CONFIRMED",
+   "evidence": "colonisation_vs_latitude r=-0.742, n=167 (results.json) refutes the earlier claim, as :99-100 says. The claim that this is 'tighter than any relationship elsewhere in this post' also checks out: the next-largest |r| quoted is the Africa dummy at 0.68.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA19",
+   "claim": "disqualified only if its effect also held steady",
+   "verdict": "CONFIRMED",
+   "evidence": "Under the bolded conjunction at :89-90 (effect constant over time AND the same across the split), a steady effect is a necessary condition for disqualification, so 'only if' is correct. Minor wording issue: :99-102 uses 'see' to mean correlation (-0.74), while the filter's second condition is about effect heterogeneity. The necessary-condition reading of this phrase still holds.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA20",
+   "claim": "because of how it shaped European settlement",
+   "verdict": "CONFIRMED",
+   "evidence": "Attributed to 'this literature' (:107). AJR 2002 itself states the mechanism: sources/ajr2002.txt:337-339 (p. 1236), 'we proposed the disease environment at the time Europeans arrived [...] :1731-1735 (p. 1268), on 'the mortality rates faced by Europeans' as a major determinant of settlement. Described, not asserted.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA21",
+   "claim": "A cause can be older than the reversal and still produce it",
+   "verdict": "CONFIRMED",
+   "evidence": "The example comes just before it (:106-108): a fixed disease environment whose effect worked through settlement. That is a logical possibility consistent with the filter's survivor set at :105-106, not a data claim.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA22",
+   "claim": "nobody checks the rank",
+   "verdict": "CONFIRMED",
+   "evidence": "draft .md:129-130 says 'Picking the country you want and describing its slide is easy, and nobody checks the rank.' This is rhetorical hyperbole about what writers and readers usually do. No figure depends on it.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA23",
+   "claim": "institutions caused the reversal",
+   "verdict": "CONFIRMED",
+   "evidence": "draft .md:143-144 reads 'It does not show that institutions caused the reversal, or extraction, or disease. I have deliberately not gone there.' A refusal. The method notes at :247-251 confirm that the settler-mortality and expropriation series were loaded and not used.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA24",
+   "claim": "nobody should read \"the split determines the sign\" as a causal statement",
+   "verdict": "CONFIRMED",
+   "evidence": "The quoted phrase appears only inside this disclaimer: grep finds it at draft .md:150 and MDX:188 and nowhere in make_charts.py or the excerpt or meta fields. It is a reading instruction that disclaims causation.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA25",
+   "claim": "cannot mean what it looks like, because among former colonies that same thermometer used to point the other way",
+   "verdict": "REFUTED",
+   "evidence": "I reran this with scratchpad/round1/claimsA-adjudicator/neo.py (scipy). Among former colonies, tas against lpd1500s is r=+0.2946 (n=97, p=0.0034), but Spearman is only +0.161 (p=0.115). Dropping CAN, USA, AUS and NZL gives r=+0.0641 (n=93, p=0.54) for 1500, and r=-0.0726 (n=94, p=0.49) for tas against 2023 income. Dropping Canada alone gives +0.169 (p=0.099). Canada's cross-product (116) is nearly three times the next largest (USA 40). The heat-by-colonisation interaction on 1500 density falls from t=+3.53 to +1.38 without the neo-Europes. AJR treat excluding the neo-Europes as a standard robustness check (sources/ajr2002.txt:112-118), and the post's density flip passes it: colonies r=-0.388, interaction t=-4.48. The thermometer flip does not pass it. The close (draft :163-165, MDX:202) therefore generalises to 'former colonies' a pattern that is absent in 93 of 97 of them. The round-4 '…, weakly' hedge (docs/round4-scope.md:45-50) was not shipped. The same generalisation appears in the excerpt (MDX:4), the metaDescription (MDX:10), README.md:8 / docs/README.src.md:8 and the chart-1 figcaption (make_charts.py:131-134).",
+   "fixed": true,
+   "fix": "Delete the because-clause in the close: 'The chart that started me off is true and cannot mean what it looks like. Whatever explains today's map has to explain that inversion too…', so that 'that inversion' points back to 'the reversal' in the preceding paragraph. Alternatively, narrow it to the already-bound robust key: 'because among former colonies the 1500 ranking ran the other way' (flip.density_1500|income_2023|former_colonies.r, interaction.t). Excerpt: delete ', because among former colonies the same thermometer used to point the other way'. metaDescription: delete 'Among former European colonies, hotter places were the more densely settled in 1500.' README: delete the same because-clause. Chart-1 footnote: delete 'but among former European colonies the same thermometer ran the OTHER way … population density, so this chart cannot be read as heat acting on prosperity in a way that never changed', then regenerate the chart. Remove the gate.toml:116, :148 and :156 licences."
+  },
+  {
+   "id": "CA26",
+   "claim": "Whatever explains today's map has to explain that inversion too, and an explanation whose effect never changed and never depended on whether Europeans arrived cannot",
+   "verdict": "CONFIRMED",
+   "evidence": "The logic is valid. A factor with an effect that is constant over time and identical across groups cannot invert one group's ranking (my CA17 simulation finds no selection artefact at the data's strength). Caveat: 'that inversion' points back to the thermometer inversion in CA25, which rests on four countries, while the cited interaction.t (-5.33) is the density inversion. If CA25's fix is applied, the referent and the licence line up.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA27",
+   "claim": "The thermometer cannot be the whole of it, and cannot have inverted the ranking unless its effect changed",
+   "verdict": "CONFIRMED",
+   "evidence": "tidy_story.r2_share=0.189 (0.188 with Kosovo), so 'not the whole of it' holds. For a within-group inversion, a change in the effect over time within that group is necessary. The survivor category 'constant but acted differently after arrival' also implies a change within the colonised group. So the necessary condition is stated correctly, and it is the round-4 narrowing proposed in round4-scope.md:55.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA28",
+   "claim": "all come from Acemoglu, Johnson and Robinson's own replication files",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.py:54-63 reads lpd1500s, sjb1500, ex2col and logpgp95 only from data/ajr_t5/maketable5.dta and data/ajr_t3/maketable3.dta. Nothing else supplies them. docs/provenance-audit.md:8-11 records the download from Acemoglu's MIT archive.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA29",
+   "claim": "everything above is a result about log density",
+   "verdict": "CONFIRMED",
+   "evidence": "Every density figure in the body uses lpd1500s: +0.29, -0.18, +0.04, -0.49, +0.28, interaction slopes and t, -0.58 (1995), -0.15 (never-colonised heat), and AJR's -0.38/0.34, which their table calls 'Log population density'. The percentiles in chart 4 are rank-based, so they do not change with the log. Untransformed figures (-0.10, +0.17, t -1.4) appear only in the method note at :185-187.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA30",
+   "claim": "because there is no",
+   "verdict": "CONFIRMED",
+   "evidence": "The Last Millennium Reanalysis exists and covers 1500. I fetched Tardif et al. (2019) at https://cp.copernicus.org/articles/15/1251/2019/: it gives annually resolved surface air temperature for the Common Era. Its fields are 'deviations (i.e., anomalies)' from a temporal mean on a coarse Gaussian grid, constrained by proxies rather than instruments. It is not an absolute, country-level climatology. The draft's reader-facing claim (draft :192-193, MDX:233) is 'there is no 1991 to 2020 equivalent for 1500', and no product of the ERA5 1991-2020 kind (observation-constrained absolute temperature, aggregable to countries) exists for 1500. The licence (gate.toml:121) also says 'country-level … climatology', which LMR's gridded anomalies are not. The refuter's point reaches only the loose word 'reanalysis' in a gate licence. It does not show the published sentence is false or misleading.",
+   "fixed": false,
+   "fix": "Narrow the draft to 'because there is no measured 1991 to 2020 equivalent for 1500', and remove 'or reanalysis' from the licence."
+  },
+  {
+   "id": "CA31",
+   "claim": "deleted from every correlation",
+   "verdict": "CONFIRMED",
+   "evidence": "I reproduced the pre-fix first-row de-duplication (scratchpad prefix.py). The first DEU row has lat 0.567 and ex2col 0 but no lpd1500s or logpgp95. The first ZWE row has latitude only. Both drop out of every correlation that needs 1500 density or 1995 income. The sentence says 'that row carries ... neither density nor income', so 'income' means the file's 1995 income. Scope note: correlations that need only 2023 income kept Germany (heat vs 2023 income, latitude vs 2023 income, urbanisation vs 2023 income), because 2023 GDP is mapped by code after de-duplication.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA32",
+   "claim": "so it removed nothing",
+   "verdict": "CONFIRMED",
+   "evidence": "data/wb_gdp_2023.json has 265 rows, and none has a 'region' key (fields: country, countryiso3code, date, decimal, indicator, obs_status, unit, value). A filter on region therefore cannot have removed any row, which matches the comment at build_analysis.py:46-47 ('passed all 265 rows').",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA33",
+   "claim": "Aggregates never reached the results because the temperature series has no code for them",
+   "verdict": "CONFIRMED",
+   "evidence": "The World Bank file has 43 distinct aggregate codes, all in WB_AGGREGATES, and none has a value in cckp_tas.json. Its 5 income-group rows have an empty code and are dropped by the truthiness test. Every result built from the World Bank-keyed frame needs tas. Results in AJR's frame map by AJR codes, and none of those is an aggregate. So they never reached the results. For the AJR-frame results the reason is AJR's code set rather than the temperature gap, but the sentence's claim holds.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA34",
+   "claim": "they correlate at only",
+   "verdict": "CONFIRMED",
+   "evidence": "withdrawn_temp1_sanity_check.r=0.5804 over n_matched=200, with USA 27 and GRL 26 (results.json, computed in build_analysis.py:103-119). For two measures of a country's mean temperature, 0.58 is low, so 'only' is warranted.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA35",
+   "claim": "because the replication file's variable label reads",
+   "verdict": "CONFIRMED",
+   "evidence": "The Stata label of lland15 in maketable5.dta is 'log land area in 1500' (pandas variable_labels). Design doc :232-246 (§6.2-8, withdrawn in §6.3-1) says that amendment 'rests on the Stata label ... plus a ratio check, and never opened the paper'. The draft gives the label as the reason and leaves out the ratio check, which simplifies but does not misstate it (the ratio fact appears at :224-226). AJR p. 1243 (ajr2002.txt:634-636) does say 'arable land'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA36",
+   "claim": "none of which fired",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json scorecard: fc1_premise_fails, fc2_reversal_is_a_vintage_artefact and fc3_sign_does_not_flip are all false, n_conditions=3. The outcome does not depend on the 0.2 thresholds, which the design doc did not pre-register: |r|=0.435, the 2023 colony r is -0.49, and the sign product -0.49*0.28 is negative.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA37",
+   "claim": "All are scored in the repository",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.py:269-278 computes fc1 to fc3, which are written to results.json under 'scorecard'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA38",
+   "claim": "none of the three need have fired, because the third",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.py:270-276. fc1 tests temperature against income and is unaffected by the reversal. fc2 needs the 1995 colony r below -0.2, so it cannot fire if the reversal is absent in 1995. fc3 is a bare sign product with no magnitude floor, so with r_col near 0 it is a coin flip. 'Need have' is therefore exact.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CA39",
+   "claim": "uses all 196 entities with both",
+   "verdict": "REFUTED",
+   "evidence": "Same root cause as CA2, re-derived independently. Kosovo is XKX in wb_gdp_2023.json (14,240.20) and KSV in cckp_tas.json (10.59 C). The join at build_analysis.py:141-142 drops it. 197 entities have both series, and with Kosovo included r=-0.43358, which prints minus 0.43. So 'uses all 196 entities with both' (draft :253, MDX:299) is false.",
+   "fixed": true,
+   "fix": "In draft .src.md:253 change 'uses all {{tidy_story.n:int}} entities with both, which includes' to 'uses {{tidy_story.n:int}} entities, which includes', and drop the gate.toml:130 licence."
+  },
+  {
+   "id": "CA40",
+   "claim": "all nine of the awkward cases",
+   "verdict": "REFUTED",
+   "evidence": "I reran this with scratchpad/round1/claimsA-adjudicator/awk.py. The 69-member never-colonised sample includes all nine of the hand-picked list (build_analysis.py:254), one of which is KHM, a French protectorate. It also includes ARE, BHR, KWT, QAT, IRQ, JOR, LBN and ISR (British protectorates or League mandates), which are not on the list, plus OMN, IRL and KOR as further arguable cases. The list's criterion is therefore inconsistent, and 'all nine of the awkward cases' (draft :256-257, MDX:304) presents it as complete. The conclusion survives: the nine recoded give t=-4.70 (matches the published figure), the nine plus eight give t=-5.18, the eight alone t=-5.58, and dropping all seventeen t=-6.48. The refuter's -5.22 and -5.62 differ slightly from mine, but the direction holds. Only the completeness wording is wrong.",
+   "fixed": true,
+   "fix": "In draft .src.md:256-257 change 'Reclassifying all {{robustness.n_awkward:words}} of the awkward cases as colonies' to 'Reclassifying {{robustness.n_awkward:words}} awkward cases as colonies', and update the gate.toml:131 licence key to match."
+  },
+  {
+   "id": "AL1",
+   "claim": "[allow] \"1500\": the historical year of AJR's 1500 measures, not a result",
+   "verdict": "CONFIRMED",
+   "evidence": "I listed every match of the phrase in the draft source, README.src, data-README.src, make_charts.py literals and the [published] templates (scratch locate.py). Every one is the year: 'in 1500', 'log land area in 1500', 'population density in 1500', the rf-2 file name, and so on. None prints a computed value.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL2",
+   "claim": "[allow] \"five centuries\": 1500 to the 2023 income year spans 523 years",
+   "verdict": "CONFIRMED",
+   "evidence": "2023 - 1500 = 523, which rounds to five centuries. The other uses (draft lines 34, 36, 66, 103, 105, 194; make_charts.py:160; the rf-2 alt text) all mean the same 1500-to-now span. The temperature-stability use (1500 against 1991-2020, roughly 491 to 520 years) also rounds to five.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL3",
+   "claim": "[allow] \"One variable, one line\": rhetorical description of the chart",
+   "verdict": "CONFIRMED",
+   "evidence": "Not a computed figure. Chart 1 draws exactly one fitted line on one explanatory variable (make_charts.py:105, a single fitline call). Small wording issue in the reason: the post says it does NOT dispute the chart ('Nothing in this post disputes that the correlation is real', rendered line 18). What it disputes is the reading, so 'the chart the post disputes' is loose. That does not affect the exemption.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL4",
+   "claim": "[allow] \"one of the tidiest\": rhetorical, not a count",
+   "verdict": "CONFIRMED",
+   "evidence": "Matches are draft line 3, README.src:6 and the excerpt. All are superlative rhetoric, and no count is implied.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL5",
+   "claim": "[allow] \"not the two or three\": the author's visual impression, not a computed figure",
+   "verdict": "CONFIRMED",
+   "evidence": "It is not computed: no results key backs it, and the bound figure in that sentence is hot_and_rich.n = 17. Chart 1 labels exactly two hot-rich places, Singapore and Qatar (make_charts.py:112-113), which fits a 'two or three' impression. Out of lens: the rendered rf-1 PNG visibly shows a dozen or more dots above $40,000 between 20 and 28 C, so the impression is contestable on rhetoric grounds.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL6",
+   "claim": "[allow] \"Two things worth saying\": enumeration, 'First' and 'Second' follow in the same paragraph",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered draft lines 21-24 form one paragraph with no blank line. It contains 'First, minus 0.44 accounts for...' and 'Second, temperature is not even the strongest...'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL7",
+   "claim": "[allow] \"One caveat\": enumeration of a single caveat",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered line 53. One caveat follows (the pre-registered global claim is false, -0.18 on 173). The sentence does not claim it is the only caveat anywhere.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL8",
+   "claim": "[allow] \"one side of the split\": the two-way colonial split",
+   "verdict": "CONFIRMED",
+   "evidence": "Chart 3 title (draft line 60; make_charts.py:199). The two panels are ex2col == 1 and ex2col == 0 (make_charts.py:184-186).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL9",
+   "claim": "[allow] \"two relationships\": the two groups named in the next sentence",
+   "verdict": "CONFIRMED",
+   "evidence": "The count is right: two subgroup correlations, -0.49 on 94 and +0.28 on 69 (results.json flip.density_1500|income_2023|former_colonies / never_colonised). The locator is slightly off: the groups are named across the next two sentences (rendered line 70), not one.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL10",
+   "claim": "[allow] \"the two differ\": the two groups just named",
+   "verdict": "CONFIRMED",
+   "evidence": "The count is right. Per build_analysis.py:123-124 (interact docstring), 'the two' are the two relationships (slopes), and the interaction t tests whether they differ. The reason calls them 'groups', which is loose but harmless.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL11",
+   "claim": "[allow] \"On one common sample\": stresses a single shared sample, size bound to rivals_common_sample.n",
+   "verdict": "CONFIRMED",
+   "evidence": "In results.json, rivals_common_sample has n = 159. Its tas, lat_abst and africa entries each have n = 159 and the same sample hash, 9e4e85f40911, so it really is one sample. The size is printed by placeholder (draft source line 22).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL12",
+   "claim": "[allow] \"in one group\": one of the two colonial groups",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered line 93: 'a ranking that inverted in one group and did not in the other'. This refers to the colonial split.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL13",
+   "claim": "[allow] \"Two problems\": enumeration, 'The first' and 'The second' follow",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered line 146 'The first is that splitting...' and line 152 'The second is that population density...'. The later 'And the reversal is a fact about former colonies' is a scope note, not a third problem with the comparison. Other limitations (residual group, log transform) are disclosed elsewhere and the sentence does not claim exclusivity.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL14",
+   "claim": "[allow] \"one side of the comparison\": one of two sides of the colonial comparison",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered line 149, describing a collider-style dependence. 'One' is not a count of anything computed.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL15",
+   "claim": "[allow] \"making one\": pronoun for a causal statement",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered line 150: 'as a causal statement, and I am not making one'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL16",
+   "claim": "[allow] \"nearly wrote it as one\": pronoun for a fact about the tropics",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered lines 160-161: 'It is not a fact about the tropics in general, and I nearly wrote it as one.'",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL17",
+   "claim": "[allow] \"two proxies\": AJR's density and urbanisation measures",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/ajr2002.txt:95-104 describes urbanization first, then 'As an additional proxy for prosperity we use population density, for which there are relatively more extensive data'. Line 105 has 'With either measure'. So there are two proxies, with density second and wider-coverage. Both are named in the post (lines 40-46, 155-158).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL18",
+   "claim": "[allow] \"Two transforms\": log of income and of density, both named",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered line 180 'Income is logged...' and line 180-181 'So is population density in 1500'. Exactly two are named.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL19",
+   "claim": "[allow] \"from zero\": the null value of a significance test",
+   "verdict": "CONFIRMED",
+   "evidence": "Line 139 (Dell et al.'s rich-country effect 'tell apart from zero') and line 187 (interaction_raw_density.t = -1.37, 'not distinguishable from zero'). Both are null-hypothesis references, not measurements.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL20",
+   "claim": "[allow] \"the never-colonised one\": pronoun for the never-colonised correlation",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered line 185. The value is bound (flip_raw_density.never_colonised.r = +0.174).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL21",
+   "claim": "[allow] \"the two signs\": signs of the two correlations just given",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json flip_raw_density gives former_colonies r = -0.095 and never_colonised r = +0.174. Two signs, and they are opposite, as the sentence says.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL22",
+   "claim": "[allow] \"One assumption\": enumeration of a single assumption",
+   "verdict": "REFUTED",
+   "evidence": "I checked the post's method-note headers (rendered draft, lines 173-253). Singular items are introduced with 'A' ('A variable I withdrew', 'A correction that was itself wrong', 'A pre-registered claim'). Counted items use literal numbers ('Two transforms', 'Two bugs', 'Three falsification conditions'). So 'One assumption that is not a measurement' (draft line 192, live MDX line 232) reads as a count of one. The post names a second item in the same words. Chart 2's caption (make_charts.py:169-171, live MDX figcaption line 55) says 1500 density as a proxy for prosperity is 'an assumption of the method, not a measurement'. The [allow] reason, 'enumeration of a single assumption', therefore licenses a count the post's own text contradicts. Low severity.",
+   "fixed": true,
+   "fix": "Draft source line 192: change '**One assumption that is not a measurement.**' to '**An assumption that is not a measurement.**', matching the other singular headers. Delete the now-stale [allow] entry \"One assumption\" and regenerate the rendered draft, MDX and docx."
+  },
+  {
+   "id": "AL23",
+   "claim": "[allow] \"Two bugs\": enumeration, 'The first' and 'The second' follow",
+   "verdict": "REFUTED",
+   "evidence": "The structure the reason describes is real: 'The first' and 'The second' follow at draft lines 197-202. But 'Two bugs found in fact-checking, both fixed before publication' states how many bugs were found, and the design doc as committed in 1c5d364 records more code bugs, all found by fact-check rounds and fixed before the only MDX commit (8cb1520, 2026-09-07 21:30). (1) 6.1 item 7: chart 2's frame demanded 2023 GDP and drew 93 points under n=96; the fix comment is at make_charts.py:65-67. (2) 6.3 item 5: the round-2 tie-break never fired (make_charts.py:251-254). (3) 6.3 item 6: an assert that could never fail, plus a phantom '.' member in the never-colonised group (build_analysis.py:56-60). This is the same kind as the post's bug 2: a dead safeguard, and no figure moved. (4) 6.3 item 7: temp1_sanity mixed frames. The 'two' matches only design doc 6.1 item 1's round-1 'Two analysis bugs'.",
+   "fixed": true,
+   "fix": "Draft source line 197: change 'Two bugs found in fact-checking' to 'Two of the bugs found in fact-checking'. Replace the [allow] phrase \"Two bugs\" with \"Two of the bugs\", keeping the same reason, and regenerate the downstream copies."
+  },
+  {
+   "id": "AL24",
+   "claim": "[allow] \"six published figures\": round 4's re-run found exactly six draft-quoted figures moved (design doc 6.3)",
+   "verdict": "REFUTED",
+   "evidence": "I recomputed this myself in scratch/round1/allow-adjudicator. I made two copies of build_analysis.py: one shipped, whose output is byte-identical to the repo's results.json, and one with the de-duplication changed to plain drop_duplicates (keep first). I rendered draft .src.md through gate.render with each (114 bindings; the shipped render equals the repo draft). Figures printed to two decimals that move: heat_vs_1500_density.r -0.18 to -0.17; flip all r +0.04 to +0.02; never-colonised r +0.28 to +0.27; slope_never_colonised +0.15 to +0.14; slope_former_colonies -0.33 to -0.34; 1995 former-colony r -0.58 to -0.59. That is exactly six (four correlations, two slopes), so the post's 'six published figures at the second decimal' is correct. The [allow] reason is not. 'Exactly six draft-quoted figures moved' at draft precision is false: indonesia.density_pct (79th to 78th), indonesia.rank_by_slide (47th to 46th) and many sample sizes also move. Every sample size that moves changes by one or two (173 to 171, 163 to 161, the rest by one). The cited section, design doc 6.3, is 'Amendments from fact-check round 3', not round 4, and no round-4 adjudicator diff is recorded anywhere in the repo or in ~/.claude/plans. round4-scope.md:85 (a round-3 finding) says 'five correlations' and 'Indonesia's rank unchanged', which my recompute contradicts.",
+   "fixed": true,
+   "fix": "Narrow the gate.toml reason for \"six published figures\" to: \"process history: under the pre-fix keep-first loader exactly six figures the draft prints to two decimals move (four correlations, two slopes; design doc 6.3 item 8); Indonesia's percentile and slide rank also move, at integer precision\". The draft text needs no change."
+  },
+  {
+   "id": "AL25",
+   "claim": "[allow] \"by one or two\": every changed sample size moved by one or two",
+   "verdict": "CONFIRMED",
+   "evidence": "Same scratch re-run. 12 of the draft's 17 sample-size placeholders change, each by 1 or 2: 159 to 158, 97 to 96, 98 to 97, overlap 94 to 93, 173 to 171, 163 to 161 (twice), 94 to 93, 69 to 68 (twice), 91 to 90, n_colonies 94 to 93. Unchanged: 196 (twice), 43 (twice), seventeen. 'Most ... by one or two' holds.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL26",
+   "claim": "[allow] \"A third round\": fact-check round name",
+   "verdict": "CONFIRMED",
+   "evidence": "Line 207 is supported by design doc 6.3 item 8 ('the two loaders were made identical again'). Line 222 is supported by design doc 6.2 item 8 ('Verified in round 3 against a freshly downloaded PDF') and 6.3 item 1.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL27",
+   "claim": "[allow] \"the two loaders\": build_analysis.load and make_charts.frame",
+   "verdict": "CONFIRMED",
+   "evidence": "They are the only two loaders: build_analysis.py:44 and make_charts.py:46. I imported both read-only. They give identical lpd1500s and ex2col for all 220 AJR countries, with no extra or missing codes. The code differs, but the outputs match, which supports 'made them identical'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL28",
+   "claim": "[allow] \"between one of them\": one of the five temperature variables",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json has withdrawn_temp1_sanity_check.n_temperature_variables = 5. Both .dta files carry temp1 to temp5 (my column listing).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL29",
+   "claim": "[allow] \"four monthly extremes\": average temperature plus four extremes",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/ajr2002.txt:2407-2410 (Appendix 2) lists 'average temperature, minimum monthly high, maximum monthly high, minimum monthly low, and maximum monthly low'. That is average plus four extremes.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL30",
+   "claim": "[allow] \"a 1997 source\": Parker (1997), cited by Appendix 2",
+   "verdict": "CONFIRMED",
+   "evidence": "ajr2002.txt:2407 cites 'Parker [1997]' as the temperature variables' source. The reference list (ajr2002.txt:2808-2810) gives Greenwood Press, 1997.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL31",
+   "claim": "[allow] \"three times in the paper\": the three places named in the same sentence",
+   "verdict": "REFUTED",
+   "evidence": "I grepped the stored paper text (sources/ajr2002.txt) for 'arable' and read each hit in context. Population density is defined as total population divided by arable land in the Table II note (:552, the table is headed at :533), on p. 1243 (:634-636), in the Table V note (:984), in the Table VIII note on p. 1272 (:1916-1918, the table is headed at :1878; 'Population density is calculated as total population divided by arable land area'), and in Appendix 2 (:2366-2368). The appendix data note (:2565-2567) adds 'adjusted for arable land area', and the Table VI note (:1130) gives a 1995 variant. That is at least five definitions. The three places named in the sentence are real, but the typed count 'three times' is false. The same miscount is in design doc 6.2 item 8 (line 237) and provenance-audit.md:16-17, neither of which the gate scans.",
+   "fixed": true,
+   "fix": "Draft source line 220: delete 'three times ' so the sentence reads 'Acemoglu, Johnson and Robinson define it in the paper, on page 1243, in the note to Table V and in Appendix 2, as total population divided by arable land'. Delete the stale [allow] entry \"three times in the paper\" and regenerate the downstream copies."
+  },
+  {
+   "id": "AL32",
+   "claim": "[allow] \"page 1243\": citation locator in AJR (2002)",
+   "verdict": "CONFIRMED",
+   "evidence": "ajr2002.txt:632 has the page header 'REVERSAL OF FORTUNE 1243', and :634-636 reads 'We calculate population density by dividing total population by arable [...].'",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL33",
+   "claim": "[allow] \"Appendix 2\": section name in AJR (2002)",
+   "verdict": "CONFIRMED",
+   "evidence": "ajr2002.txt:2353 'APPENDIX 2: VARIABLE DEFINITIONS AND SOURCES'. :2366-2368 names 'log arable land in 1500', and :2407 is the temperature entry.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL34",
+   "claim": "[allow] \"round two\": fact-check round name",
+   "verdict": "CONFIRMED",
+   "evidence": "Design doc 6.2 item 8 (round 2's amendment, withdrawn in round 3). provenance-audit.md NOTES record that round 2 withdrew the 'label settles it' bullet that round 1 had left standing, which supports 'the same mistake it had corrected round one for'. audit/defect-classes.json (D088/D309) says the same.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL35",
+   "claim": "[allow] \"round one\": fact-check round name",
+   "verdict": "CONFIRMED",
+   "evidence": "Design doc 6.1 is headed 'Amendments after fact-check round 1, 2026-09-07'. provenance-audit.md NOTES: 'round 1 corrected the section above and left this one standing'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL36",
+   "claim": "[allow] \"Chart one\": chart name",
+   "verdict": "CONFIRMED",
+   "evidence": "rf-1 (draft line 15; make_charts.chart1).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL37",
+   "claim": "[allow] \"Chart two\": chart name",
+   "verdict": "CONFIRMED",
+   "evidence": "rf-2 (draft line 36; make_charts.chart2).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL38",
+   "claim": "[allow] \"Chart three\": chart name",
+   "verdict": "CONFIRMED",
+   "evidence": "rf-3 (draft line 60; make_charts.chart3).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL39",
+   "claim": "[allow] \"Chart four\": chart name",
+   "verdict": "CONFIRMED",
+   "evidence": "rf-4 (draft line 117; make_charts.chart4).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL40",
+   "claim": "[allow] \"than one picked\": pronoun for a chart",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered line 236: 'a weaker object than one picked before'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL41",
+   "claim": "[allow] \"of the four\": the post's four charts",
+   "verdict": "CONFIRMED",
+   "evidence": "The draft embeds rf-1 to rf-4 (lines 15, 36, 60, 117), and charts/ holds exactly four PNGs.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL42",
+   "claim": "[allow] \"the two samples\": former-colony and never-colonised groups",
+   "verdict": "CONFIRMED",
+   "evidence": "fc3 at build_analysis.py:274-276 multiplies the former_colonies r by the never_colonised r (2023). Those are the two groups.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL43",
+   "claim": "[allow] \"the third is a bare test\": the third falsification condition",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.py:274-276: fc3 is 'r_col * r_nev > 0' with no magnitude floor. results.json scorecard.n_conditions = 3.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL44",
+   "claim": "[allow] \"which one it was\": pronoun for scope or absence of data",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered lines 250-251: 'a choice about scope, not an absence of data ... which one it was'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL45",
+   "claim": "[allow] \"the first and third\": chart 4 footnote, charts 1 and 3",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:264-265 'unlike the first and third'. The method notes (rendered lines 233-238) say charts 1 and 3 were specified before the data and chart 4 after.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL46",
+   "claim": "[allow] \"one identical density value\": tied values are one value",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json density_ties: an 11-country block sharing one lpd1500s value (BEN, BFA, CIV, GHA, GIN, GMB, GNB, NGA, SEN, SLE, TGO). All are West African, matching the footnote.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL47",
+   "claim": "[allow] \"are one regional estimate\": one estimate repeated across tied countries",
+   "verdict": "CONFIRMED",
+   "evidence": "ajr2002.txt:2568-2570: 'In some cases McEvedy and Jones [1978] only provide regional [...][rages]'. The West Africa group listed there includes the tied block.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL48",
+   "claim": "[allow] \"Two scatter plots\": charts 2 and 3 each have two panels",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:141 and :181 both call plt.subplots(1, 2, ...). The phrase is used in the rf-2 and rf-3 alt texts only.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL49",
+   "claim": "[allow] \"the cold half\": the left, colder half of chart 1",
+   "verdict": "CONFIRMED",
+   "evidence": "Chart 1's temperature range runs from GRL -18.19 to SEN 28.79 C, midpoint 5.3. NOR is at 2.64 and MNG at 1.49, both in the left half. Confirmed visually on the rendered rf-1 PNG.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL50",
+   "claim": "[allow] \"Post 25\": the series index of this post",
+   "verdict": "CONFIRMED",
+   "evidence": "Commit messages 8cb1520 (site) and 1c5d364 (analytics-blog) read 'feat: add post 25, the map used to run the other way'. CONVENTIONS.md:30 and the 10-09 decision log also say Post 25. Minor: the URL /blog/the-map-used-to-run-the-other-way/ carries no number, so 'site's URL history' should read 'site's commit history'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL51",
+   "claim": "[allow] \"four adversarial rounds\": rounds 1 to 4",
+   "verdict": "CONFIRMED",
+   "evidence": "Design doc 6.1, 6.2 and 6.3 cover rounds 1 to 3. round4-scope.md exists, and round 4's fixes are live: the site text reads 'Urbanisation barely moved', which round 4 proposed. CONVENTIONS.md:30 and decision 20260908-012601 both say four. Caveat: this gate-era review round, once closed, would make the README count stale.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL52",
+   "claim": "[allow] \"Six of the seven recurring defect classes\": decision 20260908-012601",
+   "verdict": "CONFIRMED",
+   "evidence": "decisions/20260908-012601-...md says 'six of seven recurring defect classes were deterministic checks' and lists six. The seventh, label over paper, is named in its Decision section.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL53",
+   "claim": "[allow] \"2026-10-09\": date check.py was withdrawn",
+   "verdict": "CONFIRMED",
+   "evidence": "CONVENTIONS.md:15 'WITHDRAWN IN PART, 2026-10-09' and :23 'SUPERSEDED, 2026-10-09: the per-post check.py was deleted'. Decision 20261009-140101 is dated 2026-10-09, and reversal-of-fortune/check.py no longer exists.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL54",
+   "claim": "[allow] \"the first one ported\": no other post had a gate.toml",
+   "verdict": "CONFIRMED",
+   "evidence": "'ls */gate.toml' finds only reversal-of-fortune/gate.toml, which was added in commit 164a691 (2026-10-09).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL55",
+   "claim": "[allow] \"The one class\": the seventh class",
+   "verdict": "CONFIRMED",
+   "evidence": "Decision 20260908-012601: 'The one non-mechanical class, trusting a variable label over the paper'. This matches README.src:45.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL56",
+   "claim": "[allow] \"shipped twice here\": the label-over-paper error on arable land (data/README trap 1)",
+   "verdict": "REFUTED",
+   "evidence": "'Twice' holds, but not on the reason given. The reason cites only the arable-land instance, and data/README trap 1 describes only that one. The other instance is temp1 being called undocumented on the strength of its Stata label (provenance-audit.md:57-58). The draft itself pairs the two ('round two made the same mistake it had corrected round one for'). 'Shipped' is contradicted by git. The live MDX has exactly one commit, 8cb1520 (2026-09-07 21:30), and it already reads 'per unit of arable land' and 'A third round caught it by opening the paper'. git log --all -S for the erroneous 'per unit of land rather' text finds only that commit, where it appears inside the corrected narrative. The analytics repo's first commit, 1c5d364 (21:31), already has the round-3-corrected data/README trap 1. Neither instance reached a committed or published surface. README.src.md is gated as a public-facing file, where 'shipped' reads as 'published'.",
+   "fixed": true,
+   "fix": "docs/README.src.md:46: change 'shipped twice here' to 'occurred twice here'. Replace the [allow] phrase with \"occurred twice here\" and the reason \"process history: temp1 called undocumented from its label (provenance-audit.md:57-58) and the arable denominator (design doc 6.2 item 8)\", then regenerate README.md."
+  },
+  {
+   "id": "AL57",
+   "claim": "[allow] \"The four charts\": make_charts.py writes four files",
+   "verdict": "CONFIRMED",
+   "evidence": "save() is called at make_charts.py:135, 175, 213 and 267. charts/ holds rf-1 to rf-4 only.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL58",
+   "claim": "[allow] \"403s\": HTTP status the portal returned to curl",
+   "verdict": "CONFIRMED",
+   "evidence": "Today, 'curl https://climateknowledgeportal.worldbank.org/download-data' returned HTTP 403. The README states it in the present tense. No stored record of the 2026-09 response exists, but the claim reproduces.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL59",
+   "claim": "[allow] \"410 Gone\": status of the URL in AJR's readme",
+   "verdict": "CONFIRMED",
+   "evidence": "data/ajr_readme.txt:1 prints https://econ-www.mit.edu/faculty/acemoglu/data/av2002. curl returns 410, with and without the trailing period and with -L.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL60",
+   "claim": "[allow] \"Table 3\": AJR replication-file table number",
+   "verdict": "CONFIRMED",
+   "evidence": "ajr2002.txt:768-769 'TABLE III URBANIZATION IN 1500 AND GDP PER CAPITA IN 1995'. maketable3.dta carries sjb1500 (build_analysis.py:63).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL61",
+   "claim": "[allow] \"Table 5\": AJR replication-file table number",
+   "verdict": "CONFIRMED",
+   "evidence": "ajr2002.txt:928-929 'TABLE V POPULATION DENSITY AND GDP PER CAPITA IN FORMER EUROPEAN [COLONIES]'. maketable5.dta carries lpd1500s, logpgp95 and ex2col (build_analysis.py:62).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL62",
+   "claim": "[allow] \"p. 1243\": citation locator",
+   "verdict": "CONFIRMED",
+   "evidence": "Same as AL32: ajr2002.txt:632-636 holds the arable-land definition on page 1243.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL63",
+   "claim": "[allow] \"three times\": the three places named in the same parenthesis",
+   "verdict": "REFUTED",
+   "evidence": "This is the same miscount as AL31, re-derived from the same grep of sources/ajr2002.txt. The arable-land definition appears in the Table II note (:552), p. 1243 (:635), the Table V note (:984), the Table VIII note (:1918) and Appendix 2 (:2366-2368), plus the appendix data note (:2565-2567). That is five or more places, not three. docs/data-README.src.md:19 says 'defines the density denominator as **arable** land three times (p. 1243, the note to Table V, and Appendix 2, ...)'. The [allow] entry \"three times\" also covers the draft's 'three times in the paper'. The gate scans only the draft, MDX, docx, README.src.md and data-README.src.md (gate.toml lines 3-13), so once both texts are fixed the entry is stale.",
+   "fixed": true,
+   "fix": "docs/data-README.src.md:19: delete 'three times ' so it reads 'defines the density denominator as **arable** land (p. 1243, the note to Table V, and Appendix 2, ...)'. Together with AL31's deletion, remove the stale [allow] entry \"three times\" and regenerate data/README.md."
+  },
+  {
+   "id": "AL64",
+   "claim": "[allow] \"Egypt 0.040\": hand-checked against World Bank land area; Egypt not in wb_land_2020.json",
+   "verdict": "CONFIRMED",
+   "evidence": "data/wb_land_2020.json holds only BRA, IND and USA. exp(lland15[EGY]) from maketable5.dta = 39,818.0. The World Bank API gives AG.LND.TOTL.K2 for EGY in 2020 = 995,450. 39,818.0 / 995,450 = 0.0400. Cross-check: Libya 35,190.8 / 1,759,540 = 0.020, matching the provenance audit.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL65",
+   "claim": "[allow] \"120 rows\": empty-string country codes in both .dta files",
+   "verdict": "CONFIRMED",
+   "evidence": "Recount: maketable3.dta and maketable5.dta each have 376 rows, of which 120 have shortnam == '' and 0 are NaN. Out of lens (a [claims] entry): data-README.src:27 says 'None carries an analysis value except ex2col = 0 on the . row', but 3 of the 120 empty rows per file also carry ex2col = 0 (t3 rows 43, 83, 92; t5 rows 104, 107, 119; one also has africa = 0). Design doc 6.3 item 6 scoped 'None' to the 33 rows only.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL66",
+   "claim": "[allow] \"33 more\": US-state, '.' or 'notIndonesia' codes",
+   "verdict": "CONFIRMED",
+   "evidence": "Per file, 33 non-empty codes are not ISO3: 31 two-letter US state codes, '.', and 'notIndonesia'. The counts are identical in both files.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL67",
+   "claim": "[allow] \"appear twice\": DEU, ZWE, YUG each have two rows",
+   "verdict": "CONFIRMED",
+   "evidence": "value_counts on ISO3 rows: in both files, exactly DEU, YUG and ZWE have 2 rows. No other code repeats.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL68",
+   "claim": "[allow] \"Parker 1997\": source cited by Appendix 2",
+   "verdict": "CONFIRMED",
+   "evidence": "ajr2002.txt:2407 'Parker [1997]' is cited for the temperature variables. The full reference is at :2808-2810.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL69",
+   "claim": "[allow] \"15 former colonies\": 8 largest slides + Indonesia + 6 largest climbs",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json ranks[:8] = BDI, SDN, AFG, RWA, UGA, ETH, PAK, BFA. ranks[-6:] = URY, USA, HKG, AUS, CAN, SGP. IDN is rank 47 of 94, so it is in neither group. 8 + 1 + 6 = 15 (make_charts.py:219-229). The alt text's six climbers match.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL70",
+   "claim": "[pairs] \"Two things worth saying\": tidy_story's 196 stated in the paragraph above; 159 named in its own sentence",
+   "verdict": "CONFIRMED",
+   "evidence": "Rendered line 17: 'every place with both, 196 countries and territories'. Line 22: 'On one common sample of 159 countries'. The samples differ: tidy_story is cc82ac6aa1b0 and rivals is 9e4e85f40911, so -0.44 against -0.46 is a real cross-sample pair, and both n's are printed.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "AL71",
+   "claim": "[pairs] \"Two transforms, both load-bearing\": group sizes 94 and 69 stated in the flip section",
+   "verdict": "CONFIRMED",
+   "evidence": "flip_raw_density.former_colonies has n = 94 with sample fa48ae20d922, identical to flip.density_1500|income_2023|former_colonies. flip_raw_density.never_colonised has n = 69 with sample efecbb65feb4, identical to the log never-colonised sample. Rendered line 70 states 'Among 94 former colonies' and 'Among the 69 not on that list'. interaction and interaction_raw_density share n = 163 and sample a45c443ef375, and the raw-dollar figure carries 'on 196' inline.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB1",
+   "claim": "Every entity with both",
+   "verdict": "REFUTED",
+   "evidence": "Reran it. data/wb_gdp_2023.json has XKX 'Kosovo' at 14,240.2, and data/cckp_tas.json has KSV at 10.59. Both loaders map on the raw code (build_analysis.py:49-53, make_charts.py:51-55), so Kosovo drops out without a warning. XKX is the only GDP code with no temperature. All 50 temperature-only codes have null or absent 2023 GDP. With XKX mapped to KSV: n=197, r=-0.4336 (prints -0.43, shipped -0.4352 prints -0.44), raw-dollar r=-0.386 (still -0.39). Kosovo, XKX and KSV appear nowhere in the README, gate.toml, the scripts or docs/. The same false completeness wording is at draft:17 ('every place with both, 196'), draft:253 ('all 196 entities with both'), gate.toml:93, 130 and 132, and the live MDX figcaption.",
+   "fixed": true,
+   "fix": "Prose narrowing: make_charts.py:127 'Every entity with both, 196 of them' becomes 'Every entity matched by country code in both sources, 196 of them'. Same narrowing at draft:17 and draft:253 and in the MDX. The root fix, mapping XKX to KSV in both loaders, moves the headline to -0.43 on 197, so it is an owner decision, not a prose fix."
+  },
+  {
+   "id": "CB2",
+   "claim": "Former European colonies only, using",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:142 col = d[(d.ex2col == 1)]. Both panels of chart 2 plot only ex2col==1 rows, which is AJR's own dummy, not re-derived. The panel n values are 97 and 98 (results.json heat_reversal.former_colonies). The 11-country tied block in the same footnote is BEN, BFA, CIV, GHA, GIN, GMB, GNB, NGA, SEN, SLE, TGO, all West African. Separate issue: DR Congo (AJR code ZAR) is missing from chart 2 (see CB5), but 'former colonies only' is still true.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB3",
+   "claim": "predicts poverty now, but only on one side",
+   "verdict": "CONFIRMED",
+   "evidence": "The licence statistics reproduce: former colonies r=-0.4877 (n=94), the rest r=+0.2800 (n=69, t=2.39), interaction t=-5.33. The framing objection over-reaches. AJR's abstract (sources/ajr2002.txt:44-47) says those 'relatively rich in 1500 are now relatively poor' and that density and urbanisation 'proxy for economic prosperity'. AJR p.1232 (ajr2002.txt:106-108) describes its own density figure as a 'negative association between economic prosperity in 1500 and today'. Design doc line 34 names chart 3 '1500 prosperity against income today'. The chart's x-axis names the proxy ('Log population density in 1500', make_charts.py:192). The proxy assumption is stated in the body (draft:40-46, 152-156) and on chart 2 (make_charts.py:169-171). AJR's p.1243 caution concerns income per capita specifically. The title uses the construct the cited source uses for the same figure. Minor and not blocking: chart 3's own footnote does not repeat the proxy caveat.",
+   "fixed": false,
+   "fix": "Replace 'Being prosperous in 1500' with 'Being densely settled in 1500' in the chart 3 title (make_charts.py:199) and the draft/MDX image alt text."
+  },
+  {
+   "id": "CB4",
+   "claim": "which is nothing",
+   "verdict": "CONFIRMED",
+   "evidence": "Chart 3 footnote (make_charts.py:206). results.json flip density_1500|income_2023|all: r=+0.0351, n=163, t=+0.45, which is indistinguishable from zero. With the ZAR/ROM code fix from CB5 it is +0.0425 (n=165), still nothing.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB5",
+   "claim": "Former European colonies only, 94",
+   "verdict": "REFUTED",
+   "evidence": "AJR's row ZAR has ex2col=1, lpd1500s=0.405 and logpgp95=6.87. The World Bank and CCKP carry it as COD ('Congo, Dem. Rep.', 1,559.3; 24.09 C). build_analysis.py:79-80 maps on the raw shortnam, so DR Congo gets NaN and drops out without a warning. Same for ROM vs ROU. Recomputed with ZAR mapped to COD and ROM to ROU: former colonies n=95, r=-0.4794 (prints -0.48, published -0.49); the rest n=70, r=+0.2806; pooled n=165, r=+0.0425; interaction t=-5.29; Indonesia 78.9/65.3, 47th of 95. Chart 4's top 8 and bottom 6 are unchanged (COD's slide is 41.6). The 1995 figure already includes ZAR because logpgp95 is in AJR's own file. Further: AJR's WBG (sjb1500 12.7) is PSE in both modern sources. With ROM and WBG matched, urbanisation among the rest moves from +0.275 (n=43) to +0.165 (n=45), and its interaction t from -3.56 to -3.12, so draft:79-80 moves too. No doc mentions ZAR, ROM or WBG.",
+   "fixed": true,
+   "fix": "make_charts.py:258 '94 with both measures' becomes '94 matched by country code in both sources'. The root fix, recoding ZAR to COD, ROM to ROU and WBG to PSE in both loaders, moves several published figures, so it is an owner decision."
+  },
+  {
+   "id": "CB6",
+   "claim": "across ALL countries, temperature against 1500 population density",
+   "verdict": "REFUTED",
+   "evidence": "Severity LOW-MODERATE. ROM (density 2.161; CCKP ROU 10.04 C) and ZAR (density 0.405; CCKP COD 24.09 C) have both measures but drop out on AJR's pre-ISO codes. Matched: n=175, r=-0.1822. Shipped: n=173, r=-0.1773. Both print -0.18, so the sign and the 'slightly negative' reading survive, but 'ALL' (n=173) is false by two countries. ANT and YUG are dissolved entities and are rightly unmatched. The same completeness wording, 'the 173 countries with both measures', is at draft:54 and draft:230.",
+   "fixed": true,
+   "fix": "make_charts.py:166 'across ALL countries' becomes 'across the countries matched in both sources'. At draft:54 and draft:230 (and the MDX), 'the 173 countries with both measures' becomes 'the 173 countries matched in both sources'."
+  },
+  {
+   "id": "CB7",
+   "claim": "because an earlier draft said something stronger and false",
+   "verdict": "CONFIRMED",
+   "evidence": "docs/claim-inventory-r1.md rows 25-26: 'Any explanation independent of colonisation cannot work either' and 'A story about climate and productivity has no way to condition on that'. Design doc 6.1 item 2 (lines 164-171) says splitting it into two sufficient bans was 'strictly stronger' and that the second was false. The next sentence refutes it: colonisation_vs_latitude.r=-0.7416 (n=167). Temperature also tracks the split: corr(tas, ex2col)=+0.535 (n=173, my recompute).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB8",
+   "claim": "it contains the most famous explanation in this literature",
+   "verdict": "UNVERIFIABLE",
+   "evidence": "The licence (gate.toml:139) says the sentence attributes the account to AJR. It does not: draft:105-109 names no author and cites nothing, so the licence is false. The settler-mortality / disease-environment account is AJR 2001a, which is not in the references. AJR 2002 sets its own thesis apart from it (ajr2002.txt:336-344, 'Our thesis in the current paper is related, but ...'). 'Most famous' is a judgement of prominence. Nothing in the repository (sources/, docs/, sources.json) measures prominence, so the superlative can be neither confirmed nor refuted. REFUTED overstates what the evidence shows.",
+   "fixed": true,
+   "fix": "Delete the superlative: 'it contains an explanation from this literature, in which a fixed tropical disease environment mattered enormously ...'. Correct the gate.toml:139 licence to drop 'attributed to AJR'."
+  },
+  {
+   "id": "CB9",
+   "claim": "is most of the argument",
+   "verdict": "CONFIRMED",
+   "evidence": "Draft line 113. An authorial weighting of two quoted framings, with no data content. The paragraph presents it as a judgement ('the honest shape of what the data supports'). Nothing in results.json bears on it.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB10",
+   "claim": "than most of the world Europeans went on to colonise",
+   "verdict": "CONFIRMED",
+   "evidence": "Recomputed from build_analysis.load(). Indonesia's lpd1500s (1.453, about 4.3 per km2) is strictly above 73 of the other 93 colonies in the 94-row frame, and 77 of 97 among all colonies with density. Indonesia's own rank is 74 of 94 (20 above it). It is a majority by country count either way. Small licence imprecision: 'above about 79 percent' uses the 78.7 percentile, which counts Indonesia itself; strictly above is 73/94 = 77.7 percent (73/93 others = 78.5 percent).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB11",
+   "claim": "better land tends to produce more people rather than richer ones",
+   "verdict": "REFUTED",
+   "evidence": "Wrong locator. p.1232 (ajr2002.txt:92-105) has no Malthusian premise. It argues the reverse direction, that 'only relatively prosperous areas could support dense populations'. The Malthusian discussion is on p.1243 (ajr2002.txt:642-651: excess population causing 'low income per capita'; 'caution is required in interpreting population density as a proxy for income per capita') and in footnote 7 (ajr2002.txt:670-673: density as 'a measure of total income, but not necessarily of income per capita'). Design doc 6.2 item 10 already gives p.1243. The prose 'AJR raise that caution themselves' is supported at p.1243.",
+   "fixed": true,
+   "fix": "gate.toml:142: change the locator from 'p. 1232' to 'p. 1243 and footnote 7'. No prose change."
+  },
+  {
+   "id": "CB12",
+   "claim": "changed most sample sizes in the post",
+   "verdict": "CONFIRMED",
+   "evidence": "I rebuilt the pre-fix loader (drop_duplicates('shortnam') keeping the first row) and diffed it against the shipped one (scratchpad prefix.py). Changed: 159 (from 158), 97 (96), 98 (97), overlap 94 (93), 173 (171), 163 (161; flip and interaction), 94 (93), 69 (68; flip and the never-colonised common sample), 91 (90), and the Indonesia base 94 (93). Unchanged: urbanisation 43/43, the 11-country tied block, and the non-AJR 196. So most changed, each by 1 or 2. The same diff reproduces exactly six printed figures moving at draft precision (-0.17 to -0.18, +0.02 to +0.04, +0.27 to +0.28, -0.59 to -0.58, slopes +0.14 to +0.15 and -0.34 to -0.33).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB13",
+   "claim": "which is the least clean of the four",
+   "verdict": "CONFIRMED",
+   "evidence": "Design doc section 4 (lines 100-113): chart 2 was pre-registered as a global claim, failed at -0.18 (n=173), and was narrowed to the subgroup where it held (+0.29). That is a post-hoc subgroup rescue. Chart 4 was chosen after the data (line 116) but makes no inferential claim. Chart 1 was specified first, and chart 3 is flagged 'not a clean case'. The judgement is defensible and labelled as the author's.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB14",
+   "claim": "That is the most likely way this post could have been wrong",
+   "verdict": "REFUTED",
+   "evidence": "docs/provenance-audit.md is titled 'run before any design'. Its lines 34-42 already table the 1995 flip, -0.58 (n=91) against +0.50 (n=65), under 'The reversal replicates'. Draft:234 concedes that relationship 'was already sitting in my provenance notes'. The uncovered scenario needs the reversal absent in 1995 as well, which was known false before the conditions were written. The only open leg, 2023, is covered by fc2 (build_analysis.py:271-273: fires if 1995 < -0.2 and 2023 >= -0.2). So the gap was not a live risk, let alone the most likely failure. The licence (gate.toml:145) calls it 'the author's judgement, stated as one', but the sentence is unhedged, and the post's own line 234 contradicts it. Design doc 6.1 item 6 carries the same sentence.",
+   "fixed": true,
+   "fix": "Draft:244-245 (and the MDX): delete 'That is the most likely way this post could have been wrong and', leaving 'I had not written a condition for it.'"
+  },
+  {
+   "id": "CB15",
+   "claim": "Nothing after it disputes that the relationship is real, but among former European colonies the same thermometer ran the OTHER way against the best measure of 1500 prosperity we have, population density, so this chart cannot be read as heat acting on prosperity in a way that never changed",
+   "verdict": "REFUTED",
+   "evidence": "Severity HIGH. AJR p.1232 (ajr2002.txt:94-101) names urbanisation as the 'main measure of economic prosperity in 1500' and density as 'an additional proxy'. p.1243 (ajr2002.txt:637-639, 652-655) calls the density-income relationship 'more nuanced' and the evidence 'less clear-cut' than for urbanisation. The post's own draft:155 calls density 'the wider-coverage second of AJR's two proxies rather than their first'. So 'the best measure of 1500 prosperity we have' contradicts both the cited page and the post body, and the licence (gate.toml:146) misattributes it to p.1232. My recomputation: temperature against sjb1500 among 44 former colonies is Pearson +0.261 (p=0.087) and Spearman -0.032 (p=0.84); among the other 44 it is Pearson +0.277. The sentence is live in the MDX figcaption (MDX line 27).",
+   "fixed": true,
+   "fix": "make_charts.py:132-134: delete 'the best measure of 1500 prosperity we have,' so it reads '... ran the OTHER way against population density in 1500, so this chart cannot be read ...'. Re-render rf-1, update the MDX figcaption, and correct the gate.toml:146 licence."
+  },
+  {
+   "id": "CB16",
+   "claim": "This post does not claim to know what caused the flip",
+   "verdict": "CONFIRMED",
+   "evidence": "Chart 3 footnote (make_charts.py:211-212). It is consistent with draft lines 84 ('I am not going to tell you what caused the reversal') and 143-144. No sentence in the rendered draft asserts a cause. 'Predicts' in the chart title is correlational.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB17",
+   "claim": "impossible to read the way it invites you to, because among former colonies the same thermometer used to point the other way",
+   "verdict": "REFUTED",
+   "evidence": "Severity MODERATE-LOW. The MDX excerpt (MDX line 4, gate.toml:185) drops the body's hedge at draft:10 ('It is also, I think, impossible'), and the body version's licence (gate.toml:94) rests on that hedge. The excerpt grounds 'impossible' on heat_reversal former_colonies (+0.29 Pearson, n=97). I reproduced Spearman +0.161 (p=0.115) and Kendall +0.106 (p=0.129) on the 97. Design doc 6.3 item 3 records that only Pearson clears and that the tied block carries it. On AJR's main proxy, urbanisation, the colonised heat link is Spearman -0.03. The body's close (draft:163-164, licence gate.toml:116) has the same unhedged 'cannot mean' form; the excerpt is the most widely shared copy of it.",
+   "fixed": true,
+   "fix": "Restore the body's hedge in gate.toml:185 [published] and MDX line 4: 'It is also, I think, impossible to read the way it invites you to, because ...'."
+  },
+  {
+   "id": "CB18",
+   "claim": "one of the tidiest things you will ever see in economics",
+   "verdict": "CONFIRMED",
+   "evidence": "Draft line 3-4. Framed as visual impression ('you will ever see') and undercut by the post itself: r2_share 0.189 ('about a fifth'), and 'not even the strongest crude variable' (latitude +0.60, Africa -0.68 on the common 159). It works as rhetorical setup. Small licence inaccuracy: the r is bound three paragraphs later (line 17-18, after the paragraphs at 7-8 and 10-11), not two.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB19",
+   "claim": "accounts for about a fifth of the variation in log income",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json tidy_story.r2_share = 0.1894; 'about a fifth' is accurate. With Kosovo matched (CB1) it is 0.188, still a fifth. This is variance-explained language, with no causal verb.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB20",
+   "claim": "never-colonised",
+   "verdict": "REFUTED",
+   "evidence": "The method notes (draft:253-258) never use the term 'never-colonised'. They describe '69 places absent from AJR's ex-colony list', so the licence's 'defined in the method notes' (gate.toml:151) is false. The label remains at draft:73, draft:185, MDX:98 and MDX:225. data/README.md:36-37 (trap 5) says ex2col == 0 'does not mean \"never colonised\"'. Design doc 6.2 item 9 says the wording was fixed. Recomputed: the 69 include ABW, ATG, BMU, CYM, GNQ, KHM, LBR, MLT and PRI. Draft:70-71 discloses the residual two sentences earlier, which lowers the severity, but the label is literally false for Bermuda and Puerto Rico.",
+   "fixed": true,
+   "fix": "Draft:73 'for the never-colonised' becomes 'for places not on the list'. Draft:185 'while the never-colonised one' becomes 'while the other'. Same edits in the MDX. Remove the gate.toml:37 [allow] entry and the gate.toml:151 claim."
+  },
+  {
+   "id": "CB21",
+   "claim": "Heat acting directly and identically on human productivity is the clearest casualty",
+   "verdict": "CONFIRMED",
+   "evidence": "This follows logically from the stated filter: an effect that is constant over time and identical across the split cannot produce a ranking inversion confined to one group, and heat acting 'identically' is constant and split-independent by construction. Caveats: the licence cites interaction.t, a density-by-colony test that does not involve temperature, and the heat-specific clause that follows rests on Pearson +0.29 (rank tests n.s., see CB17). I also checked whether colonial selection alone could manufacture the +0.29. A probit of ex2col on standardised temperature and density gives +0.759 and -0.447. Simulating a homogeneous rho of -0.177 under that selection gives a within-colonised mean of -0.02, and P(r>=0.29) = 0.002. So the clause is not a pure selection artefact.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB22",
+   "claim": "It is just the easiest thing to measure",
+   "verdict": "REFUTED",
+   "evidence": "Severity LOW. 'The easiest' is a grammatical superlative, so the licence's 'not a ranked claim' does not hold. The post's own content contradicts the ranking. Draft:22: absolute latitude of the capital and an Africa dummy are cruder, trivially measured, and both beat temperature on the same 159 (+0.60 and -0.68 against -0.46). Draft:210-215: AJR's own country temperatures failed a sanity check, so a country-mean temperature is not trivially measured.",
+   "fixed": true,
+   "fix": "Draft:169 (and the MDX): 'It is just the easiest thing to measure' becomes 'It is just an easy thing to measure'."
+  },
+  {
+   "id": "CB23",
+   "claim": "one of the tidiest things in economics",
+   "verdict": "CONFIRMED",
+   "evidence": "MDX excerpt, which matches gate.toml [published].excerpt. It is rhetorical and the next sentence in the excerpt undercuts it ('impossible to read the way it invites you to'). It drops the body's 'you will ever see' perception frame, which is minor. The licence's 'as in the post' is close but not verbatim.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB24",
+   "claim": "one of the tidiest charts in economics",
+   "verdict": "CONFIRMED",
+   "evidence": "README.md line 6. Rhetorical, and the same sentence group undercuts it ('This post argues it cannot mean what it looks like'). Weakness worth noting: the colon puts minus 0.44 directly after 'tidiest' as if it were evidence, though r2 is 0.19 and two cruder variables beat it (rivals_common_sample). The '196' in the same sentence is affected by CB1.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB25",
+   "claim": "This post argues it cannot mean what it looks like, because among former European colonies the same thermometer used to point the other way",
+   "verdict": "CONFIRMED",
+   "evidence": "README.md lines 7-8 accurately summarise the draft's close (lines 163-164) and attribute it with 'argues'. The figures behind it are true: heat_reversal.former_colonies vs_density_1500 r=+0.2946 (n=97), vs_income_2023 r=-0.2502 (n=98). The robustness caveat from CB17 applies to the underlying result.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB26",
+   "claim": "The post does not claim to know what caused the flip",
+   "verdict": "CONFIRMED",
+   "evidence": "README.md lines 21-22. It matches draft lines 84 and 143-144 and the chart 3 footnote; no causal claim appears in the rendered draft.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB27",
+   "claim": "Every figure the post computes",
+   "verdict": "REFUTED",
+   "evidence": "Severity LOW. README.md:28 says build_analysis.py holds 'Every figure the post computes'. The draft source carries 'six published figures' and 'by one or two' as literals (draft .src.md:199-200, checked with sed). gate.toml:41-42 [allow] says they came from round 4's diff of the pre-fix loader against the shipped one. They are computed, but not by any script in the repository, and they are not in results.json. The [allow] header (gate.toml:16) itself separates such counts from 'results'.",
+   "fixed": true,
+   "fix": "README.md:28 (via docs/README.src.md): 'Every figure the post computes' becomes 'Every result the post computes'."
+  },
+  {
+   "id": "CB28",
+   "claim": "every computed figure on a chart reads from",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py: every printed number comes from R. That covers r and n annotations (lines 120, 158, 195), footnote values (127-130, 167-174, 206-209), Indonesia percentiles, slide and rank (261-263, which use R['ranks'] and its index), the ERA5 years and the GDP year (meta). No numeric literal is printed except layout and axis limits.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB29",
+   "claim": "every computed figure a",
+   "verdict": "REFUTED",
+   "evidence": "Severity LOW. README.md:32 says the .src.md has 'every computed figure a key:fmt placeholder'. The source has 113 placeholders, but src:199-200 keep 'six published figures' and 'by one or two' as literal text. Both are computed counts from the round 4 loader diff (gate.toml:41-42).",
+   "fixed": true,
+   "fix": "README.md:32 (via docs/README.src.md): 'every computed figure a key:fmt placeholder' becomes 'every computed result a key:fmt placeholder'."
+  },
+  {
+   "id": "CB30",
+   "claim": "with every amendment marked in place",
+   "verdict": "REFUTED",
+   "evidence": "The preamble (design doc lines 4-5) promises in-place AMENDED/WITHDRAWN/SUPERSEDED markers. I confirmed these superseded statements carry none:\n- line 61 'Raw GDP per capita is not used in any correlation', against build_analysis.py:174 tidy_story_raw_dollars, reported at draft:180;\n- lines 51-54 'Labelled only ...', corrected by 6.1 item 5;\n- lines 83-87, the cause-level conjunction, replaced by 6.2 item 1;\n- line 115 'fixed before the data was seen', against provenance-audit.md:34-42 and draft:234;\n- line 178 'the flip disappears', refuted by 6.2 item 4 at line 219;\n- lines 185-186 'none of the three conditions would have fired', softened by 6.2 item 13;\n- lines 107-108 'six correlations ... every sample size', corrected by 6.3 item 8;\n- 6.1 item 8 at line 195, also unmarked.\ndocs/round4-scope.md proposed exactly these markers, and none was applied.",
+   "fixed": true,
+   "fix": "README.md:34 (via docs/README.src.md): 'with every amendment marked in place' becomes 'with amendments recorded in sections 6.1 to 6.3'. The alternative is to add the missing markers."
+  },
+  {
+   "id": "CB31",
+   "claim": "most of what they caught should never have needed them",
+   "verdict": "UNVERIFIABLE",
+   "evidence": "decisions/20260908-012601 counts 'six of seven recurring defect classes'. The README phrase counts findings ('what they caught'), which is a different unit. I classified the design doc's 29 numbered amendments (6.1: 8, 6.2: 13, 6.3: 8). About 10 to 12 are script-catchable (6.1-1, 6.1-7, 6.2-5, 6.2-6, 6.2-7, 6.2-11, 6.3-2, 6.3-5, 6.3-6, 6.3-7, and parts of 6.2-4 and 6.3-8). About 17 to 19 are argument, source-fidelity or hostile-reader issues. Counting the sub-items of 6.2 item 6 (seven figures) and 6.3 item 8 (eight corrections) separately could flip the majority. Round 3's 67 findings and round 4's findings are not classified anywhere. The claim cannot be settled either way from the repository.",
+   "fixed": true,
+   "fix": "README.md:40 (via docs/README.src.md): 'most of what they caught should never have needed them' becomes 'most of the recurring defect classes they caught should never have needed them'."
+  },
+  {
+   "id": "CB32",
+   "claim": "Nothing in this folder except this README is committed",
+   "verdict": "CONFIRMED",
+   "evidence": "`git ls-files reversal-of-fortune/data` returns only reversal-of-fortune/data/README.md. .gitignore lines 3-4 ('*/data/*', '!*/data/README.md') ignore everything else; `git check-ignore` confirms for wb_land_2020.json.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB33",
+   "claim": "Everything below is public and free, and none of it needs a login or an API key",
+   "verdict": "CONFIRMED",
+   "evidence": "curl without credentials, 2026-10-09: the api.worldbank.org NY.GDP.PCAP.PP.KD query returned 200 JSON. CCKP_REQUEST (build_analysis.py:40-41) returned 200 JSON, 5912 bytes, the same size as data/cckp_tas.json. Acemoglu's MIT data-archive page returned 200 with public dropbox.com links. Separate gap: the data README table omits data/wb_land_2020.json, which build_analysis.py:295 needs, so a reproducer following the README would crash. It is still public World Bank data.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB34",
+   "claim": "None carries an analysis value except",
+   "verdict": "REFUTED",
+   "evidence": "Recomputed both .dta files.\n- Of the 120 empty-code rows, 112 carry temp1, 3 carry ex2col=0 and 1 carries africa=0.\n- The '.' row carries temp1=7.0 as well as ex2col=0.\n- temp1_sanity() (build_analysis.py:106-108) filters only notna and len>0, not ISO3, so the '.' row is inside its frame. results.json rows=209 and rows_at_7=29 each include it (the ISO3-only frame gives 208 and 28). raw_rows=323 includes 113 junk rows (210 are ISO3).\n- r=0.58 and n_matched=200 are unaffected, because '.' has no ERA5 value.\nThe same false sentence is at build_analysis.py:58 and in design doc 6.3 item 6.",
+   "fixed": true,
+   "fix": "Data README trap 2 (docs/data-README.src.md): 'None carries an analysis value except ex2col = 0 on the . row, which sat ...' becomes 'None carries a density, income, latitude or urbanisation value, though the . row's ex2col = 0 sat ...'."
+  },
+  {
+   "id": "CB35",
+   "claim": "silently deletes them from every correlation that needs either",
+   "verdict": "REFUTED",
+   "evidence": "Rebuilt the merged frame as build_analysis.py:61-63 does. A plain drop_duplicates() keeps all 4 DEU rows (2 with density and 1995 income) and 2 ZWE rows (1 with density). That double-counts the two countries; it does not delete them. The deletion came from drop_duplicates('shortnam') keeping the first row (design doc 6.1 item 1). Under that pre-fix loader, DEU and ZWE stayed in the 2023-income-only correlations: tas vs lgdp2023 (n=183) and lat vs lgdp2023 (n=159) both include them. They were dropped from the density and 1995-income correlations (tas vs lpd1500s n=171, lpd1500s vs lgdp2023 n=161, lpd1500s vs logpgp95 n=154). The comment at build_analysis.py:66 repeats the plain drop_duplicates() wording.",
+   "fixed": true,
+   "fix": "Data README trap 3: 'a naive `drop_duplicates()` silently deletes them from every correlation that needs either' becomes 'a naive `drop_duplicates(\"shortnam\")` silently deletes them from every correlation that needs density or 1995 income'."
+  },
+  {
+   "id": "CB36",
+   "claim": "Keep the most-populated row",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.py:74-76 (and the identical make_charts.py:62-64) sort by non-null count and keep the top row per shortnam. Checked: the kept DEU row carries lpd1500s 2.92, logpgp95 9.94 and sjb1500 8.0. The kept ZWE row carries lpd1500s -0.24, ex2col 1, logpgp95 7.70 and africa 1. So the outer merge's cartesian rows include a fully populated combination.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB37",
+   "claim": "All temperature in this post is ERA5",
+   "verdict": "REFUTED",
+   "evidence": "The licence (gate.toml:168) says build_analysis.py reads temperature only from data/cckp_tas.json. That is false: temp1_sanity() reads AJR's temp1 from data/ajr_t3/maketable3.dta (build_analysis.py:106-107). Its outputs are printed in the post: 'the United States at 27 degrees and Greenland at 26' and the 0.58 correlation (draft:214; data README:33-34). The phrase is therefore literally false as well, although its intended meaning holds: every temperature in an analysis result is ERA5.",
+   "fixed": true,
+   "fix": "gate.toml:168 licence becomes 'every temperature in a reported result is ERA5; temp1 is read only by temp1_sanity() to justify its withdrawal'. Optional narrowing of the phrase: 'All temperature in this post's results is ERA5'."
+  },
+  {
+   "id": "CB38",
+   "claim": "does not mean \"never colonised\"",
+   "verdict": "CONFIRMED",
+   "evidence": "data/README.md trap 5 quotes the label in order to deny it, which is accurate: the ex2col==0 group contains PRI, BMU, CYM, ABW, ATG, MLT, GNQ, LBR and KHM (recomputed). The trap's own 'The post says so' is undercut by the post's continued use of 'never-colonised' (see CB20).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB39",
+   "claim": "Income is logged in every correlation except the raw-dollar figure",
+   "verdict": "CONFIRMED",
+   "evidence": "Every corr()/interact() call in build_analysis.py (lines 144-260) uses lgdp, lgdp2023 or logpgp95, except tidy_raw = corr(modern, 'tas', 'gdp') at line 174, which the sentence names. Ranks (line 213) use percentile ranks of raw GDP, which do not change under logging. The make_charts fitlines use lgdp.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "CB40",
+   "claim": "moves only from the",
+   "verdict": "REFUTED",
+   "evidence": "Chart 4's rows are ranks[:8], Indonesia and ranks[-6:] (make_charts.py:219-229). From results.json, the absolute moves are:\n- slides: BDI 97.3, SDN 81.9, AFG 78.7, RWA 77.1, UGA 70.2, ETH 69.1, PAK 60.6, BFA 60.6;\n- climbs: URY 81.4, USA 93.6, HKG 94.1, AUS 94.7, CAN 94.7, SGP 96.3.\nSix rows are below 80, so the licence's '80 to 97' is false. Indonesia's 13.8 is far below the smallest other move (60.6), so the phrase 'moves only' stands.",
+   "fixed": true,
+   "fix": "gate.toml:171 licence becomes 'Indonesia's slide is 13.8 points against 60.6 to 97.3 for every other row on chart 4 (indonesia.slide, ranks)'. No prose change."
+  }
+ ]
+}

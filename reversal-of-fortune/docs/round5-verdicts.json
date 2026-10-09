@@ -1,0 +1,41 @@
+{
+ "round": 5,
+ "date": "2026-10-09",
+ "lenses_dispatched": 1,
+ "lenses_returned": 1,
+ "lenses_errored": 0,
+ "lenses": [
+  "non-published wording edits after round 4 (comments, licence, design doc)"
+ ],
+ "scope": [],
+ "findings": [
+  {
+   "id": "R5-1",
+   "claim": "build_analysis.py:41-42 comment: load() asserts every AJR place with a density, urbanisation or 1995 income value finds its match",
+   "verdict": "REFUTED",
+   "evidence": "build_analysis.py:107 asserts only with_data - set(gdp) - set(tas) - AJR_DEFUNCT is empty: a World Bank OR CCKP code. GLP, GUF and MTQ have density but no World Bank row and pass via CCKP.",
+   "fixed": true
+  },
+  {
+   "id": "R5-2",
+   "claim": "build_analysis.py:102 comment: Every place with ... finds its match, the check that would have caught the legacy codes above",
+   "verdict": "REFUTED",
+   "evidence": "Second clause confirmed: load() with AJR_CODE_FIXES removed raises AssertionError ['ROM','WBG','ZAR']; with TAS_CODE_FIXES removed, ['XKX'] from line 109. First clause overclaims, as R5-1.",
+   "fixed": true
+  },
+  {
+   "id": "R5-3",
+   "claim": "gate.toml licence for 'Across all 165 places with both'",
+   "verdict": "REFUTED",
+   "evidence": "The 'so' does not follow from the assert: a place matching CCKP but not the World Bank passes it and drops out of the 165. The 12 density places outside the 165: ANT, YUG (defunct); CUB, ERI, PYF, SYR, VEN, VIR, YEM (null 2023 GDP); GLP, GUF, MTQ (no World Bank row).",
+   "fixed": true
+  },
+  {
+   "id": "R5-4",
+   "claim": "design doc 6.4 item 1: the analysis loader asserts ... finds its match; temp1 0.58 on 203 would be 0.57 on 205",
+   "verdict": "REFUTED",
+   "evidence": "Same flaw as R5-1 for the assert clause; the mapping-functions and temp1 sentences confirmed: temp1_sanity r=0.5811 n=203 as shipped, r=0.5731 n=205 with ADO->AND and IMY->IMN.",
+   "fixed": true
+  }
+ ]
+}

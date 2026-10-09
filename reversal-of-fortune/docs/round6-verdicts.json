@@ -1,0 +1,50 @@
+{
+ "round": 6,
+ "date": "2026-10-09",
+ "lenses_dispatched": 1,
+ "lenses_returned": 1,
+ "lenses_errored": 0,
+ "lenses": [
+  "round 5 rewordings and the data README sentence"
+ ],
+ "scope": [
+  "[data/README.md] Unmatched, they silently dropped out of every join between the mismatched sources until a fact-check a month after publication. `build_analysis.py` maps them in reader functions that both scripts use, and its loader asserts that every place with a 1500 density, 1500 urbanisation or 1995 income value, bar the defunct Netherlands Antilles and Yugoslavia, finds a match in the World Bank or CCKP codes."
+ ],
+ "findings": [
+  {
+   "id": "R6-1",
+   "claim": "build_analysis.py comment, lines 38-43",
+   "verdict": "CONFIRMED",
+   "evidence": "The wording matches the assert at lines 107-109 and AJR_DEFUNCT at line 46; noted that line 38's 'three places' left out ADO and IMY, also older codes (Andorra, Isle of Man).",
+   "fixed": true
+  },
+  {
+   "id": "R6-2",
+   "claim": "build_analysis.py comment, lines 103-105",
+   "verdict": "REFUTED",
+   "evidence": "ANT and YUG have values and no code; the assert passes only because line 108 subtracts AJR_DEFUNCT. 'The legacy codes above' includes KSV, which line 110's assert catches, not this one.",
+   "fixed": true
+  },
+  {
+   "id": "R6-3",
+   "claim": "gate.toml licence for 'Across all 165 places with both'",
+   "verdict": "REFUTED",
+   "evidence": "The assert clause is false for ANT and YUG without 'bar'; counts confirmed: corr(ajr,'lpd1500s','lgdp2023') n=165; the 12 density places outside are ANT, YUG, CUB, ERI, GLP, GUF, MTQ, PYF, SYR, VEN, VIR, YEM.",
+   "fixed": true
+  },
+  {
+   "id": "R6-4",
+   "claim": "design doc 6.4 item 1",
+   "verdict": "CONFIRMED",
+   "evidence": "Assert wording accurate; temp1_sanity n=203 r=0.5811, with ADO->AND and IMY->IMN n=205 r=0.5731; CHI and WSH have no CCKP counterpart.",
+   "fixed": false
+  },
+  {
+   "id": "R6-5",
+   "claim": "[data/README.md] trap 6 sentence",
+   "verdict": "CONFIRMED",
+   "evidence": "data/README.md:45 equals the template with 1995 bound; d33bb07 joined on raw codes; make_charts.py:21 imports read_ajr, read_gdp and read_tas; 32 days from publication.",
+   "fixed": false
+  }
+ ]
+}
