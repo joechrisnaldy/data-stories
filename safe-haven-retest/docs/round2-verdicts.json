@@ -1,0 +1,1780 @@
+{
+ "round": 2,
+ "date": "2026-10-11",
+ "lenses_dispatched": 3,
+ "lenses_returned": 3,
+ "lenses_errored": 0,
+ "lenses": [
+  "facts, numbers and sources",
+  "logic, hostile reader and rights",
+  "consistency"
+ ],
+ "scope": [
+  "It noted a fall on 11 March, then a significant rise again.",
+  "So during a pandemic, Bitcoin was \"more promising and safer\" than buying LQ45 stocks.",
+  "And it adds gold.",
+  "The daily tests, and what would count as passing them, were written down before I downloaded any data.",
+  "My draft's window ran from 5 March to 5 May 2020.",
+  "Bitcoin's daily volatility, the standard deviation of its log returns from one S&P 500 trading day to the next, was 9.2 percent against 4.5 percent for the index, across 43 trading days.",
+  "It was a recovery from a fall of 46 percent, in the asset I had just called much more stable.",
+  "Baur and McDermott then split the safe haven into weak, an asset uncorrelated with stocks in those conditions, and strong, an asset negatively correlated with them, and note that the weak kind on average keeps its value when the market falls while the strong kind gains (Baur & McDermott, 2009).",
+  "Their tests are regressions with extra terms for the market's worst days.",
+  "The strong bar has a weakness too: an asset that usually rises can clear it without being negatively correlated with anything.",
+  "By my own test, Bitcoin was not a safe haven.",
+  "It did not hold for the worst 1 percent of two-day periods, where nine periods remain and the interval includes zero.",
+  "Gold averaged minus 0.5 percent, rising in two of the eight months, with an interval from minus 4.0 to plus 3.0: a weak safe haven by my test.",
+  "Bitcoin averaged minus 13.1 percent, with an interval from minus 24.8 to minus 1.4: not a safe haven by my test.",
+  "It also first closed back at its level on the S&P 500's high day sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.",
+  "That is not what safe means.",
+  "On daily returns, Bitcoin moved with the S&P 500 at a correlation of 0.40 across 1,605 daily returns.",
+  "Some countries group several days into one report (World Health Organization, n.d.), so I summed world cases by week.",
+  "Week-on-week growth in world cases correlated with Bitcoin's weekly return at minus 0.50 (p = 0.14) and with the S&P 500's at minus 0.54 (p = 0.11).",
+  "The counts have gaps too: the daily file has no new-case figures for France in those weeks.",
+  "My planned neural network would have been trained on daily data from 5 March to 5 May 2020: a single stretch of a single spring, and no way to tell what else was happening.",
+  "On that test, over these years, Bitcoin fell with stocks.",
+  "Bitcoin is the Coin Metrics reference rate, PriceUSD (Coin Metrics, 2024), from the free data archive of Coin Metrics, Inc.",
+  "Gold's verdicts are the same without the May and June 2025 changes, where the series changed definition.",
+  "Covid-19 cases are daily reports, summed by week (World Health Organization, 2023).",
+  "The full notice is on the [FRED series page](https://fred.stlouisfed.org/series/SP500). - Bitcoin: Coin Metrics, Inc., from [github.com/coinmetrics/data](https://github.com/coinmetrics/data), licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/), and published by Coin Metrics \"without any warranty\". - Gold: The World Bank: World Bank Commodity Price Data (The Pink Sheet): Bloomberg Finance L.P.; Kitco.com; International Monetary Fund, International Financial Statistics; London Bullion Market; Metals Week; Platts Metals Week; Shearson Lehman Brothers, Metal Market Weekly Review; Thomson Reuters Datastream; World Bank.",
+  "Licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). - Covid-19 cases: World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard]. https://data.who.int/dashboards/covid19/more-resources.",
+  "**Timing.** Bitcoin's price for a date is fixed at midnight UTC at the end of that day (Coin Metrics, 2024), a few hours after the S&P 500 closes (S&P Dow Jones Indices LLC, 2026), which is why the worst-days test was also run on two-day returns.",
+  "**What was fixed in advance, and what was not.** The questions, the daily tests and the conditions that would count as failing them were written before any data was downloaded.",
+  "A few smaller choices were settled after the first results, and the design document marks them as such.",
+  "By my test, Bitcoin was not a safe haven on daily data, with or without the Covid crash.",
+  "Gold was a weak safe haven by this test on monthly data, with or without 2020.",
+  "Bitcoin was not a safe haven by my monthly test with 2020 included, and the monthly test cannot tell without it.",
+  "(2024, April 3).",
+  "*Price*.",
+  "Data Knowledge Base.",
+  "Retrieved October 9, 2026, from [https://docs.coinmetrics.io/network-data/network-data-overview/market/price](https://docs.coinmetrics.io/network-data/network-data-overview/market/price)",
+  "[README.md] In late 2020 I drafted a research proposal claiming Bitcoin was \"more stable\" and \"safer\" than Indonesia's LQ45 stocks during the pandemic.",
+  "[README.md] Verdicts: the 2020 claim was wrong; by my test, Bitcoin was not a safe haven on daily data, with or without the Covid crash; gold was a weak safe haven by this test on monthly data.",
+  "[README.md] | Path | What | |---|---| | `build_analysis.py` | The results the post states, into `results.json` | | `make_charts.py` | The four charts; the figures on each chart read from `results.json` | | `data/README.md` | Sources, credits, licences and download instructions | | `profile_data.py` | The structural checks behind the dataset go/no-go, rerunnable | | `gate.toml` | This post's configuration for the shared gate in `../gate/` | | `docs/README.src.md`, `docs/data-README.src.md` | Templates for this file and `data/README.md`, rendered by the gate | | `docs/2026-10-09-safe-haven-retest-design.md` | The pre-registration, with amendments in section 8 | | `docs/provenance-audit.md` | What each source and data series is, quoted from the document that defines it | | `draft/*.src.md` (not committed) | The draft as written: each figure a `key:fmt` placeholder |",
+  "[data/README.md] | File | Source | Licence | |---|---|---| | `sp500_fred.csv` | FRED series `SP500`, S&P Dow Jones Indices LLC | Copyright © 2016, S&P Dow Jones Indices LLC.",
+  "[data/README.md] All rights reserved.",
+  "[data/README.md] Full notice on the FRED series page | | `btc_coinmetrics_github.csv` | Coin Metrics, Inc., free data archive on GitHub, column `PriceUSD` | CC BY-NC 4.0 | | `gold_worldbank_CMO-Historical-Data-Monthly.xlsx` | The World Bank: World Bank Commodity Price Data (The Pink Sheet), monthly prices, column `Gold`; data sources as listed in the workbook's Description sheet | CC BY 4.0 | | `covid_who.csv` | World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard], daily frequency file | CC BY 4.0 |",
+  "[data/README.md] **No free daily gold price whose terms allowed published charts was found in the vet.** So gold is the World Bank's monthly average, whose definition changed in June 2025.",
+  "[data/README.md] **The daily counts batch whole weeks onto Sundays for some countries, and have no French figures in the weeks covering 5 March to 5 May 2020.** So the Covid aside uses weekly sums."
+ ],
+ "findings": [
+  {
+   "id": "r2:facts:R2A-01",
+   "lens": "facts",
+   "severity": "MODERATE",
+   "claim": "It also first closed back at its level on the S&P 500's high day sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: build_analysis.py:252-261 (regain_days looks only at x.loc[low_day:]). scratch post26-r2/facts/scripts/regain.py output: 2020-02-19 Bitcoin level 9636.00, first below 2020-02-20, first back 2020-02-21 [2 td], back after low 2020-05-07 [55 td]. 2022-01-03 Bitcoin level 46453.43, first back 2022-03-28 [58 td], back after low 2024-01-08 [505 td]. 2025: 51 both ways. The chart footnote states the right rule (make_charts.py:195-196, 'after its lowest point in the episode'), as does gate.toml:81. Adjudicator: Reran it myself (scratch adj-facts/regain.py, which imports build_analysis readers and episode_table). Bitcoin's level on each S&P high day, then its first close at or above that level after the high: 2020-02-19 level 9636.00, 9614.03 on 02-20, 9701.80 on 02-21, so the first close back is 2 trading days later. 2022-01-03 level 46453.43, first close back 2022-03-28 at 47223.65, 58 trading days later. 2025: 51 under either reading. The script's regain_days (build_analysis.py:252-261) only looks at x.loc[low_day:], with low_day the asset's lowest close between the S&P high and the S&P trough (2020-03-12, 2022-09-21, 2025-04-08). That gives 55, 505 and 51. The S&P figures (126, 513, 89) are the same under both readings, because the S&P's low is the trough. The chart footnote (make_charts.py:195-196) and gate.toml:81 state the computed rule ('after its lowest point in the episode'). The prose word 'first' contradicts it. Round 1's adjudicator (round1-verdicts.json, stats:F2) described regain_days as 'the first close at or above the start level', which is wrong, and the fix 'first' rests on that misreading. As printed, two of the three Bitcoin figures are wrong, and the next sentence, 'In the 2022 episode they were close', becomes false (58 against 513). I lowered it ",
+   "fixed": true,
+   "fix": "Narrow the sentence to the computed rule, reusing the gate's registered phrase (gate.toml:81): 'It also closed back at its level on the S&P 500's high day sooner in each, counting from that high to the first such close after its lowest point in the episode: 55 trading days against 126, 505 against 513, and 51 against 89.' This deletes 'first' and adds only the definition already in the sh-3 footnote and regain_days."
+  },
+  {
+   "id": "r2:facts:R2A-02",
+   "lens": "facts",
+   "severity": "LOW",
+   "claim": "The daily counts batch whole weeks onto Sundays for some countries, and have no French figures in the weeks covering 5 March to 5 May 2020.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: covid_who.csv, France 2020-03-02 to 2020-05-10: 70 rows, New_cases blank on 70 of 70; New_deaths present on 9 Sundays (43, 670, 1999, 3276, 3344, 2730, 2096, 1406, 1056); Cumulative_cases = 16 on every row (pandas check in this session). Adjudicator: My own check (scratch adj-facts/france.py on data/covid_who.csv, read as strings with keep_default_na=False) covers France from 2020-03-02 to 2020-05-10, the weeks bound by results.json covid.first_week_end 2020-03-08 and last_week_end 2020-05-10. There are 70 rows. New_cases is blank on all 70. Cumulative_cases is '16' on all 70. New_deaths is present on 9 Sundays (43, 670, 1999, 3276, 3344, 2730, 2096, 1406, 1056), and Cumulative_deaths is non-blank on all 70. So the README's 'no French figures' (data/README.md:31-32, docs/data-README.src.md:31-32) is false. Round 1's fix (consistency:F12) only narrowed the date scope of 'record no French cases', so the move from 'cases' to 'figures' broadened the claim. A fix may not do that. I lowered it from MODERATE: it sits in a secondary README's traps list, the fact the analysis relies on (no French new cases) is still true, the deaths columns are never used, and the post body (md:89, 'no new-case figures') is correct.",
+   "fixed": true,
+   "fix": "'...and have no French new-case figures in the weeks covering 5 March to 5 May 2020.' This narrows the wording back to the column that is actually blank."
+  },
+  {
+   "id": "r2:facts:R2A-03",
+   "lens": "facts",
+   "severity": "LOW",
+   "claim": "Bitcoin, I wrote, was \"much more stable\" than the stocks and \"tended to rise\". It noted a fall on 11 March, then a significant rise again.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: md:4-6 sentence order. The content is true per sources/2020-draft.txt:13. Adjudicator: In md:5-6, the sentence 'Bitcoin, I wrote, was \"much more stable\" ... \"tended to rise\".' is followed by 'It noted a fall on 11 March'. Grammatically, the nearest antecedent of 'It' is Bitcoin. The intended referent is chapter one (md:4), two sentences back. Since Bitcoin cannot 'note' anything, a reader can work out the meaning, so this is a clarity defect, not a false fact. The content is correct: sources/2020-draft.txt:13, 'Terdapat penurunan harga pada tanggal 11 Maret, lalu kembali naik signifikan', which reads as a price fall on 11 March, then a significant rise again.",
+   "fixed": true,
+   "fix": "Replace the pronoun only: 'The draft noted a fall on 11 March, then a significant rise again.' 'I noted' would also match the preceding 'I wrote'. Neither adds a claim."
+  },
+  {
+   "id": "r2:facts:R2A-04",
+   "lens": "facts",
+   "severity": "LOW",
+   "claim": "Covid-19 cases are daily reports, summed by week (World Health Organization, 2023).",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: covid_who.csv: 15 countries with nonzero New_cases only on Sundays, 2020-03-02 to 2020-05-10 (Bulgaria, Estonia, Germany, Greece, Iceland, Latvia, Luxembourg, Malta, Montenegro, Netherlands, North Macedonia, Portugal, Slovenia, Spain, Ukraine). WHO calls the file 'data attributed to specific dates (daily data)' (who_covid19_about_page.txt). Adjudicator: md:107 says 'Covid-19 cases are daily reports, summed by week', but md:89 says 'Some countries group several days into one report'. My check (scratch adj-facts/sundays.py, data/covid_who.csv, 2020-03-02 to 2020-05-10): 15 countries have nonzero New_cases only on Sundays (Bulgaria, Estonia, Germany, Greece, Iceland, Latvia, Luxembourg, Malta, Montenegro, Netherlands, North Macedonia, Portugal, Slovenia, Spain, Ukraine). Their rows carry 13.5 percent of world cases in the window. WHO describes the file as data 'attributed to specific dates (daily data)' and says some countries 'group data from 7 days into a single statistic' (sources/who_covid19_about_page.txt:75-77). So not every count is a daily report, and the replacement prose from round 1 (sources fix removing WHO's name) contradicts md:89. The contradiction is mild, and no number depends on it.",
+   "fixed": true,
+   "fix": "'Covid-19 cases are the daily file's counts, summed by week (World Health Organization, 2023).' This refers back to 'the daily file' already introduced at md:89, narrows 'daily reports', and adds no new claim."
+  },
+  {
+   "id": "r2:facts:R2A-05",
+   "lens": "facts",
+   "severity": "LOW",
+   "claim": "Gold's verdicts are the same without the May and June 2025 changes, where the series changed definition.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: worldbank_pinksheet_description_gold.txt:12 ('spot average of daily rates, from June 2025; previously ... London afternoon fixing'). Design doc lines 185-188. build_analysis.py:29,301. Verdicts confirmed identical by monthly.py. Adjudicator: sources/worldbank_pinksheet_description_gold.txt:12 (workbook Description!B103) reads 'spot average of daily rates, from June 2025; previously ... London afternoon fixing'. Only the change stamped June 2025 (May to June) straddles the change of definition. The change stamped May 2025 (April to May) is fixing to fixing. Design 8.2 (lines 185-188) excludes it because the May value is an outlier against the London fixing, and per provenance-audit.md:326 that reason has no stored source. 'the May and June 2025 changes, where the series changed definition' therefore over-explains the May exclusion. The verdict claim itself holds (results.json monthly.gold_check worst10, worst20 and ex2020 are all 'weak safe haven', n_total 73 = 75 - 2; build_analysis.py:29,301). The refuter's fix rewords and adds a clause. A deletion is enough, because the previous sentence in md:107 already states the definition change (fixings to May 2025, spot rates from June 2025), which satisfies design 8.2's footnote requirement.",
+   "fixed": true,
+   "fix": "Delete the trailing clause: 'Gold's verdicts are the same without the May and June 2025 changes.' Do not add the outlier reason, since it has no stored source."
+  },
+  {
+   "id": "r2:facts:R2A-06",
+   "lens": "facts",
+   "severity": "LOW",
+   "claim": "World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard], daily frequency file",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: who_covid19_data_page.txt:257, whose citation ends '[Dashboard]. https://data.who.int/dashboards/covid19/more-resources'. who_data_terms.txt:54 requires attribution 'in the manner indicated in the metadata'. Adjudicator: WHO's metadata citation, sources/who_covid19_data_page.txt:257: 'World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard]. https://data.who.int/dashboards/covid19/more-resources'. data/README.md:11 drops the URL and replaces the final '. URL' with ', daily frequency file'. So the string is not WHO's citation verbatim, although design 8.7 says the data README names the source 'only in WHO's citation form', and who_data_terms.txt:54 asks for attribution 'in the manner indicated in the metadata'. The only URL in the README is the raw CSV link (line 16), not the cited dashboard page. The impact is small: the post's credit line (md:114) carries the full citation, the README reproduces no data (line 3: git tracks the README alone), and the other rows in the Source column carry no URLs either.",
+   "fixed": true,
+   "fix": "Restore WHO's string verbatim from the stored source and keep the file note outside it: 'World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard]. https://data.who.int/dashboards/covid19/more-resources (daily frequency file)'. The added text is WHO's own citation, bound to who_covid19_data_page.txt:257."
+  },
+  {
+   "id": "r2:facts:R2A-07",
+   "lens": "facts",
+   "severity": "NONE",
+   "claim": "Their tests are regressions with extra terms for the market's worst days.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: baur-mcdermott txt:548-555 (dummies at the 10%, 5% and 1% quantiles) and txt:616-618 ('Tables 2a, 2b and 2c show the estimates ... for daily, weekly and monthly data'). Baur and Lucey is daily only (txt:329). Adjudicator: Baur and McDermott do run the quantile-dummy regression on weekly and monthly data as well as daily (baur-mcdermott txt:396, 616-620; Tables 2b and 2c at txt:1406, 1454). They also have volatility-dummy and crisis-dummy versions (txt:581-588, 605). But the sentence describes the core form both papers share: Baur and Lucey eq. 1 (daily, txt:220-233, data daily per txt:329), and Baur and McDermott eqs. 1a-1b, where dummies at the 10, 5 and 1 percent quantiles are the extra terms (txt:534-552). The post uses that form only to set up 'Mine is not their test'. Nothing in md:41 says they used daily data only, so the sentence is a fair simplification, not a false statement. The refuter also calls it not misleading in context. The proposed fix adds a clause, which round 2 does not allow, and changing 'the market's worst days' would break the registered key at gate.toml:68.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S01 md:6 'It noted a fall on 11 March, then a sign",
+   "lens": "facts",
+   "claim": "S01 md:6 'It noted a fall on 11 March, then a significant rise again.'",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/2020-draft.txt:13 'Terdapat penurunan harga pada tanggal 11 Maret, lalu kembali naik signifikan[6]' (a price fall on 11 March, then a significant rise again). Attributing it to the draft fixes the round 1 problem: in Coin Metrics data, 11 March 2020 is +0.4% and 12 March is -37.5% (my check against data/btc_coinmetrics_github.csv). The content holds. The pronoun 'It' dangles; see finding R2A-03.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S02 md:7 'So during a pandemic, Bitcoin was \"more ",
+   "lens": "facts",
+   "claim": "S02 md:7 'So during a pandemic, Bitcoin was \"more promising and safer\" than buying LQ45 stocks.'",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:13 'saat terjadi pandemic bitcoin lebih menjanjikan dan lebih aman daripada membeli saham yang terdaftar di indeks LQ45' = more promising and safer than buying stocks listed in the LQ45 index. The quoted fragment and 'buying LQ45 stocks' both match. The draft's hedge 'dapat dikatakan' (it can be said) is dropped from the unquoted paraphrase. That is acceptable and adds no claim.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S03 md:13 'And it adds gold.'",
+   "lens": "facts",
+   "claim": "S03 md:13 'And it adds gold.'",
+   "verdict": "CONFIRMED",
+   "evidence": "'it' refers to 'This post' (md:10, 'It goes global'). Gold is added in the monthly layer (results.json monthly.*.gold). The fix only deleted the 'digital gold' attribution clause.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S04 md:13-14 'The daily tests, and what would coun",
+   "lens": "facts",
+   "claim": "S04 md:13-14 'The daily tests, and what would count as passing them, were written down before I downloaded any data.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Design doc line 3 marks it as a pre-registration 'written before any data was downloaded'. FC1, FC2 and FC3 are at lines 76-85, and the daily rules are in section 2. Narrowing to 'daily' matches 8.7 line 265-266, since the monthly tests (8.2) came after the data. The details settled after the results (8.5: k rounded up, two pairings) are disclosed at md:134. FC2's 'two-sided t at 5%' is equivalent to the post's 95% interval rule (build_analysis.py:108-122).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S05 md:20 'My draft's window ran from 5 March to 5",
+   "lens": "facts",
+   "claim": "S05 md:20 'My draft's window ran from 5 March to 5 May 2020.'",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:27 'dimulai dari tanggal 5 Maret hingga 5 Mei'. Figure captions at lines 9 and 11 give the same window. The year comes from the Figure 1 caption '5 Maret 2020 hingga 5 Mei 2020'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S06 md:22 Bitcoin daily volatility 9.2 vs 4.5 acro",
+   "lens": "facts",
+   "claim": "S06 md:22 Bitcoin daily volatility 9.2 vs 4.5 across 43 trading days",
+   "verdict": "CONFIRMED",
+   "evidence": "recompute.py gives btc vol 9.173, sp 4.522 and n 43 (42 returns), matching results.json window_2020. The volatility is computed on prices sampled on S&P 500 trading days (build_analysis.py:205-213), so 'from one S&P 500 trading day to the next' is accurate.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S07 md:25 'It was a recovery from a fall of 46 per",
+   "lens": "facts",
+   "claim": "S07 md:25 'It was a recovery from a fall of 46 percent, in the asset I had just called much more stable.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Fall 45.78% (recompute.py; results window_2020.bitcoin.fall 0.4578). 'much more stable' = 'jauh lebih stabil' (2020-draft.txt:13). That sentence comes just before the 11 March sentence, so 'just' holds. The fix deleted the comparator and added nothing.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S08 md:36-39 Baur & McDermott weak/strong split, '",
+   "lens": "facts",
+   "claim": "S08 md:36-39 Baur & McDermott weak/strong split, 'the weak kind on average keeps its value ... the strong kind gains'",
+   "verdict": "CONFIRMED",
+   "evidence": "baur-mcdermott txt:177-180, footnote 5: 'as the reference asset loses value, the value of the weak safe haven asset on average will remain unchanged ... strong safe haven ... gains value as the reference asset loses value'. 'on average' is attached to the weak kind only, as in the source. The weak (uncorrelated) and strong (negatively correlated) definitions in certain periods are at txt:352-354.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S09 md:41 'Their tests are regressions with extra ",
+   "lens": "facts",
+   "claim": "S09 md:41 'Their tests are regressions with extra terms for the market's worst days.'",
+   "verdict": "CONFIRMED",
+   "evidence": "BL 2006 txt:220-233: extra regressors rstock(t,q) for the 5%, 2.5% and 1% lower quantiles on daily data (txt:329). BM 2009 txt:548-555: slope dummies at the 10%, 5% and 1% quantiles. Minor imprecision: BM also run the model on weekly and monthly data (txt:617-618); see LOW finding R2A-07.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S10 md:50-51 'The strong bar has a weakness too: a",
+   "lens": "facts",
+   "claim": "S10 md:50-51 'The strong bar has a weakness too: an asset that usually rises can clear it without being negatively correlated with anything.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Logical property of the rule in build_analysis.py:115-122 (strong = interval entirely above 0, a test of the level, not the correlation). An uncorrelated asset with positive drift passes it. provenance-audit.md:99 records the same point. 'too' correctly refers back to the weak bar's generosity (md:49).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S11 md:57 'By my own test, Bitcoin was not a safe ",
+   "lens": "facts",
+   "claim": "S11 md:57 'By my own test, Bitcoin was not a safe haven.'",
+   "verdict": "CONFIRMED",
+   "evidence": "recompute.py: 81 worst days, BTC mean -4.391, CI [-5.949, -2.834], entirely below 0. results worst_days.primary.bitcoin.verdict = 'not a safe haven'. The past tense matches the sample period.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S12 md:59 'It did not hold for the worst 1 percent",
+   "lens": "facts",
+   "claim": "S12 md:59 'It did not hold for the worst 1 percent of two-day periods, where nine periods remain and the interval includes zero.'",
+   "verdict": "CONFIRMED",
+   "evidence": "recompute.py: two-day worst 1%: pairing 1 k=9 of 802, CI [-24.725, +1.183]; pairing 2 k=9, CI [-6.970, +4.556]. Both include 0. results robustness.differ lists exactly these two.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S13 md:61 gold -0.5, rising in two of eight, inter",
+   "lens": "facts",
+   "claim": "S13 md:61 gold -0.5, rising in two of eight, interval -4.0 to +3.0, weak",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.py: worst10 k=8 of 75, gold mean -0.53, CI [-4.02, 2.96], up 2/8. The interval includes 0 but not the S&P mean -7.41, so the verdict is 'weak' under the 8.2 rule (build_analysis.py:115).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S14 md:61 Bitcoin -13.1, interval -24.8 to -1.4, n",
+   "lens": "facts",
+   "claim": "S14 md:61 Bitcoin -13.1, interval -24.8 to -1.4, not a safe haven",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.py: btc mean -13.08, CI [-24.76, -1.40]. results monthly.worst10.bitcoin.verdict = 'not a safe haven'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S15 md:71 'It also first closed back at its level ",
+   "lens": "facts",
+   "claim": "S15 md:71 'It also first closed back at its level on the S&P 500's high day sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.'",
+   "verdict": "REFUTED",
+   "evidence": "The numbers match results.json, but the round 1 wording does not describe them. regain_days (build_analysis.py:252-261) counts only after the asset's lowest close between the high and the S&P low. regain.py: Bitcoin first closed back at its 2020-02-19 level (9636.00) on 2020-02-21, 2 trading days after the high, not 55. It first closed back at its 2022-01-03 level (46453.43) on 2022-03-28, 58 trading days after the high, not 505. Only 2025 (51) fits the literal wording. See HIGH finding R2A-01.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S16 md:73 'That is not what safe means.'",
+   "lens": "facts",
+   "claim": "S16 md:73 'That is not what safe means.'",
+   "verdict": "CONFIRMED",
+   "evidence": "'That' refers to the previous paragraph's deeper falls and faster recoveries. It is consistent with the safe-haven definition at md:34-36 (BL 2006 txt:199-201). The fix deleted 'Deeper falls, faster rebounds...' and the referent still resolves.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S17 md:80 'Bitcoin moved with the S&P 500 at a cor",
+   "lens": "facts",
+   "claim": "S17 md:80 'Bitcoin moved with the S&P 500 at a correlation of 0.40 across 1,605 daily returns.'",
+   "verdict": "CONFIRMED",
+   "evidence": "recompute.py: daily r 0.3981, n 1605. results hedge_daily.primary r 0.398, n 1605.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S18 md:89 'Some countries group several days into ",
+   "lens": "facts",
+   "claim": "S18 md:89 'Some countries group several days into one report (World Health Organization, n.d.), so I summed world cases by week.'",
+   "verdict": "CONFIRMED",
+   "evidence": "who_covid19_about_page.txt (section 'Does WHO still collect daily COVID-19 data?'): 'others who report less frequently may group data from 7 days into a single statistic attributed to a week'. Spring 2020 data confirm it: 15 countries have nonzero new cases only on Sundays from 2020-03-02 to 2020-05-10 (my check of covid_who.csv: Bulgaria, Germany, Spain, Portugal, Netherlands and others).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S19 md:89 covid correlations -0.50 (p = 0.14) and ",
+   "lens": "facts",
+   "claim": "S19 md:89 covid correlations -0.50 (p = 0.14) and -0.54 (p = 0.11)",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.py: 10 weeks (2020-03-02/08 to 2020-05-04/10), cases~btc r -0.502 p 0.139, cases~sp r -0.542 p 0.106. results covid matches.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S20 md:89 'the daily file has no new-case figures ",
+   "lens": "facts",
+   "claim": "S20 md:89 'the daily file has no new-case figures for France in those weeks.'",
+   "verdict": "CONFIRMED",
+   "evidence": "covid_who.csv: all 70 France rows from 2020-03-02 to 2020-05-10 have a blank New_cases (0 non-blank). The first figure after that is 677 on 2020-05-17, outside the window weeks. The new wording is precise (blank, not 0). Contrast with data README trap 4, finding R2A-02.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S21 md:91-92 neural network trained on daily data ",
+   "lens": "facts",
+   "claim": "S21 md:91-92 neural network trained on daily data 5 March to 5 May 2020",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:27 (daily new cases, LQ45, bitcoin, 5 Maret to 5 Mei) and :29 ('Metode yang digunakan adalah Neural Network'). The fix deleted one list item, so nothing was added.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S22 md:100 'On that test, over these years, Bitcoi",
+   "lens": "facts",
+   "claim": "S22 md:100 'On that test, over these years, Bitcoin fell with stocks.'",
+   "verdict": "CONFIRMED",
+   "evidence": "'that test' is the worst-days test restated at md:98-100. BTC mean -4.4 on the S&P's worst days and -3.7 without the crash (results worst_days.primary and without_crash). The fix deleted the gold clause.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S23 md:107 'Bitcoin is the Coin Metrics reference ",
+   "lens": "facts",
+   "claim": "S23 md:107 'Bitcoin is the Coin Metrics reference rate, PriceUSD (Coin Metrics, 2024), from the free data archive of Coin Metrics, Inc.'",
+   "verdict": "CONFIRMED",
+   "evidence": "coinmetrics_docs_price.txt:273-275: PriceUSD 'is identical to ReferenceRate and ReferenceRateUSD but with different timestamp conventions' and is 'computed using our CM Reference Rates'. The company's own form is 'Coin Metrics Inc.' without a comma (coinmetrics_former_terms_of_use txt). The comma is a style variant, not an error.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S24 md:107 'Gold's verdicts are the same without t",
+   "lens": "facts",
+   "claim": "S24 md:107 'Gold's verdicts are the same without the May and June 2025 changes, where the series changed definition.'",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.py gold check (drops the changes indexed 2025-05 and 2025-06, n 73): worst10 gold -0.53 [-4.02, 2.96], worst20 0.56 [-1.53, 2.64], ex2020 -0.56 [-4.74, 3.61], all weak, identical to the full sample. 'changes' correctly describes what build_analysis.py:301 drops. The trailing clause is imprecise for May; see LOW finding R2A-05.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S25 md:107 'Covid-19 cases are daily reports, summ",
+   "lens": "facts",
+   "claim": "S25 md:107 'Covid-19 cases are daily reports, summed by week (World Health Organization, 2023).'",
+   "verdict": "CONFIRMED",
+   "evidence": "The cases come from WHO's daily-frequency file (data README curl line), summed over W-SUN weeks (build_analysis.py:344). The fix removed WHO's name per 8.7. 'daily reports' sits uneasily with S18; see LOW finding R2A-04.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S26 md:111-113 S&P full notice on FRED page; Bitco",
+   "lens": "facts",
+   "claim": "S26 md:111-113 S&P full notice on FRED page; Bitcoin credit with CC BY-NC 4.0 and 'without any warranty'; Gold World Bank credit",
+   "verdict": "CONFIRMED",
+   "evidence": "fred_sp500_series_page.txt:204 holds the full notice; the copyright line is verbatim. coinmetrics_github_README.md:41 'published in the hope it will be useful, but without any warranty' and :43 CC BY-NC 4.0. The gold bullet matches 'The World Bank: ' + Description!A1 + ': ' + Description!T103 exactly (python string check, worldbank_pinksheet_description_gold.txt:7,13), in the form of worldbank_terms_datasets.txt:191. CC BY 4.0 rests on terms line 184 'Unless specifically labeled otherwise' and the owner's 8.6 decision on the 'Official Use Only' tag. That is an owner decision, not reopened here.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S27 md:113-114 'Licensed CC BY 4.0. - Covid-19 cas",
+   "lens": "facts",
+   "claim": "S27 md:113-114 'Licensed CC BY 4.0. - Covid-19 cases: World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard]. https://data.who.int/dashboards/covid19/more-resources.'",
+   "verdict": "CONFIRMED",
+   "evidence": "A byte comparison shows the WHO metadata citation (who_covid19_data_page.txt:257; same string in who_covid19_about_page.html and data_page.html) is a substring of the post bullet. The only addition is the sentence period after the URL. CC BY 4.0 per who_covid19_data_page.txt:224.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S28 md:118-119 Timing: fixed at midnight UTC at en",
+   "lens": "facts",
+   "claim": "S28 md:118-119 Timing: fixed at midnight UTC at end of day (Coin Metrics, 2024), a few hours after the S&P 500 closes (S&P Dow Jones Indices LLC, 2026)",
+   "verdict": "CONFIRMED",
+   "evidence": "coinmetrics_docs_price.txt:271: 'The daily frequency represents the price as of the end of the day in UTC time' (PriceUSD section). The stored API refdata JSON says the same ('as of 00:00 UTC the following day (i.e., midnight UTC of the current day)'). fred_sp500_series_page.txt:198: 'The market typically closes at 4 PM ET'. Midnight UTC is 3 hours after a 4 PM EST close and 4 hours after a 4 PM EDT close, and longer after early holiday closes, so 'a few hours' holds.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S29 md:128-129 'The questions, the daily tests and",
+   "lens": "facts",
+   "claim": "S29 md:128-129 'The questions, the daily tests and the conditions that would count as failing them were written before any data was downloaded.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Design doc line 3 (pre-registration before data), section 1 (questions Q2020a/b, lines 14-15), section 4 (FC1 to FC3, lines 76-85). The narrowing to 'daily' matches 8.7 lines 265-266. Consistent with md:13-14 ('passing' vs 'failing' describe the same conditions).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S30 md:134 'A few smaller choices were settled aft",
+   "lens": "facts",
+   "claim": "S30 md:134 'A few smaller choices were settled after the first results, and the design document marks them as such.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Design 8.5 lines 222-223: 'choices the design left open, fixed here after the first results were seen, so they carry less weight'. The six bullets follow at lines 225-239.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S31 md:137-138 'By my test, Bitcoin was not a safe",
+   "lens": "facts",
+   "claim": "S31 md:137-138 'By my test, Bitcoin was not a safe haven on daily data, with or without the Covid crash.'",
+   "verdict": "CONFIRMED",
+   "evidence": "results fc3.daily_bitcoin holds=true (full and without crash both 'not a safe haven'). recompute.py without crash: k 80 of 1582, CI [-4.860, -2.638]. The two-day without-crash checks also hold (fc3 pairings 1 and 2).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S32 md:138 'Gold was a weak safe haven by this tes",
+   "lens": "facts",
+   "claim": "S32 md:138 'Gold was a weak safe haven by this test on monthly data, with or without 2020.'",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.py: worst10 gold weak; ex2020 k 7 of 64, gold -0.56 [-4.74, 3.61], weak. results fc3.monthly_gold holds=true.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S33 md:138 'Bitcoin was not a safe haven by my mon",
+   "lens": "facts",
+   "claim": "S33 md:138 'Bitcoin was not a safe haven by my monthly test with 2020 included, and the monthly test cannot tell without it.'",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.py ex2020: btc -10.30 [-21.85, +1.25], which includes 0 and the S&P mean -5.45, so 'cannot tell' under the 8.2 rule. results fc3.monthly_bitcoin full 'not a safe haven', without 'cannot tell'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S34 md:154 reference date '(2024, April 3).'",
+   "lens": "facts",
+   "claim": "S34 md:154 reference date '(2024, April 3).'",
+   "verdict": "CONFIRMED",
+   "evidence": "coinmetrics_docs_price.html carries 'Last updated <time ... dateTime=\"2024-04-03T10:01:15.590Z\"'. provenance-audit.md:309 records the same. APA 7 uses the last-updated date of a dated webpage.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S35 md:154 title '*Price*.'",
+   "lens": "facts",
+   "claim": "S35 md:154 title '*Price*.'",
+   "verdict": "CONFIRMED",
+   "evidence": "<title>Price | Data Knowledge Base</title> and page heading 'Price' (coinmetrics_docs_price.txt:1,156). Italic for a standalone webpage title follows APA 7.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S36 md:154 site name 'Data Knowledge Base.'",
+   "lens": "facts",
+   "claim": "S36 md:154 site name 'Data Knowledge Base.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Site name from the <title> suffix and nav (txt:1,10,148). It differs from the author name, so APA 7 includes it.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S37 md:154 'Retrieved October 9, 2026, from https:",
+   "lens": "facts",
+   "claim": "S37 md:154 'Retrieved October 9, 2026, from https://docs.coinmetrics.io/network-data/network-data-overview/market/price'",
+   "verdict": "CONFIRMED",
+   "evidence": "provenance-audit.md:133 gives the fetch URL and time as 2026-10-10 01:34 UTC. File mtime Oct 9 21:42 local shows UTC-4, so the local date is 9 October, consistent with the other references. The URL equals the fetch URL and the docs_url in coinmetrics_api_refdata_PriceUSD.json. The HTML's canonical is gitbook-docs.coinmetrics.io/..., but the cited URL is Coin Metrics' own pointer, so it is acceptable. A retrieval date on a dated page is optional in APA 7, not an error. Ordering 2024 before 2026 under the same author is correct.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S38 (part of reference entry) full Coin Metrics 20",
+   "lens": "facts",
+   "claim": "S38 (part of reference entry) full Coin Metrics 2024 reference as a whole",
+   "verdict": "CONFIRMED",
+   "evidence": "Author, date, title, site and URL each checked above (S34 to S37). The in-text '(Coin Metrics, 2024)' at md:107 and md:118 resolves to this entry with no clash with the 2026 entry.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S39 README.md:3-4 'In late 2020 I drafted a resear",
+   "lens": "facts",
+   "claim": "S39 README.md:3-4 'In late 2020 I drafted a research proposal claiming Bitcoin was \"more stable\" and \"safer\" than Indonesia's LQ45 stocks during the pandemic.'",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:13 'jauh lebih stabil' (much more stable; 'more stable' is a fragment of it) against the LQ45 index, and 'lebih aman daripada membeli saham yang terdaftar di indeks LQ45'. 'Late 2020': draft sources accessed 1 Desember 2020 (txt references).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S40 README.md:14-15 Verdicts line",
+   "lens": "facts",
+   "claim": "S40 README.md:14-15 Verdicts line",
+   "verdict": "CONFIRMED",
+   "evidence": "results window_2020.fc1.survives=false; fc3.daily_bitcoin holds with 'not a safe haven'; monthly.worst10.gold.verdict 'weak safe haven'. Deleting 'by the test fixed before any data was downloaded' matches 8.7. 'this test' resolves to 'my test'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S41 README.md:19-29 Files table incl. new row 'dat",
+   "lens": "facts",
+   "claim": "S41 README.md:19-29 Files table incl. new row 'data/README.md | Sources, credits, licences and download instructions'",
+   "verdict": "CONFIRMED",
+   "evidence": "data/README.md has a Source column (now in credit form), a Licence column and the curl block. Every listed path exists (ls). gate.toml:12 renders docs/README.src.md and docs/data-README.src.md, so 'rendered by the gate' holds. The draft is ignored by .gitignore:12, so '(not committed)' holds.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S42 data/README.md:8 sp500 licence 'Copyright © 20",
+   "lens": "facts",
+   "claim": "S42 data/README.md:8 sp500 licence 'Copyright © 2016, S&P Dow Jones Indices LLC.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Verbatim from fred_sp500_series_page.txt:204.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S43 data/README.md:8 'All rights reserved.' + 'Ful",
+   "lens": "facts",
+   "claim": "S43 data/README.md:8 'All rights reserved.' + 'Full notice on the FRED series page'",
+   "verdict": "CONFIRMED",
+   "evidence": "fred_sp500_series_page.txt:204 continues 'All rights reserved.' The full notice is in the series Notes (txt:196-206). The round 1 deletion of the 'FRED allows non-commercial...' clause is a pure deletion.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S44 data/README.md:9-11 btc/gold/covid source and ",
+   "lens": "facts",
+   "claim": "S44 data/README.md:9-11 btc/gold/covid source and licence columns",
+   "verdict": "CONFIRMED",
+   "evidence": "BTC: column PriceUSD exists in btc_coinmetrics_github.csv; CC BY-NC 4.0 per coinmetrics_github_README.md:43. Gold: 'Monthly Prices' sheet, column BR5 'Gold' (worldbank_pinksheet_description_gold.txt:23), and the sources are on the Description sheet T103. COVID: the WHO citation is truncated (URL dropped); see LOW finding R2A-06. CC BY 4.0 per who_covid19_data_page.txt:224.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S45a data/README.md:27-28 trap 2 'No free daily go",
+   "lens": "facts",
+   "claim": "S45a data/README.md:27-28 trap 2 'No free daily gold price whose terms allowed published charts was found in the vet. So gold is the World Bank's monthly average, whose definition changed in June 2025.'",
+   "verdict": "CONFIRMED",
+   "evidence": "This narrows design 8.1 lines 132-134 (LBMA paid, FRED LBMA discontinued, GLD terms). The definition change is in Description!B103: 'Gold, spot average of daily rates, from June 2025; previously ... London afternoon fixing'. Consistent with md:61.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:S45b data/README.md:31-32 trap 4 'The daily counts",
+   "lens": "facts",
+   "claim": "S45b data/README.md:31-32 trap 4 'The daily counts batch whole weeks onto Sundays for some countries, and have no French figures in the weeks covering 5 March to 5 May 2020.'",
+   "verdict": "REFUTED",
+   "evidence": "First half confirmed: 15 countries have Sunday-only new cases in the window. Second half is false as worded. In covid_who.csv, France's rows in those weeks carry 9 New_deaths figures (43, 670, 1999, 3276, 3344, 2730, 2096, 1406, 1056 on Sundays) and Cumulative_cases 16 on all 70 rows. Only New_cases is blank (70 of 70). Round 1 widened 'no French cases' to 'no French figures'. See MODERATE finding R2A-02.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:C1 Chart footers, S&P copyright line (sh-1, sh-2, ",
+   "lens": "facts",
+   "claim": "C1 Chart footers, S&P copyright line (sh-1, sh-2, sh-3, sh-4)",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:35 SRC_SP, appended on all four footnotes (lines 116, 165, 197, 229). The rendered PNGs show 'S&P 500: S&P Dow Jones Indices LLC via FRED. Copyright © 2016, S&P Dow Jones Indices LLC. All rights reserved.' The copyright sentences are verbatim from fred_sp500_series_page.txt:204.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:C2 Chart footers, gold credit in World Bank form (",
+   "lens": "facts",
+   "claim": "C2 Chart footers, gold credit in World Bank form (sh-2, sh-4)",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:37-40 SRC_GOLD contains the exact string 'The World Bank: World Bank Commodity Price Data (The Pink Sheet): <Description!T103>' (python substring check true). It is rendered in sh-2 and sh-4. sh-1 and sh-3 draw no gold, so no gold credit is needed there.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:C3 sh-1 label 'my 2020 draft's window'",
+   "lens": "facts",
+   "claim": "C3 sh-1 label 'my 2020 draft's window'",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:104. The dotted lines are at the first and last window dates (lines 102-103), 5 March and 5 May 2020, matching 2020-draft.txt:27. Rendered PNG shows the label at top left of the first line.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:C4 sh-2 title 'On the S&P 500's worst days and mon",
+   "lens": "facts",
+   "claim": "C4 sh-2 title 'On the S&P 500's worst days and months, Bitcoin fell too'",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:158. BTC averages -4.4 (daily) and -13.1 (monthly), both with intervals entirely below 0 (recompute.py, monthly.py).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:C5 sh-3 x-axis 'Largest fall between the S&P 500's",
+   "lens": "facts",
+   "claim": "C5 sh-3 x-axis 'Largest fall between the S&P 500's high and its low (%)'",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:187. episode_table computes max_fall over prices.loc[peak:trough] (build_analysis.py:274), i.e. between the S&P high and the S&P low. The bars read 34/49, 25/61 and 19/22, matching results. The sh-3 footnote (make_charts.py:195-196) correctly says regain counts start 'after its lowest point in the episode', which the body sentence S15 omits.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:facts:item:C6 sh-4 title 'Over 24-month windows, Bitcoin's li",
+   "lens": "facts",
+   "claim": "C6 sh-4 title 'Over 24-month windows, Bitcoin's link with stocks stayed positive; gold's came and went'",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:222. results monthly.rolling.bitcoin min 0.290, n_negative 0 of 52. Gold max 0.493, min -0.294, n_negative 19 of 52. The rendered PNG matches.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:R2-B1",
+   "lens": "logic",
+   "severity": "HIGH",
+   "claim": "It also first closed back at its level on the S&P 500's high day sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: build_analysis.py:252-261 (after = x.loc[low_day:]); make_charts.py:195-196 ('after its lowest point in the episode'); gate.toml:81. Computed, checks_r2_logic_out.txt section A: Bitcoin closed at or above 9,636.00 on 2020-02-21 (2 days); 47,223.65 against 46,453.43 on 2022-03-28 (58 days); 98,392.22 against 96,647.91 on 2025-02-20 (1 day). The S&P figures 126, 513, 89 are right because the S&P cannot regain before its own trough. Adjudicator: build_analysis.py:255-261: regain_days sets low_day = window.idxmin() over high to S&P low and searches after = x.loc[low_day:], so it counts to the first close at or above the high-day level AFTER the asset's low, not the first close back. My runs (adj-logic/check_b1_out.txt, check_b1b_out.txt, on build_analysis.daily_prices): 2020, Bitcoin closed below its 19 Feb level (9,636.00) on 20 Feb and back on 21 Feb, 2 trading days (post says 55); 2022, below its 3 Jan level (46,453.43) on 4 Jan and back on 2022-03-28 at 47,223.65, 58 trading days (post says 505); 2025, first close below on 21 Feb and first close back on 2025-05-02, 51 days, which matches only because Bitcoin did not close back before its 8 April low. So two of the three Bitcoin figures are false as written, not all three: the refuter's 1 day for 2025 counts a close that never left the level, which is not 'closed back'. S&P 126, 513, 89 hold under both readings. The next sentence, 'In the 2022 episode they were close', is also false under the stated measure (58 against 513). The sentence contradicts the sh-3 footnote (make_charts.py:195-196, PNG viewed). Round 1 stats:F2's adjudicator premise ('counts the first close') is wrong per line 259; the r1 wording 'got back to its starting level' was looser and not false in this way. HIGH: a reproducibly false quantitat",
+   "fixed": true,
+   "fix": "md:71 (src.md:71): 'It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.' This deletes 'first' and adds only the sh-3 footnote's own words, bound to episodes[*].*.regain_days (build_analysis.py:252-261) and already registered at gate.toml:81. 'In the 2022 episode they were close' then stays true."
+  },
+  {
+   "id": "r2:logic:R2-B2",
+   "lens": "logic",
+   "severity": "MODERATE",
+   "claim": "claiming Bitcoin was \"more stable\" and \"safer\" than Indonesia's LQ45 stocks during the pandemic ... Verdicts: the 2020 claim was wrong;",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: README.md:4, :14; draft md:11-13 ('the verdict is on the general claim ... not on Indonesian stocks in particular'); md:140-142 ('including the LQ45 my draft started from'); design.md:21-24; grep -c LQ45 results.json = 0. Adjudicator: logic/r1_README.md.txt vs r2_README.md.txt: round 1 changed README.md:4 from 'than stocks' to 'than Indonesia's LQ45 stocks' and left :14 'the 2020 claim was wrong' unscoped. Read together, 'that claim' (:5) and 'the 2020 claim' (:14) now name the LQ45 comparison. design.md:21-24 requires the verdict to be 'on the general claim ... not on LQ45 itself'; md:11-13 and md:140-142 say the same; results.json has no LQ45 series (grep -c LQ45 = 0). I tried to refute it with :5: 'audits that claim ... against the S&P 500' names the benchmark but does not say it replaced LQ45, so the README contradicts the pre-registered scope on the repository's front page. MODERATE, not LOW, because it is the README's headline verdict and round 1's narrowing created the conflict.",
+   "fixed": true,
+   "fix": "docs/README.src.md:14: 'Verdicts: the 2020 claim, tested against the S&P 500 instead of LQ45, was wrong; ...'. The added clause is bound to md:10-13, design.md:21-24 and window_2020.fc1.survives = false; it narrows the verdict and adds no new finding."
+  },
+  {
+   "id": "r2:logic:R2-B3",
+   "lens": "logic",
+   "severity": "NONE",
+   "claim": "gold was a weak safe haven by this test on monthly data / Gold was a weak safe haven by this test on monthly data, with or without 2020.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: results.json monthly.worst10.gold (mean -0.531, CI -4.02 to 2.96, n_up 2), fc3.monthly_gold; checks_r2_logic_out.txt section B (ex2025: n 7, -2.12, -4.06 to -0.17, 0 up; worst months 2025-03 +2.99 and 2025-04 +7.58); round1 logic:L2 found the same months; README.md:14-15. Adjudicator: I reproduced the numbers (adj-logic/check_b3_out.txt): full worst-10% gold -0.53 [-4.02, +2.96], 2 of 8 up; post hoc ex-2025 -2.12 [-4.06, -0.17], 0 of 7 up; the rises are 2025-03 +2.99 and 2025-04 +7.58. That is not a defect in the round 2 text. The README and md:138 state the scored verdict, qualified 'by this test', and results.json agrees: monthly.worst10.gold, ex2020.gold and worst20.gold are all 'weak safe haven', as are all three gold_check runs. README.md:11, two lines above the verdict, prints gold's minus 0.5 percent over 8 months, so the README does not imply gold rose. 'With or without 2020' reports a check that the design approved (8.2), and it implies nothing about 2025. Round 1 already adjudicated the 2025 dependence (logic:L2). Its fix deleted 'gold's average stayed close to zero' and narrowed md:138, and both round 1 changes here only narrowed (r1 vs r2 diff: 'is' became 'was by this test'). Reporting the ex-2025 run would add a post hoc claim, which this round may not do. That stays an owner choice, as the refuter says.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:R2-B4",
+   "lens": "logic",
+   "severity": "MODERATE",
+   "claim": "The World Bank: World Bank Commodity Price Data (The Pink Sheet), monthly prices, column `Gold`; data sources as listed in the workbook's Description sheet",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: worldbank_terms_datasets.txt:143 (charts and tables are covered), :191 (format); worldbank_pinksheet_description_gold.txt:13 (T103 list); data/README.md:3 'git tracks this README alone'. Computed: the T103 string is present in md:113 and make_charts.py:37-40, absent from data/README.md. Adjudicator: worldbank_terms_datasets.txt:191 requires 'The World Bank: Dataset name: Data source (if known)', and :143 extends this to derived data in tables and charts. The providers are known: worldbank_pinksheet_description_gold.txt:13 (Description!T103). Design 8.6 records the owner decision 'The credit follows the World Bank's required form, sources included.' data/README.md:10 (data-README.src.md:10) replaces the providers with a pointer to the workbook, which git does not track (data/README.md:3). README.md:23, a row round 1 added, names this file as the credits file for README.md's gold-derived figure (:11). I tried to refute it. The pointer is resolvable, since :19 gives the World Bank page, and the post (md:113) and all four PNG footers (make_charts.py:37-40) carry the full form. A required element is still missing on a published surface, against an explicit owner decision. MODERATE, matching round 1's rating of the same gap on the chart footers (rights:R5-6).",
+   "fixed": true,
+   "fix": "data-README.src.md:10 Source cell: 'The World Bank: World Bank Commodity Price Data (The Pink Sheet): Bloomberg Finance L.P.; Kitco.com; International Monetary Fund, International Financial Statistics; London Bullion Market; Metals Week; Platts Metals Week; Shearson Lehman Brothers, Metal Market Weekly Review; Thomson Reuters Datastream; World Bank. Monthly prices, column `Gold`'. This copies the T103 notice already used at md:113 and adds no claim."
+  },
+  {
+   "id": "r2:logic:R2-B5",
+   "lens": "logic",
+   "severity": "NONE",
+   "claim": "S&P 500: Copyright © 2016, S&P Dow Jones Indices LLC. All rights reserved. The full notice is on the FRED series page.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: fred_legal_notices.txt:117, :171, :277, :415; fred_sp500_series_page.txt:164 ('review the copyright information in the series notes before sharing'), :204; PNG footers viewed for sh-1 to sh-4; design.md:244-246. Adjudicator: The gap is real in substance: fred_sp500_series_page.txt:204 is six sentences, and the page, charts and data README carry sentences 1 and 2 (PNG footers viewed). But it is the residual the owner explicitly chose in design 8.6 (design.md:244-246): 'prints its copyright line verbatim and links the full notice ...; every chart carries the copyright line. The owner may paste the full notice ... by hand.' Round 1's fixes (logic:L8, sources:S3-07, rights:R5-1, consistency:F6) did what 8.6 asked. They deleted the self-conceding clause and narrowed SRC_SP (make_charts.py:35) to the verbatim line. The added sentence 'The full notice is on the FRED series page' is true and bound to :204. The data/README.md:8 cell is not a dangling pointer: its Source column names 'FRED series `SP500`', which identifies the page. Round 1 introduced no new error. The refuter concedes that round 1's deletion was right and that 8.6 leaves the paste to the owner.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:R2-B6",
+   "lens": "logic",
+   "severity": "NONE",
+   "claim": "S&P 500 daily path 5 March to 5 May 2020, 'Value, indexed to 100 on the first day'",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: fred_sp500_series_page.txt:204, :206 (index_services@spdji.com); fred_legal_notices.txt:129, :199, :221, :271; design.md:211-212 (8.4 relies on 'no raw daily levels'); round1 rights item 'Permission to publish: S&P 500 via FRED'. Adjudicator: Out of round 2 scope, and round 1 already ruled on it. Round 1 changed only the sh-1 label text ('my 2020 draft's window', make_charts.py:104) and the footer; the S&P line and its rebasing (make_charts.py:83) are unchanged. Round 1 rights:R5-3 adjudicated this exact exposure real=false: SP500 is 'Copyrighted: Pre-Approval Required' (fred_sp500_series_page.txt:282), and fred_legal_notices.txt:199 allows non-commercial educational or personal use without the holder's permission. Its residual, S&P's 'in any form' sentence (:204), was recorded for the owner (provenance-audit.md:247; rights item 'Permission to publish: S&P 500 via FRED'), and design 8.4 approved 'no raw daily levels' as the mitigation. No text change in round 1 touched it, and none can resolve it.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:R2-B7",
+   "lens": "logic",
+   "severity": "NONE",
+   "claim": "Bitcoin: Coin Metrics Community data (PriceUSD), licensed CC BY-NC 4.0. / ... Monthly averages, licensed CC BY 4.0.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: cc_by-nc_4.0_deed.txt:207-209, :266-269; cc_by_4.0_deed.txt:207-209, :263-266; coinmetrics_github_README.md:41-43; round1 rights item 'Committed folder layout' (charts/ committed, repository public). Adjudicator: Not introduced by round 1, and round 1 already ruled on it. SRC_BTC (make_charts.py:36) was unchanged in round 1: sources:S3-17 says 'No change to the Bitcoin footer', and rights:R5-7 adjudicated this footer real=false. The CC BY-NC deed allows credit 'in any reasonable manner' (cc_by-nc_4.0_deed.txt:207-209), and the footer's 'Each series transformed by the author' gives the change notice. The 'licensed CC BY 4.0' wording in SRC_GOLD predates round 1 (r1 claim text in R5-6). The data/README licence column for both rows is identical in r1_data_README.md.txt and r2 (diff changes only the Source cells). In an image, a licence name is a reasonable manner of notice, and the page that embeds the charts links both licences and carries the warranty notice (md:112-114).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:R2-B8",
+   "lens": "logic",
+   "severity": "LOW",
+   "claim": "and have no French figures in the weeks covering 5 March to 5 May 2020.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: checks_r2_logic_out.txt section C: 70 France rows, New_cases blank in 70, Cumulative_cases 16 in 70, New_deaths 43, 670, 1999, 3276, ... in 9 rows. Adjudicator: My run on data/covid_who.csv (keep_default_na=False), France, 2020-03-02 to 2020-05-10: 70 rows. New_cases is blank in all 70, Cumulative_cases is '16' in all 70, New_deaths is non-blank in 9 rows (1056, 1406, 1999, 2096, 2730, ...) and Cumulative_deaths is non-blank in all 70. 'No French figures' is false. Round 1 consistency:F12 narrowed only the window, but the r1 vs r2 diff shows 'record no French cases' became 'have no French figures', a broadening. md:89 says correctly 'no new-case figures'. LOW: secondary file, and the post body is right.",
+   "fixed": true,
+   "fix": "data-README.src.md:31: 'and have no French new-case figures in the weeks covering 5 March to 5 May 2020', matching md:89. This narrows the sentence."
+  },
+  {
+   "id": "r2:logic:R2-B9",
+   "lens": "logic",
+   "severity": "LOW",
+   "claim": "World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard], daily frequency file",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: who_data_terms.txt:30; who_covid19_data_page.txt:257; draft md:114 has the URL. Computed: the URL is absent from data/README.md. Adjudicator: who_data_terms.txt:54 (the refuter cited :30; the clause is at :54): 'You must include attribution for the data you use in the manner indicated in the metadata'. The metadata citation, who_covid19_data_page.txt:257, ends with 'https://data.who.int/dashboards/covid19/more-resources'. Round 1 moved data/README.md:11 to WHO's citation form (design 8.7: 'the data README names the source only in WHO's citation form') but stopped at '[Dashboard]'. The page has the URL (md:114). The data README's only WHO URL is a blob-storage download link (:16). LOW, matching round 1's rating of the same gap on the page (rights:R5-8).",
+   "fixed": true,
+   "fix": "data-README.src.md:11: insert ' https://data.who.int/dashboards/covid19/more-resources' after '[Dashboard].', exactly as at who_covid19_data_page.txt:257. This completes WHO's own citation and adds no claim."
+  },
+  {
+   "id": "r2:logic:R2-B10",
+   "lens": "logic",
+   "severity": "LOW",
+   "claim": "That is not what safe means.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: r1_draft.txt vs r2_draft.txt diff (md:75-76 to md:73); draft md:71-74. Adjudicator: r1 vs r2 diff: round 1 deleted 'Deeper falls, faster rebounds. For someone who can sit through a fall, that may be worth something.' and turned 'It is not what safe means' into 'That is not what safe means', which now opens md:73. The nearest proposition is md:71's 'In the 2022 episode they were close', so 'That' at first reads as 'being close'. Only the next sentence ('not to recover sooner afterwards') recovers the meaning. This is a fix-created dangling reference. LOW: the very next sentence resolves it.",
+   "fixed": true,
+   "fix": "Delete 'That is not what safe means.' md:73 then opens with 'A safe haven is supposed to hold its value while stocks are falling, not to recover sooner afterwards.', which stands alone. This is a deletion only, and no gate register entry depends on the sentence."
+  },
+  {
+   "id": "r2:logic:R2-B11",
+   "lens": "logic",
+   "severity": "LOW",
+   "claim": "It noted a fall on 11 March, then a significant rise again.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: draft md:4-6, md:22; gate.toml:26; round1 sources:S3-08 proposed 'My draft noted'. Adjudicator: md:5-6: the grammatical subject of the preceding sentence is 'Bitcoin' ('Bitcoin, I wrote, was ...'). The intended antecedent, 'chapter one' (md:5), sits two sentences back, so 'It noted' first parses as Bitcoin noting a fall and only semantic anomaly sends the reader back. Round 1 sources:S3-08 adjudicated the fix as 'My draft noted a fall on 11 March, ...' (round1-verdicts.json), but the applied text is 'It noted'. The attribution matters: gate.toml:25 allows '11 March' only as the draft's date, and md:22 says the fall bottomed on 12 March. I tried to refute it: 'noted' needs a text or author, so most readers will recover the draft. LOW.",
+   "fixed": true,
+   "fix": "md:6: 'My draft noted a fall on 11 March, then a significant rise again.' This is round 1's own adjudicated wording. Update the reason string at gate.toml:25 from ('It noted') to ('My draft noted'); the key '11 March' is unchanged, so the entry does not go stale."
+  },
+  {
+   "id": "r2:logic:R2-B12",
+   "lens": "logic",
+   "severity": "NONE",
+   "claim": "It did not hold for the worst 1 percent of two-day periods, where nine periods remain and the interval includes zero.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: results.json worst_days.two_day_worst1_pairing1 and _pairing2: k 9, n_total 802 (the ex-crash variants are two_day_without_crash_*, k 40). Adjudicator: results.json worst_days.two_day_worst1_pairing1 and _pairing2: k 9, n_total 802, so no periods were excluded. But the sentence names its own variant ('the worst 1 percent of two-day periods'), and 'nine periods remain' reads naturally as 'are left after the 1 percent cut'. The ex-crash two-day variants are worst 5 percent with k 40 (two_day_without_crash_*), so no ex-crash worst-1-percent variant exists for a reader to confuse it with. 'Remain' is also pre-existing: r1_draft.txt:61 has 'where nine periods remain', and round 1 changed only the clause end ('is wide enough to include zero' became 'includes zero'). The stated facts hold: 9 periods, and both intervals include zero (pairing1 -24.72 to +1.18; pairing2 -6.97 to +4.56).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:R2-B13",
+   "lens": "logic",
+   "severity": "LOW",
+   "claim": "Gold's verdicts are the same without the May and June 2025 changes, where the series changed definition.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: build_analysis.py:29 GOLD_CHECK_MONTHS = ('2025-05', '2025-06'); worldbank_pinksheet_description_gold.txt:12; design.md:185-188. Adjudicator: build_analysis.py:29 and :301 drop the monthly changes indexed 2025-05 (April to May) and 2025-06 (May to June). worldbank_pinksheet_description_gold.txt:12: spot average from June 2025, London fixing before. The April-to-May change lies wholly within the fixing definition, so 'the May and June 2025 changes, where the series changed definition' is true only of the June change. Per design 8.2 (design.md:185-188), the May change is dropped for the anomalous May value. Round 1's 'values' to 'changes' edit made the code reference exact but left the clause attached to both. The verdict claim itself holds: gold_check worst10, worst20 and ex2020 are all 'weak safe haven'. LOW.",
+   "fixed": true,
+   "fix": "md:107: delete ', where the series changed definition'. The previous sentence in md:107 already dates both definitions (fixings to May 2025, spot from June 2025)."
+  },
+  {
+   "id": "r2:logic:R2-B14",
+   "lens": "logic",
+   "severity": "NONE",
+   "claim": "## Digital gold, or something else ... Gold's swung from 0.49 to minus 0.29.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: grep: 'digital' occurs only at md:76; r1 vs r2 diff of md:13 and md:85; monthly.hedge.bitcoin p 2.3e-06, gold p 0.159; round1 logic:L1 proposed keeping a bound Bitcoin clause. Adjudicator: The heading is framing that design 8.6 permits ('\"Digital gold\" is used as framing, attributed to no one', design.md:250), and design section 1's stated reader is 'someone who has heard that Bitcoin is \"digital gold\"', so the phrase needs no introduction for that reader. The section does answer the heading's question: Bitcoin r 0.51 monthly (p 2.3e-06) and 0.40 daily against gold's 0.16 (p 0.16, 'small enough to be chance'), with 'Bitcoin's is not' (md:80), and sh-4's title contrasts Bitcoin's link staying positive with gold's coming and going. That is the 'something else'. The refuter concedes that the section does not mislead. Round 1 deleted the gold-as-hedge overclaim (logic:L1), and the remaining text claims nothing false.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:R2-B15",
+   "lens": "logic",
+   "severity": "NONE",
+   "claim": "The endpoints said Bitcoin held up; the path said it fell 46 percent on the way. Run the test before using the word.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: draft md:94-100; r1 vs r2 diff (deleted 'Look at the path, not the two dates.'). Adjudicator: Out of scope and pre-existing. 'Run the test before using the word.' is not among the 45 sentences in round2-scope.md. r1_draft.txt:100-102 already had it after 'Look at the path, not the two dates. The endpoints said ...', and neither of those sentences named the word either, so round 1's deletion removed no referent. In context the word is the post's subject throughout ('safe' in the md:31 heading and in 'A safe haven ...' at md:73), and the section's heading, 'What I would tell my 2020 self', calls back to the draft's 'safer' (md:7). That still holds if B10's deletion is applied, since md:73 keeps 'A safe haven'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S1 md:6 'It noted a fall on 11 March, then a signi",
+   "lens": "logic",
+   "claim": "S1 md:6 'It noted a fall on 11 March, then a significant rise again.'",
+   "verdict": "REFUTED",
+   "evidence": "Content holds: 2020-draft.txt:13 'Terdapat penurunan harga pada tanggal 11 Maret, lalu kembali naik signifikan'. Defect is the reference: the nearest subject is 'Bitcoin' (md:5 'Bitcoin, I wrote, was...'); the intended antecedent 'chapter one' is two sentences back (md:4-5). See finding R2-B11 (LOW).",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S2 md:7 'So during a pandemic, Bitcoin was \"more p",
+   "lens": "logic",
+   "claim": "S2 md:7 'So during a pandemic, Bitcoin was \"more promising and safer\" than buying LQ45 stocks.'",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:13 'bitcoin lebih menjanjikan dan lebih aman daripada membeli saham yang terdaftar di indeks LQ45'. Quote and LQ45 narrowing exact. Framed as reported speech by md:5 'I wrote' and md:7-8 '(The quotes are my translation.)'; the draft's hedge 'dapat dikatakan' is dropped but outside the quote marks, so not a misquote.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S3 md:13 'And it adds gold.'",
+   "lens": "logic",
+   "claim": "S3 md:13 'And it adds gold.'",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json monthly.worst10.gold, monthly.hedge.gold exist. Side effect of the deletion: 'digital gold' now first appears as the heading md:76 with no setup (grep: only occurrence). See R2-B14 (LOW).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S4 md:13-14 'The daily tests, and what would count",
+   "lens": "logic",
+   "claim": "S4 md:13-14 'The daily tests, and what would count as passing them, were written down before I downloaded any data.'",
+   "verdict": "CONFIRMED",
+   "evidence": "design.md:3 (pre-registration before download); design.md:163-166 (daily layer keeps sections 2 to 4 'as written'); design.md:265-266 (8.7: only daily tests fixed before data). Post-results choices disclosed at md:134.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S5 md:20 'My draft's window ran from 5 March to 5 ",
+   "lens": "logic",
+   "claim": "S5 md:20 'My draft's window ran from 5 March to 5 May 2020.'",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:7, :11, :27 ('dimulai dari tanggal 5 Maret hingga 5 Mei'); design.md:262-264 (8.7). No two-date method is now attributed to the draft.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S6 md:22 volatility sentence (9.2 vs 4.5, 43 tradi",
+   "lens": "logic",
+   "claim": "S6 md:22 volatility sentence (9.2 vs 4.5, 43 trading days)",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json window_2020.bitcoin.daily_vol_pct 9.173, sp500 4.522, n_days 43, n_returns 42; design.md:39 defines daily return between consecutive S&P trading days, which the added clause now states. Every-calendar-day Bitcoin vol 7.74 (window_2020.bitcoin_every_day) still exceeds 4.5, so FC1 does not hinge on the definition.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S7 md:25 'It was a recovery from a fall of 46 perc",
+   "lens": "logic",
+   "claim": "S7 md:25 'It was a recovery from a fall of 46 percent, in the asset I had just called much more stable.'",
+   "verdict": "CONFIRMED",
+   "evidence": "window_2020.bitcoin.fall 0.458; 2020-draft.txt:13 'jauh lebih stabil' (much more stable), stated immediately before the 11 March fall. Deleting 'than stocks that fell 26 percent' removed the LQ45/S&P mismatch (round1 logic:L10) and left no dangling comparison.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S8 md:36-39 Baur and McDermott weak/strong, 'on av",
+   "lens": "logic",
+   "claim": "S8 md:36-39 Baur and McDermott weak/strong, 'on average keeps its value'",
+   "verdict": "CONFIRMED",
+   "evidence": "baur-mcdermott-2009...txt:177-180 'the value of the weak safe haven asset on average will remain unchanged. A strong safe haven ... gains value as the reference asset loses value'; :349-352 formal definitions.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S9 md:41 'Their tests are regressions with extra t",
+   "lens": "logic",
+   "claim": "S9 md:41 'Their tests are regressions with extra terms for the market's worst days.'",
+   "verdict": "CONFIRMED",
+   "evidence": "baur-mcdermott-2009...txt:550-552 (dummy variables equal to one when the market return passes the 10%, 5%, 1% quantile, interacted in the regression). 'days' is narrow since they also use weekly and monthly data (:173-174), but not false.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S10 md:50-51 'The strong bar has a weakness too: a",
+   "lens": "logic",
+   "claim": "S10 md:50-51 'The strong bar has a weakness too: an asset that usually rises can clear it...'",
+   "verdict": "CONFIRMED",
+   "evidence": "Logic holds for a mean-return test with drift (provenance-audit.md:68 per round1 logic:L12). 'too' is accurate: md:49-50 states the weak bar's weakness first.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S11 md:57 'By my own test, Bitcoin was not a safe ",
+   "lens": "logic",
+   "claim": "S11 md:57 'By my own test, Bitcoin was not a safe haven.'",
+   "verdict": "CONFIRMED",
+   "evidence": "worst_days.primary.bitcoin CI -5.95 to -2.83, verdict 'not a safe haven'; past tense scoped by the paragraph's own dates (md:57).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S12 md:59 'It did not hold for the worst 1 percent",
+   "lens": "logic",
+   "claim": "S12 md:59 'It did not hold for the worst 1 percent of two-day periods, where nine periods remain and the interval includes zero.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Adjudicator (R2-B12, real=false): results.json worst_days.two_day_worst1_pairing1 and _pairing2 have k 9 of 802; the sentence names its own variant, so 'nine periods remain' reads as the periods left at that cut-off. Unchanged. Lens note: Verdict part correct: worst_days.two_day_worst1_pairing1 CI -24.72 to +1.18, pairing2 -6.97 to +4.56, both 'weak safe haven'; robustness.differ lists both. But 'remain' implies periods were removed; k = 9 of n_total 802, nothing excluded (results.json). See R2-B12 (LOW).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S13 md:61 gold averaged minus 0.5, rising in two o",
+   "lens": "logic",
+   "claim": "S13 md:61 gold averaged minus 0.5, rising in two of eight, interval -4.0 to +3.0, weak safe haven",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.worst10.gold mean -0.531, n_up 2 (bound in src.md:61), CI -4.02 to 2.96; S&P mean -7.41 lies outside the CI so the 'cannot tell' rule (design.md:180-182) does not apply. Added clause is bound. Hostile-reader fragility in R2-B3.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S14 md:61 Bitcoin averaged minus 13.1, interval -2",
+   "lens": "logic",
+   "claim": "S14 md:61 Bitcoin averaged minus 13.1, interval -24.8 to -1.4, not a safe haven",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.worst10.bitcoin mean -13.08, CI -24.76 to -1.40, verdict 'not a safe haven'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S15 md:71 'It also first closed back at its level ",
+   "lens": "logic",
+   "claim": "S15 md:71 'It also first closed back at its level on the S&P 500's high day sooner in each: 55 ... 126, 505 ... 513, and 51 ... 89.'",
+   "verdict": "REFUTED",
+   "evidence": "build_analysis.py:252-261 counts from the high to the first close at the start level AFTER the asset's lowest point (after = x.loc[low_day:]); make_charts.py:195-196 footnote says so. Computed (checks_r2_logic_out.txt A): Bitcoin first closed back at its high-day level after 2 (2020-02-21), 58 (2022-03-28, 47,223.65 vs 46,453.43) and 1 (2025-02-20) trading days. See R2-B1 (HIGH).",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S16 md:73 'That is not what safe means.'",
+   "lens": "logic",
+   "claim": "S16 md:73 'That is not what safe means.'",
+   "verdict": "REFUTED",
+   "evidence": "After round 1 deleted 'Deeper falls, faster rebounds' and the next sentence, 'That' opens a new paragraph whose nearest antecedent is md:71 'In the 2022 episode they were close.' Meaning is recovered only from the following sentence. See R2-B10 (LOW).",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S17 md:80 'Bitcoin moved with the S&P 500 at a cor",
+   "lens": "logic",
+   "claim": "S17 md:80 'Bitcoin moved with the S&P 500 at a correlation of 0.40 across 1,605 daily returns.'",
+   "verdict": "CONFIRMED",
+   "evidence": "hedge_daily.primary r 0.398, n 1605.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S18 md:89 'Some countries group several days into ",
+   "lens": "logic",
+   "claim": "S18 md:89 'Some countries group several days into one report (World Health Organization, n.d.), so I summed world cases by week.'",
+   "verdict": "CONFIRMED",
+   "evidence": "who_covid19_about_page.txt:75 ('may group data from 7 days into a single statistic attributed to a week'). WHO name only inside the citation (design.md:260-261). The deletion of 'WHO's counts are by date of reporting' leaves the sentence readable.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S19 md:89 'correlated ... at minus 0.50 (p = 0.14)",
+   "lens": "logic",
+   "claim": "S19 md:89 'correlated ... at minus 0.50 (p = 0.14) and ... minus 0.54 (p = 0.11)'",
+   "verdict": "CONFIRMED",
+   "evidence": "covid.cases_bitcoin r -0.502 p 0.139; covid.cases_sp500 r -0.542 p 0.106; both bound in src.md:89. The added p values narrow, they do not overclaim.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S20 md:89 'the daily file has no new-case figures ",
+   "lens": "logic",
+   "claim": "S20 md:89 'the daily file has no new-case figures for France in those weeks.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Computed (checks_r2_logic_out.txt C): 70 France rows 2020-03-02 to 2020-05-10, New_cases blank in all 70.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S21 md:91-92 neural network sentence after deletio",
+   "lens": "logic",
+   "claim": "S21 md:91-92 neural network sentence after deletion",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:27-29 (daily sample 5 March to 5 May, Neural Network). The two-item list still parses after round1 logic:L13's deletion.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S22 md:100 'On that test, over these years, Bitcoi",
+   "lens": "logic",
+   "claim": "S22 md:100 'On that test, over these years, Bitcoin fell with stocks.'",
+   "verdict": "CONFIRMED",
+   "evidence": "worst_days.primary.bitcoin mean -4.39 and without_crash -3.75, both 'not a safe haven'; 'that test' binds to md:98-100. Gold clause deletion leaves no dangling reference.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S23 md:107 'Bitcoin is the Coin Metrics reference ",
+   "lens": "logic",
+   "claim": "S23 md:107 'Bitcoin is the Coin Metrics reference rate, PriceUSD (Coin Metrics, 2024), from the free data archive of Coin Metrics, Inc.'",
+   "verdict": "CONFIRMED",
+   "evidence": "coinmetrics_docs_price.txt:275 'computed using our CM Reference Rates'; coinmetrics_api_refdata_PriceUSD.json docs_url matches the reference URL.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S24 md:107 'Gold's verdicts are the same without t",
+   "lens": "logic",
+   "claim": "S24 md:107 'Gold's verdicts are the same without the May and June 2025 changes, where the series changed definition.'",
+   "verdict": "REFUTED",
+   "evidence": "Verdicts same: monthly.gold_check worst10/worst20/ex2020 gold verdicts identical. But build_analysis.py:29 drops the changes stamped 2025-05 and 2025-06; only the June change spans the definition change (worldbank_pinksheet_description_gold.txt:12); the May change is dropped for the May value's anomaly (design.md:185-188). See R2-B13 (LOW).",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S25 md:107 'Covid-19 cases are daily reports, summ",
+   "lens": "logic",
+   "claim": "S25 md:107 'Covid-19 cases are daily reports, summed by week (World Health Organization, 2023).'",
+   "verdict": "CONFIRMED",
+   "evidence": "design.md:200-202; WHO name only inside the citation.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S26 md:111-113 credits: S&P line and pointer; Bitc",
+   "lens": "logic",
+   "claim": "S26 md:111-113 credits: S&P line and pointer; Bitcoin credit; Gold credit",
+   "verdict": "CONFIRMED",
+   "evidence": "Adjudicator (R2-B5 and R2-B7, real=false): the page prints S&P's copyright line verbatim (fred_sp500_series_page.txt:204) and links the full notice, the residual the owner chose in design 8.6; the Bitcoin and gold credits meet the CC deeds' 'any reasonable manner' (cc_by-nc_4.0_deed.txt:207-210) with creator, licence link, material link and warranty notice on the page. Lens note: Bitcoin passes (creator, github link, licence link, warranty quote from coinmetrics_github_README.md:41). Gold passes worldbank_terms_datasets.txt:191 form; computed T103 string match True. S&P: sentences 1 and 2 of fred_sp500_series_page.txt:204 verbatim, rest linked; strict reading of fred_legal_notices.txt:171/:277 still unmet. See R2-B5 (MODERATE).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S27 md:114 WHO citation with URL; Licensed CC BY 4",
+   "lens": "logic",
+   "claim": "S27 md:114 WHO citation with URL; Licensed CC BY 4.0",
+   "verdict": "CONFIRMED",
+   "evidence": "Matches who_covid19_data_page.txt:257 verbatim (plus a final period); who_data_terms.txt:30 requires the metadata form; :23 CC BY 4.0. No emblem, name only in citation.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S28 md:118-119 Timing with (Coin Metrics, 2024) an",
+   "lens": "logic",
+   "claim": "S28 md:118-119 Timing with (Coin Metrics, 2024) and (S&P Dow Jones Indices LLC, 2026)",
+   "verdict": "CONFIRMED",
+   "evidence": "coinmetrics_docs_price.txt:271 'price as of the end of the day in UTC time'; fred_sp500_series_page.txt:198 'typically closes at 4 PM ET' (20:00 or 21:00 UTC, 3 to 4 hours before midnight UTC).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S29 md:128-129 'The questions, the daily tests and",
+   "lens": "logic",
+   "claim": "S29 md:128-129 'The questions, the daily tests and the conditions that would count as failing them were written before any data was downloaded.'",
+   "verdict": "CONFIRMED",
+   "evidence": "design.md:3, :72-85, :163-166; consistent with md:13-14.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S30 md:134 'A few smaller choices were settled aft",
+   "lens": "logic",
+   "claim": "S30 md:134 'A few smaller choices were settled after the first results, and the design document marks them as such.'",
+   "verdict": "CONFIRMED",
+   "evidence": "design.md:217-223 (8.5 heading 'after the first results were seen' and 'fixed here after the first results were seen').",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S31 md:137-138 'By my test, Bitcoin was not a safe",
+   "lens": "logic",
+   "claim": "S31 md:137-138 'By my test, Bitcoin was not a safe haven on daily data, with or without the Covid crash.'",
+   "verdict": "CONFIRMED",
+   "evidence": "fc3.daily_bitcoin full/without both 'not a safe haven', holds true; same for both two-day pairings.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S32 md:138 'Gold was a weak safe haven by this tes",
+   "lens": "logic",
+   "claim": "S32 md:138 'Gold was a weak safe haven by this test on monthly data, with or without 2020.'",
+   "verdict": "CONFIRMED",
+   "evidence": "fc3.monthly_gold full/without 'weak safe haven', holds true. True as scored, but the most quotable gold line; quotability and 2025 dependence in R2-B3.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S33 md:138 'Bitcoin was not a safe haven by my mon",
+   "lens": "logic",
+   "claim": "S33 md:138 'Bitcoin was not a safe haven by my monthly test with 2020 included, and the monthly test cannot tell without it.'",
+   "verdict": "CONFIRMED",
+   "evidence": "fc3.monthly_bitcoin full 'not a safe haven', without 'cannot tell'; monthly.ex2020.bitcoin CI -21.85 to +1.25 includes 0 and S&P mean -5.45.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S34-S37 md:154 Coin Metrics. (2024, April 3). *Pri",
+   "lens": "logic",
+   "claim": "S34-S37 md:154 Coin Metrics. (2024, April 3). *Price*. Data Knowledge Base. Retrieved October 9, 2026, from <url>",
+   "verdict": "CONFIRMED",
+   "evidence": "coinmetrics_docs_price.html dateTime=\"2024-04-03T10:01:15.590Z\"; title 'Price | Data Knowledge Base' (coinmetrics_docs_price.txt:1); URL equals refdata docs_url; provenance-audit.md:309.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S38 README.md:3-4 '...claiming Bitcoin was \"more s",
+   "lens": "logic",
+   "claim": "S38 README.md:3-4 '...claiming Bitcoin was \"more stable\" and \"safer\" than Indonesia's LQ45 stocks during the pandemic.'",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:13 ('jauh lebih stabil', 'lebih aman daripada membeli saham ... LQ45'); sources accessed 1 Dec 2020 (:63-73) support 'late 2020'. The narrowing is accurate but makes the README verdict line overreach; see R2-B2.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S39 README.md:14-15 verdicts line",
+   "lens": "logic",
+   "claim": "S39 README.md:14-15 verdicts line",
+   "verdict": "REFUTED",
+   "evidence": "'the 2020 claim was wrong' now refers to an LQ45 claim (README.md:4) that no result tests (grep -c LQ45 results.json = 0; md:140-142 disclaims LQ45). 'gold was a weak safe haven' appears with none of the post's caveats. See R2-B2 and R2-B3 (MODERATE).",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S40 README.md:23 '`data/README.md` | Sources, cred",
+   "lens": "logic",
+   "claim": "S40 README.md:23 '`data/README.md` | Sources, credits, licences and download instructions'",
+   "verdict": "CONFIRMED",
+   "evidence": "Accurate description of data/README.md:6-21; the pointer resolves R5-9. The target file's gold credit is deficient (R2-B4) and its licence names carry no links (R2-B7).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S41-S42 data/README.md:8 S&P licence cell 'Copyrig",
+   "lens": "logic",
+   "claim": "S41-S42 data/README.md:8 S&P licence cell 'Copyright © 2016, S&P Dow Jones Indices LLC. All rights reserved. Full notice on the FRED series page'",
+   "verdict": "CONFIRMED",
+   "evidence": "Verbatim sentences 1 and 2 of fred_sp500_series_page.txt:204; deleting the FRED permission clause (round1 consistency:F7) removes an overstatement and adds nothing. Strict-reading gap (full notice; no URL for 'FRED series page') in R2-B5.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S43 data/README.md:9-11 Bitcoin, Gold, WHO rows",
+   "lens": "logic",
+   "claim": "S43 data/README.md:9-11 Bitcoin, Gold, WHO rows",
+   "verdict": "REFUTED",
+   "evidence": "Gold source replaces the known providers with a pointer to an untracked workbook (data/README.md:3, :10; worldbank_terms_datasets.txt:191) R2-B4; WHO cell omits the URL that is part of WHO's metadata citation (who_covid19_data_page.txt:257) R2-B9; CC licence names unlinked R2-B7.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S44 data/README.md:27-28 trap 2 'No free daily gol",
+   "lens": "logic",
+   "claim": "S44 data/README.md:27-28 trap 2 'No free daily gold price whose terms allowed published charts was found in the vet.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Matches md:61 and design.md:132-134; narrowed from unsupported 'paid licence' and 'discontinued' (round1 rights:R5-10). No new claim.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:S45 data/README.md:31-32 trap 4 '...and have no Fr",
+   "lens": "logic",
+   "claim": "S45 data/README.md:31-32 trap 4 '...and have no French figures in the weeks covering 5 March to 5 May 2020.'",
+   "verdict": "REFUTED",
+   "evidence": "Computed (checks_r2_logic_out.txt C): France rows carry Cumulative_cases 16 in all 70 rows and New_deaths figures (43, 670, 1999, ...) in 9 rows; only New_cases is blank. The post (md:89) says 'no new-case figures'. See R2-B8 (LOW).",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:Chart footers, S&P line (sh-1..sh-4)",
+   "lens": "logic",
+   "claim": "Chart footers, S&P line (sh-1..sh-4)",
+   "verdict": "CONFIRMED",
+   "evidence": "PNGs viewed: 'S&P 500: S&P Dow Jones Indices LLC via FRED. Copyright © 2016, S&P Dow Jones Indices LLC. All rights reserved.' equals fred_sp500_series_page.txt:204 sentences 1 and 2 plus FRED access (fred_legal_notices.txt:171). Remaining strict gaps in R2-B5, R2-B6.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:Chart footers, gold credit (sh-2, sh-4)",
+   "lens": "logic",
+   "claim": "Chart footers, gold credit (sh-2, sh-4)",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:37-40 and PNGs viewed: 'The World Bank: World Bank Commodity Price Data (The Pink Sheet): <T103 list>' matches worldbank_terms_datasets.txt:191 form; computed T103 string match True; change notice 'Each series transformed by the author' (make_charts.py:41). Licence link missing, R2-B7.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:Chart footers, Bitcoin credit (sh-1..sh-4)",
+   "lens": "logic",
+   "claim": "Chart footers, Bitcoin credit (sh-1..sh-4)",
+   "verdict": "CONFIRMED",
+   "evidence": "Adjudicator (R2-B7, real=false): SRC_BTC was unchanged in round 1, and round 1 rights:R5-7 ruled it adequate: coinmetrics_github_README.md:3 says the archives come from the free Community tier, and CC BY-NC 4.0 allows credit in any reasonable manner, with the page carrying the licence link, archive link and warranty notice. Lens note: 'Coin Metrics Community data (PriceUSD), licensed CC BY-NC 4.0.' has no licence link, no link to the material and no warranty notice (cc_by-nc_4.0_deed.txt:207-209, :266-269); charts are committed and travel without the page. R2-B7 (MODERATE).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:sh-1 label 'my 2020 draft's window'",
+   "lens": "logic",
+   "claim": "sh-1 label 'my 2020 draft's window'",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:104; matches 2020-draft.txt:27 and design.md:262-264; no longer attributes a two-date comparison to the draft. Title 'Both dates said Bitcoin held up' describes the endpoints, not the draft.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:sh-2 title 'On the S&P 500's worst days and months",
+   "lens": "logic",
+   "claim": "sh-2 title 'On the S&P 500's worst days and months, Bitcoin fell too'",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:158; worst_days.primary.bitcoin mean -4.39, monthly.worst10.bitcoin -13.08. Deleting the gold clause removed the 'gold held' reading; the title asserts nothing about gold (which averaged -0.53 and fell in 6 of 8 months).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:sh-3 x-axis 'Largest fall between the S&P 500's hi",
+   "lens": "logic",
+   "claim": "sh-3 x-axis 'Largest fall between the S&P 500's high and its low (%)'",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.py:274-275 max_fall over prices.loc[peak:trough]; gate.toml:80.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:logic:item:sh-4 title 'Over 24-month windows, Bitcoin's link ",
+   "lens": "logic",
+   "claim": "sh-4 title 'Over 24-month windows, Bitcoin's link with stocks stayed positive; gold's came and went'",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.rolling.bitcoin min 0.290, n_negative 0; gold min -0.294, max 0.493, n_negative 19 of 52.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:C1",
+   "lens": "consistency",
+   "severity": "MODERATE",
+   "claim": "It also first closed back at its level on the S&P 500's high day sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: Computed in scratch with regain_check.py, using build_analysis's own readers. 2020: Bitcoin was 9,636.00 on 2020-02-19, 9,614.03 on 02-20 and 9,701.80 on 02-21, so it first closed back after 2 trading days; the code gives 55 (from the 2020-03-12 low). 2022: Bitcoin was 46,453.43 on 2022-01-03, fell below, and closed at 47,223.65 on 2022-03-28, so it first closed back after 58 trading days; the code gives 505 (from the 2022-09-21 low). 2025: 51 either way. The S&P figures (126, 513, 89) are unaffected. The sh-3 footnote ('after its lowest point in the episode', make_charts.py:196) matches the code; the prose does not. Adjudicator: Re-run with build_analysis's own readers (scratch adj_regain.py, adj_regain_out.txt). The coded rule (build_analysis.py:256-261, after = x.loc[low_day:]) reproduces results.json exactly: Bitcoin 55/505/51, S&P 126/513/89. The rule the prose states ('first closed back at its level on the S&P 500's high day') gives Bitcoin 2 trading days in 2020 (9,636.00 on 2020-02-19, below on 02-20, 9,701.80 on 02-21) and 58 in 2022 (46,453.43 on 2022-01-03, 47,223.65 on 2022-03-28). 2025 is 51 either way, and the S&P figures do not change. So the sentence is false as worded for 2 of its 6 figures. Under the stated rule the next sentence, 'In the 2022 episode they were close', is also false (58 against 513). The rendered sh-3 footnote (charts/sh-3-episodes.png; make_charts.py:195-196) says 'after its lowest point in the episode', which matches the code, so the prose now contradicts its own chart. Round 1 introduced the defect: stats:F2's adjudicator wrote that Bitcoin 'first closed at or above its 3 Jan 2022 level on 2024-01-08', but it did so on 2022-03-28. The design's measure 3 (design.md:64-65, 'regain its pre-episode level') and 8.5 do not record",
+   "fixed": true,
+   "fix": "Delete 'first' and narrow with the chart's own registered phrase (gate.toml:81 already licenses 'lowest point in the episode'): 'It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.' This is bound to episodes[*].*.regain_days and build_analysis.regain_days. Correct the gate.toml:81 reason in the same change (C4). Record the after-the-low rule with a date in design section 8, so md:134 ('the design document marks them as such') stays true. That is a design record, not post prose."
+  },
+  {
+   "id": "r2:consistency:C2",
+   "lens": "consistency",
+   "severity": "LOW",
+   "claim": "Word review draft: 'My draft compared 5 March and 5 May 2020. On those two dates the claim holds up.' / 'By my own test, Bitcoin is not a safe haven.' / 'Deeper falls, faster rebounds. For someone who can sit through a fall, that may be worth something.' / 'WHO's daily file records 0 new cases for France'",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: docx mtime is Oct 9 22:05; md is Oct 10 20:56 and the PNGs are Oct 10 20:56. Text extracted from word/document.xml contains 'On those two dates the claim holds up' and 'records 0 new cases'. It also contains 'For someone who can sit through a fall', 'Bitcoin is not a safe haven' (4 hits for 'is not a safe haven') and 7 'WHO' hits, against 0 hits for 'It noted', 'first closed back' and 'daily tests'. None of word/media/image1-4.png matches the SHA-256 of any current chart. Adjudicator: Confirmed stale. The docx mtime is 2026-10-09 22:05:53; the md is 2026-10-10 20:56:45 and all four PNGs are 20:56:44-45. Extracted word/document.xml has 1 hit each for 'On those two dates the claim holds up', 'records 0 new cases', 'For someone who can sit through a fall', 'Deeper falls' and 'got back to its starting level'. It has 7 for 'WHO' and 0 for 'It noted', 'first closed back', 'daily tests' and 'rising in two of the eight'. None of word/media/image1-4.png matches the SHA-256 of any current chart. Severity is lowered from MODERATE. The docx is gitignored (.gitignore:12 '*/draft/') and never published. publish-check builds the MDX from the md (data-story step 9). The file has no owner comments or revisions to lose (no comments part; 0 w:ins or w:del). The risk is procedural: step 8 says a material change voids prior approval and requires a re-show, and the re-show surface is stale. gate/checks/fresh.py:28 only excludes *.docx from the build copy; nothing checks the docx for freshness.",
+   "fixed": true,
+   "fix": "No prose change. Before any re-show, regenerate with: python3 /Users/jonathanchrisnaldy/Claude-Workspace/Projects/analytics-blog/sberbank-housing/md_to_docx.py draft/the-dip-i-waved-away.md draft/the-dip-i-waved-away.docx, run from the post folder. Optionally add a gate check, with a test, that fails when the configured docx is older than the rendered md or the charts."
+  },
+  {
+   "id": "r2:consistency:C3",
+   "lens": "consistency",
+   "severity": "NONE",
+   "claim": "(context for C10) Gold's verdict held without 2020 and in the S&P 500's worst 20 percent of months.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: gold_check.worst10, worst20 and ex2020 are all 'weak safe haven' (results.json), the same as monthly.worst10, worst20 and ex2020. Adjudicator: Not a finding, as the refuter says. results.json monthly.gold_check worst10, worst20 and ex2020 all give gold 'weak safe haven', on 73 and 62 changes. monthly.worst20.gold and monthly.ex2020.gold are also 'weak safe haven'. md:63 agrees with both.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:C4",
+   "lens": "consistency",
+   "severity": "LOW",
+   "claim": "\"lowest point in the episode\" = \"regain_days counts from the asset's lowest point between the high and the S&P 500 low\"",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: build_analysis.py:253-254 docstring ('Trading days from start until x is back...after its lowest point') and :261 (get_loc(back) - get_loc(start)). The S&P 2020 regain_days of 126 equals the trading days from the 2020-02-19 high to 2020-08-18, not from the 2020-03-23 low. Adjudicator: The gate.toml:81 reason says regain_days 'counts from the asset's lowest point'. build_analysis.py:261 subtracts get_loc(start), the high day. Recomputed: the S&P 500's 2020 figure of 126 is the trading-day distance from 2020-02-19 to 2020-08-18; from the 2020-03-23 low it would be 103 (adj_regain_out.txt). The footnote phrase the entry licenses is correct; only the reason misstates the measure, so anyone reconciling C1 against the register would get the wrong definition. This is register text, not reader-facing.",
+   "fixed": true,
+   "fix": "As proposed. Narrow the reason to: 'regain_days counts S&P 500 trading days from the high to the first close at or above the high-day level after the asset's lowest point between the high and the S&P 500 low (build_analysis.regain_days)'."
+  },
+  {
+   "id": "r2:consistency:C5",
+   "lens": "consistency",
+   "severity": "LOW",
+   "claim": "\"all-time\" = \"the running maximum of the FRED file, which starts 2016-10-10 above the S&P 500's pre-2016 record close, so a running high in it is an all-time high (find_episodes)\"",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: Computed: sp500_fred.csv's first row is 2016-10-10 at 2163.66; the file's maximum to 2016-12-31 is 2271.72 (2016-12-13); the 2020-02-19 peak is 3386.15. The reason cites no source for the pre-2016 record level. Adjudicator: Computed (adj_misc_out.txt). sp500_fred.csv starts 2016-10-10 at 2163.66. The file's running highs before it first exceeds 2190.15 (on 2016-11-21, at 2198.18) are 2016-10-10 2163.66, 11-10 2167.48, 11-15 2180.39 and 11-17 2187.12. That makes four 'running highs in the file' below the August 2016 record close of 2190.15 (general knowledge, not a stored source). So the reason's inference ('starts above the pre-2016 record close, so a running high in it is an all-time high') is a non sequitur, even though its premise (above the 2015 record of 2130.82, also general knowledge) is true. The post's three episode peaks are unaffected: the file's maximum was 2271.72 by 2016-12-13 and 3240.02 before 2020, and each peak (3386.15, 4796.56, 6144.15) is a file running high from 2020 on. Round 1's L16 adjudicator called the pre-file level 'general knowledge, not verifiable from repo data'. The rewritten reason presents it as established. The find_episodes docstring (build_analysis.py:229, 'the whole FRED history') is also inaccurate, but that code is unchanged since round 1 and outside this round's scope.",
+   "fixed": true,
+   "fix": "As proposed. Narrow the reason to: 'running maximum of the FRED file (from 2016-10-10); each episode peak (3386.15, 4796.56, 6144.15) exceeds every earlier close in the file; that it exceeds every pre-file close is general knowledge, not a stored source'. This changes no post text."
+  },
+  {
+   "id": "r2:consistency:C6",
+   "lens": "consistency",
+   "severity": "LOW",
+   "claim": "Bitcoin, I wrote, was \"much more stable\" than the stocks and \"tended to rise\". It noted a fall on 11 March, then a significant rise again.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: md:4-6. Source date: 2020-draft.txt:13 ('tanggal 11 Maret'). Coin Metrics PriceUSD (computed): 7,909.93 on 10 March, 7,939.34 on 11 March (+0.4%), 4,959.31 on 12 March (-37.5%). window_2020.bitcoin.low_day is 12. Adjudicator: md:4-6: 'But chapter one had already reached its answer. Bitcoin, I wrote, was ... It noted a fall on 11 March'. The grammatical subject just before 'It' is 'Bitcoin'. Only the verb 'noted' sends the reader two sentences back to 'chapter one'. Round 1's adjudicated fix (sources:S3-08, round1-verdicts.json findings[38]) was 'My draft noted ...', but the applied text uses 'It noted', so the applied fix differs from the adjudicated one. The source date is right: 2020-draft.txt:13 'tanggal 11 Maret'. The post's own data has the fall on 12 March (results window_2020.bitcoin.low_day = 12, md:22). With unambiguous attribution, no reconciling prose is needed.",
+   "fixed": true,
+   "fix": "Apply round 1's adjudicated wording: 'My draft noted a fall on 11 March, then a significant rise again.' Update the gate.toml:25 reason, which quotes ('It noted'), in the same change."
+  },
+  {
+   "id": "r2:consistency:C7",
+   "lens": "consistency",
+   "severity": "NONE",
+   "claim": "And it adds gold. / ## Digital gold, or something else",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: grep finds 'Digital gold' only at md:76 (src.md:76). The round-1 diff (.rounds/1.json against 2.json) shows the deleted md:13-14 clause. Adjudicator: Not a dangling reference. A heading is not anaphoric, and 'Digital gold, or something else' asks a question without asserting anything. Round 1 deleted the intro clause (sources:item:12) because nothing supported the claim about what 'people mean when they call Bitcoin \"digital gold\"'. The heading makes no such claim. Design 8.6:250 says '\"Digital gold\" is used as framing, attributed to no one', and design 1:30 defines the reader as 'someone who has heard that Bitcoin is \"digital gold\"'. The section body answers the frame by comparing Bitcoin's and gold's correlations with the S&P 500, and md:13 already introduces gold as the comparator.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:C8",
+   "lens": "consistency",
+   "severity": "LOW",
+   "claim": "That is not what safe means. A safe haven is supposed to hold its value while stocks are falling, not to recover sooner afterwards.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: md:71 ends 'In the 2022 episode they were close.'; md:73 opens 'That is not what safe means.' The round-1 fix note for logic:L7 assumed 'It is not what safe means' would refer to item 67's regain figures. Adjudicator: md:71 ends 'In the 2022 episode they were close.' The new paragraph opens (md:73) 'That is not what safe means.' Read literally, 'That' points at the 2022 closeness. The intended referent is the earlier claim that Bitcoin recovered sooner, which round 1 assumed would be the antecedent (logic:L7 fix: 'It is not what safe means then refers to item 67'). The next sentence resolves it ('not to recover sooner afterwards'), and every plausible reading leads to a true statement, so the severity stays LOW.",
+   "fixed": true,
+   "fix": "Delete only: remove 'That is not what safe means.' and keep 'A safe haven is supposed to hold its value while stocks are falling, not to recover sooner afterwards.', which states the point without a pronoun. The refuter's 'Recovering sooner is not what safe means.' is also acceptable, since it is a noun phrase bound to the regain figures."
+  },
+  {
+   "id": "r2:consistency:C9",
+   "lens": "consistency",
+   "severity": "LOW",
+   "claim": "The counts have gaps too: the daily file has no new-case figures for France in those weeks.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: Computed: all 70 FR rows in covid_who.csv from 2020-03-02 to 2020-05-10 have a blank New_cases. md:86-89 contain no prior 'file'. Adjudicator: md:86-89 never introduce a file before 'the daily file has no new-case figures'. The section's only earlier mentions are 'one report' and 'summed world cases by week'. The wording came from round 1's fix (sources:S3-03), which removed 'WHO's' under 8.4 and 8.7. The fact is correct. covid_who.csv (keep_default_na=False) has 70 FR rows from 2020-03-02 to 2020-05-10, all with blank New_cases. That range matches results covid.first_week_end 2020-03-08 to last_week_end 2020-05-10 and n_weeks 10.",
+   "fixed": true,
+   "fix": "Replace 'the daily file has' with 'the daily counts have': 'The counts have gaps too: the daily counts have no new-case figures for France in those weeks.' This matches data/README.md trap 4 ('The daily counts ... have no French figures') and adds no claim. A delete-only alternative: 'The counts have gaps too: no new-case figures for France in those weeks.'"
+  },
+  {
+   "id": "r2:consistency:C10",
+   "lens": "consistency",
+   "severity": "LOW",
+   "claim": "Gold's verdicts are the same without the May and June 2025 changes, where the series changed definition.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: worldbank_pinksheet_description_gold.txt:12 ('spot average of daily rates, from June 2025; previously ... London afternoon fixing'); md:107 ('fixings to May 2025 and of daily spot rates from June 2025'); design 8.2:185-188; build_analysis.py:29 GOLD_CHECK_MONTHS = ('2025-05','2025-06'). The verdicts themselves are confirmed (gold_check all 'weak safe haven'). Adjudicator: Computed monthly gold from build_analysis.monthly_prices: April to May 2025 is +2.79 (fixing to fixing) and May to June 2025 is +1.32 (fixing to spot). So only the June change spans the definition change (worldbank_pinksheet_description_gold.txt:12, 'spot average of daily rates, from June 2025; previously ... London afternoon fixing'). Design 8.2:185-188 excludes May because the May value is anomalous against GLD, not because of a definition change. Round 1's narrowing of 'values' to 'changes' (consistency:F9) is right about the code (build_analysis.py:29, :301). But it turns ', where the series changed definition' into a claim that the definition changed in both months. The verdict itself holds: monthly.gold_check worst10, worst20 and ex2020 are all 'weak safe haven'.",
+   "fixed": true,
+   "fix": "Delete only: remove ', where the series changed definition'. The sentence then reads 'Gold's verdicts are the same without the May and June 2025 changes.', and the sentence before it already states the definition change. The refuter's 'around the definition change' is a rewording, not needed."
+  },
+  {
+   "id": "r2:consistency:C11",
+   "lens": "consistency",
+   "severity": "LOW",
+   "claim": "Gold averaged minus 0.5 percent, rising in two of the eight months, with an interval from minus 4.0 to plus 3.0: a weak safe haven by my test.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: src.md:61 {{monthly.worst10.gold.n_up:words}}; results.json monthly.worst10.gold.n_up 2 and bitcoin.n_up 2; round1-verdicts.json stats:item:57 (fixed false). Adjudicator: The clause is true and bound: src.md:61 {{monthly.worst10.gold.n_up:words}}, and results monthly.worst10.gold.n_up = 2. Gold rose only in 2025-03 (+2.99) and 2025-04 (+7.58) of the eight worst months (adj_misc_out.txt). So the round-2 rule on unbound additions is not breached. What is real is that no round-1 fix authorises the addition. stats:item:57 and logic:item:57 are CONFIRMED with fixed=false. logic:L2, whose adjudicator noted 'n_up=2 is not reported', fixed by deletion only. The round record and the draft therefore disagree. The asymmetry argument is weak. Bitcoin also rose in 2 of 8 (2025-04 +1.72, 2026-03 +2.31), but the paragraph asserts no up-count contrast, and the clause reads as a caveat against gold, which matches L2's point that gold fell in 6 of the 8 months.",
+   "fixed": true,
+   "fix": "No prose change is needed. Record the addition in the round log as bound to monthly.worst10.gold.n_up, since round 2 has now verified it. If the owner wants strictly delete-only fixes, delete 'rising in two of the eight months,'. Do not add Bitcoin's count."
+  },
+  {
+   "id": "r2:consistency:C12",
+   "lens": "consistency",
+   "severity": "LOW",
+   "claim": "| ... The World Bank: World Bank Commodity Price Data (The Pink Sheet), monthly prices, column `Gold`; data sources as listed in the workbook's Description sheet | ... | World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard], daily frequency file |",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: worldbank_terms_datasets.txt:191 (format 'The World Bank: Dataset name: Data source'); worldbank_pinksheet_description_gold.txt:13 (source list); who_covid19_data_page.txt:257 (citation ending with the URL); md:113-114; design 8.6:247-249 and 8.7:260-261. Adjudicator: World Bank terms (worldbank_terms_datasets.txt:191) require 'The World Bank: Dataset name: Data source (if known)'. The sources are known (worldbank_pinksheet_description_gold.txt:13), and 8.6:249 says the credit follows that form 'sources included'. The data README gold cell (data/README.md:10, from docs/data-README.src.md:10) adopts the prefix but puts a pointer ('data sources as listed in the workbook's Description sheet') where the sources should be, while md:113 and the chart footers list them. WHO's citation (who_covid19_data_page.txt:257) ends with the URL https://data.who.int/dashboards/covid19/more-resources. The covid cell (:11) leaves the URL out and appends ', daily frequency file'. Round 1's consistency:F1 flagged the missing URL on the page, and md:114 now carries it. 8.7:260-261 says the data README names the source 'only in WHO's citation form'. Round 1's R5-4 says the data README will be public once committed.",
+   "fixed": true,
+   "fix": "As proposed. In docs/data-README.src.md, paste md:113's gold credit text, sources list included, into the gold Source cell, and md:114's WHO citation, URL included, into the covid Source cell. Delete ', daily frequency file' (or move it to the File column). Re-render. Both insertions are verbatim stored-source credits, not new claims."
+  },
+  {
+   "id": "r2:consistency:C13",
+   "lens": "consistency",
+   "severity": "LOW",
+   "claim": "8.5 said every chart and sentence says \"log\". In fact the method notes, the README and charts sh-2 and sh-4 say so; the body sentences rely on the method notes.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: md:22 contains 'log returns'; no other body sentence (md:3-103) says 'log'. Adjudicator: Design 8.7:258-259 says 'the body sentences rely on the method notes' for 'log'. md:22 says 'the standard deviation of its log returns'. It is the only body sentence with 'log' (grep of md:3-103), and the pre-round-1 text ('daily log returns', draft/.rounds/1.json) also said 'log', so 8.7 was inaccurate when written. The rest of 8.7's description is accurate: make_charts.py:151, 162-163 (sh-2) and :224 (sh-4) say log, README.md:10-11 say log, and sh-1 and sh-3 show levels and falls. Design housekeeping only; no post text is affected.",
+   "fixed": true,
+   "fix": "As proposed. Narrow 8.7 to: 'the body sentences, except the volatility definition at md:22, rely on the method notes'."
+  },
+  {
+   "id": "r2:consistency:C14",
+   "lens": "consistency",
+   "severity": "NONE",
+   "claim": "By my test, Bitcoin was not a safe haven on daily data, with or without the Covid crash. Gold was a weak safe haven by this test on monthly data, with or without 2020. Bitcoin was not a safe haven by my monthly test with 2020 included, and the monthly test cannot tell without it.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: md:61 ('by my test' twice), md:137-138, design 8.2:179-183, fc3.monthly_gold and fc3.monthly_bitcoin in results.json. Adjudicator: md:137-138 call the same procedure 'this test on monthly data' (gold) and 'my monthly test' (Bitcoin). Design 8.2:179-183 defines FC2b as applying 'the same rule' on monthly data, plus a 'cannot tell' outcome when the interval contains both zero and the S&P mean. So both names describe the monthly test accurately, and neither is wrong for its verdict. Gold's intervals include zero and exclude the S&P mean in both the full and ex-2020 samples (monthly.worst10.gold weak, S&P -7.41; monthly.ex2020.gold weak, S&P -5.45; fc3.monthly_gold holds), so the verdict is 'weak' with or without the cannot-tell clause. Bitcoin's 'cannot tell' is correctly given to 'the monthly test' (fc3.monthly_bitcoin without = 'cannot tell'). Two accurate, equivalent names in adjacent sentences are a matter of style, not a contradiction.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S1 md:6 'It noted a fall on 11 March, then a signi",
+   "lens": "consistency",
+   "claim": "S1 md:6 'It noted a fall on 11 March, then a significant rise again.'",
+   "verdict": "REFUTED",
+   "evidence": "The attribution is faithful: 2020-draft.txt:13 reads 'Terdapat penurunan harga pada tanggal 11 Maret, lalu kembali naik signifikan'. But the fix's 'It' has as its nearest subject 'Bitcoin' (md:5, 'Bitcoin, I wrote, was...'), not 'chapter one'. The 11 March date also sits unexplained against md:22, 'bottoming on 12 March'. Coin Metrics PriceUSD gives 7,909.93 on 10 March, 7,939.34 on 11 March (up) and 4,959.31 on 12 March (computed). See finding C6.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S2 md:7 '...\"more promising and safer\" than buying",
+   "lens": "consistency",
+   "claim": "S2 md:7 '...\"more promising and safer\" than buying LQ45 stocks.'",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:13 reads 'lebih menjanjikan dan lebih aman daripada membeli saham yang terdaftar di indeks LQ45'. README.md:4 was narrowed in the same round ('Indonesia's LQ45 stocks'), so the two surfaces agree.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S3 md:13 'And it adds gold.'",
+   "lens": "consistency",
+   "claim": "S3 md:13 'And it adds gold.'",
+   "verdict": "CONFIRMED",
+   "evidence": "The sentence is true: gold enters at md:61. Its deletion of the 'digital gold' setup orphans the md:76 heading; see finding C7.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S4 md:13-14 'The daily tests, and what would count",
+   "lens": "consistency",
+   "claim": "S4 md:13-14 'The daily tests, and what would count as passing them, were written down before I downloaded any data.'",
+   "verdict": "CONFIRMED",
+   "evidence": "git diff against commit a5c7805 (the pre-registration) shows that sections 2 to 4 (FC1, FC2, FC3, worst 5% and 1%, two-day robustness) gained only AMENDED markers. It is consistent with md:128-129 ('the daily tests and the conditions that would count as failing them'), with design 8.7:265-266, and with README.md:14, where the 'fixed before any data' clause was deleted.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S5 md:20 'My draft's window ran from 5 March to 5 ",
+   "lens": "consistency",
+   "claim": "S5 md:20 'My draft's window ran from 5 March to 5 May 2020.'",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:7, :11 and :27 ('dari 5 Maret hingga 5 Mei'). It matches the sh-1 label (make_charts.py:104), README.md:9 ('the window my draft used') and design 8.7:262-264.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S6 md:22 volatility sentence",
+   "lens": "consistency",
+   "claim": "S6 md:22 volatility sentence",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json window_2020: bitcoin.daily_vol_pct 9.173, sp500 4.522, n_days 43. build_analysis.py:213 takes np.log(x).diff().std over the S&P-day sample, which matches 'from one S&P 500 trading day to the next'. The sh-1 footer reads 'Daily values on the 43 S&P 500 trading days'. Side effect on design 8.7: see finding C13.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S7 md:25 'It was a recovery from a fall of 46 perc",
+   "lens": "consistency",
+   "claim": "S7 md:25 'It was a recovery from a fall of 46 percent, in the asset I had just called much more stable.'",
+   "verdict": "CONFIRMED",
+   "evidence": "window_2020.bitcoin.fall is 0.4578. 'much more stable' repeats the md:5 quote, which renders 'jauh lebih stabil' (2020-draft.txt:13). Nothing in it contradicts the nearby text.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S8 md:36-39 Baur and McDermott weak/strong sentenc",
+   "lens": "consistency",
+   "claim": "S8 md:36-39 Baur and McDermott weak/strong sentence",
+   "verdict": "CONFIRMED",
+   "evidence": "baur-mcdermott-2009 txt:177-180: 'the value of the weak safe haven asset on average will remain unchanged ... A strong safe haven asset is negatively correlated ... and therefore gains value'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S9 md:41 'Their tests are regressions with extra t",
+   "lens": "consistency",
+   "claim": "S9 md:41 'Their tests are regressions with extra terms for the market's worst days.'",
+   "verdict": "CONFIRMED",
+   "evidence": "baur-lucey-2006 txt:220-233 has rstock(t,q) terms at the 5%, 2.5% and 1% quantiles, and McDermott txt:550-552 has quantile dummies. The gate.toml:68 [claims] reason still holds.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S10 md:50-51 'The strong bar has a weakness too...",
+   "lens": "consistency",
+   "claim": "S10 md:50-51 'The strong bar has a weakness too...'",
+   "verdict": "CONFIRMED",
+   "evidence": "'too' pairs with the weak-bar caveat at md:49-50. Under step 3 (md:46-47), an uncorrelated asset with positive drift has a mean above zero, so it can clear the bar.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S11 md:57 'By my own test, Bitcoin was not a safe ",
+   "lens": "consistency",
+   "claim": "S11 md:57 'By my own test, Bitcoin was not a safe haven.'",
+   "verdict": "CONFIRMED",
+   "evidence": "worst_days.primary.bitcoin: verdict 'not a safe haven', CI -5.95 to -2.83. The tense and wording match md:137 and README.md:14.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S12 md:59 'It did not hold for the worst 1 percent",
+   "lens": "consistency",
+   "claim": "S12 md:59 'It did not hold for the worst 1 percent of two-day periods, where nine periods remain and the interval includes zero.'",
+   "verdict": "CONFIRMED",
+   "evidence": "two_day_worst1_pairing1 has n 9 and CI -24.72 to +1.18; pairing2 has n 9 and CI -6.97 to +4.56. robustness.differ lists both, which matches 'six of eight' and design 8.5.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S13 md:61 gold monthly sentence incl. 'rising in t",
+   "lens": "consistency",
+   "claim": "S13 md:61 gold monthly sentence incl. 'rising in two of the eight months'",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.worst10.gold: mean -0.53, CI -4.02 to +2.96, n_up 2, n 8, verdict 'weak safe haven'. The added clause is bound to monthly.worst10.gold.n_up, but no fix produced it; see finding C11.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S14 md:61 'Bitcoin averaged minus 13.1 percent ...",
+   "lens": "consistency",
+   "claim": "S14 md:61 'Bitcoin averaged minus 13.1 percent ... not a safe haven by my test.'",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.worst10.bitcoin: mean -13.08, CI -24.76 to -1.40, verdict 'not a safe haven'. The wording now matches the gold clause in the same paragraph.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S15 md:71 'It also first closed back at its level ",
+   "lens": "consistency",
+   "claim": "S15 md:71 'It also first closed back at its level on the S&P 500's high day sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.'",
+   "verdict": "REFUTED",
+   "evidence": "build_analysis.py:252-261 looks for a close back at the high-day level only after the asset's lowest point (line 259, after = x.loc[low_day:]). The sentence's own definition, 'first closed back', gives different Bitcoin figures. Bitcoin closed at 9,701.80 on 2020-02-21, against 9,636.00 on the high day: 2 trading days, not 55. It closed at 47,223.65 on 2022-03-28, against 46,453.43: 58, not 505. For 2025 both definitions give 51 (regain_check.py). The sh-3 footnote (make_charts.py:195-196) carries the 'after its lowest point' qualifier; the prose drops it. See finding C1.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S16 md:73 'That is not what safe means.'",
+   "lens": "consistency",
+   "claim": "S16 md:73 'That is not what safe means.'",
+   "verdict": "REFUTED",
+   "evidence": "Deleting md:75's 'Deeper falls, faster rebounds...' left 'That' with the nearest antecedent 'In the 2022 episode they were close.' (md:71). The intended referent, recovering sooner, sits two sentences back. See finding C8.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S17 md:80 correlation 0.40 across 1,605 daily retu",
+   "lens": "consistency",
+   "claim": "S17 md:80 correlation 0.40 across 1,605 daily returns",
+   "verdict": "CONFIRMED",
+   "evidence": "hedge_daily.primary: r 0.398, n 1605. This matches meta.n_daily_returns and md:57.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S18 md:89 'Some countries group several days into ",
+   "lens": "consistency",
+   "claim": "S18 md:89 'Some countries group several days into one report (World Health Organization, n.d.), so I summed world cases by week.'",
+   "verdict": "CONFIRMED",
+   "evidence": "who_covid19_about_page.txt:75 ('may group data from 7 days into a single statistic'). Consistent with data/README.md trap 4 and design 8.1. The gate.toml:49 reason is true.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S19 md:89 correlations with p values",
+   "lens": "consistency",
+   "claim": "S19 md:89 correlations with p values",
+   "verdict": "CONFIRMED",
+   "evidence": "covid.cases_bitcoin: r -0.502, p 0.139. covid.cases_sp500: r -0.542, p 0.106. n_weeks is 10, which matches 'ten points'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S20 md:89 'The counts have gaps too: the daily fil",
+   "lens": "consistency",
+   "claim": "S20 md:89 'The counts have gaps too: the daily file has no new-case figures for France in those weeks.'",
+   "verdict": "REFUTED",
+   "evidence": "The fact holds: all 70 FR rows from 2020-03-02 to 2020-05-10 in covid_who.csv have a blank New_cases (computed). That matches data/README.md trap 4. But 'the daily file' is a new definite reference with no antecedent in the post body; the old antecedent was 'WHO's'. See finding C9.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S21 md:91-92 neural network sentence",
+   "lens": "consistency",
+   "claim": "S21 md:91-92 neural network sentence",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:27 (daily cases, 5 March to 5 May) and :29 (Neural Network). The deletion leaves no contradiction, and the batching reason survives at md:89.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S22 md:100 'On that test, over these years, Bitcoi",
+   "lens": "consistency",
+   "claim": "S22 md:100 'On that test, over these years, Bitcoin fell with stocks.'",
+   "verdict": "CONFIRMED",
+   "evidence": "'that test' is md:98-100's procedure. worst_days.primary mean -4.39 and without_crash mean -3.75 are both 'not a safe haven'. fc3.daily_bitcoin.holds is true.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S23 md:107 'Bitcoin is the Coin Metrics reference ",
+   "lens": "consistency",
+   "claim": "S23 md:107 'Bitcoin is the Coin Metrics reference rate, PriceUSD (Coin Metrics, 2024), from the free data archive of Coin Metrics, Inc.'",
+   "verdict": "CONFIRMED",
+   "evidence": "coinmetrics_docs_price.txt: 'This metric is identical to ReferenceRate and ReferenceRateUSD'. The reference entry at md:154 exists, and the date matches the stored HTML's dateTime 2024-04-03 (coinmetrics_docs_price.html:496).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S24 md:107 'Gold's verdicts are the same without t",
+   "lens": "consistency",
+   "claim": "S24 md:107 'Gold's verdicts are the same without the May and June 2025 changes, where the series changed definition.'",
+   "verdict": "REFUTED",
+   "evidence": "The verdicts hold: gold_check worst10, worst20 and ex2020 are all 'weak safe haven', with n_total 73 = 75 - 2 (build_analysis.py:29, :301). But the definition changed once, in June 2025 (Description!B103 in worldbank_pinksheet_description_gold.txt:12; md:107's previous sentence). May 2025 is dropped for its anomalous value (design 8.2:185-188), not for a definition change. See finding C10.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S25 md:107 'Covid-19 cases are daily reports, summ",
+   "lens": "consistency",
+   "claim": "S25 md:107 'Covid-19 cases are daily reports, summed by week (World Health Organization, 2023).'",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.py:341-345 sums weekly over W-SUN. The 2023 reference is at md:168. Consistent with 8.7's rule on WHO's name.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S26 md:111-113 credits (S&P notice link, Bitcoin, ",
+   "lens": "consistency",
+   "claim": "S26 md:111-113 credits (S&P notice link, Bitcoin, Gold)",
+   "verdict": "CONFIRMED",
+   "evidence": "fred_sp500_series_page.txt:204 has the line verbatim. coinmetrics_github_README.md: 'without any warranty' and CC BY-NC 4.0. The gold sources are verbatim from worldbank_pinksheet_description_gold.txt:13, in the worldbank_terms_datasets.txt:191 form. The text matches the chart footers (make_charts.py:35-40) and the data/README.md licence column.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S27 md:113-114 'Licensed CC BY 4.0. - Covid-19 cas",
+   "lens": "consistency",
+   "claim": "S27 md:113-114 'Licensed CC BY 4.0. - Covid-19 cases: World Health Organization 2023 ... https://data.who.int/dashboards/covid19/more-resources.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Matches who_covid19_data_page.txt:257 exactly, URL included. The data README cell was not given the same URL; see finding C12.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S28 md:118-119 Timing",
+   "lens": "consistency",
+   "claim": "S28 md:118-119 Timing",
+   "verdict": "CONFIRMED",
+   "evidence": "coinmetrics_docs_price.txt: 'price as of the end of the day in UTC time'. fred_sp500_series_page.txt:198: 'The market typically closes at 4 PM ET'. Midnight UTC is 8 PM EDT or 7 PM EST, 3 to 4 hours later (design 8.1).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S29 md:128-129 'The questions, the daily tests and",
+   "lens": "consistency",
+   "claim": "S29 md:128-129 'The questions, the daily tests and the conditions that would count as failing them were written before any data was downloaded.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Commit a5c7805 contains sections 1 to 4. design 8.7:265-266 says the same, and it agrees with md:13.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S30 md:134 'A few smaller choices were settled aft",
+   "lens": "consistency",
+   "claim": "S30 md:134 'A few smaller choices were settled after the first results, and the design document marks them as such.'",
+   "verdict": "CONFIRMED",
+   "evidence": "design 8.5:217-223 is headed 'after the first results were seen' and lists the choices. One gap: 8.5 does not list the regain-after-the-low rule (build_analysis.py:252-261), which is the crux of finding C1.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S31 md:137-138 'By my test, Bitcoin was not a safe",
+   "lens": "consistency",
+   "claim": "S31 md:137-138 'By my test, Bitcoin was not a safe haven on daily data, with or without the Covid crash.'",
+   "verdict": "CONFIRMED",
+   "evidence": "fc3.daily_bitcoin: full and without are both 'not a safe haven', so holds is true. Matches README.md:14.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S32 md:138 'Gold was a weak safe haven by this tes",
+   "lens": "consistency",
+   "claim": "S32 md:138 'Gold was a weak safe haven by this test on monthly data, with or without 2020.'",
+   "verdict": "CONFIRMED",
+   "evidence": "fc3.monthly_gold: full and without are both 'weak safe haven'. Matches md:63. The naming differs from S33; see finding C14.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S33 md:138 'Bitcoin was not a safe haven by my mon",
+   "lens": "consistency",
+   "claim": "S33 md:138 'Bitcoin was not a safe haven by my monthly test with 2020 included, and the monthly test cannot tell without it.'",
+   "verdict": "CONFIRMED",
+   "evidence": "fc3.monthly_bitcoin: full 'not a safe haven', without 'cannot tell'. Matches md:63.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S34-S37 md:154 reference fragments '(2024, April 3",
+   "lens": "consistency",
+   "claim": "S34-S37 md:154 reference fragments '(2024, April 3).' '*Price*.' 'Data Knowledge Base.' 'Retrieved October 9, 2026, from https://docs.coinmetrics.io/...'",
+   "verdict": "CONFIRMED",
+   "evidence": "The stored HTML has dateTime 2024-04-03T10:01:15Z and the title 'Price | Data Knowledge Base' (coinmetrics_docs_price.txt:1, :10). provenance-audit.md:133 and :172 say it was fetched from that exact URL at 2026-10-10 01:34 UTC, which is the evening of 9 October US time; the local file mtime is Oct 9 21:42.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S38 README.md:3-4 '...\"more stable\" and \"safer\" th",
+   "lens": "consistency",
+   "claim": "S38 README.md:3-4 '...\"more stable\" and \"safer\" than Indonesia's LQ45 stocks during the pandemic.'",
+   "verdict": "CONFIRMED",
+   "evidence": "2020-draft.txt:13 ('jauh lebih stabil', 'lebih aman daripada membeli saham ... LQ45'). Consistent with md:5-7.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S39 README.md:14-15 verdicts line",
+   "lens": "consistency",
+   "claim": "S39 README.md:14-15 verdicts line",
+   "verdict": "CONFIRMED",
+   "evidence": "Word for word, it matches md:137-138 ('was', 'by my test', 'by this test') and fc3. The deleted 'by the test fixed before any data was downloaded' would have contradicted 8.7.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S40 README.md Files table incl. data/README.md row",
+   "lens": "consistency",
+   "claim": "S40 README.md Files table incl. data/README.md row",
+   "verdict": "CONFIRMED",
+   "evidence": "data/README.md has Source and Licence columns, curl instructions and traps, so the row's 'Sources, credits, licences and download instructions' is accurate. It rightly does not claim the hashes, which live in build_analysis.py:32-38.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S41-S42 data/README.md:8 S&P licence cell 'Copyrig",
+   "lens": "consistency",
+   "claim": "S41-S42 data/README.md:8 S&P licence cell 'Copyright © 2016 ... All rights reserved. Full notice on the FRED series page'",
+   "verdict": "CONFIRMED",
+   "evidence": "Verbatim from fred_sp500_series_page.txt:204, and the same as md:111 and every chart footer. The gate.toml:84 [claims] reason ('on the page, the charts and the data README') is true.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S43 data/README.md:9-11 Bitcoin, gold and covid so",
+   "lens": "consistency",
+   "claim": "S43 data/README.md:9-11 Bitcoin, gold and covid source cells",
+   "verdict": "REFUTED",
+   "evidence": "The Bitcoin cell matches md:112. The gold cell points to the workbook ('data sources as listed in the workbook's Description sheet') instead of carrying the source list that 8.6 requires and that the page and charts print. The covid cell drops the URL from WHO's citation form (who_covid19_data_page.txt:257) and appends ', daily frequency file', although 8.7:260-261 says the data README uses only WHO's citation form. See finding C12.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S44 data/README.md:27-28 trap 2",
+   "lens": "consistency",
+   "claim": "S44 data/README.md:27-28 trap 2",
+   "verdict": "CONFIRMED",
+   "evidence": "Matches md:61 ('could not find a free daily gold price whose terms let a blog publish charts') and design 8.1:132-134. The June 2025 definition change is in Description!B103.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:S45 data/README.md:31-32 trap 4",
+   "lens": "consistency",
+   "claim": "S45 data/README.md:31-32 trap 4",
+   "verdict": "CONFIRMED",
+   "evidence": "The France cells are blank for every day from 2020-03-02 to 2020-05-10 (computed), and the covid weeks run 2020-03-08 to 2020-05-10 (results.json). Sunday batching is a design 8.1 vet finding. Minor point: 'So ... weekly sums' answers only the first clause; weekly sums do not restore France.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:Chart footers, all four PNGs: S&P copyright line",
+   "lens": "consistency",
+   "claim": "Chart footers, all four PNGs: S&P copyright line",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:35 is rendered in the sh-1 to sh-4 PNGs, all opened. The line is verbatim from fred_sp500_series_page.txt:204, which satisfies 8.6 ('every chart carries the copyright line').",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:Chart footers sh-2 and sh-4: gold credit",
+   "lens": "consistency",
+   "claim": "Chart footers sh-2 and sh-4: gold credit",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:37-40 is the World Bank form with the T103 source list verbatim, the same as md:113 apart from 'Monthly averages,'. sh-1 and sh-3 draw no gold and so carry no gold credit.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:sh-1 label 'my 2020 draft's window'",
+   "lens": "consistency",
+   "claim": "sh-1 label 'my 2020 draft's window'",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:104 matches md:20. The unchanged title ('Both dates said Bitcoin held up...') describes the data, not the draft's method, so 8.7's 'no longer says the draft compared two dates' holds.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:sh-2 title 'On the S&P 500's worst days and months",
+   "lens": "consistency",
+   "claim": "sh-2 title 'On the S&P 500's worst days and months, Bitcoin fell too'",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:158. Bitcoin's means are -4.39 (daily) and -13.08 (monthly). Dropping the gold clause matches the deletion at md:100. gate.toml:71 'worst days and months' still matches.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:sh-3 x-axis 'Largest fall between the S&P 500's hi",
+   "lens": "consistency",
+   "claim": "sh-3 x-axis 'Largest fall between the S&P 500's high and its low (%)'",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:187. build_analysis.py:274-275 takes max_fall over prices.loc[peak:trough]. The gate.toml:78 reason is true.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:sh-3 footnote regain definition",
+   "lens": "consistency",
+   "claim": "sh-3 footnote regain definition",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:195-196 ('from the high until the asset closed at or above its level on that day, after its lowest point in the episode') matches build_analysis.py:252-261 exactly. The prose (S15) and the register entry (gate.toml:81) are the surfaces that disagree with it.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:sh-4 title 'Over 24-month windows, Bitcoin's link ",
+   "lens": "consistency",
+   "claim": "sh-4 title 'Over 24-month windows, Bitcoin's link with stocks stayed positive; gold's came and went'",
+   "verdict": "CONFIRMED",
+   "evidence": "monthly.rolling.bitcoin: min 0.290, n_negative 0. gold: max 0.493, min -0.294, n_negative 19. Consistent with md:82 and the sh-4 footer.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:gate.toml register reasons for changed text (11 Ma",
+   "lens": "consistency",
+   "claim": "gate.toml register reasons for changed text (11 March, Copyright © 2016, World Health Organization 2023, into one report, Largest fall between..., from one S&P 500 trading day to the next, All rights reserved)",
+   "verdict": "CONFIRMED",
+   "evidence": "Each reason checks out against its source: 2020-draft.txt:13; fred_sp500_series_page.txt:204; who_data_terms.txt:54 with who_covid19_data_page.txt:257; who_covid19_about_page.txt:75; build_analysis.py:274; md:22; md:111, the charts and data/README.md:8.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:gate.toml:81 [claims] 'lowest point in the episode",
+   "lens": "consistency",
+   "claim": "gate.toml:81 [claims] 'lowest point in the episode' reason",
+   "verdict": "REFUTED",
+   "evidence": "The reason says 'regain_days counts from the asset's lowest point'. build_analysis.py:261 counts from start, the high (get_loc(back) - get_loc(start)), and only searches from the low. The S&P 2020 figure, 126 days from 2020-02-19 to 2020-08-18, proves the count runs from the high. See finding C4.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r2:consistency:item:gate.toml:82 [claims] 'all-time' reason (rewritten",
+   "lens": "consistency",
+   "claim": "gate.toml:82 [claims] 'all-time' reason (rewritten in round 1)",
+   "verdict": "REFUTED",
+   "evidence": "sp500_fred.csv starts 2016-10-10 at 2163.66 (computed). 'Starts above the pre-2016 record close' does not rule out records set between January and October 2016, which the file does not hold, so 'a running high in it is an all-time high' does not follow from the stated premise. No stored source gives the earlier record. See finding C5.",
+   "fixed": true,
+   "fix": null
+  }
+ ]
+}

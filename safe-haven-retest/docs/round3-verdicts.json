@@ -1,0 +1,248 @@
+{
+ "round": 3,
+ "date": "2026-10-11",
+ "lenses_dispatched": 2,
+ "lenses_returned": 2,
+ "lenses_errored": 0,
+ "lenses": [
+  "facts and consistency",
+  "logic, hostile reader and rights"
+ ],
+ "scope": [
+  "My draft noted a fall on 11 March, then a significant rise again.",
+  "It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.",
+  "The counts have gaps too: the daily counts have no new-case figures for France in those weeks.",
+  "Gold's verdicts are the same without the May and June 2025 changes.",
+  "Covid-19 cases are the daily counts, summed by week (World Health Organization, 2023).",
+  "[README.md] Verdicts: the 2020 claim, tested against the S&P 500 instead of LQ45, was wrong; by my test, Bitcoin was not a safe haven on daily data, with or without the Covid crash; gold was a weak safe haven by this test on monthly data.",
+  "[data/README.md] Full notice on the [FRED series page](https://fred.stlouisfed.org/series/SP500) | | `btc_coinmetrics_github.csv` | Coin Metrics, Inc., free data archive on GitHub, column `PriceUSD` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) | | `gold_worldbank_CMO-Historical-Data-Monthly.xlsx` | The World Bank: World Bank Commodity Price Data (The Pink Sheet): Bloomberg Finance L.P.; Kitco.com; International Monetary Fund, International Financial Statistics; London Bullion Market; Metals Week; Platts Metals Week; Shearson Lehman Brothers, Metal Market Weekly Review; Thomson Reuters Datastream; World Bank.",
+  "[data/README.md] Monthly prices, column `Gold` | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | | `covid_who.csv` | World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard]. https://data.who.int/dashboards/covid19/more-resources | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |",
+  "[data/README.md] **The daily counts batch whole weeks onto Sundays for some countries, and have no French new-case figures in the weeks covering 5 March to 5 May 2020.** So the Covid aside uses weekly sums."
+ ],
+ "findings": [
+  {
+   "id": "r3:facts:R3A-01",
+   "claim": "It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: build_analysis.py:261 returns x.index.get_loc(back) - x.index.get_loc(start), where start is the peak. make_charts.py:195 says 'counts S&P 500 trading days from the high'. gate.toml:81 says 'from the high to the first close'. My independent recompute (scratch facts/regain_check.py) counts from each asset's own low: 2020 Bitcoin 39 vs S&P 103; 2022 Bitcoin 325 (2022-09-21 to 2024-01-08) vs S&P 318 (2022-10-12 to 2024-01-19); 2025 Bitcoin 17 vs S&P 55. Counted from the high, the figures 55/126, 505/513 and 51/89 reproduce exactly. Adjudicator: Reran it myself (scratch adj-facts/regain_check.py, independent of build_analysis; reads data/sp500_fred.csv and data/btc_coinmetrics_github.csv on S&P 500 trading days from 2020-01-02). Counted from the S&P 500 high: 2020 Bitcoin 55, S&P 126; 2022 Bitcoin 505, S&P 513; 2025 Bitcoin 51, S&P 89, matching results.json episodes[*].*.regain_days and build_analysis.py:252-261 (get_loc(back) - get_loc(start)). Counted from each asset's own low: 2020 Bitcoin 39 (low 2020-03-12), S&P 103 (low 2020-03-23); 2022 Bitcoin 325 (low 2022-09-21), S&P 318 (low 2022-10-12); 2025 Bitcoin 17, S&P 55. So the finder's figures reproduce exactly. Where I could refute part of it: both counts start on the same S&P high day, so 'closed back ... sooner' is true as dates in every episode (Bitcoin back 2020-05-07, 2024-01-08, 2025-05-02 against the S&P's 2020-08-18, 2024-01-19, 2025-06-27). No printed number is wrong, and the sh-3 footnote right above the paragraph gives the origin ('counts S&P 500 trading days from the high', make_charts.py:194-196; gate.toml:81 says the same). What survives is that the prose never states where the count starts. Round 2 put 'after its lowest point in the episode' directly in front of the counts (round2-verdicts r2:log",
+   "fixed": true,
+   "fix": "Narrow by inserting only the origin the sh-3 footnote already uses: 'It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each, counting from the high: 55 trading days against 126, 505 against 513, and 51 against 89.' In src.md:71, insert ', counting from the high' before the colon. All six regain_days placeholders and 'trading days' stay as they are. That is a smaller diff than the finder's, which moves 'trading days'. The new words have no digits and no universal, superlative or causal word, so no new gate register entry is needed. md:73 is unchanged."
+  },
+  {
+   "id": "r3:facts:R3A-02",
+   "claim": "Gold's verdicts are the same without the May and June 2025 changes.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: build_analysis.py:29 GOLD_CHECK_MONTHS = ('2025-05', '2025-06') and :301 drop the changes indexed to those months, i.e. April to May and May to June (results.json monthly.gold_check worst10.n_total 73 vs 75). Elsewhere the post uses 'changes' for monthly log changes (md:80, md:116). The sentence is next to md:107's 'to May 2025 ... from June 2025'. Adjudicator: The claim holds, and the feared reading is not the natural one. Computed check: build_analysis.py:29 GOLD_CHECK_MONTHS = ('2025-05', '2025-06') and :301 drop the monthly changes indexed to those months. In results.json, monthly.gold_check gold verdicts are 'weak safe haven' for worst10, worst20 and ex2020 (n_total 73, 73, 62), the same as the full sample (75, 75, 64). The hedge p moves from 0.16 to 0.18, still chance. 'The May and June 2025 changes' is an exact name for the two dropped changes. On wording: by md:107 the post has already set 'changes' to mean monthly log changes ('across 75 monthly changes', md:80). The sentence before it in md:107 describes a single switch (fixings to May 2025, spot from June 2025) and never calls it a 'change'. A plural 'May and June changes' fits two monthly changes, not one definition switch. Even on the finder's reading the takeaway is still supported: dropping the change that straddles the switch, plus the May outlier, is how the check removes the switch's effect, and design 8.2 (lines 184-187) and 8.5 frame the check that way. Round 2's three lenses adjudicated this exact deletion (r2:facts:R2A-05, r2:logic:R2-B13, r2:consistency:C10), and the facts lens noted that the previous sentence already states the definition change. No new inconsistency was created.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:facts:R3A-03",
+   "claim": "My draft noted a fall on 11 March, then a significant rise again.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: data/btc_coinmetrics_github.csv PriceUSD: 2020-03-10 7,910; 2020-03-11 7,939 (up 0.4%); 2020-03-12 4,959 (down 37.5%). results.json window_2020.bitcoin.low_day 12, low_month 3. sources/2020-draft.txt:13 gives '11 Maret'. Adjudicator: Out of scope as a defect class. Round 2's only change to this sentence was 'It' to 'My draft' (round2-verdicts scope item 1 reads 'It noted a fall on 11 March, ...'; fixes r2:logic:R2-B11 and r2:consistency:C6). The 11 March against 12 March mismatch predates round 2. Round 1 raised it in three lenses (round1-verdicts stats:F7, sources:S3-08, logic:L16). It was resolved by attributing the date to the draft (the sources:S3-08 fix, 'My draft noted a fall on 11 March', marked fixed), not by deleting it, and the delete option is the finder's proposal again. The round 2 change makes that attribution explicit, so it narrows the inconsistency rather than creating one. My own checks: sources/2020-draft.txt:13 reads 'Terdapat penurunan harga pada tanggal 11 Maret, lalu kembali naik signifikan', so the attribution is accurate, as the finding itself concedes. In data/btc_coinmetrics_github.csv, PriceUSD is 7,909.93 on 2020-03-10, 7,939.34 on 03-11 and 4,959.31 on 03-12 (scratch regain_check.py), so the post's own '12 March' at md:22 is right. gate.toml:25 licenses '11 March' only as the draft's date ('attributed to the draft (My draft noted), not a result'), and round 2 confirmed that (r2:facts:item:S01). A reader is told plainly that the date is the draft's. That md:24 says the draft saw the dip it misdated by a day is not a false statement.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:facts:item:S1 md:6 'My draft noted a fall on 11 March, then a",
+   "claim": "S1 md:6 'My draft noted a fall on 11 March, then a significant rise again.'",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/2020-draft.txt:13 reads 'Terdapat penurunan harga pada tanggal 11 Maret, lalu kembali naik signifikan[6]', which translates to 'there was a price fall on 11 March, then it rose significantly again'. The design doc (line 18) renders it the same way. As a report of what the draft says, the sentence is exact. One side issue is filed as a LOW finding: Coin Metrics data shows no fall on 11 March. The fall is on 12 March. The gate.toml:25 allow reason was updated to 'My draft noted'.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:facts:item:S2 md:71 'It also closed back at its level on the ",
+   "claim": "S2 md:71 'It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.'",
+   "verdict": "REFUTED",
+   "evidence": "All six figures reproduce. I recomputed them from the raw CSVs without importing build_analysis (scratch facts/regain_check.py). 2020: BTC level 9,636.00 on 2020-02-19, in-episode low 2020-03-12, back 2020-05-07, giving 55. S&P back 2020-08-18, giving 126. 2022: BTC level 46,453.43, low 2022-09-21, back 2024-01-08, giving 505. S&P back 2024-01-19, giving 513. 2025: BTC level 96,647.91, low 2025-04-08, back 2025-05-02, giving 51. S&P back 2025-06-27, giving 89. All match results.json episodes[*].*.regain_days. The event counted is described correctly ('after its lowest point in the episode'): without that clause, Bitcoin's first close back would have come at 2, 58 and 1 trading days. Calendar-day Bitcoin data gives the same regain dates. The wording is still not exact. It never says where the count starts. build_analysis.py:261 counts from `start` (the S&P high), the sh-3 footnote (make_charts.py:195) says 'counts S&P 500 trading days from the high', and the gate.toml:81 reason says 'from the high'. The post sentence drops that origin. Counted from each asset's low instead, 2022 reverses: Bitcoin 325 trading days, S&P 318. 'At or above' (footnote) versus 'back at' (post) is harmless.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r3:facts:item:S3 md:89 'The counts have gaps too: the daily coun",
+   "claim": "S3 md:89 'The counts have gaps too: the daily counts have no new-case figures for France in those weeks.'",
+   "verdict": "CONFIRMED",
+   "evidence": "I read covid_who.csv with keep_default_na=False and dtype=str (scratch facts/covid_check.py). France (FR) has 70 rows from 2020-03-02 to 2020-05-10, the ten WHO weeks the window touches (results.json covid.n_weeks 10, first_week_end 2020-03-08, last_week_end 2020-05-10). New_cases is the empty string in all 70. Cumulative_cases stays at 16 throughout. The last earlier figure is 2020-02-23 (4) and the next is 2020-05-17 (677). results.json covid.france_cases_in_window = 0, from build_analysis.py:356-363. 'New-case figures' is the right narrowing: New_deaths does have values in the window (43, 670, 1999, 3276).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:facts:item:S4 md:107 'Gold's verdicts are the same without th",
+   "claim": "S4 md:107 'Gold's verdicts are the same without the May and June 2025 changes.'",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.py:29 and :301 drop the monthly log changes indexed 2025-05 and 2025-06, i.e. April to May and May to June. That leaves 73 changes instead of 75, and removes every change that uses the May 2025 value flagged in design 8.2. results.json monthly.gold_check gives gold 'weak safe haven' in worst10 (-0.53, CI -4.02 to +2.96), worst20 (+0.56, -1.53 to +2.64) and ex2020 (-0.56, -4.74 to +3.61). Those are identical to the full sample. The hedge is r 0.160, p 0.177, still chance, against 0.164, p 0.159 in full. My independent recompute from the xlsx (scratch facts/gold_check.py) reproduces all of it. None of the dropped months is among the worst months (worst10 set: 2020-03, 2022-05, 2022-06, 2022-09, 2022-10, 2025-03, 2025-04, 2026-03), so only the hedge figure and the rolling correlation move. The claim is true. One wording ambiguity is filed as LOW.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:facts:item:S5 md:107 'Covid-19 cases are the daily counts, su",
+   "claim": "S5 md:107 'Covid-19 cases are the daily counts, summed by week (World Health Organization, 2023).'",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.py:85-92 sums the daily New_cases over all countries by Date_reported, with blanks counted as 0. :344 sums them into W-SUN weeks (Monday to Sunday). The in-text citation matches the reference at md:168-169, whose title and URL come from WHO's own citation at sources/who_covid19_data_page.txt:257. That stored page is where the daily file is offered (line 76, 'Daily frequency reporting of new COVID-19 cases').",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:facts:item:S6 README.md:14-15 verdict line",
+   "claim": "S6 README.md:14-15 verdict line",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json window_2020.fc1 = {smaller_fall False, lower_vol False, survives False} (Bitcoin fall 45.78 vs 26.01, volatility 9.17 vs 4.52). Design 4 FC1 requires the words 'the 2020 claim was wrong', and design 1 (lines 21-24) puts the verdict on the general claim tested against the S&P 500, which the README's inserted clause states. Daily: worst_days.primary and without_crash are both 'not a safe haven', and fc3.daily_bitcoin.holds is true, so 'with or without the Covid crash' holds. Gold: monthly.worst10.gold is 'weak safe haven', and the CI excludes the S&P mean of -7.4, so the 8.2 'cannot tell' rule does not apply. This matches md:136-138. The README leaves out the Bitcoin monthly verdict and gold's 'with or without 2020'. Both are omissions, not misstatements.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:facts:item:S7 data/README.md:8-10 FRED notice link; btc row; ",
+   "claim": "S7 data/README.md:8-10 FRED notice link; btc row; gold credit",
+   "verdict": "CONFIRMED",
+   "evidence": "The S&P line 'Copyright © 2016, S&P Dow Jones Indices LLC. All rights reserved.' is the verbatim opening of the notice at sources/fred_sp500_series_page.txt:204, and that page carries the full notice. The link matches the page's canonical URL (fred_sp500_series_page.html: rel=canonical https://fred.stlouisfed.org/series/SP500). For Bitcoin, coinmetrics_github_README.md:43 gives CC BY-NC 4.0 with exactly the linked URL, the curl source is csv/btc.csv (README:15), and PriceUSD is column 19 of the CSV header. For gold, the cell begins with the exact string 'The World Bank: ' + Description!A1 + ': ' + Description!T103 (worldbank_pinksheet_description_gold.txt:7,13). A byte check came back True. That is the required form 'The World Bank: Dataset name: Data source (if known)' (worldbank_terms_datasets.txt:191). The WB requirement to pass the acknowledgment on applies only to sub-licences granted. The data folder is untracked apart from its README, so no data is redistributed. The Coin Metrics name is written 'Coin Metrics, Inc.' where its terms say 'Coin Metrics Inc.': a style variant that identifies the same firm.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:facts:item:S8 data/README.md:10-11 gold 'Monthly prices, colu",
+   "claim": "S8 data/README.md:10-11 gold 'Monthly prices, column Gold' and CC BY 4.0; covid_who.csv WHO citation and CC BY 4.0",
+   "verdict": "CONFIRMED",
+   "evidence": "A Python equality check between the covid Source cell and sources/who_covid19_data_page.txt:257 returns True. The HTML copy prints the same string under 'Citation'. The URL is a real WHO page: the stored data page links href=/dashboards/covid19/more-resources. WHO's licence is CC BY 4.0 (data page lines 224, 238), and the World Bank's is too (terms line 184). Both links equal the canonical URL in sources/cc_by_4.0_deed.html:3. 'Monthly prices, column Gold' matches the sheet 'Monthly Prices' and header BR5 'Gold' (description txt:18-23, build_analysis.py:75-77).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:facts:item:S9 data/README.md:31-32 trap 4 'The daily counts b",
+   "claim": "S9 data/README.md:31-32 trap 4 'The daily counts batch whole weeks onto Sundays for some countries, and have no French new-case figures in the weeks covering 5 March to 5 May 2020.'",
+   "verdict": "CONFIRMED",
+   "evidence": "In the ten window weeks, 14 countries (ES, DE, NL, PT, UA, EE, LU, GR, BG, IS, MK, SI, LV, MT) report every positive daily count on a Sunday. Their other days are blank, e.g. ES has 60 blanks (scratch facts/covid_check.py). For ES, DE and NL, each Sunday's New_cases equals the 7-day rise in Cumulative_cases, and Cumulative_cases is flat Monday to Saturday (scratch facts/sunday_check.py), so these are whole weeks batched onto Sunday. who_covid19_about_page.txt:75 supports this ('group data from 7 days into a single statistic'). The France half is shown under S3. Context only, out of the sentence: the next line, 'So the Covid aside uses weekly sums', answers the Sunday batching. Weekly sums do not restore France: build_analysis counts its blanks as 0. The post discloses the gap at md:89.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:facts:item:Context md:73-74 'A safe haven is supposed to hold",
+   "claim": "Context md:73-74 'A safe haven is supposed to hold its value while stocks are falling, not to recover sooner afterwards.' (opening line after round 2 deleted 'That is not what safe means.')",
+   "verdict": "CONFIRMED",
+   "evidence": "It works as a standalone paragraph: it contrasts the md:71 falls (Bitcoin further in each) with the regain counts, and it needs no pronoun antecedent. It is supported by sources/baur-lucey-2006...txt:69 ('A safe haven is defined as a security that loses none of its value in...') and baur-mcdermott-2009...txt:104 ('some asset that holds its value in stormy weather'), and it matches md:38. 'Afterwards' holds in every episode: Bitcoin's regain dates (2020-05-07, 2024-01-08, 2025-05-02) all fall after the S&P troughs (2020-03-23, 2022-10-12, 2025-04-08). 'Recover sooner' is true only for the count from the high (see the S2 finding). The source line break at 73-74 is a soft break inside one paragraph.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:R3-B1",
+   "claim": "It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.",
+   "verdict": "REFUTED",
+   "evidence": "Refuter: scratchpad/post26-r3/logic/checks.py, built on build_analysis.read_sp500, read_bitcoin, daily_prices and episode_table. From the S&P 500 high: Bitcoin 55/505/51, S&P 500 126/513/89 (= results.json regain_days). From each asset's own low: Bitcoin 39 (2020-03-12 to 2020-05-07), 325 (2022-09-21 to 2024-01-08), 17 (2025-04-08 to 2025-05-02); S&P 500 103, 318, 55. Only the sh-3 footnote states the anchor: make_charts.py:195-196, \"'Back' counts S&P 500 trading days from the high\". Adjudicator: Created by round 2. round2-scope.md had 'It also first closed back at its level on the S&P 500's high day sooner in each'. Round 2 swapped 'first' for ', after its lowest point in the episode,' (md:71), which puts the asset's low right next to the counts. Nothing in md:65-74 says where the counts start; only the sh-3 footnote does (make_charts.py:195-196). My rerun (adj_checks.py, using build_analysis.read_sp500, read_bitcoin, daily_prices and episode_table) counts from the S&P 500 high and matches results.json and build_analysis.py:252-261: Bitcoin 55/505/51, S&P 500 126/513/89. Counted from each asset's own low the figures change: Bitcoin 39 (2020-03-12 to 2020-05-07), 325 (2022-09-21 to 2024-01-08), 17 (2025-04-08 to 2025-05-02); S&P 500 103, 318, 55. On that reading every figure is wrong and the 2022 comparison reverses (325 against 318). An ordinary reader can take it that way; no hostile reading is needed. Before round 2 the project's own register made the same mistake: gate.toml:81's reason said regain_days 'counts from the asset's lowest point' (round2-verdicts.json r2:consistency:C4). Round 2 also had a fix that stated the anchor (r2:facts:R2A-01) but applied the shorter R2-B1 text. Why MODERATE and not HIGH: under the coded rule the figures are right, the footnote sta",
+   "fixed": true,
+   "fix": "The finder's narrow fix is acceptable. It only adds the sh-3 footnote's anchor: 'It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each, counting S&P 500 trading days from that high: 55 against 126, 505 against 513, and 51 against 89.' An equivalent wording that moves the low away from the counts (R2A-01's form): 'It also closed back at its level on the S&P 500's high day sooner in each, counting S&P 500 trading days from that high to the first such close after its lowest point in the episode: 55 against 126, 505 against 513, and 51 against 89.' gate.toml:81 already registers 'lowest point in the episode'; rerun the gate after the change. The delete-only fallback (cut the colon and the figures) is weaker. 'Sooner' stays true by date (2020-05-07 vs 2020-08-18, 2024-01-08 vs 2024-01-19, 2025-05-02 vs 2025-06-27), but the 2022 from-the-low reading is still possible."
+  },
+  {
+   "id": "r3:logic:R3-B2",
+   "claim": "The daily counts batch whole weeks onto Sundays for some countries, and have no French new-case figures in the weeks covering 5 March to 5 May 2020.** So the Covid aside uses weekly sums.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: build_analysis.py:85-94 turns blank New_cases into zero before the weekly sum (build_analysis.py:341-345); results.json covid.france_cases_in_window = 0; covid_check.py shows FR New_cases blank on all 70 days, 2020-03-02 to 2020-05-10. md:89 keeps the two apart: 'so I summed world cases by week ... The counts have gaps too'. Adjudicator: Out of scope: round 2 neither changed nor created this. round2-scope.md already had '...have no French figures in the weeks covering 5 March to 5 May 2020.** So the Covid aside uses weekly sums.' Round 2 changed only 'figures' to 'new-case figures' (fixes from r2:logic:R2-B8 and r2:facts:R2A-02), so the two-clauses-then-'So' structure is the same before and after. Round 2 also saw it and did not raise it: round2-verdicts.json r2:consistency:item:S45 says ''So ... weekly sums' answers only the first clause; weekly sums do not restore France' (CONFIRMED, no fix). On the merits it would be LOW. build_analysis.py:89 turns blank New_cases into 0 before the weekly resample (build_analysis.py:341), and FR New_cases is blank on all 70 days from 2020-03-02 to 2020-05-10 (adj_covid_out.txt), so weekly sums do not fill the France gap. md:89 keeps the two problems apart.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:R3-B3",
+   "claim": "and have no French new-case figures in the weeks covering 5 March to 5 May 2020",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: covid_check.py on data/covid_who.csv, 2020-03-02 to 2020-05-10: FR blank on all 70 days, while GP Guadeloupe sums 154, MQ Martinique 186, GF French Guiana 141, RE Réunion 430 and YT Mayotte 890, each with non-blank rows. md:89 reads 'no new-case figures for France in those weeks'. Adjudicator: Out of scope: 'French' is older than round 2. Round 1 had 'record no French cases' and round 2 had 'no French figures' (round2-scope.md). Round 2 only inserted 'new-case', and its adjudicators (R2-B8, R2A-02) kept 'French'. The gap between md:89 ('for France') and the README ('French') was there before round 2, so round 2 created no new inconsistency. On the merits it would be LOW. adj_covid.py: the FR row is named 'France', has 70 rows and 0 non-blank New_cases. In the same window other rows do have figures: GP 154, MQ 186, GF 'French Guiana' 141, RE 430, YT 890, PF 'French Polynesia' 60, MF 'Saint Martin (French part)' 38. So rows that WHO itself names French contradict 'no French new-case figures'. The finder's overseas-department argument would also hit 'for France'. The stronger case for 'for France' is that it names WHO's 'France' row.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:R3-B4",
+   "claim": "| `btc_coinmetrics_github.csv` | Coin Metrics, Inc., free data archive on GitHub, column `PriceUSD` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: coinmetrics_github_README.md:41 'published in the hope it will be useful, but without any warranty'; cc_by-nc_4.0_deed.txt:266-268 'If supplied, you must provide ... a disclaimer notice, and a link to the material'; md:112 carries 'published by Coin Metrics \"without any warranty\"' and the github.com/coinmetrics/data link; a string check finds no 'warranty' in data/README.md:9. Adjudicator: Out of scope: the omission is older than round 2. Row 9's Source cell is the same in round2-scope.md ('Coin Metrics, Inc., free data archive on GitHub, column `PriceUSD` | CC BY-NC 4.0'); round 2 only turned the licence name into a link (design 8.8). data/README.md has 0 hits for 'warranty', before and after. Round 2 already ruled real=false on the same omission on the committed charts (SRC_BTC, make_charts.py:36; r2:logic:R2-B7). Its grounds: the gap was pre-existing, and the deed allows credit 'in any reasonable manner' (cc_by-nc_4.0_deed.txt:207-209). Design 8.8 says the README carries 'licence links and the FRED series link, matching the page'. That is true of the items it lists; it does not claim the README carries every element of the page. The data file itself is not committed (../.gitignore '*/data/*', '!*/data/README.md'). The page carries the notice at md:112, as coinmetrics_github_README.md:41 requires. The only remedy is an addition, outside the delete-or-narrow rule.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:R3-B5",
+   "claim": "Copyright © 2016, S&P Dow Jones Indices LLC. All rights reserved. Full notice on the [FRED series page](https://fred.stlouisfed.org/series/SP500)",
+   "verdict": "CONFIRMED",
+   "evidence": "Refuter: fred_sp500_series_page.txt:204 (6 sentences, counted by script); fred_legal_notices.txt:117 'keep any copyright notices that appear with the data', :171, :277 'keep all copyright or other proprietary notices intact', :415; design 8.6 leaves pasting the full notice to the owner; round 1 logic:L8 and rights:R5-1 were closed by the delete-only fallback. Adjudicator: The finder says it is not new, and I confirm that. fred_sp500_series_page.txt:204 has six sentences; data/README.md:8 and md:111 print sentences 1 and 2 word for word and link the rest. round2-scope.md already had 'Full notice on the FRED series page'. Round 2 only made it a link, which narrows the gap rather than widening it. Earlier rounds ruled on the same residual: r2:logic:R2-B5 (real=false, the owner's residual under design 8.6, design.md:243-246), and round 1 logic:L8 and rights:R5-1 were closed by the delete-only fallback. No new inconsistency.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:item:S1 md:6 'My draft noted a fall on 11 March, then a",
+   "claim": "S1 md:6 'My draft noted a fall on 11 March, then a significant rise again.'",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/2020-draft.txt:13 'Terdapat penurunan harga pada tanggal 11 Maret, lalu kembali naik signifikan' (a price fall on 11 March, then a significant rise again): faithful paraphrase. Antecedent is now explicit ('My draft'), so the round 2 dangling 'It' (R2-B11, C6) is gone; flow 'Bitcoin, I wrote ... My draft noted ... So during a pandemic' stays in reported speech. Hostile check: in the post's own data Bitcoin rose on 11 March (PriceUSD 7,909.93 on 10 Mar, 7,939.34 on 11 Mar, 4,959.31 on 12 Mar; my run on data/btc_coinmetrics_github.csv), and md:22 says the fall bottomed on 12 March. Because the date is now attributed to the draft, md:22 reads as the data's date and md:24 'My draft saw it' as the draft's view of the same crash (round 1 confirmed the draft's Figure 2 shows the crash just after the 11 March point). gate.toml:25 reason quotes ('My draft noted') and matches. No em or en dash on the line.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:item:S2 md:71 'It also closed back at its level on the ",
+   "claim": "S2 md:71 'It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.'",
+   "verdict": "REFUTED",
+   "evidence": "Figures are right under the computed rule: my scratch checks.py (imports build_analysis readers, episode_table) gives counts from the S&P 500 high of 126/55, 513/505, 89/51, equal to results.json episodes[*].*.regain_days, and the closing-back dates are earlier for Bitcoin in each (2020-05-07 vs 2020-08-18, 2024-01-08 vs 2024-01-19, 2025-05-02 vs 2025-06-27), so 'sooner' holds by date. But the sentence never says where the count starts. Round 2's insertion 'after its lowest point in the episode' now sits right before 'sooner ... 55 trading days', making the asset's low the nearest anchor. Counting from each asset's own low (same script): Bitcoin 39, 325, 17 trading days; S&P 500 103, 318, 55. Under that reading every figure is wrong and 2022 reverses (Bitcoin 325 vs S&P 318, so Bitcoin was slower). Only the sh-3 footnote (make_charts.py:195-196, 'counts S&P 500 trading days from the high') states the anchor; the prose does not. Pronoun 'its' (both uses) resolves to Bitcoin; for the S&P 500 both readings of 'its lowest point' coincide with the trough. See finding R3-B1.",
+   "fixed": true,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:item:S3 md:89 'The counts have gaps too: the daily coun",
+   "claim": "S3 md:89 'The counts have gaps too: the daily counts have no new-case figures for France in those weeks.'",
+   "verdict": "CONFIRMED",
+   "evidence": "My scratch covid_check.py on data/covid_who.csv (keep_default_na=False): Country_code FR has 70 rows from 2020-03-02 to 2020-05-10 and New_cases is blank on all 70; results.json covid.france_cases_in_window = 0; covid.n_weeks = 10, first_week_end 2020-03-08, last_week_end 2020-05-10, so 'those weeks' = the ten weeks named two sentences earlier. 'no new-case figures' is the right narrowing: France's Cumulative_cases column holds 16 on every one of those rows, so France is not wholly absent. 'the daily counts' has a fair antecedent in 'summed world cases by week' (same paragraph) and matches data/README.md trap 4's 'The daily counts'. build_analysis.py:85-94 treats blanks as zero, so the weekly world sums do exclude France, which the sentence discloses. No WHO name used outside the citation (who_data_terms.txt:64-66; design 8.7).",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:item:S4 md:107 'Gold's verdicts are the same without th",
+   "claim": "S4 md:107 'Gold's verdicts are the same without the May and June 2025 changes.'",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json monthly vs monthly.gold_check (73 changes after dropping 2025-05 and 2025-06, build_analysis.py:29 and :301): worst10 gold weak safe haven both (mean -0.53, CI -4.02 to 2.96, n 8); worst20 weak both (0.56, CI -1.53 to 2.64, n 15); ex2020 weak both (-0.56, CI -4.74 to 3.61, n 7); hedge r 0.164 p 0.159 vs r 0.160 p 0.177, chance either way. 'verdicts' does not cover the rolling range, which does move (min -0.294 to -0.314), so the word choice keeps it true. Hostile parse: right after 'fixings to May 2025 and ... spot rates from June 2025', a reader may take 'changes' as the definition change; that reading still lands on 'the definition switch does not drive gold's verdict', which the dropped June change (the one straddling the two definitions) supports, and md:80 and md:116 already use 'monthly changes' as the term. Deleting the reason clause in round 2 left no dangling reference.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:item:S5 md:107 'Covid-19 cases are the daily counts, su",
+   "claim": "S5 md:107 'Covid-19 cases are the daily counts, summed by week (World Health Organization, 2023).'",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.py:341-345 sums WHO daily rows over Monday-to-Sunday weeks (resample W-SUN), matching 'summed by week' and md:89 'summed world cases by week'. 'the daily counts' picks up md:89's same phrase (reading order 89 before 107). The in-text citation points to the reference at md:168-169, whose title and URL are WHO's own metadata citation (sources/who_covid19_data_page.txt:257); WHO's name appears only as a citation, per who_data_terms.txt:64-66 and design 8.7. Nothing new conflicts with md:89 or the data README.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:item:S6 README.md:14-15 verdicts line",
+   "claim": "S6 README.md:14-15 verdicts line",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json window_2020.fc1 = {smaller_fall: False, lower_vol: False, survives: False} (Bitcoin fall 0.4578 vs 0.2601); worst_days.primary.bitcoin.verdict 'not a safe haven' (k 81, mean -4.39); worst_days.without_crash 'not a safe haven'; fc3.daily_bitcoin.holds true; monthly.worst10.gold 'weak safe haven' (-0.53). The added clause 'tested against the S&P 500 instead of LQ45' matches md:10-13 and design 1 scope, and stops the line being quoted as a verdict on LQ45 (README.md:3-4 names LQ45). Same wording as md:136-138, so no new inconsistency; omitting the Bitcoin monthly verdict is an omission, not a contradiction. 'by this test' after 'by my test' is the post's own phrasing at md:137.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:item:S7 data/README.md:8-10 S&P licence cell, Bitcoin r",
+   "claim": "S7 data/README.md:8-10 S&P licence cell, Bitcoin row, gold source cell",
+   "verdict": "CONFIRMED",
+   "evidence": "Adjudicator (R3-B2 to R3-B5, real=false): out of round 3 scope; text predates round 2 and earlier rounds ruled on it (S&P notice: owner decision 8.6). Lens note: Gold cell: exact string check passes, 'The World Bank: ' + Description!A1 + ': ' + Description!T103 (sources/worldbank_pinksheet_description_gold.txt:7,13) is in data/README.md:10, in the form required by worldbank_terms_datasets.txt:191. S&P cell: 'Copyright © 2016, S&P Dow Jones Indices LLC. All rights reserved.' is verbatim from fred_sp500_series_page.txt:204, but that notice has 6 sentences and the cell keeps 2 and links the rest, while fred_legal_notices.txt:117, :171, :277 and :415 ask users to keep the notices intact (pre-existing, owner-gated by design 8.6; finding R3-B5). Bitcoin row:",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:item:S8 data/README.md:10-11 gold 'Monthly prices, colu",
+   "claim": "S8 data/README.md:10-11 gold 'Monthly prices, column Gold | CC BY 4.0' and WHO row",
+   "verdict": "CONFIRMED",
+   "evidence": "WHO cell equals sources/who_covid19_data_page.txt:257 verbatim (string check), the citation WHO's terms require (who_data_terms.txt:52-54), and it names WHO only as that citation (who_data_terms.txt:64-66, design 8.7). CC BY 4.0 for WHO: who_data_terms.txt:42 'Unless specifically indicated otherwise'; for the World Bank: worldbank_terms_datasets.txt 'Unless specifically labeled otherwise' (the 'Official Use Only' tag is the owner's 8.6 decision, not reopened). 'Monthly prices, column Gold' follows the required credit after its closing 'World Bank.' and reads as a file note, not part of the source list. Hostile rights check: neither cell retains the WB or WHO warranty disclaimers (worldbank_terms_datasets.txt:264; who_data_terms.txt:74), but the page's credits (md:113-114) do not either, so this is not newly inconsistent, and the README links the World Bank page (data/README.md:19) and WHO's URL, which CC BY 4.0's reasonable-manner rule allows.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:item:S9 data/README.md:31-32 trap 4",
+   "claim": "S9 data/README.md:31-32 trap 4",
+   "verdict": "CONFIRMED",
+   "evidence": "Adjudicator (R3-B2 to R3-B5, real=false): out of round 3 scope; text predates round 2 and earlier rounds ruled on it (S&P notice: owner decision 8.6). Lens note: Facts hold narrowly: covid_check.py finds 14 countries whose nonzero new cases in the window fall only on Sundays (BG, DE, EE, ES, GR, IS, LU, LV, MK, MT, NL, PT, SI, UA), and WHO's France row (FR) is blank on all 70 days, 2020-03-02 to 2020-05-10. Two defects. (a) 'So the Covid aside uses weekly sums' follows a two-part bold sentence, so it reads as weekly sums curing both problems; weekly sums fix the Sunday batching only, and the France gap carries into every weekly total (build_analysis.py:85-94 counts blanks as zero; covid.france_cases_in_window = 0). md:89 keeps the two apart ('so I summ",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r3:logic:item:Context md:73-74 'A safe haven is supposed to hold",
+   "claim": "Context md:73-74 'A safe haven is supposed to hold its value while stocks are falling, not to recover sooner afterwards.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Stands alone after round 2 deleted 'That is not what safe means.': 'its' resolves to 'a safe haven' inside the sentence, so nothing dangles. 'recover sooner' picks up md:71's 'sooner', and 'hold its value while stocks are falling' contrasts with md:71's 'Bitcoin fell further in each'. Matches the post's definition at md:38 ('keeps its value when the market falls') and the sources: baur-mcdermott-2009 txt:104 'some asset that holds its value in stormy weather'; baur-lucey-2006 txt:69 'loses none of its value'. Hostile quote test: quoted alone, it is a general definition with no figure or recommendation, so it cannot be turned into a pro-Bitcoin or advice line. Its rebuttal only works if md:71 is read as a recovery-speed claim, which R3-B1 narrows without changing this paragraph.",
+   "fixed": false,
+   "fix": null
+  }
+ ]
+}

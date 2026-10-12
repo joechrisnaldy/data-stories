@@ -1,0 +1,107 @@
+# Gate configuration for Post 26. Run from Projects/analytics-blog:  python3 -m gate safe-haven-retest
+[post]
+slug = "the-dip-i-waved-away"
+source = "draft/the-dip-i-waved-away.src.md"
+rendered = "draft/the-dip-i-waved-away.md"
+results = "results.json"
+sources = "docs/sources.json"
+build = ["build_analysis.py"]
+charts = "make_charts.py"
+chart_dir = "charts"
+docx = "draft/the-dip-i-waved-away.docx"
+mdx = "../../joechrisnaldy-portfolio/site/src/content/blog/the-dip-i-waved-away.mdx"
+extra = [["docs/README.src.md", "README.md"], ["docs/data-README.src.md", "data/README.md"]]
+
+# ---------------------------------------------------------------------------------------------------
+# [allow]: words or digits that are not results. Every entry says why. Stale entries fail the gate.
+[allow]
+"S&P 500" = "the index's name, not a quantity"
+"Covid-19" = "the disease's name"
+"COVID-19" = "the disease's name, in WHO's spelling"
+"CC BY-NC 4.0" = "licence name and version"
+"CC BY 4.0" = "licence name and version"
+"SHA-256" = "hash algorithm name"
+"Post 26" = "the series index of this post"
+"late 2020" = "when the original proposal was drafted: its sources were accessed on 1 December 2020 (sources/2020-draft.txt)"
+"11 March" = "the date as the 2020 draft gives it (sources/2020-draft.txt:13), attributed to the draft ('My draft noted'), not a result"
+"5 March to 5 May 2020" = "the 2020 draft's window (design section 1), a definition, not a result"
+"indexed to 100" = "index base of chart 1, a convention"
+"2020 claim" = "the claim made in the 2020 draft"
+"2020 draft" = "the original proposal's year"
+"2020 self" = "the author's self in the year of the original proposal"
+"since 2020" = "the sample start year, meta.start_year"
+"February 2020 high" = "the S&P 500 peak that opens the 2020 episode, episodes[peak_year=2020].peak (2020-02-19)"
+"May 2025" = "World Bank Pink Sheet Description sheet: the gold definition changed from June 2025 (sources/worldbank_pinksheet_description_gold.txt)"
+"June 2025" = "same source as 'May 2025'"
+"in 2024 and 2025" = "vet round 1: FRED CBBTCUSD carries next-day prices for dates 2024-09-08 to 2025-11-03 (data/README.md)"
+"September 2024 to November 2025" = "same vet finding as 'in 2024 and 2025'"
+"May 2026" = "the last date in the Coin Metrics archive, meta.bitcoin_last (2026-05-23)"
+"Copyright © 2016" = "the year printed in S&P Dow Jones Indices' copyright line (sources/fred_sp500_series_page.txt:204); the line is reproduced verbatim and the full notice is linked"
+"World Health Organization 2023" = "WHO's own metadata citation, printed as WHO's terms require (sources/who_covid19_data_page.txt)"
+"section 8" = "section number of the design document"
+"Chapter one" = "the 2020 draft's chapter number"
+"chapter one" = "the 2020 draft's chapter number"
+"Two things change" = "enumeration; 'It goes global' and 'And it adds' follow"
+"Two dates" = "section heading: the window's first and last dates, 5 March and 5 May 2020, against the path between them"
+"split it in two" = "the hedge and safe-haven split just described"
+"zero" = "the null value of the test, not a measurement"
+"two-day" = "the horizon of the robustness check, design section 2"
+"Two-day" = "the horizon of the robustness check, design section 2"
+"into one report" = "WHO's statement that some countries group several days of data (sources/who_covid19_about_page.txt)"
+"Three things changed" = "enumeration of the three amendments listed in the same sentence (design 8.1 to 8.3)"
+"The four charts" = "make_charts.py writes four files; the fresh check fails on any chart no script produces"
+"from one S&P 500 trading day to the next" = "idiom for consecutive trading days, not a count"
+"the first trading day or the second" = "the two pairings of non-overlapping two-day returns (design 8.5)"
+
+# ---------------------------------------------------------------------------------------------------
+# [claims]: the register of universal, superlative and causal sentences, each with what licenses it.
+# Round 1's logic lens reviews THIS list.
+[claims]
+"I never finished it" = "the 2020 draft has a chapter one and headings for the rest (sources/2020-draft.txt)"
+"worst 5 percent of days" = "definition of the test: the S&P 500's lowest k daily log returns, k = 5% of returns rounded up (build_analysis.worst_periods; rules.worst_days)"
+"worst 5 percent of the remaining days" = "the same definition on the sample without the 2020 crash (worst_days.without_crash)"
+"worst 1 percent of days" = "the same definition at 1% (worst_days.worst1)"
+"worst 1 percent of two-day periods" = "the same definition at 1% on two-day returns (worst_days.two_day_worst1_pairing1 and _pairing2)"
+"worst 10 percent of months" = "the S&P 500's lowest k monthly log changes, k = 10% rounded up (monthly.worst10, monthly.ex2020)"
+"worst 20 percent of months" = "the same at 20% (monthly.worst20)"
+"worst 5% of days" = "chart wording of 'worst 5 percent of days'"
+"worst 10% of months" = "chart wording of 'worst 10 percent of months'"
+"the market's worst days" = "Baur and Lucey (2006) and Baur and McDermott (2009) condition on the lowest return quantiles (sources, provenance audit)"
+"the stock market's worst days" = "the test's step 1, defined in the same list as the S&P 500's worst 5 percent of days"
+"The worst days" = "section heading for the worst-days and worst-months tests"
+"worst days and months" = "chart 2 title: the two tests just defined"
+"the worst-days test" = "the test defined in the post's numbered list"
+"worst-days and worst-months averages" = "the two tests' averages"
+"largest fall inside the window" = "max_fall over the 2020 window: the largest peak-to-trough fall (window_2020.*.fall)"
+"S&P 500's largest fall" = "max_fall over the 2020 window for the S&P 500 (window_2020.sp500.fall)"
+"Bitcoin's largest fall" = "max_fall over the 2020 window for Bitcoin (window_2020.bitcoin.fall)"
+"largest fall in that window" = "FC1's measure, max_fall (window_2020.*.fall)"
+"Largest fall between the S&P 500's high and its low" = "chart 3 axis: each asset's largest peak-to-trough fall inside the window from the S&P 500's high to its low (episodes[*].*.fall)"
+"Bitcoin's and the S&P 500's largest fall between the S&P 500's high and its low" = "chart 3 alt text, the axis definition naming the two assets drawn: each asset's largest peak-to-trough fall inside the window from the S&P 500's high to its low (episodes[*].*.fall)"
+"the lowest close before the high was regained" = "the episode rule, design section 2 (find_episodes)"
+"lowest close before the high was regained" = "chart wording of the episode rule"
+"lowest point in the episode" = "regain_days counts S&P 500 trading days from the high to the first close at or above the high-day level after the asset's lowest point between the high and the S&P 500 low (build_analysis.regain_days)"
+"all-time" = "running maximum of the FRED file (from 2016-10-10); each episode peak (3386.15, 4796.56, 6144.15) exceeds every earlier close in the file; that it exceeds every pre-file close is general knowledge, not a stored source (find_episodes)"
+"the monthly test cannot tell" = "FC2b verdict 'cannot tell' (monthly.ex2020.bitcoin.verdict; design 8.2 rule)"
+"All rights reserved" = "S&P Dow Jones Indices' copyright line, verbatim from sources/fred_sp500_series_page.txt:204, on the page, the charts and the data README"
+"is not responsible for any errors or omissions" = "S&P Dow Jones Indices' own notice, verbatim from sources/fred_sp500_series_page.txt:204 (pasted by the owner, matched exactly once); S&P's terms, not a claim by the author"
+"regardless of the cause" = "S&P Dow Jones Indices' own notice, verbatim from sources/fred_sp500_series_page.txt:204 (pasted by the owner, matched exactly once); S&P's terms, not a claim by the author"
+"S&P DISCLAIMS ANY AND ALL EXPRESS OR IMPLIED WARRANTIES" = "S&P Dow Jones Indices' own notice, verbatim from sources/fred_sp500_series_page.txt:204 (pasted by the owner, matched exactly once); S&P's terms, not a claim by the author"
+
+# ---------------------------------------------------------------------------------------------------
+# [pairs]: paragraphs that set like-for-like figures from different samples side by side while relying
+# on an n stated elsewhere. Each says where.
+[pairs]
+"Bitcoin fell further in each" = {reason = "each episode's two figures share a window; the three episodes are different windows by construction, defined in the previous paragraph, and the comparison is within each episode", paths = ["episodes[peak_year=2020].bitcoin", "episodes[peak_year=2020].sp500", "episodes[peak_year=2022].bitcoin", "episodes[peak_year=2022].sp500", "episodes[peak_year=2025].bitcoin", "episodes[peak_year=2025].sp500"]}
+
+# ---------------------------------------------------------------------------------------------------
+# [published]: templates for the MDX's hand-written fields. The gate renders each and requires it to
+# equal what is live. Figures here are bound exactly like the draft's.
+[published]
+"seoTitle" = "The Dip I Waved Away - Jonathan Chrisnaldy"
+"excerpt" = "In late 2020 I wrote that Bitcoin was more stable and safer than Indonesia's LQ45 stocks. I saw the dip and waved it away. Here is the test I should have run, against the S&P 500 and gold."
+"metaDescription" = "My 2020 draft called Bitcoin safer than LQ45 stocks. On the S&P 500's worst {{rules.worst_days:pct0}} percent of days from {{meta.start_year:year}} to {{meta.daily_end_year:year}}, Bitcoin's average log return was {{worst_days.primary.bitcoin.mean_pct:signed1}} percent. A safe-haven test anyone can run, with gold for comparison."
+"alt:sh-1-window.png" = "Line chart of Bitcoin and the S&P 500 from 5 March to 5 May 2020, both indexed to 100 on the first day. Bitcoin's largest fall inside the window was {{window_2020.bitcoin.fall:pct0}} percent, bottoming on {{window_2020.bitcoin.low_day:int}} March; the S&P 500's largest fall was {{window_2020.sp500.fall:pct0}} percent. Bitcoin ended the window at {{window_2020.bitcoin.return_pct:signed1}} percent and the S&P 500 at {{window_2020.sp500.return_pct:signed1}} percent."
+"alt:sh-2-safe-haven-test.png" = "Strip charts. Left: Bitcoin's log return on each of the S&P 500's worst {{rules.worst_days:pct0}}% of days, {{worst_days.primary.n:int}} days, averaging {{worst_days.primary.bitcoin.mean_pct:signed1}} percent against the S&P 500's {{worst_days.primary.sp500_mean_pct:signed1}}. Middle and right: Bitcoin's and gold's log change in calendar-month averages in the S&P 500's worst {{rules.worst_months:pct0}}% of months, {{monthly.worst10.n:int}} months, averaging {{monthly.worst10.bitcoin.mean_pct:signed1}} and {{monthly.worst10.gold.mean_pct:signed1}} percent against the S&P 500's {{monthly.worst10.sp500_mean_pct:signed1}}. Thick horizontal bars mark the averages and thin vertical bars their {{rules.confidence:pct0}}% confidence intervals."
+"alt:sh-3-episodes.png" = "Horizontal bar chart of Bitcoin's and the S&P 500's largest fall between the S&P 500's high and its low, in the {{meta.n_episodes:words}} S&P 500 falls of {{rules.episode_fall:pct0}}% or more since 2020. Bitcoin fell further in each: {{episodes[peak_year=2020].bitcoin.fall:pct0}} percent against {{episodes[peak_year=2020].sp500.fall:pct0}} across the {{episodes[peak_year=2020].sp500.n:int}} S&P 500 closes from the {{episodes[peak_year=2020].peak_year:year}} fall's high to its low, {{episodes[peak_year=2022].bitcoin.fall:pct0}} against {{episodes[peak_year=2022].sp500.fall:pct0}} across the {{episodes[peak_year=2022].sp500.n:int}} closes of the {{episodes[peak_year=2022].peak_year:year}} fall, and {{episodes[peak_year=2025].bitcoin.fall:pct0}} against {{episodes[peak_year=2025].sp500.fall:pct0}} across the {{episodes[peak_year=2025].sp500.n:int}} of the {{episodes[peak_year=2025].peak_year:year}} fall."
+"alt:sh-4-rolling.png" = "Line chart of the correlation of log changes in calendar-month averages with the S&P 500 over rolling {{rules.roll_months:int}}-month windows ending January {{monthly.rolling.bitcoin.first_year:year}} to April {{meta.last_month_year:year}}. Bitcoin's stays between {{monthly.rolling.bitcoin.min:dec2}} and {{monthly.rolling.bitcoin.max:dec2}}; gold's ranges between {{monthly.rolling.gold.min:signed2}} and {{monthly.rolling.gold.max:dec2}}. Over the whole period the correlations are {{monthly.hedge.bitcoin.r:dec2}} for Bitcoin and {{monthly.hedge.gold.r:dec2}} for gold."

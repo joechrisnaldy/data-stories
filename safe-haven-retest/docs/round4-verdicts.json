@@ -1,0 +1,32 @@
+{
+ "round": 4,
+ "date": "2026-10-11",
+ "lenses_dispatched": 1,
+ "lenses_returned": 1,
+ "lenses_errored": 0,
+ "lenses": [
+  "facts, logic and consistency (refute-first)"
+ ],
+ "scope": [
+  "It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each, counting S&P 500 trading days from that high: 55 against 126, 505 against 513, and 51 against 89.",
+  "[data/README.md] **The daily counts batch whole weeks onto Sundays for some countries, and have no new-case figures for France in the weeks covering 5 March to 5 May 2020.** So the Covid aside uses weekly sums."
+ ],
+ "findings": [
+  {
+   "id": "r4:item:1",
+   "claim": "Scope 1, draft md:71: 'It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each, counting S&P 500 trading days from that high: 55 against 126, 505 against 513, and 51 against 89.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Refutation failed. Independent recompute from the raw CSVs, without importing build_analysis (scratch post26-r4/refute/regain_r4.py, output regain_r4.out; episodes rebuilt from the md:69 rule on the whole FRED history). 2020 (high 2020-02-19, S&P low 2020-03-23): Bitcoin level 9,636.00, its low 2020-03-12 (4,959.31), first close at or above 2020-05-07 = 55 S&P trading days from the high; S&P back 2020-08-18 = 126. 2022 (high 2022-01-03, low 2022-10-12): Bitcoin level 46,453.43, low 2022-09-21 (18,506.76), back 2024-01-08 = 505; S&P back 2024-01-19 = 513. 2025 (high 2025-02-19, low 2025-04-08): Bitcoin level 96,647.91, low 2025-04-08, back 2025-05-02 = 51; S&P back 2025-06-27 = 89. All six equal results.json episodes[*].*.regain_days and src.md:71 placeholders, and match build_analysis.py:252-261 (count = get_loc(back) - get_loc(start), start = e['peak'], low = idxmin over peak..trough, build_analysis.py:275). Refutation attempts, all failed: (a) origin: the sentence now says 'from that high', which is what the code counts; the from-own-low reading (Bitcoin 39/325/17, S&P 103/318/55, 2022 reversed) is ruled out by the new clause. (b) 'its lowest point' read as the S&P 500's trough (nearest possessor): first close back after the S&P trough gives the same 55/505/51. (c) 'episode' read as high to regain day instead of high to trough: Bitcoin's 2022 low moves to 2022-11-09 but the back date and 505 are unchanged. (d) '>=' versus '>': identical dates. (e) a weekend regain hidden by sampling on S&P days: on calendar-day Bitcoin the first close back is 2020-05-07 (Thu), 2024-01-08 (Mon), 2025-05-02 (Fri), so the same counts. (f) 'S&P 500 trading days' equals FRED non-blank rows: every blank weekday in the three spans is an NYSE holiday (e.g. 2020-04-10, 2022-06-20, 2023-01-02, 2025-04-18, 2025-06-19), no weekday is missing a row, and the annual counts are 253/252/251/250/252/250. (g) the 'after its lowest point' clause is needed and present: without it Bitcoin would count 2 (2020) and 58 (2022). (h) 'sooner in each': 55<126, 505<513, 51<89, and by date too. Agreement: make_charts.py:193-196 and the rendered charts/sh-3-episodes.png footnote ('Back counts S&P 500 trading days from the high until the asset closed at or above its level on that day, after its lowest point in the episode') give the same origin, unit and event. The bar labels read 'back in 126/55/513/505/89/51 trading days'. gate.toml:81 says the same. 'Back at' versus the footnote's 'at or above' is idiomatic, not a misstatement: Bitcoin's first back closes were +3.71%, +1.14% and +0.20% above the level, and no delete-or-narrow fix applies. Next paragraph md:73-74 ('not to recover sooner afterwards'): all six back dates fall after the S&P troughs (2020-05-07 > 2020-03-23, 2024-01-08 > 2022-10-12, 2025-05-02 > 2025-04-08). In place: 'It' resolves to Bitcoin (previous sentence), 'that high' to 'the S&P 500's high day', 'the episode' to the md:69 definition, and 'In the 2022 episode they were close' (505 vs 513) still follows. There are no U+2013/U+2014 dashes in md:71 or md:73-74 (code-point check), and the docx (saved 09:39) carries the same sentence. Residual, not a defect: the sentence stacks four comma-set modifiers, but once the counting clause is there, no reading gives a false figure.",
+   "fixed": false,
+   "fix": null
+  },
+  {
+   "id": "r4:item:2",
+   "claim": "Scope 2, data/README.md:31-32 trap 4: 'The daily counts batch whole weeks onto Sundays for some countries, and have no new-case figures for France in the weeks covering 5 March to 5 May 2020.'",
+   "verdict": "CONFIRMED",
+   "evidence": "Refutation failed. scratch post26-r4/refute/france_r4.py (output france_r4.out) reads data/covid_who.csv with keep_default_na=False and dtype=str. 5 March 2020 is a Thursday and 5 May 2020 a Tuesday, so the covering WHO Monday-to-Sunday weeks run 2020-03-02 to 2020-05-10. That matches results.json covid first_week_end 2020-03-08, last_week_end 2020-05-10 and n_weeks 10. Country_code FR (Country 'France') has 70 rows on 70 distinct dates in that span, and New_cases is the empty string in all 70. Cumulative_cases is '16' in all 70 and New_deaths is non-blank on 9, so 'new-case figures' is the right narrowing and France is not absent from the file. The last FR New_cases before the span is 2020-02-23 (4) and the next is 2020-05-17 (677). The strict 5 March to 5 May span has 62 rows, all blank. results.json covid.france_cases_in_window = 0 (build_analysis.py:356-363, blanks turned to 0 at build_analysis.py:89). The narrowing from 'French' removes the round 3 contradiction: rows WHO itself names French do have figures in the span (GF French Guiana 38 non-blank, sum 141; PF French Polynesia sum 60; MF Saint Martin (French part) sum 38). Residual attempt: France read as including its overseas departments, which have figures (GP 154, MQ 186, RE 430, YT 890, GF 141). It fails because this README describes the file, and the file lists those as separate rows from the row it names 'France'. It also uses the same words as the post (md:89 'no new-case figures for France in those weeks'), so the README and the post agree. First clause, rechecked: in the span, 14 countries (BG DE EE ES GR IS LU LV MK MT NL PT SI UA) have 3 or more positive counts, all on Sundays. For ES and DE, every Sunday count equals that week's rise in Cumulative_cases, so these are whole weeks batched onto Sundays. data/README.md is identical to docs/data-README.src.md (empty diff), and lines 31-32 contain no en or em dashes.",
+   "fixed": false,
+   "fix": null
+  }
+ ]
+}

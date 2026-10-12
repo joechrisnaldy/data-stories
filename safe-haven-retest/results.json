@@ -1,0 +1,693 @@
+{
+ "meta": {
+  "start": "2020-01-02",
+  "start_year": 2020,
+  "start_month": 1,
+  "start_day": 2,
+  "daily_end": "2026-05-22",
+  "daily_end_year": 2026,
+  "daily_end_month": 5,
+  "daily_end_day": 22,
+  "bitcoin_last": "2026-05-23",
+  "n_trading_days": 1606,
+  "n_daily_returns": 1605,
+  "n_sp500_rows_in_range": 1606,
+  "first_month": "2020-01",
+  "last_month": "2026-04",
+  "last_month_year": 2026,
+  "last_month_number": 4,
+  "n_months": 76,
+  "n_monthly_changes": 75,
+  "gold_last_month": "2026-09",
+  "sp500_last": "2026-10-09",
+  "n_episodes": 3,
+  "n_episodes_robust": 3
+ },
+ "rules": {
+  "worst_days": 0.05,
+  "worst_days_robust": 0.01,
+  "worst_months": 0.1,
+  "worst_months_robust": 0.2,
+  "episode_fall": 0.15,
+  "episode_fall_robust": 0.1,
+  "roll_days": 90,
+  "roll_months": 24,
+  "confidence": 0.95
+ },
+ "window_2020": {
+  "n_days": 43,
+  "n_returns": 42,
+  "first": "2020-03-05",
+  "last": "2020-05-05",
+  "sample": "dfd871408c",
+  "sp500": {
+   "return_pct": -5.142297796913963,
+   "fall": 0.26010436715014185,
+   "daily_vol_pct": 4.521746597096745,
+   "low_vs_start_pct": -26.010436715014183,
+   "low_day": 23,
+   "low_month": 3,
+   "n": 43,
+   "sample": "dfd871408c"
+  },
+  "bitcoin": {
+   "return_pct": -0.8467334935082449,
+   "fall": 0.45782581200406347,
+   "daily_vol_pct": 9.17321625085375,
+   "low_vs_start_pct": -45.277240894683366,
+   "low_day": 12,
+   "low_month": 3,
+   "n": 43,
+   "sample": "dfd871408c"
+  },
+  "bitcoin_every_day": {
+   "n": 62,
+   "fall": 0.45782581200406347,
+   "daily_vol_pct": 7.741515560171687
+  },
+  "fc1": {
+   "smaller_fall": false,
+   "lower_vol": false,
+   "survives": false
+  }
+ },
+ "worst_days": {
+  "primary": {
+   "share": 0.05,
+   "k": 81,
+   "n_total": 1605,
+   "n": 81,
+   "sample": "cda75d8655",
+   "sp500_mean_pct": -3.134389814204398,
+   "sp500_threshold_pct": -1.8042794099790704,
+   "bitcoin": {
+    "n": 81,
+    "mean_pct": -4.391197865997159,
+    "t": -5.610231232549353,
+    "p": 2.802993218128814e-07,
+    "ci_low_pct": -5.948845293773596,
+    "ci_high_pct": -2.833550438220723,
+    "n_up": 16,
+    "share_up": 0.19753086419753085,
+    "verdict": "not a safe haven",
+    "sample": "cda75d8655"
+   }
+  },
+  "worst1": {
+   "share": 0.01,
+   "k": 17,
+   "n_total": 1605,
+   "n": 17,
+   "sample": "c877a80628",
+   "sp500_mean_pct": -5.59235692803891,
+   "sp500_threshold_pct": -3.5925571226009367,
+   "bitcoin": {
+    "n": 17,
+    "mean_pct": -7.7787486439525715,
+    "t": -2.560021097272283,
+    "p": 0.02097377507930872,
+    "ci_low_pct": -14.220184024776431,
+    "ci_high_pct": -1.3373132631287117,
+    "n_up": 4,
+    "share_up": 0.23529411764705882,
+    "verdict": "not a safe haven",
+    "sample": "c877a80628"
+   }
+  },
+  "without_crash": {
+   "share": 0.05,
+   "k": 80,
+   "n_total": 1582,
+   "n": 80,
+   "sample": "6318e183fa",
+   "sp500_mean_pct": -2.5934334113788626,
+   "sp500_threshold_pct": -1.7123020373770004,
+   "bitcoin": {
+    "n": 80,
+    "mean_pct": -3.7487129900130833,
+    "t": -6.71673344977831,
+    "p": 2.5872888522264233e-09,
+    "ci_low_pct": -4.859614087228759,
+    "ci_high_pct": -2.6378118927974072,
+    "n_up": 16,
+    "share_up": 0.2,
+    "verdict": "not a safe haven",
+    "sample": "6318e183fa"
+   }
+  },
+  "two_day_pairing1": {
+   "share": 0.05,
+   "k": 41,
+   "n_total": 802,
+   "n": 41,
+   "sample": "5aa4a7650b",
+   "sp500_mean_pct": -4.115715565002213,
+   "sp500_threshold_pct": -2.6275703520202143,
+   "bitcoin": {
+    "n": 41,
+    "mean_pct": -6.48065547156948,
+    "t": -4.269655934150449,
+    "p": 0.00011701978983054351,
+    "ci_low_pct": -9.548324972027462,
+    "ci_high_pct": -3.412985971111497,
+    "n_up": 7,
+    "share_up": 0.17073170731707318,
+    "verdict": "not a safe haven",
+    "sample": "5aa4a7650b"
+   }
+  },
+  "two_day_worst1_pairing1": {
+   "share": 0.01,
+   "k": 9,
+   "n_total": 802,
+   "n": 9,
+   "sample": "73a233ea1f",
+   "sp500_mean_pct": -6.740221219487225,
+   "sp500_threshold_pct": -4.777645933012664,
+   "bitcoin": {
+    "n": 9,
+    "mean_pct": -11.770887087474907,
+    "t": -2.0954473228757498,
+    "p": 0.06942742493172493,
+    "ci_low_pct": -24.724548104105462,
+    "ci_high_pct": 1.1827739291556476,
+    "n_up": 2,
+    "share_up": 0.2222222222222222,
+    "verdict": "weak safe haven",
+    "sample": "73a233ea1f"
+   }
+  },
+  "two_day_without_crash_pairing1": {
+   "share": 0.05,
+   "k": 40,
+   "n_total": 790,
+   "n": 40,
+   "sample": "9195eb6b2f",
+   "sp500_mean_pct": -3.5300787790535693,
+   "sp500_threshold_pct": -2.356430071966109,
+   "bitcoin": {
+    "n": 40,
+    "mean_pct": -5.253264556991191,
+    "t": -4.855534187469087,
+    "p": 1.9736735117224707e-05,
+    "ci_low_pct": -7.441639740796786,
+    "ci_high_pct": -3.0648893731855944,
+    "n_up": 7,
+    "share_up": 0.175,
+    "verdict": "not a safe haven",
+    "sample": "9195eb6b2f"
+   }
+  },
+  "two_day_pairing2": {
+   "share": 0.05,
+   "k": 41,
+   "n_total": 802,
+   "n": 41,
+   "sample": "f5e6be10ec",
+   "sp500_mean_pct": -4.100209503914601,
+   "sp500_threshold_pct": -2.335267126779783,
+   "bitcoin": {
+    "n": 41,
+    "mean_pct": -3.5182625320503607,
+    "t": -3.4107730838571677,
+    "p": 0.0014928445779231877,
+    "ci_low_pct": -5.603031481886893,
+    "ci_high_pct": -1.4334935822138284,
+    "n_up": 9,
+    "share_up": 0.21951219512195122,
+    "verdict": "not a safe haven",
+    "sample": "f5e6be10ec"
+   }
+  },
+  "two_day_worst1_pairing2": {
+   "share": 0.01,
+   "k": 9,
+   "n_total": 802,
+   "n": 9,
+   "sample": "c9d3c12aed",
+   "sp500_mean_pct": -6.908714474346558,
+   "sp500_threshold_pct": -4.8525489944004185,
+   "bitcoin": {
+    "n": 9,
+    "mean_pct": -1.206632349866727,
+    "t": -0.4828172353775486,
+    "p": 0.6421605433859321,
+    "ci_low_pct": -6.969680941717351,
+    "ci_high_pct": 4.5564162419838965,
+    "n_up": 3,
+    "share_up": 0.3333333333333333,
+    "verdict": "weak safe haven",
+    "sample": "c9d3c12aed"
+   }
+  },
+  "two_day_without_crash_pairing2": {
+   "share": 0.05,
+   "k": 40,
+   "n_total": 790,
+   "n": 40,
+   "sample": "0d3ca1c262",
+   "sp500_mean_pct": -3.4926890275713074,
+   "sp500_threshold_pct": -2.2523690553560627,
+   "bitcoin": {
+    "n": 40,
+    "mean_pct": -3.350218942954504,
+    "t": -3.532200249072813,
+    "p": 0.0010770078563726861,
+    "ci_low_pct": -5.268699481487964,
+    "ci_high_pct": -1.4317384044210444,
+    "n_up": 9,
+    "share_up": 0.225,
+    "verdict": "not a safe haven",
+    "sample": "0d3ca1c262"
+   }
+  },
+  "robustness": {
+   "n_checks": 8,
+   "n_same": 6,
+   "differ": [
+    "two_day_worst1_pairing1",
+    "two_day_worst1_pairing2"
+   ]
+  }
+ },
+ "hedge_daily": {
+  "primary": {
+   "r": 0.3980723424315601,
+   "p": 4.413505833052058e-62,
+   "n": 1605,
+   "sample": "001633623d"
+  },
+  "two_day_pairing1": {
+   "r": 0.4240176113367603,
+   "p": 2.4562079589452996e-36,
+   "n": 802,
+   "sample": "cb5546e69c"
+  },
+  "two_day_pairing2": {
+   "r": 0.3099031571215458,
+   "p": 2.592802109288798e-19,
+   "n": 802,
+   "sample": "6d4538e406"
+  },
+  "rolling": {
+   "window": 90,
+   "min": -0.03813163524810064,
+   "max": 0.6270674051857028,
+   "min_date": "2024-02-29",
+   "max_date": "2022-07-12",
+   "n": 1516
+  }
+ },
+ "episodes": [
+  {
+   "peak": "2020-02-19",
+   "trough": "2020-03-23",
+   "end": "2020-08-18",
+   "peak_year": 2020,
+   "trough_year": 2020,
+   "primary": true,
+   "sp500_fall": 0.3392495902426059,
+   "sp500": {
+    "fall": 0.3392495902426059,
+    "regain_days": 126,
+    "at_stock_trough_pct": -33.924959024260595,
+    "n": 24,
+    "sample": "3197b7aada"
+   },
+   "bitcoin": {
+    "fall": 0.48882530139355396,
+    "regain_days": 55,
+    "at_stock_trough_pct": -32.68568794094458,
+    "n": 24,
+    "sample": "3197b7aada"
+   }
+  },
+  {
+   "peak": "2022-01-03",
+   "trough": "2022-10-12",
+   "end": "2024-01-19",
+   "peak_year": 2022,
+   "trough_year": 2022,
+   "primary": true,
+   "sp500_fall": 0.2542509631902864,
+   "sp500": {
+    "fall": 0.2542509631902864,
+    "regain_days": 513,
+    "at_stock_trough_pct": -25.42509631902864,
+    "n": 196,
+    "sample": "23e2f4fe2e"
+   },
+   "bitcoin": {
+    "fall": 0.6100860873705862,
+    "regain_days": 505,
+    "at_stock_trough_pct": -58.76104176869744,
+    "n": 196,
+    "sample": "23e2f4fe2e"
+   }
+  },
+  {
+   "peak": "2025-02-19",
+   "trough": "2025-04-08",
+   "end": "2025-06-27",
+   "peak_year": 2025,
+   "trough_year": 2025,
+   "primary": true,
+   "sp500_fall": 0.18902207791150916,
+   "sp500": {
+    "fall": 0.18902207791150916,
+    "regain_days": 89,
+    "at_stock_trough_pct": -18.902207791150914,
+    "n": 35,
+    "sample": "a8175634f7"
+   },
+   "bitcoin": {
+    "fall": 0.22400948221308137,
+    "regain_days": 51,
+    "at_stock_trough_pct": -21.000436610413498,
+    "n": 35,
+    "sample": "a8175634f7"
+   }
+  }
+ ],
+ "monthly": {
+  "worst10": {
+   "share": 0.1,
+   "k": 8,
+   "n_total": 75,
+   "n": 8,
+   "sample": "03309af567",
+   "sp500_mean_pct": -7.413696132684821,
+   "sp500_threshold_pct": -3.2859380877102495,
+   "bitcoin": {
+    "n": 8,
+    "mean_pct": -13.07764491477499,
+    "t": -2.647166267060644,
+    "p": 0.03307747979959847,
+    "ci_low_pct": -24.759463584039388,
+    "ci_high_pct": -1.3958262455105883,
+    "n_up": 2,
+    "share_up": 0.25,
+    "verdict": "not a safe haven",
+    "sample": "03309af567"
+   },
+   "gold": {
+    "n": 8,
+    "mean_pct": -0.5313581298750703,
+    "t": -0.3597135112608715,
+    "p": 0.729668749559283,
+    "ci_low_pct": -4.024310940514334,
+    "ci_high_pct": 2.961594680764193,
+    "n_up": 2,
+    "share_up": 0.25,
+    "verdict": "weak safe haven",
+    "sample": "03309af567"
+   }
+  },
+  "worst20": {
+   "share": 0.2,
+   "k": 15,
+   "n_total": 75,
+   "n": 15,
+   "sample": "912480b558",
+   "sp500_mean_pct": -4.925582208847098,
+   "sp500_threshold_pct": -1.0886916914545353,
+   "bitcoin": {
+    "n": 15,
+    "mean_pct": -7.899703276595625,
+    "t": -2.308935862248687,
+    "p": 0.03672246395615925,
+    "ci_low_pct": -15.237792958152168,
+    "ci_high_pct": -0.5616135950390801,
+    "n_up": 5,
+    "share_up": 0.3333333333333333,
+    "verdict": "not a safe haven",
+    "sample": "912480b558"
+   },
+   "gold": {
+    "n": 15,
+    "mean_pct": 0.5566697976361942,
+    "t": 0.5728028562343613,
+    "p": 0.5758628654378622,
+    "ci_low_pct": -1.5277087255175195,
+    "ci_high_pct": 2.641048320789908,
+    "n_up": 6,
+    "share_up": 0.4,
+    "verdict": "weak safe haven",
+    "sample": "912480b558"
+   }
+  },
+  "ex2020": {
+   "share": 0.1,
+   "k": 7,
+   "n_total": 64,
+   "n": 7,
+   "sample": "167ffc5f3a",
+   "sp500_mean_pct": -5.450484760205931,
+   "sp500_threshold_pct": -3.2859380877102495,
+   "bitcoin": {
+    "n": 7,
+    "mean_pct": -10.302107884057168,
+    "t": -2.18306835674985,
+    "p": 0.07175713278253698,
+    "ci_low_pct": -21.849318394131974,
+    "ci_high_pct": 1.2451026260176383,
+    "n_up": 2,
+    "share_up": 0.2857142857142857,
+    "verdict": "cannot tell",
+    "sample": "167ffc5f3a"
+   },
+   "gold": {
+    "n": 7,
+    "mean_pct": -0.5624695511331649,
+    "t": -0.32983399489001985,
+    "p": 0.7527365580289891,
+    "ci_low_pct": -4.73521533203685,
+    "ci_high_pct": 3.6102762297705198,
+    "n_up": 2,
+    "share_up": 0.2857142857142857,
+    "verdict": "weak safe haven",
+    "sample": "167ffc5f3a"
+   }
+  },
+  "hedge": {
+   "bitcoin": {
+    "r": 0.5145465169120345,
+    "p": 2.3293249705856543e-06,
+    "n": 75,
+    "sample": "0be06a97d9"
+   },
+   "gold": {
+    "r": 0.1642653097424812,
+    "p": 0.15905051869662615,
+    "n": 75,
+    "sample": "0be06a97d9"
+   }
+  },
+  "gold_check": {
+   "worst10": {
+    "share": 0.1,
+    "k": 8,
+    "n_total": 73,
+    "n": 8,
+    "sample": "03309af567",
+    "sp500_mean_pct": -7.413696132684821,
+    "sp500_threshold_pct": -3.2859380877102495,
+    "bitcoin": {
+     "n": 8,
+     "mean_pct": -13.07764491477499,
+     "t": -2.647166267060644,
+     "p": 0.03307747979959847,
+     "ci_low_pct": -24.759463584039388,
+     "ci_high_pct": -1.3958262455105883,
+     "n_up": 2,
+     "share_up": 0.25,
+     "verdict": "not a safe haven",
+     "sample": "03309af567"
+    },
+    "gold": {
+     "n": 8,
+     "mean_pct": -0.5313581298750703,
+     "t": -0.3597135112608715,
+     "p": 0.729668749559283,
+     "ci_low_pct": -4.024310940514334,
+     "ci_high_pct": 2.961594680764193,
+     "n_up": 2,
+     "share_up": 0.25,
+     "verdict": "weak safe haven",
+     "sample": "03309af567"
+    }
+   },
+   "worst20": {
+    "share": 0.2,
+    "k": 15,
+    "n_total": 73,
+    "n": 15,
+    "sample": "912480b558",
+    "sp500_mean_pct": -4.925582208847098,
+    "sp500_threshold_pct": -1.0886916914545353,
+    "bitcoin": {
+     "n": 15,
+     "mean_pct": -7.899703276595625,
+     "t": -2.308935862248687,
+     "p": 0.03672246395615925,
+     "ci_low_pct": -15.237792958152168,
+     "ci_high_pct": -0.5616135950390801,
+     "n_up": 5,
+     "share_up": 0.3333333333333333,
+     "verdict": "not a safe haven",
+     "sample": "912480b558"
+    },
+    "gold": {
+     "n": 15,
+     "mean_pct": 0.5566697976361942,
+     "t": 0.5728028562343613,
+     "p": 0.5758628654378622,
+     "ci_low_pct": -1.5277087255175195,
+     "ci_high_pct": 2.641048320789908,
+     "n_up": 6,
+     "share_up": 0.4,
+     "verdict": "weak safe haven",
+     "sample": "912480b558"
+    }
+   },
+   "ex2020": {
+    "share": 0.1,
+    "k": 7,
+    "n_total": 62,
+    "n": 7,
+    "sample": "167ffc5f3a",
+    "sp500_mean_pct": -5.450484760205931,
+    "sp500_threshold_pct": -3.2859380877102495,
+    "bitcoin": {
+     "n": 7,
+     "mean_pct": -10.302107884057168,
+     "t": -2.18306835674985,
+     "p": 0.07175713278253698,
+     "ci_low_pct": -21.849318394131974,
+     "ci_high_pct": 1.2451026260176383,
+     "n_up": 2,
+     "share_up": 0.2857142857142857,
+     "verdict": "cannot tell",
+     "sample": "167ffc5f3a"
+    },
+    "gold": {
+     "n": 7,
+     "mean_pct": -0.5624695511331649,
+     "t": -0.32983399489001985,
+     "p": 0.7527365580289891,
+     "ci_low_pct": -4.73521533203685,
+     "ci_high_pct": 3.6102762297705198,
+     "n_up": 2,
+     "share_up": 0.2857142857142857,
+     "verdict": "weak safe haven",
+     "sample": "167ffc5f3a"
+    }
+   },
+   "hedge": {
+    "bitcoin": {
+     "r": 0.5072334894348034,
+     "p": 4.6555623337386995e-06,
+     "n": 73,
+     "sample": "527bdbb5d6"
+    },
+    "gold": {
+     "r": 0.15985600268940942,
+     "p": 0.17671394092177262,
+     "n": 73,
+     "sample": "527bdbb5d6"
+    }
+   },
+   "rolling": {
+    "window": 24,
+    "n": 50,
+    "sample": "c0b51c499c",
+    "min": -0.31376980531676324,
+    "max": 0.4929686122394997,
+    "last": -0.12540935279504165,
+    "n_negative": 17,
+    "first_month": "2022-01",
+    "last_month": "2026-04",
+    "first_year": 2022
+   }
+  },
+  "first_change": "2020-02",
+  "first_change_year": 2020,
+  "rolling": {
+   "bitcoin": {
+    "window": 24,
+    "n": 52,
+    "sample": "c328d56f3b",
+    "min": 0.2903602288952309,
+    "max": 0.5966545976121007,
+    "last": 0.4290626193440579,
+    "n_negative": 0,
+    "first_month": "2022-01",
+    "last_month": "2026-04",
+    "first_year": 2022
+   },
+   "gold": {
+    "window": 24,
+    "n": 52,
+    "sample": "c328d56f3b",
+    "min": -0.2942339936980038,
+    "max": 0.4929686122394997,
+    "last": -0.13149281842462027,
+    "n_negative": 19,
+    "first_month": "2022-01",
+    "last_month": "2026-04",
+    "first_year": 2022
+   }
+  }
+ },
+ "fc3": {
+  "daily_bitcoin": {
+   "full": "not a safe haven",
+   "without": "not a safe haven",
+   "holds": true
+  },
+  "daily_bitcoin_two_day_pairing1": {
+   "full": "not a safe haven",
+   "without": "not a safe haven",
+   "holds": true
+  },
+  "daily_bitcoin_two_day_pairing2": {
+   "full": "not a safe haven",
+   "without": "not a safe haven",
+   "holds": true
+  },
+  "monthly_bitcoin": {
+   "full": "not a safe haven",
+   "without": "cannot tell",
+   "holds": false
+  },
+  "monthly_gold": {
+   "full": "weak safe haven",
+   "without": "weak safe haven",
+   "holds": true
+  }
+ },
+ "covid": {
+  "n_weeks": 10,
+  "first_week_end": "2020-03-08",
+  "last_week_end": "2020-05-10",
+  "cases_bitcoin": {
+   "r": -0.5023347658013182,
+   "p": 0.138968694875385,
+   "n": 10,
+   "sample": "5f8a8c1228"
+  },
+  "cases_sp500": {
+   "r": -0.5419367262281902,
+   "p": 0.10562180360684938,
+   "n": 10,
+   "sample": "5f8a8c1228"
+  },
+  "bitcoin_sp500": {
+   "r": 0.3334683266357172,
+   "p": 0.34638614146881697,
+   "n": 10,
+   "sample": "5f8a8c1228"
+  },
+  "france_cases_in_window": 0
+ }
+}

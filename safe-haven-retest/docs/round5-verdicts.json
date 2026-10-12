@@ -1,0 +1,312 @@
+{
+  "round": 5,
+  "date": "2026-10-12",
+  "lenses_dispatched": 3,
+  "lenses_returned": 3,
+  "lenses_errored": 0,
+  "lenses": [
+    "numbers and definitions, recomputed from the raw data (refute-first)",
+    "sources, quotations and rights (refute-first)",
+    "consistency, charts as drawn, style and hostile reader (refute-first)"
+  ],
+  "scope": [
+    "- S&P 500, as the notice reads on the [FRED series page](https://fred.stlouisfed.org/series/SP500): Copyright © 2016, S&P Dow Jones Indices LLC.",
+    "Reproduction of S&P 500 in any form is prohibited except with the prior written permission of S&P Dow Jones Indices LLC (\"S&P\").",
+    "S&P does not guarantee the accuracy, adequacy, completeness or availability of any information and is not responsible for any errors or omissions, regardless of the cause or for the results obtained from the use of such information.",
+    "S&P DISCLAIMS ANY AND ALL EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE OR USE.",
+    "In no event shall S&P be liable for any direct, indirect, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or lost profit and opportunity costs) in connection with subscriber's or others' use of S&P 500. - Bitcoin: Coin Metrics, Inc., from [github.com/coinmetrics/data](https://github.com/coinmetrics/data), licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/), and published by Coin Metrics \"without any warranty\". - Gold: The World Bank: World Bank Commodity Price Data (The Pink Sheet): Bloomberg Finance L.P.; Kitco.com; International Monetary Fund, International Financial Statistics; London Bullion Market; Metals Week; Platts Metals Week; Shearson Lehman Brothers, Metal Market Weekly Review; Thomson Reuters Datastream; World Bank.",
+    "[data/README.md] Full notice below | | `btc_coinmetrics_github.csv` | Coin Metrics, Inc., free data archive on GitHub, column `PriceUSD` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) | | `gold_worldbank_CMO-Historical-Data-Monthly.xlsx` | The World Bank: World Bank Commodity Price Data (The Pink Sheet): Bloomberg Finance L.P.; Kitco.com; International Monetary Fund, International Financial Statistics; London Bullion Market; Metals Week; Platts Metals Week; Shearson Lehman Brothers, Metal Market Weekly Review; Thomson Reuters Datastream; World Bank.",
+    "[data/README.md] ## S&P 500 notice",
+    "[data/README.md] As it reads on the [FRED series page](https://fred.stlouisfed.org/series/SP500):",
+    "[data/README.md] > Copyright © 2016, S&P Dow Jones Indices LLC.",
+    "[data/README.md] Reproduction of S&P 500 in any form is prohibited except with the prior written permission of S&P Dow Jones Indices LLC (\"S&P\").",
+    "[data/README.md] S&P does not guarantee the accuracy, adequacy, completeness or availability of any information and is not responsible for any errors or omissions, regardless of the cause or for the results obtained from the use of such information.",
+    "[data/README.md] S&P DISCLAIMS ANY AND ALL EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE OR USE.",
+    "[data/README.md] In no event shall S&P be liable for any direct, indirect, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or lost profit and opportunity costs) in connection with subscriber's or others' use of S&P 500.",
+    "[[published] seoTitle] The Dip I Waved Away - Jonathan Chrisnaldy",
+    "[[published] excerpt] In late 2020 I wrote that Bitcoin was more stable and safer than Indonesia's LQ45 stocks.",
+    "[[published] excerpt] I saw the dip and waved it away.",
+    "[[published] excerpt] Here is the test I should have run, against the S&P 500 and gold.",
+    "[[published] metaDescription] My 2020 draft called Bitcoin safer than LQ45 stocks.",
+    "[[published] metaDescription] On the S&P 500's worst 5 percent of days from 2020 to 2026, Bitcoin averaged minus 4.4 percent.",
+    "[[published] metaDescription] A safe-haven test anyone can run, with gold for comparison.",
+    "[[published] alt:sh-1-window.png] Line chart of Bitcoin and the S&P 500 from 5 March to 5 May 2020, both indexed to 100 on the first day.",
+    "[[published] alt:sh-1-window.png] Bitcoin's largest fall inside the window was 46 percent, bottoming on 12 March; the S&P 500's largest fall was 26 percent.",
+    "[[published] alt:sh-1-window.png] Bitcoin ended the window at minus 0.8 percent and the S&P 500 at minus 5.1 percent.",
+    "[[published] alt:sh-2-safe-haven-test.png] Strip charts.",
+    "[[published] alt:sh-2-safe-haven-test.png] Left: Bitcoin's log return on each of the S&P 500's worst 5% of days, 81 days, averaging minus 4.4 percent against the S&P 500's minus 3.1.",
+    "[[published] alt:sh-2-safe-haven-test.png] Middle and right: Bitcoin's and gold's log change in calendar-month averages in the S&P 500's worst 10% of months, 8 months, averaging minus 13.1 and minus 0.5 percent against the S&P 500's minus 7.4.",
+    "[[published] alt:sh-2-safe-haven-test.png] Bars show 95% confidence intervals.",
+    "[[published] alt:sh-3-episodes.png] Horizontal bar chart of the three S&P 500 falls of 15% or more since 2020, measured from the S&P 500's high to its low.",
+    "[[published] alt:sh-3-episodes.png] Bitcoin fell further in each: 49 percent against 34 over the 24 trading days of 2020's fall, 61 against 25 over the 196 of 2022's, and 22 against 19 over the 35 of 2025's.",
+    "[[published] alt:sh-4-rolling.png] Line chart of the correlation of monthly log changes with the S&P 500 over rolling 24-month windows ending January 2022 to April 2026.",
+    "[[published] alt:sh-4-rolling.png] Bitcoin's stays between 0.29 and 0.60; gold's moves from 0.49 to minus 0.29.",
+    "[[published] alt:sh-4-rolling.png] Over the whole period the correlations are 0.51 for Bitcoin and 0.16 for gold."
+  ],
+  "findings": [
+    {
+      "id": "r5:item:1",
+      "claim": "Scope 1: - S&P 500, as the notice reads on the [FRED series page](https://fred.stlouisfed.org/series/SP500): Copyright © 2016, S&P Dow Jones Indices LLC.",
+      "verdict": "CONFIRMED",
+      "evidence": "Byte-identical (sha256 a21d99f4...cc65fc, 844 chars) to sources/fred_sp500_series_page.txt:204, to the Wayback copy of 2026-10-06 and to the live FRED page read 2026-10-12; renders correctly in the draft and MDX (sources and consistency lenses, scripted equality).",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:2",
+      "claim": "Scope 2: Reproduction of S&P 500 in any form is prohibited except with the prior written permission of S&P Dow Jones Indices LLC (\"S&P\").",
+      "verdict": "CONFIRMED",
+      "evidence": "Byte-identical (sha256 a21d99f4...cc65fc, 844 chars) to sources/fred_sp500_series_page.txt:204, to the Wayback copy of 2026-10-06 and to the live FRED page read 2026-10-12; renders correctly in the draft and MDX (sources and consistency lenses, scripted equality).",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:3",
+      "claim": "Scope 3: S&P does not guarantee the accuracy, adequacy, completeness or availability of any information and is not responsible for any errors or omissions, regardless of the cause or for the results obtained from the use of such information.",
+      "verdict": "CONFIRMED",
+      "evidence": "Byte-identical (sha256 a21d99f4...cc65fc, 844 chars) to sources/fred_sp500_series_page.txt:204, to the Wayback copy of 2026-10-06 and to the live FRED page read 2026-10-12; renders correctly in the draft and MDX (sources and consistency lenses, scripted equality).",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:4",
+      "claim": "Scope 4: S&P DISCLAIMS ANY AND ALL EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE OR USE.",
+      "verdict": "CONFIRMED",
+      "evidence": "Byte-identical (sha256 a21d99f4...cc65fc, 844 chars) to sources/fred_sp500_series_page.txt:204, to the Wayback copy of 2026-10-06 and to the live FRED page read 2026-10-12; renders correctly in the draft and MDX (sources and consistency lenses, scripted equality).",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:5",
+      "claim": "Scope 5: In no event shall S&P be liable for any direct, indirect, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or lost profit and opportunity costs) in connection with subscriber's or others' use of S&P 500. - Bitcoin: Coin Metrics, Inc., from [github.com/coinmetrics/data](https://github.com/coinmetrics/data), licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/), and published by Coin Metrics \"without any warranty\". - Gold: The World Bank: World Bank Commodity Price Data (The Pink Sheet): Bloomberg Finance L.P.; Kitco.com; International Monetary Fund, International Financial Statistics; London Bullion Market; Metals Week; Platts Metals Week; Shearson Lehman Brothers, Metal Market Weekly Review; Thomson Reuters Datastream; World Bank.",
+      "verdict": "CONFIRMED",
+      "evidence": "Byte-identical (sha256 a21d99f4...cc65fc, 844 chars) to sources/fred_sp500_series_page.txt:204, to the Wayback copy of 2026-10-06 and to the live FRED page read 2026-10-12; renders correctly in the draft and MDX (sources and consistency lenses, scripted equality). Bitcoin credit: sources/coinmetrics_github_README.md:41 ('without any warranty') and :43 (CC BY-NC 4.0); gold credit equals 'The World Bank: ' + Description!A1 + ': ' + Description!T103, the format worldbank_terms_datasets.txt:191 requires.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:6",
+      "claim": "Scope 6: [data/README.md] Full notice below | | `btc_coinmetrics_github.csv` | Coin Metrics, Inc., free data archive on GitHub, column `PriceUSD` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) | | `gold_worldbank_CMO-Historical-Data-Monthly.xlsx` | The World Bank: World Bank Commodity Price Data (The Pink Sheet): Bloomberg Finance L.P.; Kitco.com; International Monetary Fund, International Financial Statistics; London Bullion Market; Metals Week; Platts Metals Week; Shearson Lehman Brothers, Metal Market Weekly Review; Thomson Reuters Datastream; World Bank.",
+      "verdict": "CONFIRMED",
+      "evidence": "data/README.md:8 renders as a three-cell row; the notice it points to is at data/README.md:23-27; PriceUSD is in the btc csv header; the gold string matches worldbank_pinksheet_description_gold.txt:7,13.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:7",
+      "claim": "Scope 7: [data/README.md] ## S&P 500 notice",
+      "verdict": "CONFIRMED",
+      "evidence": "data/README.md:23 renders as an h2 and the notice follows it (rendered with the site's @mdx-js/mdx and remark-gfm).",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:8",
+      "claim": "Scope 8: [data/README.md] As it reads on the [FRED series page](https://fred.stlouisfed.org/series/SP500):",
+      "verdict": "CONFIRMED",
+      "evidence": "data/README.md:25 links https://fred.stlouisfed.org/series/SP500, the live page whose notice matches byte for byte.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:9",
+      "claim": "Scope 9: [data/README.md] > Copyright © 2016, S&P Dow Jones Indices LLC.",
+      "verdict": "CONFIRMED",
+      "evidence": "Byte-identical (sha256 a21d99f4...cc65fc, 844 chars) to sources/fred_sp500_series_page.txt:204, to the Wayback copy of 2026-10-06 and to the live FRED page read 2026-10-12; renders correctly as the data/README.md:27 blockquote (sources and consistency lenses, scripted equality).",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:10",
+      "claim": "Scope 10: [data/README.md] Reproduction of S&P 500 in any form is prohibited except with the prior written permission of S&P Dow Jones Indices LLC (\"S&P\").",
+      "verdict": "CONFIRMED",
+      "evidence": "Byte-identical (sha256 a21d99f4...cc65fc, 844 chars) to sources/fred_sp500_series_page.txt:204, to the Wayback copy of 2026-10-06 and to the live FRED page read 2026-10-12; renders correctly as the data/README.md:27 blockquote (sources and consistency lenses, scripted equality).",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:11",
+      "claim": "Scope 11: [data/README.md] S&P does not guarantee the accuracy, adequacy, completeness or availability of any information and is not responsible for any errors or omissions, regardless of the cause or for the results obtained from the use of such information.",
+      "verdict": "CONFIRMED",
+      "evidence": "Byte-identical (sha256 a21d99f4...cc65fc, 844 chars) to sources/fred_sp500_series_page.txt:204, to the Wayback copy of 2026-10-06 and to the live FRED page read 2026-10-12; renders correctly as the data/README.md:27 blockquote (sources and consistency lenses, scripted equality).",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:12",
+      "claim": "Scope 12: [data/README.md] S&P DISCLAIMS ANY AND ALL EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE OR USE.",
+      "verdict": "CONFIRMED",
+      "evidence": "Byte-identical (sha256 a21d99f4...cc65fc, 844 chars) to sources/fred_sp500_series_page.txt:204, to the Wayback copy of 2026-10-06 and to the live FRED page read 2026-10-12; renders correctly as the data/README.md:27 blockquote (sources and consistency lenses, scripted equality).",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:13",
+      "claim": "Scope 13: [data/README.md] In no event shall S&P be liable for any direct, indirect, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or lost profit and opportunity costs) in connection with subscriber's or others' use of S&P 500.",
+      "verdict": "CONFIRMED",
+      "evidence": "Byte-identical (sha256 a21d99f4...cc65fc, 844 chars) to sources/fred_sp500_series_page.txt:204, to the Wayback copy of 2026-10-06 and to the live FRED page read 2026-10-12; renders correctly as the data/README.md:27 blockquote (sources and consistency lenses, scripted equality).",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:14",
+      "claim": "Scope 14: [[published] seoTitle] The Dip I Waved Away - Jonathan Chrisnaldy",
+      "verdict": "CONFIRMED",
+      "evidence": "Equals the H1 (draft.md:1, MDX:2) plus the site's ' - Jonathan Chrisnaldy' suffix used by all 28 seoTitles; ASCII hyphen-minus, no en or em dash.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:15",
+      "claim": "Scope 15: [[published] excerpt] In late 2020 I wrote that Bitcoin was more stable and safer than Indonesia's LQ45 stocks.",
+      "verdict": "CONFIRMED",
+      "evidence": "sources/2020-draft.txt:13 'jauh lebih stabil' and 'lebih aman daripada membeli saham ... LQ45'; 'late 2020' rests on the references' access date '1 Desember 2020' (2020-draft.txt:63-73), licensed in gate.toml [claims].",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:16",
+      "claim": "Scope 16: [[published] excerpt] I saw the dip and waved it away.",
+      "verdict": "CONFIRMED",
+      "evidence": "Post body draft.md:24 ('That is the dip I waved away. My draft saw it'); 2020-draft.txt:13 notes the 11 March fall, then a significant rise.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:17",
+      "claim": "Scope 17: [[published] excerpt] Here is the test I should have run, against the S&P 500 and gold.",
+      "verdict": "CONFIRMED",
+      "evidence": "The test is set out at draft.md:41-47, run against the S&P 500 at :57 and on gold at :61; no verdict stated, so no stronger than the body.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:18",
+      "claim": "Scope 18: [[published] metaDescription] My 2020 draft called Bitcoin safer than LQ45 stocks.",
+      "verdict": "CONFIRMED",
+      "evidence": "sources/2020-draft.txt:13 'lebih aman daripada membeli saham yang terdaftar di indeks LQ45'.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:19",
+      "claim": "Scope 19: [[published] metaDescription] On the S&P 500's worst 5 percent of days from 2020 to 2026, Bitcoin averaged minus 4.4 percent.",
+      "verdict": "REFUTED",
+      "evidence": "Bitcoin's -4.4 is its mean log return (-4.3912, recomputed independently); the plain mean over the same 81 days is -4.08. The metaDescription stands alone in search results without the Returns note, so 'averaged minus 4.4 percent' misstates it (numbers lens).",
+      "fixed": true,
+      "fix": "Narrowed to the bound key's own measure: 'Bitcoin's average log return was minus 4.4 percent'."
+    },
+    {
+      "id": "r5:item:20",
+      "claim": "Scope 20: [[published] metaDescription] A safe-haven test anyone can run, with gold for comparison.",
+      "verdict": "CONFIRMED",
+      "evidence": "draft.md:41-42 'anyone with a spreadsheet can run it'; sources are free with download commands at data/README.md:14-16; gold compared monthly at draft.md:61.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:21",
+      "claim": "Scope 21: [[published] alt:sh-1-window.png] Line chart of Bitcoin and the S&P 500 from 5 March to 5 May 2020, both indexed to 100 on the first day.",
+      "verdict": "CONFIRMED",
+      "evidence": "make_charts.py:83 idx = 100*w/w.iloc[0], ax.plot lines; window 2020-03-05 to 2020-05-05 (43 rows); y-axis 'Value, indexed to 100 on the first day'.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:22",
+      "claim": "Scope 22: [[published] alt:sh-1-window.png] Bitcoin's largest fall inside the window was 46 percent, bottoming on 12 March; the S&P 500's largest fall was 26 percent.",
+      "verdict": "CONFIRMED",
+      "evidence": "Recomputed from data/*.csv: Bitcoin largest fall 45.78% (high 6 March, low 12 March), S&P 500 26.01%; chart prints 46% and 26% with markers on 12 and 23 March.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:23",
+      "claim": "Scope 23: [[published] alt:sh-1-window.png] Bitcoin ended the window at minus 0.8 percent and the S&P 500 at minus 5.1 percent.",
+      "verdict": "CONFIRMED",
+      "evidence": "Recomputed plain endpoint changes: Bitcoin -0.85%, S&P 500 -5.14% (build_analysis.py:212); chart prints -0.8% and -5.1%.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:24",
+      "claim": "Scope 24: [[published] alt:sh-2-safe-haven-test.png] Strip charts.",
+      "verdict": "CONFIRMED",
+      "evidence": "sh-2 draws three jittered strip panels of dots (make_charts.py:122-135).",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:25",
+      "claim": "Scope 25: [[published] alt:sh-2-safe-haven-test.png] Left: Bitcoin's log return on each of the S&P 500's worst 5% of days, 81 days, averaging minus 4.4 percent against the S&P 500's minus 3.1.",
+      "verdict": "CONFIRMED",
+      "evidence": "k = ceil(0.05 x 1,605) = 81; recomputed mean log returns Bitcoin -4.3912, S&P 500 -3.1344; labelled 'log return'; chart prints n = 81 days.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:26",
+      "claim": "Scope 26: [[published] alt:sh-2-safe-haven-test.png] Middle and right: Bitcoin's and gold's log change in calendar-month averages in the S&P 500's worst 10% of months, 8 months, averaging minus 13.1 and minus 0.5 percent against the S&P 500's minus 7.4.",
+      "verdict": "CONFIRMED",
+      "evidence": "75 monthly changes, k = ceil(7.5) = 8; recomputed mean log changes in calendar-month averages: Bitcoin -13.08, gold -0.53, S&P 500 -7.41; chart prints n = 8 months.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:item:27",
+      "claim": "Scope 27: [[published] alt:sh-2-safe-haven-test.png] Bars show 95% confidence intervals.",
+      "verdict": "REFUTED",
+      "evidence": "make_charts.py:126-127: the thick bars are the averages and only the thin vertical bars are the 95% confidence intervals; the chart's caption says so. 'Bars show 95% confidence intervals' mislabels the average bars (all three lenses).",
+      "fixed": true,
+      "fix": "'Thick bars mark the averages and thin bars their 95% confidence intervals.'"
+    },
+    {
+      "id": "r5:item:28",
+      "claim": "Scope 28: [[published] alt:sh-3-episodes.png] Horizontal bar chart of the three S&P 500 falls of 15% or more since 2020, measured from the S&P 500's high to its low.",
+      "verdict": "REFUTED",
+      "evidence": "Each Bitcoin bar is Bitcoin's own largest fall between the S&P 500's high and low dates (48.9% in 2020), not its change from the S&P high day to the S&P low day (-32.7% in 2020, smaller than the S&P's 33.9). 'Measured from the S&P 500's high to its low' invites the second reading (numbers lens).",
+      "fixed": true,
+      "fix": "Uses the chart axis definition: 'each asset's largest fall between the S&P 500's high and its low', with a matching [claims] entry."
+    },
+    {
+      "id": "r5:item:29",
+      "claim": "Scope 29: [[published] alt:sh-3-episodes.png] Bitcoin fell further in each: 49 percent against 34 over the 24 trading days of 2020's fall, 61 against 25 over the 196 of 2022's, and 22 against 19 over the 35 of 2025's.",
+      "verdict": "REFUTED",
+      "evidence": "episodes[*].sp500.n = len(seg) (build_analysis.py:274-277) counts closes with both the high and the low included: 24, 196 and 35 closes are 23, 195 and 34 trading days from the high, the convention the post uses for regain days (numbers and consistency lenses).",
+      "fixed": true,
+      "fix": "'across the 24 S&P 500 closes from 2020's high to its low, ... the 196 closes of 2022's, ... the 35 of 2025's'."
+    },
+    {
+      "id": "r5:item:30",
+      "claim": "Scope 30: [[published] alt:sh-4-rolling.png] Line chart of the correlation of monthly log changes with the S&P 500 over rolling 24-month windows ending January 2022 to April 2026.",
+      "verdict": "REFUTED",
+      "evidence": "The figures hold only for log changes in calendar-month averages: with month-end log changes Bitcoin's whole-period r is 0.548 and its rolling range 0.34 to 0.61, not 0.51 and 0.29 to 0.60 (numbers lens; the other two lenses noted the looser wording).",
+      "fixed": true,
+      "fix": "'correlation of log changes in calendar-month averages with the S&P 500'."
+    },
+    {
+      "id": "r5:item:31",
+      "claim": "Scope 31: [[published] alt:sh-4-rolling.png] Bitcoin's stays between 0.29 and 0.60; gold's moves from 0.49 to minus 0.29.",
+      "verdict": "REFUTED",
+      "evidence": "Gold's 0.49 (window ending 2024-03) and -0.29 (2025-10) are its high and low; the line starts at 0.22 and ends at -0.13, so 'moves from 0.49 to minus 0.29' reads as start and end, and the template did not enforce max before min (numbers lens; consistency lens flagged the same reading).",
+      "fixed": true,
+      "fix": "'gold's ranges between minus 0.29 and 0.49'."
+    },
+    {
+      "id": "r5:item:32",
+      "claim": "Scope 32: [[published] alt:sh-4-rolling.png] Over the whole period the correlations are 0.51 for Bitcoin and 0.16 for gold.",
+      "verdict": "CONFIRMED",
+      "evidence": "Recomputed monthly whole-period r: Bitcoin 0.5145, gold 0.1643, n = 75 (February 2020 to April 2026); the chart label prints the same.",
+      "fixed": false,
+      "fix": ""
+    },
+    {
+      "id": "r5:rights:1",
+      "claim": "Credits: 'This is a non-commercial post, and no publisher of these data endorses it.'",
+      "verdict": "CONFIRMED",
+      "evidence": "True as written, but FRED's terms (sources/fred_legal_notices.txt:177) bar implying endorsement by FRED or the St. Louis Fed, which the line did not name (sources lens, rights gap 3).",
+      "fixed": true,
+      "fix": "'This is a non-commercial post, not endorsed by FRED, the Federal Reserve Bank of St. Louis or any publisher of these data.'"
+    }
+  ]
+}

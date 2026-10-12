@@ -1,0 +1,10 @@
+9 sentence(s) added or changed since round 2; these are the next round's scope:
+  - My draft noted a fall on 11 March, then a significant rise again.
+  - It also closed back at its level on the S&P 500's high day, after its lowest point in the episode, sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.
+  - The counts have gaps too: the daily counts have no new-case figures for France in those weeks.
+  - Gold's verdicts are the same without the May and June 2025 changes.
+  - Covid-19 cases are the daily counts, summed by week (World Health Organization, 2023).
+  - [README.md] Verdicts: the 2020 claim, tested against the S&P 500 instead of LQ45, was wrong; by my test, Bitcoin was not a safe haven on daily data, with or without the Covid crash; gold was a weak safe haven by this test on monthly data.
+  - [data/README.md] Full notice on the [FRED series page](https://fred.stlouisfed.org/series/SP500) | | `btc_coinmetrics_github.csv` | Coin Metrics, Inc., free data archive on GitHub, column `PriceUSD` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) | | `gold_worldbank_CMO-Historical-Data-Monthly.xlsx` | The World Bank: World Bank Commodity Price Data (The Pink Sheet): Bloomberg Finance L.P.; Kitco.com; International Monetary Fund, International Financial Statistics; London Bullion Market; Metals Week; Platts Metals Week; Shearson Lehman Brothers, Metal Market Weekly Review; Thomson Reuters Datastream; World Bank.
+  - [data/README.md] Monthly prices, column `Gold` | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | | `covid_who.csv` | World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard]. https://data.who.int/dashboards/covid19/more-resources | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+  - [data/README.md] **The daily counts batch whole weeks onto Sundays for some countries, and have no French new-case figures in the weeks covering 5 March to 5 May 2020.** So the Covid aside uses weekly sums.

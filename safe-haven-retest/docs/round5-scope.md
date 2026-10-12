@@ -1,0 +1,33 @@
+32 sentence(s) added or changed since round 4; these are the next round's scope:
+  - - S&P 500, as the notice reads on the [FRED series page](https://fred.stlouisfed.org/series/SP500): Copyright © 2016, S&P Dow Jones Indices LLC.
+  - Reproduction of S&P 500 in any form is prohibited except with the prior written permission of S&P Dow Jones Indices LLC ("S&P").
+  - S&P does not guarantee the accuracy, adequacy, completeness or availability of any information and is not responsible for any errors or omissions, regardless of the cause or for the results obtained from the use of such information.
+  - S&P DISCLAIMS ANY AND ALL EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE OR USE.
+  - In no event shall S&P be liable for any direct, indirect, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or lost profit and opportunity costs) in connection with subscriber's or others' use of S&P 500. - Bitcoin: Coin Metrics, Inc., from [github.com/coinmetrics/data](https://github.com/coinmetrics/data), licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/), and published by Coin Metrics "without any warranty". - Gold: The World Bank: World Bank Commodity Price Data (The Pink Sheet): Bloomberg Finance L.P.; Kitco.com; International Monetary Fund, International Financial Statistics; London Bullion Market; Metals Week; Platts Metals Week; Shearson Lehman Brothers, Metal Market Weekly Review; Thomson Reuters Datastream; World Bank.
+  - [data/README.md] Full notice below | | `btc_coinmetrics_github.csv` | Coin Metrics, Inc., free data archive on GitHub, column `PriceUSD` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) | | `gold_worldbank_CMO-Historical-Data-Monthly.xlsx` | The World Bank: World Bank Commodity Price Data (The Pink Sheet): Bloomberg Finance L.P.; Kitco.com; International Monetary Fund, International Financial Statistics; London Bullion Market; Metals Week; Platts Metals Week; Shearson Lehman Brothers, Metal Market Weekly Review; Thomson Reuters Datastream; World Bank.
+  - [data/README.md] ## S&P 500 notice
+  - [data/README.md] As it reads on the [FRED series page](https://fred.stlouisfed.org/series/SP500):
+  - [data/README.md] > Copyright © 2016, S&P Dow Jones Indices LLC.
+  - [data/README.md] Reproduction of S&P 500 in any form is prohibited except with the prior written permission of S&P Dow Jones Indices LLC ("S&P").
+  - [data/README.md] S&P does not guarantee the accuracy, adequacy, completeness or availability of any information and is not responsible for any errors or omissions, regardless of the cause or for the results obtained from the use of such information.
+  - [data/README.md] S&P DISCLAIMS ANY AND ALL EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE OR USE.
+  - [data/README.md] In no event shall S&P be liable for any direct, indirect, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or lost profit and opportunity costs) in connection with subscriber's or others' use of S&P 500.
+  - [[published] seoTitle] The Dip I Waved Away - Jonathan Chrisnaldy
+  - [[published] excerpt] In late 2020 I wrote that Bitcoin was more stable and safer than Indonesia's LQ45 stocks.
+  - [[published] excerpt] I saw the dip and waved it away.
+  - [[published] excerpt] Here is the test I should have run, against the S&P 500 and gold.
+  - [[published] metaDescription] My 2020 draft called Bitcoin safer than LQ45 stocks.
+  - [[published] metaDescription] On the S&P 500's worst 5 percent of days from 2020 to 2026, Bitcoin averaged minus 4.4 percent.
+  - [[published] metaDescription] A safe-haven test anyone can run, with gold for comparison.
+  - [[published] alt:sh-1-window.png] Line chart of Bitcoin and the S&P 500 from 5 March to 5 May 2020, both indexed to 100 on the first day.
+  - [[published] alt:sh-1-window.png] Bitcoin's largest fall inside the window was 46 percent, bottoming on 12 March; the S&P 500's largest fall was 26 percent.
+  - [[published] alt:sh-1-window.png] Bitcoin ended the window at minus 0.8 percent and the S&P 500 at minus 5.1 percent.
+  - [[published] alt:sh-2-safe-haven-test.png] Strip charts.
+  - [[published] alt:sh-2-safe-haven-test.png] Left: Bitcoin's log return on each of the S&P 500's worst 5% of days, 81 days, averaging minus 4.4 percent against the S&P 500's minus 3.1.
+  - [[published] alt:sh-2-safe-haven-test.png] Middle and right: Bitcoin's and gold's log change in calendar-month averages in the S&P 500's worst 10% of months, 8 months, averaging minus 13.1 and minus 0.5 percent against the S&P 500's minus 7.4.
+  - [[published] alt:sh-2-safe-haven-test.png] Bars show 95% confidence intervals.
+  - [[published] alt:sh-3-episodes.png] Horizontal bar chart of the three S&P 500 falls of 15% or more since 2020, measured from the S&P 500's high to its low.
+  - [[published] alt:sh-3-episodes.png] Bitcoin fell further in each: 49 percent against 34 over the 24 trading days of 2020's fall, 61 against 25 over the 196 of 2022's, and 22 against 19 over the 35 of 2025's.
+  - [[published] alt:sh-4-rolling.png] Line chart of the correlation of monthly log changes with the S&P 500 over rolling 24-month windows ending January 2022 to April 2026.
+  - [[published] alt:sh-4-rolling.png] Bitcoin's stays between 0.29 and 0.60; gold's moves from 0.49 to minus 0.29.
+  - [[published] alt:sh-4-rolling.png] Over the whole period the correlations are 0.51 for Bitcoin and 0.16 for gold.

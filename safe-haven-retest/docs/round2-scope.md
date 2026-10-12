@@ -1,0 +1,48 @@
+# Round 2 scope (sentences added or changed since round 1)
+
+45 sentence(s) added or changed since round 1; these are the next round's scope:
+  - It noted a fall on 11 March, then a significant rise again.
+  - So during a pandemic, Bitcoin was "more promising and safer" than buying LQ45 stocks.
+  - And it adds gold.
+  - The daily tests, and what would count as passing them, were written down before I downloaded any data.
+  - My draft's window ran from 5 March to 5 May 2020.
+  - Bitcoin's daily volatility, the standard deviation of its log returns from one S&P 500 trading day to the next, was 9.2 percent against 4.5 percent for the index, across 43 trading days.
+  - It was a recovery from a fall of 46 percent, in the asset I had just called much more stable.
+  - Baur and McDermott then split the safe haven into weak, an asset uncorrelated with stocks in those conditions, and strong, an asset negatively correlated with them, and note that the weak kind on average keeps its value when the market falls while the strong kind gains (Baur & McDermott, 2009).
+  - Their tests are regressions with extra terms for the market's worst days.
+  - The strong bar has a weakness too: an asset that usually rises can clear it without being negatively correlated with anything.
+  - By my own test, Bitcoin was not a safe haven.
+  - It did not hold for the worst 1 percent of two-day periods, where nine periods remain and the interval includes zero.
+  - Gold averaged minus 0.5 percent, rising in two of the eight months, with an interval from minus 4.0 to plus 3.0: a weak safe haven by my test.
+  - Bitcoin averaged minus 13.1 percent, with an interval from minus 24.8 to minus 1.4: not a safe haven by my test.
+  - It also first closed back at its level on the S&P 500's high day sooner in each: 55 trading days against 126, 505 against 513, and 51 against 89.
+  - That is not what safe means.
+  - On daily returns, Bitcoin moved with the S&P 500 at a correlation of 0.40 across 1,605 daily returns.
+  - Some countries group several days into one report (World Health Organization, n.d.), so I summed world cases by week.
+  - Week-on-week growth in world cases correlated with Bitcoin's weekly return at minus 0.50 (p = 0.14) and with the S&P 500's at minus 0.54 (p = 0.11).
+  - The counts have gaps too: the daily file has no new-case figures for France in those weeks.
+  - My planned neural network would have been trained on daily data from 5 March to 5 May 2020: a single stretch of a single spring, and no way to tell what else was happening.
+  - On that test, over these years, Bitcoin fell with stocks.
+  - Bitcoin is the Coin Metrics reference rate, PriceUSD (Coin Metrics, 2024), from the free data archive of Coin Metrics, Inc.
+  - Gold's verdicts are the same without the May and June 2025 changes, where the series changed definition.
+  - Covid-19 cases are daily reports, summed by week (World Health Organization, 2023).
+  - The full notice is on the [FRED series page](https://fred.stlouisfed.org/series/SP500). - Bitcoin: Coin Metrics, Inc., from [github.com/coinmetrics/data](https://github.com/coinmetrics/data), licensed [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/), and published by Coin Metrics "without any warranty". - Gold: The World Bank: World Bank Commodity Price Data (The Pink Sheet): Bloomberg Finance L.P.; Kitco.com; International Monetary Fund, International Financial Statistics; London Bullion Market; Metals Week; Platts Metals Week; Shearson Lehman Brothers, Metal Market Weekly Review; Thomson Reuters Datastream; World Bank.
+  - Licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). - Covid-19 cases: World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard]. https://data.who.int/dashboards/covid19/more-resources.
+  - **Timing.** Bitcoin's price for a date is fixed at midnight UTC at the end of that day (Coin Metrics, 2024), a few hours after the S&P 500 closes (S&P Dow Jones Indices LLC, 2026), which is why the worst-days test was also run on two-day returns.
+  - **What was fixed in advance, and what was not.** The questions, the daily tests and the conditions that would count as failing them were written before any data was downloaded.
+  - A few smaller choices were settled after the first results, and the design document marks them as such.
+  - By my test, Bitcoin was not a safe haven on daily data, with or without the Covid crash.
+  - Gold was a weak safe haven by this test on monthly data, with or without 2020.
+  - Bitcoin was not a safe haven by my monthly test with 2020 included, and the monthly test cannot tell without it.
+  - (2024, April 3).
+  - *Price*.
+  - Data Knowledge Base.
+  - Retrieved October 9, 2026, from [https://docs.coinmetrics.io/network-data/network-data-overview/market/price](https://docs.coinmetrics.io/network-data/network-data-overview/market/price)
+  - [README.md] In late 2020 I drafted a research proposal claiming Bitcoin was "more stable" and "safer" than Indonesia's LQ45 stocks during the pandemic.
+  - [README.md] Verdicts: the 2020 claim was wrong; by my test, Bitcoin was not a safe haven on daily data, with or without the Covid crash; gold was a weak safe haven by this test on monthly data.
+  - [README.md] | Path | What | |---|---| | `build_analysis.py` | The results the post states, into `results.json` | | `make_charts.py` | The four charts; the figures on each chart read from `results.json` | | `data/README.md` | Sources, credits, licences and download instructions | | `profile_data.py` | The structural checks behind the dataset go/no-go, rerunnable | | `gate.toml` | This post's configuration for the shared gate in `../gate/` | | `docs/README.src.md`, `docs/data-README.src.md` | Templates for this file and `data/README.md`, rendered by the gate | | `docs/2026-10-09-safe-haven-retest-design.md` | The pre-registration, with amendments in section 8 | | `docs/provenance-audit.md` | What each source and data series is, quoted from the document that defines it | | `draft/*.src.md` (not committed) | The draft as written: each figure a `key:fmt` placeholder |
+  - [data/README.md] | File | Source | Licence | |---|---|---| | `sp500_fred.csv` | FRED series `SP500`, S&P Dow Jones Indices LLC | Copyright © 2016, S&P Dow Jones Indices LLC.
+  - [data/README.md] All rights reserved.
+  - [data/README.md] Full notice on the FRED series page | | `btc_coinmetrics_github.csv` | Coin Metrics, Inc., free data archive on GitHub, column `PriceUSD` | CC BY-NC 4.0 | | `gold_worldbank_CMO-Historical-Data-Monthly.xlsx` | The World Bank: World Bank Commodity Price Data (The Pink Sheet), monthly prices, column `Gold`; data sources as listed in the workbook's Description sheet | CC BY 4.0 | | `covid_who.csv` | World Health Organization 2023 data.who.int, WHO Coronavirus (COVID-19) dashboard > More resources [Dashboard], daily frequency file | CC BY 4.0 |
+  - [data/README.md] **No free daily gold price whose terms allowed published charts was found in the vet.** So gold is the World Bank's monthly average, whose definition changed in June 2025.
+  - [data/README.md] **The daily counts batch whole weeks onto Sundays for some countries, and have no French figures in the weeks covering 5 March to 5 May 2020.** So the Covid aside uses weekly sums.
