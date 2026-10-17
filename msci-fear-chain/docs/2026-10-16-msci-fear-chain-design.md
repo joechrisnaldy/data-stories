@@ -126,7 +126,7 @@ BPS inflation release) before it is used.
 Each was decided by the owner on 2026-10-17 after the source vet and before any outcome was computed;
 the detailed rules below were proposed by Claude and shown to the owner with the choice.
 
-**8.1 Stock data and the shock rule move to months.** Reason: no free, licensed, long daily IHSG
+**8.1 Stock data and the shock rule move to months.** (Its series is replaced by 8.6.) Reason: no free, licensed, long daily IHSG
 series exists (IDX publishes daily closes only in patchy PDF yearbooks and bars scraping; TICMI is
 paid and needs written permission for public charts; Stooq needs permission). Replaces section 3 and
 the horizons in section 4:
@@ -174,3 +174,33 @@ fact-check agent. MSCI's announcement, dates and stated reasons are reported fro
 definition of Standalone and the list of Standalone markets, and "Zimbabwe" appears only if such a
 source confirms it. Copies of MSCI documents saved by a vet agent before this rule were deleted on
 2026-10-17. This replaces the MSCI parts of sections 1 and 7.
+
+**8.6 The stock series becomes month-end closes from 2004; the press rule tightens.** Decided by the
+owner on 2026-10-17, after the provenance check and before any outcome was computed. Reason: OECD's
+metadata names Singapore Yahoo Finance as the source of its Indonesian share series (OECD's terms
+leave third-party rights to the user), and its monthly values are averages of daily closes. This
+replaces the series in 8.1; 8.1's shock rule, horizons and conditions stand, applied to month-end
+closes.
+- **Series:** the IHSG month-end close. From December 2005: Bank Indonesia, SEKI Table III.3,
+  credited to Bank Indonesia as its data policy (PBI 12/2024, Article 21(4)) requires. January 2004
+  to November 2005: Bapepam's weekly Statistik Pasar Modal, Table 8, column Akhir (archived copies of
+  Bapepam's own files), which match Bank Indonesia for December 2004 and December 2005.
+- **Checks and precedence, fixed before the checks of 2006 to 2022 report:** every month is compared
+  with the exchange's own publications (IDX statistics books) and with Bapepam or OJK statistics where
+  they exist. Where they disagree with Bank Indonesia, the exchange's figure is used, then Bapepam's
+  or OJK's. Each month's source is recorded in the data README.
+- **1995 to 2003 are not used.** Bank Indonesia's older sheet disagreed with the exchange's own files in
+  9 of 85 checked months and with Bapepam in 7 more, and the owner's rule was to drop it if it did
+  not check out. So 1997 to 1998 appear only in the rupiah and price links.
+- **Episodes** can start no earlier than February 2004, since a shock month needs the month before it.
+- **Incomplete horizons:** an episode counts for a link only if that link's horizon has passed by the
+  as-of date; otherwise it is reported as incomplete and not counted.
+- **Preliminary values** (Bank Indonesia marks June to August 2026 with an asterisk) are used as
+  published and flagged as preliminary.
+- **Press:** ANTARA bars AI use in its robots file and on every article, so it is excluded; Kabar
+  Bursa, IDNFinancials and France24 block Claude and are not used; MarketScreener's terms forbid even
+  partial reproduction, so it is not used. Facts from the remaining outlets (the Jakarta Post's Reuters
+  copy, Jakarta Globe, CNBC Indonesia, CNN Indonesia, Euronews, Fortune Indonesia, Databoks) are stated
+  in the post's own words with citations and no direct quotes. Standalone markets are named only as
+  these outlets name them, with attribution. Copies from the excluded outlets were deleted on
+  2026-10-17. This extends 8.5.
