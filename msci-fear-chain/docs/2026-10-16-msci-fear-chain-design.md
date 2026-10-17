@@ -18,6 +18,8 @@ The fear people repeat is a chain: the downgrade makes **stocks crash and stay d
 - **Stance:** test each link against Indonesia's own history and say which links that history
   supports. The post is not a forecast and not financial advice.
 - AMENDED: see 8.5 (MSCI's documents are not quoted; press coverage is used).
+- AMENDED: see 8.7 (the post is rebuilt around the family; savings, borrowing and unemployment tests are
+  added; fuel is described).
 - **Hook:** "Standalone" is read as "poor, corrupt, at war", because of the company it keeps. MSCI's
   own criteria are size and liquidity and market accessibility (economic development counts only
   for Developed status). The post quotes MSCI's definition from its classification page.
@@ -29,6 +31,8 @@ The fear people repeat is a chain: the downgrade makes **stocks crash and stay d
   Drops Indonesia?"; final wording after the results.
 
 ## 2. Comparison set and its limit
+
+AMENDED: see 8.7 (the 1997 slide in L5 and L6).
 
 - **Indonesia's own history only** (owner decision). No other country's reclassification is used.
 - **Limit, stated in the post:** no past Indonesian shock was an MSCI reclassification. The stock
@@ -55,7 +59,8 @@ AMENDED: see 8.1 (monthly series and shock months replace the daily rule).
 
 ## 4. The four links: measures and verdict rules
 
-AMENDED: see 8.1 (horizons in months), 8.2 (L3), 8.3 (L4) and 8.4 (rupiah source).
+AMENDED: see 8.1 (horizons in months), 8.2 (L3), 8.3 (L4), 8.4 (rupiah source) and 8.7 (L4's wording;
+L5 to L7).
 
 **Verdict words**, from the share of past episodes (excluding 1997 to 1998 and October 2026) that meet
 the link's condition, always with n: two thirds or more, **holds by my test**; one third or fewer,
@@ -84,6 +89,8 @@ the link's condition, always with n: two thirds or more, **holds by my test**; o
 
 ## 5. Charts (exactly four, each at most 2000 px on its long edge)
 
+AMENDED: see 8.7 (the four charts are replaced).
+
 1. **IHSG lined up on shock days:** 100 = "before"; each past episode a thin line, 1997 to 1998 drawn
    apart, October 2026 bold up to the as-of date; days 0 to 250.
 2. **Rupiah lined up on the same shock days:** 100 = "before", with the axis labelled so a higher
@@ -93,6 +100,8 @@ the link's condition, always with n: two thirds or more, **holds by my test**; o
    available.
 
 ## 6. What the post will not claim
+
+AMENDED: see 8.7 (no asset comparisons and no instructions).
 
 - No forecast: history gives ranges, each reported "by my test" with its n.
 - No causal claim that a downgrade produces any link; the episodes are falls, not downgrades.
@@ -123,8 +132,9 @@ BPS inflation release) before it is used.
 
 ## 8. Amendments
 
-Each was decided by the owner on 2026-10-17 after the source vet and before any outcome was computed;
-the detailed rules below were proposed by Claude and shown to the owner with the choice.
+Amendments 8.1 to 8.6 were decided by the owner on 2026-10-17 after the source vet and before any outcome
+was computed; 8.7 states its own timing. The detailed rules below were proposed by Claude and shown to the
+owner with the choice.
 
 **8.1 Stock data and the shock rule move to months.** (Its series is replaced by 8.6.) Reason: no free, licensed, long daily IHSG
 series exists (IDX publishes daily closes only in patchy PDF yearbooks and bars scraping; TICMI is
@@ -204,3 +214,156 @@ closes.
   in the post's own words with citations and no direct quotes. Standalone markets are named only as
   these outlets name them, with attribution. Copies from the excluded outlets were deleted on
   2026-10-17. This extends 8.5.
+
+**8.7 The post is rebuilt around the author's family; savings, borrowing and unemployment tests are added;
+fuel is described.** Decided by the owner on 2026-10-17. The detailed rules were proposed by Claude,
+reviewed by four independent reviewers and a completeness critic, and shown to the owner with each choice.
+
+- **What was known when these rules were written.** Unlike 8.1 to 8.6, this amendment comes after outcomes
+  were computed. The author knew every result in `results.json` (L1 to L4, including inflation over the
+  twelve months after each slide, which is one side of L5), the dates of the fuel price rises found in the
+  source vet (which, with L4, decide the fuel description below), and Indonesia's economic history in general
+  terms (for example Bank Indonesia's rate rises in 2005 and 2008 and the jump in unemployment in 2020). The
+  source vet opened Bank Indonesia's SEKI Tables I.25.A, I.26 and I.28 to check coverage, gaps and whether
+  rows were equal, and reported no values; web search summaries showed it some 2005, 2006 and 2022 inflation
+  figures, which it did not record. BPS table 543 was seen only through archived copies, for its rounds and
+  notes. Bank Indonesia's Data Inflasi file (`data/Data Inflasi.xlsx`, SHA-256
+  `5c79086509b6c19f90c5e3e835c5dcc40a02d322087d94e1c2a30a17e0280217`, downloaded by the owner on 2026-10-17
+  at 16:46 New York time) has not been read by the author: the page showed the owner, and the author's
+  browser, only its ten latest months (November 2025 to August 2026), outside every window compared here,
+  and a vetting agent reported only its last row, a "Desember 2002, 0,00 %" placeholder. These rules are
+  fixed before their data is read, not written blind; the predictions make that checkable.
+- **Predictions, before any new data is read.** `docs/2026-10-17-predictions-8.7.csv`, committed with this
+  amendment, gives the author's predicted outcome for every new comparison and each new link's verdict,
+  with what each prediction rests on. The build stores each prediction beside its result, and the method
+  notes report how many came true.
+- **L5. Savings lose buying power.** For each slide counted in L4, a one-month rupiah time deposit, rolled
+  over every month with its interest added, earns less after tax over the twelve months after the slide
+  month than prices rose over the same months (L4's "after" rate: the IMF index at the slide month against
+  twelve months later). Return: the product over k = 0 to 11 of (1 + (1 minus the tax rate) times
+  r(s + k) / 1,200), minus 1, where r(m) is SEKI Table I.28's one-month rate for all commercial banks (Bank
+  Umum) in month m, in percent a year as published, read as the rate earned over month m + 1. The tax is the
+  final tax on deposit interest in force in each window, from its regulation stored in `sources/` with a
+  quote; small exempt balances are not modelled. The before-tax return is recorded in `data/README.md`.
+  Before any value is read, what SEKI's notes say the rate is (weighted or simple; new or outstanding
+  deposits; month average or month end) is recorded in the provenance audit and stated in the post. A window
+  with a missing month is incomplete; provisional months are used as published and flagged. The post says
+  "a one-month deposit rolled over each month", never "savings", and treats it as a hypothetical deposit,
+  not the family's account. Beside the verdict: the share of all twelve-month windows, one starting in each
+  month from January 2004 to the last complete one, that meet the same condition. No comparative word ("more
+  often than usual") unless the slides' share exceeds that share by at least a third of it; otherwise both
+  shares are printed without comparison.
+- **L6. Bank borrowing gets dearer.** For each slide counted in L4, SEKI Table I.26's rupiah consumer-loan
+  rate (Konsumsi, all commercial banks, as printed) in the twelfth month after the slide month is at least
+  1.00 percentage point above its rate in the slide month. One point is a round number fixed before the
+  table is read. What SEKI's notes say the rate is gets recorded first; if they show a change in how it is
+  compiled inside a window, the episode is counted as published and flagged. The post calls it "the average
+  rate banks charged on consumer loans". Beside the verdict, not a verdict: whether the policy rate at the
+  end of the slide month, or of any of the three months after it, is at least 0.25 points above its rate at
+  the end of the month before the slide month. Policy rate: to June 2005, the one-month SBI rate at the
+  month's last auction (called that in the post, never a decision); July to September 2005, the BI Rate from
+  Bank Indonesia's decision page, stored with a quote; from October 2005, SEKI Table I.25.A at month end;
+  from 19 August 2016, the BI 7-day reverse repo rate, renamed BI-Rate on 21 December 2023. A comparison that
+  would cross an instrument change is reported as not comparable.
+- **L7. Unemployment rises.** For each IHSG shock episode, the before round is the latest February or August
+  Sakernas round held in a calendar month earlier than month 0 (a round in month 0 itself is not "before");
+  the after round is the same season one year later. The condition: BPS's national open unemployment rate
+  (table 543, as published to two decimals) is at least 0.50 percentage points higher in the after round.
+  Pairs: August 2005 shock, February 2005 and February 2006; March 2008, February 2008 and February 2009;
+  September 2008, August 2008 and August 2009; March 2020, February 2020 and February 2021; February 2025,
+  August 2024 and August 2025; March 2026, February 2026 and February 2027 (incomplete, not counted). No pair
+  uses the 2004 round or November 2005. Where table 543 gives more than one value for a round (as published
+  and backcast), both rounds of a pair use the same basis, the backcast where both have one; a pair inside a
+  break with only one basis is flagged. Half a point is a round number fixed before the table is read. The
+  post names each pair's rounds and says "6 to 11 months after the shock month", never "a year after"; it
+  calls the link "unemployment rises", not "jobs disappear", and says the two 2008 windows overlap. Beside
+  the verdict: the share of all same-season pairs from February 2006 onward that meet the same condition,
+  under L5's rule for comparative words. Only Sakernas national figures are used.
+- **Fuel, described, never a verdict.** Both of its inputs, L4's per-slide results and the dates of the
+  rises, were known when this was written. For each slide counted in L4: every change in the government-set
+  retail price of Premium gasoline or Solar diesel (the Java price where prices differed) whose effective
+  date falls in the before window (the slide month and the eleven months before it) or the after window (the
+  twelve months after it), with its date, product, direction and percentage change. Each change comes from
+  its regulation or an official notice stored in `sources/` with a quote, extracted by script into a
+  hash-pinned file. A change whose date is verified but whose prices are not is listed as "size not
+  verified". The post never says a window had no change unless a stored document shows the list is
+  complete; otherwise it says "among the changes I verified". Changes in a window's edge month are flagged.
+  Kerosene, LPG, electricity tariffs, transport fares and Pertamax are named as not covered; the 1997 slide
+  is not checked; changes outside the windows are not mentioned. The list is printed beside L4's result with
+  no causal wording of the author's own; Bank Indonesia's statement that the 2005 and 2008 fuel rises caused
+  inflation surges is reported with attribution.
+- **L4 is worded "does inflation speed up?".** The rule is unchanged. The post says, bound to the results,
+  that prices rose over the twelve months after every counted slide, and uses each slide's after rate as the
+  family's figure; "inflation fell" becomes "prices rose more slowly than in the year before". L4's other
+  reading in `results.json`, with the pivot at the month before the slide, is printed in Limits, and prices
+  join the links where one episode changes the verdict. Food is not tested: no consistent food series exists
+  (8.3), and BPS's split of inflation into parts begins in 2009, after every slide whose inflation sped up;
+  Limits says so.
+- **BPS's published rates (amends 8.3).** From the Data Inflasi file above: BPS's officially published
+  year-on-year headline inflation, which Bank Indonesia's inflation page (Fungsi Utama, Moneter, Inflasi)
+  says BPS calculates; credited to Bank Indonesia, as its data policy requires, and to BPS. For each counted
+  slide, the published rate in the slide month and twelve months later is set beside L4's before and after
+  rates; the post reports the largest gap in percentage points and whether L4's count would change. The
+  placeholder row is excluded. The IMF series stays the measure of record; the 1997 slide is not compared.
+- **Verdicts for L5 to L7** use section 4's words, from complete episodes only, excluding 1997 to 1998 and
+  the open 2026 episode; a link with fewer than four complete episodes gets no verdict word. L5 and L6 use
+  L4's registered slides; L4's cut-at-1998 reading is not carried over. L5 and L6 are computed for the 1997
+  slide where SEKI has every month of its windows, shown apart and reported in a count including it, as
+  section 2 requires; the policy-rate note marks 1997 not available. For every link, L1 to L7,
+  `results.json` records whether a different outcome in one episode would change the verdict word, and the
+  post says so for each link where it would. The opening and the closing name every link's verdict with its
+  n, in chain order.
+- **What the post prints.** First tier, in the post: each link's verdict with its n, the per-episode values
+  in its chart, and one figure beside each new link (L5 and L7, the share of all windows; L6, the policy-rate
+  note; L4, the published-rate comparison and the fuel list). Everything else the build emits (the
+  before-tax return, other bases, other deposit terms) stays in `results.json` and `data/README.md`, and
+  reaches the prose only through a later dated amendment.
+- **Independent recomputation before drafting.** An agent that did not write these rules recomputes L5 to L7,
+  the fuel list and the published-rate comparison from this text and the frozen files. Where a result
+  differs because the text allows two readings, this text decides if it can; otherwise both readings go into
+  `results.json` sensitivity and Limits, and the verdict stays on the reading committed here.
+- **Sources, checks and fallbacks.** SEKI Tables I.25.A, I.26 and I.28 (direct downloads from bi.go.id,
+  credited to Bank Indonesia); BPS table 543 (downloaded by the owner after this amendment is committed:
+  Indonesia, every round from 2005 to the latest, all years in one export, every basis offered; the owner
+  records what the screen showed); the fuel regulations (official copies). Before any download, each site's
+  robots file and terms are stored and checked against the test that excluded ANTARA (bans on AI use or text
+  and data mining, blocks on Claude). Each new series is checked, before any window value is read, against a
+  second publication of the same figures for three months outside every window (for SEKI, the IMF's copy or
+  an archived earlier edition of the table; for table 543, BPS's release for that round), within 0.05
+  points; if no second publication can be found, the method notes say the series was not independently
+  checked. A series that fails its check, or cannot be obtained, is dropped and its link reported as not
+  tested. If L7 is dropped, chart 2 becomes the foreign-flows chart; if L5 and L6 are both dropped, chart 4
+  does; if one of them is dropped, chart 4 keeps the other's panel. Only national series are used. Kompas
+  bans AI use and text and data mining in its robots file and blocks Claude, so it joins the outlets
+  excluded in 8.6.
+- **A slide since 16 October** means a month-end from October 2026 to the as-of date at least
+  `rules.slide_used` weaker than three month-ends earlier, the L4 rule as applied; until October's month-end
+  exists, the latest daily rate against the end of July stands in, against the same line. The as-of date is
+  the last day in the frozen rupiah files (16 October 2026). A slide found by then is an open episode, shown
+  and never counted. This corrects the build's earlier test against the 10% line.
+- **The post's shape.** Rebuilt around the author's family on Java (groceries, fuel, daily basics;
+  retirement savings in rupiah), read from New York. Only facts the owner supplied are used; the loans and
+  unemployment sections address readers. Order: opening; what Standalone means; how I tested; markets
+  (stocks, the rupiah, foreign money); unemployment; prices and fuel; savings and loans; what I would tell
+  my family (every link's verdict with its n, and what to watch); limits; method notes. About 2,300 words
+  before the references.
+- **Charts (replaces section 5).** Exactly four: (1) markets, two stacked panels, the IHSG and the rupiah
+  lined up on shock months, October 2026 dotted and not counted; (2) unemployment before and after each
+  shock, one column per episode; (3) inflation before and after each slide, with the fuel list in rows under
+  it and no colour for fuel; (4) savings and loans, two panels, the after-tax deposit's buying power and the
+  change in the consumer-loan rate for each slide. The foreign-flows chart is dropped and its figures stay
+  in the text. Blue marks the latest episode, amber a link's condition met, grey everything else.
+- **What the post will not do (adds to section 6).** No comparison of rupiah savings with any other asset or
+  currency, and no sentence telling a reader to buy, sell, move, hold, borrow or repay. No reading of any
+  link without the 2020 episode.
+- **The essay's method sentence** becomes: "I wrote the first four tests before downloading any data, then
+  changed their data sources and some details after checking the data but before computing any result;
+  every change is dated in the pre-registration. I added the savings, borrowing and unemployment tests after
+  seeing those four results. Their rules were fixed before I opened the rate and unemployment data, but not
+  before I knew the broad outline of Indonesia's economic history." The README says the same.
+- **October's close (amends 8.1; recorded after the closes were read, and changes no rule).** IDX's
+  quarterly file for the fourth quarter of 2026 is not yet published (on 2026-10-17 its Digital
+  Statistic lists 2026 to the third quarter), so the 15 and 16 October closes come from the
+  exchange's IDX Daily Statistics, downloaded by the owner. Chart 1 continues the open 2026 episode
+  past Bank Indonesia's last month (August 2026) with OJK's 30 September close and the 16 October
+  close, drawn dotted and never counted.
