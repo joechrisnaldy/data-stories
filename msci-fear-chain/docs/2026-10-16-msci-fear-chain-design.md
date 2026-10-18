@@ -59,8 +59,8 @@ AMENDED: see 8.1 (monthly series and shock months replace the daily rule).
 
 ## 4. The four links: measures and verdict rules
 
-AMENDED: see 8.1 (horizons in months), 8.2 (L3), 8.3 (L4), 8.4 (rupiah source) and 8.7 (L4's wording;
-L5 to L7).
+AMENDED: see 8.1 (horizons in months), 8.2 (L3), 8.3 (L4), 8.4 (rupiah source), 8.7 (L4's wording;
+L5 to L7) and 8.8 (L7 is dropped).
 
 **Verdict words**, from the share of past episodes (excluding 1997 to 1998 and October 2026) that meet
 the link's condition, always with n: two thirds or more, **holds by my test**; one third or fewer,
@@ -89,7 +89,7 @@ the link's condition, always with n: two thirds or more, **holds by my test**; o
 
 ## 5. Charts (exactly four, each at most 2000 px on its long edge)
 
-AMENDED: see 8.7 (the four charts are replaced).
+AMENDED: see 8.7 (the four charts are replaced) and 8.8 (chart 2 becomes the foreign-flows chart).
 
 1. **IHSG lined up on shock days:** 100 = "before"; each past episode a thin line, 1997 to 1998 drawn
    apart, October 2026 bold up to the as-of date; days 0 to 250.
@@ -367,3 +367,23 @@ reviewed by four independent reviewers and a completeness critic, and shown to t
   exchange's IDX Daily Statistics, downloaded by the owner. Chart 1 continues the open 2026 episode
   past Bank Indonesia's last month (August 2026) with OJK's 30 September close and the 16 October
   close, drawn dotted and never counted.
+
+**8.8 BPS's own site is excluded, and the unemployment test (L7) is dropped.** Decided by the owner on
+2026-10-17, as the fallback the owner chose before the search: if no other source passed, jobs would be dropped.
+- **Why.** bps.go.id's robots file names ClaudeBot with "Disallow: /" (Internet Archive copy of 7 May 2026; the
+  live file sits behind a human check), the kind of block that excluded Kabar Bursa, IDNFinancials and France24
+  in 8.6. BPS table 543 and BPS's releases are therefore not used. The archived copies of five BPS pages stored
+  during earlier vets were moved out of `sources/` on 2026-10-17, and provenance entries that rested only on them
+  are marked excluded. BPS remains the compiler of the consumer price index and of the published inflation
+  rates, which reach the post through the IMF and Bank Indonesia.
+- **No other source passed 8.7's tests.** ILOSTAT (CC BY 4.0) carries the ILO-harmonised measure, not BPS's,
+  for 2008 to 2023 only: three of the five pairs, below the four a verdict needs. The Asian Development Bank's
+  Key Indicators are annual. The Ministry of Manpower's portal starts in 2020, and the ministry's terms bar
+  automated tools. Satu Data Indonesia's files sit on a private network address.
+- **What changes.** L7 is reported as not tested, with this reason, in one sentence. Chart 2 becomes the
+  foreign-flows chart, as 8.7 fixed. The predictions for L7 cannot be checked and are reported as such. The
+  essay's method sentence names the savings and borrowing tests only.
+- **The family's city.** On 2026-10-18 the owner named it: Jakarta (8.7 said Java). The essay says Jakarta; the
+  fuel prices it describes for Java, Madura and Bali are the ones that apply there.
+- **Disclosure.** During the search, the Ministry of Manpower's homepage showed a vetting agent one unemployment
+  figure, for February 2026 (the open 2026 pair, never counted); it was not recorded.
