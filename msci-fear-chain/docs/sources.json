@@ -1,0 +1,16 @@
+{
+ "pp131_2000_rate": {
+  "ref": "Pemerintah Republik Indonesia 2000",
+  "title": "Peraturan Pemerintah Republik Indonesia Nomor 131 Tahun 2000 tentang pajak penghasilan atas bunga deposito dan tabungan serta diskonto Sertifikat Bank Indonesia",
+  "doc": "sources/tax/pp_131_2000.txt",
+  "sha256": "662c09e7d561d8d3c3cc0e855537c7e6ea6ae6e38ae5b9e23aabd96420eca754",
+  "fetched_from": "https://peraturan.bpk.go.id/Download/43363/PP%20No.131%20TH%202000.pdf (PDF sha256 7e46c646cde1d1ba7dec04a9c81c811c4f77d3d798d6161e93edf242c5acce5e)",
+  "extracted_with": "pdftotext -layout",
+  "page": "2",
+  "locator": "Pasal 2 huruf a",
+  "quote": "dikenakan pajak final sebesar 20% (dua puluh persen) dari jumlah bruto, terhadap Wajib Pajak dalam negeri dan bentuk usaha tetap",
+  "values": {
+   "rate_pct": 20
+  }
+ }
+}

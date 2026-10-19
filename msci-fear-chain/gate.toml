@@ -1,0 +1,77 @@
+# Gate configuration for Post 27. Run from Projects/analytics-blog:  python3 -m gate msci-fear-chain
+[post]
+slug = "if-msci-drops-indonesia"
+source = "draft/if-msci-drops-indonesia.src.md"
+rendered = "draft/if-msci-drops-indonesia.md"
+results = "results.json"
+sources = "docs/sources.json"
+build = ["build_analysis.py"]
+charts = "make_charts.py"
+chart_dir = "charts"
+docx = "draft/if-msci-drops-indonesia.docx"
+mdx = "../../joechrisnaldy-portfolio/site/src/content/blog/if-msci-drops-indonesia.mdx"
+extra = [["docs/README.src.md", "README.md"], ["docs/data-README.src.md", "data/README.md"]]
+
+# ---------------------------------------------------------------------------------------------------
+# [allow]: words or digits that are not results. Every entry says why. Stale entries fail the gate.
+[allow]
+"30 April 2027" = "MSCI's consultation deadline, reported by Desfika and Wijaya (2026); a date, not a result"
+"30 June 2027" = "MSCI's planned decision date, reported by Desfika and Wijaya (2026); a date, not a result"
+"Post 27" = "the series index of this post"
+"SHA-256" = "hash algorithm name"
+"IDX Statistics 2007" = "title of the exchange's statistics book for 2007 (sources/idx_statistics_2007.pdf), a publication name"
+"IDX Statistics 2009" = "title of the exchange's revised statistics book for 2009 (sources/idx_statistics_2009_revised.pdf), a publication name"
+"IDX Monthly Statistics April 2021" = "title of the exchange's monthly statistics for April 2021 (sources/idx_monthly_statistics_2021-04.pdf), a publication name"
+"the last three solid points of the" = "chart 1: Bank Indonesia marks three months as preliminary, meta.ihsg_preliminary (2026-06 to 2026-08), named in the same sentence"
+"Months from the shock month (0); minus 1 is the month before, set to 100" = "x-axis convention of mf-1-markets.png: month 0 is the shock month, month minus 1 the index base"
+"100 = month before" = "index base of chart 1's panels, a convention"
+"US$ billion, quarter of the shock and the next" = "mf-2-flows.png axis: the unit and the L3 window (design 8.2)"
+"the quarter that contains the shock month and the next quarter" = "the L3 window as fixed in design 8.2, a definition"
+"both of its quarters are published" = "mf-2-flows.png footnote: the latest episode's L3 window (two quarters, design 8.2) is complete, episodes[-1].flows.complete"
+"its quarter is not yet published" = "mf-2-flows.png footnote: 2026 Q4, october_2026.shock_quarter, has no balance-of-payments figure yet (meta.bop_last is 2026Q2)"
+"the quarter of each IHSG shock and the next" = "alt:mf-2-flows.png: the L3 window, design 8.2"
+"the quarter of the October" = "alt:mf-2-flows.png: 2026 Q4, october_2026.shock_quarter"
+"billion around the March" = "unit of the bound figure before it, episodes[month0=2026-03].flows.outflow_usd_bn"
+"billion over those quarters" = "unit of the bound figure before it and the L3 window, episodes[month0=2026-03].flows.outflow_usd_bn"
+"trillion of Indonesian shares" = "unit of the bound figure before it, october_2026.foreign_sold_2026_idr_tn"
+"an earlier one joins its episode" = "pronoun for a shock month in the shock definition, not a count"
+"an earlier one join its episode" = "pronoun for a rupiah slide in the slide definition, not a count"
+"the first four tests" = "the pre-registered links L1 to L4 (design section 4)"
+"The first four tests" = "the pre-registered links L1 to L4 (design section 4)"
+"those four results" = "the results of L1 to L4, named in the preceding sentence"
+"Two kinds of events anchor the tests" = "enumeration: shock months and rupiah slides, both defined in the next sentences"
+"the one people remember" = "pronoun for the 1997 slide, not a count"
+"a hypothetical one" = "pronoun for a deposit, not a count"
+"one-month" = "an instrument's term: the deposit (SEKI Table I.28 row '1 Bulan') and the SBI rate (I.25.A row 'Sertifikat Bank Indonesia, 1 Bulan'), a definition"
+"the shock's quarter and the next" = "the L3 window, design 8.2"
+"in one episode" = "the counterfactual unit of household.flips: one episode with a different outcome"
+"PP 131/2000" = "regulation identifier (sources/tax/pp_131_2000.pdf)"
+"PP 51/1994" = "regulation identifier (sources/tax/pp_51_1994.pdf)"
+"December 2018" = "the label of the duplicated column in SEKI Table I.26 (provenance audit)"
+
+# ---------------------------------------------------------------------------------------------------
+# [claims]: the register of universal, superlative and causal sentences, each with what licenses it.
+# Round 1's logic lens reviews THIS list.
+[claims]
+"a month-end close at least 10% below the previous month-end" = "the shock-month definition, rules.shock_used (design 8.1)"
+"a month-end rate at least 7% weaker against the US dollar than 3 months earlier" = "the slide definition, rules.slide_used over rules.slide_span_months (design section 4, L4, with its fallback)"
+"I found no other official source with the same figures that I could use" = "amendment 8.8 and sources/provenance/rights-88: ILOSTAT, ADB, the Ministry of Manpower and Satu Data Indonesia checked; none could be used"
+"no other official source with BPS's round-by-round figures could be used" = "amendment 8.8 and sources/provenance/rights-88"
+"An episode counts for a link only once its outcome is known" = "design 8.6, Incomplete horizons: an episode counts for a link only if that link's horizon has passed; 1997 to 1998 is also left out of every count (section 2)"
+
+# ---------------------------------------------------------------------------------------------------
+# [pairs]: paragraphs that set like-for-like figures from different samples side by side while relying
+# on an n stated elsewhere. Each says where.
+[pairs]
+
+# ---------------------------------------------------------------------------------------------------
+# [published]: templates for the MDX's hand-written fields. The gate renders each and requires it to
+# equal what is live. Figures here are bound exactly like the draft's.
+[published]
+"seoTitle" = "What Should My Family Worry About If MSCI Drops Indonesia? - Jonathan Chrisnaldy"
+"excerpt" = "MSCI has proposed moving Indonesia to Standalone status, and people fear a chain: stocks crash and stay down, the rupiah falls, foreign money leaves, prices rise faster. Against Indonesia's own record, foreign money left Indonesian shares around {{links.L3.n_meeting:words}} of {{links.L3.n:words}} past shocks, but the index was back above its pre-shock level a year later in {{links.L1.n_not_meeting:words}} of {{links.L1.n:words}}; inflation sped up by {{rules.inflation_gap_pp:int}} percentage points or more after {{links.L4.n_meeting:words}} of {{links.L4.n:words}} rupiah slides, a bank deposit lost buying power after {{household.L5.verdict.n_meeting:words}} of {{household.L5.verdict.n:words}}, and consumer-loan rates rose a point or more after {{household.L6.verdict.n_meeting:words}} of {{household.L6.verdict.n:words}}."
+"metaDescription" = "Testing the MSCI downgrade fear against Indonesia's own history: foreign money left Indonesian shares around {{links.L3.n_meeting:words}} of {{links.L3.n:words}} past shocks; the rupiah was {{rules.rupiah_weaker:pct0}} percent or more weaker {{rules.rupiah_horizon_months:words}} months on after a minority of them, and inflation sped up by {{rules.inflation_gap_pp:int}} percentage points or more, a deposit lost buying power and consumer-loan rates rose a point or more after a minority of rupiah slides."
+"alt:mf-1-markets.png" = "Line charts after each IHSG shock episode since {{meta.ihsg_first_year:year}}, indexed to the month before. Top: the IHSG; a year after the shock it was back above that level in {{links.L1.n_not_meeting:words}} of {{links.L1.n:words}} episodes, and the episode that began in March {{episodes[month0=2026-03].year:year}} is open, with a dotted end at the close on {{october_2026.shock_day_d:int}} October {{october_2026.shock_day_y:year}}, {{october_2026.idx_below_latest_before_pct:dec1}} percent below its level before that shock. Bottom: the rupiah per US dollar, where higher means weaker; it was {{rules.rupiah_weaker:pct0}} percent or more weaker {{rules.rupiah_horizon_months:words}} months on in {{links.L2.n_meeting:words}} of {{links.L2.n:words}} episodes."
+"alt:mf-2-flows.png" = "Bar chart of net foreign purchases of Indonesian shares over the quarter of each IHSG shock and the next, in US dollars. There were net outflows around {{links.L3.n_meeting:words}} of {{links.L3.n:words}} episodes, including {{episodes[month0=2026-03].flows.outflow_usd_bn:dec1}} billion around the March {{episodes[month0=2026-03].year:year}} episode; the quarter of the October {{october_2026.shock_day_y:year}} fall is not yet published."
+"alt:mf-3-prices.png" = "Dumbbell chart of consumer price inflation over the {{rules.inflation_window_months:words}} months up to and after each rupiah slide. Prices rose after {{household.prices_rose.n_meeting:words}} of {{household.prices_rose.n:words}} slides; inflation was {{rules.inflation_gap_pp:int}} percentage points or more higher after {{links.L4.n_meeting:words}} of {{links.L4.n:words}}, after August {{slides[start=2005-08].year:year}}. Rows under the chart count the government's changes to Premium and Solar prices in each window. The {{slides[start=1997-09].year:year}} slide, shown apart and not counted: inflation went from {{slides[start=1997-09].inflation_before_pct:dec1}} to {{slides[start=1997-09].inflation_after_pct:dec1}} percent."
+"alt:mf-4-savings-loans.png" = "Bar charts for each counted rupiah slide. Top: the buying power of a one-month rupiah deposit after tax, {{household.rules.deposit_months:words}} months on; it fell after {{household.L5.verdict.n_meeting:words}} of {{household.L5.verdict.n:words}} slides, May {{slides[start=2004-05].year:year}} and August {{slides[start=2005-08].year:year}}. Bottom: the change in the average consumer-loan rate over {{household.rules.deposit_months:words}} months; it rose a point or more after {{household.L6.verdict.n_meeting:words}} of {{household.L6.verdict.n:words}}, after August {{slides[start=2005-08].year:year}}."

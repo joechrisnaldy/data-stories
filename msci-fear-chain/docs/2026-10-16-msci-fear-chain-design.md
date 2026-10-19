@@ -387,3 +387,21 @@ reviewed by four independent reviewers and a completeness critic, and shown to t
   fuel prices it describes for Java, Madura and Bali are the ones that apply there.
 - **Disclosure.** During the search, the Ministry of Manpower's homepage showed a vetting agent one unemployment
   figure, for February 2026 (the open 2026 pair, never counted); it was not recorded.
+
+**8.9 Round 1 corrections to the record (2026-10-17, New York time; revised after rounds 2 and 3).** None changes a
+test rule or a result.
+- **Length.** The rebuilt essay ran to about 2,800 words before the references, not the 2,300 that 8.7 planned,
+  when the owner read it and accepted the length on 2026-10-17.
+- **How the fuel list is printed.** 8.7 said each change prints with its date, product, direction and percentage
+  change. Instead, chart 3 prints, for each counted slide, the number of rises and cuts in each window. The full
+  list, with date, product and direction for each change, is in `docs/fuel-manifest.csv` in the post's folder.
+  Edge-month flags are recorded in `results.json` and not printed.
+- **Dates.** 8.8's item on the family's city is dated 2026-10-18. In New York time, which this document uses
+  elsewhere, the owner named Jakarta on 2026-10-17.
+- **Credits.** BPS is credited by name in the essay's credits line, as 8.7 requires for the published rates.
+- **The opening** gives the six results in chain order.
+- **Fuel not covered.** 8.7 names kerosene, LPG, electricity tariffs, transport fares and Pertamax as not covered;
+  chart 3 names kerosene, LPG, electricity and other fuels, and transport fares are not named.
+- **The method sentence.** The essay's version departs from 8.7's wording: "opened" became "read"; "every change
+  is dated in the pre-registration" became "with later changes dated", in the first sentence; and the
+  unemployment test is dropped with L7 (8.8). The README words it differently.

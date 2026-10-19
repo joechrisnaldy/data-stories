@@ -1,0 +1,2709 @@
+{
+ "round": 1,
+ "date": "2026-10-17",
+ "lenses_dispatched": 6,
+ "lenses_returned": 6,
+ "lenses_errored": 0,
+ "lenses": [
+  "sources and paraphrase",
+  "reference list",
+  "licence and logic",
+  "construction and statistics",
+  "hostile reader",
+  "consistency across surfaces"
+ ],
+ "scope": [
+  "full claim inventory: 336 items (282 sentences, 12 headings, 35 [allow] reasons, 6 [claims] licences, 1 stored source)"
+ ],
+ "method": "Each lens refuted its primary items and any others it chose; every non-confirmed verdict was re-checked by an independent skeptic, and a finding stands only if the skeptic upheld it.",
+ "findings": [
+  {
+   "id": "r1:item:1",
+   "claim": "# What Should My Family Worry About If MSCI Drops Indonesia?",
+   "verdict": "REFUTED",
+   "evidence": "Design 8.7 (line 349): 'About 2,300 words before the references.' The rendered draft has 2,791 words before '## References' (image lines stripped), about 21% over. | skeptic: I re-ran the counts myself. The script is /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/round1/skeptic-K-26/wc.py, and nothing in the post was changed.\n\n(1) The budget. In /Users/jonathanchrisnaldy/Claude-Workspace/Projects/analyti",
+   "fixed": true,
+   "fix": "Owner accepted the length on 2026-10-17; recorded in design 8.9."
+  },
+  {
+   "id": "r1:item:2",
+   "claim": "On 16 October 2026, the IHSG closed 11.57 percent lower, at 5,185 (Indonesia Stock Exchange, 2026), after the index provider MSCI proposed moving Indonesia out of its emerging markets and into a category called Standalone (Reuters, 2026).",
+   "verdict": "CONFIRMED",
+   "evidence": "data/idx_ihsg_daily_2026-10.csv has 2026-10-16 close 5185.105, previous 5863.780, printed change -11.57 (DS261016 p.1). sources/provenance/press-msci/jakpost_2026-10-16_msci-weighs.txt line 176 quotes MSCI 'launching a consultation on a proposal to reclassify Indonesia as a Standalone Market'; the article was published 2026-10-16 07:24 +07:00, before the Jakarta session. 'After' is only about timing.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:3",
+   "claim": "I read the headlines in New York, and what came to mind was not the index.",
+   "verdict": "CONFIRMED",
+   "evidence": "Matches an owner-supplied fact (the author read the news in New York) and design 8.7 ('read from New York').",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:4",
+   "claim": "It was my family in Jakarta: what they pay for groceries, fuel and the basics of daily life, and the rupiah savings they are putting aside for retirement.",
+   "verdict": "UNVERIFIABLE",
+   "evidence": "Jakarta, groceries, fuel and daily basics, and rupiah retirement savings are owner-supplied (8.7, 8.8). 'The rupiah savings they are putting aside' adds a detail nobody supplied: that the family is still adding to its savings now. The owner said only that their savings are in rupiah for retirement (8.7: 'retirement savings in rupiah'). If the family is already retired, the sentence is wrong. | skeptic: I checked this myself. Line 3 of the draft (.md, and .src.md line 3) says: \"the rupiah savings they are putting aside for retirement\". The only record of what the owner said about savings is the design doc, docs/2026-10-16-msci-fear-chain-design.md, section 8.7, line 344-345: \"Rebuilt around the aut",
+   "fixed": true,
+   "fix": "Narrowed to 'and their rupiah savings for retirement' (owner's facts only)."
+  },
+  {
+   "id": "r1:item:5",
+   "claim": "The fear I kept hearing runs like a chain.",
+   "verdict": "UNVERIFIABLE",
+   "evidence": "'I kept hearing' is a personal experience claim that is not among the owner-supplied facts (Jakarta family; groceries, fuel and basics; rupiah retirement savings; read the news in New York). Design section 1 says only 'The fear people repeat is a chain'. | skeptic: I re-checked this from the files and the finding stands. The claim is unsupported by anything the owner supplied, so it is unverifiable as worded.\n(1) The sentence 'The fear I kept hearing runs like a chain.' sits at line 5 of both draft/if-msci-drops-indonesia.src.md and the rendered .md. It is pla",
+   "fixed": true,
+   "fix": "Deleted 'I kept hearing': 'The fear runs like a chain.'"
+  },
+  {
+   "id": "r1:item:6",
+   "claim": "The market crashes and stays down, the rupiah falls, foreign investors leave, and the cost of living rises.",
+   "verdict": "CONFIRMED",
+   "evidence": "Describes the fear, not a finding. Matches the chain in design section 1 (stocks crash and stay down, rupiah weakens, foreign investors leave, cost of living rises).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:7",
+   "claim": "For a family, the chain does not stop at prices; it reaches savings and the cost of borrowing.",
+   "verdict": "CONFIRMED",
+   "evidence": "In context it extends the fear chain (8.7 adds the savings and borrowing links). It is tested in [14] and the scorecard, so it is not stated as a finding.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:8",
+   "claim": "I tested each link against Indonesia's own history.",
+   "verdict": "CONFIRMED",
+   "evidence": "Each link of the chain named in [6] and [7] (stocks, rupiah, foreign money, prices, savings, borrowing) has a result in results.json (links.L1 to L4, household.L5 and L6). Jobs are not part of the opening's chain.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:9",
+   "claim": "By my tests, the foreign-money link holds: foreign investors pulled money out around four of six past shocks.",
+   "verdict": "REFUTED",
+   "evidence": "Design 8.7 (line 314): 'The opening and the closing name every link's verdict with its n, in chain order.' The opening [9]-[14] leads with foreign money (L3) and then gives L1, L2, L4, L5 and L6. The closing scorecard [96] is in chain order. The README follows the same out-of-order sequence. | skeptic: I re-checked this from the files and the finding stands.\n\n1. The rule exists, and nothing later changes it. Design doc /Users/jonathanchrisnaldy/Claude-Workspace/Projects/analytics-blog/msci-fear-chain/docs/2026-10-16-msci-fear-chain-design.md, amendment 8.7, lines 314-315: \"The opening and the clos",
+   "fixed": true,
+   "fix": "Opening reordered to chain order (L1 to L6); the verdict sentence moved to the end."
+  },
+  {
+   "id": "r1:item:10",
+   "claim": "The other links do not.",
+   "verdict": "REFUTED",
+   "evidence": "8.7 (design:314-315): 'The opening and the closing name every link's verdict with its n, in chain order.' The opening (draft:5) leads with foreign money (L3), then gives L1, L2, L4, L5 and L6. The scorecard keeps chain order. | skeptic: I re-checked this against the files and the finding stands.\n\nDesign rule: docs/2026-10-16-msci-fear-chain-design.md:314-315 (amendment 8.7) says \"The opening and the closing name every link's verdict with its n, in chain order.\" Amendment 8.8 (lines 371-389) drops L7 but does not change this rule. I",
+   "fixed": true,
+   "fix": "Opening reordered to chain order (L1 to L6); the verdict sentence moved to the end."
+  },
+  {
+   "id": "r1:item:11",
+   "claim": "A year after a shock, the index was back above its pre-shock level in four of five cases.",
+   "verdict": "CONFIRMED",
+   "evidence": "links.L1.n_not_meeting 4 of n 5. Index 12 months after the shock month (path key 13): 2005-08 121.1, 2008-09 113.9, 2020-03 109.8, 2025-02 115.8 are above 100; 2008-03 is 52.7. The 2026 episode is incomplete and not counted.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:12",
+   "claim": "The rupiah weakened by 5 percent or more within three months after two of six.",
+   "verdict": "REFUTED",
+   "evidence": "'Within three months' implies the rupiah weakened at any point in the window, but the test is the month-3 endpoint: rupiah_link sets weakens = weaker_3m_pct >= 5 (design 8.1 L2). [54] and the scorecard ('three months on') describe it correctly. On the 'within' reading, counting the shock month's own close, March 2020 was 13.7% weaker (episodes[2020-03].rupiah.path['1']=113.68) and September 2008 peaked at 33.9%. That makes 3 of 6, which is mixed. Leaving the shock month out keeps 2, because August 2005 peaked at 4.95%. | skeptic: I re-checked this from the files myself and the finding stands. The case is stronger than the finding states.\n\n1. What the test measures. In build_analysis.py, rupiah_link (around line 313) sets weaker_3m_pct = (rme[m0+3]/before - 1)*100 and weakens = weaker_3m_pct >= 5. Design section 8.1 says the ",
+   "fixed": true,
+   "fix": "Narrowed to the bound end-of-horizon measure: 'Three months after a shock, the rupiah was 5 percent or more weaker in two of six.'"
+  },
+  {
+   "id": "r1:item:13",
+   "claim": "Prices kept rising after six of six sharp falls in the rupiah, but inflation sped up after one of six.",
+   "verdict": "REFUTED",
+   "evidence": "'Inflation sped up after one of six' is false in plain words. slides[start=2004-05]: inflation 6.50% before and 7.40% after, gap_pp +0.90, so it also sped up after May 2004. Two of six sped up; one of six (2005-08, +6.58) sped up by 2 points or more, which is the L4 rule. Chart mf-3 prints '+0.9 pts' over May 2004, so a reader can quote the chart against this sentence. The 2-point qualifier first appears in [67], after the opening. | skeptic: I re-ran this from results.json and the draft files, and the finding stands.\n\n1. The claim. Opening paragraph, line 5 of draft/if-msci-drops-indonesia.md: \"Prices kept rising after six of six sharp falls in the rupiah, but inflation sped up after one of six.\" In the .src.md it is bound to links.L4.n",
+   "fixed": true,
+   "fix": "Narrowed to 'inflation sped up by 2 percentage points or more' (rules.inflation_gap_pp)."
+  },
+  {
+   "id": "r1:item:14",
+   "claim": "A bank deposit lost buying power after two of six, and the rate on consumer loans rose a percentage point or more after one of six.",
+   "verdict": "CONFIRMED",
+   "evidence": "household.L5.verdict 2 of 6 (2004-05 real -2.0%, 2005-08 -5.0%). household.L6.verdict 1 of 6 (2005-08 +1.87 pp). 'A bank deposit' follows the 8.7 rule against calling it 'savings'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:15",
+   "claim": "This is not financial advice, and it is not a forecast.",
+   "verdict": "CONFIRMED",
+   "evidence": "I scanned the draft for buy/sell/move/hold/borrow/repay/should/safe/dollar/gold. No sentence tells the reader to act. 'Gold' appears only in the list of things not covered (line 88), with no comparison. The closing uses 'can' and 'watch', not predictions or instructions.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:16",
+   "claim": "It is what Indonesia's own record says about the fears, written for my family and for anyone who felt the same jolt.",
+   "verdict": "CONFIRMED",
+   "evidence": "Uses only the owner-supplied family framing. The 'record' is the author's tests, as the opening says.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:17",
+   "claim": "## What Standalone means, and what it does not",
+   "verdict": "CONFIRMED",
+   "evidence": "This is a section heading. The section's sourced claims are checked one by one below.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:18",
+   "claim": "Standalone sounds like a verdict on a country, the kind of label that should sit next to poverty, corruption or war.",
+   "verdict": "CONFIRMED",
+   "evidence": "The author's own framing of how the label sounds; it states no external fact. The next sentences rebut it with Baskoro.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:19",
+   "claim": "It is not.",
+   "verdict": "CONFIRMED",
+   "evidence": "Baskoro (sources/provenance/press-msci/jakartaglobe_explainer-msci-classification.txt) says MSCI classifies markets by economic development, size and liquidity, and accessibility, and uses development 'only to determine whether a market qualifies as developed'. So the label is a judgement on a market, not on a country. A hostile reader could point to CNN Indonesia's own description (cnnindonesia_apa-itu-standalone.txt: standalone status goes to markets with 'masalah tata kelola dan regulasi yang dinilai serius', serious governance and regulatory problems) as close to the word 'corruption' in [18]. This is a rhetorical risk, not a false statement.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:20",
+   "claim": "MSCI sorts markets by economic development, by the size and liquidity of their shares and by how easily foreign investors can get money in and out, and economic development decides whether a market is Developed, not where the others sit (Baskoro, 2026).",
+   "verdict": "CONFIRMED",
+   "evidence": "Baskoro gives the three criteria (economic development; size and liquidity; market accessibility) and says economic development is used 'only to determine whether a market qualifies as developed'. The paraphrase of accessibility as 'how easily foreign investors can get money in and out' is narrower than the source. The source also lists buying and selling shares and 'obtain reliable market information', and transparency is the Indonesian issue. The narrowing is not false.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:21",
+   "claim": "Standalone is the category outside the main groups: markets not yet admitted, and markets taken out of the main groups over serious problems with accessibility or with how the market works (Baskoro, 2026).",
+   "verdict": "CONFIRMED",
+   "evidence": "Baskoro: 'The category includes markets that have not been admitted to the main groups and those that have been removed because of significant problems with accessibility or market functioning.' The paraphrase is faithful.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:22",
+   "claim": "That is why the company Indonesia might keep looks odd.",
+   "verdict": "CONFIRMED",
+   "evidence": "A rhetorical bridge that follows from [20] and [21]: the label does not track development, so the company looks odd. No external fact.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:23",
+   "claim": "Euronews lists Jamaica, Panama and Palestine as Standalone markets (Katanich, 2026), and CNN Indonesia (2026) also names Zimbabwe.",
+   "verdict": "CONFIRMED",
+   "evidence": "Euronews (euronews_2026-10-16_indonesian-stocks-plunge.txt) says the move would 'put it in the same category as Jamaica, Panama and Palestine'. CNN Indonesia (cnnindonesia_apa-itu-standalone.txt) lists the EMEA standalone markets ending 'Palestina, Ukraina, serta Zimbabwe'. Authors and years match the references.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:24",
+   "claim": "What these markets share, in MSCI's terms, is not income.",
+   "verdict": "CONFIRMED",
+   "evidence": "Baskoro: economic development matters only for the Developed category. So 'not income' is supported.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:25",
+   "claim": "It is investors' trust in getting in and out.",
+   "verdict": "REFUTED",
+   "evidence": "No cited source says that the named markets (Jamaica, Panama, Palestine, Zimbabwe) share 'investors' trust in getting in and out', and the post's own sources contradict it. Baskoro and [21] say the category also holds 'markets that have not been admitted to the main groups'. CNN Indonesia calls one of its two groups 'newly eligible markets': markets MSCI did not monitor before, 'kini dinilai sudah makin terbuka dan aman bagi investor asing' (now judged more open and safe for foreign investors). CNN also lists 'kendala likuiditas yang parah' (severe liquidity constraints) and high operational risk as reasons for the status. In MSCI's terms as reported, the removed markets share accessibility  | skeptic: I checked the finding against the stored source texts in sources/provenance/press-msci/ and the draft (.md line 13, identical in .src.md line 13). Sentence [24] (\"in MSCI's terms\") governs [25], so [25] is presented as MSCI's reason for grouping Jamaica, Panama, Palestine and Zimbabwe together. None",
+   "fixed": true,
+   "fix": "Sentence deleted."
+  },
+  {
+   "id": "r1:item:26",
+   "claim": "MSCI's stated concerns about Indonesia are about who owns the shares and how they trade: a lack of clarity in shareholding structures and suspected coordinated trading (Katanich, 2026).",
+   "verdict": "CONFIRMED",
+   "evidence": "Euronews: MSCI said 'market participants had raised significant concerns regarding the investability of the Indonesian equity market'; 'These include a lack of clarity in shareholding structures and suspected coordinated trading.' Reuters/Jakarta Post adds concentrated shareholdings, which also fits 'who owns the shares'. Strictly, these are concerns MSCI reports from market participants. Fortune (Jan 2026) shows MSCI holding the same view itself.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:27",
+   "claim": "MSCI considered a smaller step down, to frontier status, and set it aside as not reflecting the problems (Reuters, 2026).",
+   "verdict": "CONFIRMED",
+   "evidence": "Reuters (jakpost_2026-10-16_msci-weighs.txt): 'MSCI said investor feedback suggested a move to frontier-market status would not adequately reflect Indonesia's market-accessibility issues.' Fortune (Jan 2026) shows MSCI had raised the frontier option, so 'considered' holds. The post's 'not reflecting' is slightly stronger than the source's 'would not adequately reflect'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:28",
+   "claim": "It is still a proposal: feedback runs until 30 April 2027, and MSCI plans to decide by 30 June 2027 (Desfika & Wijaya, 2026).",
+   "verdict": "CONFIRMED",
+   "evidence": "Desfika & Wijaya (jakartaglobe_join-zimbabwe-palestine.txt): 'The consultation deadline is April 30, 2027, with MSCI scheduled to make a final decision by June 30, 2027.' Reuters and CNN Indonesia agree.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:29",
+   "claim": "## How I tested the fear",
+   "verdict": "CONFIRMED",
+   "evidence": "Section heading; it makes no claim.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:30",
+   "claim": "I used Indonesia's own history and fixed the rules in a pre-registration on GitHub, with later changes dated and explained.",
+   "verdict": "REFUTED",
+   "evidence": "'On GitHub' holds: `git branch -vv` shows main at 660cb27 [origin/main] with nothing ahead, and the five design commits (b1d89e4, c3eea6f, 3152795, c86f41b, 660cb27) are on origin/main. 'Dated' holds: design:135 dates 8.1 to 8.6, and 8.6, 8.7 and 8.8 carry dates in their own text. 'Explained' fails twice. design:4 requires every amendment to carry 'their date and reason', but 8.2 (design:157-164) gives no reason, and neither does 8.4 (design:174-178), which drops section 7's JISDOR for BIS. A third problem: 8.8's family-city item says 'On 2026-10-18 the owner named it' (design:386), yet it sits in commit 660cb27, timestamped 2026-10-17 20:59:49 -0400. That date is after the commit that conta | skeptic: I re-ran the checks myself. Nothing in the post was modified, and the scratch folder skeptic-L-0 was created.\n\n'On GitHub' holds. `git ls-remote origin refs/heads/main` returns 660cb27ef4726b5471f28cb2b7c9e1a30b5c4c53, which is the local HEAD. `git log` on the design doc lists b1d89e4, c3eea6f, 3152",
+   "fixed": true,
+   "fix": "Deleted 'and explained'; its [claims] entry removed."
+  },
+  {
+   "id": "r1:item:31",
+   "claim": "I wrote the first four tests before downloading any data, then changed their data sources and some details after checking the data but before computing any result.",
+   "verdict": "CONFIRMED",
+   "evidence": "The order matches git and file birth times. The pre-registration commit b1d89e4 is 2026-10-16 22:41:43. The earliest data file, data/bis_idr_usd_daily.csv, was born 2026-10-16 22:46:22 (stat %SB), and every other 10-16 file was born between 22:48 and 23:13. Amendments 8.1 to 8.5 landed in c3eea6f at 2026-10-17 04:10:52 and 8.6 in 3152795 at 14:59:24. results.json was born 2026-10-17 15:02:25, three minutes after 8.6. The diffs from b1d89e4 to HEAD change text above section 8 only by adding AMENDED pointers. Note: 8.7 changed parts of the L1-L4 reporting after results were known: design:339-343 corrects the slide-since-October check from the 10% line to slide_used, design:364-369 sets the October close source, and design:295-301 changes L4's wording. 'Later changes dated' in [30] covers these; this sentence does not.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:32",
+   "claim": "I added the savings and borrowing tests after seeing those four results.",
+   "verdict": "CONFIRMED",
+   "evidence": "design:222-224 (8.7) says 'this amendment comes after outcomes were computed. The author knew every result in results.json (L1 to L4 ...)'. results.json was born at 15:02:25, before the 8.7 commit c86f41b at 18:07:55.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:33",
+   "claim": "Their rules were fixed before I opened the rate data, but not before I knew the broad outline of Indonesia's economic history.",
+   "verdict": "REFUTED",
+   "evidence": "The pre-registration's own disclosure contradicts 'before I opened the rate data'. design:227-229 (8.7) says 'The source vet opened Bank Indonesia's SEKI Tables I.25.A, I.26 and I.28 to check coverage, gaps and whether rows were equal, and reported no values', and that happened before the rules were fixed. The frozen files (data/bi_seki_table_i25a/i26/i28) were born 2026-10-17 18:11:41, four minutes after c86f41b (18:07:55), so no values had been read. But the tables had been opened. The draft's sentence is the one 8.7 itself prescribes (design:359-363), so the conflict sits inside the design doc. The second clause slightly understates what was known: the author knew L4's after-slide inflati | skeptic: I re-checked this from the files and git, and the refutation holds.\n\n(1) The 8.7 text as committed at c86f41b (2026-10-17 18:07:55, the moment these rules were fixed) already discloses, at design:227-229, that the source vet had opened SEKI Tables I.25.A, I.26 and I.28 to check coverage, gaps and wh",
+   "fixed": true,
+   "fix": "Narrowed to 'before I read the rate data' (and 'before reading that data' in the next sentence)."
+  },
+  {
+   "id": "r1:item:34",
+   "claim": "So before opening that data I wrote down what I expected for each comparison.",
+   "verdict": "CONFIRMED",
+   "evidence": "The predictions CSV was committed in c86f41b at 18:07:55; git log shows no later change. The SEKI rate files were born at 18:11:41. Data Inflasi.xlsx (born 16:46:02) is disclosed as unread at design:229-234. The CSV covers every new comparison: L5 and L6 per slide including 1997, the policy note per slide, the L5 share, the verdicts, the BPS comparison and L7.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:35",
+   "claim": "Twenty-two of twenty-two predictions came true, so read the savings and borrowing results as confirming what an attentive reader could have guessed, not as discoveries.",
+   "verdict": "REFUTED",
+   "evidence": "docs/2026-10-17-predictions-8.7.csv commits 31 predictions. results.json household.predictions has n=22 and n_matched=22. The other nine are skipped without a trace at household.py:221-223 ('if got is None: continue'): the seven L7 rows (the test was dropped in 8.8), L6 1997-09 'met' (household.L6.with_outer.n=6, so 1997 was never computed) and policy note 2005-08 'raised' (not available). Amendment 8.8, which is binding, says at design:384: 'The predictions for L7 cannot be checked and are reported as such.' No surface reports them; grep for 'predict' across the draft, README, data README and MDX finds nothing. A reader who opens the CSV the post points to will count 31. | skeptic: I re-ran every check myself, read-only, using only the scratch folder.\n\n1. The CSV has 31 predictions. `docs/2026-10-17-predictions-8.7.csv` has 32 lines, and `csv.DictReader` returns 31 rows: L5 9, L6 8, policy note 6, L7 7, BPS comparison 1.\n\n2. Only 22 were checked. `results.json` household.predi",
+   "fixed": true,
+   "fix": "Narrowed to 'of the twenty-two predictions I could check'."
+  },
+  {
+   "id": "r1:item:36",
+   "claim": "Two kinds of events anchor the tests.",
+   "verdict": "CONFIRMED",
+   "evidence": "The two kinds are shock months and slides, defined in [37] and [39].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:37",
+   "claim": "A shock month is a month whose closing IHSG level is 10 percent or more below the previous month's close; since 2004, six episodes qualify, starting in August 2005, March 2008, September 2008, March 2020, February 2025 and March 2026.",
+   "verdict": "CONFIRMED",
+   "evidence": "rules.shock_used=0.1 and shock_counts={0.1: 6}, so no fallback was needed. build_analysis.py shock_episodes tests month-end change <= -threshold. results.episodes month0 values are 2005-08, 2008-03, 2008-09, 2020-03, 2025-02 and 2026-03. meta.ihsg_first_year=2004.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:38",
+   "claim": "The stock, rupiah and foreign-money tests start from these.",
+   "verdict": "CONFIRMED",
+   "evidence": "stock_link, rupiah_link and flows_link are all keyed on the shock month m0 (design 8.1 and 8.2).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:39",
+   "claim": "A rupiah slide is a month when the rupiah is 7 percent or more weaker against the dollar than three months earlier.",
+   "verdict": "CONFIRMED",
+   "evidence": "rules.slide_used=0.07 and slide_span_months=3. slide_counts={0.1: 3, 0.07: 6}, so section 4's fallback applies (design:84-86). The prose does not say that 7% is the fallback from a pre-registered 10%, or mention the 12-month clustering. Chart 3's caption does disclose the fallback (make_charts.py:291-293). Incomplete, not false.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:40",
+   "claim": "The price, savings and borrowing tests start from slides, the route by which a weaker rupiah would reach a family's costs.",
+   "verdict": "CONFIRMED",
+   "evidence": "L4, L5 and L6 all iterate over slides (8.7: 'For each slide counted in L4').",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:41",
+   "claim": "A link holds by my test when two thirds or more of the past episodes meet it, does not hold when a third or fewer do, and is mixed in between.",
+   "verdict": "CONFIRMED",
+   "evidence": "Matches design:65-67. build_analysis.verdict() calls a link 'holds' when share >= 2/3 and 'does not hold' when share <= 1/3. In floating point 4/6 equals 2/3 and 2/6 equals 1/3, so results.links shows L3 at 4/6 as 'holds' and L2 at 2/6 as 'does not hold'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:42",
+   "claim": "An episode counts for a link once its outcome is known.",
+   "verdict": "REFUTED",
+   "evidence": "The post's own handling of 1997 contradicts this universal. slides[start=1997-09] is complete, so its outcome is known (gap 75.1 points), yet it is 'shown apart and left out of the count' ([78]; design:42-44). The rule being paraphrased, design 8.6 'Incomplete horizons', is a necessary condition for counting, not a sufficient one. | skeptic: I re-ran the check from the files. The draft sentence (draft/if-msci-drops-indonesia.md line 23, and the same in .src.md line 23, inventory [42]) reads \"An episode counts for a link once its outcome is known.\" Read as plain English, \"counts once X\" says X is enough for an episode to be counted. The ",
+   "fixed": true,
+   "fix": "Narrowed to 'only once its outcome is known'; [claims] entry added citing design 8.6 and section 2."
+  },
+  {
+   "id": "r1:item:43",
+   "claim": "## The markets: stocks, the rupiah and foreign money",
+   "verdict": "CONFIRMED",
+   "evidence": "Heading only; the section covers L1 to L3 (src.md lines 27-37).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:44",
+   "claim": "The fear starts in the markets, while my family's life runs in rupiah, so I keep this part short.",
+   "verdict": "UNVERIFIABLE",
+   "evidence": "'While my family's life runs in rupiah' implies the family has no foreign-currency income or assets. The owner supplied only Jakarta, groceries, fuel and daily basics, and rupiah retirement savings. | skeptic: I checked this myself and nothing in the post was modified.\n\n1. **Where the sentence is.** It is line 27 in both if-msci-drops-indonesia.src.md and the rendered .md: \"The fear starts in the markets, while my family's life runs in rupiah, so I keep this part short.\" It has no template keys, so result",
+   "fixed": true,
+   "fix": "Deleted ', while my family's life runs in rupiah,'."
+  },
+  {
+   "id": "r1:item:45",
+   "claim": "Stocks crash; that is what a shock month is.",
+   "verdict": "CONFIRMED",
+   "evidence": "A shock month is a month-end close 10% or more below the previous month-end (rules.shock_used=0.1; build_analysis.py shock_episodes).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:46",
+   "claim": "Staying down is another matter.",
+   "verdict": "CONFIRMED",
+   "evidence": "A transition sentence with no claim.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:47",
+   "claim": "A year after the shock month, the index was back above its level before the shock in four of five episodes, so this link does not hold by my test.",
+   "verdict": "CONFIRMED",
+   "evidence": "links.L1 n=5, n_not_meeting=4. path index 13 (month 12 after month 0): 2005-08 121.1, 2008-03 52.7, 2008-09 113.9, 2020-03 109.8, 2025-02 115.8. 2026-03 is incomplete. Spot check: Feb 2025 7109.2 to Feb 2026 8235.49 = +15.84%. The result holds at month 11 too. Share 0.2 is at most a third, so 'does not hold'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:48",
+   "claim": "The exception is March 2008: a deeper fall followed that September, and a year on the index was still 47.3 percent below.",
+   "verdict": "CONFIRMED",
+   "evidence": "below_12m_pct=47.31 is path[13]=52.69 (March 2009 against Feb 2008 2721.94, which gives 1434). The Sep 2008 month fell 15.4% against March's 10.1%, and Oct 2008 fell 31% more.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:49",
+   "claim": "The episode that began in March 2026 has not reached its year yet.",
+   "verdict": "CONFIRMED",
+   "evidence": "For 2026-03, stocks.complete=false and the path ends at index 6 (Aug 2026); month 12 would be March 2027.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:50",
+   "claim": "By August 2026, the index stood 20.8 percent below its level before that shock, on Bank Indonesia's preliminary figures, and the October fall came on top of that: at the 16 October close, it stood 37.0 percent below.",
+   "verdict": "REFUTED",
+   "evidence": "Both numbers are right: latest_below_pct 20.76 is path[6]=79.24 (Aug 2026), and 5185.105/8235.49 is 37.04% below. But 'the October fall came on top of that' assigns the whole 16-point gap to October. latest_extension shows OJK's 30 Sep close at 73.72 (Aug to Sep was already -7%). The 15 Oct close 5863.78 is 71.2. Even the 16 October fall of 11.57% applied to 79.24 gives about 70, not 63. So September and early October account for a large share of the drop, and the post skips them. | skeptic: I re-ran the numbers myself with the post's own readers: scratchpad/round1/skeptic-C-0/check.py imports build_analysis.read_ihsg, read_ojk_daily and read_idx_daily and runs with -I. I modified nothing in the post.\n\nBoth numbers in item 50 are correct:\n- Bank Indonesia's August 2026 month-end is 6525",
+   "fixed": true,
+   "fix": "Deleted 'and the October fall came on top of that'."
+  },
+  {
+   "id": "r1:item:51",
+   "claim": "The warning had been building.",
+   "verdict": "CONFIRMED",
+   "evidence": "A rhetorical bridge. It is supported by the January freeze (freeze_fall_pct 7.35, 28 Jan) and the March 2026 shock episode, both before October.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:52",
+   "claim": "In January, MSCI froze its index rebalancing for Indonesian shares over concerns about free float, the share of a company that actually trades (Sigit, 2026), and on 28 January 2026 the IHSG closed 7.35 percent lower.",
+   "verdict": "REFUTED",
+   "evidence": "The sourced facts hold. Fortune (fortuneidn_msci-bekukan-interim-freeze.txt, 28 Jan 2026, author Bonaventura Sigit) reports the interim freeze over free-float transparency. The 7.35 percent fall is bound to october_2026.freeze_fall_pct=7.3458 (close 8,320.556), and Databoks independently reports 'turun 7,35% ke level 8.320,56' on 28/1/2026. The defect is the post's own gloss, 'free float, the share of a company that actually trades'. The post's own source defines it otherwise: Baskoro, 'Free float refers to shares available for public trading'. Free float is availability to trade, not actual trading, and MSCI's concern was precisely whether shares counted as free float are really available. | skeptic: I re-ran the checks against the stored files and nothing in the post was changed. (1) The sourced parts hold. In fortuneidn_msci-bekukan-interim-freeze.txt the author is Bonaventura Sigit, it was published 2026-01-28T10:18:15+07:00, and it reports the interim freeze over free-float transparency (\"is",
+   "fixed": true,
+   "fix": "Deleted the free-float gloss."
+  },
+  {
+   "id": "r1:item:53",
+   "claim": "The rupiah fell less often than the fear assumes.",
+   "verdict": "REFUTED",
+   "evidence": "Under the test's own horizon the rupiah was weaker after EVERY shock. weaker_3m_pct values are 2.35, 1.44, 19.67, 0.73, 0.20 and 6.56: all positive, six of six. It fell 5% or more only twice. My recomputation from data/bis_idr_usd_daily.csv (lens-C/l2.py) gives the peak daily weakness in months 1-3 after the shock month, against the pre-shock month-end: 2005 5.76% (28 Sep 2005), 2008-09 37.2%, 2020 16.25% (1 Apr 2020), 2026 8.03% (8 Jun 2026). That is 4 of 6 at 5% or more. So 'fell less often than the fear assumes' can be quoted against the post: the rupiah fell every time, and often sharply, inside the window. | skeptic: I re-ran the numbers myself from the raw files, using only the scratch folder. The scripts are /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/round1/skeptic-C-1/recheck.py and peak.py, both run on data/bis_idr_usd_daily.csv, with th",
+   "fixed": true,
+   "fix": "Sentence deleted; the next sentence's pronoun repaired ('the rupiah was')."
+  },
+  {
+   "id": "r1:item:54",
+   "claim": "Three months after the shock month, it was 5 percent or more weaker against the US dollar in two of six episodes: after September 2008, by 19.7 percent, and after March 2026, by 6.6 percent.",
+   "verdict": "CONFIRMED",
+   "evidence": "Bound to rupiah.weaker_3m_pct, which is path[4]: the end of month 3 against the end of the 'before' month (build_analysis.py:313-320). 2008-09: Dec 2008 vs Aug 2008 = 19.67. 2026-03: Jun 2026 vs Feb 2026 = 6.56. links.L2 is 2 of 6. My recomputation from the BIS month-ends matches.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:55",
+   "claim": "This result sits exactly on my line of a third; without this year's episode it would be one of five.",
+   "verdict": "CONFIRMED",
+   "evidence": "2/6 equals the FAILS line of 1/3 exactly, so 'does not hold'. sensitivity.L2_without_latest is 1 of 5.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:56",
+   "claim": "![Stocks and the rupiah after each IHSG shock month](../charts/mf-1-markets.png)",
+   "verdict": "CONFIRMED",
+   "evidence": "Opened mf-1-markets.png. The panel titles (4 of 5; 2 of 6), the month-3 marker and the dotted October ends match results.json. Note: the chart shows the Mar 2020 rupiah at 113.7 at month 0, above the 5% line, which contradicts the opening's 'within three months' wording (see extra [12]).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:57",
+   "claim": "Foreign money is the link that holds.",
+   "verdict": "CONFIRMED",
+   "evidence": "links.L3 verdict is 'holds' (4/6 = 2/3).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:58",
+   "claim": "Over the quarter that contains the shock month and the next quarter, foreigners took money out of Indonesian shares in four of six episodes.",
+   "verdict": "CONFIRMED",
+   "evidence": "flows_link sums the quarter of month 0 and the next (build_analysis.py:324). Net values: 2005 +1.58, 2008-03 +0.53, 2008-09 -0.21, 2020 -2.18, 2025 -3.76, 2026 -4.04 (US$ bn), so 4 of 6 are outflows. I cross-checked against data/bi_seki_table_v7_crosscheck.xls (private-sector equity liabilities): 2005 Q1-Q4 -179.51/-1568.68/816.59/766.54 and 2008 Q1-Q4 11.21/519.46/-98.03/-110.17 (US$ mn) are identical to the IMF file. The 2008-09 result is robust: both of its quarters are negative.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:59",
+   "claim": "In the episode that began in March 2026, the outflow came to US$4.0 billion over those quarters, and from January to September 2026, foreign investors sold a net Rp82 trillion of Indonesian shares on the exchange.",
+   "verdict": "REFUTED",
+   "evidence": "US$4.0bn checks out (0.905+3.135). The Rp82tn is the sum of OJK weeks labelled '2026-..' (build_analysis.py:388). The labels assign whole Mon-Fri weeks to the month that holds most of their days. provenance-audit.md:397 shows the week of 30 Sep-4 Oct 2024 labelled October. The week counts in the file confirm no split at month boundaries: 2024-04 has only 3 weeks, 2025-12 has a Minggu 5, and 2026-01 has 4. So '2026-09 Minggu 5' (-3.52tn) is 28 Sep-2 Oct 2026, and ojk_daily_last=2026-10-02 fits that. The sum therefore includes 1-2 October, and probably leaves 2 January in the 2025-12 week. 'From January to September 2026' is slightly wrong, and the rounded figure could move by about Rp1tn. | skeptic: I re-ran everything myself from data/ojk_foreign_trading_weekly.xml, data/ojk_ihsg_daily_2023on.xml and the stored OJK PDF text. Scripts are in /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/round1/skeptic-C-2/ (weeks.py, rule.py, v",
+   "fixed": true,
+   "fix": "Window narrowed to the data's own labels: 'in the weeks OJK files under January to September 2026'."
+  },
+  {
+   "id": "r1:item:60",
+   "claim": "It holds by a thin margin.",
+   "verdict": "CONFIRMED",
+   "evidence": "household.flips.L3=true: 3 of 6 would be 0.5, which is mixed.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:61",
+   "claim": "Four of six is exactly two thirds, and without this year's episode it would be three of five, which is mixed.",
+   "verdict": "CONFIRMED",
+   "evidence": "4/6 = 2/3 meets HOLDS. sensitivity.L3_without_latest is 3/5 = 0.6, which is mixed.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:62",
+   "claim": "![Net foreign purchases of Indonesian shares around each shock](../charts/mf-2-flows.png)",
+   "verdict": "CONFIRMED",
+   "evidence": "Opened mf-2-flows.png. The bars match flows.net_usd_bn, and the caption says each window starts before the shock. Minor: the dashed 'Q4 2026 not yet published' box is drawn at 55% of the axis floor (make_charts.py:211), about -2.2. Its sized outline can read as a magnitude.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:63",
+   "claim": "## At the market and the pump",
+   "verdict": "CONFIRMED",
+   "evidence": "No checkable claim: a section heading (draft/if-msci-drops-indonesia.md:39); the claims under it are verdicted item by item.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:64",
+   "claim": "This is the link my family would feel, in groceries, fuel and the basics of daily life.",
+   "verdict": "CONFIRMED",
+   "evidence": "A framing sentence. The family facts are owner-supplied per design 8.7 ('The post's shape').",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:65",
+   "claim": "The useful question is not whether prices rise, since they rise in a normal year, but whether a rupiah slide makes them rise faster.",
+   "verdict": "CONFIRMED",
+   "evidence": "inflation_after_pct is positive for every counted slide, and the before rates are 3.0-11.6%. This matches the 8.7 'does inflation speed up?' wording.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:66",
+   "claim": "Prices kept rising after six of six slides.",
+   "verdict": "CONFIRMED",
+   "evidence": "household.prices_rose is 6/6 (after rates 7.40, 14.90, 2.57, 3.99, 3.07, 1.37). My recomputation from imf_cpi_idn_m.csv (lens-C/l4.py) matches.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:67",
+   "claim": "Inflation sped up by 2 percentage points or more after one of six: after August 2005, when it went from 8.3 percent to 14.9 percent.",
+   "verdict": "CONFIRMED",
+   "evidence": "2005-08: CPI Aug04 to Aug05 is 8.32 and Aug05 to Aug06 is 14.90 (my recomputation). BPS published 8.33 and 14.90. links.L4 is 1/6. Under the pivot-a-month-earlier reading, 2004 also meets (gap 2.26), which the Limits section reports.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:68",
+   "claim": "After the slides of 2008, 2013, 2015 and 2020, prices rose more slowly than in the year before.",
+   "verdict": "CONFIRMED",
+   "evidence": "gap_pp is negative for 2008 (-8.98), 2013 (-3.99), 2015 (-3.76) and 2020 (-1.67); 2004 is +0.90 and correctly not listed. The result is robust under the pivot-1 reading (-9.09, -3.41, -4.38, -1.67) and on BPS's published rates (11.77 to 2.57, 8.79 to 3.99, 6.83 to 3.07, 2.96 to 1.37).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:69",
+   "claim": "BPS's own published rates, as Bank Indonesia reports them (Bank Indonesia, 2026c), stay within 0.8 percentage points of the figures I computed and give the same count.",
+   "verdict": "REFUTED",
+   "evidence": "Bound key household.published.largest_gap_pp = 0.8111 (2013-08, published 8.79 against computed 7.98). The provenance audit's recomputation also reports 0.81. 'Stay within 0.8 percentage points' states an upper bound that the real gap exceeds; the printed figure rounds the bound down. 'Give the same count' is correct (n_rises_published=1, the same as L4). | skeptic: The finding stands, though the error is small: the real largest gap is 0.811, and the sentence says \"within 0.8\". I re-checked it with my own script, /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/round1/skeptic-S-2/recheck.py, run ",
+   "fixed": true,
+   "fix": "Changed to 'differ by as much as 0.8 percentage points from the figures I computed'."
+  },
+  {
+   "id": "r1:item:70",
+   "claim": "Fuel is part of that story, and its price is set by the government.",
+   "verdict": "REFUTED",
+   "evidence": "Limits [112] says that from 2015 'Pertamina set the Java price' of Premium. data/fuel_price_changes.csv also sources the 2016-01-05 Premium change from Pertamina's Java-Madura-Bali table. For a family in Jakarta, then, 'its price is set by the government' contradicts the post's own Limits from 2015 on. [101] repeats the claim ('which the government sets'). | skeptic: I re-checked this against the stored files only. Nothing in the post was modified, and the scratch folder skeptic-C-3 was created.\n\n1. The stored government releases say Pertamina, not the government, set the Java Premium price from 2015.\n   - sources/fuel/migas_2016-01-05_penetapan_harga.html says ",
+   "fixed": true,
+   "fix": "Sentence deleted."
+  },
+  {
+   "id": "r1:item:71",
+   "claim": "In October 2005, inside the year after the August slide, the government raised the price of Premium petrol by 87.5 percent and of Solar diesel by 104.8 percent (Presiden Republik Indonesia, 2005).",
+   "verdict": "CONFIRMED",
+   "evidence": "Stored sources/fuel/perpres_55_2005.pdf (pdftotext): Premium Rp 4.500, Solar Rp 4.300, in force 1 Oktober 2005. Perpres 22/2005 gives the old prices: Premium Rp 2.400, Solar for transport at SPBU Rp 2.100. 4500/2400 = +87.5% and 4300/2100 = +104.8%. October 2005 falls in the after-window (m+1..m+12) of the August 2005 slide. One caveat: the old prices come from Perpres 22/2005, which is not in the reference list. A reader of the cited Perpres 55/2005 alone cannot rebuild the percentages, but the method notes point to the full list.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:72",
+   "claim": "Before the slides of 2008, 2013 and 2015, it had raised both fuels by 22 percent or more inside the twelve months my test uses as \"before\" (Menteri Energi dan Sumber Daya Mineral, 2008; Menteri Energi dan Sumber Daya Mineral, 2013; Kementerian Energi dan Sumber Daya Mineral, 2014), though in the yea",
+   "verdict": "CONFIRMED",
+   "evidence": "Checked fuel-manifest.csv against the stored documents. The rises were 2008-05-23 (Permen 16/2008 abstract: Premium 6.000, Solar 5.500 from 4.500 and 4.300), 2013-06-22 (permen_esdm_18_2013.pdf: RON 88 6.500, Solar 5.500 from 4.500 in perpres_15_2012.pdf) and 2014-11-18 (ESDM press release 60/SJI/2014: RON 88 6.500 to 8.500, Solar 5.500 to 7.500). The minimum of the largest single rises is Solar 2013 at +22.2%. All fall in household.py's before-window (m-11..m). The two cuts before the 2015 slide (1 and 19 Jan 2015) are correct. The sentence omits the two further rises of March 2015 in the same window (chart 3 shows '3 rises, 2 cuts'); this is not false.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:73",
+   "claim": "It cut them in the year after the 2008 and 2015 slides (Menteri Energi dan Sumber Daya Mineral, 2009; Direktorat Jenderal Minyak dan Gas Bumi, 2016).",
+   "verdict": "CONFIRMED",
+   "evidence": "The Permen 01/2009 abstract (15 Jan 2009) cuts Premium 5.000 to 4.500 and Solar 4.800 to 4.500, inside the after-window of the October 2008 slide; Permen 38/2008 and 41/2008 added further cuts. The stored DJ Migas release of 1 Apr 2016 cuts Solar Subsidi 5.650 to 5.150 and Premium outside Java-Madura-Bali 6.950 to 6.450, inside the September 2015 after-window. The Java Premium price was set by Pertamina; the limits section [112] discloses this.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:74",
+   "claim": "Bank Indonesia's own page on inflation names the fuel price rises of 2005 and 2008 as the source of surges in inflation (Bank Indonesia, n.d.).",
+   "verdict": "CONFIRMED",
+   "evidence": "The stored copy sources/provenance/ojk-bps/bi_inflasi_definisi.txt (bi.go.id inflasi page, fetched 2026-10-17) says BI's ability to control inflation is 'relatif terbatas apabila terdapat kejutan yang sangat besar, seperti ketika terjadi kenaikan harga BBM di tahun 2005 dan 2008, sehingga menyebabkan adanya lonjakan inflasi'. The fuel price rises of 2005 and 2008 are named as very large shocks that caused inflation surges, so the paraphrase is fair. 'The source' is a little stronger than the page's 'shocks... thereby causing'. The (n.d.) citation with a retrieval date is correct.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:75",
+   "claim": "My test describes this timing; it does not measure how much of any price change came from fuel.",
+   "verdict": "CONFIRMED",
+   "evidence": "Matches design 8.7: fuel is described and never a verdict, with no causal wording of the author's own.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:76",
+   "claim": "![Inflation before and after each rupiah slide, with fuel price changes](../charts/mf-3-prices.png)",
+   "verdict": "CONFIRMED",
+   "evidence": "Chart 3 (charts/mf-3-prices.png): the main title's end, 'rupiah slides;', overprints the inset label '1997 slide, shown apart'. A crop of the top-right at 2x shows 'slides;997 slide', so the year 1997 cannot be read. This is a rendering defect the gate's chart check would not see.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:77",
+   "claim": "The slide of 1997 is the one people remember, and there inflation went from 7.3 percent to 82.4 percent.",
+   "verdict": "CONFIRMED",
+   "evidence": "1997-09: CPI Sep96 to Sep97 is 7.33 and Sep97 to Sep98 is 82.42 (my recomputation). Sensitivity: the code excludes August 1997 (months > FLOAT_MONTH, build_analysis.py:341), although Aug 1997 was 24.4% weaker than May. Starting the slide in August would give 6.4 to 77.7. No count changes, because 1997 is outer-bound and meets the test either way.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:78",
+   "claim": "As I decided before looking, it is shown apart and left out of the count; with it included, the result is two of seven, which still does not hold.",
+   "verdict": "CONFIRMED",
+   "evidence": "Design section 2 (written before the data) excludes 1997-98 from every count. sensitivity.L4_with_outer_bound is 2/7 = 0.286, which is 'does not hold'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:79",
+   "claim": "So far there has been no slide.",
+   "verdict": "CONFIRMED",
+   "evidence": "october_2026.slide_so_far=false. The 16 Oct rate against end-July is far from the 7% line.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:80",
+   "claim": "On 16 October, the rupiah was 0.1 percent stronger against the dollar than at the end of July.",
+   "verdict": "CONFIRMED",
+   "evidence": "18030.996 (16 Oct, ECB cross) against 18052.399 (31 Jul) is 0.119% stronger. I checked for a mixed-source basis: BIS equals the ECB cross rate to 1e-9% on all 200 overlapping 2026 days (lens-C/rupiah.py), so the sign is not a source artefact.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:81",
+   "claim": "## Savings and loans",
+   "verdict": "CONFIRMED",
+   "evidence": "No checkable claim: a section heading (draft/if-msci-drops-indonesia.md:51); the claims under it are verdicted item by item.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:82",
+   "claim": "This section records what a rupiah bank deposit earned against prices after past slides.",
+   "verdict": "CONFIRMED",
+   "evidence": "Describes L5 (household.py savings_link).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:83",
+   "claim": "It does not say where anyone should keep their savings, and it is not financial advice.",
+   "verdict": "CONFIRMED",
+   "evidence": "No sentence in the post tells the reader where to hold savings, which 8.7 forbids.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:84",
+   "claim": "My family's retirement savings are in rupiah, so the question I care about is whether a slide eats into their buying power.",
+   "verdict": "CONFIRMED",
+   "evidence": "'Retirement savings in rupiah' is an owner-supplied fact listed in design 8.7, 'The post's shape'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:85",
+   "claim": "A bank time deposit is a plain rupiah saving with a published rate, so I tested a hypothetical one: a one-month deposit at the average rate of Indonesia's commercial banks (Bank Indonesia, 2026b), rolled over each month for the twelve months after the slide, after the 20 percent final tax on its int",
+   "verdict": "CONFIRMED",
+   "evidence": "The deposit series is household.py read_seki(I.28, block 'Bank Umum', row '1 Bulan'), table title 'I.28 SUKU BUNGA SIMPANAN BERJANGKA RUPIAH', i.e. a rupiah one-month deposit at all commercial banks. Tax is 20% from 2001-01 (DEPOSIT_TAX). PP 131/2000 Pasal 2 huruf a gives 20% final tax for 'Wajib Pajak dalam negeri', and its explanatory notes count time deposits 'baik dalam rupiah maupun dalam valuta asing'. Rolling over each month for twelve months matches the registered r(s)..r(s+11) rule (provenance audit, 8.7 recomputation). The small-balance exemption (Pasal 3: deposits up to Rp 7,500,000) is disclosed in the limits.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:86",
+   "claim": "The deposit lost buying power after two of six slides, after May 2004 and August 2005, so this link does not hold by my test, though two of six sits exactly on my line of a third.",
+   "verdict": "CONFIRMED",
+   "evidence": "L5 verdict is 2/6 (2004-05 real -2.04, 2005-08 real -5.03). My independent parse of the SEKI I.28 'Bank Umum 1 Bulan' row (lens-C/l5.py) reproduces 5.211% net against 7.401% inflation, and 9.123% against 14.899%. Both also lose before tax (6.55 vs 7.40; 11.52 vs 14.90), and the other four have margins of 2.2 points or more. 2/6 is at the 1/3 line.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:87",
+   "claim": "Losing to prices is not rare in general: across the 261 twelve-month periods starting from January 2004, the same deposit lost buying power in 34 percent.",
+   "verdict": "REFUTED",
+   "evidence": "8.7 (design:253-255): 'No comparative word ... otherwise both shares are printed without comparison.' household.L5.comparative_allowed is false (slides 2/6 against 34% of all windows). 'Losing to prices is not rare in general' presents the overall share as a contrast with the slides. This is borderline. | skeptic: The finding stands, though only just. The numbers are right. The wording breaks the design rule.\n\n1. I re-ran the numbers from results.json (household.L5). Output is saved in scratchpad/round1/skeptic-L-22/recheck.txt.\n   - Base windows: 90 of 261 (34.48%), first 2004-01, last 2025-09. This renders ",
+   "fixed": true,
+   "fix": "Deleted 'Losing to prices is not rare in general:'; both shares printed without comparison."
+  },
+  {
+   "id": "r1:item:88",
+   "claim": "After the 1997 slide, under the tax then in force, the deposit lost 23.3 percent of its buying power; with 1997 included, the count is three of seven, which is mixed.",
+   "verdict": "CONFIRMED",
+   "evidence": "The tax was 15% under PP 51/1994 (pdftotext: '15% (lima belas persen)', in force 1 Jan 1995), which PP 131/2000 replaced from 1 Jan 2001. My recomputation gives 1997-09 net 39.92% against inflation 82.42%, a loss of 23.30%. with_outer is 3/7 = 0.43, which is mixed.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:89",
+   "claim": "For anyone with a bank loan, the question is the rate.",
+   "verdict": "CONFIRMED",
+   "evidence": "No checkable claim: a framing sentence (draft/if-msci-drops-indonesia.md:59); the figures in the following sentences are verdicted as separate items.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:90",
+   "claim": "The average rate banks charged on consumer loans (Bank Indonesia, 2026b) was a percentage point or more higher a year after the slide in one of six cases: after August 2005, by 1.9 points.",
+   "verdict": "CONFIRMED",
+   "evidence": "The loan series is I.26 ('SUKU BUNGA PINJAMAN RUPIAH YANG DIBERIKAN'), block 'Bank Umum', row 'Pinjaman Konsumsi Yang Diberikan'. results.json household.L6: 2005-08 moved 15.96 to 17.83 (+1.87, printed 1.9); n_meeting=1 of n=6. Chart 4's caption discloses that BI's tables do not say whether the rates are weighted, or whether they cover new or existing balances.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:91",
+   "claim": "Bank Indonesia raised its policy rate within three months after two of the five slides I could check, after 2008 and 2013; for 2005, I could not find its rate for July.",
+   "verdict": "REFUTED",
+   "evidence": "8.7 (design:263-265) says that up to June 2005 the policy rate is 'the one-month SBI rate at the month's last auction (called that in the post, never a decision)'. The post counts the May 2004 slide among 'the five slides I could check' for 'its policy rate' and never names the SBI rate. | skeptic: I re-ran the check from the files and the finding stands. (1) Design 8.7, lines 261-266 of /Users/jonathanchrisnaldy/Claude-Workspace/Projects/analytics-blog/msci-fear-chain/docs/2026-10-16-msci-fear-chain-design.md, defines the policy rate up to June 2005 as \"the one-month SBI rate at the month's l",
+   "fixed": true,
+   "fix": "Instrument named for May 2004 (bound year) and the test stated as 8.7 defines it: rose by 0.25 percentage points or more in the slide month or the three months after (bound keys)."
+  },
+  {
+   "id": "r1:item:92",
+   "claim": "A fixed-rate loan does not move at all, and loans from finance companies and pawnshops are not in these figures.",
+   "verdict": "CONFIRMED",
+   "evidence": "I.26 is read from the 'Bank Umum' row only (household.py read_rates), so finance companies and pawnshops are outside it. 'A fixed-rate loan does not move' holds within its fixed term.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:93",
+   "claim": "![Savings and loans after each rupiah slide](../charts/mf-4-savings-loans.png)",
+   "verdict": "CONFIRMED",
+   "evidence": "Opened mf-4-savings-loans.png. The deposit bars (-2.0, -5.0, +5.0, +2.2, +2.7, +2.6) match real_net_pct. The loan bars (-1.5, +1.9, +0.5, +0.3, -0.1, -0.5) match change_pp. The caption states the weighting is unknown, as 8.7 requires.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:94",
+   "claim": "## What I would tell my family",
+   "verdict": "CONFIRMED",
+   "evidence": "Heading matches the section order in design 8.7.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:95",
+   "claim": "Here is the scorecard, by my tests:",
+   "verdict": "CONFIRMED",
+   "evidence": "Introduces the table, which carries 'by my test'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:96",
+   "claim": "| The fear | My test | Result | By my test | |---|---|---|---| | Stocks crash and stay down | Still below the pre-shock level a year later | One of five | Does not hold | | The rupiah falls | 5 percent weaker three months on | Two of six | Does not hold | | Foreign investors leave | Net outflow over",
+   "verdict": "REFUTED",
+   "evidence": "Every count and verdict matches results.json (L1 1/5, L2 2/6, L3 4/6 holds, L4 1/6, L5 2/6, L6 1/6), in chain order. But the row label 'Jobs disappear' breaks a pre-registered wording rule: 8.7 L7 says the post 'calls the link \"unemployment rises\", not \"jobs disappear\"'. 8.8 drops L7 but does not lift the wording rule. A worried family member reads the untested row as the jobs fear in its strongest form. | skeptic: I re-checked each part of the finding against the files.\n\n(1) The counts are right. results.json gives L1 1/5 (does not hold), L2 2/6 (does not hold), L3 4/6 (holds), L4 1/6 (does not hold), household.L5.verdict 2/6 (does not hold) and household.L6.verdict 1/6 (does not hold). The scorecard rows in ",
+   "fixed": true,
+   "fix": "Row label changed to 'Unemployment rises', as 8.7 requires."
+  },
+  {
+   "id": "r1:item:97",
+   "claim": "So my message home would be this.",
+   "verdict": "CONFIRMED",
+   "evidence": "'Home' points at the family's home in Jakarta, which is owner-supplied. No new personal fact.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:98",
+   "claim": "The stock market can keep falling, and foreign money is already leaving.",
+   "verdict": "UNVERIFIABLE",
+   "evidence": "'Can keep falling' is supported by March 2008 (a deeper fall followed, 47.3% below a year on) and is a possibility, not a forecast. 'Foreign money is already leaving' is supported only for shares: BoP equity liabilities -US$4.0bn in 2026Q1 to Q2, and OJK weekly net selling in every September week from week 2 (Sep 2026 total -Rp10.7tn, computed from read_ojk_weekly). The post has no evidence on other foreign money (bonds, deposits, FDI), and the sentence drops the 'Indonesian shares' scope that the body keeps. | skeptic: I re-ran the evidence from the post's own code and data. Nothing in the post was modified. My script is /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/round1/skeptic-H-5/weekly.py, which calls build_analysis.read_ojk_weekly.\n\n(1) 'C",
+   "fixed": true,
+   "fix": "Narrowed to 'foreign money is already leaving Indonesian shares'."
+  },
+  {
+   "id": "r1:item:99",
+   "claim": "Faster inflation, lost savings and dearer loans followed past slides in a minority of cases, and the rupiah has not slid so far.",
+   "verdict": "REFUTED",
+   "evidence": "8.7 (design:250-252): 'The post says \"a one-month deposit rolled over each month\", never \"savings\"'. 'Lost savings' describes as a loss of savings what is really the after-tax real return of a hypothetical one-month deposit falling below zero. [105] has the same slip ('and savings'). | skeptic: The finding stands for item 99. Its second half, about item 105, goes too far.\n\n1. The design rule is real. docs/2026-10-16-msci-fear-chain-design.md, at the end of the L5 block (lines 250-252), says: 'The post says \"a one-month deposit rolled over each month\", never \"savings\", and treats it as a hy",
+   "fixed": true,
+   "fix": "'lost savings' narrowed to 'a deposit's lost buying power'."
+  },
+  {
+   "id": "r1:item:100",
+   "claim": "The thing to watch at home is not the index.",
+   "verdict": "CONFIRMED",
+   "evidence": "A 'what to watch' line, which design section 1 allows ('one or two signals to watch'). It is not an instruction to buy, sell, move, hold, borrow or repay.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:101",
+   "claim": "It is the price of fuel, which the government sets: within months of the single slide after which inflation sped up, the government raised fuel prices sharply.",
+   "verdict": "REFUTED",
+   "evidence": "'The price of fuel, which the government sets' (and [70] 'its price is set by the government') conflicts with the post's own limit [112]: from 2015, Pertamina set the Premium price in Java, which includes the family's Jakarta. fuel-manifest's 2016-04-01 note reads 'The release says Pertamina sets the Java price'. Nothing in sources/fuel covers who sets prices today. | skeptic: I re-checked the stored files and the finding stands.\n\n1. Draft line 77 (item [101]) says the thing to watch at home is \"the price of fuel, which the government sets\". Line 43 (item [70]) says \"its price is set by the government\". Both are present-tense statements with no exceptions. Line 87 (item [",
+   "fixed": true,
+   "fix": "Deleted ', which the government sets'; narrowed to 'sped up by 2 percentage points or more'."
+  },
+  {
+   "id": "r1:item:102",
+   "claim": "Before MSCI decides, I would also watch whether the concerns it raised, about who owns the shares and how they trade, are addressed, and whether the rupiah makes a slide by the rule above.",
+   "verdict": "CONFIRMED",
+   "evidence": "Reuters copy (jakpost line 169: MSCI 'citing persistent concerns'; line 171: opaque ownership structures, concentrated shareholdings, suspected coordinated trading; line 189: it expects to proceed unless governance and market functioning improve). Decision by 30 June 2027. 'By the rule above' ties 'slide' to its definition.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:103",
+   "claim": "## The limits of this test",
+   "verdict": "CONFIRMED",
+   "evidence": "Section heading; it makes no claim.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:104",
+   "claim": "- The samples are small: five or six episodes per link.",
+   "verdict": "CONFIRMED",
+   "evidence": "links.L1.n=5. L2, L3 and L4 have n=6, and household.L5.verdict.n and L6.verdict.n are both 6.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:105",
+   "claim": "For stocks, the rupiah, foreign money and savings, a different outcome in one episode would change the verdict.",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json household.flips is {L1: true, L2: true, L3: true, L4: false, L5: true, L6: false}, computed at household.py:83-86 (does k-1 or k+1 change the verdict word?). The draft names exactly L1, L2, L3 and L5. Checked by hand: L1 1/5 to 2/5 is mixed; L2 2/6 to 3/6 is mixed; L3 4/6 to 3/6 is mixed; L5 2/6 to 3/6 is mixed. For L4 and L6, 1/6 to 2/6 stays at or below the 1/3 line.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:106",
+   "claim": "Read with the pivot a month earlier, inflation sped up after two of six slides, exactly on my line, which still does not hold. - No past episode here was an MSCI downgrade.",
+   "verdict": "CONFIRMED",
+   "evidence": "sensitivity.L4_pivot_month_before has n=6, n_meeting=2, share 0.333 and verdict 'does not hold'; 2/6 sits on the 1/3 line, which counts as does not hold. Minor: 8.7 also says 'prices join the links where one episode changes the verdict' (design:298-299). The draft conveys this only through 'exactly on my line'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:107",
+   "claim": "This compares the falls Indonesia has had with the fall it is having, not downgrades with downgrades. - The stock series starts in 2004.",
+   "verdict": "CONFIRMED",
+   "evidence": "Design section 2 (design:38-41). The stored press records a January 2026 freeze and a June 2026 warning (jakpost_2026-10-16_msci-weighs.txt:170; euronews:309). No reclassification took effect before any counted episode.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:108",
+   "claim": "Bank Indonesia's earlier month-end figures failed a check against the exchange's own records, so the 1997 crash is in the price and savings tests but not in the stock tests. - March 2008 barely counts as a shock: the index fell minus 10.1 percent that month, against a threshold of 10 percent. - The ",
+   "verdict": "REFUTED",
+   "evidence": "draft src:84 puts {{sensitivity.closest_shock.fall_pct:signed1}} after 'fell', and the value is -10.09. The page therefore says 'the index fell minus 10.1 percent', a double negative that literally means it rose. Second, what the price and savings tests contain is the September 1997 rupiah slide, not the stock crash, and 1997 is not in the borrowing test (household.L6.with_outer.n=6). The 2004 start and its reason match design 8.6 (Bank Indonesia's 1995-2003 sheet disagreed in 9 of 85 months). | skeptic: I re-checked this from the files and changed nothing in the post. (1) The double negative is real. Line 84 of draft/if-msci-drops-indonesia.src.md has 'the index fell {{sensitivity.closest_shock.fall_pct:signed1}} percent'. In results.json, sensitivity.closest_shock is {month: 2008-03, fall_pct: -10",
+   "fixed": true,
+   "fix": "Rebound to episodes[month0=2008-03].stocks.fall0_pct (renders 'fell 10.1 percent')."
+  },
+  {
+   "id": "r1:item:109",
+   "claim": "Read as I fixed it, slides in the few years that followed join the 1997 episode; cut at the end of that crisis instead, inflation sped up after zero of four slides.",
+   "verdict": "REFUTED",
+   "evidence": "sensitivity.cut_at_1998 has threshold=0.1 and starts [1999-01, 2008-10, 2013-08, 2020-03]. In build_analysis.py:255-274, once the episodes are cut at 1998, four already meet 10%, so the fallback to 7% never runs. The 'four slides' are therefore 10% slides, while the post defines a slide as 7% ([39]). This reading drops May 2004, August 2005 (the only slide after which inflation sped up) and September 2015, and adds January 1999. The sentence presents it as a change of episode boundary only. The first clause is right: under the fixed reading, the 1997 episode's slide_months run to 2001-12. The same issue appears in chart 3's caption (make_charts.py:291-292): '3 slides outside 1997 to 1998 met | skeptic: I re-ran it myself. I wrote /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/round1/skeptic-L-5/recheck.py, which imports build_analysis.py read-only with PYTHONDONTWRITEBYTECODE=1. Nothing in the post folder was changed.\n\n1. How the ",
+   "fixed": true,
+   "fix": "Deleted the cut-at-1998 count; the clause now reads 'the link does not hold'."
+  },
+  {
+   "id": "r1:item:110",
+   "claim": "Either way the link does not hold. - I could not test jobs.",
+   "verdict": "CONFIRMED",
+   "evidence": "Every reading gives 'does not hold': registered 1/6, cut 0/4, pivot 2/6, with 1997 2/7. 'I could not test jobs' matches 8.8.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:111",
+   "claim": "BPS, which publishes Indonesia's unemployment figures, blocks Anthropic's crawler in its robots file; Anthropic makes the AI tools I use for this analysis, so I treated BPS's site as off limits, and I found no other official source with the same figures that I could use. - Food prices are not tested",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/provenance/rights-87/bps_robots_wayback_20260507.txt:46-47 reads 'User-agent: ClaudeBot / Disallow: /' (the latest Wayback capture; the live file sits behind a Cloudflare check). 8.8 (design:379-382) rules out the others: ILOSTAT carries a different measure for 2008-2023, ADB is annual, the Ministry of Manpower portal starts in 2020, and Satu Data's files sit on 10.42.0.15 (rights-88/datagoid_terms_none_evidence.txt). The hedged 'I found ... that I could use' holds on coverage alone. Note: 8.8's 'the ministry's terms bar automated tools' rests on terms whose clause 1.10 defines the Site as tte.kemnaker.go.id (rights-88/kemnaker_terms_live.txt:25-26).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:112",
+   "claim": "Fuel is described, not tested, and covers the pump prices of Premium and Solar, not other fuels; from 2015 the Premium price the government set applied outside Java, Madura and Bali, and Pertamina set the Java price. - The savings test uses a one-month bank deposit.",
+   "verdict": "CONFIRMED",
+   "evidence": "design:300-301 (BPS's split of inflation begins in 2009) and 8.3 support the food limit. design:291 confirms only Premium and Solar are covered. fuel-manifest region notes for 2015-01-01, 2015-03-28 and 2016-04-01 ('The release says Pertamina sets the Java price') support the regional split; the 2016-01-05 note says Pertamina sets it 'in coordination with the government'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:113",
+   "claim": "Savings accounts, longer deposits, gold and pensions are not covered, small balances that escape the tax are not modelled, and a year says little about savings held for decades.",
+   "verdict": "CONFIRMED",
+   "evidence": "household.py:51 reads the one-month row ('1 Bulan'). The provenance audit says PP 131/2000 Pasal 3 exempts deposits up to Rp 7,500,000 and that this is 'not modelled'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:114",
+   "claim": "## Method notes and credits",
+   "verdict": "CONFIRMED",
+   "evidence": "No checkable claim: a section heading (draft/if-msci-drops-indonesia.md:90); the claims under it are verdicted item by item.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:115",
+   "claim": "The rules, data checks and code are in the post's folder on GitHub, including the pre-registration, its dated amendments and the predictions.",
+   "verdict": "UNVERIFIABLE",
+   "evidence": "In git (analytics-blog, origin/main 660cb27), only msci-fear-chain/docs/2026-10-16-msci-fear-chain-design.md and docs/2026-10-17-predictions-8.7.csv are tracked and pushed. The code (build_analysis.py, household.py, seki.py, make_charts.py, extract_*.py), docs/ihsg-checks/, docs/provenance-audit.md and README.md are all untracked ('??'). The pre-registration, amendments and predictions are on GitHub now; the 'data checks and code' are not yet. sources/ and data/ are gitignored, which is consistent with the README. | skeptic: I re-checked every point myself, read-only, in /Users/jonathanchrisnaldy/Claude-Workspace/Projects/analytics-blog.\n\n(1) The remote branch is where the finding says. `git ls-remote origin refs/heads/main` returns 660cb27ef4726b5471f28cb2b7c9e1a30b5c4c53, which matches local HEAD and origin/main, so n",
+   "fixed": true,
+   "fix": "Publish precondition: the post folder (code, data checks, READMEs) is committed and pushed to data-stories before the site page merges."
+  },
+  {
+   "id": "r1:item:116",
+   "claim": "Shock months use the IHSG's month-end close: Bank Indonesia's statistics table III.3 from December 2005 (Bank Indonesia, 2026a), Bapepam's capital market statistics before that (Badan Pengawas Pasar Modal, 2005), and six months corrected to the Indonesia Stock Exchange's own figures (Indonesia Stock",
+   "verdict": "CONFIRMED",
+   "evidence": "results.json meta: bi_first_used 2005-12, bapepam 2004-01..2005-11. extract_bapepam_2004_2005.py reads the stored 28 Nov to 2 Dec 2005 Bapepam issue, Table 8, column Akhir. data/ihsg_monthend_corrections.csv lists six months: three from IDX (2006-09 IDX Statistics 2007, 2009-03 IDX Statistics 2009 revised, 2021-04 IDX Monthly April 2021) and three from Bapepam-LK March 2007 week I (2006-01, 2006-02, 2006-08). All match the references and chart 1's caption.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:117",
+   "claim": "Each month was checked against an independent publication.",
+   "verdict": "REFUTED",
+   "evidence": "provenance-audit.md, 'The IHSG month-end series (design 8.6)', documents checks for 2006 to 2016 (127 of 132 match), 2017 to 2022 (71 of 72) and 2023 to August 2026 (all 44 against OJK daily). For the Bapepam stretch it says only that the series 'matches Bank Indonesia for December 2004 and December 2005'. docs/ihsg-checks/ has no file covering 2004 to 2005. That leaves Jan to Nov 2004 and Jan to Nov 2005 (22 months, including Jul and Aug 2005, which define the August 2005 shock) with no documented independent check. I compared the 2005 months with the stored later Bapepam issue (sources/bapepam_statistik_pasar_modal_2006-01_week4.pdf, p16, Akhir column: Jul 1.182,30, Aug 1.050,09, ... Nov 1 | skeptic: I re-ran the checks from the stored files, using only the scratch folder skeptic-S-4. The post was not modified.\n\n1. Scope of the claim. In draft line 92 (inventory item 117), the sentence \"Each month was checked against an independent publication\" comes right after the sentence naming all three sto",
+   "fixed": true,
+   "fix": "Narrowed to 'Each month from December 2005' (bound meta.bi_first_used_year)."
+  },
+  {
+   "id": "r1:item:118",
+   "claim": "The rupiah is the daily US dollar rate from the Bank for International Settlements (2026), with the European Central Bank's reference rates (European Central Bank, 2026) used for the last few days, computed by me.",
+   "verdict": "CONFIRMED",
+   "evidence": "meta.rupiah_last_bis = 2026-10-13 and rupiah_last = 2026-10-16, so ECB fills 3 days ('the last few days'). The provenance audit shows the ECB cross rate (IDR per EUR divided by USD per EUR) reproduces BIS exactly on 2026-10-13 and 1999-01-04, and ECB's 16 Oct rates match data/ecb_idr_usd_per_eur_daily.csv.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:119",
+   "claim": "Foreign money is the International Monetary Fund's balance of payments: portfolio investment in Indonesian equity, net, in US dollars (International Monetary Fund, 2026a).",
+   "verdict": "CONFIRMED",
+   "evidence": "The series is IDN.L_NIL_T.P_F5.USD.Q. imf_api_bop_codes_extract.txt gives L_NIL_T = 'Liabilities, Net incurrence of liabilities' and P_F5 = 'Portfolio investment, Equity and investment fund shares'. 'Portfolio investment in Indonesian equity, net, in US dollars' is a fair shorthand; investment fund shares are folded into 'equity', and chart 2's caption spells this out.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:120",
+   "claim": "Prices are the International Monetary Fund's headline consumer price index for Indonesia, compiled by BPS-Statistics Indonesia (International Monetary Fund, 2026b), set beside BPS's published rates from Bank Indonesia's inflation data (Bank Indonesia, 2026c).",
+   "verdict": "CONFIRMED",
+   "evidence": "imf_dsbb_idn_cpi_basepageinfo.json.txt: 'Natl_Description':'Badan Pusat Statistik (BPS) - Statistics Indonesia'. data/README.md says Data Inflasi on bi.go.id reports BPS's year-on-year headline inflation.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:121",
+   "claim": "Deposit, loan and policy rates are Bank Indonesia's statistics tables I.25.A, I.26 and I.28 for commercial banks as a whole (Bank Indonesia, 2026b); each was checked against an earlier edition of the same table.",
+   "verdict": "CONFIRMED",
+   "evidence": "seki.py and household.py map I.28 to deposit rates, I.26 to loan rates and I.25.A to the policy rate. The post lists 'Deposit, loan and policy rates' against 'I.25.A, I.26 and I.28'. Without 'respectively' this is not false, but read in order it pairs deposits with I.25.A and policy with I.28. data/README.md uses the correct order (I.28, I.26, I.25.A). 'For commercial banks as a whole' fits I.28 and I.26 but not the policy rate. 'Checked against an earlier edition of the same table' is supported: the provenance audit lists the 2011, 2019 and 2024 archived editions plus SEKI July 2023, with 9 values matching at a difference of 0.00.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:122",
+   "claim": "Fuel price changes come from government regulations and official notices, each stored and checked by script; the full list, with links, is in the post's data notes.",
+   "verdict": "REFUTED",
+   "evidence": "'The full list, with links, is in the post's data notes' is false on every surface that will be published. data/README.md (the data notes) gives only the sites (peraturan.bpk.go.id, esdm.go.id, migas.esdm.go.id, Pertamina), with no list. The list is docs/fuel-manifest.csv, which has instrument, file path, hash and quote but no URL column. The URLs exist only in sources/fuel/provenance.tsv, and .gitignore line 17 ('*/sources/', git check-ignore confirms) keeps that file off GitHub. 'Each stored and checked by script' is true (extract_fuel.py; the audit lists hash, one occurrence, effective date, old equals previous new). | skeptic: I re-checked this from the files. The claim is false on every surface that will be published.\n\n(1) What \"data notes\" means. In the earlier post's MDX (quits-layoffs), \"data notes\" means the GitHub folder, and the data notes file is msci-fear-chain/data/README.md. gate.toml line 13 builds that file f",
+   "fixed": true,
+   "fix": "Deleted the 'full list, with links' clause."
+  },
+  {
+   "id": "r1:item:123",
+   "claim": "Changes, returns, sums and inflation rates are my calculations.",
+   "verdict": "CONFIRMED",
+   "evidence": "All changes, returns, sums and inflation rates come from build_analysis.py and household.py. The source tables give levels and rates only.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:124",
+   "claim": "The October figures for the index come from the Indonesia Stock Exchange's daily statistics (Indonesia Stock Exchange, 2026), the January fall from OJK's data portal (Otoritas Jasa Keuangan, 2026a), and the foreign selling on the exchange from the same portal (Otoritas Jasa Keuangan, 2026b).",
+   "verdict": "CONFIRMED",
+   "evidence": "The October index uses data/idx_ihsg_daily_2026-10.csv from the stored ds_261015.pdf and ds_261016.pdf (close 5,185.105, previous 5,863.78). The January fall uses read_ojk_daily (OJK dataset 274 'Indeks & Kapitalisasi Pasar', the audit's XMLA metadata): freeze_close 8,320.556. Foreign selling uses read_ojk_weekly (dataset 404 'Nilai Perdagangan Saham di Bursa', Asing 'Net Buy Sell', cross-checked against OJK's weekly PDF). All of this matches the references OJK 2026a and 2026b.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:125",
+   "claim": "Credits: Bank Indonesia (as its data policy requires: Bank Indonesia, 2024), Bapepam and Bapepam-LK, the Indonesia Stock Exchange, OJK, the Ministry of Energy and Mineral Resources and Pertamina, the Bank for International Settlements, the European Central Bank and the International Monetary Fund.",
+   "verdict": "REFUTED",
+   "evidence": "Design 8.7 (line 304) says BPS's published rates are 'credited to Bank Indonesia, as its data policy requires, and to BPS'. The Credits sentence lists Bank Indonesia, Bapepam, IDX, OJK, ESDM/Pertamina, BIS, ECB and IMF but omits BPS. The method notes do say 'compiled by BPS-Statistics Indonesia'. | skeptic: I re-checked this from the files myself, and the finding's evidence is accurate.\n\n(1) docs/2026-10-16-msci-fear-chain-design.md, lines 302-304 (8.7, \"BPS's published rates (amends 8.3)\"), says the Data Inflasi rates are \"credited to Bank Indonesia, as its data policy requires, and to BPS.\"\n\n(2) Amen",
+   "fixed": true,
+   "fix": "BPS-Statistics Indonesia added to the credits line, as 8.7 requires; recorded in design 8.9."
+  },
+  {
+   "id": "r1:item:126",
+   "claim": "This post is not endorsed by any of them, and its use of their data is non-commercial.",
+   "verdict": "CONFIRMED",
+   "evidence": "A disclaimer; no external fact. The repo README and the chart captions also state non-commercial use.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:127",
+   "claim": "MSCI's own documents were not used; its announcement is reported here from the press.",
+   "verdict": "CONFIRMED",
+   "evidence": "Every MSCI fact in the post is cited to the press (Reuters/Jakarta Post, Euronews, Jakarta Globe, CNN Indonesia, Fortune). data/README.md records that MSCI's terms bar use of its content with language models, and design 8.6 sets the press rule.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:128",
+   "claim": "## References",
+   "verdict": "CONFIRMED",
+   "evidence": "The References section of draft/if-msci-drops-indonesia.md is byte-identical to the one in site/src/content/blog/if-msci-drops-indonesia.mdx (I extracted both and ran diff: no differences).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:129",
+   "claim": "Badan Pengawas Pasar Modal.",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/bapepam_statistik_pasar_modal_2005-11_week4.pdf, pdftotext line 41: 'RISET - BIRO PIR BAPEPAM'. Bapepam is Badan Pengawas Pasar Modal.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:130",
+   "claim": "(2005).",
+   "verdict": "CONFIRMED",
+   "evidence": "The cover reads '28 November - 2 Desember 2005'. The PDF CreationDate is 22 Dec 2005.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:131",
+   "claim": "*Statistik pasar modal* [Capital market statistics], weekly issue to 2 December 2005, Table 8.",
+   "verdict": "CONFIRMED",
+   "evidence": "Cover title is 'Statistik Pasar Modal', week '28 November - 2 Desember 2005'. Page 16 holds 'Tabel 8 INDEKS HARGA SAHAM GABUNGAN (IHSG)' with columns Tertinggi/Terendah/Akhir, which is the table extract_bapepam_2004_2005.py reads.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:132",
+   "claim": "Internet Archive copy of the OJK archive file. https://web.archive.org/web/20170630073004id_/http://www.ojk.go.id/id/kanal/pasar-modal/data-dan-statistik/statistik-pasar-modal/Documents/408.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "I fetched the Wayback URL today. The returned PDF has SHA-256 95921cd7...480d, identical to the stored copy that extract_bapepam_2004_2005.py hash-checks.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:133",
+   "claim": "Badan Pengawas Pasar Modal dan Lembaga Keuangan.",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/bapepam_lk_statistik_pasar_modal_2007-03_week1.pdf cover: 'Bapepam dan Lembaga Keuangan' and 'BIRO RISET DAN TEKNOLOGI INFORMASI BAPEPAM-LK'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:134",
+   "claim": "(2007).",
+   "verdict": "CONFIRMED",
+   "evidence": "The cover reads '5 - 9 Maret 2007'. The PDF CreationDate is 13 Mar 2007.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:135",
+   "claim": "*Statistik pasar modal* [Capital market statistics], weekly issue for week I of March 2007, Table 8.",
+   "verdict": "CONFIRMED",
+   "evidence": "This is the first week of March 2007 (5 to 9 March). Page 16, Tabel 8, lists the 2006 monthly Akhir values Januari 1.232,32, Pebruari 1.230,66 and Agustus 1.431,26, matching data/ihsg_monthend_corrections.csv rows 2006-01, 2006-02 and 2006-08.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:136",
+   "claim": "Internet Archive copy of the Bapepam-LK file. https://web.archive.org/web/20070322170355id_/http://www.bapepam.go.id:80/pasar_modal/publikasi_pm/statistik_pm/2007/2007_III_1.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "I fetched the Wayback URL today. SHA-256 09588c28...a10a is identical to the stored copy hash-checked in extract_ihsg_corrections.py.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:137",
+   "claim": "Bank for International Settlements.",
+   "verdict": "CONFIRMED",
+   "evidence": "The BIS Data Portal series D.ID.IDR.A is published by the Bank for International Settlements (stored bis_xru_series_D.ID.IDR.A.txt).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:138",
+   "claim": "(2026).",
+   "verdict": "CONFIRMED",
+   "evidence": "The series metadata gives last_updated 2026-10-15 and end_date 2026-10-13, so a 2026 data set.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:139",
+   "claim": "*US dollar exchange rates* [Data set]. https://data.bis.org/topics/XRU",
+   "verdict": "CONFIRMED",
+   "evidence": "Refutation not upheld. Skeptic: I re-ran the checks on 2026-10-17. Copies of everything I fetched are in /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/round1/skeptic-R-0 (topic.html sha256 a9771d1e..., dataflow.xml 702caca3..., meta.json e4eb2025...).\n\nWhat the finding gets right:\n- On the live page https://data.bis.org/topics/XRU, the <title> is \"Bilateral exchange rates - overview | BIS Data Portal\" and the H1 is \"Bilateral exchange rates\".\n- The stored sources/provenance/oecd-bis-ecb/bis_xru_metadata_report.txt has TITLE.text \"Bilateral exchange rates\". The live metadata_report API returns the same value.\n- The stored bis_xru_series_D.ID.IDR.A.txt has ",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:140",
+   "claim": "Bank Indonesia.",
+   "verdict": "CONFIRMED",
+   "evidence": "The page is on bi.go.id under Fungsi Utama > Moneter > Inflasi.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:141",
+   "claim": "(n.d.).",
+   "verdict": "CONFIRMED",
+   "evidence": "Neither the stored copy (bi_inflasi_definisi.txt) nor today's fetch shows a publication date, so n.d. is right.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:142",
+   "claim": "*Inflasi* [Inflation].",
+   "verdict": "CONFIRMED",
+   "evidence": "Today's fetch shows page <title> 'Inflasi' and heading 'Inflasi'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:143",
+   "claim": "Retrieved October 17, 2026, from https://www.bi.go.id/id/fungsi-utama/moneter/inflasi/default.aspx",
+   "verdict": "CONFIRMED",
+   "evidence": "The URL returns HTTP 200. The page text supports [74]: 'kenaikan harga BBM di tahun 2005 dan 2008, sehingga menyebabkan adanya lonjakan inflasi'. A retrieval date is correct for an undated live page.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:144",
+   "claim": "Bank Indonesia.",
+   "verdict": "CONFIRMED",
+   "evidence": "The regulation is issued by the Governor of Bank Indonesia (stored PDF p.1).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:145",
+   "claim": "(2024).",
+   "verdict": "CONFIRMED",
+   "evidence": "Stored sources/bi_pbi_12_2024_data_policy.pdf reads 'Ditetapkan di Jakarta pada tanggal 31 Desember 2024'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:146",
+   "claim": "*Peraturan Bank Indonesia Nomor 12 Tahun 2024 tentang Kebijakan Data dan Informasi Bank Indonesia* [Bank Indonesia Regulation on its data and information policy]. https://www.bi.go.id/id/publikasi/peraturan/Pages/PBI_122024.aspx",
+   "verdict": "REFUTED",
+   "evidence": "The words and URL are right: the page title is identical, and PBI p.7, Pasal 21(4) requires external users to name Bank Indonesia as the source, which supports the use in [125]. The problem is capitalisation. The entry keeps 'Kebijakan Data dan Informasi' in title case, while every other regulation entry is in APA sentence case after 'tentang' (PP 131/2000, Perpres 55/2005, Permen 18/2013). | skeptic: I re-ran the check from the stored files only and fetched nothing. The finding stands, but it is a formatting problem, not a factual error.\n\n(1) The reference content is correct. I ran pdftotext on sources/bi_pbi_12_2024_data_policy.pdf. Its title page reads 'PERATURAN BANK INDONESIA / NOMOR 12 TAHU",
+   "fixed": true,
+   "fix": "Subject lowercased to APA sentence case."
+  },
+  {
+   "id": "r1:item:147",
+   "claim": "Bank Indonesia.",
+   "verdict": "CONFIRMED",
+   "evidence": "SEKI is Bank Indonesia's publication.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:148",
+   "claim": "(2026a).",
+   "verdict": "REFUTED",
+   "evidence": "APA 7 (9.47) arranges same-author, same-year entries alphabetically by title before assigning a/b/c. 'Data inflasi' sorts before 'Statistik ekonomi...: Suku bunga', which sorts before 'Statistik ekonomi...: Transaksi...'. The draft labels Transaksi as 2026a and Data inflasi as 2026c, which reverses the order. | skeptic: I re-checked this against the draft files and the finding stands. Both draft/if-msci-drops-indonesia.src.md and the rendered .md, lines 108-112, list the three same-author, same-year entries in this order: Bank Indonesia (2026a) = \"Statistik ekonomi dan keuangan Indonesia: Transaksi dan indeks harga",
+   "fixed": true,
+   "fix": "Bank Indonesia's 2026 entries relabelled alphabetically (Data inflasi a, Suku bunga b, Transaksi c), reordered, in-text citations updated."
+  },
+  {
+   "id": "r1:item:149",
+   "claim": "*Statistik ekonomi dan keuangan Indonesia: Transaksi dan indeks harga saham di Bursa Efek Indonesia* [Indonesian financial economic statistics: Transaction and stock price indices at the Indonesia Stock Exchange] [Data set]. https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/Default.aspx",
+   "verdict": "REFUTED",
+   "evidence": "Title and URL are right. The XLS sheet title is 'III. 3 TRANSAKSI DAN INDEKS HARGA SAHAM DI BURSA EFEK INDONESIA', BI's English is 'TRANSACTION AND STOCK PRICE INDICES AT INDONESIA STOCK EXCHANGE', and the SEKI page returns HTTP 200. But the entry has no retrieval date for a table that BI revises: design 8.6 says BI marks June to August 2026 as preliminary, and [50] prints 'on Bank Indonesia's preliminary figures'. APA 7 (9.16) calls for a retrieval date on unarchived works designed to change. Meanwhile the static, archived IDX PDFs do carry one. | skeptic: I re-ran each piece of evidence from local files. Nothing in the post was changed. My only fetch was the Internet Archive copy of an APA Style page; bi.go.id and the barred sites were not fetched.\n\n1. The entry. Inventory [149] matches line 108 of the rendered .md and line 108 of the .src.md: \"Bank ",
+   "fixed": true,
+   "fix": "Retrieval date added (October 16, 2026, from the file timestamp, New York time)."
+  },
+  {
+   "id": "r1:item:150",
+   "claim": "Bank Indonesia.",
+   "verdict": "CONFIRMED",
+   "evidence": "Bank Indonesia is the publisher.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:151",
+   "claim": "(2026b).",
+   "verdict": "CONFIRMED",
+   "evidence": "2026 matches the downloaded tables. The b letter is right under either ordering.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:152",
+   "claim": "*Statistik ekonomi dan keuangan Indonesia: Suku bunga* [Indonesian financial economic statistics: Interest rates] (Tables I.25.A, I.26 and I.28) [Data set]. https://www.bi.go.id/id/statistik/ekonomi-keuangan/seki/Default.aspx",
+   "verdict": "CONFIRMED",
+   "evidence": "The SEKI page (fetched, HTTP 200) lists 'I.25.A. Suku Bunga, Diskonto, Imbalan', 'I.26. Suku Bunga Pinjaman Rupiah ... Menurut Kelompok Bank dan Jenis Pinjaman' and 'I.28. Suku Bunga Simpanan Berjangka Rupiah ...'. The XLS titles match.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:153",
+   "claim": "Bank Indonesia.",
+   "verdict": "CONFIRMED",
+   "evidence": "Bank Indonesia is the publisher.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:154",
+   "claim": "(2026c).",
+   "verdict": "REFUTED",
+   "evidence": "Same APA 7 9.47 lettering error as [148]: 'Data inflasi' should be 2026a, not 2026c. | skeptic: I checked this myself and the finding holds. The draft has three Bank Indonesia references from the same year. In the rendered draft (if-msci-drops-indonesia.md, lines 108 to 112) and identically in if-msci-drops-indonesia.src.md they are labelled: 2026a = \"Statistik ekonomi dan keuangan Indonesia: ",
+   "fixed": true,
+   "fix": "Bank Indonesia's 2026 entries relabelled alphabetically (Data inflasi a, Suku bunga b, Transaksi c), reordered, in-text citations updated."
+  },
+  {
+   "id": "r1:item:155",
+   "claim": "*Data inflasi* [Inflation data] [Data set]. https://www.bi.go.id/id/statistik/indikator/data-inflasi.aspx",
+   "verdict": "CONFIRMED",
+   "evidence": "The URL returns HTTP 200 and shows a 'Data Inflasi' table (Agustus 2026 3,19 %), the same series as the stored data/Data Inflasi.xlsx.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:156",
+   "claim": "Baskoro, F.",
+   "verdict": "CONFIRMED",
+   "evidence": "Stored jakartaglobe_explainer-msci-classification.txt byline: 'Faisal Maliki Baskoro'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:157",
+   "claim": "M.",
+   "verdict": "CONFIRMED",
+   "evidence": "The middle initial M. is for Maliki.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:158",
+   "claim": "(2026, October 16).",
+   "verdict": "CONFIRMED",
+   "evidence": "Dateline: 'October 16, 2026 | 11:38 am'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:159",
+   "claim": "Explainer: What is MSCI market classification and why does it matter for Indonesia?",
+   "verdict": "CONFIRMED",
+   "evidence": "The page heading is 'Explainer: What Is MSCI Market Classification and Why Does It Matter for Indonesia?', correctly rendered in sentence case. The article supports [20] ('MSCI uses this criterion only to determine whether a market qualifies as developed') and [21] (the Standalone paragraph on 'significant problems with accessibility or market functioning').",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:160",
+   "claim": "*Jakarta Globe*. https://jakartaglobe.id/business/explainer-what-is-msci-market-classification-and-why-does-it-matter-for-indonesia",
+   "verdict": "REFUTED",
+   "evidence": "The URL returns HTTP 200 with the matching title. The source type is wrong: Jakarta Globe has been online-only since 15 December 2015 (Wikipedia; Asia Pacific Report, 2015-12-18). APA 7's news-website format applies, so the article title should be italic and the site name in roman. The draft uses newspaper format (plain title, italic *Jakarta Globe*). | skeptic: I re-checked this myself and the finding holds.\n\n(1) The reference in the draft: if-msci-drops-indonesia.src.md line 114 and if-msci-drops-indonesia.md line 114 read \"Baskoro, F. M. (2026, October 16). Explainer: What is MSCI market classification and why does it matter for Indonesia? *Jakarta Globe",
+   "fixed": true,
+   "fix": "News-website format: article title italic, site name roman."
+  },
+  {
+   "id": "r1:item:161",
+   "claim": "CNN Indonesia.",
+   "verdict": "CONFIRMED",
+   "evidence": "The byline is 'CNN Indonesia' with staff initials only, so a group author is right.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:162",
+   "claim": "(2026, October 16).",
+   "verdict": "CONFIRMED",
+   "evidence": "Dateline: 'Jumat, 16 Okt 2026 11:51 WIB'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:163",
+   "claim": "*Apa itu standalone market di tengah riuh pengumuman MSCI?* [What is a standalone market amid the uproar over MSCI's announcement?]. https://www.cnnindonesia.com/ekonomi/20261016085631-92-1415988/apa-itu-standalone-market-di-tengah-riuh-pengumuman-msci",
+   "verdict": "CONFIRMED",
+   "evidence": "The heading matches, and the translation is accurate ('riuh' means uproar). News-website format is correct: italic title, site name omitted because it is the author. The URL returns HTTP 200. Stored line 114 names Zimbabwe, which supports [23].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:164",
+   "claim": "Desfika, T.",
+   "verdict": "CONFIRMED",
+   "evidence": "Byline: 'Thresa Sandra Desfika, Ria Fortuna Wijaya'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:165",
+   "claim": "S., & Wijaya, R.",
+   "verdict": "CONFIRMED",
+   "evidence": "The initials match the byline.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:166",
+   "claim": "F.",
+   "verdict": "CONFIRMED",
+   "evidence": "The initial F. is for Fortuna.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:167",
+   "claim": "(2026, October 16).",
+   "verdict": "CONFIRMED",
+   "evidence": "Dateline: 'October 16, 2026 | 12:48 pm'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:168",
+   "claim": "Indonesia could join Zimbabwe, Palestine in MSCI standalone market downgrade.",
+   "verdict": "CONFIRMED",
+   "evidence": "The title matches the page heading in sentence case. Stored line 86, 'The consultation deadline is April 30, 2027, with MSCI scheduled to make a final decision by June 30, 2027', supports [28].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:169",
+   "claim": "*Jakarta Globe*. https://jakartaglobe.id/business/indonesia-could-join-zimbabwe-palestine-in-msci-standalone-market-downgrade",
+   "verdict": "REFUTED",
+   "evidence": "Same source-type error as [160]: Jakarta Globe is an online-only news site, so APA 7's news-website format applies. The URL returns HTTP 200 with the matching title. | skeptic: I re-checked this myself, and the finding stands.\n\n1. Draft text. Line 118 of both draft/if-msci-drops-indonesia.src.md and draft/if-msci-drops-indonesia.md uses the newspaper pattern, with the article title in roman and the outlet in italics: \"Desfika, T. S., & Wijaya, R. F. (2026, October 16). Ind",
+   "fixed": true,
+   "fix": "News-website format: article title italic, site name roman."
+  },
+  {
+   "id": "r1:item:170",
+   "claim": "Direktorat Jenderal Minyak dan Gas Bumi.",
+   "verdict": "CONFIRMED",
+   "evidence": "The page is hosted on migas.esdm.go.id with the footer 'Kementerian ESDM Ditjen Migas'. Note that the release itself is numbered 00026.Pers/04/SJI/2016 and signed by Kementerian ESDM's Kepala Pusat Komunikasi Publik, so Kementerian ESDM is an equally defensible author, which is how the 2014 SJI release is treated. The current choice is acceptable as the publishing site.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:171",
+   "claim": "(2016, March 30).",
+   "verdict": "CONFIRMED",
+   "evidence": "The release header reads 'Tanggal: 30 Maret 2016'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:172",
+   "claim": "*Siaran pers: Penetapan harga BBM berlaku 1 April 2016* [Press release: Fuel prices from 1 April 2016]. https://migas.esdm.go.id/post/siaran-pers---penetapan-harga-bbm-berlaku-1-april-2016",
+   "verdict": "CONFIRMED",
+   "evidence": "Page title 'SIARAN PERS : Penetapan Harga BBM Berlaku 1 April 2016'; the URL returns HTTP 200. The Harga Lama/Baru table shows cuts (Solar 5.650 to 5.150; Premium outside Java-Madura-Bali 6.950 to 6.450) on 1 April 2016, within 12 months after the 2015-09 slide. This supports [73].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:173",
+   "claim": "European Central Bank.",
+   "verdict": "CONFIRMED",
+   "evidence": "European Central Bank is the publisher.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:174",
+   "claim": "(2026).",
+   "verdict": "CONFIRMED",
+   "evidence": "The 2026 rates were used (16 Oct 2026 rates match the data file, per the provenance audit).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:175",
+   "claim": "*Euro foreign exchange reference rates* [Data set]. https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+   "verdict": "CONFIRMED",
+   "evidence": "Page <title> 'Euro foreign exchange reference rates'; HTTP 200. ECB reference rates are fixed once published, so no retrieval date is needed.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:176",
+   "claim": "Indonesia Stock Exchange.",
+   "verdict": "CONFIRMED",
+   "evidence": "The covers read 'Indonesia Stock Exchange / Bursa Efek Indonesia'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:177",
+   "claim": "(n.d.).",
+   "verdict": "REFUTED",
+   "evidence": "One entry merges two separately dated works under a single n.d. sources/idx_statistics_2009_revised.pdf prints '(c) 2009 Indonesia Stock Exchange' in its front pages (pdftotext), so the 2009 book is dated. I found no printed date in the 2007 book. APA 7 gives each work its own reference. | skeptic: I checked the finding against the stored files myself. Its verdict holds, but one piece of its evidence is wrong, and so is its proposed fix.\n\n1. The finding is right that the entry merges two works. Reference line 124 of draft/if-msci-drops-indonesia.md (and the .src.md) is a single \"Indonesia Stoc",
+   "fixed": true,
+   "fix": "Split into Indonesia Stock Exchange (2007) and (2009) entries; in-text citation updated."
+  },
+  {
+   "id": "r1:item:178",
+   "claim": "*IDX statistics* [Statistics books for 2007 and for 2009, revised].",
+   "verdict": "CONFIRMED",
+   "evidence": "The covers print 'IDX STATISTICS 2007' and 'IDX STATISTICS 2009'. 'Revised' is not printed in the book; it comes from IDX's own file name 'IDX STATISTICS 2009_revisi.pdf', which is acceptable in a bracketed description.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:179",
+   "claim": "Internet Archive copies of the IDX files.",
+   "verdict": "CONFIRMED",
+   "evidence": "Both URLs are web.archive.org copies of idx.co.id files.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:180",
+   "claim": "Retrieved October 17, 2026, from https://web.archive.org/web/20110125080940id_/http://www.idx.co.id:80/Portals/0/StaticData/Publication/Statistic/Yearly/IDX%20STATISTICS%202007.pdf and https://web.archive.org/web/20110817005635id_/http://www.idx.co.id/Portals/0/StaticData/Publication/Statistic/Yearl",
+   "verdict": "CONFIRMED",
+   "evidence": "I fetched both URLs today. SHA-256 ca214685... (2007) and c43d7518... (2009) are identical to the stored copies hash-checked in extract_ihsg_corrections.py. The access date satisfies IDX's terms.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:181",
+   "claim": "Indonesia Stock Exchange.",
+   "verdict": "CONFIRMED",
+   "evidence": "Cover: 'Indonesia Stock Exchange, Data Services Division'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:182",
+   "claim": "(2021).",
+   "verdict": "CONFIRMED",
+   "evidence": "The cover reads 'APRIL 2021', and the front matter prints '(c) 2021 Indonesia Stock Exchange'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:183",
+   "claim": "*IDX monthly statistics, April 2021*.",
+   "verdict": "CONFIRMED",
+   "evidence": "Cover title: 'IDX Monthly Statistics APRIL 2021'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:184",
+   "claim": "Internet Archive copy of the IDX file.",
+   "verdict": "CONFIRMED",
+   "evidence": "The URL is a web.archive.org copy.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:185",
+   "claim": "Retrieved October 17, 2026, from https://web.archive.org/web/20210518045642id_/https://www.idx.co.id/media/9881/idx-monthly-apr-2021.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "I fetched the URL today. SHA-256 a7e19d0f... is identical to the stored copy used for the 2021-04 correction.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:186",
+   "claim": "Indonesia Stock Exchange.",
+   "verdict": "CONFIRMED",
+   "evidence": "Stored ds_261015.pdf and ds_261016.pdf are IDX reports.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:187",
+   "claim": "(2026).",
+   "verdict": "CONFIRMED",
+   "evidence": "The reports are dated 15 and 16 October 2026.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:188",
+   "claim": "*IDX daily statistics* [Reports for 15 and 16 October 2026].",
+   "verdict": "CONFIRMED",
+   "evidence": "Page 1 of each report: 'IDX DAILY STATISTICS Thursday, 15 October 2026' and 'Friday, 16 October 2026'. The 16 October report shows IHSG 5,185.105 and -678.675 (-11.57%), which supports [2].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:189",
+   "claim": "Retrieved October 17, 2026, from https://www.idx.co.id/Media/bfsctwrv/ds_261015.pdf and https://www.idx.co.id/Media/bndpqsus/ds_261016.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "provenance-audit.md (October 2026 section) records that the owner downloaded these exact URLs on 2026-10-17. The stored PDFs' SHA-256 values are recorded, and their content matches. I did not refetch, to respect IDX's no-scraping term and design 8.1's hand-download rule. The retrieval date is present as IDX's terms require.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:190",
+   "claim": "International Monetary Fund.",
+   "verdict": "CONFIRMED",
+   "evidence": "IMF Statistics Department series (DEPARTMENT=STA).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:191",
+   "claim": "(2026a).",
+   "verdict": "CONFIRMED",
+   "evidence": "PUBLICATION_DATE is 2026-10-16T19:36:48Z in the API response.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:192",
+   "claim": "*Balance of payments (BOP)* [Data set]. https://api.imf.org/external/sdmx/2.1/data/IMF.STA,BOP,21.0.0/IDN.L_NIL_T.P_F5.USD.Q",
+   "verdict": "CONFIRMED",
+   "evidence": "The API URL returns XML (HTTP 200) for Series COUNTRY=IDN, BOP_ACCOUNTING_ENTRY=L_NIL_T, INDICATOR=P_F5, UNIT=USD, FREQUENCY=Q. The IMF's own description starts 'The Balance of Payments (BOP) is...'. Note: the 2026-Q1 and Q2 values behind the US$4.0 billion are the latest quarters and may be revised, so a retrieval date would help, but this is not required.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:193",
+   "claim": "International Monetary Fund.",
+   "verdict": "CONFIRMED",
+   "evidence": "Author element of the reference entry (draft/if-msci-drops-indonesia.md:94); the data sets are published by that body at the cited URLs (provenance-audit.md, IMF and OJK sections).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:194",
+   "claim": "(2026b).",
+   "verdict": "CONFIRMED",
+   "evidence": "PUBLICATION_DATE is 2026-10-16 in the CPI file and API.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:195",
+   "claim": "*Consumer price index (CPI)* [Data set]. https://data.imf.org/en/datasets/IMF.STA:CPI",
+   "verdict": "CONFIRMED",
+   "evidence": "Title and URL match the IMF's SUGGESTED_CITATION in the file metadata: 'International Monetary Fund. Consumer Price Index (CPI), https://data.imf.org/en/datasets/IMF.STA:CPI'. My curl got 403 Access Denied (a bot block), so I did not re-verify the live landing page today.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:196",
+   "claim": "Katanich, D.",
+   "verdict": "CONFIRMED",
+   "evidence": "Stored euronews file: 'By Doloresz Katanich'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:197",
+   "claim": "(2026, October 16).",
+   "verdict": "CONFIRMED",
+   "evidence": "'Published on 16/10/2026 - 10:13 GMT+2'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:198",
+   "claim": "Indonesian stocks plunge 11% as MSCI proposes emerging market downgrade.",
+   "verdict": "CONFIRMED",
+   "evidence": "The visible heading is 'Indonesian stocks plunge 11% as MSCI proposes emerging market downgrade'. The og:title differs ('...worst fall in 28 years...'), but the heading is the right choice. Line 306 (Jamaica, Panama, Palestine) supports [23], and line 308 (lack of clarity in shareholding structures, suspected coordinated trading) supports [26].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:199",
+   "claim": "*Euronews*. https://www.euronews.com/2026/10/16/indonesian-stocks-plunge-11-as-msci-proposes-emerging-market-downgrade",
+   "verdict": "REFUTED",
+   "evidence": "The URL returns HTTP 200. The source type is wrong: Euronews is a broadcaster's news website, like APA 7's BBC News and CNN examples, so the news-website format applies (italic article title, site name in roman). The draft uses periodical format (plain title, italic *Euronews*). | skeptic: I re-checked this myself and the finding holds.\n\n1. Live URL: curl -L on https://www.euronews.com/2026/10/16/indonesian-stocks-plunge-11-as-msci-proposes-emerging-market-downgrade returned HTTP 200 with no redirect.\n\n2. The citation details are correct. The stored copy is /Users/jonathanchrisnaldy/C",
+   "fixed": true,
+   "fix": "News-website format: article title italic, site name roman."
+  },
+  {
+   "id": "r1:item:200",
+   "claim": "Kementerian Energi dan Sumber Daya Mineral.",
+   "verdict": "CONFIRMED",
+   "evidence": "The release header reads 'KEMENTERIAN ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA SIARAN PERS'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:201",
+   "claim": "(2014, November 17).",
+   "verdict": "CONFIRMED",
+   "evidence": "The release reads 'Tanggal: 17 Nopember 2014'. The site's CMS header wrongly shows 'Jumat, 21 Juni 2013'; the reference correctly uses the release's own date.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:202",
+   "claim": "*Penyesuaian harga bahan bakar minyak (BBM) bersubsidi* [Adjustment of subsidised fuel prices] [Press release No. 60/SJI/2014]. https://www.esdm.go.id/id/media-center/arsip-berita/penyesuaian-harga-bahan-bakar-minyak-bbm-bersubsidi",
+   "verdict": "CONFIRMED",
+   "evidence": "Title 'PENYESUAIAN HARGA BAHAN BAKAR MINYAK (BBM) BERSUBSIDI', 'NOMOR: 60/SJI/2014'; the URL returns HTTP 200. The Harga Lama/Baru table (6.500 to 8.500; 5.500 to 7.500) supports the 2014 rises of 22 percent or more in [72].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:203",
+   "claim": "Menteri Energi dan Sumber Daya Mineral.",
+   "verdict": "CONFIRMED",
+   "evidence": "The regulation is issued by the Minister.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:204",
+   "claim": "(2008).",
+   "verdict": "CONFIRMED",
+   "evidence": "Abstract: 'Ditetapkan di Jakarta pada tanggal 23 Mei 2008'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:205",
+   "claim": "*Peraturan Menteri Energi dan Sumber Daya Mineral tentang harga jual eceran bahan bakar minyak jenis minyak tanah (kerosene), bensin premium dan minyak solar (gas oil) untuk keperluan rumah tangga, usaha kecil, usaha perikanan, transportasi dan pelayanan umum* [Regulation No. 16 of 2008 on the retai",
+   "verdict": "CONFIRMED",
+   "evidence": "The title matches the JDIH abstract; the reference silently fixes the source's typo 'Kerosenen'. The bracketed translation is shortened but accurate, and the [Abstract] label is right. Premium Rp 6.000 and Solar Rp 5.500 against the 4.500/4.300 of Perpres 55/2005 (also listed) support the 2008 rise of 22 percent or more.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:206",
+   "claim": "Jaringan Dokumentasi Informasi Hukum, Kementerian ESDM.",
+   "verdict": "CONFIRMED",
+   "evidence": "The page heading is 'Jaringan Dokumentasi Informasi Hukum' (ESDM's legal documentation site).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:207",
+   "claim": "Internet Archive copy. https://web.archive.org/web/20170503031650id_/http://jdih.esdm.go.id:80/view/abstrak.php?id=633",
+   "verdict": "CONFIRMED",
+   "evidence": "I fetched the URL today. SHA-256 1223e94b... is identical to sources/fuel/jdih_abstrak_permen_esdm_16_2008.html.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:208",
+   "claim": "Menteri Energi dan Sumber Daya Mineral.",
+   "verdict": "CONFIRMED",
+   "evidence": "The regulation is issued by the Minister.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:209",
+   "claim": "(2009).",
+   "verdict": "CONFIRMED",
+   "evidence": "Set 12 Januari 2009, in force 15 Januari 2009.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:210",
+   "claim": "*Peraturan Menteri Energi dan Sumber Daya Mineral tentang harga jual eceran bahan bakar minyak jenis minyak tanah (kerosene), bensin premium dan minyak solar (gas oil) untuk keperluan rumah tangga, usaha kecil, usaha perikanan, transportasi, dan pelayanan umum* [Regulation No. 1 of 2009 on the retai",
+   "verdict": "CONFIRMED",
+   "evidence": "The title matches the abstract. It sets Premium and Solar at Rp 4.500 'meninjau kembali' Permen 41/2008, a cut, which supports [73] for the 2008 slide.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:211",
+   "claim": "Jaringan Dokumentasi Informasi Hukum, Kementerian ESDM.",
+   "verdict": "CONFIRMED",
+   "evidence": "JDIH ESDM is the host.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:212",
+   "claim": "Internet Archive copy. https://web.archive.org/web/20170503055604id_/http://jdih.esdm.go.id:80/view/abstrak.php?id=659",
+   "verdict": "CONFIRMED",
+   "evidence": "I fetched the URL today. SHA-256 e5919fa4... is identical to the stored abstract.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:213",
+   "claim": "Menteri Energi dan Sumber Daya Mineral.",
+   "verdict": "CONFIRMED",
+   "evidence": "PDF p.1 header: 'MENTERI ENERGI DAN SUMBER DAYA MINERAL'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:214",
+   "claim": "(2013).",
+   "verdict": "CONFIRMED",
+   "evidence": "PDF p.1: 'NOMOR 18 TAHUN 2013'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:215",
+   "claim": "*Peraturan Menteri Energi dan Sumber Daya Mineral Republik Indonesia Nomor 18 Tahun 2013 tentang harga jual eceran jenis bahan bakar minyak tertentu untuk konsumen pengguna tertentu* [Regulation on the retail prices of certain fuels for certain users].",
+   "verdict": "CONFIRMED",
+   "evidence": "PDF p.1: 'PERATURAN MENTERI ENERGI DAN SUMBER DAYA MINERAL REPUBLIK INDONESIA NOMOR 18 TAHUN 2013 TENTANG HARGA JUAL ECERAN JENIS BAHAN BAKAR MINYAK TERTENTU UNTUK KONSUMEN PENGGUNA TERTENTU'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:216",
+   "claim": "Internet Archive copy of the JDIH ESDM file. https://web.archive.org/web/20220723081651/https://jdih.esdm.go.id/storage/document/Permen%20ESDM%2018%202013.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "I fetched the URL today. SHA-256 5c6210b8... is identical to sources/fuel/permen_esdm_18_2013.pdf.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:217",
+   "claim": "Otoritas Jasa Keuangan.",
+   "verdict": "CONFIRMED",
+   "evidence": "The page footer reads 'Copyrights (c) Otoritas Jasa Keuangan'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:218",
+   "claim": "(2026a).",
+   "verdict": "CONFIRMED",
+   "evidence": "The cube was last updated 2026-10-16. The a/b letters are correctly ordered by title (I before N).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:219",
+   "claim": "*Indeks dan kapitalisasi pasar* [Index and market capitalisation] [Data set].",
+   "verdict": "CONFIRMED",
+   "evidence": "Breadcrumb: 'Produk Pasar Modal > Kinerja Pasar > Indeks & Kapitalisasi Pasar'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:220",
+   "claim": "Portal Data SJK Terintegrasi. https://data.ojk.go.id/SJKPublic/Dataset/Dataset/Dataset/274",
+   "verdict": "REFUTED",
+   "evidence": "The portal name is right (OJK FAQ: 'Portal Data SJK Terintegrasi'), the URL returns HTTP 200, and the data hold the 28 Jan 2026 close of 8,320.556 against 8,980.23 the day before. But there is no retrieval date for a dataset that updates daily (LAST_DATA_UPDATE 2026-10-16) and that OJK's terms say may be provisional ('data yang ditampilkan bisa saja merupakan data sementara'). APA 7 9.16 calls for a retrieval date here. | skeptic: The finding stands. One correction to its label: the entry's content is right, and what is wrong is a missing APA 7 element. The finding's own evidence says the same.\n\nWhat I re-ran myself:\n\n(1) Portal name. sources/provenance/ojk-bps/ojk_portal_faq.txt, FAQ 35, reads \"Portal Data SJK Terintegrasi d",
+   "fixed": true,
+   "fix": "Retrieval date added (October 16, 2026, from the file timestamp)."
+  },
+  {
+   "id": "r1:item:221",
+   "claim": "Otoritas Jasa Keuangan.",
+   "verdict": "CONFIRMED",
+   "evidence": "Author element of the reference entry (draft/if-msci-drops-indonesia.md:146); the data sets are published by that body at the cited URLs (provenance-audit.md, IMF and OJK sections).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:222",
+   "claim": "(2026b).",
+   "verdict": "CONFIRMED",
+   "evidence": "Cube INV_BursaSaham was last updated 2026-10-16.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:223",
+   "claim": "*Nilai perdagangan saham di bursa* [Value of share trading on the exchange] [Data set].",
+   "verdict": "CONFIRMED",
+   "evidence": "Breadcrumb: 'Investor > Informasi Transaksi > Nilai Perdagangan Saham di Bursa'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:224",
+   "claim": "Portal Data SJK Terintegrasi. https://data.ojk.go.id/SJKPublic/Dataset/Dataset/Dataset/404",
+   "verdict": "REFUTED",
+   "evidence": "The URL returns HTTP 200 and the dataset is right. But the Rp82 trillion is summed through the latest week ('2026-09 Minggu 5') of a live dataset that OJK warns may be provisional, and the entry has no retrieval date. Same issue as [220]. | skeptic: I re-checked everything from local files and wrote only to skeptic-R-10 (sum404.py, which I ran with python3 -I). (1) Entry [224] reads the same in draft .md line 146 and .src.md line 146: \"Otoritas Jasa Keuangan. (2026b). *Nilai perdagangan saham di bursa* ... [Data set]. Portal Data SJK Terintegra",
+   "fixed": true,
+   "fix": "Retrieval date added (October 16, 2026, from the file timestamp)."
+  },
+  {
+   "id": "r1:item:225",
+   "claim": "Pemerintah Republik Indonesia.",
+   "verdict": "CONFIRMED",
+   "evidence": "This is a Government Regulation (Peraturan Pemerintah), signed by the President.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:226",
+   "claim": "(2000).",
+   "verdict": "CONFIRMED",
+   "evidence": "pp_131_2000.txt: 'Ditetapkan di Jakarta pada tanggal 15 Desember 2000'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:227",
+   "claim": "*Peraturan Pemerintah Republik Indonesia Nomor 131 Tahun 2000 tentang pajak penghasilan atas bunga deposito dan tabungan serta diskonto Sertifikat Bank Indonesia* [Government Regulation on income tax on deposit and savings interest and Bank Indonesia Certificate discounts]. https://peraturan.bpk.go.",
+   "verdict": "CONFIRMED",
+   "evidence": "The title matches p.1. I fetched the URL today: SHA-256 7e46c646... is identical to the stored PDF. Pasal 2 huruf a, 'pajak final sebesar 20%', supports [85].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:228",
+   "claim": "Presiden Republik Indonesia.",
+   "verdict": "CONFIRMED",
+   "evidence": "PDF p.1: 'PRESIDEN REPUBLIK INDONESIA'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:229",
+   "claim": "(2005).",
+   "verdict": "CONFIRMED",
+   "evidence": "'NOMOR 55 TAHUN 2005'; in force 1 Oktober 2005.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:230",
+   "claim": "*Peraturan Presiden Republik Indonesia Nomor 55 Tahun 2005 tentang harga jual eceran bahan bakar minyak dalam negeri* [Presidential Regulation on domestic fuel retail prices]. https://peraturan.bpk.go.id/Download/73247/PERPRES%20NO%2055%20TH%202005.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "The title matches p.1. I fetched the URL today: SHA-256 85418d43... is identical. It sets Bensin Premium Rp 4.500 and Minyak Solar Rp 4.300 from 1 Oktober 2005, which supports the date in [71]. The percent changes need the old prices; see the extra finding on [71].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:231",
+   "claim": "Reuters.",
+   "verdict": "CONFIRMED",
+   "evidence": "Jakarta Post copy: meta author 'Reuters', byline 'Reuters'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:232",
+   "claim": "(2026, October 16).",
+   "verdict": "CONFIRMED",
+   "evidence": "datePublished 2026-10-16T07:24:28+07:00; 'Published on Oct. 16, 2026'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:233",
+   "claim": "MSCI weighs downgrading Indonesia to standalone-market status.",
+   "verdict": "CONFIRMED",
+   "evidence": "The headline matches. The article supports [2] (the Standalone proposal) and [27] (frontier status 'would not adequately reflect' the issues).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:234",
+   "claim": "*The Jakarta Post*. https://www.thejakartapost.com/business/2026/10/16/msci-weighs-downgrading-indonesia-to-standalone-market-status",
+   "verdict": "CONFIRMED",
+   "evidence": "The Jakarta Post is a newspaper, so periodical format is right. The URL returns HTTP 200 with the matching title.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:235",
+   "claim": "Sigit, B.",
+   "verdict": "CONFIRMED",
+   "evidence": "JSON-LD author: 'Bonaventura Sigit'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:236",
+   "claim": "(2026, January 28).",
+   "verdict": "CONFIRMED",
+   "evidence": "datePublished 2026-01-28T10:18:15+07:00.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:237",
+   "claim": "MSCI bekukan rebalancing, saham Indonesia masuk interim freeze [MSCI freezes rebalancing; Indonesian shares enter an interim freeze].",
+   "verdict": "CONFIRMED",
+   "evidence": "The title matches the heading in sentence case, and the translation is accurate. The article supports [52]: MSCI froze rebalancing of Indonesian shares over free-float transparency.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:238",
+   "claim": "*Fortune Indonesia*. https://www.fortuneidn.com/market/msci-bekukan-rebalancing-saham-indonesia-masuk-interim-freeze-d7w03-00-dz73p-hrlsxj",
+   "verdict": "CONFIRMED",
+   "evidence": "Fortune Indonesia is a print magazine published by IDN Media (gold for best cover at the 2022 Indonesia Print Media Awards, per fortuneidn.com), so periodical format is acceptable. The URL returns HTTP 200 with the matching title.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:239",
+   "claim": "[README.md] # What Should My Family Worry About If MSCI Drops Indonesia?",
+   "verdict": "CONFIRMED",
+   "evidence": "README.md line 1 equals the draft H1 (draft/if-msci-drops-indonesia.md line 1) and the MDX frontmatter title. They match exactly.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:240",
+   "claim": "[README.md] MSCI has proposed moving Indonesia from its emerging markets into the Standalone category.",
+   "verdict": "CONFIRMED",
+   "evidence": "The stored Reuters copy (sources/provenance/press-msci/jakpost_2026-10-16_msci-weighs.txt) says MSCI was 'considering downgrading Indonesia to standalone- from emerging-market status' and is 'launching a consultation on a proposal to reclassify Indonesia as a Standalone Market'. This matches draft [2].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:241",
+   "claim": "[README.md] People fear a chain: the stock market crashes and stays down, the rupiah falls, foreign investors leave, and the cost of living rises; for a family it reaches savings and borrowing too.",
+   "verdict": "CONFIRMED",
+   "evidence": "Same chain as draft [6]-[7] and design section 1, with savings and borrowing added per 8.7.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:242",
+   "claim": "[README.md] This folder tests each link against Indonesia's own history since 2004.",
+   "verdict": "CONFIRMED",
+   "evidence": "'since 2004' is bound to meta.ihsg_first_year (2004). Every counted episode falls in 2004 or later: shock months run from 2005-08 and slides from 2004-05 (results.json slides). Minor tension: the 1997 slide is shown apart and reported in 'with 1997' counts (household.L5.with_outer 3 of 7), and the essay's Limits say 1997 'is in the price and savings tests'. A summary of counted episodes, so not false.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:243",
+   "claim": "[README.md] The first four tests were fixed before any outcome was computed; the savings and borrowing tests were added after those results and fixed before their data was read, with predictions written down first, as the pre-registration records.",
+   "verdict": "REFUTED",
+   "evidence": "Design 8.7 (design doc lines 359-363) fixes the method sentence and says 'The README says the same'. The essay prints the caveat 'but not before I knew the broad outline of Indonesia's economic history'. README.md line 3 drops it and says only 'fixed before their data was read'. That makes the README sound blinder than the essay and than 8.7 allow. Timing otherwise checks out: the predictions CSV was committed in c86f41b at 18:07:55, and the SEKI files have mtime 18:11:41. | skeptic: I re-ran every check myself, reading files only and modifying nothing in the post. One caveat on the verdict: each clause of the README sentence is literally true, so \"REFUTED\" goes too far if it means the sentence is false. The finding still stands, because the sentence breaks an explicit pre-regis",
+   "fixed": true,
+   "fix": "README method sentence aligned with the essay's caveat about prior knowledge."
+  },
+  {
+   "id": "r1:item:244",
+   "claim": "[README.md] By those rules, the foreign-money link holds: foreign investors pulled money out of Indonesian shares around four of six past shocks.",
+   "verdict": "CONFIRMED",
+   "evidence": "links.L3 n_meeting 4, n 6. Chart mf-2-flows.png shows four negative bars: Sep 2008 -0.2, Mar 2020 -2.2, Feb 2025 -3.8, Mar 2026 -4.0. Its footnote explains 'around': each window starts before the shock.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:245",
+   "claim": "[README.md] The other links do not hold.",
+   "verdict": "CONFIRMED",
+   "evidence": "links.L1, L2 and L4 have verdict 'does not hold', and so do household.L5.verdict and household.L6.verdict. Jobs is handled separately in [247].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:246",
+   "claim": "[README.md] A year after a shock, the IHSG was back above its pre-shock level in four of five episodes; the rupiah was 5 percent or more weaker three months on after two of six; inflation sped up after one of six rupiah slides; a one-month bank deposit lost buying power after tax after two of six; a",
+   "verdict": "REFUTED",
+   "evidence": "README surface repeats 'inflation sped up after one of six rupiah slides' with no 2-point qualifier. slides[start=2004-05].gap_pp is +0.90, so inflation also sped up after the 2004 slide. | skeptic: I re-ran the check myself with /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/round1/skeptic-H-13/check.py against /Users/jonathanchrisnaldy/Claude-Workspace/Projects/analytics-blog/msci-fear-chain/results.json. The finding stands.\n",
+   "fixed": true,
+   "fix": "Narrowed to 'sped up by 2 percentage points or more' (rules.inflation_gap_pp)."
+  },
+  {
+   "id": "r1:item:247",
+   "claim": "[README.md] Jobs could not be tested.",
+   "verdict": "CONFIRMED",
+   "evidence": "Design 8.8 drops L7. The draft scorecard reads 'Not tested (see the limits)'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:248",
+   "claim": "[README.md] The samples are small, and the essay sets out the limits.",
+   "verdict": "CONFIRMED",
+   "evidence": "The draft's Limits section says 'five or six episodes per link'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:249",
+   "claim": "[README.md] The essay: https://joechrisnaldy.com/blog/if-msci-drops-indonesia/",
+   "verdict": "CONFIRMED",
+   "evidence": "The MDX slug is 'if-msci-drops-indonesia', in src/content/blog, and the route is src/pages/blog/[...slug].astro. Note: the site MDX and images are still untracked (git status in site/), so the link resolves only after the site PR merges.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:250",
+   "claim": "[README.md] ## Files",
+   "verdict": "CONFIRMED",
+   "evidence": "No checkable claim: a section heading (README.md:9); the claims under it are verdicted item by item.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:251",
+   "claim": "[README.md] | File | What it is | |---|---| | `docs/2026-10-16-msci-fear-chain-design.md` | The pre-registration and its dated amendments | | `build_analysis.py` | Reads the frozen data, finds the shock months and rupiah slides, tests each link, writes `results.json` | | `make_charts.py` | Draws the",
+   "verdict": "REFUTED",
+   "evidence": "(a) 'docs/ihsg-checks/ | The month-by-month checks of the index series': the folder holds only comparison_1995_2003.csv, comparison_2006_2016.csv and comparison_2017_2022.csv. It has no table for Jan 2004 to Nov 2005, and none for the 44 OJK-daily months from 2023 to Aug 2026 (provenance-audit.md line ~641 says 'Tables: docs/ihsg-checks/'). (b) 'docs/sources.json | The stored quote behind the deposit tax rate': it holds only pp131_2000_rate (20%). The 15% PP 51/1994 rate behind the printed 1997 loss is hardcoded at household.py:67 (DEPOSIT_TAX). (c) The extract_* rows describe 'stored' PDFs and regulations, but .gitignore line 17 (*/sources/, 'never committed') keeps them out of the repo. Th | skeptic: The finding stands, but only on part (a). Parts (b) and (c) don't show that any row is wrong.\n\n(a) Upheld. `ls docs/ihsg-checks/` lists only three tables:\n- `comparison_1995_2003.csv`: the rejected older BI sheet, 120 rows.\n- `comparison_2006_2016.csv`: 132 rows.\n- `comparison_2017_2022.csv`: 72 row",
+   "fixed": true,
+   "fix": "Added docs/ihsg-checks/comparison_2023_2026.csv (check_ihsg_2023on.py: 44 months, all match)."
+  },
+  {
+   "id": "r1:item:252",
+   "claim": "[README.md] ## Run it",
+   "verdict": "CONFIRMED",
+   "evidence": "No checkable claim: a section heading (README.md:35); the claims under it are verdicted item by item.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:253",
+   "claim": "[README.md] The data files are not in the repository; `data/README.md` says how to get each one.",
+   "verdict": "REFUTED",
+   "evidence": "data/README.md does not mention data/bi_seki_table_v7_crosscheck.xls at all, and no hash, provenance entry or script references that file (grep on provenance-audit.md, build_analysis.py and profile_data.py comes back empty). For the derived CSVs it names the documents but gives no way to get them. The 19 fuel documents' URLs are only in sources/fuel/provenance.tsv, which .gitignore excludes. docs/fuel-manifest.csv lists local source_file paths and has no URL column. The Bapepam/IDX PDFs are described without URLs. | skeptic: I re-checked the claim at README.md:36 (source: docs/README.src.md:36): \"The data files are not in the repository; `data/README.md` says how to get each one.\" Its second half overstates what data/README.md does.\n\n(1) data/ holds 16 data files besides README.md, and the repo's .gitignore excludes all",
+   "fixed": true,
+   "fix": "Narrowed to 'where each file the build reads comes from'."
+  },
+  {
+   "id": "r1:item:254",
+   "claim": "[README.md] Then, from this folder:",
+   "verdict": "CONFIRMED",
+   "evidence": "No checkable claim: an instruction line (README.md:37) introducing the commands below it, which run as listed (gate fresh check rebuilds with them).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:255",
+   "claim": "[README.md] ```bash pip install -r requirements.txt python3 build_analysis.py python3 make_charts.py ```",
+   "verdict": "CONFIRMED",
+   "evidence": "requirements.txt pins matplotlib, numpy, openpyxl, pandas and xlrd. That covers build_analysis.py (pandas, xlrd), household.py (openpyxl; called from build_analysis.py line 489) and make_charts.py (matplotlib).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:256",
+   "claim": "[README.md] The build refuses to run on any file that does not match the copy that was vetted.",
+   "verdict": "CONFIRMED",
+   "evidence": "build_analysis.path() (lines 69-75) raises SystemExit on a SHA-256 mismatch for all 16 files in FILES. household.py and profile_data.py read through the same path().",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:257",
+   "claim": "[data/README.md] # Data for Post 27",
+   "verdict": "CONFIRMED",
+   "evidence": "The design doc title says Post 27.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:258",
+   "claim": "[data/README.md] The data files are not committed.",
+   "verdict": "CONFIRMED",
+   "evidence": ".gitignore has '*/data/*' and '!*/data/README.md'. git check-ignore confirms the data files are ignored.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:259",
+   "claim": "[data/README.md] Each one is frozen by its SHA-256, which `build_analysis.py` checks before reading it; a fresh download may differ and then needs a new vet.",
+   "verdict": "REFUTED",
+   "evidence": "'Each one is frozen by its SHA-256' does not cover data/bi_seki_table_v7_crosscheck.xls. It sits in data/ but is absent from build_analysis.FILES, from provenance-audit.md and from this README, so it is frozen nowhere. Every file the build actually reads is hash-checked. | skeptic: The finding stands. I re-ran every check myself and found nothing wrong with its evidence.\n\n(1) Tally of data/ against build_analysis.FILES (saved at .../skeptic-K-4/data_vs_FILES.txt). data/ holds 16 files besides README.md. 15 are keys in FILES, and all 15 SHA-256s match the files on disk (15 of 1",
+   "fixed": true,
+   "fix": "Narrowed to 'Each data file build_analysis.py reads is frozen'."
+  },
+  {
+   "id": "r1:item:260",
+   "claim": "[data/README.md] The blog is non-commercial.",
+   "verdict": "CONFIRMED",
+   "evidence": "Design section 7 and the essay credits ('non-commercial').",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:261",
+   "claim": "[data/README.md] Source documents and licence terms are in `docs/provenance-audit.md`.",
+   "verdict": "CONFIRMED",
+   "evidence": "provenance-audit.md has a section for each source, including the 8.7 tax and fuel sections and the 8.8 section. The fuel URLs are delegated to sources/fuel/provenance.tsv, which is not committed (see [253]).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:262",
+   "claim": "[data/README.md] ## Sources",
+   "verdict": "CONFIRMED",
+   "evidence": "No checkable claim: a section heading (data/README.md:5); the claims under it are verdicted item by item.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:263",
+   "claim": "[data/README.md] - **IHSG month-end close.** Bank Indonesia, SEKI Table III.3, \"Transaksi dan indeks harga saham di Bursa Efek Indonesia\" (bi.go.id, statistics, SEKI), used from December 2005.",
+   "verdict": "CONFIRMED",
+   "evidence": "meta.bi_first_used is 2005-12, and build_analysis.read_ihsg keeps BI values from 2005-12 onward. The table title matches the essay reference Bank Indonesia (2026a).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:264",
+   "claim": "[data/README.md] Bank Indonesia's data policy requires its data to be credited to Bank Indonesia.",
+   "verdict": "CONFIRMED",
+   "evidence": "Stored sources/bi_pbi_12_2024_data_policy.pdf, Pasal 21(4): 'Pihak eksternal yang menggunakan Data dan Informasi ... harus mencantumkan Bank Indonesia sebagai sumber materi.'",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:265",
+   "claim": "[data/README.md] Before that: Bapepam's weekly capital market statistics (Statistik Pasar Modal), read from an Internet Archive copy of the OJK archive file by `extract_bapepam_2004_2005.py`.",
+   "verdict": "CONFIRMED",
+   "evidence": "The extract_bapepam_2004_2005.py docstring says: Internet Archive copy of OJK Documents/408.pdf, Table 8, Akhir, Jan 2004 to Nov 2005.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:266",
+   "claim": "[data/README.md] Six months are corrected to the Indonesia Stock Exchange's own statistics books or Bapepam-LK's statistics by `extract_ihsg_corrections.py` (Indonesia Stock Exchange files cited with their access date, as its terms require). - **Rupiah per US dollar, daily.** Bank for International ",
+   "verdict": "REFUTED",
+   "evidence": "The corrections CSV draws on two IDX statistics books (2007; 2009 revised) and on 'IDX Monthly Statistics April 2021', a monthly report rather than a statistics book. Chart 1's footnote and the essay ('the Indonesia Stock Exchange's own figures') name it correctly. The other three corrections (2006-01, 2006-02, 2006-08) come from Bapepam-LK's March 2007 week 1 issue, as stated. The rupiah clause is confirmed by provenance-audit lines 83-93 ('From 1 Jan 1988 to 4 Jan 1999: US Federal Reserve System'; ECB from 5 Jan 1999). | skeptic: I checked this against the files myself, and the claim is wrong in one small way. The rest of the sentence holds.\n\nThe sentence is in /Users/jonathanchrisnaldy/Claude-Workspace/Projects/analytics-blog/msci-fear-chain/data/README.md, line 7: \"Six months are corrected to the Indonesia Stock Exchange's",
+   "fixed": true,
+   "fix": "Deleted 'books'."
+  },
+  {
+   "id": "r1:item:267",
+   "claim": "[data/README.md] Days after the last BIS update use the European Central Bank's reference rates (rupiah per euro divided by dollars per euro), computed by the author. - **Foreign equity flows, quarterly.** International Monetary Fund, Balance of Payments: Indonesia, portfolio investment liabilities,",
+   "verdict": "CONFIRMED",
+   "evidence": "read_rupiah appends the ECB cross rate after the last BIS date. meta.rupiah_last_bis is 2026-10-13 and rupiah_last is 2026-10-16. The BoP description matches read_bop and chart 2's footnote.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:268",
+   "claim": "[data/README.md] Sums are the author's calculations. - **Consumer prices, monthly.** International Monetary Fund, Consumer Price Index: Indonesia, headline index, compiled by BPS-Statistics Indonesia.",
+   "verdict": "CONFIRMED",
+   "evidence": "read_cpi filters the IMF headline index (COICOP _T, IX). The compiler rests on the IMF DSBB record (provenance 8.8 section).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:269",
+   "claim": "[data/README.md] Inflation rates are the author's calculations. - **October context.** OJK's Portal Data SJK Terintegrasi: the daily IHSG and weekly foreign trading on the exchange. - **Deposit, loan and policy rates, monthly.** Bank Indonesia, SEKI Tables I.28 (rupiah time-deposit rates), I.26 (rup",
+   "verdict": "REFUTED",
+   "evidence": "OJK's portal data is labelled 'October context', but it is also the source of the 28 January 2026 fall that the essay prints (essay: 'the January fall from OJK's data portal (Otoritas Jasa Keuangan, 2026a)'; october_2026.freeze_fall_pct), of the 30 September bridge close in chart 1, of the 2023 to Aug 2026 month-end checks, and of the Jan-Sep 2026 net selling (Rp82 trillion). Minor: 'commercial banks as a whole' does not apply to I.25.A's policy rates. | skeptic: I checked each piece of the refuter's evidence against the post's files. All four uses are real, and the label \"October context\" does not describe them.\n\n1. **The January fall comes from OJK.** In build_analysis.py, october_2026() (around line 383) takes the January 2026 slice of read_ojk_daily() (d",
+   "fixed": true,
+   "fix": "Label narrowed to 'Context.'."
+  },
+  {
+   "id": "r1:item:270",
+   "claim": "[data/README.md] Each was checked against an earlier edition of the same table archived by the Internet Archive. - **BPS's published inflation, monthly.** Bank Indonesia's Data Inflasi page (bi.go.id, statistics, indicators), which reports BPS's year-on-year headline inflation; downloaded by hand. -",
+   "verdict": "REFUTED",
+   "evidence": "'the rate is bound to a stored quote in docs/sources.json' names two regulations, but only PP 131/2000's 20% is bound (sources.json has the single key pp131_2000_rate). PP 51/1994's 15%, verified in the stored copy ('15% (lima belas persen)', Pasal 3), is hardcoded at household.py:67 and drives the printed 1997 loss (household.L5 1997-09: tax 0.15, real_net -23.3). The draft's reference list omits PP 51/1994 even though the essay prints that result ('under the tax then in force'). The rest checks out: archived 2011/2019/2024 editions were used for I.28, I.26 and I.25 (provenance lines 700-707), and the fuel domains match sources/fuel/provenance.tsv (bpk, esdm, migas, jdih via IA, Pertamina v | skeptic: I re-ran the checks myself and the finding holds. The claim says the rate is bound to a stored quote, but only one of the two regulations it names is bound.\n\n1. docs/sources.json has exactly one key, `pp131_2000_rate`. Its quote is from Pasal 2 huruf a of PP 131/2000, it reads \"20% (dua puluh persen",
+   "fixed": true,
+   "fix": "Narrowed to 'PP 131/2000's rate is bound to a stored quote'."
+  },
+  {
+   "id": "r1:item:271",
+   "claim": "[data/README.md] October has no monthly or quarterly file from the exchange yet.",
+   "verdict": "CONFIRMED",
+   "evidence": "Provenance (October 2026 section): on 2026-10-17 IDX's Digital Statistic listed 2026 only to Q3 (quarterly) and September (monthly).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:272",
+   "claim": "[data/README.md] ## How the index series was checked",
+   "verdict": "CONFIRMED",
+   "evidence": "No checkable claim: a section heading (data/README.md:18); the claims under it are verdicted item by item.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:273",
+   "claim": "[data/README.md] Bank Indonesia's month-ends were compared, month by month, with the Indonesia Stock Exchange's statistics books, Bapepam and OJK statistics and OJK's daily index; the comparison tables are in `docs/ihsg-checks/`.",
+   "verdict": "REFUTED",
+   "evidence": "'the comparison tables are in docs/ihsg-checks/': the folder has only the 1995-2003, 2006-2016 and 2017-2022 CSVs. The comparison with 'OJK's daily index' named in the same sentence (44 months, 2023 to Aug 2026, provenance line ~641) has no table there. | skeptic: I re-checked this myself and changed nothing in the post. Item 273 is the sentence at data/README.md:20, which is generated from docs/data-README.src.md:20. It names four comparisons: the IDX statistics books, Bapepam statistics, OJK statistics and \"OJK's daily index\". It then says \"the comparison t",
+   "fixed": true,
+   "fix": "Added docs/ihsg-checks/comparison_2023_2026.csv (44 months, all match), so the sentence holds."
+  },
+  {
+   "id": "r1:item:274",
+   "claim": "[data/README.md] Months where they disagree use the exchange's figure first, then Bapepam's or OJK's.",
+   "verdict": "CONFIRMED",
+   "evidence": "Design 8.6 precedence and the extract_ihsg_corrections.py docstring ('the exchange's figure, then Bapepam's or OJK's').",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:275",
+   "claim": "[data/README.md] Bank Indonesia's closes before 2004 are not used: they failed this check.",
+   "verdict": "CONFIRMED",
+   "evidence": "Design 8.6 and docs/ihsg-checks/comparison_1995_2003.csv: 9 of 85 months disagree with the exchange, 7 more with Bapepam. BI's Jan 2004 to Nov 2005 values are unused only because III.3 has just the Decembers (extract_bapepam docstring). That is not a contradiction.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:276",
+   "claim": "[data/README.md] ## Traps hit while vetting",
+   "verdict": "CONFIRMED",
+   "evidence": "No checkable claim: a section heading (data/README.md:22); the claims under it are verdicted item by item.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:277",
+   "claim": "[data/README.md] - OECD's monthly share price series for Indonesia names a commercial website as its source and averages daily closes, so it was not used. - Bank Indonesia's table places the year label on the first month of each year in older sheets and on the last month in recent years; the reader ",
+   "verdict": "REFUTED",
+   "evidence": "The OECD, III.3 label, IDX scraping and MSCI items match 8.6, 8.1 and 8.5, and the BPS robots claim matches 8.8. But 'no other official source with BPS's round-by-round figures passed the same check' misstates 8.8: ILOSTAT failed on measure and coverage, the ADB on annual frequency, Satu Data on reachability (a private address), and only the Ministry of Manpower on terms. None of those is 'the same check' as BPS's robots block. The essay's wording ('I found no other official source with the same figures that I could use') is accurate. | skeptic: I re-ran the check from the files and the refutation stands, though one part of the refuter's reasoning goes too far.\n\n1. Where the claim sits. The clause is in data/README.md line 28 and in its source, docs/data-README.src.md line 28. gate.toml line 13 renders the source into the README. gate.toml ",
+   "fixed": true,
+   "fix": "'passed the same check' narrowed to 'could be used'."
+  },
+  {
+   "id": "r1:item:278",
+   "claim": "[data/README.md] Kompas bans AI use in its robots file and was not used. - Bank Indonesia's rate tables spread each series over several sheets, label the year on a few months in newer sheets, and repeat December 2018 (the first copy empty); `seki.py` checks each case. - From 2015 the Premium price t",
+   "verdict": "REFUTED",
+   "evidence": "data-README.src.md:29 says 'Bank Indonesia's rate tables ... repeat December 2018 (the first copy empty)', but only I.26 does: household.checks shows deposit duplicates_skipped=0 and loan duplicates_skipped=1, and the provenance audit names I.26 only. | skeptic: The finding is right. I checked it in two ways.\n\n1. Stored results and code. In results.json (around lines 1624-1637), household.checks shows deposit duplicates_skipped=0 and loan duplicates_skipped=1. seki.py:sheet_series adds to `dupes` every time a month column repeats the month before it. househ",
+   "fixed": true,
+   "fix": "Narrowed to 'Table I.26 repeats December 2018' and 'the other Premium rows from 2015 on'."
+  },
+  {
+   "id": "r1:item:279",
+   "claim": "[[published] seoTitle] What Should My Family Worry About If MSCI Drops Indonesia? - Jonathan Chrisnaldy",
+   "verdict": "CONFIRMED",
+   "evidence": "Title plus author name; same assessment as [1].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:280",
+   "claim": "[[published] excerpt] MSCI has proposed moving Indonesia to Standalone status, and people fear a chain: stocks crash and stay down, the rupiah falls, foreign money leaves, prices rise.",
+   "verdict": "CONFIRMED",
+   "evidence": "Reuters copy line 176 (a proposal to reclassify as a Standalone Market). The chain matches design section 1. Read alone, it describes the fear, not a finding.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:281",
+   "claim": "[[published] excerpt] Against Indonesia's own record, foreign money left around four of six past shocks, but the index was back above its pre-shock level a year later in four of five; inflation sped up after one of six rupiah slides, a bank deposit lost buying power after two of six, and consumer-lo",
+   "verdict": "REFUTED",
+   "evidence": "Read alone, the excerpt says 'inflation sped up after one of six rupiah slides' with no 2-point qualifier, but inflation also sped up after May 2004 (gap_pp +0.90; chart mf-3 '+0.9 pts'). The other counts are right: L3 4/6, L1 4 of 5 back above, L5 2/6, L6 1/6 with 'a point or more'. | skeptic: I re-ran the check myself from results.json, the design doc, gate.toml and the published MDX, and the finding stands.\n\n1. The excerpt comes from gate.toml line 75. Its count is bound to links.L4.n_meeting / links.L4.n, which comes out as one of six.\n2. L4 does not mean \"inflation went up at all\". Th",
+   "fixed": true,
+   "fix": "Narrowed to 'sped up by 2 percentage points or more' (rules.inflation_gap_pp)."
+  },
+  {
+   "id": "r1:item:282",
+   "claim": "[[published] metaDescription] Testing the MSCI downgrade fear against Indonesia's own history: foreign money left around four of six past shocks, while the rupiah, inflation, savings and loan rates followed in a minority of cases.",
+   "verdict": "REFUTED",
+   "evidence": "Read alone, 'foreign money left around four of six past shocks, while the rupiah, inflation, savings and loan rates followed in a minority of cases' says all four followed past (stock) shocks. Only the rupiah test runs on shocks; inflation, the deposit and loan rates were tested after rupiah slides, a different set of episodes (shocks 2005-08, 2008-03, 2008-09, 2020-03, 2025-02, 2026-03; slides 2004-05, 2005-08, 2008-10, 2013-08, 2015-09, 2020-03). It also uses 'savings' for the deposit result, which 8.7 forbids. The 'minority' counts themselves are right (2/6, 1/6, 2/6, 1/6). | skeptic: I re-ran the check against results.json, the gate template and design 8.7 (output saved at /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/round1/skeptic-H-9/recheck.txt). The sentence comes from gate.toml line 76 ([published] metaDe",
+   "fixed": true,
+   "fix": "Narrowed each link to its own event set (shocks for the rupiah, slides for the household links)."
+  },
+  {
+   "id": "r1:item:283",
+   "claim": "[[published] alt:mf-1-markets.png] Stacked line charts after each IHSG shock month since 2004, indexed to the month before.",
+   "verdict": "REFUTED",
+   "evidence": "Chart mf-1 has two separate line panels, one above the other. 'Stacked line charts' is a standard term for cumulative stacked lines or areas, so a screen-reader user would picture the wrong chart type. The rest is accurate (since 2004, indexed to the month before = 100). | skeptic: I re-ran the check against the files.\n\nWhere the text lives: the alt text is generated from /Users/jonathanchrisnaldy/Claude-Workspace/Projects/analytics-blog/msci-fear-chain/gate.toml line 77, and it renders as \"Stacked line charts after each IHSG shock month since 2004, indexed to the month before",
+   "fixed": true,
+   "fix": "Deleted 'Stacked'."
+  },
+  {
+   "id": "r1:item:284",
+   "claim": "[[published] alt:mf-1-markets.png] Top: the IHSG; a year after the shock it was back above that level in four of five episodes, and the episode that began in March 2026 is open, with a dotted end at the close on 16 October 2026, 37.0 percent below its level before that shock.",
+   "verdict": "CONFIRMED",
+   "evidence": "L1 4 of 5. latest_extension: 16 Oct index 62.96, so 37.0% below, plotted dotted at x 6.52 (the chart marker sits at about 63). The dotted segment also passes through OJK's 30 Sep close, which the alt text does not need to mention.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:285",
+   "claim": "[[published] alt:mf-1-markets.png] Bottom: the rupiah per US dollar, where higher means weaker; it was 5 percent or more weaker three months on in two of six episodes.",
+   "verdict": "CONFIRMED",
+   "evidence": "Axis label 'higher means a weaker rupiah'. L2 2/6 at month 3, which matches the chart title '5% or more weaker 3 months on after 2 of 6'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:286",
+   "claim": "[[published] alt:mf-2-flows.png] Bar chart of net foreign purchases of Indonesian shares over the quarter of each IHSG shock and the next, in US dollars.",
+   "verdict": "REFUTED",
+   "evidence": "Chart image mf-2 (not the alt text): the 'Q4 2026 not yet published' placeholder is a dashed box from 0 down to about -2.2. make_charts.py draws Rectangle((slot-0.34, lo*0.55), 0.68, -lo*0.55), with lo = -4.04. That gives the placeholder a bar-like height in the outflow direction, about the size of the 2020 outflow. A reader can quote it as an implied estimate of US$2.2bn of Q4 outflow, which the post does not make. | skeptic: I re-ran the check from the files. The finding is right about the chart image. It is filed against the wrong item: inventory item 286 is the alt-text sentence, which is accurate.\n\n1. Code: make_charts.py chart_flows(), lines 207-214, sets lo = min(vals + [0]). It then draws Rectangle((slot-0.34, lo*",
+   "fixed": true,
+   "fix": "Placeholder box removed from mf-2-flows.png; the 'not yet published' label kept."
+  },
+  {
+   "id": "r1:item:287",
+   "claim": "[[published] alt:mf-2-flows.png] There were net outflows around four of six episodes, including 4.0 billion around the March 2026 episode; the quarter of the October 2026 fall is not yet published.",
+   "verdict": "CONFIRMED",
+   "evidence": "Four amber bars (-0.2, -2.2, -3.8, -4.0). The 2026 episode's outflow_usd_bn is 4.04. meta.bop_last is 2026Q2, so Q4 is not published. The currency is given in [286].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:288",
+   "claim": "[[published] alt:mf-3-prices.png] Dumbbell chart of consumer price inflation over the twelve months up to and after each rupiah slide.",
+   "verdict": "REFUTED",
+   "evidence": "Chart image mf-3 (not the alt text): the title's first line, ending 'rupiah slides;', overlaps the side-panel label '1997 slide, shown apart', so the rendered image reads 'slides;997 slide'. This is a visible defect that a hostile reader can screenshot. | skeptic: The finding is right: the bold title runs into the side-panel label in the published chart.\n\n1. Looked at the image itself. In a full-resolution crop of the top-right of charts/mf-3-prices.png (1708x1454 px at 200 dpi), the bold title's first line, ending 'rupiah slides;', runs into the grey side-pa",
+   "fixed": true,
+   "fix": "Title line break moved in mf-3-prices.png; no overlap."
+  },
+  {
+   "id": "r1:item:289",
+   "claim": "[[published] alt:mf-3-prices.png] Prices rose after six of six slides; inflation was 2 percentage points or more higher after one of six, after August 2005.",
+   "verdict": "CONFIRMED",
+   "evidence": "prices_rose 6/6. Only 2005-08 has gap_pp of at least 2 (+6.58). This is correctly qualified, unlike [13] and [281].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:290",
+   "claim": "[[published] alt:mf-3-prices.png] Rows under the chart count the government's changes to Premium and Solar prices in each window.",
+   "verdict": "CONFIRMED",
+   "evidence": "Refutation not upheld. Skeptic: The finding does not stand. Item 290 is alt text: \"Rows under the chart count the government's changes to Premium and Solar prices in each window.\" I checked it against the published chart and it is accurate.\n\n1. charts/mf-3-prices.png has two rows under each of the six counted slides. The rows read \"Fuel price changes, 12 months to the slide\" and \"12 months after\". The 1997 slide's cell reads \"fuel not checked\".\n2. make_charts.py fuel_cell() (around line 236) prints only n_rises and n_cuts, or \"no change found\".\n3. Every cell matches results.json household.fuel.episodes. I recomputed them and saved the output to skeptic-K-19/fuel_counts_check.txt. For example: 2004-05 is 0/0 before and 1 ri",
+   "fixed": false,
+   "fix": "Design gap recorded in 8.9 (fuel list printed as counts)."
+  },
+  {
+   "id": "r1:item:291",
+   "claim": "[[published] alt:mf-3-prices.png] The 1997 slide, shown apart and not counted, went from 7.3 to 82.4 percent.",
+   "verdict": "CONFIRMED",
+   "evidence": "slides[start=1997-09] inflation 7.33 to 82.42. The chart shows it in a separate panel marked 'not counted'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:292",
+   "claim": "[[published] alt:mf-4-savings-loans.png] Stacked bar charts for each rupiah slide.",
+   "verdict": "REFUTED",
+   "evidence": "Chart mf-4 has two plain bar panels, not stacked (segmented) bars. It also shows only the six counted slides; the 1997 slide (shown in mf-3, and counted 'with 1997 included' in the prose) is absent, so 'each rupiah slide' overstates. | skeptic: I checked both parts against the files, and both hold.\n\n(1) \"Stacked.\" I looked at charts/mf-4-savings-loans.png and at make_charts.py lines 306-348. bars() makes one ax.bar call per panel, with no bottom= argument, so there are no segments. The chart is plt.subplots(2, 1, sharex=True): two plain, s",
+   "fixed": true,
+   "fix": "Changed to 'Bar charts for each counted rupiah slide'."
+  },
+  {
+   "id": "r1:item:293",
+   "claim": "[[published] alt:mf-4-savings-loans.png] Top: the buying power of a one-month rupiah deposit after tax, twelve months on; it fell after two of six slides, May 2004 and August 2005.",
+   "verdict": "CONFIRMED",
+   "evidence": "household.L5: 2004-05 -2.04% and 2005-08 -5.03%, matching the amber bars labelled -2.0% and -5.0%. 2 of 6.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:294",
+   "claim": "[[published] alt:mf-4-savings-loans.png] Bottom: the change in the average consumer-loan rate over twelve months; it rose a point or more after one of six, after August 2005.",
+   "verdict": "CONFIRMED",
+   "evidence": "household.L6: only 2005-08 +1.87 pp is at least 1.0. The chart bar reads +1.9, above the 1-point line.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:295",
+   "claim": "with later changes dated and explained => licence: docs/2026-10-16-msci-fear-chain-design.md section 8: amendments 8.1 to 8.6, each dated and each with its reason",
+   "verdict": "REFUTED",
+   "evidence": "The licence covers 'amendments 8.1 to 8.6', but the later changes also include 8.7 and 8.8 (design:218, 371). 'Each with its reason' fails for 8.2 (design:157-164) and 8.4 (design:174-178), against the design's own rule at design:4. 8.8's family-city item is dated 2026-10-18 (design:386) inside a commit dated 2026-10-17 20:59:49 -0400. | skeptic: I re-checked this from the files and the finding stands. The gate.toml licence (gate.toml:58) is wrong in two ways, and both feed draft [30] (\"with later changes dated and explained\", draft .md:19).\n\n(1) The range is incomplete. The licence covers only \"amendments 8.1 to 8.6\", but section 8 also con",
+   "fixed": true,
+   "fix": "Draft phrase 'and explained' deleted; the [claims] entry removed."
+  },
+  {
+   "id": "r1:item:296",
+   "claim": "a month-end close at least 10% below the previous month-end => licence: the shock-month definition, rules.shock_used (design 8.1)",
+   "verdict": "CONFIRMED",
+   "evidence": "rules.shock_used=0.1 and shock_cluster_months=3. The text comes from make_charts.py shock_definition() and appears in the chart 1 and chart 2 figcaptions. Minor: the 'month-end' part comes from 8.6 (design:188-193), but the licence cites only 8.1.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:297",
+   "claim": "a month-end rate at least 7% weaker against the US dollar than 3 months earlier => licence: the slide definition, rules.slide_used over rules.slide_span_months (design 8.1)",
+   "verdict": "REFUTED",
+   "evidence": "Wrong section cited. 8.1 covers stock shock months and L1/L2 (design:139-155). The slide definition is section 4's L4 rule with its 7% fallback (design:81-86), and the BIS month-end comes from 8.3 (design:171-172). The keys rules.slide_used=0.07 and slide_span_months=3 are right. | skeptic: I re-checked this from the files and the finding stands. The licence for item 297 (gate.toml:60) cites \"(design 8.1)\", and that section is the wrong one.\n\n1. Design 8.1 (docs/2026-10-16-msci-fear-chain-design.md:139-155) sets the stock series, the shock-month rule (10%, with a 7% fallback, and a sho",
+   "fixed": true,
+   "fix": "Licence section corrected to design section 4, L4, with its fallback."
+  },
+  {
+   "id": "r1:item:298",
+   "claim": "Every figure the essay prints => licence: the draft binds each figure to results.json; the gate's numbers check fails any unbound figure",
+   "verdict": "REFUTED",
+   "evidence": "README.src.md:27 says results.json holds 'Every figure the essay prints'. But draft src:55 binds the 20 percent deposit tax to {{src:pp131_2000_rate.values.rate_pct:int}} in docs/sources.json, and README.src.md:24 itself lists sources.json as 'The stored quote behind the deposit tax rate'. The dates 30 April 2027 and 30 June 2027 are [allow] entries, not results. The licence's premise, 'the draft binds each figure to results.json', is therefore false. | skeptic: I re-checked this against the files and the finding stands, with one correction.\n\n1. The claim and its licence. gate.toml:61 reads: \"Every figure the essay prints\" = \"the draft binds each figure to results.json; the gate's numbers check fails any unbound figure\". The prose behind it is docs/README.s",
+   "fixed": true,
+   "fix": "README row narrowed to 'Figures the essay prints'; [claims] entry removed."
+  },
+  {
+   "id": "r1:item:299",
+   "claim": "I found no other official source with the same figures that I could use => licence: amendment 8.8 and sources/provenance/rights-88: ILOSTAT, ADB, the Ministry of Manpower, Satu Data Indonesia and Bank Indonesia checked; none passed",
+   "verdict": "UNVERIFIABLE",
+   "evidence": "The four sources 8.8 names (ILOSTAT, ADB, Ministry of Manpower, Satu Data) are confirmed by design:379-382 and the rights-88 files, so the draft's hedged wording stands. But the licence also says 'Bank Indonesia checked; none passed'. 8.8 never mentions Bank Indonesia, and rights-88/bi_terms_none_homepage_live.txt records only that BI has no terms page and its robots file allows everything. Nothing records whether BI publishes the round-by-round figures. | skeptic: I re-checked this against the files and the finding stands. The draft sentence is fine; the problem is the part of the gate licence (gate.toml:62) that says Bank Indonesia was \"checked; none passed\". The sources the licence cites do not record that.\n\n(1) Amendment 8.8 in docs/2026-10-16-msci-fear-ch",
+   "fixed": true,
+   "fix": "Bank Indonesia removed from the licence."
+  },
+  {
+   "id": "r1:item:300",
+   "claim": "no other official source with BPS's round-by-round figures passed the same check => licence: amendment 8.8 and sources/provenance/rights-88",
+   "verdict": "REFUTED",
+   "evidence": "data-README.src.md:28 says no other source 'passed the same check', meaning the robots and terms test that excluded BPS. Per 8.8, the others failed on different grounds. ILOSTAT (CC BY 4.0; archived robots with 'Disallow:' empty) is a different measure. ADB is annual. Satu Data's files sit on a private address. The Ministry of Manpower's Satu Data portal starts in 2020, has no terms page and serves an allow-all robots file (rights-88/kemnaker_satudata_robots_live.txt), and the terms 8.8 cites define the Site as tte.kemnaker.go.id. | skeptic: I re-checked this from the stored files and the README claim does not hold up.\n\n1. What \"same check\" points to. docs/data-README.src.md:28 (copied word for word into data/README.md:28) says BPS's site blocks Anthropic's crawler in its robots file, then that \"no other official source with BPS's round",
+   "fixed": true,
+   "fix": "Phrase and [claims] entry narrowed to 'could be used'."
+  },
+  {
+   "id": "r1:item:301",
+   "claim": "30 April 2027 => reason: MSCI's consultation deadline, reported by Desfika and Wijaya (2026); a date, not a result",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/provenance/press-msci/jakartaglobe_join-zimbabwe-palestine.txt:86: 'The consultation deadline is April 30, 2027'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:302",
+   "claim": "30 June 2027 => reason: MSCI's planned decision date, reported by Desfika and Wijaya (2026); a date, not a result",
+   "verdict": "CONFIRMED",
+   "evidence": "Same line: 'final decision by June 30, 2027'. jakpost_2026-10-16_msci-weighs.txt:177 agrees.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:303",
+   "claim": "Post 27 => reason: the series index of this post",
+   "verdict": "CONFIRMED",
+   "evidence": "Used in the data-README title and at make_charts.py:1. The memory index lists Post 26 as the latest.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:304",
+   "claim": "SHA-256 => reason: hash algorithm name",
+   "verdict": "CONFIRMED",
+   "evidence": "Hash algorithm name, data-README.src.md:3.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:305",
+   "claim": "IDX Statistics 2007 => reason: title of the exchange's statistics book for 2007 (sources/idx_statistics_2007.pdf), a publication name",
+   "verdict": "CONFIRMED",
+   "evidence": "pdftotext of sources/idx_statistics_2007.pdf shows the cover 'IDX STATISTICS 2007'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:306",
+   "claim": "IDX Statistics 2009 => reason: title of the exchange's revised statistics book for 2009 (sources/idx_statistics_2009_revised.pdf), a publication name",
+   "verdict": "CONFIRMED",
+   "evidence": "The cover of sources/idx_statistics_2009_revised.pdf reads 'IDX STATISTICS 2009'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:307",
+   "claim": "IDX Monthly Statistics April 2021 => reason: title of the exchange's monthly statistics for April 2021 (sources/idx_monthly_statistics_2021-04.pdf), a publication name",
+   "verdict": "CONFIRMED",
+   "evidence": "The cover reads 'IDX Monthly Statistics APRIL 2021'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:308",
+   "claim": "the last three points of the => reason: chart 1: Bank Indonesia marks three months as preliminary, meta.ihsg_preliminary (2026-06 to 2026-08), named in the same sentence",
+   "verdict": "CONFIRMED",
+   "evidence": "meta.ihsg_preliminary is [2026-06, 2026-07, 2026-08], named in the same caption sentence (make_charts.py:106-107). Ambiguity: in chart 1, the Mar 2026 line continues dotted to 30 September and 16 October. Read literally, its last three points are August, 30 September and 16 October.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:309",
+   "claim": "Months from the shock month (0); minus 1 is the month before, set to 100 => reason: x-axis convention of charts 1 and 2: month 0 is the shock month, month minus 1 the index base",
+   "verdict": "REFUTED",
+   "evidence": "The label is set in lined_up() (make_charts.py:154), which only chart_markets (mf-1) uses, and the top panel's label is cleared. Chart 2 is the flows bar chart (chart_flows), with episode labels on its x-axis. | skeptic: I re-checked this from the files and the refutation holds. The reason text \"x-axis convention of charts 1 and 2\" is wrong under the post's current chart numbering.\n\n1. The label is set in one place only: make_charts.py:154, inside lined_up() (`ax.set_xlabel(\"Months from the shock month (0); minus 1 ",
+   "fixed": true,
+   "fix": "Reason points at mf-1-markets.png, not a stale chart number."
+  },
+  {
+   "id": "r1:item:310",
+   "claim": "100 = month before => reason: index base of chart 1's panels, a convention",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:173-174, on both panels of chart 1.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:311",
+   "claim": "US$ billion, quarter of the shock and the next => reason: chart 3 axis: the unit and the L3 window (design 8.2)",
+   "verdict": "REFUTED",
+   "evidence": "Wrong chart number. The label is set in chart_flows (make_charts.py:218), saved as mf-2-flows.png, which has been chart 2 since 8.8 (design:383-384). | skeptic: I checked this again in the post's files. Item 311 is gate.toml line 28: \"US$ billion, quarter of the shock and the next\" = \"chart 3 axis: the unit and the L3 window (design 8.2)\". The label exists in only one place, make_charts.py:218 (ax.set_ylabel), inside chart_flows(). That function saves its o",
+   "fixed": true,
+   "fix": "Reason points at mf-2-flows.png, not a stale chart number."
+  },
+  {
+   "id": "r1:item:312",
+   "claim": "the quarter that contains the shock month and the next quarter => reason: the L3 window as fixed in design 8.2, a definition",
+   "verdict": "CONFIRMED",
+   "evidence": "Matches design 8.2 (design:160-161) and build_analysis flows_link (quarters q0 and q0+1).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:313",
+   "claim": "both of its quarters are published => reason: chart 3: the latest episode's L3 window (two quarters, design 8.2) is complete, episodes[-1].flows.complete",
+   "verdict": "REFUTED",
+   "evidence": "The substance is true: episodes[-1].flows.complete is true, covering 2026Q1 and 2026Q2. But the caption belongs to chart 2 (make_charts.py:228, mf-2), not chart 3. | skeptic: I re-checked this from the files and changed nothing in the post. Item 313 is the gate.toml [allow] entry at line 30. Its key is \"both of its quarters are published\" and its reason begins \"chart 3:\". That chart label is wrong. The phrase is produced at make_charts.py:228 inside chart_flows(), which ",
+   "fixed": true,
+   "fix": "Reason points at mf-2-flows.png, not a stale chart number."
+  },
+  {
+   "id": "r1:item:314",
+   "claim": "its quarter is not yet published => reason: chart 3: 2026 Q4, october_2026.shock_quarter, has no balance-of-payments figure yet (meta.bop_last is 2026Q2)",
+   "verdict": "REFUTED",
+   "evidence": "The substance is true: october_2026.shock_quarter is 2026Q4 and meta.bop_last is 2026Q2. But it is chart 2's caption (make_charts.py:229). | skeptic: I re-checked this myself. Item 314 is not prose in the draft. It is the reason string on line 31 of gate.toml's [allow] list: \"its quarter is not yet published\" = \"chart 3: 2026 Q4, october_2026.shock_quarter, has no balance-of-payments figure yet (meta.bop_last is 2026Q2)\".\n\n(1) The bound values ar",
+   "fixed": true,
+   "fix": "Reason points at mf-2-flows.png, not a stale chart number."
+  },
+  {
+   "id": "r1:item:315",
+   "claim": "the quarter of each IHSG shock and the next => reason: chart 3 alt text: the L3 window, design 8.2",
+   "verdict": "REFUTED",
+   "evidence": "The phrase is in the alt text for mf-2-flows.png ([published] in gate.toml), which is chart 2. | skeptic: I re-checked this from the files and did not modify the post. The finding stands: the [allow] reason gives the wrong chart number.\n\n(1) Where the phrase is. The text \"the quarter of each IHSG shock and the next\" appears in gate.toml only at line 32 (the [allow] entry) and at line 78, inside the [pub",
+   "fixed": true,
+   "fix": "Reason points at alt:mf-2-flows.png, not a stale chart number."
+  },
+  {
+   "id": "r1:item:316",
+   "claim": "the quarter of the October => reason: chart 3 alt text: 2026 Q4, october_2026.shock_quarter",
+   "verdict": "REFUTED",
+   "evidence": "Same: the alt text belongs to mf-2-flows.png, which is chart 2. | skeptic: I re-checked this from the files, without editing anything in the post. Inventory item 316 is the gate.toml [allow] entry at /Users/jonathanchrisnaldy/Claude-Workspace/Projects/analytics-blog/msci-fear-chain/gate.toml line 33: \"the quarter of the October\" = \"chart 3 alt text: 2026 Q4, october_2026.s",
+   "fixed": true,
+   "fix": "Reason points at alt:mf-2-flows.png, not a stale chart number."
+  },
+  {
+   "id": "r1:item:317",
+   "claim": "billion around the March => reason: unit of the bound figure before it, episodes[month0=2026-03].flows.outflow_usd_bn",
+   "verdict": "CONFIRMED",
+   "evidence": "The mf-2 alt text says '4.0 billion around the March 2026 episode', and episodes[2026-03].flows.outflow_usd_bn is 4.0.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:318",
+   "claim": "billion over those quarters => reason: unit of the bound figure before it and the L3 window, episodes[month0=2026-03].flows.outflow_usd_bn",
+   "verdict": "CONFIRMED",
+   "evidence": "The draft says 'US$4.0 billion over those quarters', bound to the same key.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:319",
+   "claim": "trillion of Indonesian shares => reason: unit of the bound figure before it, october_2026.foreign_sold_2026_idr_tn",
+   "verdict": "CONFIRMED",
+   "evidence": "'Rp82 trillion of Indonesian shares', bound to october_2026.foreign_sold_2026_idr_tn.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:320",
+   "claim": "an earlier one joins its episode => reason: pronoun for a shock month in the shock definition, not a count",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:84, the shock definition.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:321",
+   "claim": "an earlier one join its episode => reason: pronoun for a rupiah slide in the slide definition, not a count",
+   "verdict": "CONFIRMED",
+   "evidence": "make_charts.py:90, the slide definition.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:322",
+   "claim": "how to get each one => reason: pronoun for the data files, not a count",
+   "verdict": "CONFIRMED",
+   "evidence": "README.src.md 'Run it' section, referring to the data files.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:323",
+   "claim": "Each one is frozen => reason: pronoun for the data files, not a count",
+   "verdict": "CONFIRMED",
+   "evidence": "data-README.src.md:3, referring to the data files.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:324",
+   "claim": "the first four tests => reason: the pre-registered links L1 to L4 (design section 4), named in the same sentence",
+   "verdict": "REFUTED",
+   "evidence": "The sentence at draft src:19 ('I wrote the first four tests before downloading any data, then changed...') names no link, and 'How I tested' never names L1 to L4. The four chain links are listed in the opening (draft:5). The count of four is right (design section 4). | skeptic: The finding holds. Item 324 is the gate.toml [allow] entry at /Users/jonathanchrisnaldy/Claude-Workspace/Projects/analytics-blog/msci-fear-chain/gate.toml line 41: \"the first four tests\" = \"the pre-registered links L1 to L4 (design section 4), named in the same sentence\".\n\n1. The lowercase phrase ap",
+   "fixed": true,
+   "fix": "False locator removed from the reason."
+  },
+  {
+   "id": "r1:item:325",
+   "claim": "The first four tests => reason: the pre-registered links L1 to L4 (design section 4)",
+   "verdict": "CONFIRMED",
+   "evidence": "README.src.md:3. The claim is true by the git timing given in [31].",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:326",
+   "claim": "those four results => reason: the results of L1 to L4, named in the preceding sentence",
+   "verdict": "CONFIRMED",
+   "evidence": "The preceding sentence names 'the first four tests', which is the referent.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:327",
+   "claim": "Two kinds of events anchor the tests => reason: enumeration: shock months and rupiah slides, both defined in the next sentences",
+   "verdict": "CONFIRMED",
+   "evidence": "Shock months and slides, both defined in the next sentences.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:328",
+   "claim": "the one people remember => reason: pronoun for the 1997 slide, not a count",
+   "verdict": "CONFIRMED",
+   "evidence": "draft src:47; refers to the 1997 slide.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:329",
+   "claim": "a hypothetical one => reason: pronoun for a deposit, not a count",
+   "verdict": "CONFIRMED",
+   "evidence": "draft src:55; refers to the deposit.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:330",
+   "claim": "one-month => reason: the deposit's term (SEKI Table I.28 row '1 Bulan'), a definition",
+   "verdict": "CONFIRMED",
+   "evidence": "household.py:51: read_seki(..., 'Bank Umum', '1 Bulan', ...).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:331",
+   "claim": "the shock's quarter and the next => reason: the L3 window, design 8.2",
+   "verdict": "CONFIRMED",
+   "evidence": "The scorecard's L3 row, matching design 8.2.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:332",
+   "claim": "in one episode => reason: the counterfactual unit of household.flips: one episode with a different outcome",
+   "verdict": "CONFIRMED",
+   "evidence": "household.py:83-86 flips one episode (k-1 or k+1).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:333",
+   "claim": "PP 131/2000 => reason: regulation identifier (sources/tax/pp_131_2000.pdf)",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/tax/pp_131_2000.pdf exists, and the provenance audit records Pasal 2 at 20%.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:334",
+   "claim": "PP 51/1994 => reason: regulation identifier (sources/tax/pp_51_1994.pdf)",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/tax/pp_51_1994.pdf exists. The provenance audit records 15%, used for the 1997 slide.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:335",
+   "claim": "December 2018 => reason: the label of the duplicated column in SEKI Table I.26 (provenance audit)",
+   "verdict": "CONFIRMED",
+   "evidence": "The provenance audit says 'I.26's \"Th 2009-2018\" sheet has two December 2018 columns, the first empty'. household.checks shows loan duplicates_skipped=1.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r1:item:336",
+   "claim": "pp131_2000_rate: quote 'dikenakan pajak final sebesar 20% (dua puluh persen) dari jumlah bruto, terhadap Wajib Pajak dalam negeri dan bentuk usaha tetap' page 2 of sources/tax/pp_131_2000.txt values {'rate_pct': 20}",
+   "verdict": "CONFIRMED",
+   "evidence": "sources/tax/pp_131_2000.txt page 2, Pasal 2 huruf a: 'dikenakan pajak final sebesar 20% ... dari jumlah bruto, terhadap Wajib Pajak dalam negeri dan bentuk usaha tetap'. Pasal 1 (explanatory notes) covers time deposits in rupiah or foreign currency, so it supports a 20% final tax for a resident family's rupiah time deposit (the Pasal 3 exemption for deposits up to Rp 7.5 million is disclosed). In force: Pasal 7 (1 Jan 2001), and the BPK record (wayback 2024-05-25) gives status 'Berlaku'. That covers all six counted windows (Jun 2004 to Mar 2021). The 1997 window uses PP 51/1994 at 15% (Pasal 3, in force 1 Jan 1995). Caveat: from 28 Dec 2015, PP 123/2015 Pasal I replaced Pasal 2 entirely. For the 2015-09 and 2020-03 windows, the operative text is the new Pasal 2 huruf c angka 1 (pp_123_2015.pdf p4: 'Tarif 20% ... terhadap Wajib Pajak dalam negeri'), not the quoted huruf a, at the same rat",
+   "fixed": false,
+   "fix": ""
+  }
+ ]
+}

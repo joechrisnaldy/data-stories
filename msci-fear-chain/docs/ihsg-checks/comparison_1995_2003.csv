@@ -1,0 +1,121 @@
+month,bi,doc_value,bi_minus_doc,status,document
+1995-12,513.84,513.84,0.0,match,"Bapepam Annual Report 2002, statistics section (statistic.PDF)"
+1996-12,637.43,637.43,0.0,match,"Bapepam Annual Report 2002, statistics section (statistic.PDF)"
+1997-01,691.11,691.116,-0.006,match,JSX Monthly Summary 1997-01 (SU9701.TXT)
+1997-02,705.37,705.374,-0.004,match,JSX Monthly Summary 1997-02 (SU9702.TXT)
+1997-03,662.23,662.236,-0.006,match,JSX Monthly Summary 1997-03 (SU9703.TXT)
+1997-04,652.05,652.049,0.001,match,JSX Monthly Summary 1997-04 (SU9704.TXT)
+1997-05,696.02,696.028,-0.008,match,JSX Monthly Summary 1997-05 (SU9705.TXT)
+1997-06,724.55,724.556,-0.006,match,JSX Monthly Summary 1997-06 (SU9706.TXT)
+1997-07,721.27,721.27,0.0,match,JSX Monthly Summary July 1997 compilation (DT9707.TXT)
+1997-08,493.96,493.962,-0.002,match,JSX Monthly Summary 1997-08 (SU9708.TXT)
+1997-09,546.68,546.688,-0.008,match,JSX Monthly Summary 1997-09 (SU9709.TXT)
+1997-10,500.41,500.418,-0.008,match,JSX Monthly Summary 1997-10 (SU9710.TXT)
+1997-12,401.71,401.71,0.0,match,"Bapepam Annual Report 2002, statistics section (statistic.PDF)"
+1997-12,401.71,401.712,-0.002,match,"JSX Daily Stock Trading and JSX Composite Index, December 1997 (DT9712.TXT)"
+1997-12,401.71,401.712,-0.002,match,JSX Monthly Summary 1997-12 (SU9712.TXT)
+1998-01,485.93,413.92,72.01,MISMATCH,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-01,485.93,485.938,-0.008,match,"JSX Daily Stock Trading and JSX Composite Index, 1998-01 (dt9801.txt)"
+1998-01,485.93,485.938,-0.008,match,JSX Monthly Summary 1998-01 (su9801.txt)
+1998-02,482.37,448.15,34.22,MISMATCH,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-02,482.37,482.378,-0.008,match,"JSX Daily Stock Trading and JSX Composite Index, 1998-02 (dt9802.txt)"
+1998-02,482.37,482.378,-0.008,match,JSX Monthly Summary 1998-02 (su9802.txt)
+1998-03,541.42,541.42,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-03,541.42,541.425,-0.005,match,JSX Monthly Summary 1998-03 (su9803.txt)
+1998-04,460.13,460.13,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-05,420.46,413.82,6.64,MISMATCH,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-05,420.46,420.465,-0.005,match,"JSX Daily Stock Trading and JSX Composite Index, 1998-05 (dt9805.txt)"
+1998-05,420.46,420.465,-0.005,match,JSX Monthly Summary 1998-05 (su9805.txt)
+1998-06,445.92,445.92,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-07,481.71,481.71,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-08,342.43,342.43,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-09,276.15,276.15,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-10,300.77,300.77,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-11,386.27,386.27,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-12,398.03,398.03,0.0,match,"Bapepam Annual Report 2002, statistics section (statistic.PDF)"
+1998-12,398.03,398.03,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1998-12,398.03,398.038,-0.008,match,JSX Summary 1998 (yearly su1998.txt)
+1999-01,411.93,411.93,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-02,396.0,396.08,-0.08,MISMATCH,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-03,393.62,393.62,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-04,495.22,495.22,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-05,585.24,585.24,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-06,662.02,662.02,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-07,597.87,597.87,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-08,572.66,567.02,5.64,MISMATCH,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-08,572.66,567.026,5.634,MISMATCH,"JSX Daily Stock Trading and JSX Composite Index, August 1999 (dt9908.txt)"
+1999-09,547.94,547.93,0.01,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-10,593.86,593.86,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-11,583.8,583.8,0.0,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-12,676.92,676.91,0.01,match,"Bapepam Annual Report 2002, statistics section (statistic.PDF)"
+1999-12,676.92,676.91,0.01,match,"Bapepam, Statistik Pasar Modal, Minggu V, 27-30 Desember 1999 (weekly)"
+1999-12,676.92,676.919,0.001,match,JSX Annual Report 2003 (bej-ar-2003.pdf)
+2000-01,636.37,636.37,0.0,match,"Bapepam Capital Market Statistics, June 2000 (statistic_jun2000.pdf)"
+2000-01,636.37,636.37,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-02,576.54,576.54,0.0,match,"Bapepam Capital Market Statistics, June 2000 (statistic_jun2000.pdf)"
+2000-02,576.54,576.54,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-03,583.27,583.27,0.0,match,"Bapepam Capital Market Statistics, June 2000 (statistic_jun2000.pdf)"
+2000-03,583.27,583.27,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-04,526.73,526.73,0.0,match,"Bapepam Capital Market Statistics, June 2000 (statistic_jun2000.pdf)"
+2000-04,526.73,526.73,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-05,454.32,454.32,0.0,match,"Bapepam Capital Market Statistics, June 2000 (statistic_jun2000.pdf)"
+2000-05,454.32,454.32,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-06,515.11,515.11,0.0,match,"Bapepam Capital Market Statistics, June 2000 (statistic_jun2000.pdf)"
+2000-06,515.11,515.11,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-07,492.19,492.19,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-08,466.38,466.38,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-09,421.33,421.33,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-10,405.34,405.34,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-11,429.21,429.21,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-12,416.32,416.32,0.0,match,"Bapepam Annual Report 2002, statistics section (statistic.PDF)"
+2000-12,416.32,416.32,0.0,match,"Bapepam, Statistik Pasar Modal, 2-5 Januari 2001 (weekly)"
+2000-12,416.32,416.321,-0.001,match,JSX Annual Report 2003 (bej-ar-2003.pdf)
+2001-01,425.61,425.61,0.0,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-02,428.3,428.3,0.0,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-03,381.05,381.05,0.0,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-04,358.23,358.23,0.0,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-05,405.86,405.86,0.0,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-06,437.62,437.62,0.0,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-07,444.08,444.08,0.0,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-08,435.55,435.55,0.0,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-09,392.47,392.47,0.0,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-10,383.74,383.73,0.01,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-11,380.31,380.3,0.01,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-12,392.03,392.03,0.0,match,"Bapepam Annual Report 2002, statistics section (statistic.PDF)"
+2001-12,392.03,392.03,0.0,match,"Bapepam, Statistik Pasar Modal, 2-4 Januari 2002 (weekly)"
+2001-12,392.03,392.036,-0.006,match,JSX Annual Report 2003 (bej-ar-2003.pdf)
+2002-01,392.03,451.63,-59.6,MISMATCH,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-01,392.03,451.636,-59.606,MISMATCH,JSX Monthly Summary 2002-01 (su0201.txt)
+2002-02,453.25,453.25,0.0,match,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-03,481.86,481.77,0.09,MISMATCH,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-03,481.86,481.775,0.085,MISMATCH,JSX Monthly Summary 2002-03 (su0203.txt)
+2002-04,544.85,534.06,10.79,MISMATCH,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-04,544.85,534.062,10.788,MISMATCH,JSX Monthly Summary 2002-04 (su0204.txt)
+2002-05,530.79,530.79,0.0,match,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-06,505.01,505.0,0.01,match,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-06,505.01,505.009,0.001,match,JSX Monthly Summary 2002-06 (su0206.txt)
+2002-07,463.67,463.66,0.01,match,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-08,456.4,443.67,12.73,MISMATCH,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-08,456.4,443.674,12.726,MISMATCH,JSX Monthly Summary 2002-08 (su0208.txt)
+2002-09,412.43,419.3,-6.87,MISMATCH,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-09,412.43,419.307,-6.877,MISMATCH,JSX Monthly Summary 2002-09 (su0209.txt)
+2002-10,371.14,369.04,2.1,MISMATCH,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-10,371.14,369.044,2.096,MISMATCH,JSX Monthly Summary 2002-10 (su0210.txt)
+2002-11,390.42,390.42,0.0,match,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-12,424.94,424.94,0.0,match,"Bapepam Annual Report 2002, statistics section (statistic.PDF)"
+2002-12,424.94,424.94,0.0,match,"Bapepam, Statistik Pasar Modal, 30 Des 2002 - 3 Jan 2003 (weekly)"
+2002-12,424.94,424.945,-0.005,match,JSX Annual Report 2003 (bej-ar-2003.pdf)
+2003-01,388.44,388.44,0.0,match,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"
+2003-02,399.22,399.22,0.0,match,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"
+2003-03,398.0,398.0,0.0,match,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"
+2003-04,435.04,450.86,-15.82,MISMATCH,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"
+2003-04,435.04,450.861,-15.821,MISMATCH,JSX Monthly Summary 2003-04 (su0304.txt)
+2003-05,494.78,467.93,26.85,MISMATCH,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"
+2003-06,497.81,505.5,-7.69,MISMATCH,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"
+2003-07,508.7,507.98,0.72,MISMATCH,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"
+2003-08,530.86,529.67,1.19,MISMATCH,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"
+2003-09,599.84,597.65,2.19,MISMATCH,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"
+2003-10,629.05,625.55,3.5,MISMATCH,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"
+2003-11,617.08,617.08,0.0,match,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"
+2003-12,679.3,691.895,-12.595,MISMATCH,JSX Annual Report 2003 (bej-ar-2003.pdf)
+2003-12,679.3,691.9,-12.6,MISMATCH,"Bapepam, Statistik Pasar Modal, minggu ke-1 Januari 2004 (weekly)"

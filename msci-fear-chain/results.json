@@ -1,0 +1,1705 @@
+{
+ "meta": {
+  "ihsg_first": "2004-01",
+  "ihsg_first_year": 2004,
+  "ihsg_last": "2026-08",
+  "ihsg_last_year": 2026,
+  "n_ihsg_months": 272,
+  "bapepam_first": "2004-01",
+  "bapepam_last": "2005-11",
+  "bi_first_used": "2005-12",
+  "bi_first_used_year": 2005,
+  "ihsg_corrections": [
+   "2006-01",
+   "2006-02",
+   "2006-08",
+   "2006-09",
+   "2009-03",
+   "2021-04"
+  ],
+  "n_ihsg_corrections": 6,
+  "float_month": "1997-08",
+  "n_corrections_idx": 3,
+  "n_corrections_bapepam": 3,
+  "idx_access": "2026-10-17",
+  "bi_old_first": "1995-07",
+  "bi_old_last": "2003-12",
+  "bi_old_first_year": 1995,
+  "bi_old_last_year": 2003,
+  "ihsg_preliminary": [
+   "2026-06",
+   "2026-07",
+   "2026-08"
+  ],
+  "rupiah_first": "1988-01-01",
+  "rupiah_last": "2026-10-16",
+  "rupiah_last_bis": "2026-10-13",
+  "rupiah_last_complete_month": "2026-09",
+  "bop_first": "1993Q1",
+  "bop_last": "2026Q2",
+  "cpi_first": "1968-01",
+  "cpi_last": "2026-09",
+  "n_episodes": 6,
+  "n_slides": 7,
+  "n_slides_counted": 6
+ },
+ "rules": {
+  "shock": 0.1,
+  "shock_fallback": 0.07,
+  "shock_used": 0.1,
+  "shock_counts": {
+   "0.1": 6
+  },
+  "shock_cluster_months": 3,
+  "horizons": [
+   1,
+   3,
+   12
+  ],
+  "min_episodes": 4,
+  "rupiah_weaker": 0.05,
+  "slide": 0.1,
+  "slide_fallback": 0.07,
+  "slide_used": 0.07,
+  "slide_counts": {
+   "0.1": 3,
+   "0.07": 6
+  },
+  "slide_cluster_months": 12,
+  "slide_span_months": 3,
+  "inflation_gap_pp": 2.0,
+  "inflation_window_months": 12,
+  "holds": 0.6666666666666666,
+  "fails": 0.3333333333333333,
+  "outer_bound_years": [
+   1997,
+   1998
+  ],
+  "rupiah_horizon_months": 3,
+  "stock_horizon_months": 12
+ },
+ "episodes": [
+  {
+   "month0": "2005-08",
+   "shock_months": [
+    "2005-08"
+   ],
+   "year": 2005,
+   "stocks": {
+    "before_month": "2005-07",
+    "before": 1182.3,
+    "fall_month0_pct": -11.18244100482112,
+    "low_pct": -11.18244100482112,
+    "months_to_regain": 5,
+    "path": {
+     "0": 100.0,
+     "1": 88.81755899517889,
+     "2": 91.28562970481265,
+     "3": 90.18184893850969,
+     "4": 92.75479996616765,
+     "5": 98.33629366489049,
+     "6": 104.23073669965322,
+     "7": 104.09033240294343,
+     "8": 111.89799543263132,
+     "9": 123.86027235050328,
+     "10": 112.49259917110717,
+     "11": 110.82297217288337,
+     "12": 114.32377569144889,
+     "13": 121.05726127040515
+    },
+    "change_1m_pct": -8.714370295187345,
+    "change_3m_pct": -7.245200033832344,
+    "change_12m_pct": 21.05726127040515,
+    "complete": true,
+    "stays_down": false,
+    "fall0_pct": 11.18244100482112,
+    "above_12m_pct": 21.05726127040515,
+    "below_12m_pct": null
+   },
+   "rupiah": {
+    "before": 9805.002894,
+    "path": {
+     "0": 100.0,
+     "1": 104.99741092682233,
+     "2": 104.94644185466572,
+     "3": 103.161583595143,
+     "4": 102.34569875691462,
+     "5": 100.25493371363814,
+     "6": 95.60422837545775,
+     "7": 93.6511814659338,
+     "8": 92.4528366080052,
+     "9": 89.82152647185134,
+     "10": 94.39055747411797,
+     "11": 94.47216492580874,
+     "12": 92.7587971092342,
+     "13": 92.77912960705753
+    },
+    "weaker_1m_pct": 4.9464418546657285,
+    "weaker_3m_pct": 2.345698756914616,
+    "weaker_12m_pct": -7.220870392942469,
+    "complete": true,
+    "weakens": false
+   },
+   "flows": {
+    "quarters": [
+     "2005Q3",
+     "2005Q4"
+    ],
+    "complete": true,
+    "net_usd_bn": 1.583138689284052,
+    "per_quarter_usd_bn": [
+     0.81659481497604,
+     0.766543874308012
+    ],
+    "leave": false,
+    "outflow_usd_bn": null
+   }
+  },
+  {
+   "month0": "2008-03",
+   "shock_months": [
+    "2008-03"
+   ],
+   "year": 2008,
+   "stocks": {
+    "before_month": "2008-02",
+    "before": 2721.94,
+    "fall_month0_pct": -10.089862377568936,
+    "low_pct": -54.38767937573936,
+    "months_to_regain": 24,
+    "path": {
+     "0": 100.0,
+     "1": 89.91013762243107,
+     "2": 84.6646142089833,
+     "3": 89.80175903950858,
+     "4": 86.30278404373351,
+     "5": 84.66424682395645,
+     "6": 79.57339250681498,
+     "7": 67.32367355636053,
+     "8": 46.1692763249741,
+     "9": 45.61232062426063,
+     "10": 49.795733925068156,
+     "11": 48.96030037399796,
+     "12": 47.22661043226522,
+     "13": 52.68573150032697
+    },
+    "change_1m_pct": -15.335385791016709,
+    "change_3m_pct": -13.697215956266485,
+    "change_12m_pct": -47.31426849967303,
+    "complete": true,
+    "stays_down": true,
+    "fall0_pct": 10.089862377568936,
+    "above_12m_pct": null,
+    "below_12m_pct": 47.31426849967303
+   },
+   "rupiah": {
+    "before": 9098.701127,
+    "path": {
+     "0": 100.0,
+     "1": 101.27820593705277,
+     "2": 101.3551402368203,
+     "3": 102.37723582719016,
+     "4": 101.44303678258404,
+     "5": 99.95929078284583,
+     "6": 100.5638416438118,
+     "7": 103.64117435418207,
+     "8": 119.79731884647495,
+     "9": 134.63464463788844,
+     "10": 120.34688732116214,
+     "11": 125.29260870181784,
+     "12": 131.66712754691846,
+     "13": 128.58978261502355
+    },
+    "weaker_1m_pct": 1.355140236820307,
+    "weaker_3m_pct": 1.4430367825840396,
+    "weaker_12m_pct": 28.589782615023562,
+    "complete": true,
+    "weakens": false
+   },
+   "flows": {
+    "quarters": [
+     "2008Q1",
+     "2008Q2"
+    ],
+    "complete": true,
+    "net_usd_bn": 0.530675577614087,
+    "per_quarter_usd_bn": [
+     0.011213761973915999,
+     0.519461815640171
+    ],
+    "leave": false,
+    "outflow_usd_bn": null
+   }
+  },
+  {
+   "month0": "2008-09",
+   "shock_months": [
+    "2008-09",
+    "2008-10"
+   ],
+   "year": 2008,
+   "stocks": {
+    "before_month": "2008-08",
+    "before": 2165.94,
+    "fall_month0_pct": -15.394239914309725,
+    "low_pct": -42.67892924088387,
+    "months_to_regain": 10,
+    "path": {
+     "0": 100.0,
+     "1": 84.60576008569028,
+     "2": 58.02099781157373,
+     "3": 57.32107075911613,
+     "4": 62.57837243875638,
+     "5": 61.528481860069995,
+     "6": 59.34975114730786,
+     "7": 66.21023666398884,
+     "8": 79.53913774158103,
+     "9": 88.49875804500586,
+     "10": 93.57507594854889,
+     "11": 107.26243570920708,
+     "12": 108.107334459865,
+     "13": 113.92697858666445
+    },
+    "change_1m_pct": -41.97900218842627,
+    "change_3m_pct": -37.42162756124362,
+    "change_12m_pct": 13.92697858666445,
+    "complete": true,
+    "stays_down": false,
+    "fall0_pct": 15.394239914309725,
+    "above_12m_pct": 13.92697858666445,
+    "below_12m_pct": null
+   },
+   "rupiah": {
+    "before": 9150.003393,
+    "path": {
+     "0": 100.0,
+     "1": 103.06007871225715,
+     "2": 119.12563888597893,
+     "3": 133.87977471540157,
+     "4": 119.672126038522,
+     "5": 124.5901177339596,
+     "6": 130.92889590800613,
+     "7": 127.86880504274802,
+     "8": 115.84695157719051,
+     "9": 112.71028335235064,
+     "10": 111.55965152766146,
+     "11": 108.75132308270608,
+     "12": 110.19432496291314,
+     "13": 105.4609711880792
+    },
+    "weaker_1m_pct": 19.125638885978937,
+    "weaker_3m_pct": 19.672126038522,
+    "weaker_12m_pct": 5.4609711880792,
+    "complete": true,
+    "weakens": true
+   },
+   "flows": {
+    "quarters": [
+     "2008Q3",
+     "2008Q4"
+    ],
+    "complete": true,
+    "net_usd_bn": -0.2081998148616148,
+    "per_quarter_usd_bn": [
+     -0.0980310368437358,
+     -0.110168778017879
+    ],
+    "leave": true,
+    "outflow_usd_bn": 0.2081998148616148
+   }
+  },
+  {
+   "month0": "2020-03",
+   "shock_months": [
+    "2020-03"
+   ],
+   "year": 2020,
+   "stocks": {
+    "before_month": "2020-02",
+    "before": 5452.7,
+    "fall_month0_pct": -16.75811983054266,
+    "low_pct": -16.75811983054266,
+    "months_to_regain": 8,
+    "path": {
+     "0": 100.0,
+     "1": 83.24188016945733,
+     "2": 86.49659801566196,
+     "3": 87.17901223247199,
+     "4": 89.96258734205074,
+     "5": 94.44183615456564,
+     "6": 96.07148751994424,
+     "7": 89.3142846663121,
+     "8": 94.04918664148038,
+     "9": 102.92919104296953,
+     "10": 109.6533827278229,
+     "11": 107.5127918279018,
+     "12": 114.47172960184864,
+     "13": 109.77167274928019
+    },
+    "change_1m_pct": -13.503401984338037,
+    "change_3m_pct": -10.037412657949263,
+    "change_12m_pct": 9.771672749280192,
+    "complete": true,
+    "stays_down": false,
+    "fall0_pct": 16.75811983054266,
+    "above_12m_pct": 9.771672749280192,
+    "below_12m_pct": null
+   },
+   "rupiah": {
+    "before": 14347.499317,
+    "path": {
+     "0": 100.0,
+     "1": 113.67837203292059,
+     "2": 103.67660364600944,
+     "3": 101.82961691929802,
+     "4": 100.73495482153506,
+     "5": 102.147682729874,
+     "6": 101.59644612583185,
+     "7": 104.16588656179128,
+     "8": 101.93416950834904,
+     "9": 98.70921424766638,
+     "10": 97.92650108965327,
+     "11": 97.59957404847597,
+     "12": 99.7867013594227,
+     "13": 101.23713928872391
+    },
+    "weaker_1m_pct": 3.6766036460094353,
+    "weaker_3m_pct": 0.7349548215350499,
+    "weaker_12m_pct": 1.2371392887239097,
+    "complete": true,
+    "weakens": false
+   },
+   "flows": {
+    "quarters": [
+     "2020Q1",
+     "2020Q2"
+    ],
+    "complete": true,
+    "net_usd_bn": -2.1830731296652,
+    "per_quarter_usd_bn": [
+     -0.7143184002013,
+     -1.4687547294639
+    ],
+    "leave": true,
+    "outflow_usd_bn": 2.1830731296652
+   }
+  },
+  {
+   "month0": "2025-02",
+   "shock_months": [
+    "2025-02"
+   ],
+   "year": 2025,
+   "stocks": {
+    "before_month": "2025-01",
+    "before": 7109.2,
+    "fall_month0_pct": -11.795982670342642,
+    "low_pct": -11.795982670342642,
+    "months_to_regain": 3,
+    "path": {
+     "0": 100.0,
+     "1": 88.20401732965736,
+     "2": 91.58020593034378,
+     "3": 95.18370562088562,
+     "4": 100.93709559444099,
+     "5": 97.44668879761437,
+     "6": 105.27682439655659,
+     "7": 110.14586732684408,
+     "8": 113.38912957857426,
+     "9": 114.83542452033984,
+     "10": 119.6858999606144,
+     "11": 121.63028188825749,
+     "12": 117.16662915658584,
+     "13": 115.8427108535419
+    },
+    "change_1m_pct": -8.419794069656216,
+    "change_3m_pct": 0.9370955944409953,
+    "change_12m_pct": 15.842710853541897,
+    "complete": true,
+    "stays_down": false,
+    "fall0_pct": 11.795982670342642,
+    "above_12m_pct": 15.842710853541897,
+    "below_12m_pct": null
+   },
+   "rupiah": {
+    "before": 16300.596555,
+    "path": {
+     "0": 100.0,
+     "1": 101.5180351293591,
+     "2": 102.06405843408717,
+     "3": 101.95974990806096,
+     "4": 100.19846928234092,
+     "5": 99.56413390908563,
+     "6": 101.20704927170073,
+     "7": 101.07420937270109,
+     "8": 102.3011672041226,
+     "9": 102.21650835772127,
+     "10": 102.20545308748056,
+     "11": 102.54594022740046,
+     "12": 102.99206603484947,
+     "13": 103.07046844151526
+    },
+    "weaker_1m_pct": 2.064058434087168,
+    "weaker_3m_pct": 0.19846928234092953,
+    "weaker_12m_pct": 3.0704684415152617,
+    "complete": true,
+    "weakens": false
+   },
+   "flows": {
+    "quarters": [
+     "2025Q1",
+     "2025Q2"
+    ],
+    "complete": true,
+    "net_usd_bn": -3.7586931847764102,
+    "per_quarter_usd_bn": [
+     -1.8734492258068098,
+     -1.8852439589696
+    ],
+    "leave": true,
+    "outflow_usd_bn": 3.7586931847764102
+   }
+  },
+  {
+   "month0": "2026-03",
+   "shock_months": [
+    "2026-03",
+    "2026-05"
+   ],
+   "year": 2026,
+   "stocks": {
+    "before_month": "2026-02",
+    "before": 8235.49,
+    "fall_month0_pct": -14.416507093081277,
+    "low_pct": -31.477179864221803,
+    "months_to_regain": null,
+    "path": {
+     "0": 100.0,
+     "1": 85.58349290691872,
+     "2": 84.47341931081212,
+     "3": 74.40213029218663,
+     "4": 68.52282013577819,
+     "5": 75.72263459733422,
+     "6": 79.23608674165106
+    },
+    "change_1m_pct": -15.526580689187885,
+    "change_3m_pct": -31.477179864221803,
+    "complete": false,
+    "stays_down": null,
+    "fall0_pct": 14.416507093081277,
+    "latest_month": "2026-08",
+    "latest_below_pct": 20.763913258348936
+   },
+   "rupiah": {
+    "before": 16801.101228,
+    "path": {
+     "0": 100.0,
+     "1": 100.9749183269429,
+     "2": 103.24145634032843,
+     "3": 106.04214848910141,
+     "4": 106.55970223049003,
+     "5": 107.44771152806723,
+     "6": 105.4097776607956,
+     "7": 106.48764143616644
+    },
+    "weaker_1m_pct": 3.241456340328419,
+    "weaker_3m_pct": 6.559702230490028,
+    "complete": true,
+    "weakens": true
+   },
+   "flows": {
+    "quarters": [
+     "2026Q1",
+     "2026Q2"
+    ],
+    "complete": true,
+    "net_usd_bn": -4.040556362776555,
+    "per_quarter_usd_bn": [
+     -0.905104079715595,
+     -3.13545228306096
+    ],
+    "leave": true,
+    "outflow_usd_bn": 4.040556362776555
+   }
+  }
+ ],
+ "slides": [
+  {
+   "start": "1997-09",
+   "slide_months": [
+    "1997-09",
+    "1997-10",
+    "1997-11",
+    "1997-12",
+    "1998-01",
+    "1998-02",
+    "1998-03",
+    "1998-05",
+    "1998-06",
+    "1998-07",
+    "1999-01",
+    "1999-02",
+    "1999-03",
+    "1999-09",
+    "2000-01",
+    "2000-03",
+    "2000-05",
+    "2000-06",
+    "2000-07",
+    "2000-11",
+    "2000-12",
+    "2001-04",
+    "2001-05",
+    "2001-06",
+    "2001-10",
+    "2001-11",
+    "2001-12"
+   ],
+   "year": 1997,
+   "slide_pct": 33.673469387755105,
+   "outer_bound": true,
+   "complete": true,
+   "inflation_before_pct": 7.328603733290295,
+   "inflation_after_pct": 82.41558573019248,
+   "gap_pp": 75.08698199690218,
+   "rises": true
+  },
+  {
+   "start": "2004-05",
+   "slide_months": [
+    "2004-05",
+    "2004-06"
+   ],
+   "year": 2004,
+   "slide_pct": 9.707895477668838,
+   "outer_bound": false,
+   "complete": true,
+   "inflation_before_pct": 6.504759805490212,
+   "inflation_after_pct": 7.400990209527203,
+   "gap_pp": 0.8962304040369906,
+   "rises": false
+  },
+  {
+   "start": "2005-08",
+   "slide_months": [
+    "2005-08"
+   ],
+   "year": 2005,
+   "slide_pct": 8.282909739316446,
+   "outer_bound": false,
+   "complete": true,
+   "inflation_before_pct": 8.320134965396386,
+   "inflation_after_pct": 14.898790033262799,
+   "gap_pp": 6.578655067866412,
+   "rises": true
+  },
+  {
+   "start": "2008-10",
+   "slide_months": [
+    "2008-10",
+    "2008-11",
+    "2008-12"
+   ],
+   "year": 2008,
+   "slide_pct": 19.846107258529642,
+   "outer_bound": false,
+   "complete": true,
+   "inflation_before_pct": 11.551296553410362,
+   "inflation_after_pct": 2.5667980909117816,
+   "gap_pp": -8.98449846249858,
+   "rises": false
+  },
+  {
+   "start": "2013-08",
+   "slide_months": [
+    "2013-08",
+    "2013-09",
+    "2013-10",
+    "2014-01"
+   ],
+   "year": 2013,
+   "slide_pct": 15.051404600104568,
+   "outer_bound": false,
+   "complete": true,
+   "inflation_before_pct": 7.978938182960427,
+   "inflation_after_pct": 3.9919517277340555,
+   "gap_pp": -3.986986455226371,
+   "rises": false
+  },
+  {
+   "start": "2015-09",
+   "slide_months": [
+    "2015-09"
+   ],
+   "year": 2015,
+   "slide_pct": 9.297835915830731,
+   "outer_bound": false,
+   "complete": true,
+   "inflation_before_pct": 6.831156951291151,
+   "inflation_after_pct": 3.073893989627474,
+   "gap_pp": -3.7572629616636766,
+   "rises": false
+  },
+  {
+   "start": "2020-03",
+   "slide_months": [
+    "2020-03",
+    "2020-04"
+   ],
+   "year": 2020,
+   "slide_pct": 17.486073645330656,
+   "outer_bound": false,
+   "complete": true,
+   "inflation_before_pct": 3.033297525320555,
+   "inflation_after_pct": 1.3655511778932095,
+   "gap_pp": -1.6677463474273457,
+   "rises": false
+  }
+ ],
+ "links": {
+  "L1": {
+   "n": 5,
+   "n_meeting": 1,
+   "n_not_meeting": 4,
+   "share": 0.2,
+   "verdict": "does not hold",
+   "sample": "6efe9c1688"
+  },
+  "L2": {
+   "n": 6,
+   "n_meeting": 2,
+   "n_not_meeting": 4,
+   "share": 0.3333333333333333,
+   "verdict": "does not hold",
+   "sample": "cdc90bc586"
+  },
+  "L3": {
+   "n": 6,
+   "n_meeting": 4,
+   "n_not_meeting": 2,
+   "share": 0.6666666666666666,
+   "verdict": "holds",
+   "sample": "cdc90bc586"
+  },
+  "L4": {
+   "n": 6,
+   "n_meeting": 1,
+   "n_not_meeting": 5,
+   "share": 0.16666666666666666,
+   "verdict": "does not hold",
+   "sample": "7826c50e95"
+  }
+ },
+ "sensitivity": {
+  "latest_episode": "2026-03",
+  "L2_without_latest": {
+   "n": 5,
+   "n_meeting": 1,
+   "n_not_meeting": 4,
+   "share": 0.2,
+   "verdict": "does not hold",
+   "sample": "6efe9c1688"
+  },
+  "L3_without_latest": {
+   "n": 5,
+   "n_meeting": 3,
+   "n_not_meeting": 2,
+   "share": 0.6,
+   "verdict": "mixed",
+   "sample": "6efe9c1688"
+  },
+  "L4_with_outer_bound": {
+   "n": 7,
+   "n_meeting": 2,
+   "n_not_meeting": 5,
+   "share": 0.2857142857142857,
+   "verdict": "does not hold",
+   "sample": "3c00d77351"
+  },
+  "L4_pivot_month_before": {
+   "n": 6,
+   "n_meeting": 2,
+   "n_not_meeting": 4,
+   "share": 0.3333333333333333,
+   "verdict": "does not hold",
+   "sample": "7826c50e95"
+  },
+  "cut_at_1998": {
+   "threshold": 0.1,
+   "starts": [
+    "1999-01",
+    "2008-10",
+    "2013-08",
+    "2020-03"
+   ],
+   "n": 4,
+   "n_meeting": 0,
+   "n_not_meeting": 4,
+   "share": 0.0,
+   "verdict": "does not hold",
+   "sample": "9bde427b07"
+  },
+  "closest_shock": {
+   "month": "2008-03",
+   "fall_pct": -10.089862377568936
+  }
+ },
+ "household": {
+  "L5": {
+   "episodes": [
+    {
+     "start": "1997-09",
+     "outer_bound": true,
+     "tax": 0.15,
+     "complete": true,
+     "return_net_pct": 39.916230180307124,
+     "return_gross_pct": 48.30422228134896,
+     "inflation_pct": 82.41558573019248,
+     "real_net_pct": -23.298094502048393,
+     "loses": true,
+     "loss_pct": 23.298094502048393
+    },
+    {
+     "start": "2004-05",
+     "outer_bound": false,
+     "tax": 0.2,
+     "complete": true,
+     "return_net_pct": 5.211135033500192,
+     "return_gross_pct": 6.552235434300324,
+     "inflation_pct": 7.400990209527203,
+     "real_net_pct": -2.038952501047575,
+     "loses": true,
+     "loss_pct": 2.038952501047575
+    },
+    {
+     "start": "2005-08",
+     "outer_bound": false,
+     "tax": 0.2,
+     "complete": true,
+     "return_net_pct": 9.122837910184355,
+     "return_gross_pct": 11.519559787494526,
+     "inflation_pct": 14.898790033262799,
+     "real_net_pct": -5.026991251523471,
+     "loses": true,
+     "loss_pct": 5.026991251523471
+    },
+    {
+     "start": "2008-10",
+     "outer_bound": false,
+     "tax": 0.2,
+     "complete": true,
+     "return_net_pct": 7.665177697651182,
+     "return_gross_pct": 9.663710961211237,
+     "inflation_pct": 2.5667980909117816,
+     "real_net_pct": 4.970789477332005,
+     "loses": false,
+     "loss_pct": null
+    },
+    {
+     "start": "2013-08",
+     "outer_bound": false,
+     "tax": 0.2,
+     "complete": true,
+     "return_net_pct": 6.313532659832566,
+     "return_gross_pct": 7.947947564205093,
+     "inflation_pct": 3.9919517277340555,
+     "real_net_pct": 2.2324621218541507,
+     "loses": false,
+     "loss_pct": null
+    },
+    {
+     "start": "2015-09",
+     "outer_bound": false,
+     "tax": 0.2,
+     "complete": true,
+     "return_net_pct": 5.883570926911319,
+     "return_gross_pct": 7.403204428661292,
+     "inflation_pct": 3.073893989627474,
+     "real_net_pct": 2.7258860886410163,
+     "loses": false,
+     "loss_pct": null
+    },
+    {
+     "start": "2020-03",
+     "outer_bound": false,
+     "tax": 0.2,
+     "complete": true,
+     "return_net_pct": 4.038087109313659,
+     "return_gross_pct": 5.07065828683686,
+     "inflation_pct": 1.3655511778932095,
+     "real_net_pct": 2.636532727701768,
+     "loses": false,
+     "loss_pct": null
+    }
+   ],
+   "verdict": {
+    "n": 6,
+    "n_meeting": 2,
+    "n_not_meeting": 4,
+    "share": 0.3333333333333333,
+    "verdict": "does not hold",
+    "sample": "7826c50e95"
+   },
+   "with_outer": {
+    "n": 7,
+    "n_meeting": 3,
+    "n_not_meeting": 4,
+    "share": 0.42857142857142855,
+    "verdict": "mixed",
+    "sample": "3c00d77351"
+   },
+   "base": {
+    "n": 261,
+    "n_meeting": 90,
+    "share": 0.3448275862068966,
+    "first": "2004-01",
+    "last": "2025-09"
+   },
+   "comparative_allowed": false
+  },
+  "L6": {
+   "episodes": [
+    {
+     "start": "1997-09",
+     "outer_bound": true,
+     "complete": false,
+     "loan_at_slide": NaN,
+     "loan_12m": NaN,
+     "change_pp": null,
+     "dearer": null,
+     "policy": {
+      "status": "not available"
+     }
+    },
+    {
+     "start": "2004-05",
+     "outer_bound": false,
+     "complete": true,
+     "loan_at_slide": 17.68,
+     "loan_12m": 16.17,
+     "change_pp": -1.509999999999998,
+     "dearer": false,
+     "policy": {
+      "status": "not raised",
+      "instrument": "one-month SBI rate",
+      "before": 7.33,
+      "highest": 7.37,
+      "rise_pp": 0.040000000000000036
+     }
+    },
+    {
+     "start": "2005-08",
+     "outer_bound": false,
+     "complete": true,
+     "loan_at_slide": 15.96,
+     "loan_12m": 17.83,
+     "change_pp": 1.8699999999999974,
+     "dearer": true,
+     "policy": {
+      "status": "not available",
+      "instrument": "BI Rate"
+     }
+    },
+    {
+     "start": "2008-10",
+     "outer_bound": false,
+     "complete": true,
+     "loan_at_slide": 16.05,
+     "loan_12m": 16.53,
+     "change_pp": 0.4800000000000004,
+     "dearer": false,
+     "policy": {
+      "status": "raised",
+      "instrument": "BI Rate",
+      "before": 9.25,
+      "highest": 9.5,
+      "rise_pp": 0.25
+     }
+    },
+    {
+     "start": "2013-08",
+     "outer_bound": false,
+     "complete": true,
+     "loan_at_slide": 13.05,
+     "loan_12m": 13.33,
+     "change_pp": 0.27999999999999936,
+     "dearer": false,
+     "policy": {
+      "status": "raised",
+      "instrument": "BI Rate",
+      "before": 6.5,
+      "highest": 7.5,
+      "rise_pp": 1.0
+     }
+    },
+    {
+     "start": "2015-09",
+     "outer_bound": false,
+     "complete": true,
+     "loan_at_slide": 13.85,
+     "loan_12m": 13.72,
+     "change_pp": -0.129999999999999,
+     "dearer": false,
+     "policy": {
+      "status": "not raised",
+      "instrument": "BI Rate",
+      "before": 7.5,
+      "highest": 7.5,
+      "rise_pp": 0.0
+     }
+    },
+    {
+     "start": "2020-03",
+     "outer_bound": false,
+     "complete": true,
+     "loan_at_slide": 11.37,
+     "loan_12m": 10.91,
+     "change_pp": -0.4599999999999991,
+     "dearer": false,
+     "policy": {
+      "status": "not raised",
+      "instrument": "BI 7-day reverse repo rate",
+      "before": 4.75,
+      "highest": 4.5,
+      "rise_pp": -0.25
+     }
+    }
+   ],
+   "verdict": {
+    "n": 6,
+    "n_meeting": 1,
+    "n_not_meeting": 5,
+    "share": 0.16666666666666666,
+    "verdict": "does not hold",
+    "sample": "7826c50e95"
+   },
+   "with_outer": {
+    "n": 6,
+    "n_meeting": 1,
+    "n_not_meeting": 5,
+    "share": 0.16666666666666666,
+    "verdict": "does not hold",
+    "sample": "7826c50e95"
+   },
+   "base": {
+    "n": 260,
+    "n_meeting": 10,
+    "share": 0.038461538461538464,
+    "first": "2004-01",
+    "last": "2025-08"
+   },
+   "policy_raised": [
+    "2008-10",
+    "2013-08"
+   ],
+   "n_policy_raised": 2,
+   "policy_checked": 5
+  },
+  "published": {
+   "episodes": [
+    {
+     "start": "2004-05",
+     "published_before": 6.47,
+     "published_after": 7.4,
+     "gap_before_pp": -0.034759805490212514,
+     "gap_after_pp": -0.0009902095272025235
+    },
+    {
+     "start": "2005-08",
+     "published_before": 8.33,
+     "published_after": 14.9,
+     "gap_before_pp": 0.009865034603613765,
+     "gap_after_pp": 0.0012099667372016398
+    },
+    {
+     "start": "2008-10",
+     "published_before": 11.77,
+     "published_after": 2.57,
+     "gap_before_pp": 0.2187034465896378,
+     "gap_after_pp": 0.003201909088218269
+    },
+    {
+     "start": "2013-08",
+     "published_before": 8.79,
+     "published_after": 3.99,
+     "gap_before_pp": 0.8110618170395725,
+     "gap_after_pp": -0.0019517277340552752
+    },
+    {
+     "start": "2015-09",
+     "published_before": 6.83,
+     "published_after": 3.07,
+     "gap_before_pp": -0.0011569512911506763,
+     "gap_after_pp": -0.003893989627474337
+    },
+    {
+     "start": "2020-03",
+     "published_before": 2.96,
+     "published_after": 1.37,
+     "gap_before_pp": -0.07329752532055522,
+     "gap_after_pp": 0.004448822106790651
+    }
+   ],
+   "largest_gap_pp": 0.8110618170395725,
+   "n_rises_published": 1,
+   "n": 6
+  },
+  "prices_rose": {
+   "n": 6,
+   "n_meeting": 6,
+   "n_not_meeting": 0,
+   "share": 1.0,
+   "verdict": "holds",
+   "sample": "7826c50e95"
+  },
+  "fuel": {
+   "episodes": [
+    {
+     "start": "1997-09",
+     "checked": false
+    },
+    {
+     "start": "2004-05",
+     "checked": true,
+     "before": {
+      "changes": [],
+      "n_rises": 0,
+      "n_cuts": 0
+     },
+     "after": {
+      "changes": [
+       {
+        "date": "2005-03-01",
+        "year": 2005,
+        "direction": "rise",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": 32.6,
+          "status": "verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": 27.3,
+          "status": "verified"
+         }
+        ]
+       }
+      ],
+      "n_rises": 1,
+      "n_cuts": 0
+     }
+    },
+    {
+     "start": "2005-08",
+     "checked": true,
+     "before": {
+      "changes": [
+       {
+        "date": "2005-03-01",
+        "year": 2005,
+        "direction": "rise",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": 32.6,
+          "status": "verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": 27.3,
+          "status": "verified"
+         }
+        ]
+       }
+      ],
+      "n_rises": 1,
+      "n_cuts": 0
+     },
+     "after": {
+      "changes": [
+       {
+        "date": "2005-10-01",
+        "year": 2005,
+        "direction": "rise",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": 87.5,
+          "status": "verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": 104.8,
+          "status": "verified"
+         }
+        ]
+       }
+      ],
+      "n_rises": 1,
+      "n_cuts": 0
+     }
+    },
+    {
+     "start": "2008-10",
+     "checked": true,
+     "before": {
+      "changes": [
+       {
+        "date": "2008-05-23",
+        "year": 2008,
+        "direction": "rise",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": 33.3,
+          "status": "verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": 27.9,
+          "status": "verified"
+         }
+        ]
+       }
+      ],
+      "n_rises": 1,
+      "n_cuts": 0
+     },
+     "after": {
+      "changes": [
+       {
+        "date": "2008-12-01",
+        "year": 2008,
+        "direction": "cut",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": -8.3,
+          "status": "verified"
+         }
+        ]
+       },
+       {
+        "date": "2008-12-15",
+        "year": 2008,
+        "direction": "cut",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": -9.1,
+          "status": "verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": -12.7,
+          "status": "verified"
+         }
+        ]
+       },
+       {
+        "date": "2009-01-15",
+        "year": 2009,
+        "direction": "cut",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": -10.0,
+          "status": "verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": -6.2,
+          "status": "verified"
+         }
+        ]
+       }
+      ],
+      "n_rises": 0,
+      "n_cuts": 3
+     }
+    },
+    {
+     "start": "2013-08",
+     "checked": true,
+     "before": {
+      "changes": [
+       {
+        "date": "2013-06-22",
+        "year": 2013,
+        "direction": "rise",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": 44.4,
+          "status": "verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": 22.2,
+          "status": "verified"
+         }
+        ]
+       }
+      ],
+      "n_rises": 1,
+      "n_cuts": 0
+     },
+     "after": {
+      "changes": [],
+      "n_rises": 0,
+      "n_cuts": 0
+     }
+    },
+    {
+     "start": "2015-09",
+     "checked": true,
+     "before": {
+      "changes": [
+       {
+        "date": "2014-11-18",
+        "year": 2014,
+        "direction": "rise",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": 30.8,
+          "status": "verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": 36.4,
+          "status": "verified"
+         }
+        ]
+       },
+       {
+        "date": "2015-01-01",
+        "year": 2015,
+        "direction": "cut",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": null,
+          "status": "size not verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": -3.3,
+          "status": "verified"
+         }
+        ]
+       },
+       {
+        "date": "2015-01-19",
+        "year": 2015,
+        "direction": "cut",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": null,
+          "status": "size not verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": -11.7,
+          "status": "verified"
+         }
+        ]
+       },
+       {
+        "date": "2015-03-01",
+        "year": 2015,
+        "direction": "rise",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": null,
+          "status": "size not verified"
+         }
+        ]
+       },
+       {
+        "date": "2015-03-28",
+        "year": 2015,
+        "direction": "rise",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": null,
+          "status": "size not verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": 7.8,
+          "status": "verified"
+         }
+        ]
+       }
+      ],
+      "n_rises": 3,
+      "n_cuts": 2
+     },
+     "after": {
+      "changes": [
+       {
+        "date": "2015-10-10",
+        "year": 2015,
+        "direction": "cut",
+        "edge": true,
+        "products": [
+         {
+          "product": "Solar",
+          "pct_change": -2.9,
+          "status": "verified"
+         }
+        ]
+       },
+       {
+        "date": "2016-01-05",
+        "year": 2016,
+        "direction": "cut",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": -4.7,
+          "status": "verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": -15.7,
+          "status": "verified"
+         }
+        ]
+       },
+       {
+        "date": "2016-04-01",
+        "year": 2016,
+        "direction": "cut",
+        "edge": false,
+        "products": [
+         {
+          "product": "Premium",
+          "pct_change": null,
+          "status": "size not verified"
+         },
+         {
+          "product": "Solar",
+          "pct_change": -8.8,
+          "status": "verified"
+         }
+        ]
+       }
+      ],
+      "n_rises": 0,
+      "n_cuts": 3
+     }
+    },
+    {
+     "start": "2020-03",
+     "checked": true,
+     "before": {
+      "changes": [],
+      "n_rises": 0,
+      "n_cuts": 0
+     },
+     "after": {
+      "changes": [],
+      "n_rises": 0,
+      "n_cuts": 0
+     }
+    }
+   ],
+   "n_changes_in_file": 15,
+   "file_first": "2005-03",
+   "file_last": "2016-04",
+   "slowed": {
+    "episodes": [
+     {
+      "start": "2008-10",
+      "date": "2008-05-23",
+      "year": 2008,
+      "min_pct": 27.9
+     },
+     {
+      "start": "2013-08",
+      "date": "2013-06-22",
+      "year": 2013,
+      "min_pct": 22.2
+     },
+     {
+      "start": "2015-09",
+      "date": "2014-11-18",
+      "year": 2014,
+      "min_pct": 30.8
+     }
+    ],
+    "n": 3,
+    "min_pct": 22.2
+   },
+   "premium_regional_from_year": 2015
+  },
+  "flips": {
+   "L1": true,
+   "L2": true,
+   "L3": true,
+   "L4": false,
+   "L5": true,
+   "L6": false
+  },
+  "predictions": {
+   "rows": [
+    {
+     "item": "L5",
+     "episode": "2004-05",
+     "predicted": "met",
+     "result": "met",
+     "matched": true
+    },
+    {
+     "item": "L5",
+     "episode": "2005-08",
+     "predicted": "met",
+     "result": "met",
+     "matched": true
+    },
+    {
+     "item": "L5",
+     "episode": "2008-10",
+     "predicted": "not met",
+     "result": "not met",
+     "matched": true
+    },
+    {
+     "item": "L5",
+     "episode": "2013-08",
+     "predicted": "not met",
+     "result": "not met",
+     "matched": true
+    },
+    {
+     "item": "L5",
+     "episode": "2015-09",
+     "predicted": "not met",
+     "result": "not met",
+     "matched": true
+    },
+    {
+     "item": "L5",
+     "episode": "2020-03",
+     "predicted": "not met",
+     "result": "not met",
+     "matched": true
+    },
+    {
+     "item": "L5",
+     "episode": "1997-09",
+     "predicted": "met",
+     "result": "met",
+     "matched": true
+    },
+    {
+     "item": "L5 verdict",
+     "episode": "counted slides",
+     "predicted": "2 of 6: does not hold",
+     "result": "2 of 6: does not hold",
+     "matched": true
+    },
+    {
+     "item": "L5 share of all windows",
+     "episode": "2004 onward",
+     "predicted": "between a fifth and two fifths of windows",
+     "result": "between a fifth and two fifths of windows",
+     "matched": true
+    },
+    {
+     "item": "L6",
+     "episode": "2004-05",
+     "predicted": "not met",
+     "result": "not met",
+     "matched": true
+    },
+    {
+     "item": "L6",
+     "episode": "2005-08",
+     "predicted": "met",
+     "result": "met",
+     "matched": true
+    },
+    {
+     "item": "L6",
+     "episode": "2008-10",
+     "predicted": "not met",
+     "result": "not met",
+     "matched": true
+    },
+    {
+     "item": "L6",
+     "episode": "2013-08",
+     "predicted": "not met",
+     "result": "not met",
+     "matched": true
+    },
+    {
+     "item": "L6",
+     "episode": "2015-09",
+     "predicted": "not met",
+     "result": "not met",
+     "matched": true
+    },
+    {
+     "item": "L6",
+     "episode": "2020-03",
+     "predicted": "not met",
+     "result": "not met",
+     "matched": true
+    },
+    {
+     "item": "L6 verdict",
+     "episode": "counted slides",
+     "predicted": "1 of 6: does not hold",
+     "result": "1 of 6: does not hold",
+     "matched": true
+    },
+    {
+     "item": "policy note",
+     "episode": "2004-05",
+     "predicted": "not raised",
+     "result": "not raised",
+     "matched": true
+    },
+    {
+     "item": "policy note",
+     "episode": "2008-10",
+     "predicted": "raised",
+     "result": "raised",
+     "matched": true
+    },
+    {
+     "item": "policy note",
+     "episode": "2013-08",
+     "predicted": "raised",
+     "result": "raised",
+     "matched": true
+    },
+    {
+     "item": "policy note",
+     "episode": "2015-09",
+     "predicted": "not raised",
+     "result": "not raised",
+     "matched": true
+    },
+    {
+     "item": "policy note",
+     "episode": "2020-03",
+     "predicted": "not raised",
+     "result": "not raised",
+     "matched": true
+    },
+    {
+     "item": "BPS comparison",
+     "episode": "counted slides",
+     "predicted": "largest gap under 1 point; L4 count unchanged",
+     "result": "largest gap under 1 point; L4 count unchanged",
+     "matched": true
+    }
+   ],
+   "n": 22,
+   "n_matched": 22
+  },
+  "checks": {
+   "deposit": {
+    "provisional": [],
+    "duplicates_skipped": 0,
+    "overlap_months_checked": 114,
+    "superseded_disagreements": 3
+   },
+   "loan": {
+    "provisional": [],
+    "duplicates_skipped": 1,
+    "overlap_months_checked": 114,
+    "superseded_disagreements": 3
+   },
+   "published_first": "2003-01",
+   "published_last": "2026-08"
+  },
+  "rules": {
+   "deposit_months": 12,
+   "loan_rise_pp": 1.0,
+   "policy_rise_pp": 0.25,
+   "policy_months": 3,
+   "min_for_word": 4,
+   "base_from": "2004-01",
+   "base_from_year": 2004,
+   "comparative_margin": 0.3333333333333333,
+   "deposit_tax": 0.2
+  }
+ },
+ "october_2026": {
+  "shock_day": "2026-10-16",
+  "shock_quarter": "2026Q4",
+  "rupiah_latest_date": "2026-10-16",
+  "rupiah_latest": 18030.996178796766,
+  "rupiah_end_july": 18052.398781,
+  "rupiah_vs_end_july_pct": -0.11855821745838657,
+  "rupiah_on_shock_day": 18030.996178796766,
+  "ojk_daily_last": "2026-10-02",
+  "slide_so_far": false,
+  "slide_month_ends_tested": 0,
+  "rupiah_stronger_than_july_pct": 0.11855821745838657,
+  "freeze_day": "2026-01-28",
+  "freeze_day_d": 28,
+  "freeze_day_y": 2026,
+  "freeze_fall_pct": 7.345847489429547,
+  "freeze_close": 8320.556,
+  "freeze_prev_close": 8980.23,
+  "foreign_net_2026_idr_tn": -82.101256380451,
+  "foreign_weeks_2026": 39,
+  "foreign_last_week": "2026-09 Minggu 5",
+  "foreign_sold_2026_idr_tn": 82.101256380451,
+  "shock_day_d": 16,
+  "shock_day_y": 2026,
+  "idx_close": 5185.105,
+  "idx_prev_close": 5863.78,
+  "idx_fall_pct": 11.574018806981169,
+  "idx_below_latest_before_pct": 37.03950827455319,
+  "latest_extension": [
+   {
+    "date": "2026-09-30",
+    "day": 30,
+    "source": "OJK",
+    "x": 6,
+    "index": 73.71920796455342
+   },
+   {
+    "date": "2026-10-16",
+    "day": 16,
+    "source": "IDX",
+    "x": 6.516129032258064,
+    "index": 62.96049172544681
+   }
+  ],
+  "rupiah_extension": [
+   {
+    "date": "2026-10-16",
+    "day": 16,
+    "x": 6.516129032258064,
+    "index": 107.32032343657971
+   }
+  ]
+ }
+}
