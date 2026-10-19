@@ -12,7 +12,9 @@ from gate.text import body_and_refs
 
 _YEAR = r"(?:1[6-9]\d\d|20\d\d)[a-z]?|n\.d\."
 _PAREN = re.compile(r"\(([^()]*)\)")
-_SEGMENT = re.compile(r"^(?P<names>[^\d;]*?[A-Z][^\d;]*?),\s*(?P<year>" + _YEAR + r")(?:,\s*(?:p|pp)\.\s*\d+(?:-\d+)?)?$")
+# one author's several works are '(Name, 2007, 2009)' (APA 7, 8.12); each year is checked against its own entry
+_SEGMENT = re.compile(r"^(?P<names>[^\d;]*?[A-Z][^\d;]*?),\s*(?P<years>(?:" + _YEAR + r")(?:,\s*(?:" + _YEAR + r"))*)"
+                      r"(?:,\s*(?:p|pp)\.\s*\d+(?:-\d+)?)?$")
 _BARE = re.compile(r"^(?P<year>" + _YEAR + r")$")
 # 'Author. (Date). Title': the date closes with ')' and a full stop, then the title begins
 _ENTRY = re.compile(r"^(?P<author>.+?)\.?\s*\((?P<year>" + _YEAR + r")(?:,\s*[A-Z][a-z]+(?:\s+\d{1,2})?)?\)\.\s+\S")
@@ -50,7 +52,7 @@ def _citations(body: str) -> list:
         for seg in (x.strip() for x in m.group(1).split(";")):
             s = _SEGMENT.match(seg)
             if s:
-                out.append((s.group("names"), s.group("year"), ctx))
+                out += [(s.group("names"), year, ctx) for year in re.split(r",\s*", s.group("years"))]
             elif _BARE.match(seg) and ";" not in m.group(1):
                 out.append((_narrative_names(body, m.start()), seg, ctx))
     return out

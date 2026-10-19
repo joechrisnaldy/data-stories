@@ -34,6 +34,11 @@ _YEAR = r"(?:1[6-9]\d\d|20\d\d)[a-z]?"
 # parentheses: '(by 1.1 points; Dell et al., 2012)' still exposes '1.1'.
 _CITE_SEGMENT = re.compile(r"(?<=[(;])\s*[^()\d;]*?[A-Z][^()\d;]*?,\s*" + _YEAR +
                            r"(?:,\s*(?:p|pp)\.\s*\d+(?:-\d+)?)?\s*(?=[;)])")
+# One author's several years, '(Name, 2007, 2009)', are masked only inside a full '(...)' of the post; in a README
+# or outside parentheses they stay figures.
+_PAREN = re.compile(r"\([^()]*\)")
+_CITE_YEARS = re.compile(r"(?<=[(;])\s*[^()\d;]*?[A-Z][^()\d;]*?,\s*" + _YEAR + r"(?:,\s*" + _YEAR + r")+" +
+                         r"(?:,\s*(?:p|pp)\.\s*\d+(?:-\d+)?)?\s*(?=[;)])")
 _CITE_YEAR = re.compile(r"\(" + _YEAR + r"\)")
 _GAP = r"(?:\s|&nbsp;|&#160;|\u00a0)*"
 _SIGN_BEFORE = re.compile(r"(?:\b(?:minus|plus|negative|positive)|[-+−])" + _GAP + r"(?:\*{1,2}|_)?" + _GAP + "$",
@@ -74,6 +79,8 @@ def _masked(source: str, bindings, readme: bool = False) -> str:
     spans = [(b.start, b.end) for b in bindings if b.end <= len(body)]
     for rx in (_URL, _LINK_TARGET, _CITE_SEGMENT, _CITE_YEAR) + ((_FENCE, _INLINE_CODE) if readme else ()):
         spans += [m.span() for m in rx.finditer(body)]
+    if not readme:
+        spans += [m.span() for p in _PAREN.finditer(body) for m in _CITE_YEARS.finditer(body, p.start(), p.end())]
     return mask_spans(body, spans + _list_markers(body))
 
 

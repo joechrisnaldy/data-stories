@@ -152,6 +152,14 @@ class NumbersTest(unittest.TestCase):
         self.assertTrue(num_fails("the gap (r = 0.81 for Europe, 2023) was large"))
         self.assertTrue(num_fails("growth fell (by 1.1 points; Dell et al., 2012) in poor countries"))
         self.assertEqual(num_fails("as found (Smith & Jones, 2019; Dell et al., 2012, p. 67)."), [])
+        self.assertEqual(num_fails("as found (Dell et al., 2007, 2009, 2021; Smith & Jones, 2019)."), [])
+        self.assertTrue(num_fails("growth fell (Dell et al., 2012, 1.1 points) in poor countries"))
+
+    def test_several_years_are_masked_only_in_a_post_citation(self):
+        # several years are masked only inside a full '(...)' of the post; anywhere else they stay figures
+        self.assertTrue(num_fails("prices rose; Jakarta, 1850, 1900) then fell."))
+        self.assertTrue(num_fails("prices rose; Jakarta, 2005, 2008; then fell."))
+        self.assertTrue(tmpl_fails("as found (Dell et al., 2007, 1850)."))
 
     def test_allow_phrase_needs_word_boundaries(self):
         # attack: an allow entry 'round one' also exempted 'around one'

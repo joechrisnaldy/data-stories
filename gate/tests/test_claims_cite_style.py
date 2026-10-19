@@ -143,6 +143,17 @@ class CiteTest(unittest.TestCase):
         f = cite.check(DOC.replace("(Acemoglu et al., 2002)", "(Nunn, 2008; Acemoglu et al., 2002)"))
         self.assertTrue(any("Nunn" in x for x in f), f)
 
+    def test_one_author_with_several_years_cites_each_entry(self):
+        # APA 7 (8.12) gives one author's works once, years in order: '(Acemoglu et al., 2002, 2005)'
+        entry = "\n\nAcemoglu, D., Johnson, S., & Robinson, J. A. (2005). Institutions. *Handbook*, 385-472.\n"
+        doc = DOC.replace("(Acemoglu et al., 2002)", "(Acemoglu et al., 2002, 2005)") + entry
+        self.assertEqual(cite.check(doc), [])
+        self.assertTrue(any("2005" in x and "never cited" in x for x in cite.check(DOC + entry)))
+
+    def test_each_year_of_a_several_year_citation_needs_its_entry(self):
+        f = cite.check(DOC.replace("(Acemoglu et al., 2002)", "(Acemoglu et al., 2002, 2005)"))
+        self.assertTrue(any("no reference entry" in x for x in f), f)
+
     def test_page_locators_are_understood(self):
         self.assertEqual(cite.check(DOC.replace("(Acemoglu et al., 2002)", "(Acemoglu et al., 2002, p. 1243)")), [])
 
