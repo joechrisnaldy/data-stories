@@ -55,7 +55,6 @@ extra = [["docs/README.src.md", "README.md"], ["docs/data-README.src.md", "data/
 [claims]
 "a month-end close at least 10% below the previous month-end" = "the shock-month definition, rules.shock_used (design 8.1)"
 "a month-end rate at least 7% weaker against the US dollar than 3 months earlier" = "the slide definition, rules.slide_used over rules.slide_span_months (design section 4, L4, with its fallback)"
-"I found no other official source with the same figures that I could use" = "amendment 8.8 and sources/provenance/rights-88: ILOSTAT, ADB, the Ministry of Manpower and Satu Data Indonesia checked; none could be used"
 "no other official source with BPS's round-by-round figures could be used" = "amendment 8.8 and sources/provenance/rights-88"
 "An episode counts for a link only once its outcome is known" = "design 8.6, Incomplete horizons: an episode counts for a link only if that link's horizon has passed; 1997 to 1998 is also left out of every count (section 2)"
 

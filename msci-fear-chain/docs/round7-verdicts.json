@@ -1,0 +1,43 @@
+{
+ "round": 7,
+ "date": "2026-10-19",
+ "lenses_dispatched": 1,
+ "lenses_returned": 1,
+ "lenses_errored": 0,
+ "lenses": [
+  "amendment 8.10 as narrowed in round 6"
+ ],
+ "scope": [],
+ "inventory": "gate scope --since 6 lists no changed sentence; the round checks the one record round 6 changed, amendment 8.10, statement by statement",
+ "method": "One lens refuted each statement of 8.10 against the round snapshots, git history, the READMEs and the site diff; it found nothing, so no skeptic was needed. Nothing that determines the post changed after snapshot 7.",
+ "findings": [
+  {
+   "id": "r7:item:1",
+   "claim": "8.10: after publication the owner asked to remove the limits bullet on unemployment and the scorecard row on unemployment",
+   "verdict": "CONFIRMED",
+   "evidence": "lens (amendment 8.10): After publication the owner asked to remove the two passages: draft/.rounds/5.json against 7.json removes only the scorecard row and the limits bullet; the site MDX diff removes the same two lines; PR 46 merged before the request; the owner's message 'kindly take out this' with both screenshots precedes the edit.",
+   "fixed": false
+  },
+  {
+   "id": "r7:item:2",
+   "claim": "8.10: this departs from 8.8, which reported L7 in the essay as not tested, with its reason",
+   "verdict": "CONFIRMED",
+   "evidence": "lens (amendment 8.10): Design doc line 383 (8.8): 'L7 is reported as not tested, with this reason, in one sentence'; the deleted bullet was that sentence, so the essay no longer reports L7. Style note only: 8.8 set what the essay reports.",
+   "fixed": false
+  },
+  {
+   "id": "r7:item:3",
+   "claim": "8.10: no test rule or result changes",
+   "verdict": "CONFIRMED",
+   "evidence": "lens (amendment 8.10): git status lists only the design doc, docs/rounds.jsonl and gate.toml as modified in the post; results.json, build_analysis.py, household.py, make_charts.py, seki.py and the predictions file are clean against HEAD 07b9a9e; results.json has no L7 key; gate.toml lost one [claims] line, not a test rule.",
+   "fixed": false
+  },
+  {
+   "id": "r7:item:4",
+   "claim": "8.10: the README and data/README.md still record that the unemployment test was not run",
+   "verdict": "CONFIRMED",
+   "evidence": "lens (amendment 8.10): README.md:5 'Unemployment could not be tested.'; data/README.md:28 '...the unemployment test could not be run...'; both unchanged against HEAD and against 5.json.",
+   "fixed": false
+  }
+ ]
+}

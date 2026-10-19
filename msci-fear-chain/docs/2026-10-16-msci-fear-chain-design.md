@@ -405,3 +405,8 @@ test rule or a result.
 - **The method sentence.** The essay's version departs from 8.7's wording: "opened" became "read"; "every change
   is dated in the pre-registration" became "with later changes dated", in the first sentence; and the
   unemployment test is dropped with L7 (8.8). The README words it differently.
+
+**8.10 Unemployment taken out of the essay (2026-10-19, New York time).** After publication the owner asked to
+remove the limits bullet on unemployment and the scorecard row on unemployment. This departs from
+8.8, which reported L7 in the essay as not tested, with its reason. No test rule or result changes. The README and
+`data/README.md` still record that the unemployment test was not run.
