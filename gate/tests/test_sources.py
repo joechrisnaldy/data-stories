@@ -11,7 +11,7 @@ import os
 import tempfile
 import unittest
 
-from gate.checks import sources
+from gate.checks import cite, sources
 from gate.render import render
 
 ARTICLE = ("Temperature Shocks and Economic Growth: Evidence from the Last Half Century\n"
@@ -181,3 +181,110 @@ class ReviewV2Test(unittest.TestCase):
         s = self.mutate(sha256=hashlib.sha256(doc.encode()).hexdigest(), quote="0.38")
         s["dell2012"]["values"] = {"growth_pp": 0.38}
         self.assertTrue(any("occurs 2 times" in x for x in self.fails(s)), self.fails(s))
+
+
+PP46 = ("Iuran Jaminan Hari Tua\nIuran JHT bagi Peserta penerima Upah sebesar 5,7% (lima koma tujuh persen) dari "
+        "Upah, dengan ketentuan: a. 2% (dua persen) ditanggung oleh Pekerja; dan b. 3,7% (tiga koma tujuh persen) "
+        "ditanggung oleh Pemberi Kerja. Peserta program JHT sebanyak 19.100.050 orang.")
+PP46_QUOTE = ("sebesar 5,7% (lima koma tujuh persen) dari Upah, dengan ketentuan: a. 2% (dua persen) ditanggung oleh "
+              "Pekerja; dan b. 3,7% (tiga koma tujuh persen)")
+IRS = ("Retirement topics\nThe limit on employee elective deferrals is: $24,500 in 2026. Generally, early "
+       "distributions are those you receive before reaching age 59½ and are taxed.")
+SIM = "Pengembangan Saldo JHT\nBesarnya pengembangan 5% per tahun dari saldo."
+
+
+class NumberFormatAndUndatedTest(unittest.TestCase):
+    """Post 28 (jht-401k): Indonesian sources print '5,7%' and '19.100.050', the IRS prints '$24,500' and
+    'age 59½', and a BPJS web page carries no date. Each value of those quotes failed (or the wrong one passed:
+    19.1 from '19.100.050', 59 from '59½'), and a 'Surname n.d.' ref was refused outright."""
+
+    def setUp(self):
+        self.root = tempfile.mkdtemp()
+        self.addCleanup(__import__("shutil").rmtree, self.root, True)
+        os.makedirs(os.path.join(self.root, "sources"))
+
+    def fails(self, doc, quote, values, fmt=None, ref="Agency 2015", title="Iuran jaminan hari tua", citing=None):
+        """(sources failures, rendered draft) for one entry used once, in a sentence that ends with `citing`
+        (default '(Surname, Year)'), over a reference list holding only that entry."""
+        with open(os.path.join(self.root, "sources", "doc.txt"), "w", encoding="utf-8") as f:
+            f.write(doc)
+        entry = {"ref": ref, "title": title, "doc": "sources/doc.txt", "quote": quote, "values": values,
+                 "sha256": hashlib.sha256(doc.encode("utf-8")).hexdigest()}
+        if fmt is not None:
+            entry["number_format"] = fmt
+        surname, year = ref.rsplit(" ", 1)
+        leaf = next(iter(values))
+        draft = (f"The figure is {{{{src:k.values.{leaf}:dec1}}}}, {citing or '(' + surname + ', ' + year + ')'}.\n\n"
+                 f"## References\n\n{surname}. ({year}). {title[0].upper() + title[1:]}. Publisher.\n")
+        rendered, b = render(draft, {}, {"k": entry})
+        return sources.check(draft, rendered, b, {"k": entry}, self.root), rendered
+
+    def test_indonesian_quote_reads_comma_decimals(self):
+        f, _ = self.fails(PP46, PP46_QUOTE, {"total": 5.7, "worker": 2, "employer": 3.7}, fmt="id")
+        self.assertEqual(f, [])
+
+    def test_indonesian_quote_reads_dot_thousands(self):
+        f, _ = self.fails(PP46, "Peserta program JHT sebanyak 19.100.050 orang", {"members": 19100050}, fmt="id")
+        self.assertEqual(f, [])
+
+    def test_a_piece_of_an_indonesian_number_is_not_its_value(self):
+        # before: the English reader took 19.1 from '19.100.050', so a value of 19.1 passed
+        f, _ = self.fails(PP46, "Peserta program JHT sebanyak 19.100.050 orang", {"members": 19.1}, fmt="id")
+        self.assertTrue(any("19.1" in x for x in f), f)
+        f, _ = self.fails(PP46, "sebesar 5,7% (lima", {"total": 5}, fmt="id")
+        self.assertTrue(any("is not a number in its quote" in x for x in f), f)
+
+    def test_an_indonesian_quote_read_as_english_fails(self):
+        f, _ = self.fails(PP46, PP46_QUOTE, {"total": 5.7, "worker": 2, "employer": 3.7})
+        self.assertTrue(f)
+
+    def test_a_number_joined_to_letters_is_not_read(self):
+        # 'Rp19.100.050' read from its second group gave 100050 and 19.1-style fragments in "id"
+        self.assertEqual(sources._quote_numbers("sebesar Rp19.100.050 orang", "id"), [])
+        self.assertEqual(sources._quote_numbers("ERA5 grid", "en"), [])
+
+    def test_indonesian_thousands_and_decimal_together(self):
+        self.assertEqual(sources._quote_numbers("naik 1.234,5 persen", "id"), [1234.5])
+
+    def test_an_unknown_number_format_is_reported(self):
+        f, _ = self.fails(PP46, "sebesar 5,7% (lima", {"total": 5.7}, fmt="de")
+        self.assertTrue(any("number_format" in x for x in f), f)
+
+    def test_english_quote_reads_comma_thousands(self):
+        quote = "is: $24,500 in 2026"
+        for fmt in (None, "en"):
+            with self.subTest(fmt=fmt):
+                f, _ = self.fails(IRS, quote, {"limit": 24500, "year": 2026}, fmt=fmt, title="Retirement topics")
+                self.assertEqual(f, [])
+
+    def test_the_groups_of_an_english_number_are_not_numbers(self):
+        # before: '$24,500' was read as 24 and 500, so three values 24, 500 and 2026 passed
+        f, _ = self.fails(IRS, "is: $24,500 in 2026", {"a": 24, "b": 500, "year": 2026}, title="Retirement topics")
+        self.assertTrue(any("values.a = 24 is not a number" in x for x in f), f)
+        self.assertTrue(any("values.b = 500 is not a number" in x for x in f), f)
+
+    def test_a_half_attached_to_a_number_is_read(self):
+        f, _ = self.fails(IRS, "before reaching age 59½", {"age": 59.5}, title="Retirement topics")
+        self.assertEqual(f, [])
+
+    def test_the_whole_part_of_a_half_is_not_the_value(self):
+        # before: '59½' was read as 59, so a value of 59 passed
+        f, _ = self.fails(IRS, "before reaching age 59½", {"age": 59}, title="Retirement topics")
+        self.assertTrue(any("values.age = 59 is not a number" in x for x in f), f)
+
+    def test_an_undated_reference_splits_matches_and_is_cited(self):
+        kw = dict(fmt="id", ref="BPJS Ketenagakerjaan n.d.", title="Pengembangan saldo JHT")
+        for citing in (None, "as BPJS Ketenagakerjaan (n.d.) assumes"):
+            with self.subTest(citing=citing):
+                f, rendered = self.fails(SIM, "Besarnya pengembangan 5% per tahun", {"r": 5}, citing=citing, **kw)
+                self.assertIn("(BPJS Ketenagakerjaan, n.d.)." if citing is None else "Ketenagakerjaan (n.d.) assumes",
+                              rendered)
+                self.assertIn("BPJS Ketenagakerjaan. (n.d.). Pengembangan saldo JHT.", rendered)
+                self.assertEqual(f, [])
+                self.assertEqual(cite.check(rendered), [])
+
+    def test_an_undated_reference_still_needs_its_citation(self):
+        f, _ = self.fails(SIM, "Besarnya pengembangan 5% per tahun", {"r": 5}, fmt="id",
+                          ref="BPJS Ketenagakerjaan n.d.", title="Pengembangan saldo JHT",
+                          citing="(BPJS Ketenagakerjaan, 2025)")
+        self.assertTrue(any("does not cite BPJS Ketenagakerjaan (n.d.)" in x for x in f), f)

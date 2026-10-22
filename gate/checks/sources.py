@@ -1,7 +1,8 @@
 """External figures are bound to a stored, hash-pinned copy of the cited document.
 
 For every {{src:...}} placeholder: the document is on disk with the recorded sha256; the verbatim quote
-occurs in it exactly once, starting and ending on whole tokens; the quote contains the value; the reference list has the entry; the entry's title opens
+occurs in it exactly once, starting and ending on whole tokens; the quote contains the value, read in the entry's
+number_format ("en" or "id"); the reference list has the entry ('Surname YEAR' or 'Surname n.d.'); the entry's title opens
 the stored document (so a press release or working paper cannot stand in for the cited article); and the
 paragraph using the figure cites that reference. This replaces an allowlist that accepted any figure an
 author typed in with an invented citation.
@@ -27,18 +28,42 @@ def normalise(text: str) -> str:
     return " ".join(text.split())
 
 
-_QUOTE_NUMBER = re.compile(r"(?<![\w.])-?\d+(?:\.\d+)?")
+# A quote is read in its entry's "number_format": "en" (the default) has comma thousands and dot decimals
+# ('$24,500', '0.08'), "id" (Indonesian) has dot thousands and comma decimals ('19.100.050', '5,7%'). A
+# grouped number is one number, and a '½' attached to a number is its half ('59½' is 59.5): read in pieces,
+# '19.100.050' gave 19.1 and '59½' gave 59, and either passed as the value.
+_NUMBER_FORMATS = {"en": (",", "."), "id": (".", ",")}
+_HALF = "½"
 
 
-def _quote_numbers(quote: str) -> list:
+def _number_rx(thousands: str, decimal: str) -> re.Pattern:
+    t, d = re.escape(thousands), re.escape(decimal)
+    # with dot thousands, a group after 'Rp19.' must not start a number either ('Rp19.100.050' is not 100050)
+    joined = rf"(?<!\w{t})" if thousands == "." else ""
+    return re.compile(rf"(?<![\w{d}]){joined}-?(?:\d{{1,3}}(?:{t}\d{{3}})+(?!\d)|\d+)(?:{d}\d+|{_HALF})?")
+
+
+_QUOTE_NUMBER = {name: _number_rx(*seps) for name, seps in _NUMBER_FORMATS.items()}
+
+
+def _quote_numbers(quote: str, number_format: str = "en") -> list:
     """Every number in the (normalised) quote as a signed float, in order."""
-    return [float(m.group(0)) for m in _QUOTE_NUMBER.finditer(quote)]
+    thousands, decimal = _NUMBER_FORMATS[number_format]
+    out = []
+    for m in _QUOTE_NUMBER[number_format].finditer(quote):
+        token = m.group(0)
+        x = float(token.rstrip(_HALF).replace(thousands, "").replace(decimal, "."))
+        out.append(x + (-0.5 if token.startswith("-") else 0.5) if token.endswith(_HALF) else x)
+    return out
 
 
-def _values_fail(key: str, values: dict, quote: str) -> list:
+def _values_fail(key: str, values: dict, quote: str, number_format: str = "en") -> list:
     """Each value must equal a distinct number in the quote exactly, sign included, and the quote may hold
     no more numbers than values: a whole table row would let a figure from the wrong column pass."""
-    nums, fails = _quote_numbers(quote), []
+    if not isinstance(number_format, str) or number_format not in _NUMBER_FORMATS:
+        return [f"src:{key}: number_format must be one of {', '.join(sorted(_NUMBER_FORMATS))}, "
+                f"got {number_format!r}"]
+    nums, fails = _quote_numbers(quote, number_format), []
     if len(nums) > len(values):
         fails.append(f"src:{key}: the quote holds {len(nums)} numbers for {len(values)} value(s); quote only the "
                      "cell or phrase each value comes from")
@@ -87,15 +112,15 @@ def _cites(para: str, surname: str, year: str) -> bool:
     """A real citation of Surname (Year) or (Surname ..., Year), not the year inside some other word."""
     y = re.escape(year) + r"[a-z]?"
     narrative = r"\b" + re.escape(surname) + r"\b[^()\n]{0,80}?\(\s*" + y + r"\s*(?:,[^()]*)?\)"
-    paren = r"\([^()]*\b" + re.escape(surname) + r"\b[^()]*?,\s*" + y + r"\b[^()]*\)"
+    paren = r"\([^()]*\b" + re.escape(surname) + r"\b[^()]*?,\s*" + y + r"(?!\w)[^()]*\)"   # 'n.d.' ends in a dot
     flat = " ".join(para.split())
     return bool(re.search(narrative, flat) or re.search(paren, flat))
 
 
 def _split_ref(ref) -> tuple:
     parts = str(ref or "").rsplit(" ", 1)
-    if len(parts) != 2 or not parts[1][:4].isdigit():
-        raise ValueError(f"ref must be 'Surname YEAR', got {ref!r}")
+    if len(parts) != 2 or not (parts[1][:4].isdigit() or parts[1] == "n.d."):
+        raise ValueError(f"ref must be 'Surname YEAR' or 'Surname n.d.', got {ref!r}")
     return parts[0], parts[1]
 
 
@@ -127,7 +152,7 @@ def _check_entry(key: str, e: dict, refs: str, root: str) -> list:
     elif not _clean_occurrence(text, quote):
         fails.append(f"src:{key}: the quote starts or ends inside a number or a word in {e['doc']}, which can "
                      f"drop a sign or a digit; quote whole tokens: {quote[:90]!r}")
-    fails += _values_fail(key, e.get("values", {}), quote)
+    fails += _values_fail(key, e.get("values", {}), quote, e.get("number_format", "en"))
     try:
         entry = _ref_entry(refs, e.get("ref"))
     except ValueError as err:
