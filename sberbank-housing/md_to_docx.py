@@ -45,9 +45,10 @@ def convert(md_path, docx_path):
         elif block.startswith("## "):
             doc.add_heading(block[3:], level=1)
         elif block.startswith("!["):
-            m = re.match(r"!\[.*?\]\((.+?)\)", block)
-            img = (md_path.parent / m.group(1)).resolve()
-            doc.add_picture(str(img), width=Inches(6.2))
+            m = re.match(r"!\[(.*?)\]\((.+?)\)", block)
+            img = (md_path.parent / m.group(2)).resolve()
+            pic = doc.add_picture(str(img), width=Inches(6.2))
+            pic._inline.docPr.set("descr", m.group(1))  # Word's alt text
         elif block.startswith("> "):
             par = doc.add_paragraph()
             run = par.add_run(block[2:].replace("\n> ", " "))
