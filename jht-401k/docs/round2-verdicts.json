@@ -1,0 +1,649 @@
+{
+ "round": 2,
+ "date": "2026-10-23",
+ "lenses_dispatched": 4,
+ "lenses_returned": 4,
+ "lenses_errored": 0,
+ "lenses": [
+  "sources and references",
+  "licence and logic",
+  "hostile reader",
+  "consistency across surfaces and charts"
+ ],
+ "scope": [
+  "I worked on a payroll in Indonesia, and under Indonesian law a share of that pay should have gone into an old-age savings account: Jaminan Hari Tua, or JHT, run by BPJS Ketenagakerjaan.",
+  "A separate pension scheme, Jaminan Pensiun, takes another 3 percent (Pemerintah Republik Indonesia, 2015a); it pays a pension, so I leave it out of the growth comparison.",
+  "The window stops in 2020 for a reason I come back to: BPJS has not published the rate it credited to balances since.",
+  "In 2008, the stock fund saver had 0.73 times what they had put in.",
+  "In plans Vanguard keeps records for, the average participant deferred 7.6 percent of pay in 2024, and the average total with the employer's money was 12.1 percent (Vanguard, 2026a).",
+  "The limit on deferrals is $24,500 in 2026 (Internal Revenue Service, 2026a).",
+  "Singapore's CPF takes 37 percent of pay, worker and employer together, for workers aged 55 and under, on wages in the top band.",
+  "US law requires a 401(k) that lets savers choose their investments to furnish each of them a statement at least once each quarter (Employee Benefits Security Administration, 2006).",
+  "The rate it credited to members' balances has not been published for the five years since 2020.",
+  "The money must go in by law, from the worker and the employer.",
+  "What Indonesia does not do is make that money feel like yours.",
+  "Publish the rate credited to balances each year.",
+  "It could change whether the people who own it know it is there.",
+  "I did not know JHT was there.",
+  "For 2015 the figure is the year-end rate BPJS reported, and reading 2020's figure as the rate for balances is an inference. - Which balance the extra payouts of 2009 and 2013 applied to is not stated in the reports; the base-rate line shows the result without them. - The saver model is simplified: one payment a year, credited at half the year's rate, applied the same way to each line.",
+  "JHT rates come from PT Jamsostek and BPJS Ketenagakerjaan (PT Jamsostek, 2007, 2008, 2009, 2011, 2012, 2013, 2014; BPJS Ketenagakerjaan, 2015, 2016a, 2016b, 2017, 2018, 2020, 2021a, 2021b, 2022, 2023, 2024, 2025, 2026), each figure checked by script against a quoted passage on its page.",
+  "CPF rates are CPF Board data on data.gov.sg (Central Provident Fund Board, 2026) under the [Singapore Open Data Licence](https://data.gov.sg/open-data-licence).",
+  "(2021a).",
+  "(2021b).",
+  "Employee Benefits Security Administration.",
+  "Department of Labor.",
+  "*Laporan tahunan 2013* [2013 annual report]. https://www.bpjsketenagakerjaan.go.id/assets/uploads/laporan_tahunan/26032015_133805_ARA%20BPJS%20Ketenagakerjaan%202013.pdf",
+  "[README.md] Indonesia already requires workers to save through BPJS Ketenagakerjaan's Jaminan Hari Tua (JHT), with the worker and the employer paying in, but a worker can pay in for years without knowing.",
+  "[README.md] The rules were written down before any result, with dated amendments; the fee formula was settled after the first results, and the record says so; five of the five predictions written first came true.",
+  "[README.md] BPJS has not published the rate it credited to JHT balances for the five years after 2020, while it still publishes the fund's investment yield.",
+  "[data/README.md] Each downloaded file below is frozen by its `sha256` hash, which `profile_data.py` checks before reading it (run `python3 profile_data.py` from the post folder); the same script prints each file's coverage, gaps and key columns and, for each file the analysis uses, the exact rows it reads.",
+  "[data/README.md] They also record which column a table-row quote stops at, and that reading the window's last credited figure as the rate for balances is an inference; the balances the 2009 incentive and the 2013 payouts were paid on are inferences too, recorded in design amendment `A1` and `docs/provenance-audit.md`, section C. `docs/provenance-audit.md`, sections A to D, reads each row's defining sentence. - **Gaps.** No credited rate after the window: BPJS has not published those rates.",
+  "[data/README.md] ``` file data/jht_rates.csv sha256 4a6ab8b769536e5c66aa0bbbc657563bfde91f58b12fcbfd38b8014f7f37351f made by python3 extract_jht.py (run from the post folder; needs poppler's pdftotext) reads docs/jht-manifest.csv and the 20 documents in sources/jht/, each pinned by its sha256 in the manifest check rebuilt 2026-10-22 from the same manifest and documents: byte-identical tests python3 -m unittest test_extract_jht (17 tests, OK on 2026-10-22) ```",
+  "[data/README.md] In the window, the index's December-to-December change differs from BPS's published December year-on-year inflation (Bank Indonesia's Data Inflasi, below) for `Desember 2008`, `Desember 2013` and `Desember 2020`.",
+  "[data/README.md] Design amendment `A1` keeps the IMF index for `R5` and `R6` and shows BPS's published December rate beside it in the year-by-year chart, saying where they differ. - **United States.** Fetched for this post from the IMF's SDMX API in the same format.",
+  "[data/README.md] Accessed on [current date].` Charts and notes credit the IMF, name the national compiler BPS-Statistics Indonesia and label annual averages, inflation rates and real values as the author's calculations.",
+  "[data/README.md] The file's last row, `Desember 2002`, holds a placeholder value rather than a rate; the reader leaves it out and stops if it ever changes. - **Why it is here.** Design amendment `A1`: the IMF index stays the measure for `R5` and `R6`, and the year-by-year chart also shows BPS's published December rate and where they differ (see the Indonesia note above). - **How it was obtained.** The owner downloaded it by hand from the page below for the previous post, which pins it by the same hash (`msci-fear-chain/build_analysis.py`, key `bi_inflasi`); it is copied here unchanged under a new name.",
+  "[data/README.md] The age groups the analysis reads, `35 years & below` to `Above 50 - 55 years`, keep `Special`. - **What the analysis reads.** From the contribution file, for those age groups, the rows of their last effective date on or before `effective_from = 2026-01` (the rates in force on that date). - **Licence and credit.** Singapore Open Data Licence: use is allowed whether commercially or non-commercially.",
+  "[data/README.md] 2025` on the ILO's SDMX server), Indonesia, both sexes, persons, scaled as the file's `UNIT_MULT` column says (`3: Thousands`). `profile_data.py` reads the rows with `STE: Status in employment` equal to `STE_AGGREGATE_EES: Employees`.",
+  "[data/README.md] These are modelled estimates, not survey counts; some years carry the status flag `A: Adjusted`. - **How it was fetched.** The source vet pulled this indicator from ILOSTAT's API host, `rplumber.ilo.org`, with `timefrom=2020`, so the vet copy starts there.",
+  "[[published] excerpt] Indonesia already requires workers to save through JHT, and I did not know it existed.",
+  "[[published] metaDescription] What Indonesia can learn from the 401(k): JHT already requires workers to save, but BPJS has not published the rate it credits to JHT balances since 2020.",
+  "[[published] alt:jh-3-contributions.png] Bar chart of what goes in each year as a share of pay, worker and employer: Singapore's CPF, 37 percent for workers aged 55 and under, on wages in the top band; a 401(k) in plans Vanguard keeps records for, 12.1 percent on average among participants in 2024; JHT, 5.7 percent; JP, a separate pension, 3 percent.",
+  "[[published] alt:jh-4-shown.png] Bar chart of the JHT fund's investment yield as BPJS published it from 2014 to 2025, with dots for the rate set for member balances, which BPJS has not published after 2020."
+ ],
+ "method": "Diff-scoped round: the 39 sentences gate scope listed since round 1, plus chart text changed by code alone, the changed gate.toml entries, docs/sources.json's ref, amendment A5, the references-data.md changes and the five rewritten reference entries (65 items). Each lens refuted its primary items and any claim whose context round 1 changed; every non-confirmed verdict was re-checked by an independent skeptic. The skeptic rejected one finding, which the adjudicator re-executed and struck.",
+ "findings": [
+  {
+   "id": "r2:item:1",
+   "claim": "I worked on a payroll in Indonesia, and under Indonesian law a share of that pay should have gone into an old-age savings account: Jaminan Hari Tua, or JHT, run by BPJS Ketenagakerjaan.",
+   "verdict": "CONFIRMED",
+   "evidence": "L: Draft line 5. The wording is the one the owner approved after round 1, recorded in design doc line 140 (A5): 'should have gone into'. The legal duty is real. PP 46/2015 Pasal 2(2) (sources/text/pp_46_2015.txt:122) says 'Setiap orang yang bekerja wajib mendaftarkan dirinya dalam program JHT'. Pasal 16(1) (line 428) sets 2% from the worker and 3.7% from the employer, and Pasal 19(1) (lines 505-508) requires the employer to pay it in. The duty applies only to a non-state employer that has been phased in: Pasal 2(1) at lines 116-121 says 'sesuai penahapan kepesertaan', and Pasal 3 at line 133 leaves state employers to a separate regulation. The owner's facts do not name his employer or the dates. His own wording ('was not aware of the BPJS Ketenagakerjaan deduction') presents the deduction as one that applied to that payroll, and the sentence rests on that. In round 1 my lens noted the same dependence on the employer having been phased in (round1-verdicts.json r1:item:18, lens L). The narrowing to 'should have gone into' addressed whether money was actually deducted, but not this condition. | H: Personal part: the owner said he worked on a payroll in Indonesia, was not aware of the BPJS Ketenagakerjaan deduction, and does not know whether anything was deducted. 'should have gone into' matches all three and goes no further. Legal part: PP 46/2015 Pasal 2(2) says every person who works must register in JHT (sources/text/pp_46_2015.txt:120-123), and Pasal 16(1) puts 2% of wages on the worker (pp_46_2015.txt:428-434). What a hostile Indonesian worker can raise: Pasal 2(1) phases employers in ('sesuai penahapan kepesertaan', :118-121), and Pasal 3 and Pasal 4(1)a leave state employers out (:131-142). Nothing on file says what kind of employer he had or when; the owner's phrase 'the deduction' assumes his job was covered (r1:item:371 note). Against the title: there is no contradiction under round 1's ruling that the title states a legal duty (r1:item:1, PP 46 Pasal 2(2)). Still, 'should have gone into' can be read as 'but it did not', so the title's 'Forced to Save' now holds only as that legal duty (see extra on the title). Against 'It is how a worker can pay into such an account, year after year, without noticing' (draft line 5): that sentence is about 'a worker' and says 'can', so it states a general possibility, not the author's case (r1:item:11). The narrowing only means his own case is no longer offered as a confirmed example. Owner decision of 2026-10-23 (design A5, inventory [56]) keeps the wording.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:2",
+   "claim": "A separate pension scheme, Jaminan Pensiun, takes another 3 percent (Pemerintah Republik Indonesia, 2015a); it pays a pension, so I leave it out of the growth comparison.",
+   "verdict": "CONFIRMED",
+   "evidence": "S: sources/text/pp_45_2015.txt lines 820-825 (Pasal 28(2)): 'Iuran ... sebesar 3% (tiga persen) dari Upah per bulan'. Lines 60-64 (Pasal 1(3)): 'Manfaat Pensiun adalah sejumlah uang yang dibayarkan setiap bulan', and Pasal 16 (lines 457-466) lists the pension benefits. So 'it pays a pension' holds. Deleting 'rather than building a balance' removed the conflict with Pasal 24(1) (lines 737-742, the lump sum for members with under 15 years). The 'so I leave it out' logic still rests on the scheme being a pension. Not introduced by round 1: Pasal 29(2) (lines 855-858) caps the wage base, so for pay above the ceiling the scheme takes less than 3 percent of pay. The sentence follows the regulation's own '3% dari Upah per bulan'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:3",
+   "claim": "The window stops in 2020 for a reason I come back to: BPJS has not published the rate it credited to balances since.",
+   "verdict": "REFUTED",
+   "evidence": "L: Draft line 32. The bare 'since' points back to the '2020' earlier in the same sentence ('The window stops in 2020'), so the reader takes 2020 as a rate year. Read that way, results.json published.years_without_credited is 2021 to 2025 (n=5), and the sentence is true under both readings of 2020's 5.59%. If 5.59% is the credited rate, it was published and nothing came after. If it is not, nothing has been published for 2021 onward either. One residual problem: under the second reading, 'not since 2020' still implies that 2020's rate was published. The limits bullet at line 77 and the notes on charts 1, 2 and 4 cancel that by calling 2020 an inference. A second reading also fails. Read 'since' as a publication date, and the sentence is false under either reading. BPJS's 2019 report, which gives 6.08% credited for 2019, is cited in the post as (2021a) and was listed on the BPJS page only by Feb 2021 (references-data.md). The 2020 summary that prints 5.59% (sources/provenance/jht/lk_lpp_2020_summary.pdf) is dated 'Jakarta, 31 Mei 2021'. Line 77 ('BPJS has not published the credited rate since.') uses the same construction.",
+   "fixed": true,
+   "fix": "H extra E1b: 'has not published ... since' reads as publication time, and BPJS published the 2019 rate in February 2021 (2021a). Narrowed to 'for later years'."
+  },
+  {
+   "id": "r2:item:4",
+   "claim": "In 2008, the stock fund saver had 0.73 times what they had put in.",
+   "verdict": "CONFIRMED",
+   "evidence": "L: Draft line 40. In the template (.src.md:40) the sentence binds growth.sp500.low_year (2008) and growth.sp500.low (0.7259 in results.json); the JHT figure for 2008 is growth.jht.path.2008 (1.0195). The paragraph still makes its case without the two deleted clauses. 'That gap' refers back to the 2.4 versus 1.4 at line 38. A ratio of 0.73 against 1.02 shows the risk on its own terms, chart 1 draws a reference line at '1 = got back exactly what was put in', and the sentence makes no causal claim. 'Stock fund' is the S&P 500 line, matching line 27.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:5",
+   "claim": "In plans Vanguard keeps records for, the average participant deferred 7.6 percent of pay in 2024, and the average total with the employer's money was 12.1 percent (Vanguard, 2026a).",
+   "verdict": "CONFIRMED",
+   "evidence": "S: vanguard_how_america_saves_2026.txt, p.6 table (line 214): 'Average participant deferral rate ... 7.6% [2024]'. Line 224: 'Average total contribution rate (participant and employer) ... 12.1% [2024]'. P.11 (lines 459-465): 'the average total participant contribution rate was 12.1%'. P.45 (lines 2558-2566): 'These rates exclude eligible nonparticipants'; Figure 44 gives 12.1% for 2024. So 12.1 also covers participants only, which matches the sentence's parallel reading. P.109 (lines 6665-6669): 'The 2024 restated analysis includes approximately 1,300 plans', the same as the 1,300-plan recordkeeping universe, so 'plans Vanguard keeps records for' holds for 2024.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:6",
+   "claim": "The limit on deferrals is $24,500 in 2026 (Internal Revenue Service, 2026a).",
+   "verdict": "REFUTED",
+   "evidence": "S: irs_401k_contribution_limits.txt line 251: 'The limit on employee elective deferrals (for traditional and safe harbor plans) is: $24,500 in 2026'. Line 256 gives a different limit for a SIMPLE 401(k): '$17,000 in 2026'. Lines 261-262: participants aged 50 or over 'can also make catch-up contributions ... additional elective salary deferrals of $8,000 in 2026' ($11,250 at ages 60 to 63). Line 258: plans may set a lower limit. Round 1 deleted the tax clause and left a stand-alone universal, 'The limit on deferrals is $24,500', which is wrong for SIMPLE 401(k) plans and for savers who can make catch-up contributions. The figure itself is right. | skeptic S: draft .md:52 and .src.md:52 print the sentence with no scope. Its bound key, docs/sources.json irs_deferral_limit_2026, quotes 'The limit on employee elective deferrals (for traditional and safe harbor plans) is: $24,500 in 2026', so the scope is in the key but not in the sentence. In sources/text/irs_401k_contribution_limits.txt, line 251-252 gives $24,500 for traditional and safe harbor plans. Line 256 gives '$17,000 in 2026' for a SIMPLE 401(k). Line 258 says 'Your plan's terms may impose a lower limit'. Line 262 adds '$8,000 in 2026' of catch-up deferrals at age 50 and over ($11,250 at ages 60 to 63). round1_fixes r1:item:57 confirms that deleting the tax clause left the sentence standing alone. The figure is right; as written, the universal is not. LOW.",
+   "fixed": true,
+   "fix": "Narrowed to the bound quote's scope: 'The limit on employee elective deferrals in traditional and safe harbor 401(k) plans is $24,500 in 2026'."
+  },
+  {
+   "id": "r2:item:7",
+   "claim": "Singapore's CPF takes 37 percent of pay, worker and employer together, for workers aged 55 and under, on wages in the top band.",
+   "verdict": "CONFIRMED",
+   "evidence": "S: sources/provenance/cpf/meta_d_98ffa142ae0dec40391f78f81d26aca9.json, description: 'The CPF contribution rates are applicable for the highest wage band. For example, the rates for January 2014 are applicable for wages of $750 or more per month.' 'Top band' renders 'highest wage band' faithfully. data/cpf_contribution_rates.csv 2026-01 rows: Employer 17 + Employee 20 for each age group up to 'Above 50 - 55 years'. Note: the band starts at S$750 a month (the 2014 example), so a reader may take 'top band' to mean high earners only. The CPF Ordinary Wage ceiling, above which no contribution is due, is not in any stored file, so '37 percent of pay' is still broad for pay above the ceiling. That is unverifiable from stored sources and was not introduced by round 1.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:8",
+   "claim": "US law requires a 401(k) that lets savers choose their investments to furnish each of them a statement at least once each quarter (Employee Benefits Security Administration, 2006).",
+   "verdict": "CONFIRMED",
+   "evidence": "S: sources/text/dol_fab_2006-03.txt lines 26-31: 'an affirmative obligation to automatically furnish pension benefit statements - at least once each quarter, in the case of individual account plans that permit participants to direct their investments'. The Issue 3 text adds 'section 105(a)(1)(A)(i) requires that a pension benefit statement be furnished at least once each calendar quarter'. 'Furnish' is the bulletin's verb. Stored PDF: sha256 7f484ee6... and SHA-1 base32 R7Q7VJ47YSSR4P4RV77RAQG3ESVMN4QH, which I recomputed. A CDX query I ran today returns the same digest for capture 20190619215402 of the dol.gov file. No other surface still says 'send' (grep of the draft, make_charts.py and gate.toml).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:9",
+   "claim": "The rate it credited to members' balances has not been published for the five years since 2020.",
+   "verdict": "UNVERIFIABLE",
+   "evidence": "L: Draft line 62. 'For the five years since 2020' means data years 2021 to 2025, which matches results.json published.years_without_credited_n = 5. It is true under both readings of 2020, because it claims nothing about whether 2020 itself was published. Round 1 replaced 'appears' (meaning in its reports) with the passive 'has not been published', which is broader on its face. The topic sentence 'What BPJS publishes about growth is another matter' keeps the subject as BPJS, and provenance-audit.md section L supports exactly that: 'BPJS has not published it (vet and gap search)'.",
+   "fixed": true,
+   "fix": "H extra E2: the passive covered any publisher, beyond the BPJS-only search. Agent restored and 'since' changed to 'after': 'It has not published the rate it credited to members' balances for the five years after 2020.'"
+  },
+  {
+   "id": "r2:item:10",
+   "claim": "The money must go in by law, from the worker and the employer.",
+   "verdict": "CONFIRMED",
+   "evidence": "L: Draft line 68. This is a claim about the duty to contribute, not about who is covered. PP 46 Pasal 16(1) (pp_46_2015.txt:428) sets 2% from the worker and 3.7% from the employer, and Pasal 19(1) (lines 505-508) says the employer 'wajib menyetor Iuran JHT'. Round 1 refuted r1:item:18 ('JHT is compulsory for wage earners') because Pasal 2(1) phases employers in and Pasal 3 leaves state employers out. That was a claim that every wage earner is in JHT, which this sentence does not make. The paragraph still argues validly: the second sentence works as the unstated reason for 'Indonesia does not need a 401(k)', and 'that money' in the third sentence refers back to it. Two weaknesses remain, both left by deleting 'It already does the hard part:'. 'The money' now has no antecedent in its section and has to be picked up from line 13. And the employer share applies only to wage-earner members; non-wage-earner members pay alone under Pasal 18 and 21. | H: 'must go in by law' states a duty, not an outcome: PP 46/2015 Pasal 16(1) sets 5.7% of wages, 2% borne by the worker and 3.7% by the employer (pp_46_2015.txt:428-434), and Pasal 2(2) sets the duty to register (:120-123). BPJS's own 2022 report on non-compliant employers ('belum patuh', bpjs_ir_2022.txt:14254-14262) therefore does not refute it, which is why round 1 changed 'goes in' to 'must go in' (r1:item:76). Scope notes: the worker-and-employer split applies to wage earners at non-state employers (the Pasal 16(1) text); non-wage members pay alone. The paragraph is about wage earners. 'The money' has no antecedent inside the paragraph, but it had none before round 1 either (round 1 snapshot line 68: 'the money goes in by law').",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:11",
+   "claim": "What Indonesia does not do is make that money feel like yours.",
+   "verdict": "CONFIRMED",
+   "evidence": "H: This is opinion in the lessons section; round 1 kept the earlier form as opinion (r1:item:77). Replacing 'it' with 'Indonesia' keeps the same referent: in the round 1 snapshot (draft line 68) 'It already does the hard part... What it does not do' already pointed to 'Indonesia'. A hostile BPJS official can quote the post against it. Line 17 says the law makes BPJS tell members their balance and its growth once a year (PP 46 Pasal 22(7), pp_46_2015.txt:604-607), and line 62 gives JMO's 33,682,397 registered users. The deleted contrast ('JHT leaves more of the looking to the member') used to support the sentence. What is left: the unpublished credited rate (results.json published.years_without_credited = 2021 to 2025), the 2022 report's low brand awareness (line 64), and the owner's own unawareness. That is enough for a stated opinion.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:12",
+   "claim": "Publish the rate credited to balances each year.",
+   "verdict": "CONFIRMED",
+   "evidence": "L: Draft line 70. This is a policy suggestion addressed to BPJS, not financial advice. It follows from line 62, where the credited rate has not been published for 2021 to 2025. After two lessons were removed, two remain: publishing the rate and showing the payslip line. So the plural in 'The lessons I take from the 401(k) are small and practical' still holds, and 'This would not change how JHT is invested' is still true of both, since both are about disclosure. One link is weaker than before. The connection to the 401(k) now rests on the owner's own view stated before any data (line 7, 'watch your money grow') rather than on the deleted statement contrast. That is acceptable for 'The lessons I take'. | H: The recommendation assumes the rate is not published, and the post's evidence supports that: results.json published.years_without_credited = [2021..2025], plus the gap search over the BPJS news archive and the 2022 to 2025 summaries (r1:item:70, r1:item:331). A yearly rate still exists to publish: Peraturan BPJS 3/2020 Pasal 2(6) and Pasal 5(1) set a 'Tingkat Pengembangan tahunan' and credit it every 1 January (docs/provenance-audit.md, Pasal 2(6) and 5(1) entries). The sentence is aimed at BPJS, so it is policy, not financial advice. Note for a US retirement economist: after the statement lesson was deleted, 'lessons I take from the 401(k)' ties to this lesson only through the thesis, since a 401(k) declares no single crediting rate (balances are valued at market). The sentence never says a 401(k) does this, so it stays opinion.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:13",
+   "claim": "It could change whether the people who own it know it is there.",
+   "verdict": "CONFIRMED",
+   "evidence": "L: Draft line 70. 'Could' states a possibility and introduces no causal claim, as the round 1 fix r1:item:83 intended. 'It' refers back to 'This', meaning the lessons. Line 72, 'I did not know JHT was there. That is the part I would change first.', still follows: 'That' is the lack of awareness this sentence names.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:14",
+   "claim": "I did not know JHT was there.",
+   "verdict": "CONFIRMED",
+   "evidence": "H: 'I did not know JHT was there' rests on the owner's facts: he thought his home country had nothing like the 401(k) and was not aware of the BPJS TK deduction. It repeats line 5's 'I did not know it existed'. It no longer claims a balance: round 1 changed 'mine' to 'JHT' (r1:item:84). It agrees with the title's 'I Never Knew It'. It also fits line 5's 'how a worker can pay into such an account... without noticing', which concerns 'a worker' in general. Hostile reading: it comes right after 'whether the people who own it know it is there' (draft line 70), so a reader may infer he owns a JHT balance. The sentence does not say so, and the owner kept this wording on 2026-10-23 (A5, inventory [56]).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:15",
+   "claim": "For 2015 the figure is the year-end rate BPJS reported, and reading 2020's figure as the rate for balances is an inference. - Which balance the extra payouts of 2009 and 2013 applied to is not stated in the reports; the base-rate line shows the result without them. - The saver model is simplified: one payment a year, credited at half the year's rate, applied the same way to each line.",
+   "verdict": "CONFIRMED",
+   "evidence": "L: Draft lines 77-79. With 'from the report's wording' removed, the bullet simply calls 2020 an inference. That fits A5 and the 2020 row note in jht-manifest.csv, which says the evidence is image-only (the panel in sources/provenance/jht/lk_lpp_2020_summary.pdf shows 5,59% against 3,68%). The 2015 year-end rate is documented: A1 at design line 99 and the yearend_reported row in data/jht_rates.csv. On the 2009 and 2013 bonuses, provenance-audit section L confirms 'the documents give the rates and amounts, not the balance'. The 2008 incentive's base, end-2007, is stated, so leaving it out of this bullet is correct. 'JHT itself credited by days held in some years' agrees with A1's crediting note at design line 103.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:16",
+   "claim": "JHT rates come from PT Jamsostek and BPJS Ketenagakerjaan (PT Jamsostek, 2007, 2008, 2009, 2011, 2012, 2013, 2014; BPJS Ketenagakerjaan, 2015, 2016a, 2016b, 2017, 2018, 2020, 2021a, 2021b, 2022, 2023, 2024, 2025, 2026), each figure checked by script against a quoted passage on its page.",
+   "verdict": "CONFIRMED",
+   "evidence": "S: docs/jht-manifest.csv names 20 documents, and each maps to one citation. jamsostek_ar_2006/2007/2008/2010/2011/2012/2013 map to PT Jamsostek 2007/2008/2009/2011/2012/2013/2014. bpjs_ar_2014 maps to 2015 (2014 yield 13.80). bpjs_ir_2015 maps to 2016a (2014 base, 2015 yield). bpjs_news_6489 maps to 2016b (2015 year-end 6.89). bpjs_ir_2016 maps to 2017 (2016 yield). bpjs_ar_2017 maps to 2018 (2016 and 2017 base). bpjs_ir_2018 maps to 2020, bpjs_ir_2019 to 2021a, bpjs_ir_2020 to 2021b, and bpjs_ir_2021 to 2025 to 2022 to 2026 (yields). Every one feeds data/jht_rates.csv, and results.json published.years_with_yield = [2014 ... 2025 without 2017], so chart 4 uses all the yield documents. No listed year lacks a document, and no document lacks a year. For 2021b's year see item 19. A separate year concern for 2016a is reported under extra.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:17",
+   "claim": "CPF rates are CPF Board data on data.gov.sg (Central Provident Fund Board, 2026) under the [Singapore Open Data Licence](https://data.gov.sg/open-data-licence).",
+   "verdict": "CONFIRMED",
+   "evidence": "S: sources/provenance/rights/datagovsg_open-data-licence.html, Attribution: 'a conspicuous notice acknowledging the source of the datasets and including a link to the most recent version of this Licence' (the example notice is offered as an example, not required). The sentence names the source (CPF Board, data.gov.sg) and links https://data.gov.sg/open-data-licence, the licence page's own href. The MDX (line 126) carries the same link. Chart 3's note (PNG viewed; MDX line 83) repeats 'data.gov.sg, Singapore Open Data Licence, data.gov.sg/open-data-licence', and data/README.md line 106 carries the full example notice. The condition is met.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:18",
+   "claim": "(2021a).",
+   "verdict": "CONFIRMED",
+   "evidence": "S: 2021a = the 2019 integrated report (BPJS_2020_LO17.pdf). The stored capture of 21 October 2020 lists no 2019 report. CDX shows revisit records on 3 November and 17 December 2020 with the same digest (XL55Y3PX...), so the page was unchanged through 17 December 2020. The 13 February 2021 capture lists the file. pdfinfo -isodates: CreationDate 2021-02-02T21:27:54+07. APA a/b order by title: 'Laporan tahunan terintegrasi 2019' sorts before '... 2020', so 2021a and 2021b are assigned correctly.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:19",
+   "claim": "(2021b).",
+   "verdict": "CONFIRMED",
+   "evidence": "S: 2021b = the 2020 integrated report. I fetched the Internet Archive capture of laporan-tahunan.html at 20211008061840 (id_). It already lists 'laporan_tahunan/BPJS_IR2020_LO13.pdf', and the 20220425175430 capture lists 'BPJS_IR2020_LO16_Lowres.pdf'. The report was therefore online by 8 October 2021, and 2021 holds. The record's only support, the cited file's CreationDate (2021-12-13T06:30:20+07), postdates that first appearance, so the year is right for a reason the record does not give.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:20",
+   "claim": "Employee Benefits Security Administration.",
+   "verdict": "CONFIRMED",
+   "evidence": "S: dol_fab_2006-03.txt line 1, letterhead: 'U.S. Department of Labor    Employee Benefits Security Administration'. EBSA is the most specific agency. The author element matches sources.json ref (line 413) and the in-text citation (draft line 60).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:21",
+   "claim": "Department of Labor.",
+   "verdict": "CONFIRMED",
+   "evidence": "S: Fragment of the publisher element 'U.S. Department of Labor.', the parent agency on the letterhead (dol_fab_2006-03.txt line 1). APA 7 puts the parent agency in the publisher position when the most specific agency is the author (the rule round 1 quoted from Purdue OWL, docs/round1-verdicts.json r1:item:210).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:22",
+   "claim": "*Laporan tahunan 2013* [2013 annual report]. https://www.bpjsketenagakerjaan.go.id/assets/uploads/laporan_tahunan/26032015_133805_ARA%20BPJS%20Ketenagakerjaan%202013.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "S: I rendered PDF p.1 and p.696 of sources/jht/jamsostek_ar_2013.pdf. Both show only the JAMSOSTEK logo and 'PT Jaminan Sosial Tenaga Kerja (Persero)'. BPJS Ketenagakerjaan appears only in the theme line 'MEMPERKOKOH LANDASAN BPJS KETENAGAKERJAAN' and the web address. The author is the publisher, so APA 7 omits a publisher element, and the fragment correctly ends with title, translation and URL. The URL equals the href in all four stored captures.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:23",
+   "claim": "[README.md] Indonesia already requires workers to save through BPJS Ketenagakerjaan's Jaminan Hari Tua (JHT), with the worker and the employer paying in, but a worker can pay in for years without knowing.",
+   "verdict": "CONFIRMED",
+   "evidence": "K: README.md:3. The changed clause 'requires workers to save' rests on PP 46/2015 Pasal 2(2), sources/text/pp_46_2015.txt lines 123-126: 'Setiap orang yang bekerja wajib mendaftarkan dirinya dalam program JHT kepada BPJS Ketenagakerjaan'. 'worker and the employer paying in' matches sources.json pp46_jht_contribution (Pasal 16(1): 2% Pekerja, 3,7% Pemberi Kerja). The sentence agrees with the body's 'The money must go in by law, from the worker and the employer' (draft 'What Indonesia can learn'), the excerpt and the metaDescription, which use the same 'requires workers to save'. 'a worker can pay in for years without knowing' is modal and mirrors the body's framing question ('how a worker can pay into such an account, year after year, without noticing') and design section 1 (lines 8-10). It makes no personal claim, so it does not conflict with the owner's 'should have gone into' wording.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:24",
+   "claim": "[README.md] The rules were written down before any result, with dated amendments; the fee formula was settled after the first results, and the record says so; five of the five predictions written first came true.",
+   "verdict": "CONFIRMED",
+   "evidence": "K: README.md:5. R1 to R8 are headed 'Rules fixed before any result' (design lines 47-67). A1 and A2 are each stated 'before any result' (lines 94, 113). A3 is headed 'AFTER the first results, stated as such' and settles how the fee is charged (lines 121-127). results.json predictions: n=5, n_true=5. Design section 6 (line 76) says the predictions were 'written before any result'. The README now matches the body ('The formula for a fund fee was settled after the first results, and the record says so. I also wrote down five predictions first, and five of five came true'). A3 also records after the first results that R6 uses the 2009 base rate. That reading changes no result (2009's real rate is positive either way) and chart 2's note discloses it, so leaving it out of the README does not mislead.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:25",
+   "claim": "[README.md] BPJS has not published the rate it credited to JHT balances for the five years after 2020, while it still publishes the fund's investment yield.",
+   "verdict": "CONFIRMED",
+   "evidence": "K: README.md:5. results.json published.years_without_credited = [2021..2025] (n=5), last_credited_year = 2020. Yields are published through 2025 (years_with_yield ends 2025; manifest row 2025 yield 6.97 from bpjs_ir_2025.pdf p.66). The wording matches the body ('has not been published for the five years since 2020'), the excerpt and metaDescription ('since 2020'), chart 4's title ('not published after 2020'), its alt text, and data/README Gaps ('BPJS has not published those rates'). It holds whether or not 2020's 5.59% is read as the credited rate (A5 line 136).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:26",
+   "claim": "[data/README.md] Each downloaded file below is frozen by its `sha256` hash, which `profile_data.py` checks before reading it (run `python3 profile_data.py` from the post folder); the same script prints each file's coverage, gaps and key columns and, for each file the analysis uses, the exact rows it reads.",
+   "verdict": "CONFIRMED",
+   "evidence": "K: data/README.md:3. profile_data.py path() hashes each file against FILES before reading it, and stops on a mismatch. I ran it read-only (python3 -B profile_data.py, output in lens-K/profile_out.txt; exit 0). For each downloaded file it prints coverage, gaps or missing periods, and key columns. The narrowed clause 'for each file the analysis uses, the exact rows it reads' holds for Damodaran (2005 to 2020, both columns), Data Inflasi (Decembers 2004 to 2020) and the CPF contribution file (8 rows in force on 2026-01). It also prints 'rows used' for cpf_alloc and the ILO file, which the analysis does not use; that does not falsify the narrowed claim. Imprecision left over from round 1, not introduced by it: for the two IMF files the profile prints the December value as stored and the annual average of twelve months, not the twelve monthly rows that build_analysis.cpi_points reads.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:27",
+   "claim": "[data/README.md] They also record which column a table-row quote stops at, and that reading the window's last credited figure as the rate for balances is an inference; the balances the 2009 incentive and the 2013 payouts were paid on are inferences too, recorded in design amendment `A1` and `docs/provenance-audit.md`, section C. `docs/provenance-audit.md`, sections A to D, reads each row's definin",
+   "verdict": "REFUTED",
+   "evidence": "K: data/README.md:11-12. In docs/jht-manifest.csv, the 2014 yield note ('the value is the Realisasi column (last figure of the quote)') and the 2016 yield note record which column a quote stops at. The 2020 base note records 'reading it as the rate set for member balances is an inference'. Design A1 'Bonuses' (line 105) says no document states which balance the 2009 incentive and the 2013 payouts applied to, and that R3's readings are inferences. provenance-audit.md section C (lines 353-397) says the same for 2009 ('R3 adds it to the 2009 rate, an inference') and for 2013 ('does not say which balance'), and records that the 2008 incentive's base is stated ('2,1% dari saldo PSJHT tahun 2007'), so the narrowing to 2009 and 2013 is correct. It agrees with the post's limits bullet ('extra payouts of 2009 and 2013'). Gaps: extract_jht.py prints 'no credited row for 2021 to 2025' (re-run in a scratch copy).",
+   "fixed": true,
+   "fix": "L extra: 'the window's last credited figure' presumed the reading it calls an inference; narrowed to 'the window's last `base` figure'."
+  },
+  {
+   "id": "r2:item:28",
+   "claim": "[data/README.md] ``` file data/jht_rates.csv sha256 4a6ab8b769536e5c66aa0bbbc657563bfde91f58b12fcbfd38b8014f7f37351f made by python3 extract_jht.py (run from the post folder; needs poppler's pdftotext) reads docs/jht-manifest.csv and the 20 documents in sources/jht/, each pinned by its sha256 in the manifest check rebuilt 2026-10-22 from the same manifest and documents: byte-identical tests python",
+   "verdict": "CONFIRMED",
+   "evidence": "K: In a scratch copy (lens-K/copy), python3 -m unittest test_extract_jht ran 17 tests, OK. python3 extract_jht.py rewrote data/jht_rates.csv with sha256 4a6ab8b769536e5c66aa0bbbc657563bfde91f58b12fcbfd38b8014f7f37351f, equal to the block and to profile_data.FILES['jht_rates'], i.e. byte-identical. sources/jht/ holds 20 files. The manifest references exactly those 20 documents, each with one sha256, and every hash matches the stored file (0 mismatches). The manifest's current sha256 is 2a28debd..., not the deleted 9ae0f358..., so removing the stale parenthetical was correct. The manifest and jht_rates.csv mtimes are both 2026-10-22 13:05, so the 'rebuilt 2026-10-22 from the same manifest' line is not stale.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:29",
+   "claim": "[data/README.md] In the window, the index's December-to-December change differs from BPS's published December year-on-year inflation (Bank Indonesia's Data Inflasi, below) for `Desember 2008`, `Desember 2013` and `Desember 2020`.",
+   "verdict": "CONFIRMED",
+   "evidence": "K: results.json year_by_year.rows imf_bps_gap_pp: 2008 -0.827, 2013 -0.657, 2020 -0.095. All other window years are within 0.035 pp. The list equals design A1's 'differs ... in 2008, 2013 and 2020' (line 107) and chart 2's circles (make_charts.py:122, |gap| >= 0.05). With 'and agrees in the other window years' deleted, the sentence no longer claims agreement in 2005 (17.08 vs 17.11) or 2007 (6.58 vs 6.59). The cross-surface consequence for chart 2 is reported as extra 0 (circles).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:30",
+   "claim": "[data/README.md] Design amendment `A1` keeps the IMF index for `R5` and `R6` and shows BPS's published December rate beside it in the year-by-year chart, saying where they differ. - **United States.** Fetched for this post from the IMF's SDMX API in the same format.",
+   "verdict": "CONFIRMED",
+   "evidence": "K: data/README.md:50. A1 (design lines 107-109): 'R5 and R6 keep the IMF index; chart 2 and the text also show BPS's published December rate ... and say where the two differ.' build_analysis uses IMF idn_dec/idn_avg for grow (R5) and year_by_year (R6). Chart 2 plots the real rate against BPS's rate as circles where the gap is at least 0.05 pp (2008, 2013, 2020), confirmed on the PNG. The sentence is a faithful partial paraphrase of A1, but loose: the chart shows JHT's real rate computed against BPS's December rate, not the BPS rate itself. Deleting 'and the text' leaves A1's own commitment for the text unmet and unrecorded; that is reported as extra 0 (A1 text).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:31",
+   "claim": "[data/README.md] Accessed on [current date].` Charts and notes credit the IMF, name the national compiler BPS-Statistics Indonesia and label annual averages, inflation rates and real values as the author's calculations.",
+   "verdict": "CONFIRMED",
+   "evidence": "K: data/README.md:52. Chart 1's note (make_charts.py:108) and chart 2's note (line 144) both carry SRC_IDN_CPI, which credits the 'International Monetary Fund, Consumer Price Index (headline index, compiled by BPS-Statistics Indonesia)', and both end 'Calculations by the author.' Chart 1 also credits the IMF for US prices (SRC_US). No chart or note names BLS (grep of make_charts.py and the MDX figcaptions), so the narrowed sentence now matches the charts. The MDX figcaptions equal the PNG notes (checked by script).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:32",
+   "claim": "[data/README.md] The file's last row, `Desember 2002`, holds a placeholder value rather than a rate; the reader leaves it out and stops if it ever changes. - **Why it is here.** Design amendment `A1`: the IMF index stays the measure for `R5` and `R6`, and the year-by-year chart also shows BPS's published December rate and where they differ (see the Indonesia note above). - **How it was obtained.**",
+   "verdict": "CONFIRMED",
+   "evidence": "K: data/README.md:77-79. profile_data.INFLASI_PLACEHOLDER = (2002-12, '0,00 %'). read_published_inflation skips that row and raises SystemExit if its value changes; the profile output shows 'excluded: the 2002-12 placeholder row '0,00 %''. msci-fear-chain/build_analysis.py:57 pins 'bi_inflasi': ('Data Inflasi.xlsx', '5c79086509b6...'), and shasum of that file and of data/bi_data_inflasi.xlsx both give 5c79086509b6c19f..., i.e. copied unchanged. The 'Why it is here' clause paraphrases A1 for the chart only (see [30] and extra 0, A1 text).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:33",
+   "claim": "[data/README.md] The age groups the analysis reads, `35 years & below` to `Above 50 - 55 years`, keep `Special`. - **What the analysis reads.** From the contribution file, for those age groups, the rows of their last effective date on or before `effective_from = 2026-01` (the rates in force on that date). - **Licence and credit.** Singapore Open Data Licence: use is allowed whether commercially or",
+   "verdict": "CONFIRMED",
+   "evidence": "K: data/README.md:99-101. Profile output: the allocation file's in-force rows for the four groups up to 55 are Medisave, Ordinary and Special, and Retirement rows run 2025-01 to 2026-01 for older groups only, so 'keep Special' is true. build_analysis.contributions reads only pdata.cpf_young_rates(), which reads cpf_contrib. in_force() keeps, per age group, the latest effective_from on or before '2026-01'. The rows used are all 2026-01: Employee 20.0 and Employer 17.0 in each group. The stored licence (sources/provenance/rights/datagovsg_open-data-licence.html) reads 'whether commercially or non-commercially (\"Use\")'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:34",
+   "claim": "[data/README.md] 2025` on the ILO's SDMX server), Indonesia, both sexes, persons, scaled as the file's `UNIT_MULT` column says (`3: Thousands`). `profile_data.py` reads the rows with `STE: Status in employment` equal to `STE_AGGREGATE_EES: Employees`.",
+   "verdict": "CONFIRMED",
+   "evidence": "K: data/README.md:130. profile_data.ILO_EMPLOYEES = 'STE_AGGREGATE_EES: Employees', and profile_ilo selects those rows as 'rows used'. The profile output prints 2015 to 2025 with 'UNIT_MULT: Unit multiplier: ['3: Thousands']', 'SEX_T: Total', 'IDN: Indonesia' and 'PS: Persons'. build_analysis.py never reads the ILO file (it only hashes it via check_hashes), so the changed subject 'profile_data.py' is correct.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:35",
+   "claim": "[data/README.md] These are modelled estimates, not survey counts; some years carry the status flag `A: Adjusted`. - **How it was fetched.** The source vet pulled this indicator from ILOSTAT's API host, `rplumber.ilo.org`, with `timefrom=2020`, so the vet copy starts there.",
+   "verdict": "CONFIRMED",
+   "evidence": "K: data/README.md:130-131. Profile output: MEASURE 'EMP_2EMP_NB: Employment (ILO modelled estimates)', SOURCE 'ILO - Modelled Estimates', status flags {'(none)': 70, 'A: Adjusted': 18}, with the Employees rows for 2021 to 2023 flagged 'A: Adjusted'. No ILO figure appears in the draft or the MDX (grep 'ILO' finds none), so deleting 'and the post labels them so' was correct.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:36",
+   "claim": "[[published] excerpt] Indonesia already requires workers to save through JHT, and I did not know it existed.",
+   "verdict": "CONFIRMED",
+   "evidence": "H: MDX line 4. 'requires workers to save through JHT' follows PP 46/2015 Pasal 2(2), whose wording is itself universal: 'Setiap orang yang bekerja wajib mendaftarkan dirinya dalam program JHT' (pp_46_2015.txt:120-123). A hostile Indonesian reader can point to the state-employer carve-out (Pasal 3 and 4(1)a, :131-142) and the employer phase-in (Pasal 2(1)). Round 1 deleted 'JHT is compulsory for wage earners' (r1:item:18) on those same carve-outs, which the owner may see as inconsistent; the excerpt reads as a general statement and copies the regulation. 'I did not know it existed' is the owner's fact. Read alone, the excerpt still sets 1.4 (after Indonesian inflation) beside 2.4 (after US inflation). Each figure carries its own inflation tag, but the excerpt has no risk caveat. Keeping both figures is the owner's decision of 2026-10-23. The excerpt's last sentence has the 'since 2020' problem in extra E1.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:37",
+   "claim": "[[published] metaDescription] What Indonesia can learn from the 401(k): JHT already requires workers to save, but BPJS has not published the rate it credits to JHT balances since 2020.",
+   "verdict": "REFUTED",
+   "evidence": "H: MDX line 9. The changed clause holds: 'requires workers to save' rests on PP 46 Pasal 2(2), as for [36]. The unchanged clause 'BPJS has not published the rate it credits to JHT balances since 2020' is false on its most natural reading, which concerns when BPJS published. The post's own reference list dates BPJS's 2019 integrated annual report (BPJS_2020_LO17.pdf) to 2021a. Evidence: PDF CreationDate 'Tue Feb 2 2021' (pdfinfo); the file is absent from Wayback capture 20201021 and listed in capture 20210213 (grep on sources/provenance/jht/bpjs_laporan_tahunan_wayback_*.html: LO17=0, then LO17=1). That report states the credited 2019 rate: 'Hasil pengembangan DJS selama tahun 2019, khususnya Program JHT sebesar 6,08%' (pdftotext p.67; docs/jht-manifest.csv row 2019,base). The 2020 report (2021b, created Dec 2021) carries 5.59%. So BPJS did publish a credited rate in 2021, and that holds even if 2020's figure is not the credited rate (round 1 S evidence on r1:item:37: if the inference fails, the last rate is 2019's, from the same report). Round 1's re-dating (2019 to 2021a) and A5 made this contradiction independent of the 2020 inference. The bound key gives the intended reading: results.json published.years_without_credited = [2021..2025], i.e. rates for the years after 2020. | skeptic H: The changed clause holds. sources/text/pp_46_2015.txt:122-125 is Pasal 2(2), 'Setiap orang yang bekerja wajib mendaftarkan dirinya dalam program JHT'. The unchanged clause is false if 'since 2020' is read as modifying 'has not published', which is how a present perfect with 'since' normally reads. pdfinfo shows sources/jht/bpjs_ir_2019.pdf (BPJS_2020_LO17.pdf) was created Tue Feb 2 2021. My grep counts BPJS_2020_LO17 at 0 in wayback_20201021165040.html and 1 in wayback_20210213122040.html. pdftotext p.67 line 45 reads 'Hasil pengembangan DJS selama tahun 2019, khususnya Program JHT sebesar 6,08%'. The Board's report on p.13 is more explicit: 'BPJS Ketenagakerjaan memberikan hasil pengembangan JHT kepada peserta sebesar 6,08 persen per tahun'. So BPJS published a rate credited to members in February 2021, and that does not depend on the 2020 inference. The post's own reference list dates this report 2021a (draft .md:105). The intended meaning matches results.json published.years_without_credited = [2021..2025].",
+   "fixed": true,
+   "fix": "Meta description: 'since 2020' narrowed to 'for the years after 2020' (BPJS published credited rates in 2021)."
+  },
+  {
+   "id": "r2:item:38",
+   "claim": "[[published] alt:jh-3-contributions.png] Bar chart of what goes in each year as a share of pay, worker and employer: Singapore's CPF, 37 percent for workers aged 55 and under, on wages in the top band; a 401(k) in plans Vanguard keeps records for, 12.1 percent on average among participants in 2024; JHT, 5.7 percent; JP, a separate pension, 3 percent.",
+   "verdict": "CONFIRMED",
+   "evidence": "H: MDX line 79. HAS 2026 highlights, 2024 column: 'Average total contribution rate (participant and employer) ... 12.1%' (vanguard_how_america_saves_2026.txt:184 header, :224). The text says 'the average total participant contribution rate was 12.1%' (:465-470), and Figure 44 leaves out eligible nonparticipants (:2566-2576: with nonparticipants included, 10.2%), so 'among participants' is right. results.json contributions: k401 7.6 + 4.5 = 12.1 (2024); cpf 20 + 17 = 37, max_age 55; jht 5.7; jp 3. data/README.md:97 says the CPF rates 'apply to the top wage band (the dataset's description)'. Chart 3 shows the CPF bar at 37% for 'aged 55 and under' (opened). Style note: 'top band' is not explained. The dataset's top band covers most full-time wages (round 1 evidence on r1:item:337: $750 or more a month), so a reader may take it to mean high earners only. The wording is accurate to the source.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:39",
+   "claim": "[[published] alt:jh-4-shown.png] Bar chart of the JHT fund's investment yield as BPJS published it from 2014 to 2025, with dots for the rate set for member balances, which BPJS has not published after 2020.",
+   "verdict": "REFUTED",
+   "evidence": "H: MDX line 94. Round 1 changed the clause to 'which BPJS has not published after 2020'. Here 'after 2020' modifies 'published', so the clause reads as being about when BPJS published. On that reading the alt contradicts its own chart (opened charts/jh-4-shown.png). The dots for 2019 (6.08) and 2020 (5.59) come from reports the post dates to 2021: 2021a (2019 report, PDF created 2 Feb 2021, first listed in Wayback capture 20210213) and 2021b (2020 report, created Dec 2021). Evidence: pdfinfo; jht-manifest rows 2019 and 2020 base; references-data.md:133. The intended reading, rates for 2021 to 2025, is what the chart's shaded box shows ('rate for balances not published' over 2021 to 2025) and matches results.json published.years_without_credited. Readers of the alt alone, such as screen-reader users, do not get the axis. The rest of the alt holds: no 2017 bar but a 2017 dot, and yields from 2014 to 2025. Calling the 2015 and 2020 dots 'the rate set for member balances' is softened by the figcaption, which is read with the image. | skeptic H: 'After 2020' can only attach to 'has not published', so the relative clause is about when BPJS published. On that reading the alt contradicts its own chart (charts/jh-4-shown.png, viewed). The 2019 dot (6.08) comes from bpjs_ir_2019.pdf, created 2 Feb 2021 and first listed in Wayback capture 20210213. The 2020 dot (5.59) comes from bpjs_ir_2020.pdf, created Sun Dec 12 2021 (pdfinfo), and from lk_lpp_2020_summary.pdf, signed 'Jakarta, 31 Mei 2021', whose panel 'PERBANDINGAN HASIL PENGEMBANGAN JHT DENGAN DEPOSITO BANK PEMERINTAH' shows 5,59% (image viewed). The chart's shaded 'rate for balances not published' box covers 2021 to 2025, matching published.years_without_credited. One part of the finding is overstated. The alt does name the year span ('from 2014 to 2025'), so its readers are not wholly without the axis. Also, the first clause, 'as BPJS published it from 2014 to 2025', has the same verb-plus-years form, but there 'from...to' can attach to 'yield', which the relative clause does not allow. The defect is real but LOW.",
+   "fixed": true,
+   "fix": "Alt text: 'which BPJS has not published after 2020' narrowed to 'for the years after 2020'."
+  },
+  {
+   "id": "r2:item:40",
+   "claim": "Each year the saver puts in the same real amount, raised by that country's annual-average consumer price index, in the middle of the year; each line credits the year's rate on the opening balance and half of it on the year's money. Balances are valued in December prices of the same year. JHT: the rate set for member balances (2015: the year-end rate BPJS reported; reading 2020's figure as the rate",
+   "verdict": "CONFIRMED",
+   "evidence": "K: PNG text (opened) = make_charts.py chart_growth footnote = MDX figcaption (normalized string equality, by script). Regenerating from the current make_charts.py and results.json in a scratch copy gives a PNG byte-identical to charts/jh-1-growth.png, and the site copy has the same sha256 (46ae536d...). Clause checks against build_analysis.grow: c = cpi_avg[y]/base (annual-average CPI); bal*(1+rate+bonus) + c*(1+rate/2) (rate on the opening balance, half on the year's money); path = bal/(i*cpi_dec[y]/base) (December prices of the same year). Bonuses: opening 2008 and 2013, added 2009, matching R3 and the manifest. Fee: (1+r)(1-0.0008)-1, matching A3. 90/10 from rules stock_pct 90, bond_pct 10. The new inference clause matches A5 (line 136) and the limits bullet. Deleting ', as JHT's rule did' matches A5 (line 137) and A1 'Crediting'. The narrowed SRC_JHT matches the post's method notes.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:41",
+   "claim": "the year's JHT rate after December-to-December inflation (IMF index)",
+   "verdict": "CONFIRMED",
+   "evidence": "K: make_charts.py:133-134. The bars are rows[y]['real_imf_pct'] = ((1+rate)/(1+imf_pi)-1)*100 (build_analysis.year_by_year), the R6 ratio. 'after' agrees with the title 'JHT's rate after Indonesian inflation', the alt text, the note's formula and the body's 'beat Indonesian inflation'. Bar labels: minus 7.8 (real_imf_pct 2005 = -7.753) and minus 2.0 (2008 = -2.026), both seen on the PNG.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:42",
+   "claim": "Real rate: (1 + the year's JHT rate) divided by (1 + that year's December-to-December inflation), less 1. The JHT rate is the base rate set for member balances, without the 2009 incentive; 2015 is the year-end rate BPJS reported, and reading 2020's figure as the rate for balances is an inference. The IMF's linked index and BPS's published December inflation differ in a few years; the circles show ",
+   "verdict": "CONFIRMED",
+   "evidence": "K: Changed part: 'from the report's wording' is gone (make_charts.py:141-142; PNG and MDX figcaption equal, by script). This matches A5 (line 136: the wording does not support the reading) and the 2020 manifest note. The formula equals R6 and the code. 'without the 2009 incentive' matches A3 (line 126-127), and the year_by_year rate for 2009 is 9.0. The 2015 year-end clause matches A1. The sources clause covers both IMF and Data Inflasi, which chart 2 uses. The unchanged circles clause ('differ in a few years; the circles show those years') now conflicts with round 1's adjudication at [280]; reported separately as extra 0 (circles).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:43",
+   "claim": "JHT and JP: the shares the regulations set (PP 46/2015 Pasal 16; PP 45/2015 Pasal 28). 401(k): Vanguard, How America Saves 2026, plans Vanguard keeps records for, 2024, among participants: the average deferral rate as the worker share, and the average total contribution rate less that as the employer share (a difference of two averages). 401(k) deferrals are optional. CPF: CPF Board contribution r",
+   "verdict": "CONFIRMED",
+   "evidence": "K: PNG = script = MDX figcaption (by script); the regenerated PNG and the site copy are byte-identical (4b1675fb...). 'among participants': HAS text lines 1937-1941 say deferral rates 'exclude eligible employees not contributing', and lines 2560-2566 say total contribution rates 'exclude eligible nonparticipants'. The values are 7.6 and 12.1 for 2024 (sources.json has_average_deferral and has_total_contribution), and the employer share is 4.5 = 12.1 - 7.6 (results.json k401). PP 46 Pasal 16 and PP 45 Pasal 28 are the sources.json locators. CPF: the dataset description (sources/provenance/cpf/meta_d_98ffa142...json) says the rates 'are applicable for the highest wage band', and the profile shows 20/17 for each group up to 55, effective 2026-01. The stored licence page names https://data.gov.sg/open-data-licence, so the address is right. Deleting 'not a savings account' matches A5 (line 139).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:44",
+   "claim": "BPJS publishes what the JHT fund earns; the rate for balances is not published after 2020",
+   "verdict": "CONFIRMED",
+   "evidence": "K: make_charts.py:202-203 renders 'BPJS publishes what the JHT fund earns; the rate for balances is not published after 2020' (PUB last_credited_year = 2020); PNG opened. results.json published: credited_published is false for 2021 to 2025, and yields run 2014 to 2025 with 2017 null. The title agrees with the shaded band '2021 to 2025' labelled 'rate for balances not published', with the alt text ('which BPJS has not published after 2020'), the body ('five years since 2020') and the README. It holds under either reading of 2020's figure (A5 line 136). The regenerated PNG and the site copy are byte-identical (d6460a3f...).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:45",
+   "claim": "Yields: the JHT program's investment yield in BPJS's annual and integrated reports, as each report states it; the basis is labelled gross in the first of these reports, net in the last three, and not labelled in between. No searchable report gives a yield for 2017. Rate for balances: the rate set each year for member balances (2015: the year-end rate BPJS reported; reading 2020's figure as the rat",
+   "verdict": "CONFIRMED",
+   "evidence": "K: PNG = script = MDX figcaption (by script). Manifest yield notes: 2014 'bruto' (gross); 2015 to 2022 'Basis unlabelled' (pdftotext of bpjs_ir_2016.pdf pp.116-118 shows no gross or net label); 2023 to 2025 '(Neto)'. Every yield row's document is a BPJS annual or integrated report. results.json years_without_yield = [2017]. The added inference clause matches A5 and charts 1 and 2. The dots on the PNG (10.55, 6.89, 7.19, 7.83, 6.26, 6.08, 5.59) equal year_by_year rate_pct for 2014 to 2020.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:46",
+   "claim": "\"the 2013 payouts\" = \"the two 2013 one-off payout rows of data/jht_rates.csv (design R3; amendment A1 names their base as an inference)\"",
+   "verdict": "CONFIRMED",
+   "evidence": "L: gate.toml:48. data/jht_rates.csv has exactly two 2013 oneoff rows (6.50 and 0.81). R3 at design line 54 defines them, and A1 at design lines 105-106 says 'No document states which balance ... the 2013 payouts applied to; R3's readings are inferences'. The phrase is used in data/README.md section 11, about the balances the payouts were 'paid on'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:47",
+   "claim": "\"PP 46/2015 Pasal 16\" = \"the regulation and article that set the JHT contribution rate (sources.json pp46_jht_contribution)\"",
+   "verdict": "CONFIRMED",
+   "evidence": "L: gate.toml:34. PP 46/2015 Pasal 16(1) (pp_46_2015.txt:428-434) sets the 5.7% JHT contribution, split 2% and 3.7%. The pp46_jht_contribution entry in sources.json has locator 'Pasal 16 ayat (1)'. Pasal 18 sets nominal amounts, not a rate, for non-wage-earner members, so calling Pasal 16 'the JHT contribution rate' is accurate.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:48",
+   "claim": "\"PP 45/2015 Pasal 28\" = \"the regulation and article that set the JP contribution rate (sources.json pp45_jp_split)\"",
+   "verdict": "CONFIRMED",
+   "evidence": "L: gate.toml:35. PP 45/2015 Pasal 28(2) sets 3% of monthly wages and 28(3) splits it 2% employer and 1% worker (sources/text/pp_45_2015.txt, Pasal 28). The reason is true. One small mismatch: the key it cites, pp45_jp_split, quotes ayat (3), the split. The key that quotes the rate itself is pp45_jp_total, ayat (2).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:49",
+   "claim": "dol_fab_quarterly_statements: ref changed to \"Employee Benefits Security Administration 2006\"",
+   "verdict": "CONFIRMED",
+   "evidence": "S: docs/sources.json line 413: ref 'Employee Benefits Security Administration 2006'. That equals the reference entry (draft line 123) and the in-text citation (draft line 60). Its doc hash c1d00caa... equals shasum of sources/text/dol_fab_2006-03.txt. The PDF hash 7f484ee6... equals the stored PDF, and the SHA-1 digest matches CDX, re-queried today. The ref list in sources.json has no stale 'U.S. Department of Labor' ref.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:50",
+   "claim": "**A5 (2026-10-23, New York time; after fact-check round 1).** No rule R1 to R8 and no result changes.",
+   "verdict": "CONFIRMED",
+   "evidence": "L: No result changed after round 1. results.json and build_analysis.py were both last modified 2026-10-22 13:33:58 EDT. data/jht_rates.csv (13:05:33) and docs/jht-manifest.csv (13:05:32) are older still. All four predate the round 1 snapshot .rounds/1.json (2026-10-22 21:57:40) and round 1's close (rounds.jsonl closed_utc 2026-10-23T12:32:10Z). After round 1, only make_charts.py (chart text), gate.toml, sources.json and the source templates changed. The diff from the round 1 to the round 2 draft changes no number. Git cannot confirm this: build_analysis.py and results.json are untracked. git diff of the design doc shows only A4 and A5 added, with the R1 to R8 text untouched. 'No rule ... changes' holds for what the rules do, but A5's own fifth bullet withdraws R7's parenthetical reason ('a pension, not a savings account'). So a rule's wording does change even though its effect does not. The amendment was written after round 1: the design doc's mtime is 2026-10-23 10:29:45 EDT.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:51",
+   "claim": "- Section 1's \"his 401(k) in the US\" is withdrawn: the owner has not said he has a 401(k) (answers of 2026-10-22). The post says only that he found the 401(k) compelling.",
+   "verdict": "CONFIRMED",
+   "evidence": "L: Section 1 (design line 12) does read 'his 401(k) in the US'. The owner's facts say he has not said he has a 401(k). The post says he 'was hooked' and found it 'a no-brainer' (draft line 3), and line 7 uses a general 'you'. No sentence says he holds one. gate.toml [claims] at line 55 cites the same 'answers of 2026-10-22'.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:52",
+   "claim": "- A1 calls reading 2020's 5.59% as the rate for balances \"an inference from the report's wording\". The wording does not support it: the same phrase names the lowest programme yield, JKP's, in the 2021 report. The reading rests on the 2020 note in `docs/jht-manifest.csv`. The post and charts 1, 2 and 4 call it an inference without that phrase, and state the gap after 2020 in a form that holds under",
+   "verdict": "CONFIRMED",
+   "evidence": "L: A1 at design line 100 does say 'an inference from the report's wording'. In bpjs_ir_2021.pdf (the Laporan Terintegrasi 2021, cited in the post as BPJS Ketenagakerjaan 2022), PDF page 43 reads 'Tingkat imbal hasil investasi terendah yang ditetapkan BPJAMSOSTEK adalah 6,88% untuk Program JKP'. In that page's table JKP's 6.88% is the lowest programme yield (JHT 6.95, JKK 6.96, JKM 6.94, JP 7.35). In IR 2020 (PDF page 52) the same phrase reads '...ditetapkan Badan adalah 5,59% untuk Program JHT', while the table gives JHT 7.39% and a lowest of JP 6.93%. So the wording does not support the credited-rate reading. 'The same phrase' slightly overstates the match: the agency's name differs (Badan versus BPJAMSOSTEK), and the manifest's own note says 'similar wording'. The reading does rest on the 2020 manifest note, whose image evidence is stored as lk_lpp_2020_summary.pdf. The notes on charts 1, 2 and 4 (PNGs viewed) and draft line 77 each say 'is an inference' without the phrase; the MDX has 4 matches and no 'report's wording'. The post states the gap in forms that hold under either reading: lines 32, 62 and 77, the chart 4 title, the alt text and the README. The caveat is the one under item 3.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:53",
+   "claim": "- Chart 1's note said each line credits half the rate on the year's money \"as JHT's rule did\". A1 already records that JHT credited by days held in some years and by time-weighted balances from 2015, so the clause is removed.",
+   "verdict": "CONFIRMED",
+   "evidence": "L: round1-verdicts.json r1:item:408 records that ', as JHT's rule did' was deleted from chart 1's note. The current charts/jh-1-growth.png note (viewed) reads 'each line credits the year's rate on the opening balance and half of it on the year's money' with no such clause. A1 at design line 103 says 'JHT credited contributions by days held in some years and by time-weighted balances from 2015.'",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:54",
+   "claim": "- The post no longer contrasts a 401(k) statement that arrives with a JHT balance the member looks up: the cited bulletin accepts a statement made available on a secure website, and PP 46/2015 Pasal 22(7) already requires yearly balance information.",
+   "verdict": "CONFIRMED",
+   "evidence": "L: The explicit contrast is gone. The round 1 draft lines 60 and 62 had 'The balance arrives whether you asked for it or not.' and 'JHT leaves more of the looking to the member.', and neither is in the current draft. FAB 2006-03 (sources/text/dol_fab_2006-03.txt, about lines 158-164) treats website availability as 'good faith compliance', but only 'provided that participants ... have been furnished notification'. A5 leaves out that condition. PP 46 Pasal 22(7) (pp_46_2015.txt:604) requires yearly information on the balance 'beserta hasil pengembangannya'. Section 'What the saver is shown' still sets line 60 (the US quarterly statement) next to line 62 (the JMO app, 'where members can check their balance'). That pairing is accurate, because line 17 already tells the reader about the yearly requirement. 'What BPJS publishes about growth is another matter' still follows from the sentence about checking the balance.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:55",
+   "claim": "- R7's \"a pension, not a savings account\" is withdrawn: PP 45/2015 Pasal 24(1) pays a member who reaches pension age with under 15 years of contributions the accumulated contributions plus returns. JP stays apart from the growth comparison as a defined-benefit pension (the regulation's elucidation: \"program manfaat pasti\").",
+   "verdict": "CONFIRMED",
+   "evidence": "L: PP 45/2015 Pasal 24(1) (pp_45_2015.txt:737ff) reads 'Dalam hal Peserta mencapai Usia Pensiun sebelum memenuhi Masa Iur 15 (lima belas) tahun, Peserta berhak mendapatkan seluruh akumulasi Iurannya ditambah hasil pengembangannya'. The general elucidation (line 1085) reads 'Program Jaminan Pensiun merupakan program manfaat pasti'. Both quotations are correct. One scope slip: R7's 'shown apart' (design lines 63-64) applied to chart 3, what goes in, but A5's replacement reason is about the growth comparison. Chart 3 itself still separates JP with 'JP is a separate pension scheme' in its note and 'JP, a separate pension' in its alt text, which is accurate.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:56",
+   "claim": "- Owner decisions after round 1 (2026-10-23): the post keeps the narrowed wording on his own JHT deduction (\"should have gone into\"; \"I did not know JHT was there\"), since he does not know whether it was deducted; the thesis stays as his stated view before any data; the excerpt keeps both the JHT and the S&P 500 figures.",
+   "verdict": "CONFIRMED",
+   "evidence": "L: Every element matches the owner's decisions of 2026-10-23 and the current text. Draft line 5 reads 'should have gone into', line 72 reads 'I did not know JHT was there.', and line 7 keeps the thesis as 'My answer, before any data'. The published excerpt (gate.toml:69) binds growth.jht.multiple (1.4) and growth.sp500.multiple (2.4).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:57",
+   "claim": "- Years of `bpjs_ir_2018.pdf` and `bpjs_ir_2019.pdf`. Internet Archive captures of BPJS's annual-report page (`https://www.bpjsketenagakerjaan.go.id/laporan-tahunan.html`, stored as `sources/provenance/jht/bpjs_laporan_tahunan_wayback_*.html`, hashes in `sources/provenance/ADDED_SHA256SUMS.txt`) list the reports in the order they were added. `BPJS19_LO23_FS.pdf` is absent from the capture of 30 De",
+   "verdict": "REFUTED",
+   "evidence": "S: The core dating holds. shasum -c sources/provenance/ADDED_SHA256SUMS.txt (run from the post folder): 11/11 OK. Each stored capture's SHA-1 equals its CDX digest (KSIN6UJJ.../20191230165033, 75CBEIZZ.../20200416075258, XL55Y3PX.../20201021165040, 3T2NQEVC.../20210213122040), and each is a complete raw listing (2006 to the latest report, followed by the footer). BPJS19_LO23_FS.pdf is absent on 30 December 2019 and listed on 16 April 2020; BPJS_2020_LO17.pdf is absent on 21 October 2020 and listed on 13 February 2021. A CDX prefix search I ran over bpjsketenagakerjaan.go.id/assets/uploads/ (2019-01 to 2021-02) found no earlier copy of either report on the BPJS domain. Three parts of the record are wrong or unsupported. (a) 'list the reports in the order they were added' is contradicted: the list runs by report year. The 2010 report (upload stamp 26032015_134549) sits before the 2011 report (02022015_140606); SR2013 (26032015_133956) sits before the earlier-stamped ARA 2013 (26032015_133805); AR 2014 and SR 2014 swap places between the 30 December 2019 and 16 April 2020 captures. The dating does not need the order. (b) '1 March 2020' is a timezone artefact. pdfinfo -isodates gives CreationDate 2020-03-02T11:12:54+07; plain pdfinfo prints 'Sun Mar 1 23:12:54 2020 EST'. The same file's 'Close calls' note (references-data.md:129) says 2 March, and row 77 repeats 1 March. (c) The captures show when these files appeared on this page, not publication anywhere else. The same page carries Jamsostek reports with 2015 upload stamps (02022015_...) whose APA years are 2007 to 2014, so 'year it appeared online here' is not APA's rule in general. Here it is the best evidence. Also touched: the file's intro (line 3), 'Each title, publisher and year was read from the document itself', no longer holds for these two years. | skeptic S: Re-run from the post folder: shasum -a 256 -c sources/provenance/ADDED_SHA256SUMS.txt gives 11/11 OK. The base32 SHA-1 of each capture matches KSIN6UJJ, 75CBEIZZ, XL55Y3PX and 3T2NQEVC. BPJS19 appears 0 times in the 20191230 capture and once from 20200416. BPJS_2020 appears 0 times until the 20210213 capture. The core dating holds. (a) The href order in every stored capture runs by report year, not by upload stamp: 26032015_134549 (2010) comes before 02022015_140606 (2011), and 26032015_133956_SR2013 before 26032015_133805_ARA 2013. AR 2014 (15072015) and SR 2014 (29122015) swap places between the 20191230 and 20200416 captures. I fetched the 20180326 and 20190328 captures, and they order 2006, 2012, 2007, 2013... So 'in the order they were added' is contradicted. (b) pdfinfo -isodates on sources/jht/bpjs_ir_2018.pdf gives CreationDate 2020-03-02T11:12:54+07, while plain pdfinfo prints 'Sun Mar 1 23:12:54 2020 EST'. '1 March' is a timezone artefact, and it conflicts with references-data.md:129 ('2 March 2020'). Row 77 repeats 1 March. (c) Intro line 3, 'Each title, publisher and year was read from the document itself', no longer holds for these two years, which now rest on Internet Archive captures. LOW.",
+   "fixed": true,
+   "fix": "references-data.md: 'in the order they were added' deleted (the list runs by report year); '1 March 2020' narrowed to 'March 2020' (timezone); the intro narrowed to 'Each title and publisher was read from the document itself'."
+  },
+  {
+   "id": "r2:item:58",
+   "claim": "- `bpjs_ir_2018.pdf`: the latest past event printed is the end of August 2019 (PDF p.197), not July 2019.",
+   "verdict": "REFUTED",
+   "evidence": "S: P.197 does print the date: pdftotext -layout of sources/jht/bpjs_ir_2018.pdf p.197 reads 'disampaikan Dewan Pengawas kepada DJSN pada akhir bulan Agustus 2019'. But p.202 prints a later past event: '2018 APIC - Tokyo, Japan (26-28 September 2019)', listed among 2018 trips and probably a typo, as round 1's own skeptic noted (round1-verdicts r1:item:126). As printed, 'the latest past event printed is the end of August 2019' is false, and unlike other rows (e.g. the 2008 report's '19 May 2009' typo note) the record does not flag the exception. Table row 77 (references-data.md:77) still says 'The latest past events are from July 2019 ... (PDF p.197)', which contradicts this bullet in the same file. The other late-2019 dates in the report (p.416 to p.418: 1 and 31 Desember 2019) are contract end dates, not events. The year is unaffected. | skeptic S: pdftotext -layout -f 197 -l 197 sources/jht/bpjs_ir_2018.pdf prints '... selanjutnya disampaikan Dewan Pengawas kepada DJSN pada akhir bulan Agustus 2019', so the August date is real. p.202 also prints '2018 APIC - Tokyo, Japan (26-28 September 2019)' in the 2018 training list, next to '17 - 20 September 2018'. It is probably a typo, but it is printed and it is past relative to the March 2020 PDF. I scanned all 749 pages for Sept to Dec 2019 or 2020 dates (output in skeptic-S/ir2018_late_dates.txt). Apart from p.202, every hit is a maturity date, a contract end date or a future effective date (p.416-418, 432, 485-492, 727), not a past event. So 'the latest past event printed' is false as printed, and the exception is not flagged. Row 77 (references-data.md:77) still says 'The latest past events are from July 2019 ... (PDF p.197)', which contradicts the bullet on line 134 of the same file. The year is unaffected. LOW.",
+   "fixed": true,
+   "fix": "references-data.md: bullet narrowed to 'the report prints a past event at the end of August 2019 (PDF p.197), later than July 2019'; row 77's stale July 2019 clause deleted."
+  },
+  {
+   "id": "r2:item:59",
+   "claim": "- `jamsostek_ar_2013.pdf`: the entry has no publisher element. The cover (PDF p.1) and back cover (PDF p.696) name only PT Jaminan Sosial Tenaga Kerja (Persero); BPJS Ketenagakerjaan appears as the theme line and the web address.",
+   "verdict": "CONFIRMED",
+   "evidence": "S: pdftotext and a render of PDF p.1 and p.696: 'LAPORAN TAHUNAN 2013 / PT Jaminan Sosial Tenaga Kerja (Persero)' with the JAMSOSTEK logo. BPJS appears only as 'MEMPERKOKOH LANDASAN BPJS KETENAGAKERJAAN' (p.1 theme line) and 'www.bpjsketenagakerjaan.go.id' (p.1 and p.696). Signed 'Jakarta, 30 Juni 2014' (p.18 and p.25), which supports the year 2014. Style note: APA 7 asks for a group author's full name. The entry uses the brand form 'PT Jamsostek', which the running heads and logo also use, and the gate cannot parse parentheses. This is defensible, not an error.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:60",
+   "claim": "- The U.S. Department of Labor bulletin (in `docs/references-draft.md`) takes the most specific agency, the Employee Benefits Security Administration, as author and the department as publisher (APA 7 group authors).",
+   "verdict": "CONFIRMED",
+   "evidence": "S: docs/references-draft.md line 23: 'Employee Benefits Security Administration. (2006). ... (Field Assistance Bulletin No. 2006-03). U.S. Department of Labor. ...' This is the most specific agency as author and the parent as publisher, matching the letterhead (dol_fab_2006-03.txt line 1) and the APA 7 group-author rule quoted in round 1 (Purdue OWL: 'list the most specific agency as the author and the parent agency as the publisher'). The draft and MDX entries are identical (draft line 123, MDX line 164).",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:61",
+   "claim": "BPJS Ketenagakerjaan. (2020). *Laporan terintegrasi 2018* [2018 integrated report]. https://www.bpjsketenagakerjaan.go.id/assets/uploads/laporan_tahunan/BPJS19_LO23_FS.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "S: Cover text (PDF p.1): 'Laporan Terintegrasi 2018'. The URL's file name equals the href in the 16 April 2020 capture. The stored file's SHA-1 (CZ6QWASEX4LTM56HOELUID3OM3DRWUQR) equals the CDX digest of this URL's 20220124 and 20220213 captures. Its CreationDate and ModDate are both 2020-03-02 (+07), so it is the original March 2020 file. The year 2020 is supported by the captures (absent 30 December 2019, present 16 April 2020) and the creation date. Bracketed translation and no publisher element are APA-correct.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:62",
+   "claim": "BPJS Ketenagakerjaan. (2021a). *Laporan tahunan terintegrasi 2019* [2019 integrated annual report]. https://www.bpjsketenagakerjaan.go.id/assets/uploads/laporan_tahunan/BPJS_2020_LO17.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "S: Cover: 'Laporan Tahunan Terintegrasi 2019'. The stored file's SHA-1 (LMDPKSFEAABGD2HB4PDIPOULD64S4RMZ) equals the CDX digest of this URL (20220216 and 20220627 captures). The year 2021 is supported by the captures and CreationDate 2021-02-02 (see item 18). The 'a' suffix is correct by title order.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:63",
+   "claim": "BPJS Ketenagakerjaan. (2021b). *Laporan tahunan terintegrasi 2020* [2020 integrated annual report]. https://www.bpjsketenagakerjaan.go.id/assets/uploads/laporan_tahunan/Integrated_Report_2020.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "S: Cover: 'Laporan Tahunan Terintegrasi 2020'. The stored file's SHA-1 (X5GMVEMYOBN7JDJWGCGNS7ELMOHTQTXI) equals the CDX digest of this URL (captures 20250603, 20250604 and 20260502). The year 2021 is supported by the 20211008 capture listing BPJS_IR2020_LO13.pdf (item 19). Note: the cited file (created 13 December 2021) is a later export than the version first listed (LO13 by 8 October 2021, LO16_Lowres by 25 April 2022). This does not change the year.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:64",
+   "claim": "PT Jamsostek. (2014). *Laporan tahunan 2013* [2013 annual report]. https://www.bpjsketenagakerjaan.go.id/assets/uploads/laporan_tahunan/26032015_133805_ARA%20BPJS%20Ketenagakerjaan%202013.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "S: Title 'Laporan Tahunan 2013' (cover). Signed 'Jakarta, 30 Juni 2014' (PDF p.18 and p.25). The URL equals the href in all stored captures. The publisher element is correctly absent (item 22). The 26032015 upload stamp is a later re-upload; the printed signing date governs the year.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:item:65",
+   "claim": "Employee Benefits Security Administration. (2006). *Periodic pension benefit statements: Pension Protection Act of 2006* (Field Assistance Bulletin No. 2006-03). U.S. Department of Labor. Internet Archive copy of the DOL file. https://web.archive.org/web/20190619215402id_/https://www.dol.gov/sites/default/files/ebsa/employers-and-advisers/guidance/field-assistance-bulletins/2006-03.pdf",
+   "verdict": "CONFIRMED",
+   "evidence": "S: Title from the subject line 'PERIODIC PENSION BENEFIT STATEMENTS - PENSION PROTECTION ACT OF 2006', with the dash rendered as a colon (APA and the house no-dash rule). 'FIELD ASSISTANCE BULLETIN NO. 2006 - 03, Date: December 20, 2006' supports the report number and year 2006. Author and publisher order are APA 7 correct. The archive URL's capture digest matches the stored PDF (CDX query today). Style note: 'Internet Archive copy of the DOL file.' is not an APA element, and its form differs from the 2016b entry's 'Internet Archive copy, captured September 19, 2017.' This is harmless.",
+   "fixed": false,
+   "fix": ""
+  },
+  {
+   "id": "r2:extra:S0",
+   "claim": "Outside the scope, but its support changed with round 1's new dating rule (item 57). 'BPJS Ketenagakerjaan. (2016a). *Laporan tahunan terintegrasi 2015* ... Laporan_Tahunan_2015.pdf' (draft references; method-notes citation list). Applied the way round 1 applied it to the 2018 and 2019 reports, the ",
+   "verdict": "REFUTED",
+   "fixed": true,
+   "fix": "The year rule is now recorded in references-data.md: a printed date; failing that, the cited PDF's creation date, checked against page captures. The cited 2015 report file was created 28 December 2016, so 2016a stands; the record notes that BPJS's first online copy (16012017_..., embedded image dated 2017-01-10, adjudicator re-fetched it) would give 2017.",
+   "evidence": "Outside the scope, but its support changed with round 1's new dating rule (item 57). 'BPJS Ketenagakerjaan. (2016a). *Laporan tahunan terintegrasi 2015* ... Laporan_Tahunan_2015.pdf' (draft references; method-notes citation list). Applied the way round 1 applied it to the 2018 and 2019 reports, the evidence points to 2017. (1) All four stored captures (sources/provenance/jht/) link the 2015 report as '16012017_093528_IR BPJS Ketenagakerjaan 2015.pdf'. The site's prefix is an upload stamp: the AR 2014 PDF was created 2015-07-13 (pdfinfo) and is stamped 15072015. (2) I fetched the Internet Archive copy of that file (20190917010648, first 1 MB). It embeds a Photoshop image whose XMP reads xmp:ModifyDate=\"2017-01-10T08:50:02+07:00\", so the file BPJS put online was produced on or after 10 January 2017. (3) The cited URL Laporan_Tahunan_2015.pdf is first seen by CDX on 2024-10-14, and the stored copy's ModDate is 2024-10-02, so it is a later re-upload. The 2016 year rests only on that re-upload's CreationDate of 28 December 2016 (docs/references-data.md, bpjs_ir_2015 row). The page has no capture before February 2018, so a late-December 2016 release cannot be ruled out, but nothing supports it. | skeptic: Re-checked. (1) Every stored capture (sources/provenance/jht/*.html), plus the 20180326 and 20190328 captures I fetched, links the report as '16012017_093528_IR BPJS Ketenagakerjaan 2015.pdf'. These are upload stamps: AR 2014 is stamped 15072015, and pdfinfo gives its CreationDate as 2015-07-13. (2) I fetched web.archive.org/web/20190917010648id_ of that file. The archive holds only the first 1,048,576 bytes. At byte offset about 195022 it embeds an XMP packet with xmp:ModifyDate=\"2017-01-10T08:50:02+07:00\" and CreatorTool 'Adobe Photoshop CS6 (Macintosh)'. So the file BPJS first put online was built on or after 10 January 2017. (3) CDX first sees the cited URL Laporan_Tahunan_2015.pdf on 20241014235101. The stored copy has CreationDate 2016-12-28 and ModDate 2024-10-02, and its newest embedded XMP date (all 4,932 Flate streams decompressed) is 2016-12-21. It is a different, earlier build, re-uploaded in 2024. (4) The page's earliest CDX capture is 20180222. The earliest capture of the 16012017 file is 20170518 (tiny_mce path). Nothing shows a 2016 release. By round 1's own reasoning for the 2018 and 2019 reports (when the file appeared online, plus the PDF date), the year points to 2017. The 2016 year rests only on an export dated 28 December 2016. The finding slightly overstates 'nothing supports it': that export date is weak support for 2016. The inconsistency stands. Severity is arguably LOW rather than MODERATE, since it is a reference-year label."
+  },
+  {
+   "id": "r2:extra:S1",
+   "claim": "Outside the scope, same dating rule. 'BPJS Ketenagakerjaan. (2018). *Laporan tahunan 2017*' (bpjs_ar_2017.pdf) prints no date. pdfinfo: CreationDate 2018-12-12T18:04+07 and ModDate 2018-12-18T04:27+01 (Producer ilovepdf.com). The page captures I fetched show the file absent on 26 March 2018 (predate",
+   "verdict": "CONFIRMED",
+   "fixed": false,
+   "fix": "",
+   "evidence": "adjudicator: pdfinfo of sources/jht/bpjs_ar_2017.pdf gives CreationDate 12 December 2018; under the recorded year rule (cited PDF's creation date when no date is printed) 2018 holds, and references-data.md row 76 states that basis. | Outside the scope, same dating rule. 'BPJS Ketenagakerjaan. (2018). *Laporan tahunan 2017*' (bpjs_ar_2017.pdf) prints no date. pdfinfo: CreationDate 2018-12-12T18:04+07 and ModDate 2018-12-18T04:27+01 (Producer ilovepdf.com). The page captures I fetched show the file absent on 26 March 2018 (predates it) and listed on 28 March 2019 ('tiny_mce/Annual Report/laporan-tahunan-2017.pdf'). Every capture in between is a 302. Under round 1's rule the year could be 2018 or 2019. | skeptic: The finding's facts check out. pdfinfo -isodates on sources/jht/bpjs_ar_2017.pdf gives CreationDate 2018-12-12T18:04:01+07 and ModDate 2018-12-18T04:27:28+01, with Producer ilovepdf.com. The 20180326 capture lists no laporan-tahunan-2017.pdf, and the 20190328185935 capture lists 'tiny_mce/Annual%20Report/laporan-tahunan-2017.pdf'. CDX shows every capture of the page between them as a 302, and no earlier capture of the file under tiny_mce or laporan_tahunan exists (first 20190917). Nothing contradicts 2018, though. The latest past event is March 2018 (PDF p.342), the PDF was finalised on 12 December 2018, and the ilovepdf compression pass on 18 December 2018 fits a December 2018 web release. Unlike item 0 above (2016a), no upload stamp or embedded date points to the following year. references-data.md:76 already says the year rests on the PDF dates ('The PDF was created in December 2018'), the same standard used for the other undated reports, none of which has a capture. 'No capture confirms it' is true of most rows, so adding it would be a documentation preference, not a correction."
+  },
+  {
+   "id": "r2:extra:L2",
+   "claim": "Draft line 13 (section 'What Indonesia already has'): 'Each month 5.7 percent of wages goes in: 2 percent from the worker and 3.7 percent from the employer ... A separate pension scheme, Jaminan Pensiun, takes another 3 percent'. When round 1 deleted 'JHT is compulsory for wage earners.' (r1:item:18",
+   "verdict": "REFUTED",
+   "fixed": true,
+   "fix": "Narrowed 'Each month 5.7 percent of wages goes in:' to '... must go into JHT:'.",
+   "evidence": "Draft line 13 (section 'What Indonesia already has'): 'Each month 5.7 percent of wages goes in: 2 percent from the worker and 3.7 percent from the employer ... A separate pension scheme, Jaminan Pensiun, takes another 3 percent'. When round 1 deleted 'JHT is compulsory for wage earners.' (r1:item:18), the paragraph lost its subject. It no longer names JHT: 'goes in' has no destination, and 'separate' points to a scheme the paragraph does not name. The 5.7% is first tied to JHT at line 52 ('JHT's 5.7 percent'), so a reader of line 13 could take it as the total for every BPJS programme. There is a second inconsistency. Round 1 changed 'goes in' to 'must go in' at line 68 because 'goes in' reads as an outcome (r1:item:76), but this sentence keeps the outcome verb. | skeptic: The finding holds. In draft .md:13 (src:13) the paragraph opens the section 'What Indonesia already has' and never names JHT. The last mention of JHT is at line 5, with the thesis (line 7) and the disclaimer (line 9) in between. 'Separate' therefore has no named antecedent, and the 5.7 is first tied to JHT in the prose at line 52 ('JHT's 5.7 percent'). The verb inconsistency is real: round1_fixes r1:item:76 narrowed 'goes in' to 'must go in' at line 68 because 'goes in' reads as an outcome, and r1:item:18 deleted 'JHT is compulsory for wage earners' because coverage is not universal (IR 2024: 29.3M JKK/JKM wage-earner members against 18.4M in JHT). Line 13 keeps the outcome verb. The bound key sources.json pp46_jht_contribution quotes Pasal 16(1), which sets an obligation ('Iuran JHT ... sebesar 5,7% ... dari Upah'), not an outcome. That quote is also scoped to 'Peserta penerima Upah yang bekerja pada Pemberi Kerja selain penyelenggara negara', and pp_46_2015.txt:133 sends state employers to a separate regulation. Monthly payment is supported by Pasal 19(2), 'setiap bulan' (pp_46_2015.txt:512)."
+  },
+  {
+   "id": "r2:extra:L4",
+   "claim": "A5 omits three things it should record. (1) Section 1 still says 'Indonesia already makes workers save' (design lines 8-9). Round 1 narrowed this in the README, excerpt and meta to 'requires workers to save' (r1:item:226, 329, 332) and deleted 'JHT is compulsory for wage earners' (r1:item:18). A5 wi",
+   "verdict": "REFUTED",
+   "fixed": true,
+   "fix": "A5 now records that Section 1's 'makes workers save' is narrowed to 'requires workers to save'.",
+   "evidence": "A5 omits three things it should record. (1) Section 1 still says 'Indonesia already makes workers save' (design lines 8-9). Round 1 narrowed this in the README, excerpt and meta to 'requires workers to save' (r1:item:226, 329, 332) and deleted 'JHT is compulsory for wage earners' (r1:item:18). A5 withdraws a different Section 1 phrase ('his 401(k) in the US') but not this one. (2) Section 2 (design line 23) still says 'Window: 2005 to 2020, the years with a documented JHT rate for member balances'. That contradicts A5's own second bullet: 2020's rate is an inference, not documented. A5's bullet also does not note that R8's 2020 cell rests on the same inference: results.json published.rows.2020.credited_published = true and published.last_credited_year = 2020, built from the 2020 'base' row in build_analysis.py:190-195. The meta, excerpt, alt text and chart notes all bind that key. (3) Section 2 lists 'tax break' under the 'what goes in' scope. The post no longer states it as a sourced fact (r1:item:57, 410); it survives only in the owner's opening at line 3. | skeptic: Part (1) is confirmed and carries the finding. Design lines 8-9 still say 'Indonesia already makes workers save'. Round 1 refuted that exact phrase in the meta (r1:item:332) and its near-twin in the README (r1:item:226) and excerpt (r1:item:329). README.md:3, src:3 and gate.toml:69-70 now say 'requires workers to save'. A5 (line 135) withdraws only 'his 401(k) in the US' from Section 1. The design doc is reader-facing: draft line 21 says the rules are on GitHub. Part (2) over-reaches. A1 (dated 2026-10-22) already records 'Reading 2020's 5.59% as the rate for balances is an inference', which qualifies Section 2's 'documented' window, line 23. A5's own bullet (line 136) says 'charts 1, 2 and 4 call it an inference', and chart 4 is R8's chart: make_charts.py:213 carries the inference clause beside the 2020 dot drawn from published.rows.2020.credited_published=true (build_analysis.py:190-195). The A5 bullet's claim that the gap 'holds under either reading' checks out: draft:62 and the meta/excerpt/alt say 'not published since/after 2020', which stays true if 5.59 is not the credited rate. Part (3) is a process record, not a claim error. A grep confirms the tax break appears only in the owner's line 3 ('it lowers your taxable income'); line 15's early-withdrawal tax is a different point. The scope narrowing is logged in docs/round1-verdicts.json (r1:item:57, 410) but not in the design."
+  },
+  {
+   "id": "r2:extra:H5",
+   "claim": "E1, the excerpt's last sentence, MDX line 4: 'BPJS has not published the rate it credits to JHT balances since 2020.' It has the same defect as [37]. On the reading about when BPJS published, the post's own references 2021a and 2021b are BPJS reports from 2021 that carry credited rates: 6,08% for 20",
+   "verdict": "REFUTED",
+   "fixed": true,
+   "fix": "Excerpt's last sentence: 'since 2020' narrowed to 'for the years after 2020'.",
+   "evidence": "E1, the excerpt's last sentence, MDX line 4: 'BPJS has not published the rate it credits to JHT balances since 2020.' It has the same defect as [37]. On the reading about when BPJS published, the post's own references 2021a and 2021b are BPJS reports from 2021 that carry credited rates: 6,08% for 2019 at bpjs_ir_2019.pdf p.67, created 2 Feb 2021, and 5.59% for 2020. The 2020 one-page summary (sources/provenance/jht/lk_lpp_2020_summary.pdf, signed 'Jakarta, 31 Mei 2021') also prints 'Hasil pengembangan JHT 5,59%' beside the deposit rate. The excerpt is shown alone in search results and on cards, so nothing next to it fixes the reading. Its support changed in round 1, when the 2019 report was re-dated from 2020 to 2021a. | skeptic: This has the same defect as [37], and the excerpt is shown without context. I confirmed BPJS published credited rates in 2021: bpjs_ir_2019.pdf was created 2 Feb 2021 and was absent from the Wayback capture of 21 Oct 2020 but listed on 13 Feb 2021. Its p.13 reads 'memberikan hasil pengembangan JHT kepada peserta sebesar 6,08 persen per tahun' and its p.67 reads '...Program JHT sebesar 6,08%'. lk_lpp_2020_summary.pdf (signed 'Jakarta, 31 Mei 2021', created 30 May 2021) plots 5,59% under the legend 'Hasil pengembangan JHT' beside the 3,68% deposit rate, and bpjs_ir_2020.pdf was created 12 Dec 2021. The 2019 figure alone makes 'has not published ... since 2020' false on the publication-time reading. The 2021-dated entries 2021a and 2021b in the post's own references make the contradiction visible."
+  },
+  {
+   "id": "r2:extra:H6",
+   "claim": "The window ends in 2020: BPJS has not published the credited rate since.",
+   "verdict": "REFUTED",
+   "fixed": true,
+   "fix": "Narrowed to 'BPJS has not published the credited rate for later years.' (the line 32 half is r2:item:3).",
+   "evidence": "E1b, body lines 32 and 77 (inventory [3] belongs to another lens; line 77's first sentence was r1:item:88). 'The window stops in 2020 for a reason I come back to: BPJS has not published the rate it credited to balances since.' and 'The window ends in 2020: BPJS has not published the credited rate since.' Both can be read the same way as E1, and on that reading the reference list (2021a, 2021b) contradicts them. Line 62 ('for the five years since 2020') and README ('for the five years after 2020') say it without ambiguity. Chart 4's title ('not published after 2020') is tied to the rate years by its year axis, so it is fine. | skeptic: Both sentences use present perfect plus 'since [2020]', which reads as a statement about when BPJS published. On that reading they are false for the reasons given under [37] and E1: the 6.08% credited rate was in a report created 2 Feb 2021 and listed by 13 Feb 2021, and the 2020 summary was signed 31 May 2021. The 'window' context points toward the rate-year meaning but does not change the grammar, so the defect is LOW. On line 62, 'the five years since 2020' counts calendar years 2021 to 2025. As of Oct 2026 a span since 2020 would be close to six years, so the rate-year reading is the natural one there. It is less ambiguous than lines 32 and 77, but not fully unambiguous."
+  },
+  {
+   "id": "r2:extra:K8",
+   "claim": "Chart 2's circles clause, out of scope but put in conflict by round 1's fix [280]. Note: 'The IMF's linked index and BPS's published December inflation differ in a few years; the circles show those years.' (make_charts.py:143-144, PNG and MDX figcaption). Legend: 'the same, against BPS's published D",
+   "verdict": "REFUTED",
+   "fixed": true,
+   "fix": "Chart 2: deleted '; the circles show those years' from the note and ', where they differ' from the legend; the alt text narrowed to 'with circles for BPS's published December inflation in some years'. Regenerated.",
+   "evidence": "Chart 2's circles clause, out of scope but put in conflict by round 1's fix [280]. Note: 'The IMF's linked index and BPS's published December inflation differ in a few years; the circles show those years.' (make_charts.py:143-144, PNG and MDX figcaption). Legend: 'the same, against BPS's published December inflation, where they differ' (make_charts.py:137). Alt text: 'with circles where BPS's published December inflation gives a different figure'. The circles use an unstated threshold, |imf_bps_gap_pp| >= 0.05 (make_charts.py:122), so they mark only 2008, 2013 and 2020. Round 1 deleted data/README's 'and agrees in the other window years' because, at BPS's two-decimal precision, 2005 (IMF 17.08 vs BPS 17.11; real rate -7.753 vs -7.779) and 2007 (6.58 vs 6.59) also differ (round1-verdicts r1:item:280). Round 1 [409] saw the same gap in chart 2 and left it as 'minor'. Chart 2 now asserts on three surfaces what the data README no longer does. A1 (line 107) names only 2008, 2013 and 2020, which is the only support for the chart's reading. | skeptic: I recomputed the gaps myself from data/imf_cpi_idn_m.csv (headline IX, monthly, December to December) and data/bi_data_inflasi.xlsx (December rows), using the script skeptic-K/recheck_gap.py. At BPS's published two-decimal precision, five window years differ: 2005 (17.08 vs 17.11, gap -0.033 pp), 2007 (6.58 vs 6.59, -0.0066), 2008 (-0.827), 2013 (-0.657) and 2020 (-0.095). make_charts.py:122 circles only the years with |imf_bps_gap_pp| >= 0.05, which leaves out 2005 and 2007. So the note at make_charts.py:143-144, the legend at :137 and the alt text at gate.toml:72 all say or imply that the circles mark the years where the two differ. That fails the same standard round 1 used when it refuted data/README's 'agrees in the other window years' (r1:item:280). The claim holds only at one-decimal inflation, which neither the chart nor the alt text states. The finding's evidence is accurate. Severity LOW: in 2005 the real rate moves by 0.026 pp, too little to see on the chart."
+  },
+  {
+   "id": "r2:extra:K9",
+   "claim": "Design A1 (docs/2026-10-21-jht-401k-design.md:107-109): 'chart 2 and the text also show BPS's published December rate ... and say where the two differ.' The post's text only says 'The same years come out negative against BPS's own published December inflation, which differs from the IMF's index in a",
+   "verdict": "REFUTED",
+   "fixed": true,
+   "fix": "A5 records that the post's text does not print BPS's December rate or name the years where it differs.",
+   "evidence": "Design A1 (docs/2026-10-21-jht-401k-design.md:107-109): 'chart 2 and the text also show BPS's published December rate ... and say where the two differ.' The post's text only says 'The same years come out negative against BPS's own published December inflation, which differs from the IMF's index in a few years.' It prints no BPS rate and names no year (round 1 [282] evidence). Round 1 fixed this by deleting 'and the text' from data/README (lines 50 and 78) rather than recording a departure. A5 (lines 134-140) lists the post-round-1 departures but not this one. As a result the pre-registration and the post disagree, and the data README's narrowed paraphrase of A1 hides that. | skeptic: A1 (line 94) is dated before any result and commits that the text shows BPS's December rate and says where the two differ. The text does neither. The only post sentence on the subject (draft .md:46) prints no BPS rate and names no differing year. Its one inflation figure, 17.1 percent, binds year_by_year.rows.2005.imf_inflation_pct, the IMF figure (src.md:46). Round 1 refuted data/README's paraphrase on exactly this distributive reading (r1:item:282) and fixed it by deleting 'and the text' in data/README.md:50 and :78, not by recording a departure. The A5 bullets (design lines 134-140) list the other post-round-1 departures but not this one. A collective reading, in which chart 2 alone satisfies A1, is possible but conflicts with round 1's adjudication. The data README's narrowed paraphrase is a true subset of A1, so 'hides' overstates it. The pre-registration and the post still disagree with no record of it. LOW."
+  },
+  {
+   "id": "r2:extra:K10",
+   "claim": "Round 1 [95] and [408] dropped 'annual and integrated reports' from the post's method notes and from the charts' SRC_JHT because the 2015 figure (BPJS 2016b, sources/jht/bpjs_news_6489.html) is a news release. Three repository surfaces still call the 20 JHT documents reports. data/README.md:13: 'Cre",
+   "verdict": "REFUTED",
+   "fixed": true,
+   "fix": "'annual and integrated reports' deleted from data/README's credit; 'stored reports' narrowed to 'stored documents' (data/README and README); 'for the later years' narrowed to 'for 2016 to 2020' ([allow] entry added).",
+   "evidence": "Round 1 [95] and [408] dropped 'annual and integrated reports' from the post's method notes and from the charts' SRC_JHT because the 2015 figure (BPJS 2016b, sources/jht/bpjs_news_6489.html) is a news release. Three repository surfaces still call the 20 JHT documents reports. data/README.md:13: 'Credit: PT Jamsostek (Persero) and BPJS Ketenagakerjaan, annual and integrated reports.' (the same bullet's previous sentence discloses the news release, so the bullet contradicts itself). data/README.md:10: '...and from the stored reports in sources/jht/'. README.md:14: 'Writes the JHT rates from the stored reports'. data/README.md:11, next to the changed sentence [27], adds 'Where each rate comes from: the notes to the financial statements for the earlier years, and for the later years the reports' narrative sections', which leaves out 2015's release (manifest 2015 yearend_reported row; A1 line 99). | skeptic: In docs/jht-manifest.csv, the 2015 yearend_reported row's document is sources/jht/bpjs_news_6489.html, which the manifest note calls 'BPJS Ketenagakerjaan's own release'. extract_jht.py:12 and :117-119 read it as 'the one HTML page'. sources/jht holds 20 files: 19 report PDFs and this release. Round 1 removed 'annual reports' from the method notes and 'annual and integrated reports' from SRC_JHT on this basis (r1:item:95, r1:item:408). The defect remains in three places: the credit sentence at data/README.md:13, whose previous sentence in the same bullet discloses the news release; 'stored reports in sources/jht/' at data/README.md:10; and README.md:14. data/README.md:11 says the rates come from 'the notes ... for the earlier years, and for the later years the reports' narrative sections'. That leaves out 2015's release, which A1 (design line 99) records separately from the 2016 to 2020 narrative sources (line 95). Chart 4's 'annual and integrated reports' (make_charts.py:209) is correct: every yield row comes from a report. LOW."
+  }
+ ]
+}

@@ -1,0 +1,512 @@
+{
+ "pp46_jht_contribution": {
+  "ref": "Pemerintah Republik Indonesia 2015b",
+  "title": "Peraturan Pemerintah Republik Indonesia Nomor 46 Tahun 2015 tentang penyelenggaraan program jaminan hari tua",
+  "doc": "sources/text/pp_46_2015.txt",
+  "sha256": "8345590b4924bd28629ba5c5c7bdf4a31a3088f0990c4f64be89b56ef33abf56",
+  "fetched_from": "https://www.bpjsketenagakerjaan.go.id/assets/uploads/peraturan/15122015_104556_PP%2046%20Tahun%202015.pdf (PDF sha256 ad90a60ea58d6a4197f60ac3891821f3f22e205b3824e32846e23338bbb2214c, fetched 2026-10-21; stored beside the text as sources/text/pp_46_2015.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "11",
+  "locator": "Pasal 16 ayat (1): JHT contribution for wage earners whose employer is not a state organ",
+  "quote": "Iuran JHT bagi Peserta penerima Upah yang bekerja pada Pemberi Kerja selain penyelenggara negara sebesar 5,7% (lima koma tujuh persen) dari Upah, dengan ketentuan: a. 2% (dua persen) ditanggung oleh Pekerja; dan b. 3,7% (tiga koma tujuh persen) ditanggung oleh Pemberi Kerja",
+  "number_format": "id",
+  "values": {
+   "total_pct": 5.7,
+   "worker_pct": 2,
+   "employer_pct": 3.7
+  }
+ },
+ "pp46_rate_floor": {
+  "ref": "Pemerintah Republik Indonesia 2015b",
+  "title": "Peraturan Pemerintah Republik Indonesia Nomor 46 Tahun 2015 tentang penyelenggaraan program jaminan hari tua",
+  "doc": "sources/text/pp_46_2015.txt",
+  "sha256": "8345590b4924bd28629ba5c5c7bdf4a31a3088f0990c4f64be89b56ef33abf56",
+  "fetched_from": "https://www.bpjsketenagakerjaan.go.id/assets/uploads/peraturan/15122015_104556_PP%2046%20Tahun%202015.pdf (PDF sha256 ad90a60ea58d6a4197f60ac3891821f3f22e205b3824e32846e23338bbb2214c, fetched 2026-10-21; stored beside the text as sources/text/pp_46_2015.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "18",
+  "locator": "Pasal 27 ayat (3): floor on the return credited to JHT balances (average one-year state-bank deposit counter rate)",
+  "quote": "Hasil pengembangan sebagaimana dimaksud pada ayat (1) dan ayat (2) paling sedikit sebesar rata-rata bunga deposito counter rate bank pemerintah untuk jangka waktu 1 (satu) tahun",
+  "number_format": "id",
+  "values": {}
+ },
+ "pp46_balance_information": {
+  "ref": "Pemerintah Republik Indonesia 2015b",
+  "title": "Peraturan Pemerintah Republik Indonesia Nomor 46 Tahun 2015 tentang penyelenggaraan program jaminan hari tua",
+  "doc": "sources/text/pp_46_2015.txt",
+  "sha256": "8345590b4924bd28629ba5c5c7bdf4a31a3088f0990c4f64be89b56ef33abf56",
+  "fetched_from": "https://www.bpjsketenagakerjaan.go.id/assets/uploads/peraturan/15122015_104556_PP%2046%20Tahun%202015.pdf (PDF sha256 ad90a60ea58d6a4197f60ac3891821f3f22e205b3824e32846e23338bbb2214c, fetched 2026-10-21; stored beside the text as sources/text/pp_46_2015.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "15",
+  "locator": "Pasal 22 ayat (7): BPJS must tell members their JHT balance and its returns once a year",
+  "quote": "BPJS Ketenagakerjaan wajib memberikan informasi kepada Peserta mengenai besarnya saldo JHT beserta hasil pengembangannya 1 (satu) kali dalam 1 (satu) tahun",
+  "number_format": "id",
+  "values": {}
+ },
+ "pp45_jp_total": {
+  "ref": "Pemerintah Republik Indonesia 2015a",
+  "title": "Peraturan Pemerintah Republik Indonesia Nomor 45 Tahun 2015 tentang penyelenggaraan program jaminan pensiun",
+  "doc": "sources/text/pp_45_2015.txt",
+  "sha256": "995c021e007290548ee81c43a4545f7dd95a3c66de877ce9986724c144a2bfc3",
+  "fetched_from": "https://www.bpjsketenagakerjaan.go.id/assets/uploads/peraturan/15122015_104556_PP%2045%20Tahun%202015.pdf (PDF sha256 f48fe9157c56176edbecfcfc267dc0ba0d4b27a246fe96d1fad6a31e1807bdd4, fetched 2026-10-21; stored beside the text as sources/text/pp_45_2015.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "20",
+  "locator": "Pasal 28 ayat (2): Jaminan Pensiun (JP) contribution, a monthly share of wages",
+  "quote": "sebesar 3% (tiga persen) dari Upah per bulan",
+  "number_format": "id",
+  "values": {
+   "total_pct": 3
+  }
+ },
+ "pp45_jp_split": {
+  "ref": "Pemerintah Republik Indonesia 2015a",
+  "title": "Peraturan Pemerintah Republik Indonesia Nomor 45 Tahun 2015 tentang penyelenggaraan program jaminan pensiun",
+  "doc": "sources/text/pp_45_2015.txt",
+  "sha256": "995c021e007290548ee81c43a4545f7dd95a3c66de877ce9986724c144a2bfc3",
+  "fetched_from": "https://www.bpjsketenagakerjaan.go.id/assets/uploads/peraturan/15122015_104556_PP%2045%20Tahun%202015.pdf (PDF sha256 f48fe9157c56176edbecfcfc267dc0ba0d4b27a246fe96d1fad6a31e1807bdd4, fetched 2026-10-21; stored beside the text as sources/text/pp_45_2015.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "20",
+  "locator": "Pasal 28 ayat (3) huruf a and b: how the 3% JP contribution is split between employer and worker",
+  "quote": "a. 2% (dua persen) dari upah ditanggung oleh Pemberi Kerja selain penyelenggara negara; dan b. 1% (satu persen) dari upah ditanggung oleh Peserta",
+  "number_format": "id",
+  "values": {
+   "employer_pct": 2,
+   "worker_pct": 1
+  }
+ },
+ "pp60_benefit_payable": {
+  "ref": "Pemerintah Republik Indonesia 2015c",
+  "title": "Peraturan Pemerintah Republik Indonesia Nomor 60 Tahun 2015 tentang perubahan atas Peraturan Pemerintah Nomor 46 Tahun 2015 tentang penyelenggaraan program jaminan hari tua",
+  "doc": "sources/text/pp_60_2015_kemnaker.txt",
+  "sha256": "91efae081d6d80821c6f981fbb545bf5111eddb9309942a3a582067266aa7de7",
+  "fetched_from": "https://jdih.kemnaker.go.id/asset/data_puu/PP_Nomor_60_Tahun_2015.pdf (Kemnaker JDIH copy; PDF sha256 1e585cb837dc383be233502969a7d6eaa56538b15c363fe1fa0a36c43e974f05, fetched 2026-10-21; stored beside the text as sources/text/pp_60_2015_kemnaker.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "3",
+  "locator": "Pasal I, new Pasal 26 ayat (1) of PP 46/2015: when the JHT benefit must be paid",
+  "quote": "Manfaat JHT wajib dibayarkan kepada Peserta apabila: a. Peserta mencapai usia pensiun; b. Peserta mengalami cacat total tetap; atau c. Peserta meninggal dunia",
+  "values": {}
+ },
+ "pp60_stopping_work": {
+  "ref": "Pemerintah Republik Indonesia 2015c",
+  "title": "Peraturan Pemerintah Republik Indonesia Nomor 60 Tahun 2015 tentang perubahan atas Peraturan Pemerintah Nomor 46 Tahun 2015 tentang penyelenggaraan program jaminan hari tua",
+  "doc": "sources/text/pp_60_2015_kemnaker.txt",
+  "sha256": "91efae081d6d80821c6f981fbb545bf5111eddb9309942a3a582067266aa7de7",
+  "fetched_from": "https://jdih.kemnaker.go.id/asset/data_puu/PP_Nomor_60_Tahun_2015.pdf (Kemnaker JDIH copy; PDF sha256 1e585cb837dc383be233502969a7d6eaa56538b15c363fe1fa0a36c43e974f05, fetched 2026-10-21; stored beside the text as sources/text/pp_60_2015_kemnaker.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "6",
+  "locator": "Penjelasan (elucidation), Pasal I, Pasal 26 ayat (1) huruf a: reaching pension age includes members who stop working",
+  "quote": "Yang dimaksud dengan “mencapai usia pensiun” termasuk Peserta yang berhenti bekerja",
+  "values": {}
+ },
+ "permenaker4_resign_wait": {
+  "ref": "Menteri Ketenagakerjaan 2022",
+  "title": "Peraturan Menteri Ketenagakerjaan Republik Indonesia Nomor 4 Tahun 2022 tentang tata cara dan persyaratan pembayaran manfaat jaminan hari tua",
+  "doc": "sources/text/permenaker_4_2022_kemnaker.txt",
+  "sha256": "3a1fa54fb1289ad1b2bfe3cb690ae8aef682328daffd159755b35a52fb596a8d",
+  "fetched_from": "https://jdih.kemnaker.go.id/asset/data_puu/2022PMNaker004.pdf (Kemnaker JDIH copy; PDF sha256 acfb51dfb939f9f785e94667935d2044f545aa1aec3efb2b09e7b495dcdc076b, fetched 2026-10-21; stored beside the text as sources/text/permenaker_4_2022_kemnaker.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "6",
+  "locator": "Pasal 8 (Bagian Ketiga, members who resign): the JHT of a member who resigns, paid in cash after a one-month wait",
+  "quote": "dapat dibayarkan secara tunai dan sekaligus setelah melewati masa tunggu 1 (satu) bulan terhitung sejak diterbitkan keterangan pengunduran diri dari pemberi kerja",
+  "number_format": "id",
+  "values": {
+   "wait_months": 1
+  }
+ },
+ "permenaker4_layoff_wait": {
+  "ref": "Menteri Ketenagakerjaan 2022",
+  "title": "Peraturan Menteri Ketenagakerjaan Republik Indonesia Nomor 4 Tahun 2022 tentang tata cara dan persyaratan pembayaran manfaat jaminan hari tua",
+  "doc": "sources/text/permenaker_4_2022_kemnaker.txt",
+  "sha256": "3a1fa54fb1289ad1b2bfe3cb690ae8aef682328daffd159755b35a52fb596a8d",
+  "fetched_from": "https://jdih.kemnaker.go.id/asset/data_puu/2022PMNaker004.pdf (Kemnaker JDIH copy; PDF sha256 acfb51dfb939f9f785e94667935d2044f545aa1aec3efb2b09e7b495dcdc076b, fetched 2026-10-21; stored beside the text as sources/text/permenaker_4_2022_kemnaker.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "6",
+  "locator": "Pasal 10 (Bagian Keempat, members who are laid off): the JHT of a member whose employment is terminated, paid in cash after a one-month wait",
+  "quote": "dapat dibayarkan secara tunai dan sekaligus setelah melewati masa tunggu 1 (satu) bulan terhitung sejak tanggal pemutusan hubungan kerja",
+  "number_format": "id",
+  "values": {
+   "wait_months": 1
+  }
+ },
+ "vanguard_glide_age20": {
+  "ref": "Vanguard 2026b",
+  "title": "Target-date fund glide path",
+  "doc": "sources/text/vanguard_tdf_glide_path.txt",
+  "sha256": "14f60f1eeabc89bab1c73f550c27312616d711315815865921af08a1f994d483",
+  "fetched_from": "https://workplace.vanguard.com/investment/strategies/tdf-glide-path.html (HTML sha256 d48cb74b2499014f02caf8cf8de0caa320223559c007afbbfeefd320704d1626, fetched 2026-10-21; the page's structured data gives dateModified 2026-06-17; stored beside the text as sources/text/vanguard_tdf_glide_path.html)",
+  "extracted_with": "HTML tag-stripped with Python html.parser (script, style, noscript and svg dropped; the title element kept)",
+  "page": "web page",
+  "locator": "Glide path section, heading 'Age 20: Phase 1, early career' and the sentence under it",
+  "quote": "Age 20: Phase 1, early career Given the long investment horizon, younger investors can likely afford to take more risks with a 90% stock allocation",
+  "number_format": "en",
+  "values": {
+   "age": 20,
+   "phase": 1,
+   "stock_pct": 90
+  }
+ },
+ "vanguard_glide_age40": {
+  "ref": "Vanguard 2026b",
+  "title": "Target-date fund glide path",
+  "doc": "sources/text/vanguard_tdf_glide_path.txt",
+  "sha256": "14f60f1eeabc89bab1c73f550c27312616d711315815865921af08a1f994d483",
+  "fetched_from": "https://workplace.vanguard.com/investment/strategies/tdf-glide-path.html (HTML sha256 d48cb74b2499014f02caf8cf8de0caa320223559c007afbbfeefd320704d1626, fetched 2026-10-21; the page's structured data gives dateModified 2026-06-17; stored beside the text as sources/text/vanguard_tdf_glide_path.html)",
+  "extracted_with": "HTML tag-stripped with Python html.parser (script, style, noscript and svg dropped; the title element kept)",
+  "page": "web page",
+  "locator": "Glide path section, heading 'Age 40: Beginning of phase 2, midcareer' and the sentence under it (the stock share starts to fall at 40)",
+  "quote": "Age 40: Beginning of phase 2, midcareer We start to gradually reduce stock exposure to build a more conservative portfolio in preparation for retirement",
+  "number_format": "en",
+  "values": {
+   "age": 40,
+   "phase": 2
+  }
+ },
+ "vanguard_glide_age65": {
+  "ref": "Vanguard 2026b",
+  "title": "Target-date fund glide path",
+  "doc": "sources/text/vanguard_tdf_glide_path.txt",
+  "sha256": "14f60f1eeabc89bab1c73f550c27312616d711315815865921af08a1f994d483",
+  "fetched_from": "https://workplace.vanguard.com/investment/strategies/tdf-glide-path.html (HTML sha256 d48cb74b2499014f02caf8cf8de0caa320223559c007afbbfeefd320704d1626, fetched 2026-10-21; the page's structured data gives dateModified 2026-06-17; stored beside the text as sources/text/vanguard_tdf_glide_path.html)",
+  "extracted_with": "HTML tag-stripped with Python html.parser (script, style, noscript and svg dropped; the title element kept)",
+  "page": "web page",
+  "locator": "Glide path section, heading 'Age 65: Phase 3, retirement': the age at which this page places the retirement phase (the prospectus sets no age; its chart counts years from retirement)",
+  "quote": "Age 65: Phase 3, retirement",
+  "values": {}
+ },
+ "vanguard_glide_final": {
+  "ref": "Vanguard 2026b",
+  "title": "Target-date fund glide path",
+  "doc": "sources/text/vanguard_tdf_glide_path.txt",
+  "sha256": "14f60f1eeabc89bab1c73f550c27312616d711315815865921af08a1f994d483",
+  "fetched_from": "https://workplace.vanguard.com/investment/strategies/tdf-glide-path.html (HTML sha256 d48cb74b2499014f02caf8cf8de0caa320223559c007afbbfeefd320704d1626, fetched 2026-10-21; the page's structured data gives dateModified 2026-06-17; stored beside the text as sources/text/vanguard_tdf_glide_path.html)",
+  "extracted_with": "HTML tag-stripped with Python html.parser (script, style, noscript and svg dropped; the title element kept)",
+  "page": "web page",
+  "locator": "Glide path section, under the heading 'Age 72: Phase 4, withdrawal': the glide path's final allocation",
+  "quote": "This is when our default glide path reaches its final asset allocation at 30% stocks and 70% bonds",
+  "number_format": "en",
+  "values": {
+   "final_stock_pct": 30,
+   "final_bond_pct": 70
+  }
+ },
+ "vanguard_tr_glide_chart": {
+  "ref": "Vanguard 2026c",
+  "title": "Vanguard Target Retirement Funds",
+  "doc": "sources/text/vanguard_target_retirement_prospectus_p308.txt",
+  "sha256": "5783dffb930af0aa7210b3e05afd38357bb8d71de5e21ba7eeab233e943db564",
+  "fetched_from": "https://personal.vanguard.com/pub/Pdf/p308.pdf, redirected to https://personal1.vanguard.com/pub/Pdf/p308.pdf (PDF sha256 cd35c5f75fe2db3335037989a57ccc0bc07b4829081425f345fe8521e28b3015, fetched 2026-10-21; stored beside the text as sources/text/vanguard_target_retirement_prospectus_p308.pdf)",
+  "extracted_with": "pdftotext -layout -f 2 (PDF page 1 is a separate one-page supplement dated May 20, 2026 on frequent trading; the prospectus dated January 28, 2026 starts on PDF page 2)",
+  "page": "114",
+  "locator": "More on the Funds (printed page 111), chart 'An example of how fund asset allocations change over time': row 'Stocks' under the columns '50 Years Before Retirement', '25 Years Before Retirement', 'At Retirement' and '25 Years After Retirement'. The columns count years from retirement, not ages; the glide-path page's retirement phase is vanguard_glide_age65",
+  "quote": "Stocks 90% 90% 50% 30%",
+  "number_format": "en",
+  "values": {
+   "stock_50y_before_pct": 90,
+   "stock_25y_before_pct": 90,
+   "stock_at_retirement_pct": 50,
+   "stock_25y_after_pct": 30
+  }
+ },
+ "vanguard_tr2045_expenses": {
+  "ref": "Vanguard 2026c",
+  "title": "Vanguard Target Retirement Funds",
+  "doc": "sources/text/vanguard_target_retirement_prospectus_p308.txt",
+  "sha256": "5783dffb930af0aa7210b3e05afd38357bb8d71de5e21ba7eeab233e943db564",
+  "fetched_from": "https://personal.vanguard.com/pub/Pdf/p308.pdf, redirected to https://personal1.vanguard.com/pub/Pdf/p308.pdf (PDF sha256 cd35c5f75fe2db3335037989a57ccc0bc07b4829081425f345fe8521e28b3015, fetched 2026-10-21; stored beside the text as sources/text/vanguard_target_retirement_prospectus_p308.pdf)",
+  "extracted_with": "pdftotext -layout -f 2 (PDF page 1 is a separate one-page supplement dated May 20, 2026 on frequent trading; the prospectus dated January 28, 2026 starts on PDF page 2)",
+  "page": "58",
+  "locator": "Fund summary for Vanguard Target Retirement 2045 Fund (printed page 55): investment objective and the fees and expenses table. Every fund in this prospectus prints the same table (Total Annual Fund Operating Expenses 0.08%), so the quote starts at the fund's own name to occur once",
+  "quote": "Vanguard Target Retirement 2045 Fund (the “Fund”) seeks to provide capital appreciation and current income consistent with its current asset allocation. Fees and Expenses The following tables describe the fees and expenses you may pay if you buy, hold, and sell shares of the Fund. You may pay other fees, such as brokerage commissions and other fees to financial intermediaries, which are not reflected in the tables and example below. Shareholder Fees (Fees paid directly from your investment) Sales Charge (Load) Imposed on Purchases None Purchase Fee None Sales Charge (Load) Imposed on Reinvested Dividends None Redemption Fee None Account Service Fee Per Year (for certain fund account balances below $5,000,000) $25 Annual Fund Operating Expenses (Expenses that you pay each year as a percentage of the value of your investment) Management Fees 0.00% 12b-1 Distribution Fee None Other Expenses 0.00% Acquired Fund Fees and Expenses 0.08% Total Annual Fund Operating Expenses 0.08%",
+  "number_format": "en",
+  "values": {
+   "total_expenses_pct": 0.08
+  }
+ },
+ "has_participation_rate": {
+  "ref": "Vanguard 2026a",
+  "title": "How America Saves",
+  "doc": "sources/text/vanguard_how_america_saves_2026.txt",
+  "sha256": "34b506ce8fc621311d58263973b555a218a7ab7083646e34d2c8d83c781c49c7",
+  "fetched_from": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/has/2026/pdf/HowAmericaSaves2026.pdf (PDF sha256 df79916eaa0664923bb15c99c4cc1481019a9f97c55a90b6fc880d99ae758c79, fetched 2026-10-21; stored beside the text as sources/text/vanguard_how_america_saves_2026.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "6",
+  "locator": "Highlights at a glance, row 'Plan-weighted participation rate' (body text page 31); columns 2021, 2022, 2023, 2024, 2025; the 2025 cell carries the asterisk for an estimate",
+  "quote": "Plan-weighted participation rate Figure 21 84% 85% 85% 85% 86%",
+  "number_format": "en",
+  "values": {
+   "figure_no": 21,
+   "y2021_pct": 84,
+   "y2022_pct": 85,
+   "y2023_pct": 85,
+   "y2024_pct": 85,
+   "y2025_pct": 86
+  },
+  "note": "Vanguard-only sample: plans for which Vanguard is recordkeeper (see has_sample), not a national sample. The 2025 figure is an estimate (see has_2025_estimates; has_estimation_method says how it was made)."
+ },
+ "has_average_deferral": {
+  "ref": "Vanguard 2026a",
+  "title": "How America Saves",
+  "doc": "sources/text/vanguard_how_america_saves_2026.txt",
+  "sha256": "34b506ce8fc621311d58263973b555a218a7ab7083646e34d2c8d83c781c49c7",
+  "fetched_from": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/has/2026/pdf/HowAmericaSaves2026.pdf (PDF sha256 df79916eaa0664923bb15c99c4cc1481019a9f97c55a90b6fc880d99ae758c79, fetched 2026-10-21; stored beside the text as sources/text/vanguard_how_america_saves_2026.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "6",
+  "locator": "Highlights at a glance, row 'Average participant deferral rate' (body text page 36); columns 2021, 2022, 2023, 2024, 2025; the 2025 cell carries the asterisk for an estimate",
+  "quote": "Average participant deferral rate Figure 29 7.4% 7.3% 7.7% 7.6% 7.6%",
+  "number_format": "en",
+  "values": {
+   "figure_no": 29,
+   "y2021_pct": 7.4,
+   "y2022_pct": 7.3,
+   "y2023_pct": 7.7,
+   "y2024_pct": 7.6,
+   "y2025_pct": 7.6
+  },
+  "note": "Vanguard-only sample: plans for which Vanguard is recordkeeper (see has_sample), not a national sample. The deferral rate is the employee's own contribution only. The 2025 figure is an estimate (see has_2025_estimates; has_estimation_method says how it was made)."
+ },
+ "has_median_deferral": {
+  "ref": "Vanguard 2026a",
+  "title": "How America Saves",
+  "doc": "sources/text/vanguard_how_america_saves_2026.txt",
+  "sha256": "34b506ce8fc621311d58263973b555a218a7ab7083646e34d2c8d83c781c49c7",
+  "fetched_from": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/has/2026/pdf/HowAmericaSaves2026.pdf (PDF sha256 df79916eaa0664923bb15c99c4cc1481019a9f97c55a90b6fc880d99ae758c79, fetched 2026-10-21; stored beside the text as sources/text/vanguard_how_america_saves_2026.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "6",
+  "locator": "Highlights at a glance, row 'Median participant deferral rate' (body text page 36); columns 2021, 2022, 2023, 2024, 2025; the 2025 cell carries the asterisk for an estimate",
+  "quote": "Median participant deferral rate Figure 29 6.4% 6.2% 6.8% 6.7% 6.6%",
+  "number_format": "en",
+  "values": {
+   "figure_no": 29,
+   "y2021_pct": 6.4,
+   "y2022_pct": 6.2,
+   "y2023_pct": 6.8,
+   "y2024_pct": 6.7,
+   "y2025_pct": 6.6
+  },
+  "note": "Vanguard-only sample: plans for which Vanguard is recordkeeper (see has_sample), not a national sample. The 2025 figure is an estimate (see has_2025_estimates; has_estimation_method says how it was made)."
+ },
+ "has_total_contribution": {
+  "ref": "Vanguard 2026a",
+  "title": "How America Saves",
+  "doc": "sources/text/vanguard_how_america_saves_2026.txt",
+  "sha256": "34b506ce8fc621311d58263973b555a218a7ab7083646e34d2c8d83c781c49c7",
+  "fetched_from": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/has/2026/pdf/HowAmericaSaves2026.pdf (PDF sha256 df79916eaa0664923bb15c99c4cc1481019a9f97c55a90b6fc880d99ae758c79, fetched 2026-10-21; stored beside the text as sources/text/vanguard_how_america_saves_2026.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "6",
+  "locator": "Highlights at a glance, row 'Average total contribution rate (participant and employer)' (body text page 45); columns 2021, 2022, 2023, 2024, 2025; the 2025 cell carries the asterisk for an estimate",
+  "quote": "Average total contribution rate (participant and employer) Figure 44 11.6% 11.7% 12.0% 12.1% 12.1%",
+  "number_format": "en",
+  "values": {
+   "figure_no": 44,
+   "y2021_pct": 11.6,
+   "y2022_pct": 11.7,
+   "y2023_pct": 12.0,
+   "y2024_pct": 12.1,
+   "y2025_pct": 12.1
+  },
+  "note": "Vanguard-only sample: plans for which Vanguard is recordkeeper (see has_sample), not a national sample. Employee plus employer contributions as a share of pay. The 2025 figure is an estimate (see has_2025_estimates); the method sentence (has_estimation_method) names participation and deferral rates only."
+ },
+ "has_auto_enrollment": {
+  "ref": "Vanguard 2026a",
+  "title": "How America Saves",
+  "doc": "sources/text/vanguard_how_america_saves_2026.txt",
+  "sha256": "34b506ce8fc621311d58263973b555a218a7ab7083646e34d2c8d83c781c49c7",
+  "fetched_from": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/has/2026/pdf/HowAmericaSaves2026.pdf (PDF sha256 df79916eaa0664923bb15c99c4cc1481019a9f97c55a90b6fc880d99ae758c79, fetched 2026-10-21; stored beside the text as sources/text/vanguard_how_america_saves_2026.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "6",
+  "locator": "Highlights at a glance, row 'Plans with automatic enrollment' (body text page 27); columns 2021, 2022, 2023, 2024, 2025; this row has no estimate asterisk",
+  "quote": "Plans with automatic enrollment Figure 15 56% 58% 59% 61% 61%",
+  "number_format": "en",
+  "values": {
+   "figure_no": 15,
+   "y2021_pct": 56,
+   "y2022_pct": 58,
+   "y2023_pct": 59,
+   "y2024_pct": 61,
+   "y2025_pct": 61
+  },
+  "note": "Vanguard-only sample: share of Vanguard-recordkept plans, not of all US plans (the row carries no 2025 estimate mark)."
+ },
+ "has_2025_estimates": {
+  "ref": "Vanguard 2026a",
+  "title": "How America Saves",
+  "doc": "sources/text/vanguard_how_america_saves_2026.txt",
+  "sha256": "34b506ce8fc621311d58263973b555a218a7ab7083646e34d2c8d83c781c49c7",
+  "fetched_from": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/has/2026/pdf/HowAmericaSaves2026.pdf (PDF sha256 df79916eaa0664923bb15c99c4cc1481019a9f97c55a90b6fc880d99ae758c79, fetched 2026-10-21; stored beside the text as sources/text/vanguard_how_america_saves_2026.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "6",
+  "locator": "Highlights at a glance, footnote to the asterisk",
+  "quote": "These figures are estimated for 2025, as the data required to compute them will not be available until December 2026",
+  "values": {}
+ },
+ "has_sample": {
+  "ref": "Vanguard 2026a",
+  "title": "How America Saves",
+  "doc": "sources/text/vanguard_how_america_saves_2026.txt",
+  "sha256": "34b506ce8fc621311d58263973b555a218a7ab7083646e34d2c8d83c781c49c7",
+  "fetched_from": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/has/2026/pdf/HowAmericaSaves2026.pdf (PDF sha256 df79916eaa0664923bb15c99c4cc1481019a9f97c55a90b6fc880d99ae758c79, fetched 2026-10-21; stored beside the text as sources/text/vanguard_how_america_saves_2026.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "109",
+  "locator": "Methodology, 'Vanguard participation and deferral rates': the sample is Vanguard's own recordkeeping clients, and selected plan design features come from the same data",
+  "quote": "Data on participation and deferral rates is drawn from a subset of Vanguard recordkeeping clients for whom we perform nondiscrimination testing. Selected plan design features are also derived from this data",
+  "values": {},
+  "note": "How America Saves covers plans recordkept by Vanguard only, so its figures describe Vanguard's clients, not all US plans."
+ },
+ "has_estimation_method": {
+  "ref": "Vanguard 2026a",
+  "title": "How America Saves",
+  "doc": "sources/text/vanguard_how_america_saves_2026.txt",
+  "sha256": "34b506ce8fc621311d58263973b555a218a7ab7083646e34d2c8d83c781c49c7",
+  "fetched_from": "https://workplace.vanguard.com/content/dam/inst/iig-transformation/has/2026/pdf/HowAmericaSaves2026.pdf (PDF sha256 df79916eaa0664923bb15c99c4cc1481019a9f97c55a90b6fc880d99ae758c79, fetched 2026-10-21; stored beside the text as sources/text/vanguard_how_america_saves_2026.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "109",
+  "locator": "Methodology, 'Vanguard participation and deferral rates', foot of the left column: how the 2025 participation and deferral rates were estimated (the next column applies the same approach to plan design features)",
+  "quote": "Based on the trends experienced over previous years, we have estimated participation and deferral rates for 2025. The estimations use a combination of linear extrapolation and subjective estimation",
+  "values": {}
+ },
+ "irs_deferral_limit_2026": {
+  "ref": "Internal Revenue Service 2026a",
+  "title": "Retirement topics",
+  "doc": "sources/text/irs_401k_contribution_limits.txt",
+  "sha256": "7c4b68b2338cbf58ee4ce59625f73c74a780793774485385520acd493dc5f048",
+  "fetched_from": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-401k-and-profit-sharing-plan-contribution-limits (HTML sha256 3ee06bd413e7ef552ee7124f840b0ed3297d8b3c83be4cf472a2a28c3a9f6cbb, fetched 2026-10-21; page last reviewed or updated 08-Apr-2026; stored beside the text as sources/text/irs_401k_contribution_limits.html)",
+  "extracted_with": "HTML tag-stripped with Python html.parser (script, style, noscript and svg dropped; the title element kept)",
+  "page": "web page",
+  "locator": "Section on elective deferral limits: the 2026 limit on employee elective deferrals",
+  "quote": "The limit on employee elective deferrals (for traditional and safe harbor plans) is: $24,500 in 2026",
+  "number_format": "en",
+  "values": {
+   "deferral_limit_usd": 24500,
+   "year": 2026
+  }
+ },
+ "irs_early_additional_tax": {
+  "ref": "Internal Revenue Service 2026b",
+  "title": "Topic no. 558, Additional tax on early distributions from retirement plans other than IRAs",
+  "doc": "sources/text/irs_topic_558.txt",
+  "sha256": "e537db8a60a76c54e0c52afd6b5f7ddda294f759f847fddf325b4d37ef815143",
+  "fetched_from": "https://www.irs.gov/taxtopics/tc558 (HTML sha256 735181897dba1b9ebfc297421c1483cbc90f10311624128fdaa36c30d2de7c0d, fetched 2026-10-21; page last reviewed or updated 24-Sep-2026; stored beside the text as sources/text/irs_topic_558.html)",
+  "extracted_with": "HTML tag-stripped with Python html.parser (script, style, noscript and svg dropped; the title element kept)",
+  "page": "web page",
+  "locator": "First paragraph: the additional tax on early distributions",
+  "quote": "the law imposes a 10% additional tax on certain early distributions from certain retirement plans",
+  "number_format": "en",
+  "values": {
+   "additional_tax_pct": 10
+  }
+ },
+ "irs_early_age": {
+  "ref": "Internal Revenue Service 2026b",
+  "title": "Topic no. 558, Additional tax on early distributions from retirement plans other than IRAs",
+  "doc": "sources/text/irs_topic_558.txt",
+  "sha256": "e537db8a60a76c54e0c52afd6b5f7ddda294f759f847fddf325b4d37ef815143",
+  "fetched_from": "https://www.irs.gov/taxtopics/tc558 (HTML sha256 735181897dba1b9ebfc297421c1483cbc90f10311624128fdaa36c30d2de7c0d, fetched 2026-10-21; page last reviewed or updated 24-Sep-2026; stored beside the text as sources/text/irs_topic_558.html)",
+  "extracted_with": "HTML tag-stripped with Python html.parser (script, style, noscript and svg dropped; the title element kept)",
+  "page": "web page",
+  "locator": "First paragraph: which distributions count as early (before age 59 and a half)",
+  "quote": "Generally, early distributions are those you receive from a qualified retirement plan or deferred annuity contract before reaching age 59½",
+  "number_format": "en",
+  "values": {
+   "age_years": 59.5
+  }
+ },
+ "dol_fab_quarterly_statements": {
+  "ref": "Employee Benefits Security Administration 2006",
+  "title": "Periodic pension benefit statements",
+  "doc": "sources/text/dol_fab_2006-03.txt",
+  "sha256": "c1d00caab9ccf7f3026b010fe1f863521d5f31ba88993839d1765801287fccf1",
+  "fetched_from": "https://web.archive.org/web/20190619215402id_/https://www.dol.gov/sites/default/files/ebsa/employers-and-advisers/guidance/field-assistance-bulletins/2006-03.pdf (Internet Archive copy of the DOL file; PDF sha256 7f484ee60b957fc3c3d69f66b160fe6b7ea3b68db98c848c5b784a4e57187c76, whose SHA-1 matches the CDX digest R7Q7VJ47YSSR4P4RV77RAQG3ESVMN4QH of that capture; fetched 2026-10-21; stored beside the text as sources/text/dol_fab_2006-03.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "1",
+  "locator": "Field Assistance Bulletin No. 2006-03 (December 20, 2006), Background: ERISA section 105 as amended by the Pension Protection Act of 2006 requires a statement at least once each quarter for participant-directed individual account plans",
+  "quote": "at least once each quarter, in the case of individual account plans that permit participants to direct their investments",
+  "values": {}
+ },
+ "bpjs_ir2024_jht_active": {
+  "ref": "BPJS Ketenagakerjaan 2025",
+  "title": "Integrated Report 2024",
+  "doc": "sources/text/bpjs_ir_2024.txt",
+  "sha256": "f23393646c7ce04a29444fb8ca55bb99ba77e9949ba99fac2a2a08177577a7f1",
+  "fetched_from": "https://www.bpjsketenagakerjaan.go.id/assets/uploads/laporan_tahunan/Laporan_Terintegrasi_BPJS_Ketenagakerjaan_2024_5mb_publish.pdf (PDF sha256 a052bb90e28930c441a1516462fc6f9de3f598458b6bfe42e8eae459dcd6c993, fetched 2026-10-21; stored beside the text as sources/text/bpjs_ir_2024.pdf)",
+  "extracted_with": "pdftotext (reading order, without -layout: the page is set in two columns and -layout interleaves them line by line)",
+  "page": "92",
+  "locator": "Membership section, list headed 'Rincian peserta aktif per program adalah sebagai berikut' (active members by program, position to December 2024), item 2: JHT, with wage earners (PU) and non-wage earners (BPU)",
+  "quote": "Peserta program JHT sebanyak 19.100.050 yang terdiri dari PU sebanyak 18.425.867 dan BPU sebanyak 674.183",
+  "number_format": "id",
+  "values": {
+   "jht_active_members": 19100050,
+   "jht_active_wage_earners": 18425867,
+   "jht_active_non_wage_earners": 674183
+  },
+  "note": "The only JHT-specific active-member count in the text layer of the 2020 to 2025 integrated reports (all six searched, in both pdftotext modes). The source vet read 2022, 2023 and 2025 JHT counts from image-only LK/LPP infographics, which have no text to quote."
+ },
+ "bpjs_ir2024_active_list_heading": {
+  "ref": "BPJS Ketenagakerjaan 2025",
+  "title": "Integrated Report 2024",
+  "doc": "sources/text/bpjs_ir_2024.txt",
+  "sha256": "f23393646c7ce04a29444fb8ca55bb99ba77e9949ba99fac2a2a08177577a7f1",
+  "fetched_from": "https://www.bpjsketenagakerjaan.go.id/assets/uploads/laporan_tahunan/Laporan_Terintegrasi_BPJS_Ketenagakerjaan_2024_5mb_publish.pdf (PDF sha256 a052bb90e28930c441a1516462fc6f9de3f598458b6bfe42e8eae459dcd6c993, fetched 2026-10-21; stored beside the text as sources/text/bpjs_ir_2024.pdf)",
+  "extracted_with": "pdftotext (reading order, without -layout: the page is set in two columns and -layout interleaves them line by line)",
+  "page": "92",
+  "locator": "Membership section: the heading of the list that holds the JHT count, which marks those counts as active members",
+  "quote": "Rincian peserta aktif per program adalah sebagai berikut",
+  "values": {}
+ },
+ "bpjs_ir2024_jmo_balance_feature": {
+  "ref": "BPJS Ketenagakerjaan 2025",
+  "title": "Integrated Report 2024",
+  "doc": "sources/text/bpjs_ir_2024.txt",
+  "sha256": "f23393646c7ce04a29444fb8ca55bb99ba77e9949ba99fac2a2a08177577a7f1",
+  "fetched_from": "https://www.bpjsketenagakerjaan.go.id/assets/uploads/laporan_tahunan/Laporan_Terintegrasi_BPJS_Ketenagakerjaan_2024_5mb_publish.pdf (PDF sha256 a052bb90e28930c441a1516462fc6f9de3f598458b6bfe42e8eae459dcd6c993, fetched 2026-10-21; stored beside the text as sources/text/bpjs_ir_2024.pdf)",
+  "extracted_with": "pdftotext (reading order, without -layout: the page is set in two columns and -layout interleaves them line by line)",
+  "page": "142 (printed page 140)",
+  "locator": "Integrated Report 2024, list of JMO features",
+  "quote": "Cek saldo dan histori iuran",
+  "values": {},
+  "note": "JMO's features include checking the balance and the history of contributions."
+ },
+ "bpjs_ir2025_jmo_users": {
+  "ref": "BPJS Ketenagakerjaan 2026",
+  "title": "2025 Laporan Terintegrasi",
+  "doc": "sources/text/bpjs_ir_2025.txt",
+  "sha256": "af3643231a6c1c48516079c639894d06f801cfdac82bea661741db186a255550",
+  "fetched_from": "https://www.bpjsketenagakerjaan.go.id/assets/uploads/laporan_tahunan/IR_2025.pdf (PDF sha256 fb2c05e48895a35c9e9e3be498c41655d1b3070fb8320ca569b92708fe451bc0, fetched 2026-10-21; stored beside the text as sources/text/bpjs_ir_2025.pdf)",
+  "extracted_with": "pdftotext -layout",
+  "page": "99",
+  "locator": "JMO (Jamsostek Mobile) table under the header row 'Keterangan 2025 2024 2023', row 'Pengguna JMO' (registered JMO users, running totals to each reporting period; see note; the table does not say how many of them checked a balance)",
+  "quote": "Pengguna JMO 33.682.397 25.384.302 21.523.103",
+  "number_format": "id",
+  "values": {
+   "users_2025": 33682397,
+   "users_2024": 25384302,
+   "users_2023": 21523103
+  },
+  "note": "The prose above this table on the same page (PDF p.99, left column) calls the 2025 figure the registered participants using the JMO app, counted up to the 2025 reporting period ('hingga periode pelaporan tahun 2025 tercatat jumlah peserta terdaftar pengguna aplikasi JMO'). The row is therefore read as running totals of registered users, not users active within each year; reading the 2024 and 2023 columns the same way is an inference from the shared row. That sentence also prints a year-on-year growth of '(41,5%)' and the count as '33.682.397 juta'; both disagree with the table (its own 2025 and 2024 values do not give that growth, and 'juta' after a full count is a unit slip), so the post uses the table values only and never that 41.5% or '33.682.397 juta'. The sentence is interleaved with the next column in the stored -layout text, so it is described here, not quoted."
+ },
+ "bpjs_ir2022_brand_awareness": {
+  "ref": "BPJS Ketenagakerjaan 2023",
+  "title": "Laporan Tahunan Terintegrasi 2022",
+  "doc": "sources/text/bpjs_ir_2022.txt",
+  "sha256": "0f89ddb88c7ef0e5e6132a4bdc50110fe4bf20896265b9a4f88f3f5a0729386c",
+  "fetched_from": "https://www.bpjsketenagakerjaan.go.id/assets/uploads/laporan_tahunan/BPJS_2022_LO19-_(1).pdf (PDF sha256 54c879ae464b01b9396cb72253fa48dac576baa0c10efb47a341a783ec19cf4b, fetched 2026-10-21; stored beside the text as sources/text/bpjs_ir_2022.pdf)",
+  "extracted_with": "pdftotext (reading order, without -layout: in -layout output the Solusi column interleaves this table cell line by line)",
+  "page": "88",
+  "locator": "Table 'Tantangan dan Solusi Perluasan Kepesertaan', column 'Kendala' (obstacles to wider membership), first row",
+  "quote": "Brand awareness masih belum tinggi dibandingkan dengan BPJS lainnya",
+  "values": {}
+ },
+ "bpjs_simulator_assumed_return": {
+  "ref": "BPJS Ketenagakerjaan n.d.",
+  "title": "Pengembangan Saldo JHT",
+  "doc": "sources/text/bpjs_tetap_sejahtera.txt",
+  "sha256": "95f3c61483b4bad610b44bf1ecf34a33168430005ec2d7d30d077c9dcb3f2f6b",
+  "fetched_from": "https://www.bpjsketenagakerjaan.go.id/tetap-sejahtera.html (HTML sha256 fc7c66d7c05752b1d42b2fa0ca5b9721d3f3f58128bb55bbaf36ff29c95f85cc, fetched 2026-10-21; the page carries no date; stored beside the text as sources/text/bpjs_tetap_sejahtera.html)",
+  "extracted_with": "HTML tag-stripped with Python html.parser (script, style, noscript and svg dropped; the title element kept)",
+  "page": "web page",
+  "locator": "JHT simulator ('Simulasikan Manfaat JHT Disini'), list of assumptions under 'Perhitungan simulasi di atas dengan asumsi'",
+  "quote": "Besarnya pengembangan 5% per tahun",
+  "number_format": "id",
+  "values": {
+   "assumed_return_pct": 5
+  }
+ }
+}

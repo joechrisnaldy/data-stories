@@ -1,0 +1,75 @@
+# Gate configuration for Post 28. Run from Projects/analytics-blog:  python3 -m gate jht-401k
+[post]
+slug = "forced-to-save-and-i-never-knew-it"
+source = "draft/forced-to-save-and-i-never-knew-it.src.md"
+rendered = "draft/forced-to-save-and-i-never-knew-it.md"
+results = "results.json"
+sources = "docs/sources.json"
+build = ["build_analysis.py"]
+charts = "make_charts.py"
+chart_dir = "charts"
+docx = "draft/forced-to-save-and-i-never-knew-it.docx"
+mdx = "../../joechrisnaldy-portfolio/site/src/content/blog/forced-to-save-and-i-never-knew-it.mdx"
+extra = [["docs/README.src.md", "README.md"], ["docs/data-README.src.md", "data/README.md"]]
+
+# ---------------------------------------------------------------------------------------------------
+# [allow]: words or digits that are not results. Every entry says why. Stale entries fail the gate.
+[allow]
+"Post 28" = "the series index of this post"
+"401(k)" = "the plan's name, from section 401(k) of the US tax code; not a figure"
+"S&P 500" = "the index's name; not a figure"
+"90/10" = "the mix's name: growth.rules.stock_pct over growth.rules.bond_pct (design R4)"
+"10-year" = "the maturity of the Treasury bond series (Damodaran's 10-year US T-bond); not a result"
+"2009 and 2013" = "the years of the 2009 incentive and the 2013 one-off payouts (design R3; the incentive and oneoff rows of data/jht_rates.csv)"
+"the incentives of 2008 and 2009 and the payouts of 2013" = "chart 1 note: the bonus years of design R3 (the incentive and oneoff rows of data/jht_rates.csv)"
+"For 2015" = "the year whose figure is the year-end rate BPJS reported (the yearend_reported row of data/jht_rates.csv; amendment A1)"
+"2015: the year-end rate BPJS reported" = "chart 1 and chart 4 notes: the same 2015 row"
+"2015 is the year-end rate BPJS reported" = "chart 2 note: the same 2015 row"
+"from 2014 to 2025" = "design R8's window (published.n years)"
+"in 2025" = "the year of the JMO count (sources.json bpjs_ir2025_jmo_users, users_2025)"
+"2022 report" = "BPJS's integrated report for 2022 (BPJS Ketenagakerjaan, 2023)"
+"end of 2024" = "the date of the JHT active-member count (sources.json bpjs_ir2024_jht_active)"
+"2026 prospectus" = "the date of the stored Vanguard prospectus (amendment A2)"
+"How America Saves 2026" = "the report's title (Vanguard, 2026a)"
+"PP 46/2015 Pasal 16" = "the regulation and article that set the JHT contribution rate (sources.json pp46_jht_contribution)"
+"PP 45/2015 Pasal 28" = "the regulation and article that set the JP contribution rate (sources.json pp45_jp_split)"
+"1 January 2026" = "the date the CPF rates are in force (design R7; contributions.cpf.in_force)"
+"(1 + the year's JHT rate) divided by (1 + that year's December-to-December inflation), less 1" = "chart 2 note: design R6's formula"
+"one-year" = "the term of the deposit rate in PP 46/2015 Pasal 27(3) (sources.json pp46_rate_floor)"
+"one payment a year" = "design R2's saver model: one contribution a year"
+"Two savers, two currencies, two kinds of risk" = "the post's two sides, JHT in Indonesia and the 401(k) in the US"
+"four ways" = "the four lines of design R3 and R4 (growth: jht, jht_base_only, sp500, mix_90_10)"
+"at least once each quarter" = "the DOL bulletin's wording of the quarterly statement rule (sources.json dol_fab_quarterly_statements)"
+"half the year's rate" = "design R2: the year's contribution is credited half the year's rate"
+"half of it on the year's money" = "chart 1 note: design R2's crediting rule"
+"1 = got back exactly what was put in" = "chart 1 note: the line at a ratio of 1, the definition of break-even in design R5"
+"below zero" = "the sign of the real rate (design R6), not a figure"
+"the 2009 incentive" = "the 2009 incentive row of data/jht_rates.csv (design R3)"
+"the 2013 payouts" = "the two 2013 one-off payout rows of data/jht_rates.csv (design R3; amendment A1 names their base as an inference)"
+"for 2016 to 2020" = "data README: the years amendment A1 says take their rate from the reports' narrative sections (the 2016 to 2020 base rows of docs/jht-manifest.csv)"
+"a difference of two averages" = "chart 3 note: amendment A2's employer share, the average total less the average deferral"
+"net in the last three" = "chart 4 note: the integrated reports for 2023, 2024 and 2025 label the yield net (docs/jht-manifest.csv yield notes)"
+
+# ---------------------------------------------------------------------------------------------------
+# [claims]: every universal, superlative or causal phrase, with the result key or source that licenses it.
+[claims]
+"Forced to Save, and I Never Knew It" = "the owner's own account (answers of 2026-10-22): he worked on a payroll in Indonesia and was not aware of the BPJS Ketenagakerjaan JHT deduction"
+"My home country, I thought, had nothing like it" = "the owner's belief before this post, in his words of 2026-10-21 ('My home country doesn't have that')"
+"at least the average one-year deposit rate at state banks" = "sources.json pp46_rate_floor: 'paling sedikit sebesar rata-rata bunga deposito counter rate bank pemerintah untuk jangka waktu 1 (satu) tahun'"
+"at least once each quarter" = "sources.json dol_fab_quarterly_statements: the quarterly statement for plans that let participants direct their investments"
+
+# ---------------------------------------------------------------------------------------------------
+# [pairs]: paragraphs that set like-for-like figures from different samples side by side while relying
+# on an n stated elsewhere. Each says where.
+[pairs]
+
+# ---------------------------------------------------------------------------------------------------
+# [published]: front matter and image alt text for the site page, each read on its own.
+[published]
+"seoTitle" = "Forced to Save, and I Never Knew It - Jonathan Chrisnaldy"
+"excerpt" = "The US 401(k) is voluntary, yet its savers watch their money grow. Indonesia already requires workers to save through JHT, and I did not know it existed. From {{growth.rules.first_year:year}} to {{growth.rules.last_year:year}}, the same yearly saving became {{growth.jht.multiple:dec1}} times what was put in at JHT's rate, after Indonesian inflation, and {{growth.sp500.multiple:dec1}} times in an S&P 500 fund, after US inflation. BPJS has not published the rate it credits to JHT balances for the years after {{published.last_credited_year:year}}."
+"metaDescription" = "What Indonesia can learn from the 401(k): JHT already requires workers to save, but BPJS has not published the rate it credits to JHT balances for the years after {{published.last_credited_year:year}}. From {{growth.rules.first_year:year}} to {{growth.rules.last_year:year}}, the same yearly saving became {{growth.jht.multiple:dec1}} times what was put in at JHT's rate, after inflation."
+"alt:jh-1-growth.png" = "Line chart, {{growth.rules.first_year:year}} to {{growth.rules.last_year:year}}, of the real balance per unit of real money put in for the same yearly saving. It ends at {{growth.sp500.multiple:dec1}} for an S&P 500 fund and {{growth.mix_90_10.multiple:dec1}} for a 90/10 stock and bond mix, after US inflation, and at {{growth.jht.multiple:dec1}} for JHT and {{growth.jht_base_only.multiple:dec1}} for JHT at its base rate, after Indonesian inflation."
+"alt:jh-2-jht-real.png" = "Bar chart of JHT's rate after Indonesian inflation each year from {{growth.rules.first_year:year}} to {{growth.rules.last_year:year}}: below zero in {{year_by_year.negative_real_imf.n:words}} of {{year_by_year.n:words}} years, {{year_by_year.negative_real_imf.first:year}} and {{year_by_year.negative_real_imf.last:year}}, with circles for the same rate against BPS's published December inflation in some years."
+"alt:jh-3-contributions.png" = "Bar chart of contribution rates each year, worker and employer: Singapore's CPF, {{contributions.cpf.total_pct:int}} percent for workers aged {{contributions.cpf.max_age:int}} and under, on wages in the top band; a 401(k) in plans Vanguard keeps records for, {{contributions.k401.total_pct:dec1}} percent on average among participants in {{contributions.k401.year:year}}; JHT, {{contributions.jht.total_pct:dec1}} percent; JP, a separate pension, {{contributions.jp.total_pct:int}} percent."
+"alt:jh-4-shown.png" = "Bar chart of the JHT fund's investment yield as BPJS published it from 2014 to 2025, with dots for the rate set for member balances, which BPJS has not published for the years after {{published.last_credited_year:year}}."
