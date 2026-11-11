@@ -1,0 +1,105 @@
+{
+ "bi_cities": {
+  "doc": "sources/indonesia/SHPR_Tw_III_2026.txt",
+  "extracted_with": "pdftotext",
+  "fetched_from": "https://www.bi.go.id/id/publikasi/laporan/Pages/SHPR_Tw_III_2026.aspx (PDF sha256 be1e921e89576c90284f5cc3b87920b8b5a8a62b8a2f4a99c7049e76e86dae36, released 6 November 2026, retrieved 2026-11-10; stored beside the text)",
+  "locator": "methodology box (Metodologi)",
+  "number_format": "id",
+  "page": "6",
+  "quote": "total cakupan kota pelaksana SHPR menjadi 18 kota",
+  "ref": "Bank Indonesia 2026",
+  "sha256": "ba2fcb88d9dcbff007f4d989d07df2c844f70daa2bdcad47a781f21cfdf8c11c",
+  "title": "Survei harga properti residensial",
+  "values": {
+   "cities": 18
+  }
+ },
+ "census_nonresponse": {
+  "doc": "sources/income/bee_rothbaum_2026.txt",
+  "extracted_with": "HTML tags stripped, page title first (main session, 2026-11-09)",
+  "fetched_from": "https://www.census.gov/newsroom/blogs/research-matters/2026/09/evaluating-nonresponse-bias.html (HTML sha256 a3ece7f9ad3e5ac56d862188d2aa2d37190d3b2e6a05968d8b7468f1291b7631, retrieved 2026-11-10; stored beside the text)",
+  "locator": "section 'Impact of Nonresponse Bias on Income and Poverty Estimates'",
+  "page": "1",
+  "quote": "about 2% to 4% higher than the alternative estimates",
+  "ref": "Bee 2026",
+  "sha256": "e35c61834ef8c96ab4354703a2e4e40cfd5d70c61fdbe57e881c03162596c429",
+  "title": "Using administrative data to evaluate nonresponse bias in the 2026 Current Population Survey Annual Social and Economic Supplement",
+  "values": {
+   "high_pct": 4,
+   "low_pct": 2
+  }
+ },
+ "pew_boomers": {
+  "doc": "sources/generations/pew_defining_generations_2019.txt",
+  "extracted_with": "HTML tags stripped, page title first (main session, 2026-11-09)",
+  "fetched_from": "https://www.pewresearch.org/short-reads/2019/01/17/where-millennials-end-and-generation-z-begins/ (HTML sha256 2b9fb7bf2b6e29ae6df7215df650ba0d0ebe62a6101046716ad570987c5ef4cd, retrieved 2026-11-10; stored beside the text as sources/generations/pew_defining_generations_2019.html)",
+  "locator": "paragraph on the span of each generation",
+  "page": "1",
+  "quote": "births in 1946 and a significant decline in birthrates after 1964",
+  "ref": "Dimock 2019",
+  "sha256": "bbd9c931924cd140269b8a8a1a140457114cddca27debc2499b3ba0125cce769",
+  "title": "Where Millennials end and Generation Z begins",
+  "values": {
+   "first": 1946,
+   "last": 1964
+  }
+ },
+ "pew_genx": {
+  "doc": "sources/generations/pew_defining_generations_2019.txt",
+  "extracted_with": "HTML tags stripped, page title first (main session, 2026-11-09)",
+  "fetched_from": "https://www.pewresearch.org/short-reads/2019/01/17/where-millennials-end-and-generation-z-begins/ (HTML sha256 2b9fb7bf2b6e29ae6df7215df650ba0d0ebe62a6101046716ad570987c5ef4cd, retrieved 2026-11-10; stored beside the text as sources/generations/pew_defining_generations_2019.html)",
+  "locator": "paragraph on the span of each generation",
+  "page": "1",
+  "quote": "Generation X (born between 1965 and 1980)",
+  "ref": "Dimock 2019",
+  "sha256": "bbd9c931924cd140269b8a8a1a140457114cddca27debc2499b3ba0125cce769",
+  "title": "Where Millennials end and Generation Z begins",
+  "values": {
+   "first": 1965,
+   "last": 1980
+  }
+ },
+ "pew_genz": {
+  "doc": "sources/generations/pew_defining_generations_2019.txt",
+  "extracted_with": "HTML tags stripped, page title first (main session, 2026-11-09)",
+  "fetched_from": "https://www.pewresearch.org/short-reads/2019/01/17/where-millennials-end-and-generation-z-begins/ (HTML sha256 2b9fb7bf2b6e29ae6df7215df650ba0d0ebe62a6101046716ad570987c5ef4cd, retrieved 2026-11-10; stored beside the text as sources/generations/pew_defining_generations_2019.html)",
+  "locator": "opening paragraphs",
+  "page": "1",
+  "quote": "anyone born from 1997 onward is part of a new generation",
+  "ref": "Dimock 2019",
+  "sha256": "bbd9c931924cd140269b8a8a1a140457114cddca27debc2499b3ba0125cce769",
+  "title": "Where Millennials end and Generation Z begins",
+  "values": {
+   "first": 1997
+  }
+ },
+ "pew_millennials": {
+  "doc": "sources/generations/pew_defining_generations_2019.txt",
+  "extracted_with": "HTML tags stripped, page title first (main session, 2026-11-09)",
+  "fetched_from": "https://www.pewresearch.org/short-reads/2019/01/17/where-millennials-end-and-generation-z-begins/ (HTML sha256 2b9fb7bf2b6e29ae6df7215df650ba0d0ebe62a6101046716ad570987c5ef4cd, retrieved 2026-11-10; stored beside the text as sources/generations/pew_defining_generations_2019.html)",
+  "locator": "opening paragraphs",
+  "page": "1",
+  "quote": "Anyone born between 1981 and 1996",
+  "ref": "Dimock 2019",
+  "sha256": "bbd9c931924cd140269b8a8a1a140457114cddca27debc2499b3ba0125cce769",
+  "title": "Where Millennials end and Generation Z begins",
+  "values": {
+   "first": 1981,
+   "last": 1996
+  }
+ },
+ "yale_chatgpt_release": {
+  "doc": "sources/ai/yale_publication_1154.txt",
+  "extracted_with": "pdftotext -layout",
+  "fetched_from": "https://budgetlab.yale.edu/research/evaluating-impact-ai-labor-market-current-state-affairs (the Budget Lab's PDF rendering of the page, sha256 a9dbae4bcce74fd8e8a295f8b66e7017946bb64bf890561c3bb58c580fd6daa4, retrieved 2026-11-10; stored beside the text as sources/ai/yale_publication_1154.pdf)",
+  "locator": "opening section, the paragraph before the list of questions",
+  "page": "2",
+  "quote": "ChatGPT’s release in November 2022",
+  "ref": "Gimbel 2025",
+  "sha256": "1c53b9188f0a76ebaae23baab90d179c72fbaf09bb979e93e07e6f939e0dae6e",
+  "title": "Evaluating the impact of AI on the labor market",
+  "values": {
+   "release_year": 2022
+  }
+ }
+}

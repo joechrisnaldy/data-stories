@@ -1,0 +1,99 @@
+# Gate configuration for Post 29. Run from Projects/analytics-blog:  python3 -m gate genz-house-chase
+# The slug follows the working title, final only once the results support it (owner, 2026-11-09).
+[post]
+slug = "skip-the-matcha-still-no-house"
+source = "draft/skip-the-matcha-still-no-house.src.md"
+rendered = "draft/skip-the-matcha-still-no-house.md"
+results = "results.json"
+sources = "docs/sources.json"
+build = ["build_analysis.py"]
+charts = "make_charts.py"
+chart_dir = "charts"
+docx = "draft/skip-the-matcha-still-no-house.docx"
+mdx = "../../joechrisnaldy-portfolio/site/src/content/blog/skip-the-matcha-still-no-house.mdx"
+extra = [["docs/README.src.md", "README.md"], ["docs/data-README.src.md", "data/README.md"]]
+
+# ---------------------------------------------------------------------------------------------------
+# [allow]: words or digits that are not results. Every entry says why. Stale entries fail the gate.
+[allow]
+"Post 29" = "the series index of this post"
+"turns 25" = "design R1: the saver's age in the start year (AGE_START in build_analysis.py); not a result"
+"turned 25" = "design R1: the saver's age in the start year (AGE_START in build_analysis.py); not a result"
+"25 to 34" = "the age bracket's name in Census Table H-10, BLS series LEU0252888500 and the CE's age groups; not a figure"
+"35 to 44" = "the next Table H-10 age bracket's name (design R2)"
+"under 35" = "the HVS Table 17 age group's name (design R16)"
+"under 25" = "the HVS Table 17 and CE age group's name (design R12, R16)"
+"22 to 27" = "the New York Fed's definition of recent college graduates (docs/provenance-audit.md)"
+"22 to 25" = "the age band Brynjolfsson et al. (2026) study (docs/provenance-audit.md)"
+"16 to 65" = "the New York Fed's definition of all workers (docs/provenance-audit.md)"
+"3-month" = "the Treasury bill's maturity (H.15 series RIFSGFSM03_N.A); not a result"
+"one full-time salary" = "the measure's name: one earner (design R11)"
+"One full-time salary" = "the measure's name: one earner (design R11)"
+"Table H-10" = "the Census table's name"
+"Table 17" = "the Census HVS table's name"
+"three-year average" = "design R12's smoothing window, not a result"
+"two-earner" = "a kind of household, not a figure"
+"eleven months" = "BLS and Census footnotes: the final year's annual averages leave out October (BLS le.footnote code 11; HVS Table 17 footnote)"
+"CC BY 4.0" = "the licence's name"
+"four quarters" = "the FHFA index is quarterly; the build takes the mean of the year's four quarters (design R8(b))"
+"October 2025" = "the New York Fed's chart note: it estimated October 2025, a month the survey skipped (docs/provenance-audit.md)"
+"from age 25" = "design R1: the saver's age in the start year (AGE_START in build_analysis.py); not a result"
+"three-month moving averages" = "the New York Fed's smoothing of its published rates (docs/provenance-audit.md)"
+"November 2, 2026" = "the New York Fed release the data file comes from (data README)"
+
+# ---------------------------------------------------------------------------------------------------
+# [claims]: every universal, superlative or causal phrase, with the result key or source that licenses it.
+[claims]
+"because their savings could catch up with the price" = "the owner's stated view, his words of 2026-11-09: 'can save money, to buy home because the saving can catch up the housing'; the post tests it (design R1 to R7)"
+"Gen Z can't." = "the owner's stated view, his words of 2026-11-09: 'for Gen Z it's not'; tested by design R6 and R7"
+"Gen Z can't, so small spending is rational" = "the owner's stated view, his words of 2026-11-09 (README summary of the opening)"
+"every later change dated" = "docs/2026-11-09-genz-house-chase-design.md section 10: each amendment carries its date"
+"the oldest of Gen Z" = "src pew_genz (born from 1997) and chase.generations.genz.first_start, the first Gen Z birth year plus 25"
+"In all nine versions I ran" = "robustness.all_millennials_longer is true across robustness.n versions (results.json)"
+"Both rates count only people who head a household" = "HVS definitions: the homeownership rate divides owner households by households (sources/income/ann25def.pdf p. 9; docs/provenance-audit.md)"
+"the closest it comes is snacks and nonalcoholic drinks bought away from home" = "design R10, owner-approved; the sentence is scoped to a drink bought out: among items bought away from home, data/bls_cx_item.txt lists no drink item narrower by product than SNKNABEV, whose child items split it by place of purchase only"
+"the jobs most exposed to AI" = "Brynjolfsson et al. (2026): the most exposed occupational quintiles (sources/ai/stanford_Canaries_August2026.pdf p7; docs/provenance-audit.md)"
+"rather than proving a cause" = "Brynjolfsson et al. (2026) say the work is descriptive and not causal (stored PDF p1, p4, p5; docs/provenance-audit.md)"
+"The data I have can't show it." = "design R14: the New York Fed series and the other stored data measure outcomes by group and identify no cause"
+"publishes no house prices in rupiah, only an index" = "Bank Indonesia's metadata: 'Data harga dinyatakan dalam bentuk indeks' (docs/provenance-audit.md, Bank Indonesia section)"
+"so I can't run the chase there" = "design R15: with no price levels there is no down payment to chase"
+"it has been above every month" = "grads.streak: each month from streak.start_year and streak.start_month through the file's last month (results.json)"
+"the rate for all workers" = "the New York Fed's series name 'All workers' (data/nyfed_college_labor_unemployment.csv header; docs/provenance-audit.md)"
+"for all workers" = "the New York Fed's series name 'All workers' (data/nyfed_college_labor_unemployment.csv header)"
+"recent college graduates and all workers" = "the New York Fed's series names 'Recent graduates' and 'All workers' (data file header)"
+"and of all workers" = "the New York Fed's series name 'All workers' (data file header)"
+"all workers: aged 16 to 65" = "the New York Fed's definition of the all-workers series (docs/provenance-audit.md)"
+"all workers" = "the New York Fed's series name 'All workers' (chart 4 line label)"
+"all consumer units" = "the CE's group 'All Consumer Units' (data/bls_cx_characteristics.txt, LB04 code 01)"
+"recent graduates above all workers every month since January" = "grads.streak: each month from the streak's start through the file's last month (results.json)"
+"have been above all workers in every month since January" = "grads.streak: each month from the streak's start through the file's last month (results.json)"
+"The ChatGPT line is a date, not a cause." = "design R14: the chart marks a date and makes no causal claim"
+"The AI chart shows timing, not cause." = "design R14: the chart marks a date and makes no causal claim"
+"New houses only, built for sale" = "Census SOC definitions and scope: new houses built for sale (docs/provenance-audit.md)"
+"House Price Index, all transactions" = "the FHFA index's name (all-transactions)"
+"House Price Index, all-transactions" = "the FHFA index's name (all-transactions)"
+"Every BLS file is an Internet Archive copy" = "the round 1 source lens found each capture's digest equal to the stored file, directly or after gzip decoding (docs/round1-verdicts.json, item 118)"
+"Every BLS file here is an Internet Archive copy" = "the round 1 source lens found each capture's digest equal to the stored file, directly or after gzip decoding (docs/round1-verdicts.json, items 118 and 240)"
+"All-transactions indexes, United States and census divisions" = "the FHFA data set's title"
+"retroactive series using current methods (R-CPI-U-RS), all items" = "the BLS homepage's name for the series (sources/wages/r-cpi-u-rs-home.htm), with the workbook's All items label"
+"Consumer Price Index for All Urban Consumers (CPI-U), U.S. city average, all items" = "the BLS series title"
+"Median and mean household income of all households by age of householder" = "the Census table's title"
+"cost young households at most" = "treats.narrow.max_target_pct is the largest share over the years of the narrow line (results.json)"
+"including those that buy none" = "BLS CE Tables Getting Started Guide: the published estimates are the share for all CUs in the sample, including those that did not make the expenditure in question (sources/spending/tables-getting-started-guide.htm)"
+"disallows all automated agents" = "sources/wages/robots_api.bls.gov.txt reads 'User-agent: *' and 'Disallow: /'"
+
+# ---------------------------------------------------------------------------------------------------
+# [pairs]: paragraphs that set like-for-like figures from different samples side by side while relying
+# on an n stated elsewhere. Each says where.
+[pairs]
+
+# ---------------------------------------------------------------------------------------------------
+# [published]: front matter and image alt text for the site page, each read on its own.
+[published]
+"seoTitle" = "Skip the Matcha, Still No House - Jonathan Chrisnaldy"
+"excerpt" = "In {{ratio.household.first_year:year}}, the typical new US home cost {{ratio.household.first:dec1}} years of income for a household headed by someone aged 25 to 34. In {{ratio.household.last_year:year}}, it cost {{ratio.household.last:dec1}}. I tested whether a young saver can still catch up with a house, and whether skipping treats would help."
+"metaDescription" = "Can young Americans still save their way to a house? I chased a down payment for each year a saver turned 25 since {{chase.rules.first_start:year}}, and tested whether skipping treats would help."
+"alt:gz-1-years-of-pay.png" = "Line chart, {{ratio.household.first_year:year}} to {{ratio.household.last_year:year}}, of the median new-home price in years of pay. For households headed by someone aged 25 to 34, a line over {{ratio.household.n:words}} years, it is {{ratio.household.first:dec1}} years of income in {{ratio.household.first_year:year}} and {{ratio.household.last:dec1}} in {{ratio.household.last_year:year}}, with a peak of {{ratio.household.max:dec1}} in {{ratio.household.max_year:year}}. For one full-time salary at 25 to 34, a line over {{ratio.salary.n:words}} years, it is {{ratio.salary.first:dec1}} years in {{ratio.salary.first_year:year}} and {{ratio.salary.last:dec1}} in {{ratio.salary.last_year:year}}."
+"alt:gz-2-chase.png" = "Bar chart of the years of saving it took to reach a {{chase.rules.down_pct:dec0}} percent down payment on the typical new home, putting aside {{chase.rules.share_pct:dec0}} percent of income, by the year the saver turned 25, from {{chase.rules.first_start:year}} to {{chase.rules.last:year}}; chases still running show the years so far. Boomer chases took a median of {{chase.generations.boomers.finished.median_years:words}} years across {{chase.generations.boomers.n:words}} start years, and Gen X chases {{chase.generations.genx.finished.median_years:words}} across {{chase.generations.genx.n:words}}. The {{chase.generations.millennials.finished.n:words}} Millennial chases that finished took a median of {{chase.generations.millennials.finished.median_years:words}}. No Gen Z chase has finished yet. Dots show the same if eating out, entertainment and personal care were saved too."
+"alt:gz-3-treat-share.png" = "Line chart, {{shares.all.first_year:year}} to {{shares.all.last_year:year}}, of the share of average annual spending that goes on eating out, entertainment and personal care. For households aged 25 to 34 it is {{shares.age25_34.first_pct:dec1}} percent in {{shares.age25_34.first_year:year}} and {{shares.age25_34.last_pct:dec1}} percent in {{shares.age25_34.last_year:year}}; the lines for households under 25 and for households of any age also end lower than they start."
+"alt:gz-4-recent-grads.png" = "Line chart of the monthly unemployment rate of recent college graduates, aged 22 to 27, and of all workers, from {{grads.early.first:year}} to {{grads.streak.end_year:year}}, from the New York Fed. Recent graduates have been above all workers in every month since January {{grads.streak.start_year:year}}, before ChatGPT's release in November {{grads.chatgpt_release_year:year}}."
