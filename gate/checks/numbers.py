@@ -30,8 +30,8 @@ _WORDS = re.compile(
 _URL = re.compile(r"https?://\S+")
 _LINK_TARGET = re.compile(r"\]\([^)]*\)")
 _YEAR = r"(?:1[6-9]\d\d|20\d\d)[a-z]?"
-# Only the 'Name..., YEAR(, p. N)' segments of a citation are masked, never other text in the same
-# parentheses: '(by 1.1 points; Dell et al., 2012)' still exposes '1.1'.
+# Only the 'Name..., YEAR(, p. N)' segments of a citation are masked: '(by 1.1 points; Dell et al., 2012)' still
+# exposes '1.1'.
 _CITE_SEGMENT = re.compile(r"(?<=[(;])\s*[^()\d;]*?[A-Z][^()\d;]*?,\s*" + _YEAR +
                            r"(?:,\s*(?:p|pp)\.\s*\d+(?:-\d+)?)?\s*(?=[;)])")
 # One author's several years, '(Name, 2007, 2009)', are masked only inside a full '(...)' of the post; in a README
@@ -40,6 +40,11 @@ _PAREN = re.compile(r"\([^()]*\)")
 _CITE_YEARS = re.compile(r"(?<=[(;])\s*[^()\d;]*?[A-Z][^()\d;]*?,\s*" + _YEAR + r"(?:,\s*" + _YEAR + r")+" +
                          r"(?:,\s*(?:p|pp)\.\s*\d+(?:-\d+)?)?\s*(?=[;)])")
 _CITE_YEAR = re.compile(r"\(" + _YEAR + r"\)")
+# A span of years, '(Name, 1976-2004)', is masked only inside a full '(...)' of the post; in a README, a published
+# field or prose outside parentheses it stays two figures.
+_SPAN = r"(?:1[6-9]\d\d|20\d\d)-(?:1[6-9]\d\d|20\d\d)"
+_CITE_SPAN = re.compile(r"(?<=[(;])\s*[^()\d;]*?[A-Z][^()\d;]*?,\s*" + _SPAN +
+                        r"(?:,\s*(?:p|pp)\.\s*\d+(?:-\d+)?)?\s*(?=[;)])")
 _GAP = r"(?:\s|&nbsp;|&#160;|\u00a0)*"
 _SIGN_BEFORE = re.compile(r"(?:\b(?:minus|plus|negative|positive)|[-+−])" + _GAP + r"(?:\*{1,2}|_)?" + _GAP + "$",
                           re.I)
@@ -80,7 +85,8 @@ def _masked(source: str, bindings, readme: bool = False) -> str:
     for rx in (_URL, _LINK_TARGET, _CITE_SEGMENT, _CITE_YEAR) + ((_FENCE, _INLINE_CODE) if readme else ()):
         spans += [m.span() for m in rx.finditer(body)]
     if not readme:
-        spans += [m.span() for p in _PAREN.finditer(body) for m in _CITE_YEARS.finditer(body, p.start(), p.end())]
+        spans += [m.span() for p in _PAREN.finditer(body) for rx in (_CITE_YEARS, _CITE_SPAN)
+                  for m in rx.finditer(body, p.start(), p.end())]
     return mask_spans(body, spans + _list_markers(body))
 
 

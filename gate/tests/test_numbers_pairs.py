@@ -82,6 +82,14 @@ class NumbersTest(unittest.TestCase):
     def test_citation_years_are_not_quantities(self):
         self.assertEqual(num_fails("as argued (Acemoglu et al., 2002), and Dell et al. (2012) agree; see (World Bank, 2026a)."), [])
 
+    def test_a_span_of_years_in_a_citation_is_not_a_quantity(self):
+        # Post 30 round 1: '(Census Bureau, 1976-2004)' cites volumes issued over a span of years
+        self.assertEqual(num_fails("property tax (Census Bureau, 1976-2004) and more."), [])
+        self.assertTrue(num_fails("prices rose (1976-2004) then fell."))
+        # round 2 attack: a span was masked wherever it followed '(' or ';', but cite reads only the post's '(...)'
+        self.assertTrue(num_fails("Renting won; US data, 1972-2025; buying lost."))
+        self.assertTrue(tmpl_fails("Each start year (US data, 1972-2025) is raced."))
+
     def test_a_number_in_parentheses_is_still_a_quantity(self):
         self.assertTrue(num_fails("the sample (97 countries) was small"))
 

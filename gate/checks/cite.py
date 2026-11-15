@@ -11,13 +11,16 @@ import re
 from gate.text import body_and_refs
 
 _YEAR = r"(?:1[6-9]\d\d|20\d\d)[a-z]?|n\.d\."
+# volumes issued over several years carry their span, '(1976-2004)', in an entry and in a 'Name, YEAR' citation only:
+# a bare '(1991-2020)' in prose stays text
+_DATE = r"(?:1[6-9]\d\d|20\d\d)-(?:1[6-9]\d\d|20\d\d)|" + _YEAR
 _PAREN = re.compile(r"\(([^()]*)\)")
 # one author's several works are '(Name, 2007, 2009)' (APA 7, 8.12); each year is checked against its own entry
-_SEGMENT = re.compile(r"^(?P<names>[^\d;]*?[A-Z][^\d;]*?),\s*(?P<years>(?:" + _YEAR + r")(?:,\s*(?:" + _YEAR + r"))*)"
+_SEGMENT = re.compile(r"^(?P<names>[^\d;]*?[A-Z][^\d;]*?),\s*(?P<years>(?:" + _DATE + r")(?:,\s*(?:" + _DATE + r"))*)"
                       r"(?:,\s*(?:p|pp)\.\s*\d+(?:-\d+)?)?$")
 _BARE = re.compile(r"^(?P<year>" + _YEAR + r")$")
 # 'Author. (Date). Title': the date closes with ')' and a full stop, then the title begins
-_ENTRY = re.compile(r"^(?P<author>.+?)\.?\s*\((?P<year>" + _YEAR + r")(?:,\s*[A-Z][a-z]+(?:\s+\d{1,2})?)?\)\.\s+\S")
+_ENTRY = re.compile(r"^(?P<author>.+?)\.?\s*\((?P<year>" + _DATE + r")(?:,\s*[A-Z][a-z]+(?:\s+\d{1,2})?)?\)\.\s+\S")
 _NARRATIVE_WORDS = 6
 
 

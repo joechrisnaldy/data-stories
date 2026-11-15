@@ -180,6 +180,16 @@ class CiteTest(unittest.TestCase):
 
     def test_year_ranges_in_parentheses_are_not_citations(self):
         self.assertEqual(cite.check("Mean over (1991 to 2020) here."), [])
+        self.assertEqual(cite.check("Mean over (1991-2020) here."), [])
+
+    def test_a_span_of_years_dates_an_entry_and_its_citation(self):
+        # Post 30 round 1: volumes issued from 1976 to 2004 were dated n.d., because no span parsed
+        doc = DOC.replace("and the atlas", "and the surveys (Census Bureau, 1976-2004) and the atlas") + \
+              "\nCensus Bureau. (1976-2004). *Annual Housing Survey* [Series].\n"
+        self.assertEqual(cite.check(doc), [])
+        f = cite.check(doc.replace("(Census Bureau, 1976-2004)", "(Census Bureau, 1976-2003)"))
+        self.assertTrue(any("no reference entry" in x for x in f), f)
+        self.assertTrue(any("never cited" in x for x in f), f)
 
 
 class StyleTest(unittest.TestCase):
