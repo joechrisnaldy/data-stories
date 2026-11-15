@@ -1,0 +1,99 @@
+# Gate configuration for Post 30. Run from Projects/analytics-blog:  python3 -m gate rent-vs-buy
+# The slug follows the title the owner chose after the results (direction 'Kiyosaki half right', 2026-11-14).
+# The mdx line is added at step 8, when the MDX is built.
+[post]
+slug = "kiyosaki-was-half-right"
+source = "draft/kiyosaki-was-half-right.src.md"
+rendered = "draft/kiyosaki-was-half-right.md"
+results = "results.json"
+sources = "docs/sources.json"
+build = ["build_analysis.py"]
+charts = "make_charts.py"
+chart_dir = "charts"
+docx = "draft/kiyosaki-was-half-right.docx"
+mdx = "../../joechrisnaldy-portfolio/site/src/content/blog/kiyosaki-was-half-right.mdx"
+extra = [["docs/README.src.md", "README.md"], ["docs/data-README.src.md", "data/README.md"]]
+
+# ---------------------------------------------------------------------------------------------------
+# [allow]: words or digits that are not results. Every entry says why. Stale entries fail the gate.
+[allow]
+"Post 30" = "the series index of this post"
+"Half Right" = "the title's figure of speech: Kiyosaki's claim holds in one of the post's two senses (cash flow) and not in the other (net worth); not a quantity"
+"half right" = "the title's figure of speech: Kiyosaki's claim holds in one of the post's two senses (cash flow) and not in the other (net worth); not a quantity"
+"Half right" = "the title's figure of speech: Kiyosaki's claim holds in one of the post's two senses (cash flow) and not in the other (net worth); not a quantity"
+"which half" = "the title's figure of speech: which of the two senses (cash flow, net worth) Kiyosaki's claim holds in; not a quantity"
+"the half Kiyosaki got right" = "the title's figure of speech: the cash-flow sense, in which the claim holds; not a quantity"
+"day one" = "the purchase date, when the renter makes the day-one investment (design R1 and R8); an idiom, not a quantity"
+"day-one" = "the purchase date, when the renter makes the day-one investment (design R1 and R8); an idiom, not a quantity"
+"at least a fifth" = "prediction P7's threshold as written before the race was run (design section 6; predictions() in build_analysis.py tests depends >= n / 5); not a result"
+"less than half" = "the definition of share_to_tie summary below_half (shares below 0.5, shares_to_tie() in build_analysis.py), also prediction P6's threshold (design section 6); not a result"
+"30-year fixed rate" = "the name of the survey series the race reads, Freddie Mac's U.S. 30 yr FRM (docs/provenance-audit.md, section 1; design R4); a series name, not a result"
+"2023 Mortgage Market Activity and Trends" = "the title of the CFPB report (sources/cfpb_2023-mortgage-market-activity-and-trends_2024-12.txt)"
+"Fama/French 3 factors" = "the name of the Kenneth R. French Data Library data set (sources/french_data_library.txt)"
+"ten-year" = "the length of the stays Rappaport (2010) studies, ten-year occupancies throughout the stored article (sources/rappaport_ia20251115193619_PDF-10q4Rappaport.txt, PDF p. 2; design R16); a design fact of a cited study, not a result of this post"
+"para. 7" = "the APA 7 paragraph locator of the Kiyosaki quotation: the seventh paragraph of the column's body in the stored copy (sources/kiyosaki_page.txt line 301, counting from the paragraph at line 294; the italic contributor disclaimer above the body is not counted); a locator, not a result"
+"S&P 500" = "the name of the stock index that Vanguard's First Index Investment Trust tracked, as the cited press release names it (sources/vanguard_press_500_50th.txt, first paragraph); a name, not a quantity"
+
+# ---------------------------------------------------------------------------------------------------
+# [claims]: every universal, superlative or causal phrase, with the result key or source that licenses it.
+[claims]
+# prose
+"paying a big mortgage and fees every month would feel like a jail" = "the owner's stated view, in the owner's words of 2026-11-13: paying a big mortgage and fees will feel like a jail; the payments are monthly, as in the owner's example of 700 dollars per month (design section 1)"
+"The buyer never came out ahead under both" = "headline.30.all.buy = 0 of headline.30.all.n = 25 start years (1972 to 1996): no 30-year verdict is buy (results.json)"
+"Level B is the higher rent in every month" = "checks.r3_monotonicity.k_a_below_k_b_every_month is true: k_A < k_B in months_below = months = 648 months, 1972 to 2025 (design R3 check)"
+"only when both levels agree" = "design R10: the verdict is buy if buying is ahead under both levels, rent if renting is ahead under both, and depends on the rent otherwise"
+"Under both of my rent estimates, it never got that low" = "split.summary.a.above_example = split.summary.b.above_example = split.summary.n = 54, and starts_not_above_example is empty for both levels: the month-1 rent share is above the example's share in every start year (results.json)"
+"renter still won most long races" = "headline.30.all.rent = 23 of headline.30.all.n = 25 start years with a 30-year history (results.json)"
+"far bumpier, because it rides the stock market" = "design R8 and R10: the renter's net worth is the renter's stock fund alone, while the buyer's is mostly home equity"
+"The buyer pays out every month" = "design R7 and R8: each month the buyer pays property tax, insurance and upkeep on the home's value (all positive in inputs.carrying.main), plus the mortgage payment while the loan runs"
+"after the costs of buying and selling, to at least" = "household.last.a.buyer is the lower of household.last.a.buyer and household.last.b.buyer (results.json)"
+"The chart has every start year and every length of stay" = "chart 3 draws every cell in results.json cells: each start year from 1972 to 2025 and each h from 1 to 30 that ends by December 2025 (cell_summary.n = 1185)"
+"and rent was ahead in all" = "headline.30.from_1977.rent = headline.30.from_1977.n = 20 (results.json)"
+"buying was never ahead under both levels at any December" = "break_even.summary.thirty_years.agreed.not_within_data = 18 of break_even.summary.thirty_years.n = 25 start years (1972 to 1996, each with h = 1 to 30 in the data): no h from 1 to 30 with the verdict buy (design R11; results.json)"
+"the only buyer still ahead at every December since" = "break_even.summary.all.agreed.stays = 1, and derived.break_even.stays_start = 2021 with derived.break_even.stays_years = 5 years of data (design R11; results.json)"
+"I expected buying to win most of the" = "prediction P3 as written before the race was run (design section 6); predictions.P3.true is false (results.json)"
+"expected at least a fifth of the" = "prediction P7 as written before the race was run (design section 6); predictions.P7.true is false (results.json)"
+"found owners ahead for most stays that began in the" = "Rappaport (2010), the article's summary, stored PDF p. 2 (src rappaport_owners in docs/sources.json)"
+"ahead for most of the decade in between" = "Rappaport (2010), the same summary paragraph, stored PDF p. 2: for stays beginning in most of the 1980s, renters who invested built more wealth (paraphrase)"
+"renting was the better strategy over most of their study period" = "Beracha and Johnson (2012), abstract: after setting the holding period to the average American's tenure in a residence, renting proves the superior investment strategy over most of the study period (sources/wiley_ia20200221224323_page.txt and sources/crossref_beracha-johnson-2012_work.json; paraphrase)"
+"Renting only works if the money gets invested" = "cell_summary.buyer_nw_not_positive.a = .b = 0 of cell_summary.n = 1185: the buyer's net worth is positive in every cell, so a renter with no fund is behind in every cell (results.json; design R10)"
+"A renter who spends it all has no fund" = "design R8 and R10: the renter's net worth is the fund, built only from what the renter invests"
+"the buyer's net worth was positive in every cell of the race" = "cell_summary.buyer_nw_not_positive.a = .b = 0 of cell_summary.n = 1185 (results.json)"
+"even by investing every dollar of the gap" = "design R12: cannot tie means the share needed is above 1; share_to_tie.30.summary.b cannot tie = 2 (results.json)"
+"never sells in a panic, never dips into the fund" = "design R8: the fund only receives investments and is valued at each December; no withdrawals, no costs to sell fund shares, no income taxes"
+"In none of them did buying win" = "derived.sensitivity_summary.runs_buy_30_zero = derived.sensitivity_summary.runs = 7: every sensitivity run has counts.30.all.buy = 0 (results.json)"
+"renting won every start year" = "derived.sensitivity_summary.runs_rent_30_every = 2: in cpi_rent and costs_high, counts.30.all.rent = counts.30.all.n = 25 (results.json)"
+"The closest call was lower owner costs" = "sensitivities.costs_low.counts.30.all.rent = 16 is the lowest 30-year rent count of the seven runs (no_fee 23, cpi_rent 25, costs_high 25, fee_vanguard 23, purchase_only 23, no_refinancing 23; results.json)"
+"a house costs money every month" = "Kiyosaki (2016), definitions paragraph of the stored column: a liability costs its owner money (paraphrase); design R7 and R8: the buyer pays carrying costs every month"
+"the house money and the difference, in almost every" = "headline.30.all.rent = 23 of headline.30.all.n = 25 start years, 1972 to 1996 (results.json)"
+"it was enough on its own in most start years" = "share_to_tie.30.summary.a.zero = 24 and share_to_tie.30.summary.b.zero = 19 of share_to_tie.30.summary.n = 25 start years: the day-one sum alone ties or beats the buyer after 30 years (design R12; results.json)"
+"shares almost all of its years with the race before it" = "design R1 and R10: the race from start year S runs from January S to December S + 29, so the race from S + 1 shares 29 of its 30 years with it"
+"out of reach for most investors" = "Vanguard (2026), press release of August 31, 2026, third paragraph: at the time of the launch, low-cost investment strategies covering the broad stock market were not readily available to most investors (sources/vanguard_press_500_50th.txt; paraphrase)"
+# names and titles (prose, reference list, chart text)
+"all-transactions" = "the name of the FHFA House Price Index the value follows (FHFA HPI, all-transactions; design section 9)"
+"purchase-only" = "the name of the FHFA House Price Index used for level A after the workbook and for the R15.3 run (design section 9)"
+"All-transactions" = "the FHFA data set's title"
+"Purchase-only" = "the FHFA data set's title"
+"Is the American dream always wise" = "the title of Beracha and Johnson (2012), in the reference list (sources/crossref_beracha-johnson-2012_work.json)"
+"Consumer Price Index for All Urban Consumers" = "the BLS index's name (sources/bls_ia20261009030838_cu.gunzipped.txt)"
+"retroactive series using current methods (R-CPI-U-RS), all items" = "the BLS series title, as in Post 29's reference list (sources/bls_r-cpi-u-rs-home_ia20261014233717.txt)"
+"cannot tie: more than the whole gap would be needed" = "design R12: if the share needed is above 1, the label is cannot tie (chart 4 annotation; share_to_tie in results.json)"
+# published fields
+"the buyer was never ahead under both" = "headline.30.all.buy = 0 of headline.30.all.n = 25 (results.json); README summary"
+"start years and buy in none" = "headline.30.all.buy = 0 of headline.30.all.n = 25 (results.json)"
+"the renter cannot tie even by investing the whole gap" = "design R12: cannot tie means the share needed is above 1; share_to_tie.30.summary.b cannot tie = 2 (results.json)"
+
+# ---------------------------------------------------------------------------------------------------
+# [pairs]: paragraphs whose like-for-like figures come from different samples, with the reason.
+[pairs]
+
+# ---------------------------------------------------------------------------------------------------
+# [published]: templates for the MDX front matter and each chart's alt text, written with the draft.
+[published]
+"seoTitle" = "Kiyosaki Was Half Right About Your House - Jonathan Chrisnaldy"
+"excerpt" = "Over {{headline.30.all.h:int}} years, a US renter who invested the buyer's down payment and buying costs, then the monthly difference, beat the buyer of the same home in {{headline.30.all.rent:int}} of {{headline.30.all.n:int}} start years under both of my rent estimates; in the other {{headline.30.all.depends:words}}, it depends on the estimate. The house was still an asset, just slower than the fund. So was Kiyosaki right that a house is a liability? Half right."
+"metaDescription" = "Buy a home, or rent the same home and invest the difference? I raced a buyer against a renter on US data for each start year from {{rules.first_start:year}} to {{rules.last_start:year}}, counting the costs of owning, and followed both for up to {{rules.max_h:int}} years."
+"alt:rb-1-monthly-split.png" = "Line chart, start years {{split.summary.first_start:year}} to {{split.summary.last_start:year}}, of the first-month rent of the same home as a percent of the buyer's first-month outlay, under rent levels A and B. Level A runs from {{split.summary.a.min_pct:dec1}} percent in {{split.summary.a.min_start:year}} to {{split.summary.a.max_pct:dec1}} percent in {{split.summary.a.max_start:year}}, and level B from {{split.summary.b.min_pct:dec1}} percent in {{split.summary.b.min_start:year}} to {{split.summary.b.max_pct:dec1}} percent in {{split.summary.b.max_start:year}}. Both stay above a reference line at {{split.owner_example.share_pct:dec1}} percent, my example of {{split.owner_example.rent:int}} dollars of rent against {{split.owner_example.outlay:int}} dollars of mortgage and fees."
+"alt:rb-2-one-household.png" = "Line chart of the net worth of the {{household.start:year}} buyer and renter at each December from {{household.first_year:year}} to {{household.last_year:year}}, in {{household.dollars_year:year}} dollars, under rent levels A and B. By December {{household.last_year:year}} the buyer has {{household.last.a.buyer:round0}} dollars under level A and {{household.last.b.buyer:round0}} under level B, and the renter, whose line is far bumpier, has {{household.last.a.renter:round0}} and {{household.last.b.renter:round0}}."
+"alt:rb-3-who-is-ahead.png" = "Grid chart of the verdict (buy, rent, or depends on the rent) for each start year from {{rules.first_start:year}} to {{rules.last_start:year}} and each number of years held, up to {{rules.max_h:int}}; buy or rent means both rent levels agree. After {{headline.30.all.h:int}} years the verdict is rent in {{headline.30.all.rent:int}} of {{headline.30.all.n:int}} start years and buy in none; after {{headline.5.all.h:int}} years it is buy in {{headline.5.all.buy:int}} of {{headline.5.all.n:int}}."
+"alt:rb-4-share-to-tie.png" = "Line chart of the share of each monthly gap the renter must invest to tie the buyer after {{rules.max_h:int}} years, start years {{share_to_tie.30.summary.first_start:year}} to {{share_to_tie.30.summary.last_start:year}}, under rent levels A and B. Under level A the share is {{rules.tie_floor_share:pct0}} percent in {{share_to_tie.30.summary.a.zero:int}} of {{share_to_tie.30.summary.n:int}} start years. Under level B it is {{rules.tie_floor_share:pct0}} percent in {{share_to_tie.30.summary.b.zero:int}} and less than half in {{share_to_tie.30.summary.b.below_half:int}}, and in {{share_to_tie.30.summary.b.cannot tie:words}} the renter cannot tie even by investing the whole gap."

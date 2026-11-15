@@ -19,3 +19,5 @@ __pycache__/
 audit/defect-ledger.md
 audit/defect-classes.json
 audit/defect-records.json
+# rent-vs-buy: results.json stays local; build_analysis.py writes it
+rent-vs-buy/results.json

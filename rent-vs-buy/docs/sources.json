@@ -1,0 +1,17 @@
+{
+ "rappaport_owners": {
+  "doc": "sources/rappaport_ia20251115193619_PDF-10q4Rappaport.txt",
+  "extracted_with": "pdftotext (default mode, no options), from the stored PDF beside it; re-run on 2026-11-14 and byte-identical",
+  "fetched_from": "https://www.kansascityfed.org/documents/379/PDF-10q4Rappaport.pdf, Internet Archive capture 20251115193619 (PDF sha256 79d422b6e81e14f189ade53d426f7de3e05c93971d7d0f5c1216c78dff604231, retrieved 2026-11-13; stored beside the text as sources/rappaport_ia20251115193619_PDF-10q4Rappaport.pdf)",
+  "locator": "the article's opening summary, the paragraph that ends the introduction",
+  "page": "PDF p. 2 (printed p. 36)",
+  "quote": "beginning during most of the 1970s and 1990s, homeowners built more wealth",
+  "ref": "Rappaport 2010",
+  "sha256": "cb85b7ec83a2a99ed10779a6d31c6fb9d68e0201780db1cea50a3cb1ce35ac9d",
+  "title": "The effectiveness of homeownership in building household wealth",
+  "values": {
+   "first_decade": 1970,
+   "second_decade": 1990
+  }
+ }
+}
