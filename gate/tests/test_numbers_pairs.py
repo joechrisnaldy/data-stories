@@ -37,6 +37,11 @@ def tmpl_fails(src, allow=None):
     return numbers.check("", [], allow or {}, templates=[("README.md", src, b)])
 
 
+def heads(fails):
+    """Each failure without its location and context: "unbound number word 'three'"."""
+    return [f.split(" at ")[0] for f in fails]
+
+
 def pair_fails(src, exempt=None):
     _, b = render(src, R)
     return pairs.check(src, b, exempt or {})
@@ -162,6 +167,47 @@ class NumbersTest(unittest.TestCase):
         self.assertEqual(num_fails("as found (Smith & Jones, 2019; Dell et al., 2012, p. 67)."), [])
         self.assertEqual(num_fails("as found (Dell et al., 2007, 2009, 2021; Smith & Jones, 2019)."), [])
         self.assertTrue(num_fails("growth fell (Dell et al., 2012, 1.1 points) in poor countries"))
+        self.assertIn("unbound number '3'", heads(num_fails("rents rose (up 3 percent per Dell et al., 2012) then.")))
+
+    def test_a_number_word_before_a_citation_author_is_still_a_quantity(self):
+        # Post 30 rounds 3 and 4: the whole 'Name..., YEAR' segment was masked, so a number word in front of the
+        # author passed unchecked. Only the date may be masked; 'three' must be reported.
+        three = ["unbound number word 'three'"]
+        self.assertEqual(heads(num_fails("rents rose (up three percent per the U.S. Census Bureau, 2026) then.")),
+                         three)
+        self.assertEqual(heads(num_fails("rents rose (up three percent per the U.S. Census Bureau, 1976-2004) then.")),
+                         three)
+        self.assertEqual(heads(num_fails("as shown (in three studies, Rappaport, 2007, 2010) then.")), three)
+        self.assertEqual(heads(num_fails("as found (up three percent per Dell et al., 2012, p. 67).")), three)
+        self.assertEqual(heads(num_fails("rents rose (by one point, Dell et al., 2012) then.")),
+                         ["unbound number word 'one'"])
+
+    def test_a_number_word_anywhere_in_a_citation_names_part_is_a_quantity(self):
+        # the names part is read up to the comma before the date, not only up to the first capital letter
+        self.assertEqual(heads(num_fails("rents rose (U.S. Census Bureau, three-year estimates, 2026) then.")),
+                         ["unbound number word 'three'"])
+        self.assertEqual(heads(num_fails("as shown (Dell and three coauthors, 2007, 2010) then.")),
+                         ["unbound number word 'three'"])
+        self.assertEqual(heads(num_fails("tax (U.S. Census Bureau and three agencies, 1976-2004) then.")),
+                         ["unbound number word 'three'"])
+        g20 = "leaders met (Group of Twenty, 2019) then."
+        self.assertEqual(heads(num_fails(g20)), ["unbound number word 'Twenty'"])
+        self.assertEqual(heads(tmpl_fails(g20)), ["unbound number word 'Twenty'"])
+        # gate/README.md's way out: the [allow] phrase is the name without its date
+        self.assertEqual(num_fails(g20, {"Group of Twenty": "an organisation"}), [])
+
+    def test_a_number_word_before_a_citation_author_is_a_quantity_in_a_readme(self):
+        self.assertEqual(heads(tmpl_fails("rents rose (up three percent per the U.S. Census Bureau, 2026) then.")),
+                         ["unbound number word 'three'"])
+
+    def test_citation_names_and_dates_without_quantities_stay_clean(self):
+        # controls: the date (year, years or span, and any page locator) is still masked after the names part
+        self.assertEqual(num_fails("Tax (U.S. Census Bureau & U.S. Department of Housing and Urban Development, "
+                                   "1976-2004) and ACS (U.S. Census Bureau, 2026)."), [])
+        self.assertEqual(num_fails("as argued (e.g., Dell et al., 2012, p. 14; see also Kiyosaki, 2016)."), [])
+        self.assertEqual(num_fails("as argued (e.g., Rappaport, 2007, 2010, p. 3)."), [])
+        self.assertEqual(num_fails("as argued (e.g., Census Bureau, 1976-2004, p. 3)."), [])
+        self.assertEqual(tmpl_fails("as argued (e.g., Dell et al., 2012)."), [])
 
     def test_several_years_are_masked_only_in_a_post_citation(self):
         # several years are masked only inside a full '(...)' of the post; anywhere else they stay figures
