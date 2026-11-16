@@ -20,38 +20,49 @@ _FRACTION_CHARS = re.compile(r"[¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝
 _ORDINALS = ("third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|"
              "fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|fiftieth|"
              "sixtieth|seventieth|eightieth|ninetieth|hundredth|thousandth")
+# A word's edge: no letter or digit may touch it, and an underscore run that touches it ('_three_', '__three__') counts
+# as an edge unless a letter or digit sits on its far side within two underscores or one escaped '\_' ('top_ten',
+# 'false_positive', 'top\_ten' stay one word, as '\b' had them). Number words, sign words before a placeholder,
+# 'percentage points' after one, and [allow] phrases use it.
+_EDGE_BEFORE = r"(?<![^\W_])(?<![^\W_]_)(?<![^\W_]__)(?<![^\W_]\\_)"
+_EDGE_AFTER = r"(?![^\W_])(?!_[^\W_])(?!__[^\W_])(?!\\_[^\W_])"
 _WORDS = re.compile(
-    r"\b(?:zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|"
+    _EDGE_BEFORE + r"(?:zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|"
     r"fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|"
     r"ninety|hundreds?|thousands?|millions?|billions?|trillions?|dozens?|half|halves|quarters?|thirds|fifths|"
     r"sixths|sevenths|eighths|ninths|tenths|" + _ORDINALS + r"|"
-    r"halv(?:e|ed|es|ing)|doubl(?:e|ed|es|ing)|tripl(?:e|ed|es|ing)|quadrupl\w*|\w+fold|twice)\b", re.I)
+    r"halv(?:e|ed|es|ing)|doubl(?:e|ed|es|ing)|tripl(?:e|ed|es|ing)|quadrupl[^\W_]*|[^\W_]+fold|twice)" + _EDGE_AFTER,
+    re.I)
 # 'first' and 'second' are left out: they are overwhelmingly enumerators ('First, ...', 'a second round').
 _URL = re.compile(r"https?://\S+")
 _LINK_TARGET = re.compile(r"\]\([^)]*\)")
 _YEAR = r"(?:1[6-9]\d\d|20\d\d)[a-z]?"
-# A 'Name..., YEAR(, p. N)' run with an A-Z capital and no digit or parenthesis before its date, that follows '(' or ';'
-# and ends at ';' or ')', has only its date masked, from the comma before the year (group 'date'), whether or not it is
-# a citation: '(up three percent per Dell et al., 2012)' still exposes 'three', and '(by 1.1 points; Dell et al., 2012)'
-# still exposes '1.1'. The several-years and span forms below mask only their date the same way.
+# Inside an innermost '(...)' (cite reads the post's citations only there), a 'Name..., YEAR(, p. N)' run with an A-Z
+# capital and no digit or parenthesis before its date, that follows '(' or ';' and ends at ';' or ')', has only its date
+# masked, from the comma before the year (group 'date'), whether or not it is a citation: '(up three percent per Dell et
+# al., 2012)' still exposes 'three', '(by 1.1 points; Dell et al., 2012)' still exposes '1.1', and outside parentheses
+# 'prices rose; Jakarta, 2005; then fell.' exposes '2005'. The several-years and span forms below mask only their date
+# the same way. Pairs and runs are found in the text as printed (_printed), not in the placeholders' source.
 _CITE_SEGMENT = re.compile(r"(?<=[(;])\s*[^()\d;]*?[A-Z][^()\d;]*?(?P<date>,\s*" + _YEAR +
                            r"(?:,\s*(?:p|pp)\.\s*\d+(?:-\d+)?)?)\s*(?=[;)])")
-# One author's several years, '(Name, 2007, 2009)', are masked only inside a full '(...)' of the post; in a README
+# One author's several years, '(Name, 2007, 2009)', are masked only inside an innermost '(...)' of the post; in a README
 # or outside parentheses they stay figures.
 _PAREN = re.compile(r"\([^()]*\)")
 _CITE_YEARS = re.compile(r"(?<=[(;])\s*[^()\d;]*?[A-Z][^()\d;]*?(?P<date>,\s*" + _YEAR + r"(?:,\s*" + _YEAR + r")+" +
                          r"(?:,\s*(?:p|pp)\.\s*\d+(?:-\d+)?)?)\s*(?=[;)])")
 _CITE_YEAR = re.compile(r"\(" + _YEAR + r"\)")
-# A span of years, '(Name, 1976-2004)', is masked only inside a full '(...)' of the post; in a README, a published
+# A span of years, '(Name, 1976-2004)', is masked only inside an innermost '(...)' of the post; in a README, a published
 # field or prose outside parentheses it stays two figures.
 _SPAN = r"(?:1[6-9]\d\d|20\d\d)-(?:1[6-9]\d\d|20\d\d)"
 _CITE_SPAN = re.compile(r"(?<=[(;])\s*[^()\d;]*?[A-Z][^()\d;]*?(?P<date>,\s*" + _SPAN +
                         r"(?:,\s*(?:p|pp)\.\s*\d+(?:-\d+)?)?)\s*(?=[;)])")
 _GAP = r"(?:\s|&nbsp;|&#160;|\u00a0)*"
-_SIGN_BEFORE = re.compile(r"(?:\b(?:minus|plus|negative|positive)|[-+−])" + _GAP + r"(?:\*{1,2}|_)?" + _GAP + "$",
-                          re.I)
-_PERCENT_AFTER = re.compile(r"^" + _GAP + r"-?(?:\*{1,2}|_)?" + _GAP + r"(?:per\s*cent|percent|percentage|%)", re.I)
-_POINTS_AFTER = re.compile(r"^" + _GAP + r"-?(?:\*{1,2}|_)?" + _GAP + r"percentage\s+points?\b", re.I)
+# Beside a placeholder, emphasis may be '*', '**', '_' or '__' ('_minus_ {{x}}', '{{x}} __percent__').
+_EMPHASIS = r"(?:\*{1,2}|_{1,2})?"
+_SIGN_BEFORE = re.compile(r"(?:" + _EDGE_BEFORE + r"(?:minus|plus|negative|positive)|[-+−])" +
+                          _GAP + _EMPHASIS + _GAP + "$", re.I)
+_PERCENT_AFTER = re.compile(r"^" + _GAP + r"-?" + _EMPHASIS + _GAP + r"(?:per\s*cent|percent|percentage|%)", re.I)
+_POINTS_AFTER = re.compile(r"^" + _GAP + r"-?" + _EMPHASIS + _GAP + r"percentage\s+points?" + _EDGE_AFTER, re.I)
 
 
 # In READMEs only, code is identifiers, not claims: a fenced block and an inline span that contains a
@@ -86,15 +97,58 @@ def _hidden(m: re.Match) -> tuple:
     return m.span("date") if "date" in m.re.groupindex else m.span()
 
 
+def _printed(body: str, bound) -> tuple:
+    """The body as printed, each placeholder replaced by what it prints (cite reads the rendered post), and for each
+    printed character the source span it comes from, so a mask found in the printed text can be laid on the source."""
+    text, origin, pos = [], [], 0
+    for b in sorted(bound, key=lambda b: b.start):
+        if b.start < pos:                      # a joined '{{a.x&b.x:fmt}}' has one binding per key over one span
+            continue
+        text += [body[pos:b.start], b.out]
+        origin += [(i, i + 1) for i in range(pos, b.start)] + [(b.start, b.end)] * len(b.out)
+        pos = b.end
+    text.append(body[pos:])
+    origin += [(i, i + 1) for i in range(pos, len(body))]
+    return "".join(text), origin
+
+
+_ANY_CODE = re.compile(r"`[^`\n]*`")
+_LINK_NESTED = re.compile(r"\]\((?:[^()]|\([^()]*\))*\)")      # a link target with one level of '(...)' inside
+
+
+def _readme_blanks(text: str) -> list:
+    """In a README, where cite never runs, what may hold parentheses that close no citation: link targets (one nested
+    pair allowed, as in a DOI), fenced code, each inline code span that holds a parenthesis, and each pair of
+    parentheses inside a bare URL (its mask runs on past the ')' that closes the citation, which stays)."""
+    spans = [m.span() for rx in (_LINK_NESTED, _FENCE) for m in rx.finditer(text)]
+    spans += [m.span() for m in _ANY_CODE.finditer(text) if "(" in m.group() or ")" in m.group()]
+    for m in _URL.finditer(text):
+        opened = []
+        for i in range(m.start(), m.end()):
+            if text[i] == "(":
+                opened.append(i)
+            elif text[i] == ")" and opened:
+                spans += [(opened.pop(), None), (i, None)]
+    return [(a, a + 1) if b is None else (a, b) for a, b in spans]
+
+
 def _masked(source: str, bindings, readme: bool = False) -> str:
     """The text to scan. The post stops at its reference list (cite checks that); a README is read whole."""
     body = source if readme else body_and_refs(source)[0]
-    spans = [(b.start, b.end) for b in bindings if b.end <= len(body)]
-    for rx in (_URL, _LINK_TARGET, _CITE_SEGMENT, _CITE_YEAR) + ((_FENCE, _INLINE_CODE) if readme else ()):
+    bound = [b for b in bindings if b.end <= len(body)]
+    spans = [(b.start, b.end) for b in bound]
+    for rx in (_URL, _LINK_TARGET, _CITE_YEAR) + ((_FENCE, _INLINE_CODE) if readme else ()):
         spans += [_hidden(m) for m in rx.finditer(body)]
-    if not readme:
-        spans += [_hidden(m) for p in _PAREN.finditer(body) for rx in (_CITE_YEARS, _CITE_SPAN)
-                  for m in rx.finditer(body, p.start(), p.end())]
+    printed, origin = _printed(body, bound)
+    if readme:                                 # blanked with a letter, so no date run stretches over a blank
+        blanked = mask_spans(printed, _readme_blanks(printed))
+        printed = "".join("x" if c != k else c for c, k in zip(printed, blanked))
+    cites = (_CITE_SEGMENT,) if readme else (_CITE_SEGMENT, _CITE_YEARS, _CITE_SPAN)
+    for p in _PAREN.finditer(printed):
+        for rx in cites:
+            for m in rx.finditer(printed, p.start(), p.end()):
+                a, b = _hidden(m)
+                spans.append((origin[a][0], origin[b - 1][1]))
     return mask_spans(body, spans + _list_markers(body))
 
 
@@ -102,7 +156,7 @@ def _covered(text: str, allow: dict):
     intervals, used = [], set()
     for phrase in allow:
         words = r"\s+".join(re.escape(w) for w in phrase.split())
-        for m in re.finditer(r"(?<!\w)" + words + r"(?!\w)", text):
+        for m in re.finditer(_EDGE_BEFORE + words + _EDGE_AFTER, text):
             intervals.append(m.span())
             used.add(phrase)
     return intervals, used
@@ -238,7 +292,8 @@ def chart_figures(capture: list, results: dict, src: dict, allow: dict) -> list:
     for rec in capture:
         for text in rec.get("prose", []):
             intervals, _ = _covered(text, allow)
-            pair = _paired(text, stats) if not intervals else None
+            shown = [m.span() for rx in (_R_SHOWN, _N_EQ) for m in rx.finditer(text)]
+            pair = None if any(a < e and s < b for s, e in shown for a, b in intervals) else _paired(text, stats)
             if pair:
                 fails.append(f"{rec['file']}: {pair}: {' '.join(text.split())[:80]!r}")
             for m in _SIGNED_NUMBER.finditer(text):

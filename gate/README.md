@@ -51,7 +51,7 @@ Every entry is counted on each run, and an entry that matches nothing fails as s
 |---|---|---|
 | render, rendered | every figure in the draft and the `extra` templates is `{{key:fmt}}` resolved from `results.json` or `{{src:id.values.name:fmt}}` from a stored source, through a strict formatter that refuses values it cannot print honestly (no unsigned negative; no percent formatter on a key whose name says it is already in percent, such as
 `density_pct`, `pct_growth` or `growth_percent`); each rendered file is exactly a fresh render | numbers were typed and compared to `results.json` by membership |
-| numbers | no digit (including `.44` and `_0.44_`), number word (ordinals, "doubled", "-fold", "twice", "trillion") or Unicode fraction in the prose, headings, alt text, published fields, READMEs or chart-script strings is unbound, except `[allow]` phrases with a reason; no sign or percent (any spelling) is typed beside a placeholder; every figure a chart prints is a result at its printed precision, sign and percent read as written, and
+| numbers | no digit (including `.44` and `_0.44_`), number word (ordinals, "doubled", "-fold", "twice", "trillion", italic `_three_`) or Unicode fraction in the prose, headings, alt text, published fields, READMEs or chart-script strings is unbound, except `[allow]` phrases with a reason; no sign or percent (any spelling) is typed beside a placeholder; every figure a chart prints is a result at its printed precision, sign and percent read as written, and
 an `r = X` printed with an `n = Y` must come from one result object. Citation dates and their page locators in the forms `numbers.py` masks, URLs and the sequential markers of a numbered list are not quantities (a citation's names part is read); in READMEs only, neither are fenced code and inline code containing a letter | digits only; a number before a comma was invisible |
 | pairs | like-for-like figures from different samples in one paragraph each show their n (`sample` ids decide), in the draft, the README templates and the published fields | a phrase such as "on each side" silenced it |
 | claims | every universal, superlative (any -est word) or causal word, however it is quoted or italicised, in the prose, the reference list, the READMEs (code aside), on a chart or in a published field, sits inside a `[claims]` phrase naming its licence | not attempted |
@@ -95,7 +95,11 @@ an `r = X` printed with an `n = Y` must come from one result object. Citation da
 Known false positives, each with `[allow]` or rewording as the way out: a README reference list is
 scanned for numbers; a `'%.1f'` format string in a chart script reads as `.1`; a name in a citation that holds a
 number word or ends in "fold" (`Group of Twenty`, `Penfold`) is reported, and its `[allow]` phrase is the name
-without the date.
+without the date; a citation that lists a year or a span and then a date of another kind (`n.d.`, a span, or a year
+after a span), such as `(Smith, 2007, n.d., 2012)`, is reported although cite reads it, and giving each date its own
+segment, `(Smith, 2007; Smith, n.d.; Smith, 2012)`, clears it; in a README or a published field, a citation inside
+parentheses that also hold another pair, such as `(by the consumer price index (CPI); BPS, 2024)`, is reported, and
+moving the inner pair out, `(BPS, 2024; the consumer price index, CPI)`, clears it.
 - Analysis-code correctness beyond reproducibility, construction alternatives, variable definitions, and
   chart geometry. These are the next phase of the private defect ledger.
 

@@ -42,6 +42,19 @@ def heads(fails):
     return [f.split(" at ")[0] for f in fails]
 
 
+ROWS = {"gdp": [{"country": "Korea (Rep.)", "gap": 1.1}]}
+PAGES = {"pg": {"half": 12.5, "whole": 12, "big": 1234, "year": 2007}}
+JOINED = {"a": {"y": 2007, "x": 1}, "b": {"y": 2007, "x": 1}}
+
+
+def fails_in(results, src, readme=False):
+    """numbers on a source rendered from other results; readme=True checks it as a README template."""
+    _, b = render(src, results)
+    if readme:
+        return numbers.check("", [], {}, templates=[("README.md", src, b)])
+    return numbers.check(src, b, {})
+
+
 def pair_fails(src, exempt=None):
     _, b = render(src, R)
     return pairs.check(src, b, exempt or {})
@@ -214,6 +227,149 @@ class NumbersTest(unittest.TestCase):
         self.assertTrue(num_fails("prices rose; Jakarta, 1850, 1900) then fell."))
         self.assertTrue(num_fails("prices rose; Jakarta, 2005, 2008; then fell."))
         self.assertTrue(tmpl_fails("as found (Dell et al., 2007, 1850)."))
+
+    def test_a_year_in_a_semicolon_run_outside_parentheses_is_a_quantity(self):
+        # attack on 8de312e: the single-year mask matched any 'Name, YEAR' run after ';', so outside parentheses,
+        # where cite never reads, 'prices rose; Jakarta, 2005; then fell.' hid its year
+        self.assertEqual(heads(num_fails("prices rose; Jakarta, 2005; then fell.")), ["unbound number '2005'"])
+        self.assertEqual(heads(num_fails("prices rose; Jakarta, 1850) then fell.")), ["unbound number '1850'"])
+        self.assertEqual(heads(num_fails("Counts were high; Jakarta, 1850; Bali, 1700; Lombok, 1650.")),
+                         ["unbound number '1850'", "unbound number '1700'", "unbound number '1650'"])
+        self.assertEqual(heads(tmpl_fails("prices rose; Jakarta, 2005; then fell.")), ["unbound number '2005'"])
+
+    def test_a_year_after_a_semicolon_inside_parentheses_is_still_a_citation_date(self):
+        # controls: inside an innermost '(...)', where cite reads, the date after ';' or across a line stays masked
+        self.assertEqual(num_fails("Tax (see the volumes; U.S. Census Bureau, 2026) and more."), [])
+        self.assertEqual(num_fails("Tax (U.S. Census\nBureau, 2026) and more."), [])
+        self.assertEqual(tmpl_fails("Tax (see the volumes; U.S. Census Bureau, 2026) and more."), [])
+
+    def test_a_semicolon_run_is_masked_only_inside_its_own_innermost_pair(self):
+        # mutants that searched past a pair's end, from before its start, or in pairs that are not innermost survived
+        # the tests above, which had no other parenthesis in the text
+        y2005 = ["unbound number '2005'"]
+        self.assertEqual(heads(num_fails("A (note). Prices rose; Jakarta, 2005; then fell (a lot).")), y2005)
+        self.assertEqual(heads(num_fails("Prices (rose; Jakarta, 2005; then (fell)) later.")), y2005)
+        self.assertEqual(heads(num_fails("A (note) and prices rose; Jakarta, 2005) then fell.")), y2005)
+        self.assertEqual(heads(tmpl_fails("A (note). Prices rose; Jakarta, 2005; then fell (a lot).")), y2005)
+
+    def test_a_placeholder_path_with_parentheses_does_not_break_a_citation(self):
+        # found in the source, a selector such as '[country=Korea (Rep.)]' would hold a '(' that its printed value does
+        # not, so an innermost-only rule would find the citation not innermost and report its year
+        cited = "Growth lagged (by {{gdp[country=Korea (Rep.)].gap:dec1}} points; World Bank, 2024) there."
+        first = "Growth lagged (World Bank, 2024; by {{gdp[country=Korea (Rep.)].gap:dec1}} points) there."
+        self.assertEqual(fails_in(ROWS, cited), [])
+        self.assertEqual(fails_in(ROWS, first), [])
+        self.assertEqual(fails_in(ROWS, cited, readme=True), [])
+
+    def test_a_printed_figure_in_a_names_part_ends_the_citation_as_cite_reads_it(self):
+        # numbers read '{{tidy.n:int}}' as letters and hid ', 2002', while cite reads the printed '196', cannot parse
+        # that citation and never checks its year
+        digits = "The sample (the {{tidy.n:int}} colonies of Acemoglu et al., 2002) is small."
+        words = "The sample (the {{hot_rich.count:words}} colonies of Acemoglu et al., 2002) is small."
+        self.assertEqual(heads(num_fails(digits)), ["unbound number '2002'"])
+        self.assertEqual(num_fails(words), [])
+
+    def test_a_readme_citation_holding_a_link_or_code_keeps_its_date_masked(self):
+        # in a README, where cite never runs, a link target or code with parentheses inside a citation's parentheses
+        # would make them not innermost, and an innermost-only rule would report the year
+        self.assertEqual(tmpl_fails("Household spending comes from the survey microdata (`SUSENAS`, 2024)."), [])
+        lancet = ("Data come from the Lancet series (see [the paper](https://doi.org/10.1016/S0140-6736(20)30183-5); "
+                  "Huang et al., 2020).")
+        self.assertEqual(tmpl_fails(lancet), [])
+        self.assertEqual(tmpl_fails("Rates rose (BPS, 2024; [table](https://bps.go.id/x))."), [])
+        self.assertEqual(tmpl_fails("Rates rose (BPS, 2024; built by `load()` in the script)."), [])
+        # a bare URL is not blanked for pairing: its mask runs to the next space, past the closing ')'
+        self.assertEqual(tmpl_fails("Rates rose (BPS, 2024; https://bps.go.id/x)."), [])
+        # in the post, cite reads the same text and skips those parentheses, so the year is reported there
+        self.assertEqual(heads(num_fails("Rates rose (BPS, 2024; [table](https://bps.go.id/x)).")),
+                         ["unbound number '2024'"])
+        # a URL whose own parentheses pair (a DOI), and code with no letter, also pair nothing for the citation
+        doi = "Cases rose (Huang et al., 2020; https://doi.org/10.1016/S0140-6736(20)30183-5) fast."
+        self.assertEqual(tmpl_fails(doi), [])
+        self.assertEqual(tmpl_fails("Rates rose (BPS, 2024; built by `()` here)."), [])
+        self.assertEqual(tmpl_fails("Rates rose (see https://bps.go.id/x; BPS, 2024)."), [])
+        # code blanked for pairing must not let a date run stretch over a bare figure in backticks, still a figure
+        self.assertEqual(heads(tmpl_fails("Rates rose (BPS, `1850` 2024) there.")),
+                         ["unbound number '1850'", "unbound number '2024'"])
+
+    def test_a_citation_is_read_in_the_printed_text_not_the_placeholder_source(self):
+        # a page number that does not print as plain digits is no page locator to cite, which then never checks the
+        # year, so the year must be reported; a page that prints as digits leaves the citation to cite
+        self.assertEqual(heads(fails_in(PAGES, "It lagged (Smith, 2011, p. {{pg.half:dec1}}) then.")),
+                         ["unbound number '2011'"])
+        self.assertEqual(heads(fails_in(PAGES, "It lagged (Smith, 2011, p. {{pg.big:int}}) then.")),
+                         ["unbound number '2011'"])
+        self.assertEqual(heads(fails_in(PAGES, "It lagged (Smith, 2011, p. {{pg.half:dec1}}) then.", readme=True)),
+                         ["unbound number '2011'"])
+        self.assertEqual(fails_in(PAGES, "It lagged (Smith, 2011, p. {{pg.whole:int}}) then."), [])
+        # a placeholder that prints a year is a year: cite reads '(Smith, 2007, 2012)' and checks both
+        self.assertEqual(fails_in(PAGES, "Growth was slow (Smith, {{pg.year:year}}, 2012) then."), [])
+        self.assertEqual(fails_in(PAGES, "Growth was slow (Smith, 2012, {{pg.year:year}}) then."), [])
+
+    def test_a_joined_placeholder_is_printed_once(self):
+        # render gives each key of '{{a.y&b.y:year}}' a binding over the same span; printed once per key, the year read
+        # '20072007', so a year cite accepts was reported and a citation cite cannot read hid its typed figures
+        self.assertEqual(fails_in(JOINED, "Growth was slow (Smith, {{a.y&b.y:year}}, 2012) then."), [])
+        self.assertEqual(heads(fails_in(JOINED, "Growth was slow (Smith, 20{{a.x&b.x:int}}, 2007) then.")),
+                         ["unbound number '20'", "unbound number '2007'"])
+
+    def test_a_number_word_in_underscore_italics_is_a_quantity(self):
+        # attack on 8de312e: '\b' treats '_' as a letter, so '_three_' (Markdown italics) passed everywhere
+        three = ["unbound number word 'three'"]
+        self.assertEqual(heads(num_fails("rents rose _three_ percent then.")), three)
+        self.assertEqual(heads(num_fails("rents rose __three__ percent then.")), three)
+        self.assertEqual(heads(num_fails("it _doubled_ and then _quadrupled_.")),
+                         ["unbound number word 'doubled'", "unbound number word 'quadrupled'"])
+        self.assertEqual(heads(num_fails("a _threefold_ rise.")), ["unbound number word 'threefold'"])
+        self.assertEqual(heads(num_fails("rents rose (up _three_ percent per Dell et al., 2012) then.")), three)
+        self.assertEqual(heads(tmpl_fails("rents rose _three_ percent then.")), three)
+
+    def test_an_underscore_sign_or_percent_beside_a_placeholder_is_still_typed_by_hand(self):
+        # _SIGN_BEFORE kept '\b', so '_minus_ {{x}}' passed, and one '_' was the only underscore emphasis read beside
+        # a placeholder
+        sign = ["a sign is typed by hand before {{col.r:dec2}}"]
+        self.assertEqual(heads(num_fails("correlate at _minus_ {{col.r:dec2}} here")), sign)
+        self.assertEqual(heads(num_fails("correlate at __minus__ {{col.r:dec2}} here")), sign)
+        self.assertEqual(heads(tmpl_fails("correlate at _negative_ {{col.r:dec2}} here")), sign)
+        self.assertEqual(heads(num_fails("about {{tidy.r2_share:dec2}} __percent__ of it")),
+                         ["{{tidy.r2_share:dec2}} is printed as a percent"])
+
+    def test_underscore_emphasis_around_a_points_unit_or_inside_an_identifier_is_not_a_typed_sign(self):
+        # 'percentage points' in '_' or '__' emphasis is still points, and a snake_case name ending in a sign word is a
+        # name: Markdown reads an underscore as emphasis only at a word's edge
+        self.assertEqual(num_fails("cut growth by {{tidy.growth_pp:dec1}} __percentage points__ there"), [])
+        self.assertEqual(num_fails("cut growth by {{tidy.growth_pp:dec1}} _percentage points_ there"), [])
+        self.assertEqual(tmpl_fails("the column false_positive {{tidy.n:int}} rows"), [])
+        self.assertEqual(num_fails("the field net_negative {{tidy.n:int}} rows"), [])
+        self.assertEqual(num_fails("the field net\\_negative {{tidy.n:int}} rows"), [])
+
+    def test_a_number_word_inside_an_identifier_is_not_a_quantity(self):
+        # 'top_ten' and 'share_one' join words with '_' (no emphasis), as '\b' always read them
+        self.assertEqual(tmpl_fails("see top_ten.csv and the share_one column"), [])
+        self.assertEqual(num_fails("see top_ten.csv and the share_one column"), [])
+        self.assertEqual(num_fails("see ten_rows.csv and the one_hot column"), [])
+        # an escaped '\_' joins two words the same way
+        self.assertEqual(num_fails("See the top\\_ten column and the share\\_one column."), [])
+
+    def test_an_allow_phrase_switches_off_chart_pairing_only_where_it_covers_r_or_n(self):
+        # an [allow] phrase anywhere in a chart text switched off the r and n pairing ('(base 1500)' with '1500'); now
+        # only one that covers a printed r or n does, so an italic '_three_' does not either
+        for prose, allow in (("r = 0.81, n = 97 (base 1500)", {"1500": "the year the comparison is about"}),
+                             ("r = 0.81, n = 97, _three_ panels", {"three": "the panel count"})):
+            fails = numbers.chart_figures([{"file": "c.png", "prose": [prose]}], R, None, allow)
+            self.assertTrue(any("no single result has both" in f for f in fails), (prose, fails))
+
+    def test_an_allow_phrase_also_covers_its_italic_form(self):
+        # [allow] phrases matched with (?<!\w)...(?!\w), so an italic '_three_' could not be exempted
+        self.assertEqual(num_fails("rents rose _three_ percent then.", {"three": "a count stated in the source"}), [])
+        self.assertEqual(num_fails("the _Three-Body Problem_ sold well.", {"Three-Body Problem": "a book title"}), [])
+
+    def test_a_number_word_inside_a_longer_word_is_not_a_quantity(self):
+        # control: a letter on either side keeps 'one' in 'someone' and 'ten' in 'often' or 'tenant' out
+        self.assertEqual(num_fails("Someone, anyone and the tenant often phone; _tenant_ too."), [])
+        # a digit or a non-ASCII letter touching it counts as a letter, and 'fold' alone is not '-fold'
+        self.assertEqual(num_fails("the A4one form, the one4all fund, Ñone and oneñ"), [])
+        self.assertEqual(num_fails("each fold of a k-fold split"), [])
 
     def test_allow_phrase_needs_word_boundaries(self):
         # attack: an allow entry 'round one' also exempted 'around one'
