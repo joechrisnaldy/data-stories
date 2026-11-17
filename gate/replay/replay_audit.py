@@ -5,6 +5,14 @@ harness applies each to a fresh temp copy, runs `python3 -m gate`, and compares 
 with the baseline run. An attack is CAUGHT when the expected check reports a problem the baseline did
 not. Attacks expected NOT to be caught are the gate's honest limit, and are recorded as such.
 
+An attack that tampers with a figure asks the gate's own renderer what the post prints for it (`figure`),
+so it keeps finding its target after the post's data changes. On 2026-11-16 eleven attacks had gone stale
+because they hard-coded figures (minus 0.44, n = 196) and sentences that later rounds of Post 25 changed.
+An attack whose anchor is gone is reported as ERROR and fails the run: it is never counted as caught, and
+an honest-limit attack passes only as NOT CAUGHT. A gate run that prints no verdict line, or hangs, is an
+error, never zero problems. Some attacks still hang on a sentence of the post ('The sign flipped.' among
+them): when one is reworded they ERROR, which is the signal to point them at the new wording.
+
 Run from Projects/analytics-blog:  python3 gate/replay/replay_audit.py reversal-of-fortune
 Slow by design (each run rebuilds the post twice). Not part of the self-test.
 """
@@ -18,9 +26,11 @@ import sys
 import tempfile
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-GATE_TIMEOUT = 900   # seconds per gate run; a hang is reported as a failure, never waited on silently
+GATE_TIMEOUT = 900   # seconds per gate run; a hang is an error, never waited on silently or read as no problems
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, ROOT)
+from gate.render import render, resolve  # noqa: E402  (the harness lives two folders below the package's parent)
 
 
 def run_gate(post: str) -> dict:
@@ -28,7 +38,10 @@ def run_gate(post: str) -> dict:
         r = subprocess.run([sys.executable, "-m", "gate", post], cwd=ROOT, capture_output=True, text=True,
                            timeout=GATE_TIMEOUT)
     except subprocess.TimeoutExpired:
-        return {"TIMEOUT": [f"gate run exceeded {GATE_TIMEOUT}s on {post}"]}
+        raise RuntimeError(f"gate run exceeded {GATE_TIMEOUT}s on {post}") from None
+    if not re.search(r"^(GATE PASSED|GATE FAILED|GATE INCOMPLETE|setup +FAILED)", r.stdout, re.M):
+        last = ((r.stdout + r.stderr).strip().splitlines() or ["no output"])[-1]
+        raise RuntimeError(f"the gate gave no verdict (exit {r.returncode}): {last[:140]}")
     problems, current = {}, None
     for line in r.stdout.splitlines():
         m = re.match(r"^(\w+)\s+(\d+) problem", line)
@@ -64,8 +77,33 @@ def copy_post(post: str) -> str:
 
 def edit(path, old, new, count=1):
     s = open(path).read()
-    assert old in s, f"attack anchor not found in {os.path.basename(path)}: {old[:60]!r}"
+    if old not in s:
+        raise LookupError(f"attack anchor not found in {os.path.basename(path)}: {old[:60]!r}")
     open(path, "w").write(s.replace(old, new, count))
+
+
+def figure(d, path, fmt, by=0):
+    """What the post prints for results[path] in format `fmt`; with `by`, the same figure wrong by that much."""
+    value = resolve(path, json.load(open(f"{d}/results.json")))[3]
+    return render("{{x:" + fmt + "}}", {"x": value + by}, None)[0]
+
+
+def retype(d, rel, path, fmt, by, within=None):
+    """Hand-edit one printed figure in a file, as an attacker with an editor would: the first place the post
+    prints results[path], or the first such place inside a stretch matching the pattern `within`."""
+    file = f"{d}/{rel}"
+    text = open(file).read()
+    shown = figure(d, path, fmt)
+    printed = re.compile(r"(?<![\w.])(?<!\d[,-])" + re.escape(shown) + r"(?![\w])(?![.,-]\d)")   # never inside a longer number
+    stretches = re.finditer(within, text, re.S | re.M) if within else [re.match(r".*", text, re.S)]
+    hit = next((m for m in stretches if printed.search(m.group(0))), None)
+    if not hit:
+        raise LookupError(f"attack anchor not found in {os.path.basename(file)}: {shown!r}" + (f" inside {within!r}" if within else ""))
+    wrong = figure(d, path, fmt, by)
+    if wrong == shown:
+        raise ValueError(f"attack changes nothing: {path} still prints {wrong!r} when off by {by}")
+    changed = printed.sub(wrong, hit.group(0), count=1)
+    open(file, "w").write(text[:hit.start()] + changed + text[hit.end():])
 
 
 def rerender(d):
@@ -93,9 +131,45 @@ def _stale_chart(d):
     """Regenerate the charts from an edited script, then put the script back: the committed chart is stale."""
     path = f"{d}/make_charts.py"
     original = open(path).read()
-    edit(path, 'ax.set_title("The tidy story, and it is true")', 'ax.set_title("The tidy story, and it is TRUE")')
+    title = re.search(r'ax\.set_title\(\s*"([^"\\]*[a-z][^"\\]*)"\s*[,)]', original)    # the first title typed as plain text
+    if not title:
+        raise LookupError("attack anchor not found in make_charts.py: ax.set_title(\"...\") with a plain lower-case string")
+    open(path, "w").write(original[:title.start(1)] + title.group(1).upper() + original[title.end(1):])
     regenerate(d)
     open(path, "w").write(original)
+
+
+def _stale_results(d):
+    """Bump one n in the committed results, so they no longer match a clean rebuild."""
+    n = json.load(open(f"{d}/results.json"))["tidy_story"]["n"]
+    edit(f"{d}/results.json", f'"n": {n}', f'"n": {n + 1}')
+
+
+def _requote_meta_description(d):
+    """Rewrite the page's metaDescription in single quotes with one figure changed, as a hand edit would."""
+    path = f"{d}/published.mdx"
+    text = open(path).read()
+    field = re.search(r'^metaDescription: "([^"\\]*)"$', text, re.M)
+    if not field:
+        raise LookupError("attack anchor not found in published.mdx: a double-quoted metaDescription with no escapes")
+    open(path, "w").write(text[:field.start()] + "metaDescription: '" + field.group(1).replace("'", "''") + "'" + text[field.end():])
+    retype(d, "published.mdx", "tidy_story.r", "signed2", -0.05, within=r"^metaDescription: '[^\n]*'$")
+
+
+def _swap_two_keys(d):
+    """Swap the two flip figures' keys in the draft, re-render, and republish on the page each line the re-render
+    changed (found by line, never by searching the page for a printed figure, which can match another sentence)."""
+    before = open(f"{d}/{RENDERED}").read().splitlines()
+    f, n = (f"{{{{{key}.r:signed2}}}}" for key in (F, N))
+    edit(f"{d}/{SRC}", f, "@@F@@")
+    edit(f"{d}/{SRC}", n, f)
+    edit(f"{d}/{SRC}", "@@F@@", n)
+    rerender(d)
+    changed = [(a, b) for a, b in zip(before, open(f"{d}/{RENDERED}").read().splitlines()) if a != b]
+    if not changed:
+        raise ValueError("attack changes nothing: the two figures print alike")
+    for a, b in changed:
+        edit(f"{d}/published.mdx", a, b)
 
 
 def _point_images_at_copy(d):
@@ -121,7 +195,13 @@ def _set_source_value(d, key, name, value, quote=None):
 
 
 SRC = "draft/the-map-used-to-run-the-other-way.src.md"
+RENDERED = "draft/the-map-used-to-run-the-other-way.md"
 F, N = "flip.density_1500|income_2023|former_colonies", "flip.density_1500|income_2023|never_colonised"
+# two eras' figures for one group, computed on different samples (77 and 87 places on 2026-11-16), printed beside
+# the n of a third sample, the places measurable in both eras, which belongs to neither: the round-3 defect
+THEN, NOW = ("{{heat_reversal.never_colonised.vs_density_1500.r:signed2}}",
+             "{{heat_reversal.never_colonised.vs_income_2023.r:signed2}}")
+ELSEWHERE = "Elsewhere, across the {{never_colonised_common_sample.n:int}} places measurable in both eras, it ran"
 
 # (name, expected check or None if it should NOT be caught, mutation)
 ATTACKS = [
@@ -130,11 +210,12 @@ ATTACKS = [
     ("fabricated number followed by a comma", "numbers",
      lambda d: edit(f"{d}/{SRC}", "Nothing. A flat cloud.", "Nothing across 941, a flat cloud.")),
     ("figure hand-typed in place of its placeholder", "numbers",
-     lambda d: edit(f"{d}/{SRC}", "the correlation is **{{tidy_story.r:signed2}}**", "the correlation is **minus 0.44**")),
+     lambda d: edit(f"{d}/{SRC}", "the correlation is **{{tidy_story.r:signed2}}**",
+                        f"the correlation is **{figure(d, 'tidy_story.r', 'signed2')}**")),
     ("figure in 'r = -0.49' notation", "numbers",
      lambda d: edit(f"{d}/{SRC}", "This is the test the argument actually rests on.", "This is the test (r = -0.49) the argument rests on.")),
     ("hand-typed figure hidden in the method notes", "numbers",
-     lambda d: edit(f"{d}/{SRC}", "Income is logged in every correlation.", "Income is logged in 97 correlations.")),
+     lambda d: edit(f"{d}/{SRC}", "Income is logged in every correlation", "Income is logged in 97 correlations")),
     ("external figure laundered with an invented citation", "sources",
      lambda d: (edit(f"{d}/{SRC}", "I nearly wrote it as one.", "I nearly wrote it as one. Nunn (2008) puts it at {{src:nunn2008.values.fe:signed2}}."),
                 edit(f"{d}/{SRC}", "McEvedy, C., & Jones, R. (1978).", "Nunn, N. (2008). The long-term effects of Africa's slave trades. *QJE*.\n\nMcEvedy, C., & Jones, R. (1978)."),
@@ -145,11 +226,9 @@ ATTACKS = [
     ("working paper stored in place of the cited article, hash updated to match", "sources",
      lambda d: _swap_document(d, "Climate Change and Economic Growth\nNBER Working Paper 14132\n")),
     ("round-3 defect: two eras' figures from different samples, no n", "pairs",
-     lambda d: (edit(f"{d}/{SRC}", "{{never_colonised_common_sample.vs_density_1500.r:signed2}} then and {{never_colonised_common_sample.vs_income_2023.r:signed2}} now",
-                     "{{heat_reversal.never_colonised.vs_density_1500.r:signed2}} then and {{heat_reversal.never_colonised.vs_income_2023.r:signed2}} now"), rerender(d))),
+     lambda d: (edit(f"{d}/{SRC}", "The sign flipped.", f"The sign flipped. {ELSEWHERE} {THEN} then and {NOW} now."), rerender(d))),
     ("the same defect split across two sentences", "pairs",
-     lambda d: (edit(f"{d}/{SRC}", "{{never_colonised_common_sample.vs_density_1500.r:signed2}} then and {{never_colonised_common_sample.vs_income_2023.r:signed2}} now",
-                     "{{heat_reversal.never_colonised.vs_density_1500.r:signed2}} then. Now it is {{heat_reversal.never_colonised.vs_income_2023.r:signed2}}"), rerender(d))),
+     lambda d: (edit(f"{d}/{SRC}", "The sign flipped.", f"The sign flipped. {ELSEWHERE} {THEN} then. Now it is {NOW}."), rerender(d))),
     ("universal introduced by a fix", "claims",
      lambda d: (edit(f"{d}/{SRC}", "The sign flipped.", "The sign flipped in every former colony."), rerender(d))),
     ("causal claim introduced by a fix", "claims",
@@ -159,9 +238,8 @@ ATTACKS = [
     ("reference entry never cited", "cite",
      lambda d: (edit(f"{d}/{SRC}", "McEvedy, C., & Jones, R. (1978).", "Nunn, N. (2008). The long-term effects. *QJE*.\n\nMcEvedy, C., & Jones, R. (1978)."), rerender(d))),
     ("rendered draft hand-edited after rendering", "rendered",
-     lambda d: edit(f"{d}/draft/the-map-used-to-run-the-other-way.md", "minus 0.44", "minus 0.48")),
-    ("stale committed results.json", "fresh",
-     lambda d: edit(f"{d}/results.json", '"n": 196', '"n": 197')),
+     lambda d: retype(d, RENDERED, "tidy_story.r", "signed2", -0.05)),
+    ("stale committed results.json", "fresh", _stale_results),
     ("hardcoded wrong annotation on a chart, regenerated", "panels",
      lambda d: (edit(f"{d}/make_charts.py", "f\"r = {r['r']:+.2f}   n = {r['n']}\"", "\"r = +0.81   n = 250\""), regenerate(d))),
     ("en dash in a chart legend, regenerated", "style",
@@ -171,7 +249,7 @@ ATTACKS = [
     ("broken image link", "links",
      lambda d: (edit(f"{d}/{SRC}", "../charts/rf-4-who-actually-reversed.png", "../charts/missing.png"), rerender(d))),
     ("hand-edited figure in a published alt text", "published",
-     lambda d: edit(f"{d}/published.mdx", "The correlation on log income is minus 0.44.", "The correlation on log income is minus 0.48.")),
+     lambda d: retype(d, "published.mdx", "tidy_story.r", "signed2", -0.05, within=r'alt="[^"]*"')),
     ("published body drifts from the draft", "published",
      lambda d: edit(f"{d}/published.mdx", "The sign flipped.", "The sign flipped, decisively.")),
     ("exemption added without a reason", "config",
@@ -205,17 +283,14 @@ ATTACKS = [
     ("committed chart no script produces", "fresh",
      lambda d: shutil.copy(f"{d}/charts/rf-1-the-tidy-story.png", f"{d}/charts/rf-5-orphan.png")),
     ("committed chart stale against its script", "fresh", _stale_chart),
-    ("single-quoted front matter field edited by hand", "published",
-     lambda d: edit(f"{d}/published.mdx", 'metaDescription: "Temperature correlates with national income at minus 0.44.',
-                    "metaDescription: 'Temperature correlates with national income at minus 0.48.", 1) or
-               edit(f"{d}/published.mdx", 'what it does not."\n', "what it does not.'\n")),
+    ("single-quoted front matter field edited by hand", "published", _requote_meta_description),
     ("published caption edited away from the chart's footnote", "published",
-     lambda d: edit(f"{d}/published.mdx", "Every entity with both, 196 of them", "Every entity with both, 197 of them")),
+     lambda d: retype(d, "published.mdx", "tidy_story.n", "int", 1, within=r"<figcaption>.*?</figcaption>")),
     ("published image is not the chart the scripts produce", "published",
      lambda d: shutil.copy(f"{d}/charts/rf-2-the-same-heat-in-1500.png",
                            f"{d}/site-public/" + next(r for r in _point_images_at_copy(d) if r.endswith("rf-1-the-tidy-story.png")))),
     ("rendered README hand-edited after rendering", "rendered",
-     lambda d: edit(f"{d}/README.md", "| minus 0.44 (n = 196) |", "| minus 0.48 (n = 196) |")),
+     lambda d: retype(d, "README.md", "tidy_story.r", "signed2", -0.05, within=r"^\|[^\n]*\|$")),
     # ---- attacks from the review of v2, each fixed in v3
     ("quote shortened to a bare number found elsewhere in the paper (sign dropped)", "sources",
      lambda d: _set_source_value(d, "ajr2002_coef", "coef", 0.38, quote="0.38")),
@@ -278,14 +353,9 @@ ATTACKS = [
      lambda d: (edit(f"{d}/results.json", '"indonesia": {', '"indonesia": {"pct_density": 78.72340425531915, '),
                 edit(f"{d}/{SRC}", "{{indonesia.density_pct:ordinal0}}", "{{indonesia.pct_density:pct0}}"))),
     # Round bookkeeping (re-closing a round, a manifest change after the last clean round) is exercised
-    # in gate/tests/test_rounds.py rather than here: close-round refuses on a red gate, and Post 25's
-    # gate is deliberately red on three real sentences.
+    # in gate/tests/test_rounds.py rather than here.
     # ---- the honest limit: these are expected to pass
-    ("two figures' keys swapped, re-rendered and republished consistently", None,
-     lambda d: (edit(f"{d}/{SRC}", f"**{{{{{F}.r:signed2}}}}**", "**@@F@@**"), edit(f"{d}/{SRC}", f"**{{{{{N}.r:signed2}}}}**", f"**{{{{{F}.r:signed2}}}}**"),
-                edit(f"{d}/{SRC}", "**@@F@@**", f"**{{{{{N}.r:signed2}}}}**"), rerender(d),
-                edit(f"{d}/published.mdx", "**minus 0.49**", "**@@**"), edit(f"{d}/published.mdx", "**plus 0.28**", "**minus 0.49**"),
-                edit(f"{d}/published.mdx", "**@@**", "**plus 0.28**"))),
+    ("two figures' keys swapped, re-rendered and republished consistently", None, _swap_two_keys),
     ("forged source document carrying the cited title and the quote", None,
      lambda d: _swap_document(d, "Temperature Shocks and Economic Growth\n(forged)\n", keep_quote=True)),
     ("figure laundered through an [allow] entry with a plausible reason", None,
@@ -330,9 +400,10 @@ def main(post):
     caught = sum(1 for r in rows if r[1] and r[2] == "CAUGHT")
     should = sum(1 for r in rows if r[1])
     limits = sum(1 for r in rows if r[1] is None and r[2].startswith("NOT CAUGHT"))
+    errors = sum(1 for r in rows if r[2] == "ERROR")
     print(f"\n{caught} of {should} attacks caught by the expected check; {limits} of "
-          f"{len(rows) - should} honest-limit attacks pass, as documented")
-    return 0 if caught == should else 1
+          f"{len(rows) - should} honest-limit attacks pass, as documented; {errors} attack(s) in ERROR")
+    return 0 if caught == should and limits == len(rows) - should and not errors else 1
 
 
 if __name__ == "__main__":
