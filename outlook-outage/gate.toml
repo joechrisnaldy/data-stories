@@ -1,0 +1,46 @@
+# Gate configuration for Post 31. Run from Projects/analytics-blog:  python3 -m gate outlook-outage
+[post]
+slug = "outlook-break-or-blocker"
+source = "draft/outlook-break-or-blocker.src.md"
+rendered = "draft/outlook-break-or-blocker.md"
+results = "results.json"
+sources = "docs/sources.json"
+build = ["parse_records.py", "build_analysis.py"]
+charts = "make_charts.py"
+chart_dir = "charts"
+docx = "draft/outlook-break-or-blocker.docx"
+mdx = "../../joechrisnaldy-portfolio/site/src/content/blog/outlook-break-or-blocker.mdx"
+extra =[["docs/README.src.md", "README.md"], ["docs/data-README.src.md", "data/README.md"]]
+
+# ---------------------------------------------------------------------------------------------------
+# [allow]: words or digits that are not results. Every entry says why. Stale entries fail the gate.
+[allow]
+"Microsoft 365" = "a product name, not a quantity"
+"Digital 2027" = "the title of DataReportal's report series, not a quantity"
+"million reports worldwide" = "the unit of the bound figure src:downdetector_reports.values.reports_million"
+"billion US dollars" = "the unit of the bound figure src:aeg_productivity.values.billion_usd"
+"million US dollars" = "the unit of the bound figures from Souter (2026): src:dbrs_insured and src:cybercube_insured"
+"million to" = "the unit of the bound figure src:dbrs_insured.values.low_million_usd"
+"One dependency" = "the post's name for its thesis; the dependency is Exchange Online, named where it is used; not a count"
+"one dependency" = "the post's name for its thesis; the dependency is Exchange Online, named where it is used; not a count"
+
+# [claims]: every universal, superlative or causal word sits inside a phrase naming its licence.
+[claims]
+"some core systems cannot be used, because the way into them runs through Microsoft" = "the owner's own view, stated as the owner's (docs/research/brainstorm.md, answer to question 1)"
+"it had at least" = "quoted from Habib (2026), src:downdetector_countries: 'at least 43,000 reports'"
+"Workhorse Group moved its quarterly results call because of the outage" = "Workhorse Group (2026), the release postponing its results call"
+"None of the articles shows how the figures were worked out" = "docs/provenance-audit.md: none of the stored articles (Stelter et al. 2026; Souter 2026) gives a method"
+"because their features depend on Exchange Online" = "Microsoft (2026), MO1550821 final status: features that interact with Exchange Online were impacted"
+"Microsoft 365 outage theme drives credential phishing and support scams" = "the title of the Field Effect (2026) reference, quoted"
+
+# [pairs]: a paragraph that sets figures from different samples side by side, with the reason.
+[pairs]
+
+# [published]: a template for every text field of the live MDX front matter, and alt text per chart.
+[published]
+seoTitle = "Outlook Went Down: A Break or a Blocker for Your Team?"
+excerpt = "When Microsoft's email went down in November, some people called it a break and some companies were disrupted. What a team can agree on before the next outage."
+metaDescription = "Microsoft's final status put the November outage's impact at {{timeline.impact_hours:dec1}} hours and listed {{services.final_n:words}} services besides mail as impacted. A reflection on backup channels such as WhatsApp."
+"alt:oo-1-timeline.png" = "A timeline of Microsoft's updates during the outage, from its first post to its final status, in UTC and Jakarta time, with Microsoft's stated impact window of {{timeline.impact_hours:dec1}} hours shaded."
+"alt:oo-2-email-vs-whatsapp.png" = "A bar chart of the share of internet users aged {{shares.base_age:int}} and over who used email and WhatsApp in the past month: email {{shares.email_global:pct1}} percent and WhatsApp {{shares.whatsapp_global:pct1}} percent in GWI's surveyed markets."
+"alt:oo-3-many-doors.png" = "A step chart of the number of services besides mail that Microsoft listed as impacted, rising from {{services.first_n:words}} at its first post to a peak of {{services.peak_n:words}} and ending at {{services.final_n:words}} in its final status."

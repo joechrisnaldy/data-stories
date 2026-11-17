@@ -1,0 +1,746 @@
+[
+ {
+  "severity": "HIGH",
+  "kind": "misstated",
+  "where": "Thesis (line 15); Structure item 5 (line 23); chart 3 title (line 32)",
+  "evidence": "Line 15: “the systems that sit behind a Microsoft account stopped too”; line 23: “A backup chat keeps people talking but does not reopen those systems”. services.json line 10: “The impacts are partial: Teams core calls, meetings and chat are said to work, and SharePoint direct file access is said to work. The honest label is impacted, not down.” services.json line 256 (disagreement 6): “Microsoft names no Entra or sign-in service failure in any 12 to 13 Nov incident I read” and “Sign-in as a symptom is Microsoft-backed; sign-in as a failed service is not”. Lines 184-190 add a weak, anonymous report that single sign-on still worked for apps outside Microsoft 365. Line 55: “In Microsoft's wording the Exchange outage caused the sign-in failures, not the other way round.” Disagreement 4 (line 256): the shared-authentication framing and the core-authentication-configuration root cause “both belong to the 31 Aug to 3 Sep outage (EX1464935/MO1465074)”. The design's own line 32 forbids “down” and line 46 forbids saying sign-in went down, yet the thesis says “stopped”. The sweep does not bear out the owner's premise for this outage (brainstorm line 21, “since the login depend on them”; line 25, “when the Microsoft login stops”), and the design never tells the owner so. Instead it silently swaps “login” for “account” (lines 15, 23, 32), which drops the owner's word but keeps the claim that identity failed.",
+  "fix": "Before drafting, put the conflict to the owner as a multiple-choice question. In Microsoft's record the wider impact runs through Exchange Online's connection systems, not through sign-in, and the login mechanism fits the 31 Aug outage. Rewrite the thesis and the turn so the systems are “listed by Microsoft as impacted” (partial impact on features that depend on Exchange Online). State the login point as the owner's general concern, not as what happened on 12 November. Avoid “Microsoft account” as the shared door: outside these sources, it is also Microsoft's name for personal accounts.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "missing",
+  "where": "Approaches considered (line 56); Sources (lines 36 and 37); Structure item 2 (line 20)",
+  "evidence": "Brainstorm line 31, the owner's approach: “build the story from what Microsoft said in public (status posts, the executive's root-cause summary)”. Line 56 restates it as “Draft now from Microsoft's own words (chosen by the owner). The service health record gives times to the second and the statements in full”. Line 37 limits X posts to “where the service health record lacks the statement (the apology, the all-clear)”, and line 20 says only “its preliminary cause in one or two plain sentences”. The design never names the executive's root-cause summary (Lamanna, 16 Nov; timeline.json lines 166-172: “Only the opening (search index title) was read”, with the body known only through ITPro, UC Today and HRD America). The backbone is admin-console text: per timeline.json line 419 (gap 2), “The admin-center originals of EX1550543, MO1550821 and TM1550488 need tenant admin sign-in”, so it is not what Microsoft said in public. services.json line 257 put “can the post cite Penn ISC's mirror as Microsoft's own words?” to the owner as Q2, and no answer is recorded. Line 36 decides it anyway: “Cited with Microsoft as the author and the mirror as where it was retrieved.”",
+  "fix": "Name Lamanna's 16 Nov abridged root cause as a source, to be saved whole from a logged-in browser (ITPro, UC Today and HRD America reproduce parts of it). Say whether the post's cause sentences come from it or from the 14 Nov final status. List services Q2 (cite the mirror as Microsoft's words: A, B or C) as an open question for the owner, and describe the backbone honestly as Microsoft's admin-console text republished by Penn ISC.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "misstated",
+  "where": "Sources, Posts on X (line 37)",
+  "evidence": "Line 37: “a post is used only where the service health record lacks the statement (the apology, the all-clear)”. The service health record does carry an apology: timeline.json lines 246-253, “Admin-center apology and cause, 17:57:06 UTC, 13 Nov”, whose notes give its opening apology sentence. Disagreement 10 (timeline.json line 418): the admin center says “caused you and your business”, while the @Microsoft X post (16:40:18 UTC) says “caused our customers and partners”.",
+  "fix": "Limit the parenthetical to the all-clear, and say which apology the post quotes. The record's 17:57:06 UTC wording needs no X capture. The @Microsoft wording is different and does need one, and the post must not mix the two.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "misstated",
+  "where": "Non-goals (line 45)",
+  "evidence": "Line 45: “a cost estimate (the only one found, a productivity-loss figure, has no published method, so it is left out)”. The reactions sweep found several: AEG's US$7 billion productivity loss (reactions.json lines 175-181); AEG's refunds of about US$800 million a day (lines 184-190); Morningstar DBRS's US$300m to US$500m in insured losses, CyberCube's under US$100m and Marsh Re's “minimal” (lines 22-28, 193-208); and RMIT's “tens of billions globally” (lines 211-217). Disagreement 7 (line 391) treats them as different quantities, none with a published method. Leaving cost out is the sweep's owner question Q2 (line 392, options A to C), which has no recorded answer, and the owner asked for “how many impact” (brainstorm line 11).",
+  "fix": "State what was found: several estimates of different quantities (productivity, refunds, insured losses), none with a published method. Put Q2 to the owner as multiple choice instead of deciding it in the design.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "contradiction",
+  "where": "Chart 3 (line 32); Structure item 5 (line 23)",
+  "evidence": "Brainstorm line 29: the owner chose “One login, many doors (Recommended)”, glossed as “the Microsoft services reported down besides mail”, and line 25 has “knowing which work stops when the Microsoft login stops”. Line 32 renames the chart “one account, many doors” and counts “from five services at its first post to twenty in the final status, Exchange Online included”, while line 23 says “Microsoft listed many services beyond mail as impacted (chart 3)”. services.json line 258 counts besides mail, from “4 at 18:27 UTC on 12 Nov” to “19 from 22:00 through the final update”. The design makes three changes (login to account, down to impacted, besides mail to Exchange included) and marks none of them as a departure from the owner's choice.",
+  "fix": "Count and chart the services besides Exchange Online (4 rising to 19, re-counted by script), or say “including mail” in Section 5 and explain why. List the renaming and the “impacted” label as departures from Q2 and Q6 for the owner to approve.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "contradiction",
+  "where": "Thesis (line 15); Structure item 4 (line 22); Sources, Reactions (line 40)",
+  "evidence": "Line 15: “(WhatsApp is the natural candidate, especially in Indonesia)”, against line 22: “An example, not an endorsement.” The owner offered WhatsApp as one option among others: “whatsapp or anything that can be use same formal like email” (brainstorm line 13) and “such as WhatsApp” (line 25). Chart 2's own worldwide pair puts email at 76.4% above WhatsApp at 54.9% (reach.json line 213), and WhatsApp is blocked in China (line 28), so “natural” holds for Indonesia, not worldwide. The design also leaves out the one sourced counterpoint from this outage, “HSBC told staff not to use personal email or WhatsApp” (Reuters, reactions.json lines 166-172), and line 40 does not list Reuters.",
+  "fix": "Use the owner's “such as WhatsApp”, with Indonesia's figure as the reason it fits there. Add HSBC's instruction to Section 4 as a counterpoint the discussion has to answer, and add Reuters (via Euronext Live) to the sources.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "invented",
+  "where": "Structure item 3 (line 21); chart 3 (line 32); Sources, Downdetector (line 39)",
+  "evidence": "The sweeps put multiple-choice questions to the owner that the brainstorm's eight answers do not cover. services.json line 258, Q1: “which count should the chart show? (A) 19 ... (D) The timestamped step chart”. reactions.json line 392: Q1 “Downdetector numbers in the post”, Q3 “Singapore IPOS excluded-day PDF” and Q4 “Fake-support scams”. The design settles each one without saying so: a step chart that counts Exchange (line 32); “Downdetector figures only as quoted by named outlets”, with no figures named (line 39); IPOS left out; and only the email phishing reported (line 21). The owner asked for every question as multiple choice (brainstorm line 23).",
+  "fix": "Add an “Open for the owner” list with these questions, plus the mirror and cost questions from the HIGH findings. Give each as multiple choice with the option the design proposes, to be settled at the step 1 checkpoint.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "contradiction",
+  "where": "Chart 1 (line 30); Structure item 2 (line 20)",
+  "evidence": "Line 30: “with Jakarta's Friday working hours marked: the impact window covers them, which is the Indonesia thread's way into the story.” The owner chose “Indonesia comes in where WhatsApp comes up” (brainstorm line 27). The window does cover those hours (23:20 WIB Thursday to 23:10 WIB Friday), but no source defines Jakarta's working hours, so the band's hours would be an unbound figure on the chart. The band also invites the reading that Jakarta lost its working day, while “No Indonesian organisation is named as disrupted” (reactions.json line 343) and the Indonesian onset rests on a single small outlet (lines 346-352).",
+  "fix": "Keep the Jakarta axis the owner chose, and either drop “the Indonesia thread's way into the story” or put it to the owner. If the band stays, name its hours and their source (not the owner's own hours, which would be a third personal fact), and caption it as Microsoft's global window, not as measured impact in Indonesia.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "contradiction",
+  "where": "Chart 2 (line 31); Sources, DataReportal (line 38)",
+  "evidence": "Brainstorm line 29: the owner chose “Email vs WhatsApp (Recommended)” for “how many people use each worldwide, with WhatsApp's reach in Indonesia; published user counts, to be verified”. Line 31 charts survey shares instead and says “Counts in billions (Radicati, Meta) are not charted”, without saying that the owner chose counts. It labels the bars “email worldwide, WhatsApp worldwide”, but “GWI covers about 54 markets, not the whole world, and cannot survey Russia” (reach.json line 19). The WhatsApp paragraph “does not name a GWI wave” and its sample “includes China, where WhatsApp is blocked” (line 28), and the sweep asks for the wave and these caveats in a footnote (line 213). Line 38 lists “Internet Use Around the World” (category figures) without saying what it is used for.",
+  "fix": "Mark the change from counts to shares as a departure from Q6 for the owner to approve. Label the bars “in GWI's surveyed markets” and carry the caveats in the footnote: about 54 markets, China included, Russia excluded, WhatsApp's wave not named. Say what the Internet Use page is for, or drop it.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Chart 2 (line 31); Structure item 4 (line 22)",
+  "evidence": "Line 31: “No email figure for Indonesia exists on the same basis; the footnote says so”. The sweep searched the reports' text only: “The email-by-country chart is an image, and Indonesia is not named in the text” (reach.json line 19), and “Asking DataReportal or GWI is the only route I can see” (line 212). The footnote would therefore print an absence nobody has verified. Line 22 promises “How many people use email and WhatsApp, worldwide and in Indonesia (chart 2)”, which the chart cannot show for email in Indonesia. The Indonesia WhatsApp value itself “appears only in the chart labels” (line 10), while the gate needs the quote and the value in the stored copy (gate/README.md line 65), and the design does not say how that value will be stored.",
+  "fix": "In step 2, read the Global Overview's email-by-country chart, and confirm the stored copy of the Indonesia page carries 92.7% as text. Until then, the footnote may say only that neither report's text gives an Indonesia email figure. Reword line 22 to “WhatsApp in Indonesia”.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Chart 3 (line 32); Left to the builder (line 62)",
+  "evidence": "Line 32: “as the list grew during the incident (from five services at its first post to twenty in the final status, Exchange Online included)”. The list also shrank: “Defender for Cloud Apps appears as its own entry only at 08:09; Viva Engage appears only at 15:52 and 20:01” (services.json line 13). The series besides mail reads “20 at 08:09; back to 19; 20 at 15:52 and 20:01; 19 from 22:00” (line 258), which makes 21 with Exchange at its peaks, and “22 counting every service ever named” (line 256). Every count “came from a summarizing reader: re-count by script before charting” (line 19). Microsoft's preliminary PIR, as reproduced by Office Watch, lists 14 services including OneDrive, which MO1550821 never names (lines 94-100). Line 62 leaves “the grouping and order on chart 3” to the builder, which fits a list of services rather than a count over time, so the chart's form is unclear.",
+  "fix": "Describe the list as rising and falling, and state no count until a raw capture has been counted by script. Label the chart “listed as impacted in MO1550821's updates” and footnote the PIR's different list. Say whether chart 3 is a step chart of the count or a timed list of services.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Structure item 2 (line 20)",
+  "evidence": "Line 20: “Microsoft's statement that there was no sign of a cyberattack”. No Microsoft text says this. The final record says the outage was “not related to cyber or AI / agents” (timeline.json lines 264-271, filed as “Statement that it was not a cyberattack, in the final incident record.”). Disagreement 8 (line 418) traces how the wording drifted: “no indication ... malicious activity” at 03:34 UTC, then “not aware” and “no evidence”, then that final sentence and Lamanna's “not a cyberattack”. “No sign of” weakens Microsoft's final position and blends “malicious activity” into “cyberattack”.",
+  "fix": "Name the statement and the time the post quotes (for example the final status at 04:15:46 UTC on 14 November), and say whether the post mentions the drift.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Structure item 2 (line 20); Approaches considered (line 57)",
+  "evidence": "Line 20, “its preliminary cause in one or two plain sentences”, does not say which of three cause texts the post uses: 13 Nov, “an issue during an earlier network capacity upgrade”; 14 Nov, “traffic shifts ... exposed a latent bug”; or Lamanna's three factors on 16 Nov (disagreement 7, timeline.json line 418). The Preliminary Post-Incident Report itself is admin-only and unread (lines 157-163). Line 57 says “Wait for Microsoft's final post-incident review: its timing is uncertain”, but Microsoft promised a final PIR “within five business days” of 14 Nov (line 262), “reportedly due around 20 Nov 2026” (services.json line 257). The design does not say what happens if that report appears while the post is being drafted.",
+  "fix": "Name the cause text the post uses (the 14 Nov final status is the stored primary source). Correct the rejected option's reason to Microsoft's five-business-day promise. Add a rule for what to do if the final PIR, or a public copy of it, appears before publication.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Intent (line 7)",
+  "evidence": "Line 7: “took Outlook mail down for most of a day”. Microsoft's stated impact window is 23 h 50 m (timeline.json lines 183-190), and chart 1 runs about 37.8 hours to the all-clear (line 420). Disagreement 3 (line 418) lists durations from 23 h 50 m to 37 h 50 m, with press figures up to “36-hour”, and at 20:05 UTC on 13 Nov Microsoft still had no ETA for full recovery (lines 121-127). “Most of a day” is shorter than every one of these and names no window, against the design's own rule that the post “says which time it means” (line 51).",
+  "fix": "Drop the duration from the intent, or tie it to a named window: Microsoft's stated impact window of nearly a day (16:20 UTC on 12 November to 16:10 UTC on 13 November), with the all-clear on 14 November.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Structure item 3 (line 21); Sources, Downdetector (line 39)",
+  "evidence": "Line 21: “Downdetector's counts, attributed to Downdetector as the outlets quoted them”. The sweep warns that “AP calls them 'users', but Downdetector counts reports” (reactions.json line 37; “These are reports, not people”, line 28), and that “Microsoft gave no number of affected users, mailboxes or regions” (timeline.json line 419, gap 4). On the scams, Microsoft's blog gives no counts and says the available evidence does not confirm credential capture (reactions.json lines 283-289). The design carries none of these limits.",
+  "fix": "Add them to Section 3: the counts are reports, not users, and AP's word “users” is not repeated; Microsoft gave no figure for affected users; the phishing campaign has no counts and no confirmed credential capture.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Sources, Reactions (line 40)",
+  "evidence": "Line 40 lists the reaction sources, “each from its own page”, but none of them supports Section 3's “The joke that it was a day off.” (line 21). The sweep's sources for the joke are CNN via KRDO, the Seattle Times via CPA Practice Advisor and AP via ABC11 (reactions.json lines 175-181, 229-244; “so the trend can be stated”, line 235). Section 4's material on phone and WhatsApp fallbacks beyond the court and the hospital is also unlisted: Reuters on Euronext, Maersk and HSBC (lines 166-172), and AP on meetings moving to WhatsApp (line 238). Workhorse's release was read “as reproduced by Finviz” (lines 121-127), not from its own page.",
+  "fix": "Add the outlet sources for the joke and for the phone and WhatsApp fallbacks. Record Workhorse's release as read via Finviz until a GlobeNewswire or Workhorse copy is stored.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Sources, Microsoft's record (line 36)",
+  "evidence": "Line 36: “The mirror keeps about 30 days, so it is captured in step 2, before mid-December.” The sweeps say “Snapshot the PennO365 page now, before the 30-day window drops these incidents” (timeline.json line 420; “so store a snapshot”, line 181), and they call the drop date uncertain: “may drop off around mid-December 2026 (uncertain). If the post needs a stored primary quote, capture it now” (services.json line 257). The page is “refreshed every 15 minutes” (timeline.json line 181), and its header start time has already changed since 13 Nov (lines 192-199).",
+  "fix": "Make the raw capture of both incidents, and of the Cloud Admin Hub pages, the first thing done after approval, with no December deadline. Note that a later capture may differ from the one cited.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "unclear",
+  "where": "Chart 1 (line 30); Sources, Posts on X (line 37)",
+  "evidence": "Line 30, “Every time comes from the build script reading a data file compiled from the stored records”, does not say whether a script parses that file from the raw capture or someone compiles it by hand. The X times, including chart 1's end at “06:09 UTC on 14 November”, are computed from post IDs, not read off the page (timeline.json line 419, gap 1), and the sweep asks for decode_x_ids.py to be ported “into the repo before publishing any number” (line 420). The design mentions neither. Line 37 allows the all-clear post to be “left out”, but chart 1 ends on that post and the design names no other end point.",
+  "fix": "State that the build script parses the stored raw captures and decodes the X post IDs with the ported script. Name chart 1's end point for the case where the all-clear post is not saved (for example the final status at 04:15:46 UTC on 14 November).",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Nowhere in the design (charts, lines 30 to 32; anti-goals, line 46)",
+  "evidence": "The sweeps name what to keep out, and the design carries none of it. On TM1550488: “Keep it off the Exchange timeline or label it separately” (timeline.json line 289). The services sweep says “Leave out TM1550488 (Microsoft never linked it). Leave out OneDrive except via the PIR, and leave out Azure, Xbox and Entra (news or Downdetector only)”, and allows PP1550869 and CR1551339 a footnote (services.json line 258). The timeline sweep lists the confusable incidents MO1437424, EX1464935, MO1221364 and EX1112414 (timeline.json line 419, gap 7), and EX1464935/MO1465074 of 31 Aug carry the authentication root cause (services.json lines 76-82). With the owner's login point as the turn, that August cause is the most likely wrong import.",
+  "fix": "Add a line listing these exclusions, and say whether PP1550869 and CR1551339 get the footnote the sweep allows.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Opening paragraph (line 3); Intent (line 9)",
+  "evidence": "Line 3 says the record is “kept in the session scratchpad as `post31/brainstorm.md` and reproduced in the parts below that rest on them.” The scratchpad lasts only for the session, and several answers are not reproduced faithfully: “Microsoft login” (brainstorm line 25) becomes “Microsoft account”; “One login, many doors” with “reported down besides mail” (line 29) becomes “one account, many doors” with “Exchange Online included”; “published user counts” (line 29) becomes survey shares; and “what Microsoft said in public (status posts, the executive's root-cause summary)” (line 31) becomes the service health record. Line 9 labels the Q1 answer “verbatim” but drops its opening words “In my opinion,” (line 21), which are what mark it as the owner's view (line 33).",
+  "fix": "Store the brainstorm record in the post's docs/ folder. Either reproduce the eight answers verbatim or remove the claim that they are reproduced, and mark every departure from them as a departure.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Sources, DataReportal (line 38)",
+  "evidence": "Line 38: “Reuse terms: attribution to DataReportal and its partners with a link”. The terms also require fair dealing and no distortion, ask for an email before ten or more charts are recreated, and do “not say whether you may quote single data points or draw your own chart from them” (reach.json lines 58-64). GWI does not support using its data to criticise another organisation, which “matters if the Outlook outage post frames email figures as criticism of Microsoft” (lines 67-73). The sweep also says “Keep the WhatsApp logo off the chart” (line 208).",
+  "fix": "Carry these conditions, and the open question on drawing a new chart from the data points, into the rights notes. Add the GWI clause to the anti-goals next to “blaming Microsoft”.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "LOW",
+  "kind": "unclear",
+  "where": "Constraints (line 51)",
+  "evidence": "Line 51 lists “the start: 16:17, 16:20 or 18:26 UTC and a 10:05 UTC header Microsoft never explains” and then says “the post uses Microsoft's own record”. All of these come from Microsoft: “Microsoft's own record gives three different values” (10:05, 16:20, and 16:17 per CIO), and 18:26 is the start of the separate multi-service incident (timeline.json line 418, disagreement 1). The owner's rule was for outlets that disagree with Microsoft (brainstorm line 31), so this constraint does not pick a start.",
+  "fix": "Name the start: 16:20 UTC, the first EX1550543 post and the start in the final status. Note that 18:26 UTC is when MO1550821 opened, and mention 10:05, if at all, only as unexplained, never as the start (timeline.json line 420).",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "LOW",
+  "kind": "misstated",
+  "where": "Thesis (line 15)",
+  "evidence": "Line 15: “while some people took the day as a break”. The owner's fact is that some people “said it was time to take a break” (brainstorm line 33, from line 21), and the public sources report joking (reactions.json line 235), not people actually taking the day off.",
+  "fix": "Keep “said” (the owner's fact) or use “joked” (the trend the sources report).",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "LOW",
+  "kind": "misstated",
+  "where": "Sources, Microsoft's record (line 36)",
+  "evidence": "Line 36: “cross-checked with the Cloud Admin Hub mirror”. The sweep matched four items against it (first update, MO 48-hour extension, “approaching normal levels”, final status; timeline.json line 298), and the service lists were read “through WebFetch's summarizing reader” (services.json lines 10, 257). The skill says supporting records, the design included, “make no hand-written claim about when, in what order or how often something was checked” (SKILL.md line 32).",
+  "fix": "Write “Cloud Admin Hub, a second mirror of the same feed, is the corroborating copy” and leave the checking to the scripts.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "LOW",
+  "kind": "misstated",
+  "where": "Anti-goals (line 46)",
+  "evidence": "Line 46: “Microsoft reported no identity incident”. The sweep's finding is narrower: “Microsoft names no Entra or sign-in service failure in any 12 to 13 Nov incident I read” (services.json line 256), and that covers only one tenant's view. PP1550869's preliminary root cause is that “a dependency service responsible for authentication was unavailable” (lines 40-46), which a hostile reader could quote.",
+  "fix": "Narrow the wording: no Microsoft incident read for 12 to 13 November names a sign-in or Entra failure, and PP1550869 and CR1551339 attribute their sign-in failures to Exchange.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "LOW",
+  "kind": "misstated",
+  "where": "The three charts (line 28)",
+  "evidence": "Line 28: “this post has three by the owner's choice (brainstorm, question 6), flagged here as the series rule asks.” The rule allows fewer charts only if “the data genuinely cannot support a fourth honest chart, and flag it” (SKILL.md line 34; line 60). The sweep found a feasible fourth chart, “a dot chart or annotated timeline of Downdetector's own UTC points” (reactions.json line 393), and the owner declined it (brainstorm line 29).",
+  "fix": "Say that the owner waived the four-chart rule for this post, and that a fourth honest chart existed and was declined.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "LOW",
+  "kind": "misstated",
+  "where": "Constraints (line 52)",
+  "evidence": "Line 52: “Two fact-check rounds at most, then cuts only”. The skill says “a third round needs the owner's ask” (SKILL.md line 63), and the gate requires a round for any surface that did not exist at the last snapshot (gate/README.md lines 90 to 92).",
+  "fix": "Write “two rounds, then cuts only; a third only on the owner's ask or for a new surface”.",
+  "lens": "fidelity"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "misstated",
+  "where": "Thesis (design line 15)",
+  "evidence": "Design: 'the systems that sit behind a Microsoft account stopped too'. services.json line 10 (MO1550821 notes): 'The impacts are partial: Teams core calls, meetings and chat are said to work, and SharePoint direct file access is said to work. The honest label is impacted, not down.' The design's own chart 3 rule (line 32) says 'never down, because Microsoft describes partial impact on features that depend on Exchange Online'. The thesis states a stop that the design forbids the chart to call 'down', and a hostile reader can quote Microsoft's own Teams and SharePoint lines against it.",
+  "fix": "Rewrite the thesis to match the record: Microsoft listed other services as impacted, with partial, feature-level impact that depends on Exchange Online. Drop 'stopped' and 'sit behind a Microsoft account'.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "contradiction",
+  "where": "Section 5 (line 23) and thesis (line 15) vs anti-goals (line 46)",
+  "evidence": "Design line 23: 'The owner's login point. Microsoft listed many services beyond mail as impacted (chart 3). ... which work stops when the Microsoft account stops.' Line 46 anti-goal: 'saying that Microsoft's sign-in service went down (Microsoft reported no identity incident ...)'. services.json line 256, disagreement 6: 'Microsoft names no Entra or sign-in service failure in any 12 to 13 Nov incident I read ... Sign-in as a symptom is Microsoft-backed; sign-in as a failed service is not.' Brainstorm line 25 (Q2): 'knowing which work stops when the Microsoft login stops; ... the owner's login point is the turn of the piece.' The design quietly changes the owner's 'login' to 'account', which is also the name of Microsoft's consumer sign-in. It sets the login point beside chart 3 as if MO1550821 supported it. It never tells the owner that the sources show no login failure in this outage. The flat 'no identity incident' can also be quoted against the post: PP1550869's root cause is 'a dependency service responsible for authentication was unavailable' (services.json line 40).",
+  "fix": "Raise this with the owner before drafting. State the login point as the owner's general view. For 12 November, say what the record shows: features that depend on Exchange Online, including some sign-ins such as Field Service mobile (CR1551339). Keep the owner's word 'login' unless the owner approves 'account'. Scope the anti-goal to 'no Entra or sign-in service incident in the records read'.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "misstated",
+  "where": "Non-goals (line 45)",
+  "evidence": "Design: 'a cost estimate (the only one found, a productivity-loss figure, has no published method, so it is left out)'. reactions.json lines 175 to 217 and line 391 (disagreement 7) list AEG's US$7bn productivity loss, AEG's roughly US$800m a day in refunds, Morningstar DBRS's US$300m to US$500m in insured losses, CyberCube's under US$100m, Marsh Re's 'minimal' and RMIT's 'tens of billions globally'. The sweep also left the cost paragraph as an open owner question (reactions.json line 392, Q2 with options A to C). brainstorm.md records no answer to it.",
+  "fix": "Correct the reason: there are several estimates, none with a published method, and they measure different quantities. Record the owner's answer to the sweep's cost question before treating cost as cut.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "misstated",
+  "where": "Sources, Posts on X (line 37); section 2 (line 20)",
+  "evidence": "Design: 'a post is used only where the service health record lacks the statement (the apology, the all-clear)'. timeline.json lines 247 to 253: 'Admin-center apology and cause, 17:57:06 UTC, 13 Nov', with the note 'The same update opens We are deeply sorry for the disruption this incident has caused you and your business.' MO1550821 carries it at 17:57:20 UTC. So the record does contain the apology. Section 2's event list (line 20) does not include the apology at all, so where it goes in the post is unplanned.",
+  "fix": "Take the apology from the record (17:57:06 UTC, 'caused you and your business') and note that the X wording differs (timeline disagreement 10). Use X only for the all-clear. Either add the apology to section 2's list or say it is cut.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "missing",
+  "where": "Approaches considered (line 56); Sources (line 36); section 2 (line 20)",
+  "evidence": "Brainstorm line 31: 'build the story from what Microsoft said in public (status posts, the executive's root-cause summary)'. Design line 56: 'Draft now from Microsoft's own words (chosen by the owner). The service health record gives times to the second'. The design's backbone is the tenant admin record, read through a third-party mirror (line 36). Per services.json line 28, epifive says the patch wording was 'in the admin-center posts only, not on the public status page or @MSFT365Status'. Whether the post may cite that mirror as Microsoft's own words is an open owner question (services.json line 257, Q2 with options A to C), and brainstorm.md records no answer. The executive's root-cause summary (Lamanna, 16 Nov; timeline.json lines 166 to 172, body known only through ITPro, UC Today and HRD) appears nowhere in the plan. Section 2's 'its preliminary cause' does not say which of three framings it means (timeline.json line 418, disagreement 7: the 13 Nov capacity upgrade, the 14 Nov latent bug, or the 16 Nov three factors).",
+  "fix": "Record the owner's answer on citing the mirror. Say whether the executive's root-cause summary is used, and from which stored copy, or tell the owner it is dropped. Name the cause statement section 2 uses, with its time.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "contradiction",
+  "where": "Chart 2 (line 31); section 4 (line 22)",
+  "evidence": "Brainstorm line 29 (Q6): 'Email vs WhatsApp (Recommended) (how many people use each worldwide, with WhatsApp's reach in Indonesia; published user counts, to be verified)'. Design line 31 charts 'the share of internet users aged 16 and over' and says 'Counts in billions (Radicati, Meta) are not charted'. The change of measure is not flagged as a departure from the owner's choice. Section 4 (line 22) still promises 'How many people use email and WhatsApp, worldwide and in Indonesia (chart 2)', although chart 2 has no counts and no Indonesia email bar.",
+  "fix": "Flag the switch from user counts to survey shares as a change that needs the owner's approval; reach.json line 213 gives the reason and options A to D. Reword section 4 to 'what share of internet users use each', and drop Indonesia for email.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Chart 1 (line 30); Sources, X (line 37)",
+  "evidence": "Design: 'to the all-clear posted on X (06:09 UTC on 14 November)' and 'Every time comes from the build script reading a data file compiled from the stored records'. Line 37 says X posts are 'saved from a logged-in browser with the owner's agreement, or left out'. timeline.json line 419 (gaps 1): 'Every X time here is computed from the post ID (snowflake ...), not read off the page'. timeline.json line 420 says to port decode_x_ids.py 'into the repo before publishing any number'. The design gives no endpoint if the X post is left out, yet the owner's chart runs 'to the all-clear' (brainstorm line 29). It does not say the data file is extracted by a script rather than typed. It also does not say whether chart 1 mixes EX1550543, MO1550821 and X times; the 48-hour extension, for example, is at 09:03:36 (MO), 09:24:08 (X) and 09:55:42 (EX).",
+  "fix": "Name the stored artifact each plotted time comes from, extract every time with a script (plus the ported decode script for X IDs), and pick one track per event. Give the owner a fallback endpoint, such as the final status at 04:15:46 UTC, noting that it still says restoration continues.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Sources heading (line 34); Microsoft record (line 36); chart 2 (line 31)",
+  "evidence": "Design: 'every figure and quote is bound through docs/sources.json'. SKILL.md line 38: 'The quote must occur exactly once in the stored document'. The stored Penn page (about 893,000 characters, timeline.json line 181) holds EX1550543 and MO1550821 together, and key sentences repeat. The final status's start and end window appears in both EX (04:15:46) and MO (04:17:52) (timeline.json line 187). 'Approaching normal levels' appears at 14:01:18 in EX and 14:01:51 in MO (line 100). 'This was a technical issue not related to cyber or AI / agents.' appears at 17:57:06 and 04:15:46 (line 268). For chart 2, reach.json line 10 says the Indonesia WhatsApp value 'appears only in the chart labels'.",
+  "fix": "Plan the stored documents so each bound quote is unique: use longer quotes that carry the incident ID or timestamp, or store a copy per incident. Before committing chart 2's Indonesia bar, confirm the value appears as text in the stored DataReportal copy.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Chart 3 (line 32); Left to the builder (line 62)",
+  "evidence": "Design: 'as the list grew during the incident (from five services at its first post to twenty in the final status, Exchange Online included)'. services.json line 13: 'Defender for Cloud Apps appears as its own entry only at 08:09; Viva Engage appears only at 15:52 and 20:01. Final list on 14 Nov: 20'. Line 256 (disagreement 3): '22 counting every service ever named'. Line 19: 'Every count came from a summarizing reader: re-count by script before charting.' So the list rose and fell, and the counts are unverified. The design says nothing about OneDrive, which is in the preliminary PIR's list (services.json line 94), or about TM1550488 (line 258: 'Leave out TM1550488'). 'The grouping and order on chart 3' (line 62) also leaves open whether the chart is a step chart over time or a grouped list.",
+  "fix": "Describe the list as changing, not growing. Make every count depend on a script recount of the stored capture. State the rules for OneDrive (PIR only), Azure, Xbox and TM1550488. Name the chart form.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "contradiction",
+  "where": "Chart 1 (line 30); section 2 (line 20)",
+  "evidence": "Design: 'with Jakarta's Friday working hours marked: the impact window covers them, which is the Indonesia thread's way into the story' and 'UTC with Jakarta time beside it'. Brainstorm line 27 (Q4): 'the story is told globally; Indonesia comes in where WhatsApp comes up'. The working hours are neither defined nor sourced, yet the gate requires every figure a chart prints to be a result (gate README line 60). The sources hold no Indonesian impact: reactions.json line 343 says 'No Indonesian organisation is named as disrupted', and line 352 notes that the reported rise in Indonesia rests on one small outlet. Microsoft's window is global, and its patch went 'to regions entering peak business hours' at 08:06 UTC (services.json line 22). A hostile reader can say the chart implies Jakarta lost its Friday without any Indonesian evidence.",
+  "fix": "Ask the owner whether Indonesia enters at chart 1 or only where WhatsApp comes up. If the band stays, define and source the hours, and label the window as Microsoft's global impact window, not as Jakarta's experience.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Chart 2 (line 31)",
+  "evidence": "Design: 'No email figure for Indonesia exists on the same basis; the footnote says so' and 'email worldwide, WhatsApp worldwide'. reach.json line 212 (gaps 4): 'The global report's email-by-country chart is an image, and Indonesia is not named in its text'. That chart was never read, so the absence is unproven. reach.json lines 19 and 28 also say GWI covers 'about 54 markets, not the whole world', excludes Russia, includes China where WhatsApp is blocked, and that the WhatsApp paragraph 'does not name a GWI wave'.",
+  "fix": "Read the email-by-country chart before writing the footnote; until then, write 'not found in the reports' text'. Label 'worldwide' as GWI's surveyed markets and footnote the unnamed WhatsApp wave.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Sources, DataReportal (line 38)",
+  "evidence": "Design: 'Reuse terms: attribution to DataReportal and its partners with a link (recorded in the rights notes).' reach.json line 64: the citation page 'does not say whether you may quote single data points or draw your own chart from them, and it says nothing about third-party data such as GWI's'. reach.json line 73: GWI 'does not support using its data to criticise, or to harm, another organisation'. SKILL.md lines 29 and 31: note each source whose terms bar redistribution and set restricted_inputs. The design presents the terms as settled and makes no restricted_inputs decision.",
+  "fix": "Record the open points in the rights notes: whether a chart may be redrawn, GWI's own terms, and its criticism clause. Decide restricted_inputs, and ask DataReportal if needed.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Thesis (line 15); section 4 (line 22)",
+  "evidence": "Design: 'WhatsApp is the natural candidate, especially in Indonesia', against section 4's 'An example, not an endorsement' and the non-goal 'a tool comparison' (line 45). The sources hold hostile-reader material that the design leaves out. services.json line 10: 'Teams core calls, meetings and chat are said to work', so many teams already had a working chat. reactions.json line 166: 'HSBC told staff not to use personal email or WhatsApp'. Western Australia's department lost 'portals, telephone and email' (line 108). The outage-themed phishing (lines 265 to 298) makes an improvised chat channel a lure risk, and the non-goal on security advice keeps that out of the post.",
+  "fix": "Pick one stance: call WhatsApp an example, not the 'natural candidate'. Have section 4 address that Teams chat largely kept working and that some firms barred WhatsApp, or record why the post does not.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Section 3 (line 21); Sources, Reactions (line 40)",
+  "evidence": "Design: 'The joke that it was a day off.' The break is half the thesis ('The post lives between those two reactions', line 9), yet the Sources list (line 40) names no source for it. reactions.json lines 175 to 253 hold CNN ('start the weekend early'), the Seattle Times ('adult snow day'), AP via ABC11 (the WHO, brand posts, meetings moving to WhatsApp) and Philstar. Line 40's 'each from its own page' is also unmet for Workhorse: reactions.json line 123 reads it 'as reproduced by Finviz'.",
+  "fix": "Name the stored sources for the break reaction, scoped as reported anecdote. Store Workhorse's release from GlobeNewswire or its investor page, or drop 'each from its own page'.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "The three charts (line 28)",
+  "evidence": "Design: 'this post has three by the owner's choice (brainstorm, question 6), flagged here as the series rule asks.' SKILL.md line 60: '4 charts per post; fewer only if the data cannot support a fourth honest chart, flagged.' The rule's only exception is data that cannot support a fourth chart; this is an owner override, not that exception. The count also came from the request ('3 chart it enough', brainstorm line 9); question 6 chose which three.",
+  "fix": "Write: 'three charts at the owner's request, an override of the four-chart rule'.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "unclear",
+  "where": "Constraints (line 51); Intent (line 7); Approaches (line 56)",
+  "evidence": "Design: 'the post uses Microsoft's own record and says which time it means'. But the record gives three starts: the 10:05 header, the final status's 16:20 and, per CIO, 16:17 on the dashboard (timeline.json line 418). Its End Time is 16:10, while the same final status says Microsoft will 'continue to restore service to remaining customers and regions' (line 262). Line 56 promises 'disagreements are stated, not hidden', yet the 350-word section 2 names none. Duration is missing, though the intent says 'for most of a day' (line 7); Microsoft's own window is 23 h 50 m, and the all-clear came 37 h 50 m after the first post (disagreement 3).",
+  "fix": "Name the start (the final status's 16:20 UTC) and the end used. Say which disagreements the prose states, for example the 10:05 header and the reversal on the network change (disagreement 6). Give the duration with its endpoints, and replace 'most of a day'.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Approaches considered (line 57)",
+  "evidence": "Design: 'its timing is uncertain and it sits behind an admin login.' timeline.json line 262: the final status promises a final PIR 'within five business days'. services.json line 257: 'The final PIR is reportedly due around 20 Nov 2026'. Office Watch reproduced the preliminary PIR (services.json line 94). The design has no rule for a final PIR that arrives mid-pipeline and supersedes 'its preliminary cause' (line 20).",
+  "fix": "State the due date and what happens if the final PIR appears before publication: re-check the cause sentence, or keep 'preliminary' with its date.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Header (line 3)",
+  "evidence": "Design: 'kept in the session scratchpad as post31/brainstorm.md and reproduced in the parts below that rest on them.' Four answers are not reproduced: Q4's 'Indonesia comes in where WhatsApp comes up' (brainstorm line 27), Q6's 'published user counts' and 'reported down besides mail' (line 29), and Q2's 'Microsoft login' (line 25). These are exactly the parts the design departs from. A session scratchpad is not a durable record.",
+  "fix": "Copy brainstorm.md into the post's docs/ folder, and quote the Q2, Q4 and Q6 answers wherever the design departs from them.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Sections 3 and 4, chart 2 (lines 21, 31, 39)",
+  "evidence": "The sweeps left owner questions that brainstorm.md does not answer; line 23 lists the answers, and these are not among them. The design settles them silently. reactions.json line 392, Q1 (which Downdetector figures, A to C), against the design's 'Downdetector's counts, attributed to Downdetector as the outlets quoted them'. Q4 (fake-support scams) against 'Scammers sending fake outage notices'. Q3 (the IPOS PDF) is not mentioned. reach.json line 213 offers options A to D with A recommended; the design's three bars are option B.",
+  "fix": "List these as proposals awaiting the owner's answer, or record the answers.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "contradiction",
+  "where": "Chart 3 (line 32) vs section 5 (line 23)",
+  "evidence": "Design: 'twenty in the final status, Exchange Online included', against section 5's 'Microsoft listed many services beyond mail as impacted (chart 3)'. Brainstorm line 29 (Q6): 'the Microsoft services reported down besides mail'. services.json line 258 recommends '(A) 19, Microsoft's final MO1550821 list besides Exchange Online'. A prose line such as 'twenty services beyond mail' would be false.",
+  "fix": "Count the services besides Exchange Online (4 rising to 19), as the owner's chart asked, or flag including mail as a change.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "LOW",
+  "kind": "misstated",
+  "where": "Intent (line 9)",
+  "evidence": "Design: '(their answer, verbatim): for a company outage means ...'. Brainstorm line 21: 'In my opinion, for a company outage means ...'. The phrase that marks it as opinion is cut without an ellipsis.",
+  "fix": "Quote from 'In my opinion', or mark the cut.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "LOW",
+  "kind": "unclear",
+  "where": "Sources (lines 34, 36)",
+  "evidence": "Design: 'step 2 stores each one' and 'it is captured in step 2'. SKILL.md lines 31 and 32: step 3 creates sources/ and stores 'a copy of each cited document in sources/'; step 2 covers the dataset vet and the terms check.",
+  "fix": "Say the capture happens now and moves into sources/ at step 3, or name the right step.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "LOW",
+  "kind": "unclear",
+  "where": "Section 2 (line 20)",
+  "evidence": "Design: 'Microsoft's statement that there was no sign of a cyberattack'. timeline.json line 418 (disagreement 8): the wording drifted from 'for now ... no indication ... malicious activity' (03:34 UTC) through 'not aware' and 'no evidence' to 'not related to cyber or AI / agents' (17:57 UTC).",
+  "fix": "Name the statement and the time used, for example the record's 17:57:06 UTC sentence.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "LOW",
+  "kind": "missing",
+  "where": "Section 3 (line 21); Sources (line 39)",
+  "evidence": "Design: 'Downdetector's counts'. reactions.json line 28: 'These are reports, not people'. Line 37: 'AP calls them users, but Downdetector counts reports'.",
+  "fix": "Add 'reports, not people' to the Downdetector rule.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "LOW",
+  "kind": "unclear",
+  "where": "Chart 1 (line 30)",
+  "evidence": "Design: 'A horizontal timeline in hours ... A second axis in Jakarta time (WIB, UTC+7)'. Brainstorm line 29 (Q6): 'UTC and Jakarta time'. The design names elapsed hours and WIB as the axes; where UTC appears is not said.",
+  "fix": "Say whether UTC is an axis or appears only in the labels.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "LOW",
+  "kind": "unclear",
+  "where": "Thesis (line 15); Close (line 24)",
+  "evidence": "Design: 'the next outage can be a pause rather than a stop, which is the break some people enjoyed'. The break people enjoyed was a stop. A pause in which work moves to a backup chat is not that break, so a hostile reader can call the close self-contradictory. The idea comes from the owner's Q5 answer (brainstorm line 28).",
+  "fix": "Have the owner confirm the closing logic, or reword it so the goal is a calm pause rather than the day off.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "LOW",
+  "kind": "unclear",
+  "where": "Sources, DataReportal (line 38)",
+  "evidence": "Design: 'and Internet Use Around the World'. No chart or section uses it. reach.json line 37: its figures are category shares ('they include apps such as WeChat'), which belong to option C, and option C was not chosen.",
+  "fix": "Say what it supports, or drop it.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "LOW",
+  "kind": "unclear",
+  "where": "Section 2 (line 20)",
+  "evidence": "Design: 'the spread'. In the sweep, the 'any region' widening is an X post at 18:07:33 UTC (timeline.json lines 13 to 19). Line 37 allows X only where the record lacks a statement. MO1550821's opening with five services at 18:27 is the other candidate.",
+  "fix": "Say which spread is meant and which record statement sources it.",
+  "lens": "consistency"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "contradiction",
+  "where": "Thesis (line 15); Structure 5 (line 23); chart 3 title (line 32)",
+  "evidence": "Design states as fact: 'the systems that sit behind a Microsoft account stopped too' (line 15). It builds lesson 2 and chart 3 on that: 'which work stops when the Microsoft account stops' (lines 15, 23) and 'one account, many doors' (lines 23, 32). The sources contradict both a general stop and an account or login mechanism:\n- services.json:10: 'The impacts are partial: Teams core calls, meetings and chat are said to work, and SharePoint direct file access is said to work. The honest label is impacted, not down.'\n- services.json:256 (disagreement 6): 'Microsoft names no Entra or sign-in service failure in any 12 to 13 Nov incident I read ... Sign-in as a symptom is Microsoft-backed; sign-in as a failed service is not.'\n- services.json:55: 'In Microsoft's wording the Exchange outage caused the sign-in failures, not the other way round.'\n- reactions.json:85, Singapore Courts: 'Online filing systems kept working.'\n- reactions.json:112, Supreme Court of Victoria: 'documents could still be filed on RedCrest'. Both courts are sources the design itself picks (line 40).\n- services.json:82: the shared-authentication framing comes from the 31 Aug outage EX1464935.\nThe design's own chart 3 label (line 32, 'because Microsoft describes partial impact on features that depend on Exchange Online') and its anti-goal (line 46) contradict its thesis. A hostile reader can quote the post's chart label and its court sources against it.",
+  "fix": "Keep the login point as the turn (brainstorm.md:25), but only as the owner's view in the owner's words (brainstorm.md:21, 'In my opinion ... since the login depend on them'). Never state it as what happened. Rewrite the thesis fact from the record: Microsoft listed many services beyond mail as impacted, through features that depend on Exchange Online, and some sign-ins that depend on Exchange failed. Ask the owner whether the chart 3 metaphor stays 'login/account', with Microsoft's contrary record stated beside it, or becomes a mail-dependency image.",
+  "lens": "rules"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "contradiction",
+  "where": "Chart 2 (line 31)",
+  "evidence": "Design: 'Bars of the share of internet users aged 16 and over who used each in the past month' and 'Counts in billions (Radicati, Meta) are not charted: they measure different things.' The owner chose brainstorm.md:29: '\"Email vs WhatsApp (Recommended)\" (how many people use each worldwide, with WhatsApp's reach in Indonesia; published user counts, to be verified)'. The design swaps the owner's published user counts for survey shares and does not flag the change as a deviation. The reason exists: reach.json:213 advises against pairing Radicati's forecast with Meta's floor. But reach.json:213 ends with 'Owner decision, multiple choice: (A) ... (D)', and brainstorm.md records no answer. Option (D) keeps the counts, in text.",
+  "fix": "Add a flagged deviation: chart 2 shows GWI shares instead of the published user counts chosen in Q6, because reach.json finds the counts not comparable. Put reach.json:213's options A to D to the owner and record the answer in the design before step 4.",
+  "lens": "rules"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "contradiction",
+  "where": "Chart 3 (line 32), against Structure 5 (line 23)",
+  "evidence": "Design: 'from five services at its first post to twenty in the final status, Exchange Online included' (line 32). The owner chose brainstorm.md:29: '\"One login, many doors (Recommended)\" (the Microsoft services reported down besides mail)'. The design's own line 23 also says 'Microsoft listed many services beyond mail as impacted (chart 3)'. services.json:258 counts besides Exchange Online ('4 in Microsoft's first list', 19 final) and recommends '(A) 19, Microsoft's final MO1550821 list besides Exchange Online'. The builder cannot tell whether mail is on the chart.",
+  "fix": "Chart the services besides Exchange Online: 4 at 18:27 UTC on 12 Nov rising to 19 in the final status (services.json:258), re-counted by script. Show Exchange Online at most as a labelled reference, or flag including it as a deviation for the owner to accept by name.",
+  "lens": "rules"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "missing",
+  "where": "Approaches considered (line 56); Structure 2 (line 20); Posts on X (line 37)",
+  "evidence": "The owner chose brainstorm.md:31: '\"Draft now, Microsoft's words (Recommended)\": build the story from what Microsoft said in public (status posts, the executive's root-cause summary)'.\n- Line 56 restates this as 'Draft now from Microsoft's own words (chosen by the owner). The service health record gives times to the second and the statements in full', and the design never names the executive's root-cause summary.\n- Line 20 uses 'its preliminary cause', which is the 14 Nov final-status text (timeline.json:256).\n- Line 37 allows X 'only where the service health record lacks the statement (the apology, the all-clear)'. By its examples that excludes Lamanna's 16 Nov summary, and only that summary's opening was ever read (timeline.json:172).\n- The backbone is the tenant-only admin-center record, not what Microsoft said in public (services.json:257: 'The admin center and the PIR documents need a tenant login').\n- services.json:257's owner question Q2 (whether the Penn mirror can be cited as Microsoft's own words) has no recorded answer.",
+  "fix": "Name the executive's root-cause summary as an input. Either save Lamanna's 16 Nov post (x.com/clamanna/status/2122209697226948729) from a logged-in browser with the owner's agreement, or flag leaving it out as a deviation from the approach answer. Mark the admin-center backbone as the owner's call (services.json Q2), not as already chosen.",
+  "lens": "rules"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "misstated",
+  "where": "Non-goals (line 45)",
+  "evidence": "Design: 'a cost estimate (the only one found, a productivity-loss figure, has no published method, so it is left out)'. This is false. The sweep found several other estimates:\n- reactions.json:184: AEG's refund estimate, 'about US$800 million a day'.\n- reactions.json:193: Morningstar DBRS 'US$300m to US$500m in global insured losses', CyberCube 'under US$100m' and Marsh Re 'minimal'.\n- reactions.json:202: Marsh Re.\n- reactions.json:211: RMIT, 'tens of billions globally'.\n- reactions.json:391 (disagreement 7) lists them all.\nThe owner asked about 'how many impact' (brainstorm.md:11). reactions.json:392 put the cost paragraph to the owner as Q2 (A, B or C), and brainstorm.md records no answer.",
+  "fix": "Replace the parenthesis with: none of the estimates found (AEG's productivity and refund figures, DBRS, CyberCube, Marsh Re, RMIT) publishes a method, and they measure different things. Put reactions Q2 to the owner rather than deciding it in the design.",
+  "lens": "rules"
+ },
+ {
+  "severity": "HIGH",
+  "kind": "misstated",
+  "where": "Posts on X (line 37)",
+  "evidence": "Design: 'a post is used only where the service health record lacks the statement (the apology, the all-clear)'. The record has the apology. timeline.json:247: 'Admin-center apology and cause, 17:57:06 UTC, 13 Nov.' timeline.json:253: \"The same update opens 'We are deeply sorry for the disruption this incident has caused you and your business.'\". Only the wording differs from the X post: 'our customers and partners' (timeline.json:117; disagreement 10 at timeline.json:418). As written, the builder would chase a blocked X post for the apology, or drop the apology if the save fails.",
+  "fix": "Remove 'the apology' from the list and source the apology from the 17:57:06 UTC record, quoted in its own wording. List what only X holds: the all-clear, the 18:07:33 UTC 'any region' widening, Lamanna's posts and the PIR announcement.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Charts 2 and 3 (lines 31 to 32); Sources (line 36); Structure 3 (line 21)",
+  "evidence": "Each sweep ends with multiple-choice questions for the owner, and brainstorm.md records no answers to any of them. The design states each answer as settled:\n- services.json:258 Q1 (which count): line 32 picks a step chart of 5 to 20 with Exchange included.\n- services.json:257 Q2 (cite the Penn mirror as Microsoft's words): line 36 says 'Cited with Microsoft as the author and the mirror as where it was retrieved'.\n- reach.json:213 options A to D: line 31 picks (B), not the recommended (A).\n- reactions.json:392 Q1 (which Downdetector numbers): line 21 says only 'Downdetector's counts'.\n- reactions.json:392 Q2 (cost): settled in line 45.\n- reactions.json:392 Q4 (fake-support scams): line 21 is silent.\nThe builder cannot tell which of these the owner actually chose.",
+  "fix": "Add an 'Open owner questions' section listing each question with the design's recommendation, and record the owner's answers before step 4. If the owner already answered, cite where.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "contradiction",
+  "where": "Chart 3 (line 32); Structure 5 heading (line 23)",
+  "evidence": "The owner chose brainstorm.md:29: '\"One login, many doors (Recommended)\" (the Microsoft services reported down besides mail)'. The design retitles it 'one account, many doors' (lines 23, 32) and replaces 'reported down' with 'Labelled \"listed by Microsoft as impacted\", never \"down\"' (line 32). The relabel is right on the sources (services.json:10: 'The honest label is impacted, not down'). But it reverses the owner's chosen wording, and the design does not flag it as a deviation.",
+  "fix": "Flag both changes as deviations from Q6, with the reason from services.json:10, for the owner to accept by name. Keep the owner's title unless the owner accepts the new one.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "contradiction",
+  "where": "Chart 1 (line 30)",
+  "evidence": "Design: 'with Jakarta's Friday working hours marked: the impact window covers them, which is the Indonesia thread's way into the story'. The owner chose brainstorm.md:27: '\"A thread, not the frame (Recommended)\": the story is told globally; Indonesia comes in where WhatsApp comes up'. The owner did choose Jakarta time on chart 1 (brainstorm.md:29). Making a working-hours band the thread's entry point, in section 2 rather than at WhatsApp in section 4, is the design's own change and is not flagged.",
+  "fix": "Keep the WIB axis the owner chose. Drop 'the Indonesia thread's way into the story', or flag it for the owner. Indonesia enters the argument at WhatsApp (section 4 and chart 2's Indonesia bar).",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Thesis (line 15)",
+  "evidence": "Design: 'while some people took the day as a break'. The owner's personal fact is narrower. brainstorm.md:21: 'But some people said that it's time to take a break.' brainstorm.md:33: 'that some people said it was time to take a break). No other personal fact about the owner may appear.' The design turns what people said into what people did. No sweep item says anyone took the day off. The sourced items are jokes: reactions.json:175 ('start the weekend early'), reactions.json:229 ('adult snow day') and reactions.json:252 ('Rest now, backlogs later.').",
+  "fix": "Write 'while some people said it was time to take a break', which is the owner's fact. If wanted, add that many joked about it, citing a stored joke source.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Intent (line 7)",
+  "evidence": "Design: 'took Outlook mail down for most of a day'. No sweep item gives this duration, and it understates every sourced one. timeline.json:418 (disagreement 3) gives:\n- '23 h 50 m: the record's 16:20 to 16:10 window'\n- '30 h 5 m', '36 h 15 m' and '37 h 50 m'\n- the press's 'nearly 24 hours', 'more than a day' and '36-hour'\nreactions.json:391 (disagreement 6) gives outlets' 10 to 36 hours. Chart 1 itself spans about 37.8 hours (computed: 16:20:07 UTC 12 Nov to 06:09:51 UTC 14 Nov), so the post's own chart contradicts 'most of a day'.",
+  "fix": "Use Microsoft's stated window (nearly a day by its own record, with the all-clear about a day and a half after the first post), with both durations bound to results. Alternatively, drop the duration from the intent.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "invented",
+  "where": "Chart 1 (line 30)",
+  "evidence": "Design: 'with Jakarta's Friday working hours marked: the impact window covers them'. No sweep file defines Jakarta or Indonesian working hours, so the band's bounds have no source. The window is Microsoft's global stated window, and nothing in the sweeps shows Indonesia blocked through Friday:\n- reactions.json:392: 'No named Indonesian organisation was reported disrupted.'\n- services.json:22: the patch was extended 'to regions entering peak business hours' at 08:06 UTC, which is 15:06 WIB.\n- timeline.json:100: regional recovery posts at 12:09 and 13:32 UTC.\nThe band invites the reading that Jakarta lost its whole working Friday.",
+  "fix": "Source the working hours (stored and quoted) or drop the band. Caption the shaded window as Microsoft's global stated window, not as Indonesian impact.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "misstated",
+  "where": "Chart 2 (line 31)",
+  "evidence": "Design: 'No email figure for Indonesia exists on the same basis; the footnote says so'. The sweep found only that the report's text has none. reach.json:19: 'The email-by-country chart is an image, and Indonesia is not named in the text.' reach.json:212 (gap 4): 'Asking DataReportal or GWI is the only route I can see.' If the report's own email-by-country chart includes Indonesia, it refutes the footnote.",
+  "fix": "Read the email-by-country chart image before step 6. If Indonesia is absent, footnote that DataReportal's Digital 2027 reports give no Indonesia email figure on this basis. Never write that no figure exists.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Chart 2 (line 31)",
+  "evidence": "Design: 'email worldwide, WhatsApp worldwide, WhatsApp in Indonesia'. The only footnote named is the missing Indonesia email figure. reach.json:213 requires more: 'Footnote the wave: Q2 2026 is stated for email but not named for WhatsApp. Caveats: the figures are self-reported, cover about 54 markets, include China (where WhatsApp is blocked, which lowers its share) and exclude Russia.' Setting Indonesia's bar beside a 'worldwide' WhatsApp bar that China holds down exaggerates the gap. 'Worldwide' means GWI's surveyed markets.",
+  "fix": "Specify the chart 2 footnote with every caveat in reach.json:213. Label the global bars 'GWI's surveyed markets', not 'worldwide'.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "contradiction",
+  "where": "Structure 4 (line 22), against chart 2 (line 31)",
+  "evidence": "Section 4: 'How many people use email and WhatsApp, worldwide and in Indonesia (chart 2).' Chart 2 shows shares of internet users, not how many people. It also has no Indonesia email bar (line 31: 'No email figure for Indonesia exists on the same basis'). The design contradicts itself.",
+  "fix": "Align section 4 with whichever chart 2 the owner picks. With shares, write: what share of internet users used email and WhatsApp in GWI's surveyed markets, and WhatsApp in Indonesia (chart 2).",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "contradiction",
+  "where": "Thesis (line 15), against Structure 4 (line 22)",
+  "evidence": "Thesis: '(WhatsApp is the natural candidate, especially in Indonesia)'. Section 4: 'An example, not an endorsement.' The owner wrote 'whatsapp or anything that can be use same formal like email' (brainstorm.md:13) and chose 'a backup channel agreed in advance, such as WhatsApp' (brainstorm.md:25). 'The natural candidate' is an endorsement, which both the owner's 'such as' and the design's own section 4 rule out.",
+  "fix": "Write that WhatsApp is one candidate, and the most used platform in Indonesia in GWI's survey (bound to reach.json:4), or keep the owner's 'such as WhatsApp'.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Thesis, lesson 1 (line 15); Structure 4 (line 22)",
+  "evidence": "The design omits two sourced facts a hostile reader can use against lesson 1, 'agree on a backup channel ... WhatsApp'.\n1. Microsoft said Teams chat kept working during this outage, so the company's own chat was the backup. services.json:10: 'Teams core calls, meetings and chat are said to work'. services.json:18: 'Teams calls, meetings, group chats and channel messages work'. services.json:247 (Al Jazeera): 'Teams (desktop chats and calls largely kept working)'.\n2. reactions.json:166 (Reuters): 'HSBC told staff not to use personal email or WhatsApp.'",
+  "fix": "Address both in section 4: say the lesson covers the case where the company's own chat also fails, and set HSBC's instruction beside WhatsApp as the open-discussion counterpoint. Otherwise, narrow lesson 1.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Anti-goals (line 46); charts 1 and 3 (lines 30 to 32)",
+  "evidence": "The design never mentions the separate or confusable incidents that the sweeps say to handle:\n- TM1550488 (Teams, 14:45 to 15:53 UTC, before the Exchange incident). timeline.json:289: 'Keep it off the Exchange timeline or label it separately.'\n- PP1550869 and CR1551339. services.json:258: 'separate Microsoft advisories and can go in a footnote'. CR1551339 is where the anti-goal's 'some sign-ins that depend on Exchange' comes from (line 46).\n- The confusable incidents in timeline.json:419 (gap 7): EX1464935, MO1437424, MO1221364 and EX1112414. services.json:82 says the 31 Aug EX1464935 is 'the likely origin of the shared authentication layer framing'.\nWithout these rules, a builder looking for support for the owner's login point can import August's login-layer story.",
+  "fix": "Add an anti-goal listing these incidents. Say chart 1 excludes TM1550488, and say whether chart 3 footnotes PP1550869 and CR1551339. Bar the August outage and Reworked from being used for November.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "unclear",
+  "where": "Chart 3 (line 32); Left to the builder (line 62)",
+  "evidence": "Design: 'as the list grew during the incident (from five services at its first post to twenty in the final status, Exchange Online included)'. The list did not only grow:\n- services.json:13: 'Defender for Cloud Apps appears as its own entry only at 08:09; Viva Engage appears only at 15:52 and 20:01'.\n- services.json:258 gives the series besides mail: '20 at 08:09; back to 19; 20 at 15:52 and 20:01; 19 from 22:00'.\n- services.json:256: '22 counting every service ever named'.\nThe design does not say whether interim-only entries are drawn. Nor does it say whether admin and developer services stay in a post the owner wants 'not technical' (brainstorm.md:17); services.json:258 notes that 'dropping Graph and the two admin centers leaves 16'. Line 62 leaves only 'the grouping and order on chart 3' to the builder.",
+  "fix": "State the inclusion rules: whether interim-only entries are shown or dropped, and whether the chart covers user-facing services only or all. Describe the series as peaking at one count and ending at another, both from the script's count.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Chart 1 (line 30), against Posts on X (line 37)",
+  "evidence": "Chart 1 runs 'to the all-clear posted on X (06:09 UTC on 14 November)'. Line 37 says an X post is 'saved from a logged-in browser with the owner's agreement, or left out'. If it is left out, chart 1 has no end point, and the design names no fallback. The time is decoded from the post ID (timeline.json:151, '(computed from post ID)'), and the text comes from a search index title (timeline.json:154).",
+  "fix": "Name a fallback end point, such as the final status at 04:15:46 UTC on 14 Nov (timeline.json:184 to 190). Say how the X time is reproduced: port decode_x_ids.py into the post folder (timeline.json:420), or read the time off the stored capture.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "unclear",
+  "where": "Chart 1 (line 30); chart 3 (line 32)",
+  "evidence": "Design: 'Every time comes from the build script reading a data file compiled from the stored records.' It does not say who compiles that file, or whether a script does. Chart 3's 'five' and 'twenty' are stated as settled, but the sweeps say they are not. services.json:19: 'Every count came from a summarizing reader: re-count by script before charting'. timeline.json:420: 'port them into the repo before publishing any number'. A hand-compiled file is typed numbers, which breaks the workspace rule 'Never retype or reflow query output into a record'.",
+  "fix": "Specify a parser script in the post folder that reads the stored Penn capture and writes every timestamp and service list to the data file. Mark 'five' and 'twenty' provisional until that script counts them.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Structure 2 (line 20); Constraints (line 50)",
+  "evidence": "Section 2 tells the story 'in Microsoft's own words and times ... UTC with Jakarta time beside it', and line 50 bans typed numbers in prose. Every clock time and date in the prose is digits that must be bound (CONVENTIONS.md:73 to 75; gate/README.md:60). The gate's formatters (SKILL.md:38: signed, dec, int, year, words, ordinal0, round, sig2, fraction, pct) have no time-of-day formatter, and int cannot print '06:09'. Adding a formatter is a gate change, and a gate change is 'its own task for the owner' (SKILL.md:46; gate/README.md:101 to 106). The builder cannot plan section 2's prose until that is decided.",
+  "fix": "Decide in the design how times appear in prose: as elapsed hours bound with int, as times in words, or through a new gate formatter scheduled as an owner task before step 6.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "unclear",
+  "where": "Sources heading (line 34); Microsoft's service health record (line 36)",
+  "evidence": "Design: 'every figure and quote is bound through docs/sources.json' and 'Cited with Microsoft as the author and the mirror as where it was retrieved'. The gate requires the reference entry's title to open the stored document's first page, and each quote to occur exactly once (gate/README.md:65). The Penn page opens with Penn's own title ('Microsoft's Incident Reports for PennO365', timeline.json:177) and repeats Microsoft's sentences:\n- 'approaching normal levels' appears in both EX and MO (timeline.json:100).\n- The cyber sentence appears at 17:57:06 and at 04:15:46 UTC (timeline.json:268).\n- The MO wording of the 48-hour extension is a prefix of the EX wording (timeline.json:243 to 244).",
+  "fix": "Plan the reference entry's title so it opens the stored capture. Plan each quote long enough to occur once (for example, include the incident's distinguishing words), or store a separate capture per incident.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "DataReportal (line 38); Sources (lines 36 to 37)",
+  "evidence": "Design: 'Reuse terms: attribution to DataReportal and its partners with a link (recorded in the rights notes)'. Several terms the sweep flagged are missing:\n- reach.json:64: 'you may not charge for access or distort the data', and 'The page does not say whether you may quote single data points or draw your own chart from them'. Chart 2 redraws them.\n- reach.json:73: GWI 'does not support using its data to criticise, or to harm, another organisation', which matters in a post about Microsoft's failure.\n- reach.json:208: 'Keep the WhatsApp logo off the chart'.\n'The rights notes' names no file. The terms of the Penn mirror, Cloud Admin Hub and X are not stated, and restricted_inputs is undecided (SKILL.md:29, 31).",
+  "fix": "Name the rights file (for example docs/rights-notes.md) and record each source's terms in it, including the open question of whether DataReportal figures may be redrawn. Add the GWI clause, the logo rule and a decision on restricted_inputs.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Structure 3 (line 21); Reactions (line 40)",
+  "evidence": "Section 3 includes 'The joke that it was a day off', and the break is half of the thesis (line 15). But the Reactions source list (line 40) names only organisational pages and security firms. Nothing in it sources the joke. The sweep's sources for it are:\n- reactions.json:175: CNN via KRDO, 'start the weekend early'\n- reactions.json:229: Seattle Times via CPA Practice Advisor, 'adult snow day'\n- reactions.json:238: AP via ABC11, brands and the WHO\n- reactions.json:247: Philstar, 'happy long weekend'",
+  "fix": "Name the stored source or sources for the joke in line 40, or state that the break side rests only on the owner's own fact (brainstorm.md:21).",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "missing",
+  "where": "Intent (line 7); Sources heading (line 34)",
+  "evidence": "The series scope is 'one dataset, one clear question, exactly 4 charts' (SKILL.md:11). It includes step 2's vet and 'CHECKPOINT: dataset go/no-go' (SKILL.md:29), and step 3's profile_data.py and requirements.txt (SKILL.md:31). This post has no dataset, which is a deviation from the series, and the design does not flag it as the owner's choice (brainstorm.md:9: 'other than this the research will be as is'). Its only step mapping, 'step 2 stores each one' (also line 36, 'captured in step 2'), points at the wrong step. SKILL.md:32 says to 'store a copy of each cited document in sources/', and sources/ is created in step 3.",
+  "fix": "Flag 'no dataset: the data are stored records and published figures' as the owner's choice. Map steps 2 to 5 for this post: what the go/no-go checkpoint covers, what the build script reads, and what replaces profile_data.py. Correct the step reference.",
+  "lens": "rules"
+ },
+ {
+  "severity": "MODERATE",
+  "kind": "unclear",
+  "where": "Header (line 3); Sources (line 36)",
+  "evidence": "Design: 'kept in the session scratchpad as `post31/brainstorm.md`'. The scratchpad is session-specific and cleared on reboot, and the workspace mandates a fresh conversation at milestones. The design never names the four sweep files every fact rests on (timeline.json, services.json, reach.json, reactions.json). It gives the Penn URL only in shortened form: 'mailservices.isc.upenn.edu/.../ms-incidents.html'. A builder in a new session can find none of them.",
+  "fix": "Copy brainstorm.md and the four sweep files into outlook-outage/docs/ (text only) and cite them by repo path. Give the full URL: https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+  "lens": "rules"
+ },
+ {
+  "severity": "LOW",
+  "kind": "misstated",
+  "where": "Intent (line 9)",
+  "evidence": "Design, labelled '(their answer, verbatim)': '\"for a company outage means that some core system ...'. brainstorm.md:21 begins 'In my opinion, for a company outage means ...'. The silent cut drops the owner's hedge, which marks the login point as opinion; the thesis finding depends on that.",
+  "fix": "Restore 'In my opinion,' or mark the cut with an ellipsis.",
+  "lens": "rules"
+ },
+ {
+  "severity": "LOW",
+  "kind": "unclear",
+  "where": "Constraints (line 51)",
+  "evidence": "Design: 'Where sources disagree (the start: 16:17, 16:20 or 18:26 UTC and a 10:05 UTC header ...), the post uses Microsoft's own record and says which time it means.' Every one of these starts comes from Microsoft. timeline.json:418 (disagreement 1): 'Microsoft's own record gives three different values'. The 18:26 start is MO1550821's, per 'The company says' (timeline.json:306). So 'Microsoft's own record' does not pick a start.",
+  "fix": "State the rule: start at 16:20 UTC, the first EX1550543 post and the final status's start, as on chart 1. Report the 10:05 header as unexplained, and name 18:26 as the opening of the multi-service incident.",
+  "lens": "rules"
+ },
+ {
+  "severity": "LOW",
+  "kind": "unclear",
+  "where": "Structure 2 (line 20)",
+  "evidence": "Design: 'Microsoft's statement that there was no sign of a cyberattack'. Microsoft's wording drifted (timeline.json:418, disagreement 8): from 'no indication ... malicious activity' to 'not aware of', then 'no evidence', and finally the record's 'This was a technical issue not related to cyber or AI / agents' (timeline.json:270). 'No sign' is weaker than the final statement, and the builder cannot tell which statement is meant.",
+  "fix": "Name the statement (for example, the 17:57:06 UTC record wording) and quote it.",
+  "lens": "rules"
+ },
+ {
+  "severity": "LOW",
+  "kind": "missing",
+  "where": "Structure 3 (line 21); Downdetector (line 39)",
+  "evidence": "Design: 'Downdetector's counts, attributed to Downdetector as the outlets quoted them'. Nothing warns that the counts are reports, not people. reactions.json:28: 'These are reports, not people'. reactions.json:37: \"AP calls them 'users', but Downdetector counts reports\". timeline.json:419 (gap 4): 'Microsoft gave no number of affected users'. Section 3's heading 'How big' invites a user count.",
+  "fix": "Add an anti-goal: never call Downdetector reports users or people.",
+  "lens": "rules"
+ },
+ {
+  "severity": "LOW",
+  "kind": "misstated",
+  "where": "Reactions (line 40)",
+  "evidence": "Design: 'Workhorse Group's release ... each from its own page'. The sweep read it elsewhere. reactions.json:123: 'Workhorse Group press release (GlobeNewswire, Detroit), as reproduced by Finviz'. reactions.json:126: 'Primary text via an aggregator'.",
+  "fix": "Store the GlobeNewswire original, or say the release was read via Finviz.",
+  "lens": "rules"
+ },
+ {
+  "severity": "LOW",
+  "kind": "misstated",
+  "where": "Structure 3 (line 21); Reactions (line 40)",
+  "evidence": "Section 3: 'What organisations said they could not do (court and hospital notices ...)'. The only Supreme Court of Victoria page the sweep could read is a restoration notice. reactions.json:117: 'The Court can now send and receive emails'. reactions.json:118: 'The original notice URL ... now redirects to this update, so I could not read the earlier wording.'",
+  "fix": "Cite Victoria for its recovery and the delays it expected, not for what it could not do.",
+  "lens": "rules"
+ },
+ {
+  "severity": "LOW",
+  "kind": "contradiction",
+  "where": "Structure 1 (line 19)",
+  "evidence": "The opening comes before the background: 'The two reactions: the work blocker and the break. The owner's view, stated as the owner's.' The owner asked for the background first: 'I want to write about background story first what happened, how many impact, how people react' (brainstorm.md:11). Leading with the stance follows SKILL.md:38, but the change of order is not flagged.",
+  "fix": "Flag the stance-first opening for the owner to accept, or keep it to a line or two before section 2.",
+  "lens": "rules"
+ },
+ {
+  "severity": "LOW",
+  "kind": "misstated",
+  "where": "Constraints (line 52)",
+  "evidence": "Design: 'Two fact-check rounds at most, then cuts only'. This leaves out two exceptions. SKILL.md:63: 'a third round needs the owner's ask'. gate/README.md:90 to 92: a surface that did not exist at the snapshot 'needs a round'.",
+  "fix": "Write: two fact-check rounds, then cuts only; a third round only at the owner's ask or for a new surface.",
+  "lens": "rules"
+ },
+ {
+  "severity": "LOW",
+  "kind": "writing-rule",
+  "where": "Constraints (line 50)",
+  "evidence": "Design: 'no em or en dash'. The gate's style check also bans the Unicode minus (gate/README.md:68: 'no em dash, en dash or Unicode minus'), and the house rule covers U+2010 to U+2015 and U+2212. The design itself is clean: a scan found none of these characters, and the file is pure ASCII.",
+  "fix": "Write: no em or en dash, no Unicode minus, and none of U+2010 to U+2015.",
+  "lens": "rules"
+ },
+ {
+  "severity": "LOW",
+  "kind": "writing-rule",
+  "where": "Microsoft's service health record (line 36)",
+  "evidence": "Design: 'read through the University of Pennsylvania ISC mirror ..., cross-checked with the Cloud Admin Hub mirror'. This is a hand-written claim that a check was done, the kind of process claim SKILL.md:32 keeps out of supporting records ('make no hand-written claim about when, in what order or how often something was checked'). The sweep matched only a handful of timestamps (timeline.json:298).",
+  "fix": "Phrase it as a plan carried out by a script (to be compared by script with the Cloud Admin Hub copy), or drop it.",
+  "lens": "rules"
+ },
+ {
+  "severity": "LOW",
+  "kind": "unclear",
+  "where": "DataReportal (line 38)",
+  "evidence": "The design lists 'Internet Use Around the World' with no date, and nothing in the design uses it. Its figure, chat and messaging services at 94.1 percent (reach.json:31 to 37, dated 2026-10-21), is not on chart 2 or in any section.",
+  "fix": "Give its date (21 October 2026) and what it is used for, or drop it.",
+  "lens": "rules"
+ }
+]

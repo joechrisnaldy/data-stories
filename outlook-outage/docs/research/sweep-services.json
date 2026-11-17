@@ -1,0 +1,259 @@
+{
+ "sources": [
+  {
+   "fact": "In its final MO1550821 update (14 Nov 2026, 04:17 UTC) Microsoft listed 20 services as impacted: Exchange Online plus 19 others (Microsoft 365 admin center, Microsoft 365 apps, Microsoft 365 Apps Admin Center, Microsoft 365 Education, Microsoft Copilot 365, Microsoft Defender for Office 365, Microsoft Defender XDR, Microsoft Fabric, Microsoft Graph, Microsoft Intune, Microsoft Planner, Microsoft Power Apps, Microsoft Purview, Microsoft Teams, Microsoft To Do, Power BI, SharePoint Online, Universal Print, Windows 365). Header: service Microsoft 365 suite; start 12 Nov 10:05 UTC; end 13 Nov 16:10 UTC; status post-incident review published (last updated 16 Nov 04:46:36 UTC). No MO1550821 update names OneDrive, Entra ID, Azure or Xbox.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "publisher": "Microsoft (Service health incident text), republished by University of Pennsylvania ISC (PennO365 admin-console extract)",
+   "date": "2026-11-14 04:17 UTC (Microsoft final update); mirror page generated 2026-11-17 08:05 EST",
+   "kind": "primary",
+   "quote": "PARAPHRASE, not verbatim: Microsoft says users may have been unable to connect to several Microsoft 365 services, then gives per-service impacts for features that interact with Exchange Online.",
+   "notes": "Microsoft-authored words on a non-Microsoft host: an automated extract of Penn's tenant view, refreshed every 15 minutes, rolling 30-day window. The MO1550821 block sits near character offset 300000 of a page of about 893,000 characters (offsets shift on refresh). I read it through WebFetch's summarizing reader, so names and counts need a raw capture and a counting script. The impacts are partial: Teams core calls, meetings and chat are said to work, and SharePoint direct file access is said to work. The honest label is impacted, not down."
+  },
+  {
+   "fact": "Microsoft's MO1550821 list grew during the incident (counts include Exchange Online). 12 Nov: 5 services at 18:27 UTC (Exchange Online, Teams, SharePoint Online, Copilot 365, Defender XDR); 8 at 19:58 (+Planner, To Do, Purview); 11 at 20:57 (+Intune, Defender for Office 365, Power BI); 13 at 22:03 (+Microsoft 365 Apps Admin Center, Universal Print); 14 at 22:58 (+Windows 365). 13 Nov: 18 at 00:00 UTC (+Microsoft 365 admin center, Graph, Microsoft 365 apps, Microsoft 365 Education); 19 at 00:45 (+Fabric); 20 at 06:54 (+Power Apps); Defender for Cloud Apps appears as its own entry only at 08:09; Viva Engage appears only at 15:52 and 20:01. Final list on 14 Nov: 20. The Teams entry first mentions calendar and meeting scheduling at 00:00 UTC on 13 Nov, and private or shared channel create/delete failures at 02:58 UTC. The Power Apps entry (intermittent sign-in failures in the Power Apps and Field Service mobile apps) first appears at 06:54 UTC.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "publisher": "Microsoft (Service health incident text), republished by University of Pennsylvania ISC",
+   "date": "2026-11-12 18:27 UTC to 2026-11-14 04:17 UTC (mirror generated 2026-11-17)",
+   "kind": "primary",
+   "quote": "PARAPHRASE, not verbatim: Teams calls, meetings, group chats and channel messages work, but calendar scheduling that depends on Exchange, Live/Virtual event creation and private/shared channel create/delete may fail.",
+   "notes": "Offsets about 400000 to 600000; updates are listed newest first. The lists in the 03:36 UTC and 17:57 UTC updates on 13 Nov fell across chunk boundaries and could not be checked. Every count came from a summarizing reader: re-count by script before charting. After 09:57 UTC the Defender for Office 365 entry mentions the Defender for Cloud Apps portal, but not as a separate service."
+  },
+  {
+   "fact": "Mid-incident, Microsoft said server stability improved after it applied a patch to an upstream authentication/routing configuration component on part of its infrastructure. It then extended the patch to regions entering peak business hours. The text appears in EX1550543 at 07:25:42 and 08:06:25 UTC and in MO1550821 at 07:24:25 and 08:09:19 UTC on 13 Nov 2026. Microsoft does not call this component the cause, and the word shared does not appear.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "publisher": "Microsoft (Service health incident text), republished by University of Pennsylvania ISC",
+   "date": "2026-11-13 07:24 to 08:09 UTC",
+   "kind": "primary",
+   "quote": "\"applying an upstream authentication/routing configuration component patch to a portion of our infrastructure\" (Microsoft, MO1550821 update, 13 Nov 2026 07:24 UTC, as mirrored by Penn ISC)",
+   "notes": "This is the only verbatim quote in this return, because of a copyright limit (see gaps). Two separate reads returned the same wording; confirm it against a raw capture. epifive (dev.to) says this wording was in the admin-center posts only, not on the public status page or @MSFT365Status; I could not check X or status.cloud.microsoft myself."
+  },
+  {
+   "fact": "Microsoft's final status for EX1550543 (14 Nov 04:15 UTC) and MO1550821 (04:17 UTC) gives this preliminary root cause: a failure in the systems that establish connections to Exchange Online. Traffic shifts during standard network maintenance and upgrades exposed a latent bug, requests queued, and servers ran out of processing capacity. It also says the issue began with an earlier network capacity upgrade and surfaced after a recent network change. There is no authentication, sign-in, routing, identity or Entra wording. Earlier EX1550543 updates: at 01:06 UTC on 13 Nov a process that sets up secure connections was overwhelmed; at 04:59 UTC there was a surge in outbound calls from routing services to backend servers; at 20:01/20:02 UTC sign-in and access could recover before mail delivery caught up. The post-incident report was published in the admin center on 16 Nov at about 04:47 UTC.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "publisher": "Microsoft (Service health incident text), republished by University of Pennsylvania ISC",
+   "date": "2026-11-14 04:15 UTC",
+   "kind": "primary",
+   "quote": "PARAPHRASE, not verbatim: the final status blames a failure in Exchange Online's connection-establishment systems, a latent bug exposed by traffic shifts during routine network maintenance.",
+   "notes": "Offset about 300000. Microsoft gave the same network capacity upgrade wording to press (BleepingComputer, CIO). Sign-in appears only as a recovery symptom, never as a failed service."
+  },
+  {
+   "fact": "Separate Power Platform incident PP1550869 (flows, apps and connectors intermittently failing) ran from 17:36 UTC on 12 Nov to 15:50 UTC on 13 Nov. At 20:09 UTC on 12 Nov Microsoft blamed an upstream outage of a core service dependency for Microsoft Graph. It later added failures in Graph data refreshes, Copilot Studio connectors and connection creation. The final preliminary root cause: a dependency service responsible for authentication was unavailable. The text does not name Exchange, EX1550543 or MO1550821.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "publisher": "Microsoft (Service health incident text), republished by University of Pennsylvania ISC",
+   "date": "2026-11-13 16:32:31 UTC (final update)",
+   "kind": "primary",
+   "quote": "PARAPHRASE, not verbatim: Microsoft's preliminary root cause is that an authentication dependency service was unavailable; failures stopped once that upstream dependency recovered.",
+   "notes": "Offset about 500000 to 600000. Status: service restored; a PIR was promised within five days. This is Microsoft's clearest wording tying authentication to impact, but only for Power Platform."
+  },
+  {
+   "fact": "Dynamics 365 advisory CR1551339: Field Service mobile app users had intermittent sign-in failures from 17:30 UTC on 12 Nov to 12:30 UTC on 13 Nov. The 06:05 UTC update on 13 Nov names Exchange as the internal upstream dependency behind the sign-in function, with sign-in requests failing at the authorization step. The final preliminary root cause uses the same authentication-dependency wording as PP1550869.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "publisher": "Microsoft (Service health incident text), republished by University of Pennsylvania ISC",
+   "date": "2026-11-13 15:22 UTC (final update)",
+   "kind": "primary",
+   "quote": "PARAPHRASE, not verbatim: Field Service mobile sign-ins failed intermittently at the authorization step because Exchange, an upstream dependency that supports sign-in, was down.",
+   "notes": "In Microsoft's wording the Exchange outage caused the sign-in failures, not the other way round. The advisory does not cite MO1550821 or EX1550543."
+  },
+  {
+   "fact": "TM1550488 (Teams) covered chat and messaging failures for users hosted in or routed through the Americas, 14:45 to 15:53 UTC on 12 Nov. Presence was listed at first, then said not impacted. Calendar scheduling and channel creation do not appear in its text. Preliminary root cause: resource contention in the underlying service infrastructure. It does not reference EX1550543 or MO1550821. A PIR was published on 17 Nov at 00:23 UTC.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "publisher": "Microsoft (Service health incident text), republished by University of Pennsylvania ISC",
+   "date": "2026-11-12 (mitigated 17:08 UTC); PIR 2026-11-17",
+   "kind": "primary",
+   "quote": "PARAPHRASE, not verbatim: some users may have had trouble using Teams; Microsoft cites resource contention that raised utilization and hurt message processing.",
+   "notes": "Offset 0 to 100000. This contradicts the brief's claim that TM1550488 covered calendar scheduling and channel creation. The PIR's content is not mirrored."
+  },
+  {
+   "fact": "Two more Microsoft incidents fell inside the window, but Microsoft's text does not tie them to Exchange. CR1550885: agents could not reach Dynamics 365 Contact Center, 17:00 UTC 12 Nov to 00:57 UTC 13 Nov; root cause was database connectivity; feature group listed as Sign In. DV1550921: Dataverse sandbox plug-in failures, 17:36 to 21:15 UTC on 12 Nov; root cause was connectivity failures in a service dependency.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "publisher": "Microsoft (Service health incident text), republished by University of Pennsylvania ISC",
+   "date": "2026-11-12 to 2026-11-13",
+   "kind": "primary",
+   "quote": "PARAPHRASE, not verbatim: Contact Center lost database connectivity; Dataverse plug-ins failed when a supporting dependency lost connectivity.",
+   "notes": "Offset about 600000 to 700000. Without a Microsoft link to the outage, do not count these as outage services."
+  },
+  {
+   "fact": "The root cause naming a core authentication configuration used by multiple Microsoft 365 services belongs to EX1464935 and MO1465074, the Exchange Online and multi-service outage of 31 Aug to 3 Sep 2026, not to the November outage.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "publisher": "Microsoft (Service health incident text), republished by University of Pennsylvania ISC",
+   "date": "2026-08-31 to 2026-09-03 (still in the mirror on 2026-11-17)",
+   "kind": "primary",
+   "quote": "PARAPHRASE, not verbatim: Microsoft blamed the August impact on a problem in a core authentication configuration shared by several Microsoft 365 services.",
+   "notes": "This is the likely origin of the shared authentication layer framing in the brief."
+  },
+  {
+   "fact": "BleepingComputer reports Microsoft's MO1550821 advisory naming Exchange Online, Teams, SharePoint Online, Microsoft 365 Copilot and Defender XDR, and an earlier, separate Teams incident TM1550488 (9:45 to 10:53 AM ET). Outlook comes from users and Downdetector; Azure, OneDrive and Microsoft Store come from Downdetector only. Microsoft's 13 Nov statement attributes the incident to an issue during an earlier network capacity upgrade. The article carries no Microsoft statement on authentication or sign-in.",
+   "url": "https://bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide",
+   "publisher": "BleepingComputer (Lawrence Abrams)",
+   "date": "2026-11-12 15:15, updated to 2026-11-13 12:15 PM ET",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Microsoft told the outlet the outage was a technical problem, not cyber or AI-related, introduced during an earlier network capacity upgrade.",
+   "notes": "The five-service list matches the mirror's first MO1550821 list (18:27 UTC). The canonical URL is probably www.bleepingcomputer.com with a trailing slash."
+  },
+  {
+   "fact": "Office Watch reproduces Microsoft's preliminary PIR, dated 15 Nov, for EX1550543/MO1550821. Service(s) Impacted: Exchange, Copilot, Teams, SharePoint, OneDrive, Defender, Purview, Fabric, Intune, Planner, Power Apps, To Do, Power BI, Universal Print (14; 13 besides mail). Impact ran from 12 Nov 16:20 UTC to 13 Nov 16:10 UTC. The report names connection negotiation as the main area behind the access failures, and says Exchange Online cannot fail out of the network gateway for scale reasons. It does not mention authentication or identity; its action log says sign-in and service access improved.",
+   "url": "https://office-watch.com/2026/microsoft-365-outage-explained/",
+   "publisher": "Office-Watch.com",
+   "date": "2026-11-16",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: the report says other services that use Exchange Online capabilities had secondary impact, and that most of them stayed largely online.",
+   "notes": "The site says it kept the PIR wording exactly, apart from legal boilerplate; the PIR itself is tenant-only. This is the only Microsoft-authored list I found that names OneDrive."
+  },
+  {
+   "fact": "365Fanatic summarizes the preliminary PIR (15 Nov): a defect in networking gateway servers caused lock contention in a Windows process; the fix shipped from July. About 15 hours before the outage, Teams failed over to a primary gateway that also serves Exchange Online; nearly 14% of gateway capacity was already out from an unrelated issue; at the low point more than 80% of servers did not respond. The page does not mention authentication, sign-in, identity or Entra. It lists OneDrive among affected services.",
+   "url": "https://www.365fanatic.com/m365-outage-12-november-2026/",
+   "publisher": "365Fanatic",
+   "date": "last updated 2026-11-16",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: a Teams failover put extra load on the gateway Exchange Online also uses, and a latent defect then made most gateway servers unresponsive.",
+   "notes": "Own wording, not Microsoft's verbatim text. Its gateway shared with Exchange Online is the nearest November source for a shared layer, and it is a gateway, not an authentication layer."
+  },
+  {
+   "fact": "TNW reports the preliminary PIR (via The Register): a dormant defect from a July gateway update; Teams failed over at 01:07 UTC on 12 Nov to the gateway that also carries Exchange Online; the first support case came at 16:33 UTC; the fix was applied from 07:20 UTC on 13 Nov. It also carries Charles Lamanna's X post on a latent defect. Affected: Teams, OneDrive, SharePoint, Office apps, Exchange Online, Outlook. The article does not mention authentication, identity or a shared identity layer.",
+   "url": "https://thenextweb.com/news/microsoft-365-outage-july-defect-post-incident-report",
+   "publisher": "The Next Web (Ana Maria Constantin)",
+   "date": "2026-11-16",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Lamanna said a latent defect made servers overwhelmed and unresponsive under certain load conditions.",
+   "notes": "The fix timing lines up with the mirrored patch updates at 07:24 to 07:25 UTC on 13 Nov. I did not read The Register's original."
+  },
+  {
+   "fact": "In Petri, the upstream authentication and routing patch is the reporter's own wording. None of the quoted Microsoft updates (13 Nov 6:11 AM to 14 Nov 1:22 AM ET) contains authentication, routing, patch or configuration; only the 1:09 PM ET update has the network capacity upgrade and network change wording. Petri's own prose lists OneDrive, OneNote, Outlook.com, Planner, To Do, Purview, Intune, Universal Print and Windows 365.",
+   "url": "https://petri.com/microsoft-deploys-patch-stabilize-microsoft-365-outage/",
+   "publisher": "Petri (Rabia Noureen)",
+   "date": "2026-11-13, updated 2026-11-14",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: in the reporter's words, a patch to an upstream authentication and routing component is improving server stability.",
+   "notes": "The petri.com/?p=781396 form returned HTTP 403; the canonical URL loaded. Petri's quotes look like the public status page or X posts, which supports epifive's claim that the authentication wording appeared only in the admin center."
+  },
+  {
+   "fact": "PPC Land lists 19 services, attributed to Microsoft's public status page: Exchange Online, Teams, SharePoint Online, Microsoft 365 apps, Planner, To Do, Microsoft 365 Education, Universal Print, Copilot 365, Defender for Office 365, Defender XDR, Purview, Graph, Fabric, Power BI, Microsoft 365 admin center, Microsoft 365 Apps Admin Center, Intune, Windows 365. It says Power Apps mobile sign-in is not mentioned. It flags Microsoft's cause wording as inconsistent: a traffic influx versus earlier statements that load was not traffic-driven.",
+   "url": "https://ppc.land/microsoft-365-email-outage-hits-19-services-from-outlook-to-copilot/",
+   "publisher": "PPC Land (Luis Rijo)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Teams calendar invites and Live/Virtual event creation fail, and private or shared channels may not be created or deleted, while core Teams works.",
+   "notes": "The 19 matches the MO1550821 lists from 00:45 to 06:14 UTC on 13 Nov, before Power Apps was added, so this is a timing difference, not a contradiction. It is the only source I found that describes the public status page."
+  },
+  {
+   "fact": "Computerworld/CIO reports Microsoft's dashboard: Intune device enrollment, check-in and compliance may have been intermittently impacted (quoted as Microsoft). At 8:00 PM UTC on 13 Nov Microsoft said queued messages were still draining, traffic was being rebalanced, and sign-in and access could improve before delivery caught up. Purview, Teams, Windows 365 (Customer Key tenants), Copilot Chat and the admin centers appear in the author's paraphrase.",
+   "url": "https://www.cio.com/article/4248596/m365-services-slowly-come-back-online-after-global-outage-2.html",
+   "publisher": "CIO.com, originally Computerworld (Lynn Greiner)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Microsoft warned that service access could come back before mail flow fully normalized and gave no ETA for full recovery.",
+   "notes": "Corroborates the mirror's 20:01/20:02 UTC sign-in/access recovery text and the Intune entry."
+  },
+  {
+   "fact": "CIO.com quotes Microsoft: a process on the affected servers that sets up secure connections becomes overwhelmed; there was a surge in outbound call volume from routing services to backend servers; elevated load was not driven by an overall traffic increase but by servers becoming unexpectedly unavailable. The article does not mention authentication or sign-in issues and does not name Power Apps or Fabric.",
+   "url": "https://www.cio.com/article/4248249/microsoft-struggles-to-get-m365-services-back-online-after-widespread-outage.html",
+   "publisher": "CIO.com (Gyana Swain)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Microsoft said the server process responsible for secure connections was overwhelmed, so servers stopped handling requests.",
+   "notes": "The secure connections language is the nearest Microsoft wording to TLS or an authentication handshake; Microsoft did not use the word authentication there."
+  },
+  {
+   "fact": "ITPro says Azure and the Power Platform Admin Center were not affected (unattributed). It quotes Microsoft's X post on Exchange Online mailbox access issues across connection methods in the Americas, and Lamanna's statement that there is no sign of malicious activity. The article contains no authentication or sign-in text.",
+   "url": "https://www.itpro.com/software/microsoft/microsoft-365-outage-disruption-continues-with-issues-spanning-copilot-exchange-and-sharepoint",
+   "publisher": "ITPro (Jane McCallion)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Microsoft said a number of servers had become unexpectedly unavailable, straining the rest of the infrastructure.",
+   "notes": "Do not cite it for Power Platform being unaffected: PP1550869 shows Power Platform runtime failures even if the admin center worked."
+  },
+  {
+   "fact": "Science Media Centre expert reaction: Prof Rabih Bashroush (University of East London) describes the overwhelmed process as setting up secure connections and handling upstream authentication and routing on Exchange Online servers, and says Teams and Copilot depend on Exchange Online's backend for identity and calendar data. Dr Stephen McQuiston says the services share much of the same infrastructure.",
+   "url": "https://www.sciencemediacentre.org/expert-reaction-to-microsoft-outage/",
+   "publisher": "Science Media Centre",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Bashroush says the incident centres on an overloaded process for encrypted connections plus upstream authentication and routing.",
+   "notes": "Expert interpretation, not Microsoft's words. It is a likely source of the shared authentication and routing layer framing for November."
+  },
+  {
+   "fact": "Reworked's one login layer / shared identity layer story is about the outage that began on 31 Aug 2026 and lasted about 48 hours, not the 12 Nov outage. It cascades failures from a core authentication configuration inside Exchange Online across Defender XDR, Teams, SharePoint, OneDrive, Purview, Copilot and the admin center.",
+   "url": "https://www.reworked.co/information-management/one-login-layer-outage-took-out-6-microsoft-365-tools/",
+   "publisher": "Reworked (David Barry)",
+   "date": "2026-09-16",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: the writer says one failure in a core authentication configuration inside Exchange Online cascaded across several tools.",
+   "notes": "Evidence that the shared authentication layer story belongs to August (EX1464935/MO1465074)."
+  },
+  {
+   "fact": "SaaSCity relays a Hacker News commenter who says Entra was not impacted and SSO was working for non-Microsoft 365 apps. It notes that Microsoft's updates centred on Exchange, and that the core authentication configuration root cause (EX1464935) belonged to the 31 Aug to 3 Sep outage.",
+   "url": "https://saascity.io/blog/microsoft-365-outage-18-hours-saas-vendor-continuity-2026",
+   "publisher": "SaaSCity",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: a Hacker News commenter says Entra was fine and single sign-on still worked for apps outside Microsoft 365.",
+   "notes": "An anonymous forum comment, weak evidence. A search-engine summary claimed this page reported Entra sign-in flows down; the page says the opposite."
+  },
+  {
+   "fact": "Kotaku reports Downdetector problems with many Microsoft services including Xbox Network on 13 Nov, while the Xbox Status page showed everything fine. Microsoft did not tie Xbox to the Microsoft 365 incident.",
+   "url": "https://kotaku.com/xbox-live-microsoft-365-copilot-outlook-outages-ongoing-2000756565",
+   "publisher": "Kotaku (Lewis Parker)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Xbox's own status page reported no problems even as outage trackers lit up.",
+   "notes": "Xbox sign-in, cloud saves and Cloud Gaming come from news and Downdetector only. Notebookcheck returned HTTP 403; the Windows Central Xbox page returned truncated text."
+  },
+  {
+   "fact": "Azure's public status history had no incident or PIR dated 12 or 13 Nov 2026 when fetched; the latest entries were PIRs dated 29 and 30 Sep 2026. Microsoft did not report an Azure or Entra-level incident for this outage on that page.",
+   "url": "https://azure.status.microsoft/en-us/status/history/",
+   "publisher": "Microsoft (Azure status)",
+   "date": "fetched 2026-11-17",
+   "kind": "primary",
+   "quote": "PARAPHRASE, not verbatim: the history page's newest entries are two late-September post-incident reviews.",
+   "notes": "An absence finding as of the fetch date. M365 PIRs are not posted here."
+  },
+  {
+   "fact": "The IT Nerd relays Microsoft's @MSFT365Status X post about users having trouble accessing or using Teams in North America, tracked as TM1550488 in the admin center. Outlook instability was not yet confirmed by Microsoft when the post was written.",
+   "url": "https://itnerd.blog/2026/11/12/its-not-you-various-microsoft-services-are-down/",
+   "publisher": "The IT Nerd (author not named)",
+   "date": "2026-11-12 1:22 pm",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Microsoft's status account said it was investigating Teams access and usage problems for North American users.",
+   "notes": "Evidence that Microsoft named the Teams issue on a public channel. The X post itself could not be fetched (HTTP 402)."
+  },
+  {
+   "fact": "On-Site Technology's table attributes many services to MO1550821, including Planner, To Do, Intune, Defender for Office 365, Purview, Power BI, Fabric, Power Apps, the admin centers, Universal Print, Windows 365, Graph and Education. Its Teams row cites TM1550488 and MO1550821 together for calendar, Live/Virtual event and channel failures. It lists OneDrive and Azure as Downdetector-only. TM1550488 is dated 9:45 to 10:53 AM ET.",
+   "url": "https://www.on-sitetechnology.com/microsoft-365-outage-november-2026/",
+   "publisher": "On-Site Technology (Luis Garcia)",
+   "date": "2026-11-12, updated 2026-11-13",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: some users may be unable to sign in to the Power Apps or Field Service mobile apps (Microsoft text as relayed).",
+   "notes": "Probable source of the TM1550488 calendar/channel conflation. Its service list otherwise agrees with the mirror."
+  },
+  {
+   "fact": "Presenc AI lists PP1550869 (Power Platform), restored 13 Nov 15:50 UTC, and paraphrases Microsoft as tying Power Platform flows, apps and connectors to an unavailable authentication dependency. It says the admin center root-cause field read N/A. It cites the Penn mirror.",
+   "url": "https://presenc.ai/research/microsoft-365-outage-november-2026",
+   "publisher": "Presenc AI (Ramanath)",
+   "date": "last updated November 2026 (reflects updates read at 18:00 UTC on 13 Nov)",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Microsoft linked Power Platform failures to an authentication dependency that was unavailable.",
+   "notes": "Accurate to PP1550869, but easy to misread as authentication causing the whole outage."
+  },
+  {
+   "fact": "epifive says the upstream authentication/routing patch statement came from Microsoft's Service health post for EX1550543 (13 Nov 07:25 UTC), as mirrored in Penn's public feed, and not from the public status page or @MSFT365Status.",
+   "url": "https://dev.to/epifive/microsoft-365-outage-nov-2026-what-we-know-about-the-root-cause-and-what-it-admins-should-learn-4hld",
+   "publisher": "DEV Community (epifive)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Microsoft reported better server stability after patching part of its infrastructure.",
+   "notes": "It led me to the Penn mirror. I could not check its claim about the public channels."
+  },
+  {
+   "fact": "Al Jazeera names Outlook (hardest hit), Teams (desktop chats and calls largely kept working) and Copilot as disrupted; it does not mention sign-in or authentication problems, SharePoint, OneDrive, Azure or Xbox. Microsoft is quoted on unavailable servers and Lamanna on no sign of malicious activity.",
+   "url": "https://aljazeera.com/news/2026/11/13/microsoft-hit-by-global-outages-what-happened-and-why",
+   "publisher": "Al Jazeera (Heba Habib)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "PARAPHRASE, not verbatim: Microsoft said a number of servers had become unexpectedly unavailable, and the load was not due to more traffic.",
+   "notes": "Mainstream coverage did not report sign-in failure as a service outage."
+  }
+ ],
+ "disagreements": "1. TM1550488 scope. The brief says TM1550488 covered Teams calendar scheduling and channel creation. Microsoft's own TM1550488 text (Penn mirror) covers chat and messaging in the Americas, 14:45 to 15:53 UTC on 12 Nov, with its own root cause (resource contention) and no link to EX1550543 or MO1550821. Calendar scheduling and private/shared channel failures are in MO1550821's Teams entry (from 00:00 and 02:58 UTC on 13 Nov). On-Site Technology cites TM1550488 and MO1550821 together for those features. Windows Report (blocked for me) reportedly says Microsoft never confirmed a shared cause. The preliminary PIR, as reproduced, puts a Teams gateway failover (01:07 UTC on 12 Nov) in the causal chain, which is not TM1550488.\n2. OneDrive. No MO1550821 update ever names it. The preliminary PIR's Service(s) Impacted field names it (Office Watch, 365Fanatic), and news lists include it (Petri, TNW, Windows Central headline). BleepingComputer attributes it to Downdetector only.\n3. How many services. Five in Microsoft's first MO1550821 list (18:27 UTC on 12 Nov; BleepingComputer agrees). 19 including Exchange on the public status page per PPC Land, which matches the MO lists from 00:45 to 06:14 UTC on 13 Nov, before Power Apps was added; PPC Land says Power Apps sign-in was not mentioned. 20 in the final MO1550821 list; 22 counting every service ever named. 14 in the preliminary PIR field, which folds the two Defender entries into one, adds OneDrive, and drops the admin centers, Microsoft 365 apps, Education, Graph and Windows 365.\n4. Shared authentication and routing layer. Microsoft's November wording is a mid-incident patch to an upstream authentication/routing configuration component that improved stability (admin-center posts, 07:24 to 08:09 UTC on 13 Nov). Microsoft never called it the cause and never called it shared. Its final preliminary root cause (14 Nov) and the preliminary PIR (as reproduced) point to connection-establishment systems, a network gateway and connection negotiation, with no authentication or identity wording. The shared framing comes from Petri's own prose, Science Media Centre experts (Bashroush, McQuiston) and 365Fanatic (a gateway shared with Exchange Online, which is not an authentication layer). The shared identity layer story (Reworked, 16 Sep) and Microsoft's core-authentication-configuration root cause both belong to the 31 Aug to 3 Sep outage (EX1464935/MO1465074).\n5. Which way the authentication link runs. PP1550869 and CR1551339 say an authentication dependency service was unavailable, and CR1551339 names Exchange as that dependency. In Microsoft's words, sign-in failed because Exchange failed. Presenc AI's paraphrase is accurate but invites the reverse reading.\n6. Sign-in or Entra as a failed service. Microsoft names no Entra or sign-in service failure in any 12 to 13 Nov incident I read. A Hacker News comment relayed by SaaSCity says Entra was fine. A search-engine summary claimed SaaSCity reported Entra sign-in flows down; the page says the opposite. Microsoft did describe sign-in and access improving during recovery (20:01 UTC on 13 Nov; the PIR action log per Office Watch). Sign-in as a symptom is Microsoft-backed; sign-in as a failed service is not.\n7. Cause wording drift. At 19:18 UTC on 12 Nov Microsoft said load was not driven by more traffic but by unavailable servers. It later reported a surge in outbound calls from routing services (04:59 UTC on 13 Nov), and the public status page spoke of a traffic influx (flagged by PPC Land).\n8. Start time (for the timeline sweep). The mirror's EX1550543 and MO1550821 headers give 10:05 UTC on 12 Nov. The first EX1550543 update is at 16:20 UTC (CIO and Petri put the dashboard start at 16:17 UTC). The PIR gives 16:20 UTC as impact start, TNW gives 16:33 UTC for the first support case, and MO1550821 opened at about 18:26 to 18:27 UTC.\n9. Azure. Downdetector and some headlines list Azure. No Microsoft November incident I read names it, Azure status history had no 12 to 13 Nov entry, and ITPro says Azure was not affected.\n10. Xbox. Downdetector and the gaming press reported Xbox sign-in and cloud problems on 13 Nov. Kotaku says the Xbox Status page showed everything fine, and Microsoft never tied Xbox to MO1550821.\n11. Power Platform. ITPro (unattributed) says the Power Platform Admin Center was unaffected, while Microsoft ran PP1550869 for Power Platform flows, apps and connectors. These are different components, so this is not a real contradiction.\n12. Defender for Cloud Apps (08:09 UTC) and Viva Engage (15:52 and 20:01 UTC on 13 Nov) each appear only in interim MO1550821 updates and are missing from the final list.",
+ "gaps": "- No Microsoft-hosted public page with the incident text was readable. status.cloud.microsoft returns only a JavaScript shell, x.com/MSFT365Status returned HTTP 402, and web.archive.org cannot be fetched by my tool. The admin center and the PIR documents need a tenant login. Every Microsoft wording above comes through the Penn ISC mirror or through press.\n- The Penn mirror is a third-party copy of Penn's tenant view. It refreshes every 15 minutes and keeps a rolling 30-day window, so the 12 Nov incidents may drop off around mid-December 2026 (uncertain). If the post needs a stored primary quote, capture it now; I was told to download nothing, so I did not.\n- I read the mirror (about 893,000 characters, 100,000 at a time) through WebFetch's summarizing reader. Every count, timestamp and fragment above needs a raw capture and a counting script before publication (house rule: any number must be reproduced by a script).\n- Quotes: a copyright rule binding on me allows one verbatim quote per response, under 15 words. Only the authentication/routing patch entry has one; every other quote field holds a labelled paraphrase with exact locators (incident ID, update timestamp, page offset). The pipeline must capture its own verbatim quotes, under 30 words.\n- PIR: only secondary versions (Office Watch says verbatim except boilerplate; 365Fanatic; TNW via The Register). The final PIR is reportedly due around 20 Nov 2026. TM1550488's PIR (published 17 Nov 00:23 UTC) is not mirrored.\n- Blocked: Windows Report (both TM1550488 articles and its root-cause piece, HTTP 403), BetaNews (403), isdown.app (403), Notebookcheck (403), and Petri's short ?p= link (403; the canonical link worked). Windows Central pages came back truncated.\n- Not found: any Microsoft service-health text naming OneDrive; any Microsoft statement that Entra ID or sign-in infrastructure failed; any November Microsoft use of the word shared for an authentication or routing layer; any Fabric status-page or Power Platform admin-center entry (neither checked directly). I also could not confirm whether @MSFT365Status posts carried the patch wording; epifive says they did not.\n- Working notes (paraphrases and locators only): /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/post31-sweep/services-and-auth/notes.md\n- Question for the owner (multiple choice). Q2: can the post cite Penn ISC's mirror as Microsoft's own words? (A) Yes: Microsoft as author, Penn ISC as host, with a stored capture (recommended). (B) Only alongside a second independent copy, such as a news outlet quoting the same update. (C) No, Microsoft-hosted pages only, which leaves just Microsoft statements quoted by the press (the five-service first list via BleepingComputer).",
+ "chart_feasibility": "Yes, with two caveats. The chart can rest on Microsoft's own words, but those words are Microsoft's Service health text read through a third-party mirror (Penn ISC). And Microsoft describes partial impacts on features that interact with Exchange Online, so the honest label is \"listed by Microsoft as impacted\", not \"down\".\n\nCount: 19 services besides Exchange Online in Microsoft's final MO1550821 list (14 Nov, 04:17 UTC): Microsoft 365 admin center, Microsoft 365 apps, Microsoft 365 Apps Admin Center, Microsoft 365 Education, Copilot 365, Defender for Office 365, Defender XDR, Fabric, Graph, Intune, Planner, Power Apps, Purview, Teams, To Do, Power BI, SharePoint Online, Universal Print, Windows 365. If the post means user-facing products only, dropping Graph and the two admin centers leaves 16.\n\nOther counts: 21 if every service Microsoft ever listed counts (adding Defender for Cloud Apps and Viva Engage, each in interim updates only); 13 in the preliminary PIR's Service(s) Impacted field (secondary reproduction, includes OneDrive); 4 in Microsoft's first list (18:27 UTC, 12 Nov).\n\nLeave out TM1550488 (Microsoft never linked it). Leave out OneDrive except via the PIR, and leave out Azure, Xbox and Entra (news or Downdetector only). PP1550869 (Power Platform flows and connectors) and CR1551339 (Dynamics 365 Field Service mobile sign-in) are separate Microsoft advisories and can go in a footnote.\n\nThe most faithful chart is a step chart of Microsoft's own list, each step stamped with a Microsoft update time (services besides mail): 4 at 18:27 UTC on 12 Nov; 7 at 19:58; 10 at 20:57; 12 at 22:03; 13 at 22:58; 17 at 00:00 UTC on 13 Nov; 18 at 00:45; 19 at 06:54; 20 at 08:09; back to 19; 20 at 15:52 and 20:01; 19 from 22:00 through the final update. Re-count from a raw capture with a script before publishing.\n\nQuestion for the owner (multiple choice). Q1: which count should the chart show? (A) 19, Microsoft's final MO1550821 list besides Exchange Online (recommended). (B) 21, every service Microsoft listed at any point. (C) 13, the preliminary PIR field (includes OneDrive; secondary reproduction only). (D) The timestamped step chart, from 4 up to the final 19."
+}

@@ -1,0 +1,75 @@
+{
+ "downdetector_reports": {
+  "doc": "sources/reuters-outage-eases/reuters-outage-eases.txt",
+  "extracted_with": "store_text.py (markup removed, the reference title written as the first line) from the stored page beside it",
+  "fetched_from": "https://live.euronext.com/en/financial-news/microsofts-global-outage-eases-after-disrupting-businesses-governments-nearly-day (retrieved 2026-11-17; stored page beside the text copy)",
+  "locator": "the paragraph after the one naming Downdetector's parent company, Ookla",
+  "page": "web page",
+  "quote": "Downdetector logged more than 7.4 million reports worldwide, peaking at nearly 20,000 a minute",
+  "ref": "Reuters 2026",
+  "sha256": "b1137a5e3948f7f6bf32b9ddac8badbafa46792eaef571bcbde9c0b93df4fb4a",
+  "title": "Microsoft restores service to Outlook and Teams after global outage",
+  "values": {
+   "reports_million": 7.4,
+   "peak_per_minute": 20000
+  }
+ },
+ "downdetector_countries": {
+  "doc": "sources/aljazeera-2026-11-13-explainer/aljazeera-2026-11-13-explainer.txt",
+  "extracted_with": "store_text.py (markup removed, the reference title written as the first line) from the stored page beside it",
+  "fetched_from": "https://www.aljazeera.com/news/2026/11/13/microsoft-hit-by-global-outages-what-happened-and-why (retrieved 2026-11-17; stored page beside the text copy)",
+  "locator": "the paragraph on Downdetector, about 07:00 GMT on Friday",
+  "page": "web page",
+  "quote": "it had received at least 43,000 reports of problems with Outlook from users in 72 countries",
+  "ref": "Habib 2026",
+  "sha256": "e39afeb4cb204c719985f3daeb8280a40eed1d538bfa2bb2cb2ec84fc03325fb",
+  "title": "Microsoft hit by global outages: What happened and why?",
+  "values": {
+   "outlook_reports": 43000,
+   "countries": 72
+  }
+ },
+ "aeg_productivity": {
+  "doc": "sources/krdo-cnn-office-workers/krdo-cnn-office-workers.txt",
+  "extracted_with": "store_text.py (markup removed, the reference title written as the first line) from the stored page beside it",
+  "fetched_from": "https://krdo.com/money/cnn-business-consumer/2026/11/13/microsoft-outage-strands-office-workers-nationwide/ (retrieved 2026-11-17; stored page beside the text copy)",
+  "locator": "the paragraph after the one on local governments",
+  "page": "web page",
+  "quote": "The outage could cost $7 billion in lost productivity, according to an estimate by Anderson Economic Group",
+  "ref": "Stelter 2026",
+  "sha256": "508b92bf4bd4ef9183765f37208414208f203010402e1ca1f66e831622a6fa70",
+  "title": "Massive Microsoft outage disrupts businesses, schools and governments around the world",
+  "values": {
+   "billion_usd": 7
+  }
+ },
+ "dbrs_insured": {
+  "doc": "sources/businessinsurance-financial-toll/businessinsurance-financial-toll.txt",
+  "extracted_with": "store_text.py (markup removed, the reference title written as the first line) from the stored page beside it",
+  "fetched_from": "https://www.businessinsurance.com/microsoft-outages-financial-toll-may-fall-short-of-disruption/ (retrieved 2026-11-17; stored page beside the text copy)",
+  "locator": "the paragraph on Morningstar DBRS's estimate",
+  "page": "web page",
+  "quote": "Morningstar DBRS preliminarily estimated global insured losses of $300 million to $500 million",
+  "ref": "Souter 2026",
+  "sha256": "ab3a4d04f80a8dd8c30ea9485768fdd57fbde9e5cbd5548a7ac5b5685a272499",
+  "title": "Microsoft outage's financial toll may fall short of disruption",
+  "values": {
+   "low_million_usd": 300,
+   "high_million_usd": 500
+  }
+ },
+ "cybercube_insured": {
+  "doc": "sources/businessinsurance-financial-toll/businessinsurance-financial-toll.txt",
+  "extracted_with": "store_text.py (markup removed, the reference title written as the first line) from the stored page beside it",
+  "fetched_from": "https://www.businessinsurance.com/microsoft-outages-financial-toll-may-fall-short-of-disruption/ (retrieved 2026-11-17; stored page beside the text copy)",
+  "locator": "the last sentence of the paragraph on Morningstar DBRS's estimate",
+  "page": "web page",
+  "quote": "cyber risk analytics provider CyberCube said insured losses will likely be less than $100 million",
+  "ref": "Souter 2026",
+  "sha256": "ab3a4d04f80a8dd8c30ea9485768fdd57fbde9e5cbd5548a7ac5b5685a272499",
+  "title": "Microsoft outage's financial toll may fall short of disruption",
+  "values": {
+   "million_usd": 100
+  }
+ }
+}

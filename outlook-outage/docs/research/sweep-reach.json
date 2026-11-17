@@ -1,0 +1,214 @@
+{
+ "sources": [
+  {
+   "fact": "Indonesia, WhatsApp: 92.7% of internet users aged 16 and above said they used WhatsApp at least once in the past month. Source survey is GWI, Q2 2026, and WhatsApp is the top platform (Instagram 84.0%, TikTok 81.0%, Facebook 79.5%). This is a survey share, not a count.",
+   "url": "https://datareportal.com/reports/digital-2027-indonesia",
+   "publisher": "DataReportal (author Simon Kemp; analysis by Manochi; copyright Kepios; supported by Meltwater and We Are Social; survey data from GWI)",
+   "date": "2026-11-04",
+   "kind": "primary",
+   "quote": "SELF-DECLARED SOCIAL MEDIA PLATFORM USE ... [WhatsApp] 92.7% ... SOURCE: GWI (Q2 2026).",
+   "notes": "The value appears only in the chart labels. The body text says each bar is the share of internet users 'aged 16 and above' who used the platform 'at least once' during the past month. The chart warns of 'CHANGES IN AUDIENCE COMPOSITION AND SURVEY METHODOLOGY', so do not draw a trend against earlier editions. The body adds that the values may not match platform ad reach data. The same page gives 231 million internet users and 80.2% penetration (October 2026), though the text calls this 'the end of 2026'. The page has no email data at all. The search index carries the same 92.7%. Prior edition: Digital 2026 Indonesia (5 Nov 2025) gave 230 million users and a population of 286 million; its WhatsApp value was not in the page text."
+  },
+  {
+   "fact": "Worldwide, email: 76.4% of online adults (internet users aged 16+) said they used email in the past 30 days (GWI Q2 2026 wave). Excluding China, the figure is 86.6%.",
+   "url": "https://datareportal.com/reports/digital-2027-global-overview-report",
+   "publisher": "DataReportal (Simon Kemp; Manochi analysis; We Are Social and Meltwater; data from GWI)",
+   "date": "2026-10-21",
+   "kind": "primary",
+   "quote": "with 76.4 percent of respondents to GWI’s survey answering in the affirmative",
+   "notes": "The preceding clause reads 'online adults say that they’ve used email within the past 30 days'. The wave is named: 'Q2 2026 wave of research'. In text, only Nigeria (98.4%), South Africa (above 95%) and Brazil (94.7%) get country values. The email-by-country chart is an image, and Indonesia is not named in the text. GWI covers about 54 markets, not the whole world, and cannot survey Russia because of sanctions. GWI owns the data; DataReportal is the licensed publisher."
+  },
+  {
+   "fact": "Worldwide, WhatsApp: 54.9% of internet users aged 16+ said they used WhatsApp in the past 30 days (GWI 'latest survey'). That ranks it fourth, after Facebook (58.1%), Instagram (56.6%) and YouTube (56.2%).",
+   "url": "https://datareportal.com/reports/digital-2027-global-overview-report",
+   "publisher": "DataReportal (Simon Kemp; Manochi analysis; data from GWI)",
+   "date": "2026-10-21",
+   "kind": "primary",
+   "quote": "and WhatsApp claims fourth place, with 54.9 percent",
+   "notes": "The base comes from the sentence before: Instagram's 56.6 percent 'of internet users aged 16 and above' who used it 'within the past 30 days'. This paragraph does not name a GWI wave; the email figure in the same report says Q2 2026. Two separate fetches confirmed 54.9%, but the search index has not picked it up yet (it still shows 54% from the 2025 wave). GWI's sample includes China, where WhatsApp is blocked, so the global share is lower than it would otherwise be. The same report's monthly-active ranking is a Similarweb index with WhatsApp at 100, not a user count."
+  },
+  {
+   "fact": "Worldwide, by category: 94.1% of internet users aged 16+ used chat and messaging services such as WhatsApp and Telegram in the past 30 days, against 76.4% who used at least one email service in the past month (GWI).",
+   "url": "https://datareportal.com/reports/digital-2027-internet-use-around-the-world",
+   "publisher": "DataReportal (Simon Kemp; data from GWI)",
+   "date": "2026-10-21",
+   "kind": "primary",
+   "quote": "Chat and messaging services like WhatsApp and Telegram rank second, with 94.1 percent",
+   "notes": "The email line on this page: 'Email services rank fourth', with 76.4 percent of online adults 'using at least one email service during the past month'. No wave is given for this ranking. These are category figures (they include apps such as WeChat), not WhatsApp alone."
+  },
+  {
+   "fact": "Earlier GWI reading (April 2026 update): email 74.4% of online adults; WhatsApp 54.4% (GWI Q4 2025 wave); WhatsApp 69.8% when China and Russia are excluded.",
+   "url": "https://datareportal.com/reports/digital-2026-mid-year-global-update-report",
+   "publisher": "DataReportal (Simon Kemp; Manochi; data from GWI)",
+   "date": "2026-04 (no explicit date on the page; covers data at the start of April 2026)",
+   "kind": "primary",
+   "quote": "Email places fourth, at 74.4 percent",
+   "notes": "The WhatsApp sentence on the page: 'WhatsApp's 54.4 percent puts the messenger in fourth place.' The email wave is not stated. Do not combine these with the October 2026 figures in one chart, because the waves differ."
+  },
+  {
+   "fact": "GWI found 75% of online adults use email at least monthly (Digital 2025 email article). The article also notes that GWI's demographic coverage changed after Q1 2024 (ages 65+ added).",
+   "url": "https://datareportal.com/reports/digital-2025-sub-section-email-still-essential",
+   "publisher": "DataReportal (Simon Kemp, then CEO of Kepios)",
+   "date": "2025-02-05",
+   "kind": "primary",
+   "quote": "75 percent of online adults saying that they use email",
+   "notes": "No wave or country values are in the text. It also cites data.ai for roughly 2 billion handsets using the Gmail app each month, which is not a count of email users. The coverage change explains why current figures use a '16 and above' base rather than the '16 to 64' base the task mentions."
+  },
+  {
+   "fact": "DataReportal reuse terms: individual report pages may be republished with clear attribution to DataReportal and the report partners and a link to the report page. Use must count as fair dealing; you may not charge for access or distort the data. Email them before republishing or recreating ten or more pages or charts, or before republishing content from their analysis articles or blog posts. Paid publications pay a fee. Raw data is not provided.",
+   "url": "https://datareportal.com/citation",
+   "publisher": "DataReportal / Kepios Pte. Ltd.",
+   "date": "undated (read 2026-11-17)",
+   "kind": "primary",
+   "quote": "You must include clear attribution to DataReportal and the report partner(s)",
+   "notes": "No Creative Commons or other open licence; the content is described as the intellectual property of Kepios Pte. Ltd. Recommended citation: <Report Sponsors> (<report year>), '<Report Title>', retrieved from <report page URL> on <date>. The page does not say whether you may quote single data points or draw your own chart from them, and it says nothing about third-party data such as GWI's. datareportal.com/legal adds that all site content is protected by copyright. Contact address seen in a page footer: reports@kepios.com."
+  },
+  {
+   "fact": "GWI's citation guidance: when citing figures from existing reports, saying 'GWI says' or 'GWI data shows' is enough, and you may copy the report's own sourcing line.",
+   "url": "https://help.globalwebindex.com/en/articles/10725998-referencing-gwi-data",
+   "publisher": "GWI",
+   "date": "2025-03-20 (last updated)",
+   "kind": "primary",
+   "quote": "you can simply state 'GWI says'/'GWI data shows'",
+   "notes": "No explicit rule on redistribution or commercial use. Data that is not public (platform-only) needs approval from an account manager. The page also says GWI does not support using its data to criticise, or to harm, another organisation. That matters if the Outlook outage post frames email figures as criticism of Microsoft, though the clause's scope is unclear."
+  },
+  {
+   "fact": "Meta, Q1 2025 earnings call (30 April 2025): Mark Zuckerberg said WhatsApp has more than 3 billion monthly actives, including more than 100 million in the U.S. This is the latest Meta figure found on a monthly basis.",
+   "url": "https://equibles.com/stocks/meta/documents/5e268504-5cd5-44d3-b328-47c5d44ba1f0",
+   "publisher": "Equibles (third-party transcript of Meta Platforms' Q1 2025 earnings call)",
+   "date": "2025-04-30",
+   "kind": "secondary",
+   "quote": "WhatsApp now has more than 3 billion monthly actives",
+   "notes": "This is a third-party copy of a primary statement. Meta's own event page (https://investor.atmeta.com/investor-events/event-details/2025/Q1-2025-Earnings-Call/default.aspx) lists the official transcript PDF at https://s21.q4cdn.com/399680738/files/doc_financials/2025/q1/Transcripts/META-Q1-2025-Earnings-Call-Transcript-1.pdf. I did not read it because it is a PDF. 'More than' makes this a floor. No measurement date or definition of 'monthly actives' was found, and per-app actives may be counts of accounts, not deduplicated people. Meta's earnings press releases report only family-wide daily active people."
+  },
+  {
+   "fact": "News coverage of the same call: WhatsApp has more than 3 billion people using it every month.",
+   "url": "https://techcrunch.com/2025/05/01/whatsapp-now-has-more-than-3-billion-users/",
+   "publisher": "TechCrunch (Ivan Mehta)",
+   "date": "2025-05-01",
+   "kind": "secondary",
+   "quote": "WhatsApp now has more than 3 billion people using it every month",
+   "notes": "TechCrunch rewrites Meta's 'monthly actives' as 'people ... every month'. It confirms the date and that Zuckerberg said it on the Q1 results call."
+  },
+  {
+   "fact": "WhatsApp's own site: more than 3 billion people in over 180 countries use WhatsApp.",
+   "url": "https://www.whatsapp.com/about",
+   "publisher": "WhatsApp LLC (Meta)",
+   "date": "undated (footer '2026 © WhatsApp LLC'; read 2026-11-17)",
+   "kind": "primary",
+   "quote": "More than 3 billion people in over 180 countries use WhatsApp",
+   "notes": "This says 'people' with no time window, while the earnings call says 'monthly actives'. It is undated, so it is weaker than the call as a dated figure."
+  },
+  {
+   "fact": "Meta, Q4 2025 earnings (28 January 2026): more than 2 billion daily actives each on Facebook and WhatsApp, and more than 3.5 billion people using at least one Meta app every day. This is the latest WhatsApp-specific figure found, and it is daily, not monthly.",
+   "url": "https://vectorshift.ai/research/companies/meta-platforms/earnings/2025-q4",
+   "publisher": "VectorShift Research (copy of Meta's Q4 2025 earnings call and Zuckerberg's prepared remarks)",
+   "date": "2026-01-28",
+   "kind": "secondary",
+   "quote": "more than 2 billion daily actives each on Facebook and WhatsApp",
+   "notes": "Official PDFs, not read: https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/META-Q4-2025-Prepared-Remarks.pdf and https://s21.q4cdn.com/399680738/files/doc_financials/2025/q4/META-Q4-2025-Earnings-Call-Transcript.pdf. The Motley Fool transcript (https://www.fool.com/earnings/call-transcripts/2026/01/28/meta-meta-q4-2025-earnings-call-transcript/) has no WhatsApp figure, which suggests the line is in the separately published prepared remarks (my inference). Never put this daily figure next to a monthly one."
+  },
+  {
+   "fact": "Meta, Q1 2026 (29 April 2026): family daily active people were 3.56 billion in March, down slightly from December because of internet disruptions in Iran and a restriction on WhatsApp access in Russia. No new WhatsApp user count was given.",
+   "url": "https://vectorshift.ai/research/companies/meta-platforms/earnings/2026-q1",
+   "publisher": "VectorShift Research (copy of Meta's Q1 2026 earnings call; CFO Susan Li)",
+   "date": "2026-04-29",
+   "kind": "secondary",
+   "quote": "a restriction on access to WhatsApp in Russia",
+   "notes": "Secondary summaries of the Q2 2026 call (29 July) and Q3 2026 call (21 October) show no WhatsApp user count either (checked by search only). The 'more than 3 billion monthly' floor dates from April 2025 and was not restated in 2026."
+  },
+  {
+   "fact": "Radicati Email Statistics Report, 2024-2028 (worldwide email users, business and consumer, in millions): 4,481 (2024), 4,594 (2025), 4,730 (2026), 4,849 (2027), 4,970 (2028). Every year after 2024 is a forecast.",
+   "url": "https://www.radicati.com/wp/wp-content/uploads/2024/10/Email-Statistics-Report-2024-2028-Executive-Summary.pdf",
+   "publisher": "The Radicati Group, Inc.",
+   "date": "2024-12 (brochure 'Copyright © December 2024'; file sits in an October 2024 upload folder)",
+   "kind": "primary",
+   "quote": "Worldwide Email Users* (M) · 4,481 · 4,594 · 4,730 · 4,849 · 4,970",
+   "notes": "NOT FETCHED. radicati.com failed to resolve (DNS ENOTFOUND, four attempts on 2026-11-17) and web.archive.org is blocked for the fetch tool. The quote is a search-engine excerpt, so verify it before storing. Per the excerpts, the table footnote says figures include business and consumer users, the text says users 'top 4.4' billion in 2024 and will pass 4.9 billion by 2028, and a methods note says installed base numbers are active accounts accessed at least once in 3 months. Whether that note covers user counts is unverified. Radicati counts accounts separately (about 1.7 accounts per user in older editions; no 2024 ratio found). No 2025-2029 or 2026-2030 edition was found. The full report is paid ($2,500 to $3,000)."
+  },
+  {
+   "fact": "Radicati's citation policy: press and media may quote statistics from the Executive Summaries with attribution and without prior consent. Vendors and other non-media organisations need to buy the report and get written consent before using it in marketing, publicity or company-related material.",
+   "url": "https://www.radicati.com/?page_id=9953",
+   "publisher": "The Radicati Group, Inc.",
+   "date": "undated (search index; not fetched)",
+   "kind": "primary",
+   "quote": "Press and Media can quote any statistic or information from the Executive Summaries",
+   "notes": "NOT FETCHED (DNS failure), so this is a search excerpt only. Other excerpts: permission requests go to admin@radicati.com, stating the exact quote and its context, with a reply promised within 24 hours; purchased data is for internal use only and may not be distributed externally; Radicati documents carry 'Reproduction Prohibited'. It is unclear whether a personal portfolio blog counts as 'press and media'."
+  },
+  {
+   "fact": "cloudHQ's estimate: 4.83 billion email users in 2025, projected at 5.02 billion for 2026 and 5.61 billion by 2030. This is a second primary estimate that disagrees with Radicati.",
+   "url": "https://blog.cloudhq.net/email-statistics-report-2025-2030/",
+   "publisher": "cloudHQ LLC (author Naomi Assaraf)",
+   "date": "updated January 2026",
+   "kind": "primary",
+   "quote": "In 2025, global email usage stands at 4.83 billion users",
+   "notes": "The page says 'All figures represent active email usage unless otherwise stated'. The estimate is modelled from UN and ITU population and penetration data with time-series and regression forecasts. Terms: the report may not be copied, distributed, excerpted or used for derivative works without attribution (credit cloudHQ and link to the page). cloudHQ is a vendor, and its method is less transparent than Radicati's."
+  },
+  {
+   "fact": "APJII's own survey portal shows no 2026 survey files, so the 2026 survey document is not available from the primary publisher.",
+   "url": "https://survei.apjii.or.id/survei/2026",
+   "publisher": "Asosiasi Penyelenggara Jasa Internet Indonesia (APJII)",
+   "date": "undated (read 2026-11-17)",
+   "kind": "primary",
+   "quote": "Belum ada file survei yang diunggah untuk tahun 2026.",
+   "notes": "The footer reads '© 2026 Asosiasi Penyelenggara Jasa Internet Indonesia (APJII). All rights reserved.' No citation or reuse terms were found. The news page apjii.or.id/berita has no 2026 survey release (its 2026 items are dated 11 August and 11 September)."
+  },
+  {
+   "fact": "APJII 2026 survey (secondary report): 235.26 million internet users, 81.72% penetration, out of a population of 287.88 million. Fieldwork ran 1 February to 15 March 2026 with 8,700 respondents aged 13+ in 38 provinces (margin of error ±1.1%).",
+   "url": "https://data.goodstats.id/statistic/penetrasi-internet-indonesia-naik-capai-81-dengan-235-juta-pengguna-pada-2026-OMHOq",
+   "publisher": "GoodStats Data (Annisa Rendanianti)",
+   "date": "2026-05-28",
+   "kind": "secondary",
+   "quote": "jumlah pengguna internet pada 2026 mencapai 235,26 juta jiwa",
+   "notes": "Only secondary coverage is available (see the APJII portal entry). This disagrees with DataReportal's 231 million and 80.2% (October 2026); the two use different methods and should not be mixed."
+  },
+  {
+   "fact": "APJII 2026 (secondary report): asked which social media they access most often, 1.7% of respondents named WhatsApp. TikTok was 31.8%, Facebook 29.4%, Instagram 27.7%.",
+   "url": "https://data.goodstats.id/statistic/tiktok-jadi-media-sosial-yang-paling-sering-diakses-publik-ri-2026-Mxwdn",
+   "publisher": "GoodStats Data (Annisa Rendanianti)",
+   "date": "2026-06-02",
+   "kind": "secondary",
+   "quote": "Adapun WhatsApp menempati urutan berikutnya dengan persentase 1,7%.",
+   "notes": "This measures the platform people access most often, apparently one answer per respondent, aged 13+. It is not reach and cannot be compared with the 92.7% monthly-use figure. The exact question wording is not given."
+  },
+  {
+   "fact": "APJII 2025 (secondary report): 'using email/communicating' was the main reason for using the internet for 4.20% of respondents. Social media was 24.80%.",
+   "url": "https://databoks.katadata.co.id/en/technology-telecommunications/statistics/689406335afe6/reasons-indonesians-use-the-internet-in-2025",
+   "publisher": "Databoks (Katadata), Nabilah Muhamad",
+   "date": "2025-08-07",
+   "kind": "secondary",
+   "quote": "Using email/communicating: 4.20%",
+   "notes": "Fieldwork 10 April to 16 July 2025; 8,700 respondents aged 13+. The shares add up to about 100%, so this looks like one main reason per respondent, not how many people use email. Email is merged with 'communicating'. In 2026 APJII reports only a broad 'Komunikasi' category (19.9%, GoodStats, 4 June 2026) with no email split."
+  },
+  {
+   "fact": "BPS, Statistik Telekomunikasi Indonesia 2024 (secondary report): 12.89% of internet users accessed email; 77.57% used the internet for social media.",
+   "url": "https://data.goodstats.id/statistic/simak-tujuan-masyarakat-indonesia-akses-internet-2024-9eMYC",
+   "publisher": "GoodStats Data (izzul wafa)",
+   "date": "2025-09-03",
+   "kind": "secondary",
+   "quote": "Pengguna yang mengakses email tercatat 12,89%",
+   "notes": "I did not fetch the primary source because bps.go.id is on the forbidden list. GoodStats gives the BPS release date as 29 August 2025 (a search snippet says 1 September 2025). The base is not stated; BPS usually uses residents aged 5+ who used the internet in the last 3 months, but that is unverified. The BPS 2025 edition came out on 1 September 2026, and I found no email value from it."
+  },
+  {
+   "fact": "Indonesian Digital Literacy Index survey for 2021 (Kominfo with Katadata Insight Center): 42.8% of internet users had never used email.",
+   "url": "https://databoks.katadata.co.id/en/consumer-services/statistics/4c9af69e7d5f910/many-indonesian-citizens-have-never-used-email",
+   "publisher": "Databoks (Katadata), Adi Ahdiat",
+   "date": "2022-09-13",
+   "kind": "secondary",
+   "quote": "42.8% have never used it at all",
+   "notes": "10,000 respondents aged 13 to 70 who had used the internet in the last 3 months, across 34 provinces. Answers are frequency bands (very frequently 1.8%, frequently 10.9%, rarely 29.67%, very rarely 14.89%). The data is from 2021, so it is old and on a different basis from everything else here."
+  },
+  {
+   "fact": "WhatsApp terms: WhatsApp's copyrights, trademarks, domains and logos may not be used without express permission and must follow its Brand Guidelines. No clause was found on quoting usage figures.",
+   "url": "https://www.whatsapp.com/legal/terms-of-service",
+   "publisher": "WhatsApp LLC",
+   "date": "Effective Date January 4, 2021 (as shown on the page read 2026-11-17)",
+   "kind": "primary",
+   "quote": "unless you have our express permission and except in accordance with our Brand Guidelines",
+   "notes": "Keep the WhatsApp logo off the chart; the name alone is enough. Meta's investor site has no reuse terms that I could find: the footer shows '© Meta 2025', and its 'Terms' link goes to meta.com/help. Quoting a public earnings statement with attribution raised no restriction I could find."
+  }
+ ],
+ "disagreements": "1) WhatsApp worldwide: Meta has given three figures that are not interchangeable. (a) 'more than 3 billion monthly actives' (Zuckerberg, 30 April 2025, from transcript copies). (b) 'More than 3 billion people in over 180 countries' (WhatsApp site, undated, no time window: 'people', not 'monthly actives'). (c) 'more than 2 billion daily actives' (28 January 2026, for the end of 2025). Meta has not restated the monthly figure since April 2025, and in Q1 2026 it reported a Russian restriction on WhatsApp access, so the 3 billion monthly floor may be out of date. Third-party estimates (about 3.3 billion in 2026 from Timelines.ai and Resourcera via Infobip; about 2.9 billion elsewhere) are not Meta figures and contradict each other. GWI's 54.9% of internet users aged 16+ cannot be converted into Meta's count without assumptions: GWI leaves out under-16s, covers only about 54 markets, includes China and does not survey Russia.\n2) Email worldwide counts: Radicati gives 4,594 million (2025) and a 4,730 million forecast for 2026. cloudHQ gives 4.83 billion (2025) and 5.02 billion (2026), about 240 to 290 million higher. Secondary sites mix up Radicati's numbers: one attributes 5.02 billion for 2028 to Radicati, one article uses both 4.48 and 4.59 billion for 2024, another cites 4.85 billion by 2027 from an older edition. Radicati's own wording also varies: 'top 4.4' (executive summary, per search), 'over 4.4 billion' (press release), and '4.48 billion' in secondary sources.\n3) The GWI email share moves between DataReportal releases: 75% (February 2025), 74.4% (April 2026 update), 76.4% (October 2026, Q2 2026 wave). Waves changed, and GWI added ages 65+ after Q1 2024, so this is not a clean trend. The exclusion sets also differ: email's 86.6% excludes China only, while WhatsApp's 69.8% (April 2026) excludes China and Russia. Do not pair them.\n4) Age base: the task's 'aged 16 to 64' is out of date. Current DataReportal and GWI figures use 'internet users aged 16 and above'.\n5) WhatsApp in Indonesia: 92.7% (GWI Q2 2026: used in the past month, aged 16+) versus APJII 2026's 1.7% (named as the social platform accessed most often, aged 13+). Search results also show an older APJII 98.07% for chat apps (year unclear), Jakpat's 89% (past six months, 2025), and a secondary 90.8% attributed to Digital 2026 Indonesia (not verified on DataReportal). These answer different questions, but readers could take them as contradictions.\n6) Indonesia internet users: DataReportal says 231 million and 80.2% (October 2026, though the text also says 'end of 2026'), with a UN population of 288 million. APJII says 235.26 million and 81.72% (fieldwork February to March 2026, population 287.88 million; another outlet gives 287,303,234, per search). A search snippet gives BPS 2024 as 72.78% of residents aged 5+.\n7) Email in Indonesia: BPS 2024 says 12.89% of internet users accessed email. APJII 2025 says 4.20% gave 'using email/communicating' as their main reason. Kominfo and Katadata (2021) found 42.8% had never used email, so about 57% had (my arithmetic, not a published figure). Ipsos reported about 91% (undated, search only). The gaps come from different question designs (main purpose, any use, ever used) and age bases (5+, 13+, 13 to 70).\n8) DataReportal attribution: pages credit the analysis to Manochi, while the copyright notice and citation page name Kepios Pte. Ltd. A search snippet of DataReportal's About page says the Kepios team produces the reports.\n9) Radicati report date: the PDFs sit in an October 2024 upload folder, but the brochure says 'Copyright © December 2024' and the press release is dated December 2024.\n10) Meta Q4 2025 transcript copies differ: the Motley Fool transcript has no WhatsApp daily figure, while VectorShift places it in Zuckerberg's prepared remarks. My inference is that the line comes from the separately published prepared remarks, so cite those.",
+ "gaps": "1) Radicati could not be read. radicati.com failed to resolve (DNS ENOTFOUND, four attempts on 2026-11-17) and web.archive.org is blocked for the fetch tool, so every Radicati figure, definition and policy line comes from search-engine excerpts and must be checked against the live PDF or page before it is stored. No 2025-2029 or 2026-2030 edition was found; the 2026 value is a December 2024 forecast. Radicati's 2024 accounts-per-user ratio and its exact definition of 'email user' versus 'account' were not found.\n2) Meta's primary documents are PDFs on s21.q4cdn.com. WebFetch could not parse the Q3 2026 transcript PDF (compressed) and saved the binary automatically to /Users/jonathanchrisnaldy/.claude/projects/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/tool-results/webfetch-1794921345900-3c72pc.pdf (139,167 bytes). That is a file outside the scratch folder, which breaks the 'download nothing' rule. I did not open it, did not delete it, and fetched no further PDFs; the parent may want to remove it. Meta's exact wording was therefore checked only against third-party transcript copies (Equibles, VectorShift) and TechCrunch. Blocked or failed: MarketBeat, alphaspread, roic.ai, gurufocus, Statista and bisnis.com (HTTP 403); Insider Monkey (login wall); ziven.io (paywall); alphastreet (connection refused); and investor.atmeta.com's press list, which did not render.\n3) Meta publishes no definition or measurement date for WhatsApp 'monthly actives' in anything I read, and gives no Indonesia figure. Third-party Indonesia estimates range from 78 to 120 million and are not usable. No Meta monthly WhatsApp figure exists after April 2025; the Q2 and Q3 2026 calls were checked only through secondary summaries.\n4) There is no Indonesia email figure on the same GWI basis as the 92.7% WhatsApp figure. Digital 2027 Indonesia has no email data. The global report's email-by-country chart is an image, and Indonesia is not named in its text. DataReportal says it does not provide raw data. Asking DataReportal or GWI is the only route I can see.\n5) APJII's 2026 report is not on APJII's own portal ('no files uploaded for 2026'), so APJII figures come only from GoodStats and Databoks. A copy of the 2026 profile PDF on a university site (bisnisdigital.feb.unpas.ac.id) was not fetched because it is a PDF and not APJII's site. The 2026 APJII reasons list has no email item.\n6) BPS was not fetched (forbidden domain). The 12.89% comes only from GoodStats, its base is unconfirmed, and no 2025 BPS email value was found.\n7) Terms: GWI's rules on redistribution were not found (its help page covers attribution only). DataReportal's page does not say whether you may quote single data points or draw your own chart from them. GoodStats and Databoks terms were not checked, so do not cite them as primary sources.\n8) The GWI wave for the worldwide WhatsApp 54.9% is not stated in the text. The prior-year Indonesia WhatsApp value was not verified on DataReportal. GWI's 'worldwide' means its roughly 54 surveyed markets.\n9) Quotes are trimmed to short factual fragments, verbatim as returned by the fetch tool's summariser, so recheck each on the live page before storing. I wrote no files; the scratch folder /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/post31-sweep/email-whatsapp-users was created and is empty.",
+ "chart_feasibility": "The pair that can honestly sit side by side is worldwide email at 76.4% against WhatsApp at 54.9%. Both come from the same report (DataReportal Digital 2027 Global Overview, 21 October 2026) and the same survey (GWI), with the same base (internet users aged 16+) and the same window (past 30 days). Suggested label: '% of internet users aged 16+ who used it in the past month, GWI survey via DataReportal, 2026'. Footnote the wave: Q2 2026 is stated for email but not named for WhatsApp. Caveats: the figures are self-reported, cover about 54 markets, include China (where WhatsApp is blocked, which lowers its share) and exclude Russia. A category-level alternative from the same family is chat and messaging services at 94.1% against email services at 76.4% (DataReportal, 'Internet Use Around the World', 21 October 2026). That answers 'messaging versus email', not WhatsApp specifically.\nIndonesia: WhatsApp at 92.7% (GWI Q2 2026, aged 16+, monthly) has no email figure on the same basis. Do not set it beside BPS 12.89%, APJII 4.20% or the 2021 Kominfo/Katadata data: the questions, age bases and years all differ, and that chart would mislead.\nCounts: putting Radicati's roughly 4.6 billion email users (2025) next to Meta's 'more than 3 billion monthly actives' (April 2025) as bars is not recommended. One is a modelled forecast and the other is a company floor; 'users' differ from 'monthly actives' (possibly accounts); the Radicati figures are unverified here; and Radicati's policy may require permission for non-media use. Never pair the 2 billion daily figure with any monthly figure, never put a count and a percentage on one axis, and leave the WhatsApp logo out (WhatsApp's terms restrict use of its logos and trademarks).\nPermissions: DataReportal asks for attribution to DataReportal and its partners (We Are Social, Meltwater), a link to the report page and fair-dealing use, with an email first if ten or more charts are recreated. GWI asks only for 'GWI data shows', but note its clause against using its data to criticise another organisation. For Radicati, email admin@radicati.com before quoting.\nOwner decision, multiple choice:\n(A) Worldwide GWI pair only: email 76.4% against WhatsApp 54.9%. Recommended.\n(B) Option A plus a separate, clearly labelled Indonesia WhatsApp bar at 92.7%, noting that no comparable Indonesia email figure is published.\n(C) Category pair instead: chat and messaging 94.1% against email 76.4%.\n(D) No chart; state the counts in text only (Radicati's 2025 forecast and Meta's April 2025 floor), each with its own definition."
+}

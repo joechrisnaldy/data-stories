@@ -1,0 +1,97 @@
+{
+ "round": 2,
+ "read": [
+  {
+   "sentence": "In my opinion, for a company, an outage like this means some core systems cannot be used, because the way into them runs through Microsoft.",
+   "kind": "sentence",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "Diffing 2.json texts.draft against the current draft (my diff_surfaces.py) shows exactly one change in this paragraph: \"In my opinion, \" was added before the old wording (draft line 3, MDX line 12). The sentence states the owner's own view as the owner's. docs/research/brainstorm.md line 21 records it verbatim: \"In my opinion, for a company outage means that some core system that depends on them are not able to use since the login depend on them\". That is the licence gate.toml [claims] gives this phrase (\"the owner's own view, stated as the owner's\"). \"the way into them runs through Microsoft\" is a faithful paraphrase of \"the login depend on them\". Every back-reference still has its antecedent: \"Some people said something else\" (line 3), \"Both were right\" (line 5), \"what I mentioned at the start\" (line 29), \"the worry I started with\" (line 63) and \"the company view I started with\" (line 67). The hedged \"some core systems\" fits the post's own evidence, where only features that depend on Exchange stopped (lines 63 and 65). README.md and data/README.md are unchanged. The published excerpt (\"some companies were disrupted\") does not contradict it.",
+   "date": "2026-11-17",
+   "seq": 6
+  },
+  {
+   "sentence": "Microsoft. (2026). *Microsoft's incident report for PennO365* [Incidents EX1550543, MO1550821 and CR1551339]. University of Pennsylvania ISC. Retrieved November 17, 2026, from https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "kind": "sentence",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The only change is the added \"Retrieved November 17, 2026, from\" (draft line 93, MDX line 111). The capture the post is built from is sources/penn-ms-incidents/ms-incidents.html, which parse_records.py line 15 reads. Line 32 of that capture says \"This extract was generated Tue Nov 17 10:35:01 2026 EST\". stat gives its birth time as 2026-11-17 10:49:09 -0500, which is 15:49 UTC and 22:49 in Jakarta, so November 17, 2026 is the retrieval date in every relevant timezone. The page describes itself as Microsoft's reports \"within the last 30 days\", refreshed \"every 15 minutes\", and data/README.md says the mirror keeps a rolling window. That is the case where APA 7 asks for a retrieval date, and the entry uses the correct \"Retrieved Month Day, Year, from URL\" form. The capture contains all three bracketed incidents: EX1550543 appears 2 times, MO1550821 32 times and CR1551339 2 times. The author, year, title, site and URL are unchanged from the round 2 entry.",
+   "date": "2026-11-17",
+   "seq": 6
+  },
+  {
+   "sentence": "[[published] alt:oo-2-email-vs-whatsapp.png] A bar chart of the share of internet users aged 16 and over who used email and WhatsApp in the past month: email 76.4 percent and WhatsApp 54.9 percent in GWI's surveyed markets.",
+   "kind": "sentence",
+   "cut_of": "[[published] alt:oo-2-email-vs-whatsapp.png] A bar chart of the share of internet users aged 16 and over who used email and WhatsApp in the past month: email 76.4 percent and WhatsApp 54.9 percent in GWI's surveyed markets, WhatsApp 92.7 percent in Indonesia.",
+   "verdict": "CONFIRMED",
+   "evidence": "The chart was redrawn with two bars. charts/oo-2-email-vs-whatsapp.png has sha256 2b54c85c..., the same as the site's public/, dist/ and .vercel/ copies and the owner-accepted \"Two bars, one basis\" sha in docs/after-round2.json. The round 2 snapshot's sha was 3bea4be2..., when the chart had three bars. My own pixel measurement (bars.py) finds exactly two bars. The email bar's top reads 76.3 and the WhatsApp bar's top reads 54.8 on the 0 to 100 axis. They are labelled 76.4% and 54.9%, both \"GWI's surveyed markets\", with a y-axis of internet users aged 16+ and the title \"past month\". So the removed clause \"WhatsApp 92.7 percent in Indonesia\" described a bar that no longer exists, and the cut makes the alt text match the image. I recomputed the figures from the raw stored pages with my own regex (shares.py), one match each. Line 12204 of the global overview index.html gives email as \"76.4 percent of respondents to GWI's survey\", used \"within the past 30 days\" by \"online adults\". Line 9390 gives WhatsApp \"54.9 percent\" in a ranking of \"internet users aged 16 and above\" who used each platform \"within the past 30 days\". The internet-use page uses \"online adults\" and \"internet users aged 16 above\" interchangeably in the same ranking, which fixes the 16+ base. The MDX alt (line 54) matches the gate.toml line 45 template rendered with these values, character for character. No surface says the chart shows Indonesia. The \"as the chart shows\" on line 53 refers only to surveyed-markets email against WhatsApp.",
+   "date": "2026-11-17",
+   "seq": 6
+  },
+  {
+   "sentence": "For a company, an outage like this means some core systems cannot be used, because the way into them runs through Microsoft.",
+   "kind": "deletion",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The deleted sentence survives word for word inside the new opening (draft line 3, MDX line 12); the only change is \"In my opinion, \" in front of it. Nothing that pointed at it dangles: \"Some people said something else\" (line 3), \"Both were right\" (line 5), \"what I mentioned at the start\" (line 29), \"the worry I started with\" (line 63) and \"the company view I started with\" (line 67) all still resolve to it. The deletion removes only the framing that presented the owner's opinion (brainstorm.md line 21) as a general fact. That makes the text more accurate, not misleading, and no surface or chart depended on the old framing.",
+   "date": "2026-11-17",
+   "seq": 6
+  },
+  {
+   "sentence": "Microsoft. (2026). *Microsoft's incident report for PennO365* [Incidents EX1550543, MO1550821 and CR1551339]. University of Pennsylvania ISC. https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "kind": "deletion",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The deleted entry was replaced by an otherwise identical entry that adds the retrieval date (draft line 93, MDX line 111). The author, year, title, the bracketed incident list, the site and the URL are all unchanged. My count shows 6 in-text \"(Microsoft, 2026)\" citations in both the draft and the MDX, and each resolves to exactly one \"Microsoft. (2026).\" entry in each file. So nothing is orphaned, and no surface cites the old form.",
+   "date": "2026-11-17",
+   "seq": 6
+  }
+ ],
+ "accepted": [
+  {
+   "item": "charts/oo-1-timeline.png",
+   "kind": "chart",
+   "cut_of": null,
+   "sha": "9e246c7af2ffb7fa008d549ef32d93d5565f049471902a4ed054f998be99ae6c",
+   "owner": "Accept both (Recommended)",
+   "date": "2026-11-17",
+   "seq": 1
+  },
+  {
+   "item": "charts/oo-2-email-vs-whatsapp.png",
+   "kind": "chart",
+   "cut_of": null,
+   "sha": "2b54c85c251694df093ffc08c34c99f922bcee7d97171157a87ffbeee801c144",
+   "owner": "Two bars, one basis (Recommended)",
+   "date": "2026-11-17",
+   "seq": 2
+  },
+  {
+   "item": "charts/oo-3-many-doors.png",
+   "kind": "chart",
+   "cut_of": null,
+   "sha": "92a315780a77c448599c3571cd8c491e88920891f813b055c1b2f5944ee1a8f2",
+   "owner": "Accept both (Recommended)",
+   "date": "2026-11-17",
+   "seq": 3
+  },
+  {
+   "item": "In my opinion, for a company, an outage like this means some core systems cannot be used, because the way into them runs through Microsoft.",
+   "kind": "sentence",
+   "cut_of": null,
+   "sha": null,
+   "owner": "Both (Recommended)",
+   "date": "2026-11-17",
+   "seq": 4
+  },
+  {
+   "item": "Microsoft. (2026). *Microsoft's incident report for PennO365* [Incidents EX1550543, MO1550821 and CR1551339]. University of Pennsylvania ISC. Retrieved November 17, 2026, from https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html",
+   "kind": "sentence",
+   "cut_of": null,
+   "sha": null,
+   "owner": "Both (Recommended)",
+   "date": "2026-11-17",
+   "seq": 5
+  }
+ ]
+}

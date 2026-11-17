@@ -1,0 +1,10 @@
+# Rights notes, Post 31
+
+What each source allows, and what the post does with it.
+
+- **Microsoft's service health record** (incidents EX1550543, MO1550821, TM1550488, PP1550869, CR1551339), Microsoft's text as republished by the University of Pennsylvania ISC mirror. The post quotes short statements and derives times and service counts from it; the stored page stays out of the repository (`sources/` is ignored). Cited with Microsoft as the author and the mirror as where it was retrieved.
+- **DataReportal** (Kepios, We Are Social, Meltwater; GWI survey data), Digital 2027 Global Overview, Digital 2027 Indonesia and Internet use around the world. Its citation page allows republishing report pages with clear attribution to DataReportal and the report partners and a link to the report page, within fair dealing. The post states three shares, credits DataReportal and GWI in the chart footnote and the references, and links each report. The terms do not say whether a chart may be redrawn from their data points; the post draws its own three-bar chart of the three figures with full attribution, which is used as fair dealing. No GWI data beyond the three published shares is used. `restricted_inputs` is not set: nothing in these terms bars redistributing the three figures, which `results.json` holds.
+- **News reports** (Reuters, Al Jazeera, CNN via KRDO, Business Insurance): short quotes and single figures, each attributed in the paragraph and listed in the references.
+- **Organisations' own notices** (Singapore Courts, the Supreme Court of Victoria, Western Australia's Department of Planning, Lands and Heritage, Workhorse Group's release via Finviz) and **security reports** (Field Effect, Mimecast, Microsoft Security blog): paraphrased with attribution, short quotes only.
+- **WhatsApp**: the name only; no logo on any chart (WhatsApp's brand terms).
+- **Guy's and St Thomas' NHS Foundation Trust**: its page refused automated download (HTTP 403). The example is used only if it is stored from the in-app browser; otherwise it is left out.

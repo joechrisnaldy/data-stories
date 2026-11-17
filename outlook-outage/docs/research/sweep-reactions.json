@@ -1,0 +1,394 @@
+{
+ "sources": [
+  {
+   "fact": "Downdetector said Microsoft outage reports on 12 Nov 2026 reached 74 countries and territories within about an hour. It counts a country once reports there reach ten times normal and at least 20 in five minutes.",
+   "url": "https://www.bloombergtechnoz.com/detail-news/127636/microsoft-outloook-alami-gangguan-di-puluhan-negara",
+   "publisher": "Downdetector (Ookla) post on X, https://x.com/downdetector/status/2120981125145174504, read as embedded by Bloomberg Technoz",
+   "date": "2026-11-12 (post); embed page dated 2026-11-13 13:10, time zone not stated",
+   "kind": "primary",
+   "quote": "reached 74 countries and territories in about an hour on Downdetector",
+   "notes": "The wording is Downdetector's own, but I read it through an embed: x.com returns HTTP 402, and downdetector.com and ookla.com block the fetcher. The 74-country count comes from here; Al Jazeera, Katadata and others repeat it. Well sourced enough to state if attributed to Downdetector together with its counting rule."
+  },
+  {
+   "fact": "Downdetector's UTC timeline for 12 Nov: Outlook reports began climbing at 17:25 (12:25 New York). UK reports jumped tenfold at 17:43. By 18:25, five Microsoft services combined drew 19,650 reports a minute, against under 15 on an average Thursday. The rate was still above 11,000 a minute at 19:38. Nearly 3 in 10 reports came from outside the US between 17:00 and 18:55. Outlook alone peaked at more than 2,000 times normal. The post also gives Microsoft's 16:17 UTC start for the Exchange Online incident.",
+   "url": "https://www.bloombergtechnoz.com/detail-news/127636/microsoft-outloook-alami-gangguan-di-puluhan-negara",
+   "publisher": "Downdetector (Ookla) post on X, read as embedded by Bloomberg Technoz",
+   "date": "2026-11-12 (post)",
+   "kind": "primary",
+   "quote": "reports about five Microsoft services combined reached 19,650 a minute, against <15 a minute",
+   "notes": "This is the only primary, time-stamped series I found. It is a rate (reports per minute, five services combined), not the cumulative counts that outlets quote. India and New Zealand jumps are given in local time (23:21 and 06:55). Store the embed copy if this is charted."
+  },
+  {
+   "fact": "Reuters, citing Ookla, said Downdetector logged more than 7.4 million reports worldwide, peaking at nearly 20,000 a minute, more than 1,500 times normal levels. Reports started climbing around 17:25 GMT Thursday. The same story carries Morningstar DBRS's estimate of US$300m to US$500m in global insured losses (Mario De Cicco), and reports email-support disruption at IndiGo, Akasa Air and Air India.",
+   "url": "https://live.euronext.com/en/financial-news/microsofts-global-outage-eases-after-disrupting-businesses-governments-nearly-day",
+   "publisher": "Reuters (Aditya Soni and others), hosted on Euronext Live",
+   "date": "2026-11-14 08:23, time zone not stated",
+   "kind": "secondary",
+   "quote": "Downdetector logged more than 7.4 million reports worldwide, peaking at nearly 20,000 a minute",
+   "notes": "These are reports, not people. Under an older URL slug the page now shows the latest version, headlined 'Microsoft restores service to Outlook and Teams after global outage'. The '1,500 times normal' figure does not reconcile with Downdetector's own '<15 a minute' baseline, which implies roughly 1,300 times or more. I could not read any Ookla page. SBS and Digital Trends repeat the 7.4 million."
+  },
+  {
+   "fact": "AP: nearly 130,000 Downdetector reports of problems accessing Outlook just after 1 p.m. ET on Thursday 12 Nov (about 18:00 UTC). AP also quotes the Microsoft 365 Status X account: \"We're aggressively pursuing all pathways to reduce impact\".",
+   "url": "https://www.opb.org/article/2026/11/12/is-outlook-down-widespread-outage-hits-microsoft-email-and-other-apps/",
+   "publisher": "Associated Press, via OPB",
+   "date": "2026-11-13 01:16, time zone not stated (URL dated 2026-11-12)",
+   "kind": "secondary",
+   "quote": "reported problems accessing Outlook just after 1 p.m. ET",
+   "notes": "AP calls them 'users', but Downdetector counts reports. apnews.com blocks the fetcher, so I read the story via OPB. The roughly 130,000 peak is the most widely repeated figure (AP, Reuters, Nation Thailand)."
+  },
+  {
+   "fact": "Outlook reports on Downdetector climbed to about 130,000 shortly after 1 p.m. ET (18:00 GMT) on Thursday. Microsoft's 12 Nov statement thanked organisations for their patience while it worked 'with urgency'; there was no apology yet. Australian minister Tony Burke compared the outage to CrowdStrike.",
+   "url": "https://www.aljazeera.com/news/2026/11/12/microsoft-outage-hits-tens-of-thousands-of-users",
+   "publisher": "Al Jazeera (AP and Reuters copy)",
+   "date": "2026-11-12, updated 2026-11-13 10:44 GMT",
+   "kind": "secondary",
+   "quote": "shortly after 1pm Eastern Time (18:00 GMT) on Thursday",
+   "notes": "Gives the GMT conversion explicitly; EST was in force after 1 Nov. This is a wire report, so do not count it separately from AP's figure."
+  },
+  {
+   "fact": "At about 07:00 GMT on Friday 13 Nov, Downdetector had at least 43,000 Outlook problem reports from users in 72 countries. Problems began about 16:00 GMT Thursday, and within about an hour reports came from 74 countries and territories. Government systems in Singapore and Japan were disrupted, as were communications at the Supreme Court of the Philippines.",
+   "url": "https://www.aljazeera.com/news/2026/11/13/microsoft-hit-by-global-outages-what-happened-and-why",
+   "publisher": "Al Jazeera (Heba Habib)",
+   "date": "2026-11-13 (no time shown)",
+   "kind": "secondary",
+   "quote": "at least 43,000 reports of problems with Outlook from users in 72 countries",
+   "notes": "Al Jazeera attributes both country counts to Downdetector; it did not count countries itself. It adds a caveat: \"the figure only counts people who visit the site to report an issue.\" The page has no apology, no cost estimate and no phishing. Its 16:00 GMT start is close to Microsoft's 16:17 UTC incident start, not to the 17:25 UTC report spike."
+  },
+  {
+   "fact": "Al Jazeera live blog, 13 Nov (GMT stamps):\n- 14:30: Baltimore County and Austin city employees could not send or receive email; Workhorse delayed its earnings.\n- 13:25: NHS England was using paper records; Norway's parliament and ministries lost email; 80 to 90 Danish municipalities were reportedly hit.\n- 12:30: The Philippine Supreme Court's email and online systems were affected.\n- 16:25: Euronext 'told companies to phone in their trades'; firms in Taipei used fax.\n- 12:40: Microsoft shares fell 2.6% premarket (down less than 1% at 15:15).",
+   "url": "https://www.aljazeera.com/amp/news/liveblog/2026/11/13/live-microsoft-struggles-to-restore-services-as-outage-hits-global-users",
+   "publisher": "Al Jazeera (live blog, AMP version)",
+   "date": "2026-11-13, entries stamped in GMT",
+   "kind": "secondary",
+   "quote": "currently unable to send or receive emails",
+   "notes": "The quote is Baltimore County's. The canonical live-blog URL renders without entries; the AMP URL renders them. Many entries relay Reuters. The Euronext line conflicts with Reuters (see disagreements). There is no GP-surgery or pharmacy entry and no phishing entry."
+  },
+  {
+   "fact": "The WHO responded with a post suggesting healthy offline uses of the time (13:55 GMT, 13 Nov). The live blog also said social media was 'filled with memes and light-hearted observations' (16:45 GMT).",
+   "url": "https://www.aljazeera.com/amp/news/liveblog/2026/11/13/live-microsoft-struggles-to-restore-services-as-outage-hits-global-users",
+   "publisher": "Al Jazeera (live blog, AMP version)",
+   "date": "2026-11-13 13:55 and 16:45 GMT",
+   "kind": "secondary",
+   "quote": "Email outage? Here are some offline ideas that keep you healthy",
+   "notes": "I could not read the WHO's own post on X. AP (via ABC11) separately reports that the WHO suggested offline activities, so two outlets carry it; reasonably sourced. The memes line is the blog's own characterisation."
+  },
+  {
+   "fact": "Philippine Supreme Court advisory (13 Nov): the outage hit the judiciary's PJ365 platform, so email responses and other transactions may be delayed. GMA also gives 97,000 US Outlook reports as of 3:00 a.m. PHT on 13 Nov (19:00 UTC on 12 Nov), plus 38,000 Microsoft 365 reports and 4,500 Teams reports.",
+   "url": "https://www.gmanetwork.com/news/topstories/nation/1009437/explainer-what-caused-the-microsoft-outage/story/",
+   "publisher": "GMA News (Jean Mangaluz)",
+   "date": "2026-11-13 11:37 p.m. (PHT presumed)",
+   "kind": "secondary",
+   "quote": "responses to emails and other transactions may be delayed.",
+   "notes": "I did not find the court's own advisory text online. Al Jazeera's live blog carries the same quote, so two outlets have it. GMA gives no Philippines-specific Downdetector figure."
+  },
+  {
+   "fact": "Singapore Courts, 13 Nov: incoming and outgoing email was disrupted, which could affect receipt of requests about court applications and replies to enquiries. Online filing systems kept working. Urgent matters were to go by phone to the courts' call centre.",
+   "url": "https://www.judiciary.gov.sg/news-and-resources/news/news-details/advisory-on-disruption-to-sg-courts-email-services",
+   "publisher": "Singapore Courts (judiciary.gov.sg)",
+   "date": "2026-11-13",
+   "kind": "primary",
+   "quote": "the Singapore Courts are experiencing issues with incoming and outgoing emails.",
+   "notes": "Primary; can be stated. The restoration notice, dated 14 Nov, says email services 'have been restored and are now operating normally' and asks anyone who got no reply to resend: https://www.judiciary.gov.sg/news-and-resources/news/news-details/update-sg-courts-email-services-restored. This is the strongest South-East Asian primary source found."
+  },
+  {
+   "fact": "Guy's and St Thomas' NHS trust (London) told patients that services were going ahead and to phone rather than email. Urgent clinical referrals due by 5pm on Monday 16 Nov were to be phoned through. On 16 Nov the trust said services were operating as normal.",
+   "url": "https://www.guysandstthomas.nhs.uk/microsoft-outage",
+   "publisher": "Guy's and St Thomas' NHS Foundation Trust",
+   "date": "2026-11-13 (first update); 2026-11-16 (latest update)",
+   "kind": "primary",
+   "quote": "Please do not email.",
+   "notes": "Primary; can be stated. Also: 'Do not send urgent referrals by email.' I did not find NHS England's own national statement; it is known only via PA and Al Jazeera."
+  },
+  {
+   "fact": "Western Australia's Department of Planning, Lands and Heritage reported problems with its portals, telephone and email, gave no ETA, and apologised.",
+   "url": "https://www.wa.gov.au/government/announcements/service-notice-microsoft-outage",
+   "publisher": "Government of Western Australia, Department of Planning, Lands and Heritage",
+   "date": "2026-11-13",
+   "kind": "primary",
+   "quote": "issues due to the global Microsoft outage, including portals, telephone and email.",
+   "notes": "Primary. One of several organisations that apologised to their own customers for Microsoft's outage; Krungthai Bank and, per a search snippet only, Singapore's CSA did the same."
+  },
+  {
+   "fact": "Supreme Court of Victoria: email was restored after the outage, but delays to some court services were possible over the coming days. Monday hearings would go ahead, and documents could still be filed on RedCrest.",
+   "url": "https://www.supremecourt.vic.gov.au/news/microsoft-outage-update",
+   "publisher": "Supreme Court of Victoria",
+   "date": "2026-11-13",
+   "kind": "primary",
+   "quote": "The Court can now send and receive emails, following a global Microsoft outage.",
+   "notes": "Primary. The original notice URL (/news/microsoft-outage) now redirects to this update, so I could not read the earlier wording."
+  },
+  {
+   "fact": "Workhorse Group, a US truck maker, moved its Q3 results call from 4:30 p.m. ET on 12 Nov to 16 Nov because of the outage.",
+   "url": "https://finviz.com/news/422068/workhorse-group-postpones-third-quarter-earnings-release-and-conference-call",
+   "publisher": "Workhorse Group press release (GlobeNewswire, Detroit), as reproduced by Finviz",
+   "date": "2026-11-12",
+   "kind": "primary",
+   "quote": "business disruptions caused by the global Microsoft outages taking place today, November 12.",
+   "notes": "Primary text via an aggregator; can be stated. Reuters also says Richemont briefly delayed its half-year results on Friday; I did not verify that separately."
+  },
+  {
+   "fact": "Scottish public bodies: East Lothian Council could not send or receive email and asked parents to phone their child's school. City of Edinburgh and Scottish Borders councils reported similar problems. Police Scotland's online forms were affected, and NHS Grampian staff had no email.",
+   "url": "https://www.irishnews.com/news/uk/councils-and-public-services-hit-by-global-microsoft-outage-CT3ER5YUXBO3RB2BZT7LJSYMEI/",
+   "publisher": "PA Media (Ryan McDougall), via The Irish News",
+   "date": "2026-11-13 10:39 GMT",
+   "kind": "secondary",
+   "quote": "not able to send and receive emails at present",
+   "notes": "Wire relay of council statements; can be stated with attribution."
+  },
+  {
+   "fact": "UK, 13 Nov:\n- Services began going down from 6pm GMT Thursday, and UK Downdetector reports spiked around 6.15pm.\n- Police could not take online crime reports, and NHS England used paper records.\n- Cyber minister Baroness Lloyd of Effra said the impact was mainly on back-office functions, with limited frontline reports, calling it inconvenient and disruptive.\n- Tina McKenzie of the Federation of Small Businesses (FSB) said firms would be 'floundering' and warned that fraudsters may offer fake help.\n- Microsoft's apology appeared on X on Friday afternoon.",
+   "url": "https://www.irishnews.com/news/uk/microsoft-deeply-sorry-for-disruption-caused-by-major-global-outage-I67HV5SYH5L2HOAXJRYQR7VWQI/",
+   "publisher": "PA Media (Sam Hall, Holly Williams), via The Irish News",
+   "date": "2026-11-13 18:11 GMT",
+   "kind": "secondary",
+   "quote": "limited reports of impact on frontline service delivery",
+   "notes": "The minister's words are known only via PA; I found no gov.uk transcript. The FSB fraud warning is anticipatory. PA's 6pm start is later than Downdetector's 17:43 UTC tenfold UK jump."
+  },
+  {
+   "fact": "Some Metropolitan Police control rooms reverted to pen and paper. The Met, South Wales and Hertfordshire police could not take online crime reports and pointed people to 101 or 999.",
+   "url": "https://www.lbc.co.uk/news/exclusive/microsoft-outage-absolute-carnage-police-resort-pen-paper/",
+   "publisher": "LBC (Fraser Knight, Danielle de Wolfe)",
+   "date": "2026-11-13 10:00",
+   "kind": "secondary",
+   "quote": "Due to a global Microsoft service issue, some online form submissions may be affected.",
+   "notes": "The Met's official statement can be stated. The headline's 'absolute carnage' comes from one anonymous officer, so treat it as anecdote."
+  },
+  {
+   "fact": "UK pharmacies: the National Pharmacy Association (NPA) said the outage hit pharmacies' ability to communicate with GP practices and some patients, and some prescriptions might be delayed. Community Pharmacy England advised using telephone lines for urgent queries. The article dates the disruption from around 6pm GMT on 12 Nov.",
+   "url": "https://pharmaceutical-journal.com/?p=438622",
+   "publisher": "The Pharmaceutical Journal (Corrinne Burns)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "This affects a pharmacy's ability to communicate with GP practices and some patients.",
+   "notes": "A trade body's statement relayed by a professional journal; can be stated. Many search hits about GP and pharmacy disruption are from July 2024 (CrowdStrike), so check dates."
+  },
+  {
+   "fact": "Euronext told listed companies to pick up the phone because its corporate-actions and listing teams could not receive email, and it verified callers' identities. In Taiwan, short-term bill trades at an unnamed financial firm had to be confirmed by fax. Maersk asked customers to phone and to verify unexpected outage messages. HSBC told staff not to use personal email or WhatsApp. Aviva used backup phone numbers and Bluetooth.",
+   "url": "https://live.euronext.com/en/financial-news/faxes-phones-and-bluetooth-microsoft-outage-forces-businesses-find-fixes",
+   "publisher": "Reuters (Iain Withers, Liang-sa Loh, Inti Landauro), hosted on Euronext Live",
+   "date": "2026-11-13 16:14, time zone not stated",
+   "kind": "secondary",
+   "quote": "told listed companies to pick up the phone.",
+   "notes": "Can be stated with attribution. The Taiwan fax firm is unnamed and rests on a single source. This contradicts Al Jazeera's 'phone in their trades'."
+  },
+  {
+   "fact": "Anderson Economic Group (Michigan) estimated about US$7 billion in lost productivity. Its president Patrick Anderson said perhaps as many as 26 million users on Thursday and 51 million on Friday had disruption that caused economic loss, and that the cost will likely rise. The same story reports:\n- Some US office workers joked they could 'start the weekend early'.\n- Some Australian schools could not hold online classes and asked parents to phone in absences.\n- Microsoft's apology was posted on X around 1 p.m. ET Friday.",
+   "url": "https://krdo.com/money/cnn-business-consumer/2026/11/13/microsoft-outage-strands-office-workers-nationwide/",
+   "publisher": "CNN (Brian Stelter, Hilary Whiteman, Ramishah Maruf, Chris Isidore), syndicated by KRDO",
+   "date": "2026-11-13 (page shows 4:24 AM and 12:10 PM stamps, no time zone)",
+   "kind": "secondary",
+   "quote": "The outage could cost $7 billion in lost productivity",
+   "notes": "No method published: CNN gives no wage, hours or per-user assumptions, and AEG's home page and media page carry nothing on this outage. State it only as one firm's rough early estimate, with attribution. The KEYT copy (https://keyt.com/?p=1500542) shows 'Published November 12, 2026, 4:27 pm' yet contains Friday figures, so it was updated in place."
+  },
+  {
+   "fact": "Patrick Anderson told CNN International that the US$7 billion figure is a starting point given the limits of current knowledge. The article also says he estimated Microsoft could need to refund about US$800 million a day in subscription fees; no method is given.",
+   "url": "https://www.itatiaia.com.br/ciencia-e-tecnologia/custo-interrupcao-microsoft-7-bilhoes-diz-estudo/",
+   "publisher": "CNN Brasil, republished by Radio Itatiaia",
+   "date": "2026-11-13 14:16 (BRT presumed)",
+   "kind": "secondary",
+   "quote": "Este é um ponto de partida, com todas as limitações do nosso conhecimento.",
+   "notes": "Translation: 'This is a starting point, with all the limitations of our knowledge.' The refund figure is attributed only to 'Anderson'. A Russian outlet (bes.media, seen only in a search snippet) gives US$830 million; unverified."
+  },
+  {
+   "fact": "Insurance estimates:\n- Morningstar DBRS preliminarily estimated US$300m to US$500m in global insured losses, against US$400m to US$1.5bn for CrowdStrike in 2024.\n- CyberCube said insured losses would likely be under US$100m.\n- Marsh Re said insured losses would likely be minimal.\n- Cyber business-interruption cover typically has 8 to 12 hour waiting periods (McGill and Partners).",
+   "url": "https://www.businessinsurance.com/microsoft-outages-financial-toll-may-fall-short-of-disruption/",
+   "publisher": "Business Insurance (Gavin Souter)",
+   "date": "2026-11-13 (dateline; no update date shown)",
+   "kind": "secondary",
+   "quote": "CyberCube said insured losses will likely be less than $100 million.",
+   "notes": "Date anomaly: the dateline is 13 Nov, but the CyberCube sentence opens 'On Monday', which would be 16 Nov. I found neither CyberCube's nor DBRS's own statement; Reuters attributes the DBRS range to Mario De Cicco."
+  },
+  {
+   "fact": "Marsh Re expected the overall impact on the insurance market to be minimal and gave no figure. It described the event as an uneven disruption, not a full outage, cloud failure or cyberattack.",
+   "url": "https://www.reinsurancene.ws/marsh-re-expects-impact-of-microsoft-365-outage-on-insurance-market-to-be-minimal/",
+   "publisher": "Reinsurance News (Kassandra Jimenez-Sanchez)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "overall insurance market impact is expected to be minimal due to short-term productivity delays.",
+   "notes": "The article does not link Marsh Re's report, and I could not find it."
+  },
+  {
+   "fact": "RMIT's Mark Gregory said the productivity loss would be in the tens of millions in Australia and tens of billions globally. SBS also repeats the DBRS insured range and Downdetector's 7.4 million reports at nearly 20,000 a minute.",
+   "url": "https://www.sbs.com.au/news/article/20-000-complaints-per-minute-how-was-the-microsoft-outage-fixed/ts19if5en",
+   "publisher": "SBS News (Cameron Carr)",
+   "date": "2026-11-14 11:58, updated 15:43 (AEDT presumed)",
+   "kind": "secondary",
+   "quote": "tens of millions in Australia and tens of billions globally",
+   "notes": "An academic's order-of-magnitude view with no method; use it as colour, not as a figure. Search snippets also attribute to RSM Australia's Ashwin Pal a cost to Australia 'in the billions', including indirect costs. The syndicated ACM pages carrying it returned 403, so it is unverified."
+  },
+  {
+   "fact": "Security Magazine says the total number of affected users is unclear because Microsoft reports more than 450 million subscribers. It describes AEG as known for cautious estimates, which makes its high figure notable.",
+   "url": "https://www.securitymagazine.com/articles/102736-microsoft-outage-could-lead-to-7b-in-losses",
+   "publisher": "Security Magazine (Jordyn Alger)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "Microsoft reports more than 450 million subscribers to its service",
+   "notes": "Conflicts with CNN and AP's 'as many as 430 million users'. Neither figure counts affected users."
+  },
+  {
+   "fact": "Workers joked the outage was an 'adult snow day'. Examples come from X and LinkedIn, such as an unnamed LinkedIn user asking Microsoft's fixers 'please don't rush'.",
+   "url": "https://www.cpapracticeadvisor.com/?p=193898",
+   "publisher": "The Seattle Times (Alexis Weisend), via Tribune Content Agency, republished by CPA Practice Advisor",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "Outlook being down is the adult snowday.",
+   "notes": "An X post by @Micha_Siegel quoted in the article; single posts are anecdote. The joking itself is reported by several independent outlets (CNN, AP, Seattle Times, Al Jazeera, Philstar), so the trend can be stated even though individual posts are anecdote."
+  },
+  {
+   "fact": "Brands joined in: Burger King told Microsoft's engineers to take their time, and Air India said emails can wait. The WHO suggested offline activities. Redditors described meetings moving to WhatsApp and office breakfasts.",
+   "url": "https://abc11.com/story/microsoft-outage-means-no-incessant-email-chimes-message-pings-stayed-online/20037995/",
+   "publisher": "Associated Press, via ABC11 (WTVD)",
+   "date": "2026-11-13 12:04 PM (ET presumed)",
+   "kind": "secondary",
+   "quote": "take your time. go out and get a Whopper.",
+   "notes": "The brand posts are real reactions, but I read each single post only through AP because X is unreadable. Anecdote; usable as colour with attribution. AP notes the number of affected users is unknown."
+  },
+  {
+   "fact": "Filipino workers joked about a 'happy long weekend': the outage hit on the Friday before Metro Manila's 16 to 18 Nov special non-working days for the ASEAN Summit. Some worried about backlogs.",
+   "url": "https://interaksyon.philstar.com/trends-spotlights/2026/11/13/321834/microsoft-365-hits-workers-3-day-metro-manila-break/",
+   "publisher": "Interaksyon / Philstar (Jeline Malasig)",
+   "date": "2026-11-13 14:35 (PHT presumed)",
+   "kind": "secondary",
+   "quote": "Rest now, backlogs later.",
+   "notes": "Threads and Facebook posts; anecdote. Philstar Life (Cecile Baltasar, 13 Nov 20:22, https://philstarlife.com/geeky/433846-funny-relatable-reactions-microsoft-outage) has more jokes but does not say the posters were Filipino."
+  },
+  {
+   "fact": "Microsoft apologised on X on Friday 13 Nov, saying it was deeply sorry for the disruption. It said the incident was introduced by an issue during an earlier network capacity upgrade and was not related to cyber activity or AI agents.",
+   "url": "https://www.pcworld.com/article/3285440/microsoft-ai-hackers-not-to-blame-for-outlook-services-outage.html",
+   "publisher": "PCWorld (Mark Hachman)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "We are deeply sorry for the disruption this incident has caused our customers and partners",
+   "notes": "PCWorld links the post as https://x.com/Microsoft/status/2121282013600907325; it returns HTTP 402 to the fetcher, so the wording comes from outlets. PA, CNN, KTVU and Mothership quote it identically. Timing: KTVU carried it by 9:53 AM PST (17:53 UTC) on 13 Nov; CNN says around 1 p.m. ET; PA says Friday afternoon; Mothership (https://mothership.sg/2026/11/microsoft-apologises-for-day-long-service-outage-blames-network-capacity-upgrade-gone-wrong/) says 14 Nov Singapore time. These are consistent once converted. Well sourced enough to state."
+  },
+  {
+   "fact": "Field Effect's email-analysis service caught a credential-phishing email posing as a Microsoft notice on 13 Nov:\n- Subject 'Outage - ' plus a random six-character string.\n- Claims four 'held' messages will be deleted within 24 hours.\n- A RESTORE MESSAGES button leads to a credential-harvesting page.\n- Cites incident EX1550543, the real Exchange Online incident number.\nThe same text was reported at other organisations.",
+   "url": "https://fieldeffect.com/blog/microsoft-365-outage-theme",
+   "publisher": "Field Effect Security Intelligence Team",
+   "date": "2026-11-13",
+   "kind": "primary",
+   "quote": "The same text has been reported at other organizations, which indicates a distributed campaign.",
+   "notes": "Primary for the email lure. The title ('...drives credential phishing and support scams') and first sentence also claim fake IT support calls, but the only lure it reports observing is email. Phone and Teams support scams are framed as a risk, and its support-impersonation claim is sourced to an inkl.com article (403, original publisher unknown). Do not state fake-support scams as observed on this source."
+  },
+  {
+   "fact": "Mimecast saw outage-themed 'held messages' phishing within hours of the 12 Nov disruption, with sender display names such as 'Service Health', 'Mail-Restore-Auth' and 'Health Status'. It is blocking the links and gives no volumes.",
+   "url": "https://www.mimecast.com/blog/attackers-exploit-the-microsoft-365-outage-with-fake-held-messages-lures/",
+   "publisher": "Mimecast Threat Research and Intelligence",
+   "date": "2026-11-14",
+   "kind": "primary",
+   "quote": "Within hours of the Microsoft 365 service disruption on November 12, 2026",
+   "notes": "Primary; a second, independent vendor confirming the lure. No counts. It does not mention phone or support scams."
+  },
+  {
+   "fact": "Microsoft Threat Intelligence observed a coordinated, high-volume phishing campaign on 13 Nov that used fake Microsoft 365 service-health notices against organisations across multiple sectors worldwide. Microsoft assesses it as likely credential phishing but has not confirmed credential capture.",
+   "url": "https://www.microsoft.com/en-us/security/blog/2026/11/16/high-volume-phishing-campaign-uses-microsoft-365-outage-lures-target-multiple-industry-sectors-2/",
+   "publisher": "Microsoft Security blog (Microsoft Threat Intelligence; Jeremiah Jasmin, Jonathan Armer, Shreya Kale)",
+   "date": "2026-11-16",
+   "kind": "primary",
+   "quote": "the available evidence does not confirm credential capture, malware delivery, or post-compromise activity",
+   "notes": "Primary; can be stated. It gives no message, recipient or victim counts. It calls the lure's claim 'a purported Exchange Online incident on November 12' and never cites EX1550543. It does not mention fake tech-support calls. The URL ends in '-2'."
+  },
+  {
+   "fact": "Microsoft Threat Intelligence's 14 Nov alert on X said an active phishing campaign was exploiting the 12 Nov disruption and referenced EX1550543. It targeted organisations 'across multiple US sectors'. Credential collection and malware delivery were not confirmed. The article names sender domains moments-notice[.]com, planetmaison[.]com and newbooker[.]com.",
+   "url": "https://www.khaleejtimes.com/business/tech/microsoft-finds-active-phishing-campaign-exploiting-service-disruption",
+   "publisher": "Khaleej Times (Meher Dhanjal)",
+   "date": "2026-11-14 18:37",
+   "kind": "secondary",
+   "quote": "an active phishing campaign was exploiting the Microsoft 365 service disruption on November 12.",
+   "notes": "I could not read the X post (https://x.com/MsftSecIntel/status/2121491564161581148; 06:32:58 UTC on 14 Nov, per Suped). Its scope ('US sectors') differs from 'worldwide' in Microsoft's 16 Nov blog. iTnews (Juha Saarinen, 14 Nov) reports the same alert."
+  },
+  {
+   "fact": "Netherlands: the pharmacists' association KNMP, itself affected, warned that phishing emails exploiting the outage asked recipients to recover accounts, change MFA settings or 'update' Microsoft. Several Dutch hospitals told patients to check their portals directly because email alerts might not arrive.",
+   "url": "https://www.techtimes.com/articles/330670/20261113/microsoft-outage-phishing-emails-circulate-dutch-hospital-patients-may-miss-portal-alerts.htm",
+   "publisher": "Tech Times (Donald C. Case)",
+   "date": "2026-11-13 12:03 PM EST",
+   "kind": "secondary",
+   "quote": "Vertrouw deze berichten niet",
+   "notes": "Dutch: 'Do not trust these messages.' I did not check KNMP's own notice. Field Effect cites this article."
+  },
+  {
+   "fact": "Australian banks warned of outage-related scams. ING said scammers may offer to fix Microsoft issues and told customers not to give anyone device access without checking on a public number. The Customer Owned Banking Association (COBA) warned of vishing.",
+   "url": "https://www.brokernews.com.au/news/breaking-news/banks-warn-scammers-will-exploit-microsoft-friday-13th-outage-290312.aspx",
+   "publisher": "Australian Broker News (Stephen Owens)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "Scammers may contact you offering to resolve the Microsoft or other systems issues",
+   "notes": "Anticipatory warnings; no confirmed incident is reported. The ING quote is relayed via ABC News."
+  },
+  {
+   "fact": "A Victorian government spokesperson urged caution against callers posing as banks or tech companies after the outage, warning of fake IT support, phishing and payment-redirection attempts.",
+   "url": "https://www.wionews.com/world/microsoft-outage-triggers-warnings-against-scammers-1794543917454",
+   "publisher": "WION (edited by Anamica Singh)",
+   "date": "2026-11-13 10:04 IST",
+   "kind": "secondary",
+   "quote": "We urge Victorians to take extra caution against scammers",
+   "notes": "Anticipatory, and the spokesperson is unnamed. The Scamwatch and National Anti-Scam Centre pages that search returned are July 2024 CrowdStrike items, not this outage."
+  },
+  {
+   "fact": "A fabricated apology attributed to Bill Gates, with claims that Nadella had spoken, circulated on Thursday night. Neither man had issued a statement.",
+   "url": "https://techaeris.com/?p=271367",
+   "publisher": "Techaeris (Alex Hernandez)",
+   "date": "2026-11-12",
+   "kind": "secondary",
+   "quote": "Neither man said it.",
+   "notes": "Single source. It does not reproduce the fake text or name a fact-checker. Anecdote; useful only as a caution that the real apology came from Microsoft's corporate X account."
+  },
+  {
+   "fact": "Indonesia's cyber agency BSSN, in its ID-SIRTII publication 'Microsoft 365 Global Security Outage', warned that the disruption could be exploited by cybercriminals through phishing, fake login pages and social engineering. It dated the start to 18:00 UTC on 12 Nov (01:00 WIB on 13 Nov).",
+   "url": "https://katadata.co.id/digital/teknologi/6af6c064431ee/microsoft-365-down-di-banyak-negara-bssn-wanti-wanti-celah-serangan-siber",
+   "publisher": "Katadata (Leoni Susanto)",
+   "date": "2026-11-13 14:46 (WIB presumed)",
+   "kind": "secondary",
+   "quote": "Gangguan ini berpotensi dimanfaatkan pelaku kejahatan siber",
+   "notes": "Translation: 'This disruption could be exploited by cybercriminals.' I did not find BSSN's own publication; several Indonesian outlets report it (Katadata here; RCTI+, Metro TV and Hukumonline per search). This is the clearest Indonesia-specific institutional reaction. No Indonesian organisation is named as disrupted."
+  },
+  {
+   "fact": "Downdetector Indonesia showed Outlook reports rising sharply from 00:38 WIB on 13 Nov (17:38 UTC on 12 Nov), with Microsoft 365 down from 00:51 WIB.",
+   "url": "https://afu.id/internasional/layanan-microsoft-tumbang-massal-di-seluruh-dunia-menghidupkan-kembali-bayangbayang-kiamat-it-2024",
+   "publisher": "AFU.id (Agung Riyadi)",
+   "date": "2026-11-13 09:27 WIB",
+   "kind": "secondary",
+   "quote": "mulai melonjak drastis sejak pukul 00.38 WIB",
+   "notes": "Translation: 'began rising sharply from 00:38 WIB'. A small outlet and a single source, with no counts; consistent with Downdetector's global 17:25 UTC climb. A Bisnis.com search snippet says Downdetector.id logged 97 Microsoft 365 reports by 12:59 WIB and that Microsoft acknowledged Indonesia was affected. Bisnis.com returned 403, so that is unverified."
+  },
+  {
+   "fact": "Republika reported that the disruption reached Asia, including Indonesia, with no Indonesia-specific figures or organisations.",
+   "url": "https://ekonomi.republika.co.id/berita/tofi38370/outlook-hingga-teams-terganggu-microsoft-kejar-pemulihan-layanan",
+   "publisher": "Republika (editor Friska Yolandha)",
+   "date": "2026-11-13 13:59 WIB",
+   "kind": "secondary",
+   "quote": "Gangguan Microsoft dirasakan hingga ke Asia, termasuk Indonesia.",
+   "notes": "Translation: 'Microsoft's disruption was felt as far as Asia, including Indonesia.' A general statement only. I found no Microsoft Indonesia spokesperson anywhere."
+  },
+  {
+   "fact": "Malaysia's National Cyber Security Agency (NACSA) said on its Facebook page that the disruption was more likely technical or infrastructure-related than a cyberattack. It told government agencies and critical-infrastructure entities to check their services and keep monitoring uninterrupted.",
+   "url": "https://www.nst.com.my/amp/news/nation/2026/11/1576799/microsoft-365-disruption-likely-technical-not-cyberattack-nacsa",
+   "publisher": "New Straits Times (Bernama)",
+   "date": "2026-11-13 13:37 (MYT presumed)",
+   "kind": "secondary",
+   "quote": "more likely to have been caused by technical or infrastructure issues than a cyberattack",
+   "notes": "No named Malaysian organisation was disrupted. The Edge Malaysia (13 Nov, https://theedgemalaysia.com/node/825670) reports unnamed government-linked companies and banking, oil and gas and plantation firms with email disruption, while operations were largely unaffected."
+  },
+  {
+   "fact": "Thailand: Krungthai Bank blamed temporary email problems on the outage, apologised, and pointed customers to their relationship managers or its contact centre. The Stock Exchange of Thailand said only incoming email was affected and trading and settlement were normal. The article also gives Outlook reports above 130,000 at the peak around 1 p.m. ET, and more than 25,000 at 9:30 p.m. ET (02:30 GMT).",
+   "url": "https://www.nationthailand.com/news/world/40073461",
+   "publisher": "The Nation Thailand (Nuttapakron Ngamsopa)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "temporary problems with sending and receiving emails",
+   "notes": "The quote is the article's wording, not a direct Krungthai Bank quote. Single outlet."
+  },
+  {
+   "fact": "Problems started with Exchange Online around 11:17 a.m. ET (16:17 UTC) on 12 Nov, and a wider Microsoft 365 incident followed at 1:26 p.m. ET. Service was restored for the remaining customers on Saturday 14 Nov. The 7.4 million reports are not individual users.",
+   "url": "https://digitaltrends.com/computing/microsoft-365-outage-resolved",
+   "publisher": "Digital Trends (Sudhanshu Kumar Mangalam)",
+   "date": "2026-11-14",
+   "kind": "secondary",
+   "quote": "the problems started with Exchange Online at around 11:17 a.m. ET on November 12",
+   "notes": "Useful for the start-time and duration disagreements. Duration and cause belong to the separate timeline sweep."
+  }
+ ],
+ "disagreements": "1. Who counted the countries. The task says Al Jazeera counted reports from many countries. It did not. Al Jazeera attributes both of its country figures to Downdetector:\n- 74 countries and territories within about an hour of the start on Thursday.\n- 72 countries at about 07:00 GMT on Friday.\nDowndetector's own post gives its rule: a country counts at ten times normal reports and at least 20 reports in five minutes. Al Jazeera's live blog also says \"more than 70 countries\" at 16:45 GMT without attribution. No source lists the 74 countries.\n\n2. When it started. There are at least four different \"starts\". A post must say which one it means.\n- About 16:00 GMT: Al Jazeera explainer.\n- 16:17 UTC (11:17 a.m. ET): Microsoft's Exchange Online incident start, per the Downdetector post, Bloomberg Technoz and Digital Trends.\n- 17:25 UTC: user reports start climbing (Downdetector; Reuters, citing Ookla).\n- 18:00 GMT: PA (\"from 6pm GMT\"), Pharmaceutical Journal (\"around 6pm GMT\"), and BSSN (18:00 UTC = 01:00 WIB).\n- 18:26 UTC (1:26 p.m. ET): the wider Microsoft 365 incident, per Digital Trends.\nRelated figures:\n- UK: Downdetector says UK reports jumped tenfold at 17:43 UTC; PA says the UK spike came around 18:15 GMT.\n- Indonesia: AFU.id says reports rose from 00:38 WIB (17:38 UTC).\n- CNN says \"midday Thursday on the US East Coast\".\n\n3. Report counts are not comparable.\n- Peak: \"nearly 130,000\" Outlook reports just after 1 p.m. ET (AP, which wrongly calls them \"users\"), \"about 130,000\" (Reuters via Al Jazeera), \"above 130,000\" (Nation Thailand).\n- Snapshots: 97,000 US reports at 19:00 UTC (GMA); 43,000 from 72 countries at 07:00 GMT Friday (Al Jazeera); more than 25,000 at 02:30 GMT (Nation Thailand).\n- Total: more than 7.4 million reports worldwide (Reuters citing Ookla; SBS; Digital Trends).\n- Per minute: Downdetector's own post says 19,650 a minute for five services combined at 18:25 UTC, against under 15 on an average Thursday. That implies roughly 1,300 times normal or more. Reuters says \"nearly 20,000 a minute, more than 1,500 times normal\". Downdetector says Outlook alone peaked at more than 2,000 times normal.\n- Seen only in search snippets and not verified: 138,000 (Crypto Briefing); 150,000 across two countries; 120,000 by 1:30 p.m. ET; 37,000 at 5:41 p.m. ET; \"over 200,000\" (a Malaysia-related snippet); 97 Downdetector.id reports by 12:59 WIB (Bisnis.com).\n\n4. User base. CNN and AP say \"as many as 430 million users\". Security Magazine says \"more than 450 million subscribers\". Neither is a count of affected users.\n\n5. Apology timing (a time-zone trap, not a real conflict).\n- KTVU carried the apology by 9:53 a.m. PST (17:53 UTC) on Friday 13 Nov.\n- CNN says \"around 1 p.m. ET\" (18:00 UTC), a few minutes later than KTVU's stamp.\n- PA says \"Friday afternoon\".\n- Mothership says 14 Nov, Singapore time.\nThe exact post time is unverified because X returns HTTP 402. A fabricated Gates/Nadella apology also circulated (Techaeris, single source). Before the apology, Microsoft's 12 Nov statement only thanked customers for their patience.\n\n6. Duration. Outlets give 10, 11, more than 12, 18, 24, \"well over 24\", 35 and 36 hours. They mix time to first recovery with time to full restoration. Digital Trends says service was restored for the remaining customers on Saturday 14 Nov.\n\n7. Economic cost. These are different quantities, and none has a published method.\n- Lost productivity: Anderson Economic Group (AEG), US$7bn, \"will likely increase\" (CNN). Patrick Anderson calls it \"a starting point\".\n- Refunds: AEG, about US$800m a day (CNN Brasil). A Russian outlet gives US$830m (snippet only).\n- Insured losses: Morningstar DBRS US$300m to US$500m (Reuters, Business Insurance, SBS); CyberCube under US$100m (Business Insurance only); Marsh Re \"minimal\", no figure. DBRS and CyberCube contradict each other on the same quantity.\n- Other views: RMIT's Mark Gregory says \"tens of billions globally\"; RSM Australia says \"billions\" for Australia (snippet only).\n- AEG is called a \"think tank\" by CNN and a \"consultancy\" by Security Magazine.\n- Business Insurance carries a 13 Nov dateline, yet its CyberCube sentence opens \"On Monday\" (16 Nov).\n\n8. Euronext. Al Jazeera's live blog says Euronext \"told companies to phone in their trades\". Reuters says Euronext \"told listed companies to pick up the phone\" because its corporate-actions and listing teams could not receive email. No source shows trading orders moving to the phone; the Stock Exchange of Thailand (SET) separately said its trading was normal. Treat Al Jazeera's wording as inaccurate.\n\n9. Phishing details.\n- Incident number: Field Effect says the lure cites EX1550543, matching the real incident. Microsoft's 16 Nov blog calls the lure's claim \"a purported Exchange Online incident on November 12\" and never cites EX1550543. News reports of Microsoft's 14 Nov X alert say it referenced the \"legitimate\" incident EX1550543.\n- Scope: \"multiple US sectors\" (Khaleej Times on the X alert) versus \"multiple sectors worldwide\" (the blog).\n- Sender names differ by sample: Mimecast saw \"Service Health\", \"Mail-Restore-Auth\" and \"Health Status\"; Microsoft saw \"MSF Outage Notification\" and \"AMZ Service Health\".\n- Field Effect's headline and first sentence claim fake IT support calls, but its body reports observing only an email lure.\n\n10. Cause wording behind the apology. Microsoft said \"elevated load\" on 12 Nov and \"an issue during an earlier network capacity upgrade\" on 13 Nov. A Malaysia-related snippet says \"traffic management imbalance\" (unverified). The timeline sweep should settle this.\n\n11. UK Parliament. One search summary said the UK Parliament was hit; I found no source for it. The parliaments in sources are Norway's (Al Jazeera) and staff of one US congressional chamber (Reuters via Al Jazeera).\n\n12. Time-zone label. An Australian snippet says the outage began \"before 5am AEST\" on 13 Nov. Eastern states were on AEDT (UTC+11) in November, so the label may be wrong.",
+ "gaps": "Could not read or find:\n\nPrimary data and statements\n- Downdetector and Ookla pages, and AP's own site, block the fetcher. X returns HTTP 402. Downdetector's own figures were read only through Bloomberg Technoz's embed of its X post.\n- Microsoft's apology post (x.com/Microsoft/status/2121282013600907325) is quoted only via outlets.\n- Microsoft's status page (status.cloud.microsoft) renders only a title; the admin-center incidents EX1550543 and MO1550821 need a login. No post-incident report was found as of 17 Nov.\n\nCost estimates\n- AEG has no release or report on its site (home and media pages checked). Its method is unpublished; CNN is the only original source.\n- The original statements from Morningstar DBRS, CyberCube and Marsh Re were not found.\n- The RSM Australia estimate appears only in search snippets (ACM mastheads returned 403).\n\nReactions\n- There is no survey or count of public reactions. Jokes, brand posts and anonymous quotes are anecdote. The joking as a trend is reported by several independent outlets and can be stated as such.\n- The WHO's own post was not readable; AP and Al Jazeera both report it.\n- NHS England's own statement was not found.\n- The UK cyber minister's words are known only via PA.\n- Japan's foreign ministry (MOFA) notice returned 403.\n\nScams\n- No fake-support scam victim, case or volume is documented anywhere. These are warnings only, from:\n  - Field Effect (framed as a risk)\n  - the Federation of Small Businesses (FSB)\n  - ING and the Customer Owned Banking Association (COBA)\n  - the Victorian government\n  - BSSN (Indonesia)\n  - Maersk\n- The phishing campaign is confirmed (Microsoft, Field Effect, Mimecast), but there are no message or victim counts and no confirmed credential capture.\n\nSouth-East Asia\n- Indonesia:\n  - No named Indonesian organisation was reported disrupted.\n  - No Microsoft Indonesia statement was found.\n  - BSSN's original ID-SIRTII publication was not found.\n  - Bisnis.com and The Jakarta Post returned 403.\n  - kompas.com and antaranews.com were excluded by rule.\n- Singapore:\n  - No GovTech primary statement was found; The Straits Times, CNA and TODAY block the fetcher.\n  - The CSA banner ('emails to and from CSA may be delayed. We apologise...') was seen only in a search snippet; the page, updated 17 Nov, no longer shows it.\n  - IPOS's excluded day for 13 Nov (Registries Practice Direction No. 1 of 2026) was seen only in a search snippet. The PDF at file.go.gov.sg was not opened, per the no-download rule.\n- Philippines: the Supreme Court's own advisory text was not found; it is quoted by Al Jazeera and GMA.\n- Vietnam: only a VietnamNet headline, not fetched.\n- Malay Mail's piece on Singapore workers joking returned 403.\n\nExcluded as the wrong event\n- are.uscourts.gov/node/478 (22 Jan 2026 outage)\n- Scamwatch node/1173 and NASC node/68 (July 2024 CrowdStrike)\n- Fortune IDN (January 2026)\n\nWorking notes: /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/post31-sweep/reactions/notes.md\n\nQuestions for the owner (multiple choice, as requested):\n\nQ1. Downdetector numbers in the post:\n(A) State only Downdetector's own figures (74 countries in about an hour; 19,650 reports a minute at 18:25 UTC) plus Reuters' 7.4 million total, each attributed.\n(B) Option A plus a table of outlet snapshot counts with UTC times.\n(C) Prose only: \"tens of thousands of reports from dozens of countries\".\n\nQ2. Cost paragraph:\n(A) AEG's US$7bn and the insured-loss range side by side, each marked \"no published method\".\n(B) Only the insured-loss disagreement (DBRS against CyberCube against Marsh Re).\n(C) Leave cost out.\n\nQ3. Singapore IPOS excluded-day PDF:\n(A) Leave it out.\n(B) You open the PDF and paste the operative sentence for the record.\n(C) Cite it as unverified.\n\nQ4. Fake-support scams:\n(A) Say only that agencies and banks warned of them, with no confirmed cases.\n(B) Drop them and keep only the confirmed phishing campaign.",
+ "chart_feasibility": "At most one honest chart, so the post will need the \"fewer than 4 charts\" flag.\n\nFeasible: a dot chart or annotated timeline of Downdetector's own UTC points for 12 Nov, from its X post as embedded by Bloomberg Technoz (store the embed copy):\n- baseline: under 15 reports a minute\n- 17:25: climb begins\n- 17:43: UK reports up tenfold\n- 18:25: 19,650 a minute (five services combined)\n- 19:38: more than 11,000 a minute\nThere are only two numeric peaks plus a baseline, so draw points and annotations, not a connecting line; a line would invent the values between them.\n\nNot recommended: a time series built from outlet snapshots:\n- about 130,000 Outlook reports around 18:00 UTC\n- 97,000 US reports at 19:00 UTC\n- more than 25,000 at 02:30 UTC\n- 43,000 from 72 countries at 07:00 UTC on 13 Nov\nThey mix US-only and global counts, different services, unstated counting windows and different outlets. Plotting them implies a comparability the data lack; a table with UTC times is safer.\n\nNot recommended: a cost chart. AEG's productivity loss (US$7bn), the insured-loss estimates (DBRS, CyberCube, Marsh Re) and the refund estimate measure different things, and none publishes a method. A range or bar chart would present them as rival estimates of one quantity. Use a small table instead.\n\nReactions are categorical (country, sector, what was disrupted, primary or secondary), so a table, not a chart. A map of the 74 countries is impossible because no list of them was found. Phishing has no counts anywhere (Microsoft, Mimecast and Field Effect give none), so there is nothing to chart there."
+}

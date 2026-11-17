@@ -1,0 +1,421 @@
+{
+ "sources": [
+  {
+   "fact": "First public Microsoft acknowledgement of the Exchange Online problem: X post at 17:54:26 UTC on 12 Nov 2026 (12:54 p.m. ET), scoped to the Americas and pointing to EX1550543.",
+   "url": "https://x.com/MSFT365Status/status/2120938282204688468",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-12 17:54:26 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We're investigating reports of users experiencing issues accessing Exchange Online mailboxes through multiple connection methods in the Americas.",
+   "notes": "x.com returned HTTP 402, so the post was not loaded. Time computed from the snowflake ID: (id >> 22) + 1288834974657 ms. Text from the search engine's index title of this URL; matches Fox Baltimore/TND's quote. ABC7NY links this ID and says the first post came 'shortly before 1 p.m. ET Thursday'. This is 1 h 34 m after the first admin-center post (16:20:07 UTC)."
+  },
+  {
+   "fact": "Scope widened on X to any region at 18:07:33 UTC, 12 Nov.",
+   "url": "https://x.com/MSFT365Status/status/2120941584220827979",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-12 18:07:33 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "we've confirmed the issue may affect Microsoft 365 service connectivity for users in any region",
+   "notes": "Text from the search index title; ABC7NY links this ID. WindowsForum (citing Mashable) puts the 'any region' update at 1:45 p.m. ET (18:45 UTC); the ID gives 1:07 p.m. ET."
+  },
+  {
+   "fact": "Mitigation: all deployments paused and traffic moved off affected infrastructure, 19:12:31 UTC on X (admin-center update list has deployments paused at 19:06:57 UTC).",
+   "url": "https://x.com/MSFT365Status/status/2120957934607700161",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-12 19:12:31 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We've paused all deployments, we're moving additional traffic off the affected infrastructure, and we're restarting affected servers to return them to service.",
+   "notes": "Text from the search index title. ABC7NY quotes the opening 'We're aggressively pursuing all pathways to reduce impact.' The EX1550543 19:06:57 UTC timestamp comes from the PennO365 update list; its wording was summarised, not quoted."
+  },
+  {
+   "fact": "Microsoft's first diagnosis: load was not a traffic increase but servers becoming unavailable; X post 19:31:21 UTC (admin center EX1550543 at 19:18:39 UTC).",
+   "url": "https://x.com/MSFT365Status/status/2120962673911181437",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-12 19:31:21 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We determined the elevated load isn't driven by an increase in traffic, but by a number of servers being unexpectedly unavailable",
+   "notes": "Text from the search index title; BleepingComputer links this ID. Admin-center wording at 19:18:39 UTC: 'We've determined that the elevated load isn't driven by an overall increase in traffic,'."
+  },
+  {
+   "fact": "At 20:19:33 UTC Microsoft said no recent change correlated with the start of impact (later contradicted at 01:12 UTC).",
+   "url": "https://x.com/MSFT365Status/status/2120974801388904932",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-12 20:19:33 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We've not identified any recent change correlated with the start of impact",
+   "notes": "Text from the search index title. Same post blames failed health checks on 'a specific component that's responsible for processing server health'. Related X posts: 21:00:16 UTC alternative health check validated (ID 2120985048337830246); 21:40:38 UTC assessing reverting 'a small number of recent configuration updates' (ID 2120995209261514827)."
+  },
+  {
+   "fact": "First partial recovery: a portion of servers returned and stable, limited recovery; X 23:04:36 UTC (admin center EX1550543 22:57:29 UTC).",
+   "url": "https://x.com/MSFT365Status/status/2121016338181161457",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-12 23:04:36 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We're returning a portion of affected servers to the service, and they remain stable so far.",
+   "notes": "Text from the search index title and BleepingComputer's 6:57 PM ET update, which links this ID. Admin center 22:57:29 UTC: 'We've begun returning a portion of the affected servers to service, and they're remaining stable so far.'"
+  },
+  {
+   "fact": "Setback: returned servers became unresponsive again under traffic; X 00:06:34 UTC 13 Nov (admin center 23:59:42 UTC 12 Nov).",
+   "url": "https://x.com/MSFT365Status/status/2121031935010951521",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-13 00:06:34 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "The servers we returned to service can become unresponsive again once they receive traffic",
+   "notes": "Text from the search index title. Same post says Microsoft was temporarily limiting which types of traffic reach the affected infrastructure."
+  },
+  {
+   "fact": "Fixes failing: changes 'not taking as expected'; X 03:13:50 UTC 13 Nov (admin center EX1550543 02:54:05 UTC, MO1550821 02:58:06 UTC).",
+   "url": "https://x.com/MSFT365Status/status/2121079061774491735",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-13 03:13:50 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We’ve monitored the status of the changes applied to improve serviceability and confirmed they're not taking as expected.",
+   "notes": "Text from the search index title; NBC News links this ID. Earlier X post 01:59:50 UTC (ID 2121060437290516575) had reported 'positive results' from restarts."
+  },
+  {
+   "fact": "Charles Lamanna's first public denial of a cyberattack: a reply to @MSFT365Status at 03:37:28 UTC 13 Nov (10:37 p.m. ET, 12 Nov).",
+   "url": "https://x.com/clamanna/status/2121085008966529423",
+   "publisher": "Charles Lamanna (@clamanna), Microsoft EVP Copilot, Agents and Platform, on X",
+   "date": "2026-11-13 03:37:28 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "for now I can confirm that there is no indication this is the result of malicious",
+   "notes": "The search index title is cut off after 'malicious'. La Voce di New York completes it as 'malicious or cyber activity.' The post opens 'We regret that today’s outages caused disruptions for our customers'. Al Jazeera calls it a late-Thursday X post. The admin-center records carry the same sentence 3 minutes earlier (EX 03:34:14 UTC)."
+  },
+  {
+   "fact": "48-hour email timeout extension announced on X at 09:24:08 UTC, 13 Nov.",
+   "url": "https://x.com/MSFT365Status/status/2121172248241348867",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-13 09:24:08 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "To help preserve delayed mail during this event, we’ve extended email timeout to 48 hours.",
+   "notes": "Indexed under twitter.com/MSFT365Status/status/2121172248241348867. In the admin center it appears first in MO1550821 at 09:03:36 UTC and in EX1550543 at 09:55:42 UTC. BleepingComputer reported it in its 8:05 AM ET (13:05 UTC) update. A follow-up X post at 10:28:27 UTC (ID 2121188436769956078) says capacity 'has not yet fully returned to baseline'."
+  },
+  {
+   "fact": "'Approaching normal levels': X post at 14:17:29 UTC, 13 Nov.",
+   "url": "https://x.com/MSFT365Status/status/2121246073955962896",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-13 14:17:29 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We’re continuing to see improvements in service availability, with email queues significantly reduced and approaching normal levels.",
+   "notes": "Text from the search index title. The same sentence appears in the admin center at 14:01:18 UTC (EX1550543) and 14:01:51 UTC (MO1550821). Regional recovery posts came before it: 12:09:25 UTC (ID 2121213845490336163) and 13:32:27 UTC, 'broader improvements in North America' (ID 2121234739562450970)."
+  },
+  {
+   "fact": "@MSFT365Status recovery post at 15:39:30 UTC, 13 Nov, using the wording that NBC and BleepingComputer attribute to Lamanna.",
+   "url": "https://x.com/MSFT365Status/status/2121266712884416537",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-13 15:39:30 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We know our customers rely on our services to get important work done every day, and regret the impact",
+   "notes": "The search index title is cut off after 'the impact thes…'. The AP (via WBTV) links this ID. See the disagreement on attribution."
+  },
+  {
+   "fact": "Microsoft's corporate statement on X at 16:40:18 UTC, 13 Nov: an apology, cause tied to an earlier network capacity upgrade, not cyber or AI.",
+   "url": "https://x.com/Microsoft/status/2121282013600907325",
+   "publisher": "Microsoft (@Microsoft) on X",
+   "date": "2026-11-13 16:40:18 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We are deeply sorry for the disruption this incident has caused our customers and partners.",
+   "notes": "The search index title stops at 'This was a technical issue not…'. NBC News, MacRumors, KUOW and AP give the rest: the cause sentence, 'not related to cyber or AI / agents', and 'We have addressed the underlying issue and continue to restore service to remaining customers and regions.' BleepingComputer printed the same text in its 12:15 PM ET update as a statement shared with it. The admin-center version (17:57:06 UTC) says 'caused you and your business'."
+  },
+  {
+   "fact": "No ETA for full recovery, 20:05:41 UTC, 13 Nov.",
+   "url": "https://x.com/MSFT365Status/status/2121333700591857878",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-13 20:05:41 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We do not have an ETA for full recovery yet. Service access can recover before mail flow fully normalizes.",
+   "notes": "The search index title is truncated; NBC News quotes the full text and says it was posted at about 3:05 PM EST, which matches the computed time. Admin-center MO1550821 has the same text at 20:01:38 UTC."
+  },
+  {
+   "fact": "Sustained recovery under extended monitoring, 21:55:35 UTC, 13 Nov.",
+   "url": "https://x.com/MSFT365Status/status/2121361358004400637",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X (text as quoted by ABC11)",
+   "date": "2026-11-13 21:55:35 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We continue to observe sustained service recovery across the previously affected environments.",
+   "notes": "Text taken from ABC11 (https://abc11.com/live-updates/microsoft-outage-live-updates-what-know-outlook-365-other-apps-remain-down/20036817/), which also quotes 'Due to the severity of impact this incident caused, we're monitoring for an extended period' and files it under a 2:34 AM GMT 14 Nov entry. That is reporting lag. Admin center has the same content at 22:00:15 UTC."
+  },
+  {
+   "fact": "Lamanna on X at 22:02:21 UTC, 13 Nov: not a cyberattack, not AI tooling; cascading failure.",
+   "url": "https://x.com/clamanna/status/2121363062058070344",
+   "publisher": "Charles Lamanna (@clamanna) on X",
+   "date": "2026-11-13 22:02:21 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "This was not a cyberattack or an issue caused by AI tooling.",
+   "notes": "Text from the search index title, which is cut off at '(cascading failure…'. It opens 'I want to share what we know so far.'"
+  },
+  {
+   "fact": "All-clear on X at 06:09:51 UTC, 14 Nov (1:09 a.m. ET Saturday).",
+   "url": "https://x.com/MSFT365Status/status/2121485746334777593",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-14 06:09:51 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We have completed our efforts to address the underlying issue of the incident and restored service to the remaining impacted customers and regions.",
+   "notes": "Full text in the search index title: '...Further updates can be found at MO1550821 in the Microsoft 365 admin center.' Digital Trends embeds it dated November 14, 2026. A search summary gives 06:09 UTC independently. This is 37 h 50 m after the first admin-center post and 36 h 15 m after the first X post."
+  },
+  {
+   "fact": "Preliminary Post-Incident Report released (admin center only), announced on X 05:48:11 UTC, 16 Nov.",
+   "url": "https://x.com/MSFT365Status/status/2122205066157257160",
+   "publisher": "Microsoft 365 Status (@MSFT365Status) on X",
+   "date": "2026-11-16 05:48:11 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "We have released the Preliminary Post-Incident Report of last week’s outage, which is accessible via the Admin center under MO1550821 and EX1550543.",
+   "notes": "Text from the search index title. The report itself is visible only to signed-in tenant admins; I could not read it."
+  },
+  {
+   "fact": "Lamanna's abridged root cause, posted on X at 06:06:35 UTC, 16 Nov.",
+   "url": "https://x.com/clamanna/status/2122209697226948729",
+   "publisher": "Charles Lamanna (@clamanna) on X",
+   "date": "2026-11-16 06:06:35 UTC (computed from post ID)",
+   "kind": "primary",
+   "quote": "More details on the root cause can be found in the Microsoft 365 Admin center, and an abridged version can be found below.",
+   "notes": "Only the opening (search index title) was read; it continues 'We are deeply sorry for the impact to all our customers ... The incident on…'. The body is known only through ITPro, UC Today and HRD America (separate entries). HRD says he posted 'on Monday', which matches."
+  },
+  {
+   "fact": "Microsoft's first admin-center post on EX1550543 at 16:20:07 UTC, 12 Nov: the earliest Microsoft acknowledgement of the Exchange incident.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text) via University of Pennsylvania ISC, 'Microsoft's Incident Reports for PennO365'",
+   "date": "Post 2026-11-12 16:20:07 UTC; extract generated Tue Nov 17 08:05:02 2026 EST",
+   "kind": "primary",
+   "quote": "We're investigating a potential issue and checking for impact to your organization.",
+   "notes": "Microsoft's own words on a third-party host. The page header calls itself 'a data extract from the PennO365 administrative console of incident reports sent by Microsoft within the last 30 days', refreshed every 15 minutes. The ?q= parameter does not filter: the page is about 893,000 characters and EX1550543/MO1550821 sit at roughly characters 300,000 to 600,000. EX1550543 has 42 updates. Because the window rolls over 30 days, these incidents will drop off around mid-December 2026, so store a snapshot."
+  },
+  {
+   "fact": "Microsoft's stated impact window in the final status: 16:20 UTC 12 Nov to 16:10 UTC 13 Nov (23 h 50 m), posted retroactively at 04:15:46 UTC 14 Nov.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Final-status post 2026-11-14 04:15:46 UTC (EX1550543); 04:17:52 UTC (MO1550821)",
+   "kind": "primary",
+   "quote": "Start time: Thursday, November 12, 2026, at 4:20 PM UTC / End time: Friday, November 13, 2026, at 4:10 PM UTC",
+   "notes": "The two lines are quoted as separate fields of the final-status post. Same values appear on Cloud Admin Hub. Conflicts with the record header start time (next entry)."
+  },
+  {
+   "fact": "The record header now shows Start Time 10:05:00 UTC, 12 Nov, for both EX1550543 and MO1550821; Microsoft's text gives no explanation.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident metadata) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Header as read 2026-11-17; Last Updated Mon Nov 16 04:48:06 UTC (EX), 04:46:36 UTC (MO)",
+   "kind": "primary",
+   "quote": "Thu Nov 12 10:05:00 2026 UTC (Thu Nov 12 05:05:00 2026 EST)",
+   "notes": "This is the header 'Start Time' field; the header End Time is 'Fri Nov 13 16:10:00 2026 UTC'. No update text mentions 10:05. CIO reported 16:17 UTC from the dashboard on 13 Nov, so the field probably changed later. I could not confirm when or why: the Wayback Machine was unreachable and the PIR is admin-only."
+  },
+  {
+   "fact": "Cause, first explanation (13 Nov 01:06:41 UTC): the secure-connection process on affected servers became overwhelmed.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text, EX1550543) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Post 2026-11-13 01:06:41 UTC",
+   "kind": "primary",
+   "quote": "Our investigation has found that a process on the affected servers responsible for establishing secure connections becomes overwhelmed, causing the servers to stop processing requests.",
+   "notes": "CIO quotes the first half of the same sentence. ABC11 calls it a 'Thursday night' statement (01:06 UTC is 8:06 p.m. ET)."
+  },
+  {
+   "fact": "Microsoft began reverting a recent network configuration change that correlates with the start of impact (MO1550821, 01:12:07 UTC, 13 Nov).",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text, MO1550821) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Post 2026-11-13 01:12:07 UTC",
+   "kind": "primary",
+   "quote": "we've begun reverting a recent network configuration change that correlates with the start of impact",
+   "notes": "Contradicts the X post of 20:19:33 UTC, 12 Nov ('not identified any recent change correlated with the start of impact')."
+  },
+  {
+   "fact": "First 'no indication of malicious activity' statement in the incident record: EX1550543 at 03:34:14 UTC, 13 Nov (MO1550821 at 03:36:01 UTC).",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text, EX1550543) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Post 2026-11-13 03:34:14 UTC",
+   "kind": "primary",
+   "quote": "for now we can confirm that there is no indication this is the result of malicious activity.",
+   "notes": "The wording changed over time. MO1550821 at 04:56:39 and 09:03:36 UTC: 'not aware of any malicious activity'. From 12:18 UTC (MO) and 15:53:37 UTC (EX): 'At this time, we have no evidence of malicious activity associated with this incident.' The MO 03:36:01 UTC sentence straddles two page chunks; I assigned it by page order."
+  },
+  {
+   "fact": "The upstream authentication/routing patch stabilised servers (07:25:42 UTC, 13 Nov), after 'marginal success' at 06:56:29 UTC.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text, EX1550543) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Posts 2026-11-13 06:56:29 UTC and 07:25:42 UTC",
+   "kind": "primary",
+   "quote": "positive results for server stability after applying an upstream authentication/routing configuration component patch",
+   "notes": "06:56:29 UTC text: 'we have observed marginal success' (MO1550821 06:54:50 UTC, which adds that capacity was being expanded with virtual machines). Patch expansion to regions at peak hours: 08:06:25 UTC."
+  },
+  {
+   "fact": "48-hour email timeout extension in the incident record: MO1550821 09:03:36 UTC, EX1550543 09:55:42 UTC, 13 Nov.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Posts 2026-11-13 09:03:36 UTC (MO) and 09:55:42 UTC (EX)",
+   "kind": "primary",
+   "quote": "we are extending the email timeout window to 48 hours to help protect delayed messages while service recovery continues",
+   "notes": "EX1550543 wording. MO1550821 09:03:36 UTC reads 'we are extending the email timeout window to 48 hours to help protect delayed messages.' The same updates say capacity 'has not yet returned to normal levels'. Cloud Admin Hub shows the same MO times."
+  },
+  {
+   "fact": "Admin-center apology and cause, 17:57:06 UTC, 13 Nov.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text, EX1550543) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Post 2026-11-13 17:57:06 UTC (MO1550821 17:57:20 UTC)",
+   "kind": "primary",
+   "quote": "The incident was introduced by an issue during an earlier network capacity upgrade that surfaced following a recent network change.",
+   "notes": "The same update opens 'We are deeply sorry for the disruption this incident has caused you and your business.' and states 'This was a technical issue not related to cyber or AI / agents.'"
+  },
+  {
+   "fact": "Preliminary root cause in Microsoft's words (final status, 04:15:46 UTC, 14 Nov).",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text, EX1550543) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Post 2026-11-14 04:15:46 UTC",
+   "kind": "primary",
+   "quote": "we’ve determined that this incident was caused by a failure in the systems responsible for establishing connections to the Exchange Online service.",
+   "notes": "It continues: 'Specifically, traffic shifts during standard network maintenance and upgrades exposed a latent bug' ... 'causing a rapidly increasing number of requests to queue for processing.' ... servers 'exhausted their available processing capacity and could no longer accept new connections'. The final-status paragraph still says Microsoft will 'continue to restore service to remaining customers and regions' and promises a preliminary PIR 'within two business days' and a final PIR 'within five business days.'"
+  },
+  {
+   "fact": "Statement that it was not a cyberattack, in the final incident record.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text, EX1550543) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Post 2026-11-14 04:15:46 UTC (also 17:57:06 UTC, 13 Nov)",
+   "kind": "primary",
+   "quote": "This was a technical issue not related to cyber or AI / agents.",
+   "notes": "Identical wording in the @Microsoft X post (16:40:18 UTC, 13 Nov), as reproduced by NBC News and others."
+  },
+  {
+   "fact": "A post-incident report was published in the admin center on 16 Nov (EX1550543 04:47:36 UTC; MO1550821 04:46:36 UTC).",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Posts 2026-11-16 04:46:36 and 04:47:36 UTC",
+   "kind": "primary",
+   "quote": "A post-incident report has been published.",
+   "notes": "Both records now show status 'postIncidentReviewPublished'. The X post (05:48 UTC) calls it the 'Preliminary' PIR. The PIR text is not on the page."
+  },
+  {
+   "fact": "Earlier, separate Teams incident TM1550488: 14:45 to 15:53 UTC, 12 Nov; resolved post 17:08:41 UTC; cause resource contention.",
+   "url": "https://mailservices.isc.upenn.edu/computing/email/penno365/alerts/ms-incidents.html?q=EX1550543",
+   "publisher": "Microsoft (incident text, TM1550488) via University of Pennsylvania ISC PennO365 extract",
+   "date": "Posts 2026-11-12 15:18:37 to 17:08:41 UTC; PIR published 2026-11-17 00:23:05 UTC",
+   "kind": "primary",
+   "quote": "Resource contention within the underlying service infrastructure resulted in elevated resource utilization,",
+   "notes": "The record never mentions Exchange Online. An X post about Teams exists at 15:40:09 UTC (ID 2120904489209143320, linked by ABC7NY; text not captured). Keep it off the Exchange timeline or label it separately."
+  },
+  {
+   "fact": "Independent mirror of Microsoft's feed confirms the same timestamps; header 10:05 to 16:10 UTC gives a 30 h 5 m duration.",
+   "url": "https://www.cloudadminhub.com/microsoft-365-service-health/ex1550543/",
+   "publisher": "Cloud Admin Hub (third-party mirror; also /mo1550821/)",
+   "date": "Checked 2026-11-17 13:28 GMT; last Microsoft update 2026-11-16 04:48 GMT",
+   "kind": "secondary",
+   "quote": "This incident has been resolved. Duration: 30h 5m",
+   "notes": "States 'Source: Microsoft Service Communications API'. Matches PennO365: first update 16:20 UTC, MO 48-hour at 09:03 GMT, 'approaching normal levels' at 14:01 GMT, final 04:17 GMT 14 Nov. Likely origin of the press figure 'about 30 hours'."
+  },
+  {
+   "fact": "BleepingComputer: MO1550821 began 1:26 PM ET (18:26 UTC); Microsoft's statement and Lamanna's comments given to the outlet on 13 Nov.",
+   "url": "https://bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide",
+   "publisher": "BleepingComputer (Lawrence Abrams)",
+   "date": "2026-11-12 03:15 PM (timezone not stated); updates to 2026-11-13 12:15 PM ET",
+   "kind": "secondary",
+   "quote": "The company says the Microsoft 365 incident began Thursday at 1:26 PM ET",
+   "notes": "The 12:06 PM ET update cites 'Charles Lamanna, EVP, Copilot, Agents and Platform at Microsoft, told BleepingComputer.' The 12:15 PM ET update says 'Microsoft shared the following statement with BleepingComputer' (same text as the @Microsoft X post at 11:40 AM ET). The 8:05 AM ET update reports the 48-hour extension. Links X IDs 2120962673911181437 and 2121016338181161457."
+  },
+  {
+   "fact": "CIO reported the start as 16:17 UTC from Microsoft's dashboard on 13 Nov.",
+   "url": "https://www.cio.com/article/4248249/microsoft-struggles-to-get-m365-services-back-online-after-widespread-outage.html",
+   "publisher": "CIO (Gyana Swain)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "The outage began at 16:17 UTC on Nov. 12, according to Microsoft’s service health dashboard.",
+   "notes": "Links the PennO365 extract as its source for Microsoft's incident updates. Differs from today's header (10:05 UTC) and the final-status text (16:20 UTC). Digital Trends' '11:17 a.m. ET' equals 16:17 UTC."
+  },
+  {
+   "fact": "NBC News attributes the 'We know our customers rely on our services' statement to Lamanna in an entry at 10:15 AM EST, 13 Nov.",
+   "url": "https://www.nbcnews.com/tech/tech-news/live-blog/microsoft-outage-outlook-teams-updates-fix-rcna609118",
+   "publisher": "NBC News (live blog)",
+   "date": "Last updated 2026-11-13 3:30 PM EST",
+   "kind": "secondary",
+   "quote": "We know our customers rely on our services to get important work done every day,",
+   "notes": "The same words appear in the @MSFT365Status post at 15:39:30 UTC (10:39 AM EST). The live blog also confirms X times: the 'no ETA' post at about 3:05 PM EST, plus links to IDs 2121282013600907325 and 2121079061774491735."
+  },
+  {
+   "fact": "AP: Microsoft said Saturday (14 Nov) that services were fully restored.",
+   "url": "https://www.wbtv.com/2026/11/14/microsoft-says-services-fully-restored-after-hourslong-global-outage/",
+   "publisher": "The Associated Press via WBTV",
+   "date": "2026-11-14 4:33 AM EST",
+   "kind": "secondary",
+   "quote": "Microsoft said Saturday that services were fully restored after a massive outage that lasted for hours.",
+   "notes": "Quotes the all-clear X text. AP gives no time; the X post ID gives 06:09:51 UTC. AP says problems began 'around midday Thursday in the U.S.'"
+  },
+  {
+   "fact": "User-side onset about 16:00 GMT on 12 Nov (news, not Microsoft).",
+   "url": "https://aljazeera.com/news/2026/11/13/microsoft-hit-by-global-outages-what-happened-and-why",
+   "publisher": "Al Jazeera (Heba Habib)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "Problems with Microsoft products began at about 16:00 GMT on Thursday",
+   "notes": "The article also says 'Microsoft has not published a root cause but said the outage was not the result of a cyberattack.' It relays Australian minister Tony Burke's account of 'an update that has gone awry' (not Microsoft's words) and cites Downdetector reports from 74 countries and territories."
+  },
+  {
+   "fact": "Full wording of Lamanna's late-Thursday denial.",
+   "url": "https://lavocedinewyork.com/en/business/2026/11/13/global-microsoft-365-outage-paralyzes-workplaces-worldwide/",
+   "publisher": "La Voce di New York (Alex Christiansen)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "and for now I can confirm that there is no indication this is the result of malicious or cyber activity.",
+   "notes": "Says only 'on social media'; the X reply ID 2121085008966529423 decodes to 03:37:28 UTC, 13 Nov."
+  },
+  {
+   "fact": "Microsoft's Friday-morning statement ruling out malicious or cyber activity.",
+   "url": "https://kuow.org/technology/2026-11-13/microsoft-says-outage-not-caused-by-ai-or-cyber-attack",
+   "publisher": "KUOW (Monica Nickelsburg)",
+   "date": "2026-11-13 10:50 AM PST",
+   "kind": "secondary",
+   "quote": "We can confirm that there is no indication this is the result of malicious or cyber activity,",
+   "notes": "KUOW calls it 'an earlier statement Friday morning' and names no venue. It links the @Microsoft X post for the network-capacity-upgrade statement."
+  },
+  {
+   "fact": "Lamanna's abridged root cause as reproduced: at the low point more than 80% of gateway servers were unresponsive; the defect came from a fix for Microsoft 365 networking gateway servers.",
+   "url": "https://www.itpro.com/software/microsoft/microsoft-365-outage-company-exec-lifts-lid-on-the-cascading-failure-that-caused-lengthy-disruption",
+   "publisher": "ITPro (Ross Kelly)",
+   "date": "2026-11-16",
+   "kind": "secondary",
+   "quote": "At its lowest, more than 80% of servers were unresponsive.",
+   "notes": "Also quotes 'This defect was the result of a fix that was prepared specifically for Microsoft 365 networking gateway servers,' and 'lock contention'. The following are ITPro's paraphrase, not Lamanna's words: first observed in a July 2026 update; Teams 'failed over' to the gateway around 15 hours before; 'nearly 14%' of gateway capacity was out of service. Links x.com/clamanna/status/2122209697226948729."
+  },
+  {
+   "fact": "Lamanna: three factors together caused a global outage of the networking gateway; normal rollback could not quickly revert the change.",
+   "url": "https://uctoday.com/microsoft-exchange-online-outage-root-cause",
+   "publisher": "UC Today (Marcus Law)",
+   "date": "2026-11-17 09:01 GMT",
+   "kind": "secondary",
+   "quote": "together caused a global outage for the networking gateway that fronts many Microsoft 365 services",
+   "notes": "Also quotes 'our normal rollback, flighting, and feature flags were unable to quickly revert the change' and 'But not all services, like Exchange Online, can fail out of this network gateway.' Paraphrases recovery as an update that restored the known-good code path."
+  },
+  {
+   "fact": "Lamanna: the defect spread across the fleet in under two hours.",
+   "url": "https://www.hcamag.com/us/specialization/hr-technology/months-old-bug-behind-global-microsoft-365-outage-executive-says/597618",
+   "publisher": "HRD America (Dexter Tilo)",
+   "date": "2026-11-17",
+   "kind": "secondary",
+   "quote": "In less than two hours, the previously unknown defect was encountered across our fleet and rendered them unresponsive.",
+   "notes": "Says Lamanna posted 'on Monday' (16 Nov), consistent with the decoded 06:06:35 UTC. The July date, 15-hour failover and 14% figures are the outlet's narration, not quoted."
+  },
+  {
+   "fact": "ABC News placed Microsoft's first social post shortly before 1 p.m. ET and linked the X IDs used here.",
+   "url": "https://abc7ny.com/story/outlook-outage-microsoft-reports-issues-teams-email/20036364/",
+   "publisher": "ABC News via ABC7NY (Mason Leib, Jack Moore, Jon Haworth)",
+   "date": "2026-11-13 5:38 PM (ET implied)",
+   "kind": "secondary",
+   "quote": "shortly before 1 p.m. ET Thursday",
+   "notes": "Links IDs 2120938282204688468, 2120941584220827979, 2121234739562450970, 2120904489209143320 (Teams) and 2121099952633840043 (04:36:51 UTC; text not captured). Quotes Lamanna's 'Our teams are reviewing what happened...' as a statement with no time."
+  },
+  {
+   "fact": "A secondary account places the 48-hour extension at 12:00 UTC and gives network-monitor onset times.",
+   "url": "https://ppc.land/microsofts-outlook-is-back-and-it-brought-18-hours-of-mail-with-it/",
+   "publisher": "PPC Land (Luís Rijo)",
+   "date": "2026-11-13",
+   "kind": "secondary",
+   "quote": "extending the timeout for email to 48 hours so delayed messages would be preserved.",
+   "notes": "Places it at 12:00 UTC via Observador, while Microsoft's own posts give 09:03 to 09:55 UTC. The following were summarised, not quoted: Kentik onset about 17:35 UTC, ThousandEyes about 17:30, Cloudflare about 17:45, and Kentik recovery 11:20 UTC 13 Nov. Context only."
+  },
+  {
+   "fact": "Low-reliability aggregator relaying a Daily Voice summary of Lamanna (defect since July; gateway load; reduced capacity) and alternative times.",
+   "url": "https://windowsforum.com/news/exchange-online-outage-failed-health-checks-and-how-to-track-ex1550543.452127/",
+   "publisher": "WindowsForum (JSON-LD marks it as algorithmic media)",
+   "date": "2026-11-12 1:15 PM EST; updated 2026-11-16 2:43 PM EST",
+   "kind": "secondary",
+   "quote": "The defect had been present since a July software change, Lamanna said.",
+   "notes": "Gives an X acknowledgment at '10:08 a.m. PT' with Americas wording (the decoded IDs give 17:54 UTC for the Americas post and 18:07 UTC for the any-region post). Cites Mashable for 'any region' at 1:45 p.m. ET. Daily Voice is not linked. Use only to locate leads."
+  }
+ ],
+ "disagreements": "1) START TIME. Microsoft's own record gives three different values. (a) The header Start Time for both EX1550543 and MO1550821 now reads 10:05:00 UTC, 12 Nov (PennO365 and Cloud Admin Hub, read 17 Nov). (b) The final-status text says 'Thursday, November 12, 2026, at 4:20 PM UTC'. (c) CIO reported on 13 Nov 'The outage began at 16:17 UTC on Nov. 12, according to Microsoft's service health dashboard'.\nBleepingComputer gives MO1550821's start as 1:26 PM ET (18:26 UTC); its first post was 18:27:35 UTC. No Microsoft text explains 10:05 UTC, and I could not tell when the header changed.\nOutside views differ again: Al Jazeera says about 16:00 GMT (user reports); PPC Land puts network-monitor onset at about 17:30 to 17:45 UTC; AP says 'around midday Thursday in the U.S.'; ABC says the first post came 'shortly before 1 p.m. ET'.\n\n2) END / ALL-CLEAR. (a) The record's End Time is 16:10 UTC, 13 Nov, declared retroactively in the final status at 04:15:46 UTC, 14 Nov. That same final status still says Microsoft will 'continue to restore service to remaining customers and regions'. (b) The @Microsoft post at 16:40:18 UTC, 13 Nov, says 'We have addressed the underlying issue and continue to restore service'. (c) The X all-clear came at 06:09:51 UTC, 14 Nov. (d) AP wrote 'Microsoft said Saturday that services were fully restored'.\nUnverified: a live page listing a final resolution update at 05:42 UTC, 14 Nov, and an Outlook.com consumer remediation at 03:51 UTC, 14 Nov. Both appear only in search summaries; I could not confirm either.\n\n3) DURATION. Published figures conflict:\n- 23 h 50 m: the record's 16:20 to 16:10 window.\n- 30 h 5 m: header 10:05 to 16:10 (Cloud Admin Hub), probably the source of 'about 30 hours'.\n- 36 h 15 m: first X post to X all-clear.\n- 37 h 50 m: first admin-center post to X all-clear.\n- Press also uses 'nearly 24 hours', 'more than a day' and '36-hour'.\n\n4) 48-HOUR EXTENSION TIME. Microsoft's own times: MO1550821 at 09:03:36 UTC, X at 09:24:08 UTC, EX1550543 at 09:55:42 UTC. Secondary times: 'about 09:10 UTC' (a search summary), 12:00 UTC (PPC Land via Observador), and BleepingComputer's 8:05 AM ET (13:05 UTC) update, which reflects reporting lag.\n\n5) 'NORMAL LEVELS'. The 'approaching normal levels' wording appears at 14:01:18 UTC (EX), 14:01:51 UTC (MO) and 14:17:29 UTC (X). Do not mix it up with the 09:03 and 09:55 UTC updates, which say capacity 'has not yet returned to normal levels'.\n\n6) CHANGE CORRELATION (Microsoft contradicts itself). On X at 20:19:33 UTC, 12 Nov: 'We've not identified any recent change correlated with the start of impact'. In MO1550821 at 01:12:07 UTC, 13 Nov: 'we've begun reverting a recent network configuration change that correlates with the start of impact'.\n\n7) CAUSE FRAMING EVOLVED.\n- 13 Nov: 'an issue during an earlier network capacity upgrade that surfaced following a recent network change'.\n- 14 Nov preliminary root cause: 'traffic shifts during standard network maintenance and upgrades exposed a latent bug' in the systems that establish connections.\n- 16 Nov, Lamanna: three factors. First, a latent lock-contention defect from 'a fix that was prepared specifically for Microsoft 365 networking gateway servers'; the July 2026 date is ITPro and UC Today paraphrase. Second, extra load from a Teams failover about 15 hours earlier. Third, about 14% of gateway capacity was out from an unrelated issue the previous day.\nMicrosoft never says how the 'network capacity upgrade' relates to the July gateway fix. Separately, the 12 Nov line 'elevated load isn't driven by an increase in traffic' sits uneasily with Lamanna's 'increased load' from failover; that is a load shift, not traffic growth, but The Conversation questioned it.\n\n8) MALICIOUS-ACTIVITY WORDING DRIFTED.\n- 03:34:14 UTC EX and 03:36:01 UTC MO: 'no indication this is the result of malicious activity'.\n- Lamanna at 03:37:28 UTC adds 'or cyber'.\n- MO at 04:56:39 and 09:03:36 UTC: 'not aware of any malicious activity'.\n- From 12:18 UTC (MO) and 15:53:37 UTC (EX): 'no evidence of malicious activity'.\n- 16:40 UTC: 'not related to cyber or AI / agents'.\n- Lamanna at 22:02 UTC: 'not a cyberattack or an issue caused by AI tooling'.\nThe Register reportedly noted the hedging; I did not read it.\n\n9) ATTRIBUTION. 'We know our customers rely on our services to get important work done every day...' is an @MSFT365Status post at 15:39:30 UTC. NBC (10:15 AM EST entry, which is earlier) and BleepingComputer (12:06 PM ET update) present it as a Lamanna statement. ABC7NY gives his 'Our teams are reviewing...' with no time.\n\n10) APOLOGY WORDING. The admin center (17:57:06 UTC) says 'caused you and your business'. The @Microsoft X post (16:40:18 UTC) says 'caused our customers and partners'.\n\n11) 'ANY REGION' TIME. The decoded X time is 18:07:33 UTC (1:07 p.m. ET). WindowsForum cites Mashable at 1:45 p.m. ET and puts an X acknowledgment with Americas wording at 10:08 a.m. PT (18:08 UTC), but the Americas post decodes to 17:54:26 UTC.\n\n12) PIR NAMING. The admin center says 'A post-incident report has been published' (04:46 and 04:47 UTC, 16 Nov). X calls it the 'Preliminary Post-Incident Report' (05:48 UTC). A final PIR was promised 'within five business days' of 14 Nov. Reports on 15 Nov that no PIR existed are consistent with the 16 Nov release.\n\n13) TEAMS. Microsoft records TM1550488 (14:45 to 15:53 UTC, resource contention) as separate, and some outlets fold it into the outage. Lamanna's Teams failover about 15 hours before the outage is a different event by time. Microsoft has not linked the two.",
+ "gaps": "1) X COULD NOT BE READ DIRECTLY. x.com and the publish.x.com oEmbed endpoint both returned HTTP 402, and following the rule I did not try other X endpoints.\n- Every X time here is computed from the post ID (snowflake: (id >> 22) + 1288834974657 ms), not read off the page. The computed times agree with independent reports: 17:54 UTC matches 'shortly before 1 p.m. ET', 06:09 UTC matches another report's 06:09 UTC, and 20:05 UTC matches NBC's 'about 3:05 PM EST'.\n- X texts come from the search engine's index titles of each post, which are cut off at about 280 characters, or from news quotes.\n- Before publishing, open each URL in a logged-in browser and save the full text.\n- Two linked posts have no captured text: 2121099952633840043 (04:36:51 UTC, 13 Nov) and 2121199246959378803 (11:11:25 UTC, 13 Nov). The Teams post 2120904489209143320 (15:40:09 UTC) was also not captured verbatim.\n\n2) NO MICROSOFT-HOSTED HISTORY.\n- status.cloud.microsoft renders client-side; WebFetch returned only the heading 'Microsoft service health status'. The consumer Outlook.com status card and its timeline are unverified.\n- The admin-center originals of EX1550543, MO1550821 and TM1550488 need tenant admin sign-in. I relied on the University of Pennsylvania PennO365 extract, corroborated by Cloud Admin Hub. The PennO365 extract only keeps the last 30 days, so these incidents will drop out around mid-December 2026; store a copy now.\n- The fetch tool cannot reach web.archive.org, so I could not see earlier versions of the record, including when the Start Time became 10:05 UTC.\n\n3) POST-INCIDENT REPORT. The preliminary PIR (published 16 Nov) is admin-only and unread. Lamanna's abridged version is the only public root cause, and I read only its opening; ITPro, UC Today and HRD reproduce parts and paraphrase the rest (July date, 15-hour failover, 14% capacity). The final PIR, due within five business days of 14 Nov, had not appeared as of 17 Nov. No Microsoft blog post or press release was found; the 'statements to outlets' are the same text as Microsoft's X posts.\n\n4) NOT FROM MICROSOFT. Microsoft gave no number of affected users, mailboxes or regions. Downdetector counts (about 130,000 reports just after 1 p.m. ET) and economic-loss estimates are third-party figures.\n\n5) PAGES I COULD NOT READ.\n- Blocked or truncated: Windows Central, PC Gamer, Tom's Guide, TechRadar's Nov 2026 live blog, Inc., Windows Report (two articles), BetaNews, Computer Weekly, FourWeekMBA, WeAreIowa, newsfromthestates.com (States Newsroom), Deltia's Gaming.\n- Not fetched by choice: Forbes (excluded list), and I did not chase the Daily Voice piece.\n- No CAPTCHA or bot challenge was met.\n\n6) UNEXPLAINED BY MICROSOFT: the 10:05 UTC header start, and why the stated End Time (16:10 UTC, 13 Nov) comes 12 hours before the final status and 14 hours before the X all-clear.\n\n7) CONFUSABLE INCIDENTS to keep out: MO1437424 (July 2026 'maintenance bug', BleepingComputer), EX1464935 (31 Aug 2026), MO1221364 (22 Jan 2026), and the July 2025 Outlook outage (EX1112414, TechRadar live blog).",
+ "chart_feasibility": "Yes. A timeline chart from first alert to all-clear can be built entirely from Microsoft's own timestamped posts, on two tracks.\n\nTrack 1 is the admin-center incident record: EX1550543 (42 updates, from 16:20:07 UTC 12 Nov to 04:47:36 UTC 16 Nov) and MO1550821. Times are to the second, read from the University of Pennsylvania PennO365 extract and matched by Cloud Admin Hub.\n\nTrack 2 is the X posts by @MSFT365Status, @Microsoft and @clamanna, with UTC times computed from the post IDs.\n\nSuggested T0 is 16:20:07 UTC, 12 Nov: the first EX1550543 post, and also the start Microsoft gives in its final status. Optionally mark the first public X post at 17:54:26 (+1.6 h). Hours after T0:\n- MO1550821 opened 18:27:35 (+2.1)\n- Deployments paused, X 19:12:31 (+2.9)\n- Load not driven by traffic: EX 19:18:39 / X 19:31:21 (+3.0 / +3.2)\n- First servers returned: EX 22:57:29 / X 23:04:36 (+6.6 / +6.7)\n- Returned servers fail again: EX 23:59:42 / X 00:06:34 (+7.7 / +7.8)\n- Secure-connection explanation 01:06:41 (+8.8)\n- Network-change revert begun 01:12:07 (+8.9)\n- Fixes 'not taking as expected': EX 02:54:05 / X 03:13:50 (+10.6 / +10.9)\n- First 'no indication' of malicious activity 03:34:14 (+11.2)\n- 'Marginal success' 06:56:29 (+14.6)\n- Authentication/routing patch working 07:25:42 (+15.1)\n- 48-hour timeout: MO 09:03:36 / X 09:24:08 / EX 09:55:42 (+16.7 / +17.1 / +17.6)\n- 'Approaching normal levels': EX 14:01:18 / X 14:17:29 (+21.7 / +22.0)\n- Microsoft's stated end of impact 16:10 (+23.8; declared later)\n- Apology and cause: X 16:40:18 / EX 17:57:06 (+24.3 / +25.6)\n- Final status with preliminary root cause 04:15:46, 14 Nov (+35.9)\n- All-clear on X 06:09:51, 14 Nov (+37.8)\n- Post-incident report published 04:47, 16 Nov (+84.5)\n- Lamanna's root cause 06:06:35, 16 Nov (+85.8)\n\nShade Microsoft's stated impact window (16:20 to 16:10, 23 h 50 m) separately from the 37.8 h span to the all-clear.\n\nDo not use the 10:05 UTC header start as T0: Microsoft never explains it.\n\nTimes that rest on news reports only, to use as labelled context at most:\n- user-side onset (Al Jazeera about 16:00 GMT; network monitors about 17:30 to 17:45 UTC via PPC Land; AP 'around midday')\n- Downdetector counts\n- when outlets received statements (BleepingComputer 12:06 and 12:15 PM ET; NBC 10:15 AM EST for Lamanna). Each statement's text also appears in a timed Microsoft post, so chart that post instead.\n- Tony Burke's account\n- AP's 'Saturday' restoration\n\nCaveats:\n1) The X times are computed, not read, because x.com was blocked. For a stored, quoted source, the admin-center track is the safer backbone; use X as the second track.\n2) Snapshot the PennO365 page now, before the 30-day window drops these incidents.\n3) Save full X texts from a logged-in browser.\n4) Reproduction script and notes (port them into the repo before publishing any number): /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/post31-sweep/outlook-outage-timeline/decode_x_ids.py and /private/tmp/claude-501/-Users-jonathanchrisnaldy-Claude-Workspace/7a1b9d4a-a613-4eb1-a1d2-f4d11a2b1ecc/scratchpad/post31-sweep/outlook-outage-timeline/notes.md"
+}
