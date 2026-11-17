@@ -81,7 +81,10 @@ Rules that follow from it, all enforced or listed by the gate:
    count, never with another universal.
 4. **A variable is characterised only from its defining document**, quoted with its page in the
    provenance audit. A data file's label is not a definition.
-5. **A fix may only delete text or narrow a claim to a bound key.** Anything added is a new claim and
-   enters the next round's scope, which `gate scope --since N` computes.
-6. **Nothing publishes until `gate publish-check` passes**: a closed round with nothing refuted,
-   unverified or open, and no edit since. No waivers.
+5. **A fix may only delete text or narrow a claim to a bound key.** Anything round 1's fixes add is a
+   new claim and enters round 2's scope, which `gate scope --since 1 --json` computes. After round 2,
+   cuts only.
+6. **Two rounds, then cuts only. Nothing publishes until `gate publish-check` passes**: round 2 whenever
+   round 1's fixes changed what a reader sees, and after it every change is a cut or a whole deletion
+   read once, or an item the owner accepted by name. A third round needs the owner's ask. No blanket
+   waivers.

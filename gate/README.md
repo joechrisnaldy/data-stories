@@ -12,12 +12,17 @@ Run everything from `Projects/analytics-blog`, with Python 3.11 or later (the co
 ```bash
 python3 -m gate <post>                     # check; GATE PASSED or a list of problems, exit 0 or 1
 python3 -m gate render <post>              # write the rendered draft and every [post] extra output
-python3 -m gate snapshot <post> <N>        # store the draft at the start of fact-check round N
-python3 -m gate scope <post> --since <N>   # every sentence added or changed since round N started
+python3 -m gate snapshot <post> <N>        # store the post at the start of fact-check round N, before its panel runs
+python3 -m gate scope <post> --since <N>   # what changed since round N started: sentences added, changed, moved or
+                                           # deleted, and chart files; --json FILE writes the next round's inventory
 python3 -m gate close-round <post> <N>     # record round N; refuses on a red gate or open findings
+python3 -m gate changed <post>             # after the last round: each difference as a row, and what settles it
+                                           # (--json FILE writes the rows for the final read)
+python3 -m gate accept <post> --index <I> --starts "<opening words>" --owner "<the owner's words>"   # one row
 python3 -m gate publish-check <post>       # hard precondition of publishing
 python3 -m unittest discover -s gate/tests -t .   # the gate's own tests (also run by every check)
 python3 gate/replay/replay_audit.py <post>        # replay known attacks on a copy of a post (slow)
+python3 gate/replay/replay_rounds.py <post> ... --old <rounds.py from before 2026-11-16>   # both publish rules
 ```
 
 Every check first runs the gate's own tests and refuses to judge anything if one fails or is skipped;
@@ -30,9 +35,10 @@ check that raises is reported as CRASHED, never as a pass, and the other checks 
 
 - `[post]`: `slug`, `source` (the `.src.md` draft), `rendered`, `results`, `build` (scripts, in order),
   and optionally `sources`, `charts`, `chart_dir`, `docx`, `mdx`, `site_public` (the site's public
-  folder, found from the MDX path when omitted), and `extra`, a list of `[template, output]` pairs
-  rendered like the draft. Both READMEs belong in `extra`; a README that is
-  not rendered from a template is scanned as hand-typed text.
+  folder, found from the MDX path when omitted), `restricted_inputs` (a list naming each input whose
+  terms bar redistribution; `publish-check` then requires the results file to be git-ignored), and
+  `extra`, a list of `[template, output]` pairs rendered like the draft. Both READMEs belong in `extra`;
+  a README that is not rendered from a template is scanned as hand-typed text.
 - `[allow]`: `"phrase" = "reason"` for words and digits that are not results.
 - `[claims]`: `"phrase" = "licence"`. A phrase licenses only the flagged words inside it; under three
   words it licenses only a sentence that is exactly that phrase, unless it is one hyphenated term (a
@@ -62,7 +68,42 @@ an `r = X` printed with an `n = Y` must come from one result object. Citation da
 | style | no em dash, en dash or Unicode minus in any text file (the README inside `data/` included), the .docx, the MDX, or any rendered chart string; no `--` or dash entity in Markdown outside code | six hardcoded files |
 | links | every image the draft links to exists | not attempted |
 | published | the whole live page, references included, equals the rendered draft; title equals the H1; captions are the charts' own footnotes; every front-matter text field and alt text equals its template; each image, at the path the page links, matches its chart | not attempted |
-| rounds | rounds are consecutive and closed once; a round cannot close on a red gate, with an errored lens, or with an UNVERIFIED, OPEN or unevidenced finding; snapshots hold the rendered text of every surface and a manifest of every input; round 2 onward must account for exactly the rendered sentences changed since the previous snapshot (figures changed by code included), and a missing snapshot is an error; a clean round means no input moved during it; publishing requires the last round clean, no change since to anything that determines the post, and both the charts script and the MDX configured | a dead verifier's finding could be filed as refuted |
+| rounds | rounds are consecutive and closed once; a round cannot close on a red gate, with an errored lens, or with an UNVERIFIED, OPEN or unevidenced finding; a snapshot is taken before its round's verdicts exist and holds the rendered text of every surface, a manifest of every input and the hash of every file in the chart folder; round 2 onward must account for exactly the rendered sentences changed since the previous snapshot (figures changed by code included), and a missing snapshot is an error; a clean round means no input moved during it; publishing follows the rule of the next section, with both the charts script and the MDX configured | a dead verifier's finding could be filed as refuted |
+
+## Publishing: two rounds, then cuts only
+
+The owner's rule of 2026-11-16. `publish-check` compares the post with the snapshot the last closed round
+started from: its sentences, surface by surface and in order (a reference entry counts as one sentence),
+and the files of its chart folder.
+
+- **After round 1**, any such difference needs round 2. Round 2's inventory is the file
+  `scope <post> --since 1 --json FILE` writes from round 2's own snapshot: the changed sentences, the
+  `[moved]` and `[deleted]` ones, and each `[chart]` file that differs. An item's id is its place followed
+  by a check of its text, so a verdict given for another list is joined to nothing and the round cannot
+  close on it.
+- **After round 2**, `changed` lists each difference as a row. A cut (a sentence with words removed,
+  where it stood) or a deleted sentence is settled by one CONFIRMED read of that row. New words, a
+  moved sentence and a changed chart are settled only by the owner's acceptance of that row (`accept`,
+  in the owner's words; a chart is accepted at one version). A read or an acceptance counts only for
+  the row it was made for, and a row the read REFUTED stays open until it is undone or the owner
+  accepts it afterwards. Reads and acceptances live in `docs/after-round<N>.json`.
+- A surface that did not exist at the snapshot (a new `[published]` field, the alt text of a new chart)
+  is covered by no read and no acceptance: it needs a round.
+- A third round is possible and never required by the gate except for that case.
+
+What this rule no longer blocks, on purpose: a change to a build script, a `[claims]`, `[allow]` or
+`[pairs]` reason, `docs/sources.json` or untemplated MDX front matter that moves no rendered sentence
+and no chart, and a round's `fixed` count taken alone. The `fresh`, `published` and `sources` checks
+still guard those. On a post whose last snapshot predates per-file hashes (the six closed before
+2026-11-16) the gate cannot tell which input moved: any input change shows as one marker row, which the
+owner accepts as a whole, and the first round opened on such a post lists every chart.
+
+## Changing the gate
+
+A change to the gate starts from a stated invariant and a test that can find violations by itself (a
+model test, a replay on real posts, mutants). It gets ONE attack round and ONE verification round, and
+fixes only what breaks a real post, what the previous gate caught, or what lets through a defect on
+record. Everything else becomes a line in the next section or its own task.
 
 ## What it cannot check (round 1 exists for these)
 
@@ -81,8 +122,37 @@ an `r = X` printed with an `n = Y` must come from one result object. Citation da
   draw); its figures are still checked as results.
 - A cache committed inside `data/` that a build script reads instead of recomputing.
 - A mixed-sample comparison split across two paragraphs.
-- Chart text is not part of a round's snapshot, so a caption changed by chart code alone does not enter
-  the next round's `scope` (it does block a clean close and `publish-check`, through the manifest).
+- Chart text is not read sentence by sentence: a changed chart file is one `[chart]` item of the next
+  round's inventory and one row of `changed`, through its own hash.
+- A cut that changes the meaning by what it removes (a qualifier, a unit word, a sign word such as
+  "minus", part of a number written in words). The one read exists for that.
+- A cut is recognised only where the sentence stood. A sentence that was cut and also moved, or cut
+  between repeated sentences that the comparison lines up elsewhere, shows as new words plus a deletion:
+  more for the owner, never less. Inside one changed stretch, new words that all occur in order in a
+  neighbouring deleted sentence are called a cut of it; the row still points the read at that stretch.
+- A read or an acceptance is of a text and of the change it is, not of a place: identical sentences on
+  one surface share it, and a later change nearby is a row only if a sentence changes. An edit made
+  after the read that leaves no row of its own (new words taken out again before anyone accepted them)
+  does not void the reads of the sentences around it: after any edit, run the read again.
+- Paragraph breaks, line breaks and spacing are not compared. A paragraph regrouped, or a star list run
+  into its paragraph, is no row when no sentence and no order changes. The reference list is the
+  exception: each paragraph after `## References` is one entry, so entries joined or split by a blank
+  line are rows, and a list written without blank lines between its entries is one row.
+- A body sentence is split at `U.S.` before a capital; each half is its own row.
+- `scope`'s list of moved or deleted sentences holds a deleted one only from a stretch that lost more
+  than it gained; a sentence rewritten in place appears as its new text.
+- When the panel read the post. A snapshot taken after the panel ran but before `make_verdicts.py` wrote
+  the verdicts holds whatever was edited in between. A record written or edited by hand is trusted.
+- Two record commands at the same moment (`accept`, `make_final_read.py`) can lose an entry or leave
+  `docs/after-round<N>.json` unreadable: run one at a time; if the record is not valid JSON, remove it
+  and record again.
+- `--starts` that is only a surface label such as `[README.md] ` does not guard a wrong `--index`: type
+  the row's own opening words after the label.
+- A final read is recorded whole or not at all (a row without a verdict, or evidence under 12 characters,
+  voids the run), and recording the same read a second time makes it newer than an acceptance given in
+  between.
+- `restricted_inputs` is read at `publish-check` only, and checks only that the results file is
+  git-ignored.
 - `cite` reads only the draft: a README citing a work with no reference entry passes.
 - `style` reads READMEs directly inside `data/` and `sources/`, not in folders below them.
 - A one-word hyphenated `[claims]` entry licenses every later use of that term.
@@ -104,4 +174,5 @@ moving the inner pair out, `(BPS, 2024; the consumer price index, CPI)`, clears 
   chart geometry. These are the next phase of the private defect ledger.
 
 Proof of the above: `audit/gate-replay-2026-10-09.txt`, the replay of every attack on the previous
-gate and on this gate's first version, against copies of Post 25.
+gate and on this gate's first version, against copies of Post 25. The publish rule of 2026-11-16 is
+replayed against the rule before it on six real posts in `audit/rounds-replay-2026-11-16.txt`.

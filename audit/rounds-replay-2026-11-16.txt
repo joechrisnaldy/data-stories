@@ -1,0 +1,70 @@
+Replay of the publish rule on six real posts, 2026-11-16.
+
+Command, from Projects/analytics-blog (reads only; needs each post's local snapshots and results):
+    git show fc616c3:gate/rounds.py > /tmp/old_rounds.py
+    python3 gate/replay/replay_rounds.py reversal-of-fortune safe-haven-retest msci-fear-chain jht-401k \
+        genz-house-chase rent-vs-buy --old /tmp/old_rounds.py
+
+The old rule is the one of 2026-10-09: publish only after a round that fixed nothing, with no input changed
+since. The new rule is the one of 2026-11-16: two rounds, then cuts only (gate/README.md, "Publishing"). For
+each post the replay lists what every round changed, as the new rule counts it, and what each rule says about
+publishing the post as it stands. The run exits 1 if the new rule blocks a post the old rule lets publish.
+Exit code of this run: 0.
+
+== reversal-of-fortune: 9 closed round(s)
+  snapshot 1 -> 2: 83 sentence(s) changed (4 cut, 79 new words, 0 moved), 65 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 2 -> 3: 15 sentence(s) changed (3 cut, 12 new words, 0 moved), 13 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 3 -> 4: 7 sentence(s) changed (2 cut, 5 new words, 0 moved), 5 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 4 -> 5: 0 sentence(s) changed (0 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 5 -> 6: 1 sentence(s) changed (0 cut, 1 new words, 0 moved), 1 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 6 -> 7: 0 sentence(s) changed (0 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 7 -> 8: 0 sentence(s) changed (0 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 8 -> 9: 0 sentence(s) changed (0 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  old rule: PUBLISH OK
+  new rule: PUBLISH OK
+== safe-haven-retest: 7 closed round(s)
+  snapshot 1 -> 2: 42 sentence(s) changed (7 cut, 35 new words, 0 moved), 38 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 2 -> 3: 9 sentence(s) changed (1 cut, 8 new words, 0 moved), 8 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 3 -> 4: 2 sentence(s) changed (0 cut, 2 new words, 0 moved), 2 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 4 -> 5: 14 sentence(s) changed (0 cut, 13 new words, 1 moved), 3 gone, 7 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 5 -> 6: 7 sentence(s) changed (0 cut, 7 new words, 0 moved), 7 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 6 -> 7: 5 sentence(s) changed (0 cut, 5 new words, 0 moved), 4 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  old rule: PUBLISH OK
+  new rule: PUBLISH OK
+== msci-fear-chain: 7 closed round(s)
+  snapshot 1 -> 2: 59 sentence(s) changed (15 cut, 44 new words, 0 moved), 47 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 2 -> 3: 25 sentence(s) changed (5 cut, 20 new words, 0 moved), 21 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 3 -> 4: 1 sentence(s) changed (1 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 4 -> 5: 1 sentence(s) changed (0 cut, 1 new words, 0 moved), 1 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 5 -> 6: 2 sentence(s) changed (2 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 6 -> 7: 0 sentence(s) changed (0 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  old rule: PUBLISH OK
+  new rule: PUBLISH OK
+== jht-401k: 9 closed round(s)
+  snapshot 1 -> 2: 39 sentence(s) changed (8 cut, 31 new words, 0 moved), 38 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 2 -> 3: 14 sentence(s) changed (1 cut, 13 new words, 0 moved), 13 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 3 -> 4: 5 sentence(s) changed (0 cut, 5 new words, 0 moved), 5 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 4 -> 5: 2 sentence(s) changed (1 cut, 1 new words, 0 moved), 1 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 5 -> 6: 1 sentence(s) changed (0 cut, 1 new words, 0 moved), 1 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 6 -> 7: 3 sentence(s) changed (0 cut, 3 new words, 0 moved), 3 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 7 -> 8: 1 sentence(s) changed (1 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 8 -> 9: 0 sentence(s) changed (0 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  old rule: PUBLISH OK
+  new rule: PUBLISH OK
+== genz-house-chase: 5 closed round(s)
+  snapshot 1 -> 2: 50 sentence(s) changed (3 cut, 45 new words, 2 moved), 38 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 2 -> 3: 6 sentence(s) changed (4 cut, 2 new words, 0 moved), 2 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 3 -> 4: 1 sentence(s) changed (1 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 4 -> 5: 1 sentence(s) changed (0 cut, 1 new words, 0 moved), 1 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  old rule: PUBLISH OK
+  new rule: PUBLISH OK
+== rent-vs-buy: 4 closed round(s)
+  snapshot 1 -> 2: 7 sentence(s) changed (1 cut, 6 new words, 0 moved), 8 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 2 -> 3: 0 sentence(s) changed (0 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  snapshot 3 -> 4: 0 sentence(s) changed (0 cut, 0 new words, 0 moved), 0 gone, 0 new surface(s); charts not comparable (a snapshot predates per-file hashes)
+  old rule: BLOCKED, 1 reason(s)
+      - round 4 fixed 4 finding(s); those fixes need a diff-scoped round 5 before publishing
+  new rule: BLOCKED, 2 reason(s)
+      - cut, not read: [README.md] | File | What it is | |---|---| | `docs/2026-11-13-rent-vs-buy-design.md` [...]
+      - changed, not accepted: (an input changed; this snapshot predates per-file hashes)
+SUMMARY: 6 post(s); the old rule lets 5 publish, the new rule 5; verdicts differ on none; blocked by the new rule only: none
