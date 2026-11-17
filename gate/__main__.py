@@ -3,12 +3,15 @@
     python3 -m gate check <post>                 (also: python3 -m gate <post>)
     python3 -m gate render <post>
     python3 -m gate snapshot <post> <N>
-    python3 -m gate scope <post> --since <N>
+    python3 -m gate scope <post> --since <N> [--json FILE]
     python3 -m gate close-round <post> <N>
+    python3 -m gate changed <post> [--json FILE]
+    python3 -m gate accept <post> --index <I> --starts "<opening words>" --owner "<the owner's words>" [--date YYYY-MM-DD]
     python3 -m gate publish-check <post>
 """
 
 import argparse
+import datetime
 import json
 import os
 import re
@@ -21,7 +24,7 @@ from gate.config import ConfigError, load
 from gate.render import RenderError, render
 
 GATE_DIR = os.path.dirname(os.path.abspath(__file__))
-COMMANDS = ("check", "render", "snapshot", "scope", "close-round", "publish-check")
+COMMANDS = ("check", "render", "snapshot", "scope", "close-round", "changed", "accept", "publish-check")
 SELFTEST_TIMEOUT = 600
 # The self-test can itself start the gate (tests of the command line). Without this guard that recursed
 # without bound and leaked thousands of temp directories on 2026-10-09.
@@ -189,7 +192,63 @@ def _parser():
     s = sub.add_parser("scope")
     s.add_argument("post")
     s.add_argument("--since", type=int, required=True)
+    s.add_argument("--json")
+    s = sub.add_parser("changed")
+    s.add_argument("post")
+    s.add_argument("--json")
+    s = sub.add_parser("accept")
+    s.add_argument("post")
+    s.add_argument("--index", type=int, required=True)
+    s.add_argument("--starts", required=True)
+    s.add_argument("--owner", required=True)
+    s.add_argument("--date")
     return p
+
+
+def _write_json(path: str, value) -> None:
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(value, f, indent=1, ensure_ascii=False)
+        f.write("\n")
+
+
+def _scope(cfg, since: int, out) -> None:
+    """The next round's scope as the post stands now; with a file, the round's inventory from its own snapshot."""
+    changed = rounds.scope(cfg, since)
+    print(f"{len(changed)} sentence(s) added or changed since round {since}; these are the next round's scope:")
+    for s in changed:
+        print(f"  - {s}")
+    charts = rounds.changed_since(cfg, since)["charts"]
+    unplaced = charts == [rounds.LEGACY_CHANGE]             # an older snapshot: some input moved, a chart or not
+    for what, items in (("sentence(s) moved or deleted", rounds.moved_or_deleted(cfg, since)),
+                        ("chart file(s) changed", charts))[:1 if unplaced else 2]:
+        print(f"{len(items)} {what} since round {since}:")
+        for item in items:
+            print(f"  - {item}")
+    if unplaced:
+        print(f"an input changed since round {since}; that snapshot predates per-file hashes, so which input, and "
+              "whether a chart, is not known")
+    if out:
+        inventory = rounds.round_inventory(cfg, since + 1)
+        _write_json(out, inventory)
+        print(f"wrote round {since + 1}'s inventory, {len(inventory)} item(s) from its snapshot, to {out}")
+
+
+def _changed(cfg, out) -> None:
+    """Every difference from the snapshot the last closed round started from, and what settles each."""
+    s = rounds.settlement(cfg)
+    unsettled = sum(1 for r in s["rows"] if r["state"] not in rounds.SETTLED)
+    print(f"{len(s['rows'])} change(s) since the snapshot round {s['round']} started from, {unsettled} not settled:")
+    for r in s["rows"]:
+        print(f"  [{r['index']}] {r['state']}: {r['item']}")
+        if r["cut_of"]:
+            print(f"        cut of: {r['cut_of']}")
+    for label in s["new_surfaces"]:
+        print(f"  new surface, covered by no round: {label}")
+    if s["round"] < 2 and (s["rows"] or s["new_surfaces"]):
+        print("after round 1 every change needs round 2; reads and acceptances start after round 2")
+    if out:
+        _write_json(out, s)
+        print(f"wrote {out}")
 
 
 def main(argv) -> int:
@@ -211,10 +270,15 @@ def main(argv) -> int:
             print(f"snapshot {rounds.snapshot(cfg, args.round)}")
             return 0
         if args.cmd == "scope":
-            changed = rounds.scope(cfg, args.since)
-            print(f"{len(changed)} sentence(s) added or changed since round {args.since}; these are the next round's scope:")
-            for s in changed:
-                print(f"  - {s}")
+            _scope(cfg, args.since, args.json)
+            return 0
+        if args.cmd == "changed":
+            _changed(cfg, args.json)
+            return 0
+        if args.cmd == "accept":
+            row = rounds.record_acceptance(cfg, rounds.settlement(cfg)["round"], args.index, args.starts, args.owner,
+                                           args.date or datetime.date.today().isoformat())
+            print(f"accepted [{row['index']}] {row['item']}")
             return 0
         if args.cmd == "close-round":
             print(json.dumps(rounds.close_round(cfg, args.round, run_check(args.post))))

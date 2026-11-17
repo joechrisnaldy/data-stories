@@ -1,6 +1,7 @@
 """The command line accepts the README's own usage, the config refuses what it cannot honour, and a
 crash inside any check is reported as a problem instead of killing the run."""
 
+import json
 import os
 import shutil
 import subprocess
@@ -8,6 +9,7 @@ import sys
 import tempfile
 import unittest
 
+from gate import rounds
 from gate.config import ConfigError, load
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -36,6 +38,13 @@ class ConfigTest(unittest.TestCase):
         # 'chart' instead of 'charts' used to switch the chart checks off silently
         with self.assertRaises(ConfigError):
             load(self.write(BASE + 'chart = "make_charts.py"\n'))
+
+    def test_restricted_inputs_is_a_list_of_source_names(self):
+        for bad in ('"AEI"', '[""]', "[1]", '["AEI", " "]'):
+            with self.subTest(bad=bad), self.assertRaises(ConfigError):
+                load(self.write(BASE + f"restricted_inputs = {bad}\n"))
+        self.assertEqual(load(self.write(BASE + 'restricted_inputs = ["AEI"]\n')).restricted_inputs, ("AEI",))
+        self.assertEqual(load(self.write(BASE)).restricted_inputs, ())
 
     def test_build_must_be_a_list(self):
         with self.assertRaises(ConfigError):
@@ -77,6 +86,120 @@ class CliTest(unittest.TestCase):
         gate("snapshot", self.d, "1")
         r = gate("scope", self.d, "--since", "1")
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
+    def put(self, rel, body):
+        os.makedirs(os.path.dirname(os.path.join(self.d, rel)), exist_ok=True)
+        with open(os.path.join(self.d, rel), "w") as f:
+            f.write(body)
+
+    def close(self, n, scope=None):
+        """Close round n in this process: the close-round command would run the whole gate on this stub post."""
+        v = {"round": n, "lenses_dispatched": 4, "lenses_returned": 4, "lenses_errored": 0, "findings": [
+            {"id": "A1", "verdict": "REFUTED", "evidence": "results.json tidy_story.r = -0.4352", "fixed": True}]}
+        self.put(f"docs/round{n}-verdicts.json", json.dumps({**v, **({} if scope is None else {"scope": scope})}))
+        rounds.close_round(load(self.d), n, gate_passed=True)
+
+    def round_1_fixed_a_sentence_and_a_chart(self):
+        self.put("draft/d.src.md", "First sentence. Second sentence. Third sentence.")
+        self.put("charts/c1.png", "one")
+        rounds.snapshot(load(self.d), 1)
+        self.put("draft/d.src.md", "First sentence. Second sentence, fixed and long.")
+        self.put("charts/c1.png", "one, redrawn")
+        self.close(1)
+
+    def two_rounds_then_a_cut_and_a_redrawn_chart(self):
+        self.round_1_fixed_a_sentence_and_a_chart()
+        rounds.snapshot(load(self.d), 2)
+        self.close(2, scope=["Second sentence, fixed and long."])
+        self.put("draft/d.src.md", "First sentence. Second sentence, fixed.")
+        self.put("charts/c1.png", "one, redrawn twice")
+
+    def test_scope_names_changed_charts_and_writes_the_round_inventory(self):
+        self.round_1_fixed_a_sentence_and_a_chart()
+        out = os.path.join(self.d, "inventory.json")
+        r = gate("scope", self.d, "--since", "1", "--json", out)
+        self.assertEqual(r.returncode, 1, r.stdout + r.stderr)           # round 2 has no snapshot to list from yet
+        self.assertIn("no snapshot for round 2", r.stdout)
+        self.assertFalse(os.path.exists(out))
+        gate("snapshot", self.d, "2")
+        r = gate("scope", self.d, "--since", "1", "--json", out)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("  - Second sentence, fixed and long.", r.stdout)
+        self.assertIn("2 sentence(s) moved or deleted since round 1:\n  - [deleted] Second sentence.\n"
+                      "  - [deleted] Third sentence.", r.stdout)
+        self.assertIn("1 chart file(s) changed since round 1:\n  - charts/c1.png", r.stdout)
+        with open(out) as f:
+            self.assertEqual([x["text"] for x in json.load(f)], [
+                "Second sentence, fixed and long.", "[deleted] Second sentence.", "[deleted] Third sentence.",
+                "[chart] charts/c1.png"])
+
+    def test_scope_does_not_call_an_input_change_it_cannot_place_a_chart(self):
+        # attack of 2026-11-16: on a post whose snapshot predates per-file hashes, any input change was printed as
+        # "1 chart file(s) changed" although no chart had moved
+        self.put("charts/c1.png", "one")
+        path = rounds.snapshot(load(self.d), 1)
+        with open(path) as f:
+            snap = json.load(f)
+        del snap["outputs"]
+        self.put("draft/.rounds/1.json", json.dumps(snap))
+        self.assertIn("0 chart file(s) changed since round 1", gate("scope", self.d, "--since", "1").stdout)
+        self.put("results.json", "{ }")
+        r = gate("scope", self.d, "--since", "1")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertNotIn("chart file(s) changed", r.stdout)
+        self.assertIn("an input changed since round 1; that snapshot predates per-file hashes, so which input, and "
+                      "whether a chart, is not known", r.stdout)
+
+    def test_changed_lists_each_row_and_writes_json(self):
+        self.two_rounds_then_a_cut_and_a_redrawn_chart()
+        out = os.path.join(self.d, "changed.json")
+        r = gate("changed", self.d, "--json", out)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("2 change(s) since the snapshot round 2 started from, 2 not settled", r.stdout)
+        self.assertIn("  [0] cut, not read: Second sentence, fixed.\n        cut of: Second sentence, fixed and long.",
+                      r.stdout)
+        self.assertIn("  [1] changed, not accepted: charts/c1.png", r.stdout)
+        with open(out) as f:
+            got = json.load(f)
+        self.assertEqual((got["round"], [(x["index"], x["kind"], x["state"]) for x in got["rows"]]),
+                         (2, [(0, "sentence", "cut, not read"), (1, "chart", "changed, not accepted")]))
+
+    def test_accept_records_the_owners_words_for_one_row(self):
+        self.two_rounds_then_a_cut_and_a_redrawn_chart()
+        r = gate("accept", self.d, "--index", "1", "--starts", "charts/c9.png", "--owner", "yes, the redrawn chart stands")
+        self.assertEqual(r.returncode, 1, r.stdout + r.stderr)           # not what row 1 opens with
+        self.assertIn("accept: RoundError: row 1 does not open with", r.stdout)
+        r = gate("accept", self.d, "--index", "1", "--starts", "charts/c1.png", "--owner",
+                 "yes, the redrawn chart stands", "--date", "2026-11-16")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("accepted [1] charts/c1.png", r.stdout)
+        r = gate("accept", self.d, "--index", "0", "--starts", "Second sentence, fixed.", "--owner", "fine, keep the cut")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)           # the day defaults to today
+        after = gate("changed", self.d).stdout
+        self.assertIn("  [0] accepted: Second sentence, fixed.", after)
+        self.assertIn("2 change(s) since the snapshot round 2 started from, 0 not settled", after)
+        self.assertIn("  [1] accepted: charts/c1.png", gate("changed", self.d).stdout)
+        with open(os.path.join(self.d, "docs", "after-round2.json")) as f:
+            entry = json.load(f)["accepted"][0]
+        self.assertEqual((entry["owner"], entry["date"], entry["kind"]),
+                         ("yes, the redrawn chart stands", "2026-11-16", "chart"))
+
+    def test_changed_says_round_2_is_needed_after_round_1_and_lists_a_new_surface(self):
+        self.round_1_fixed_a_sentence_and_a_chart()
+        self.assertIn("after round 1 every change needs round 2", gate("changed", self.d).stdout)
+        self.put("p.mdx", "---\ntitle: x\n---\n")
+        self.put("gate.toml", BASE + 'mdx="p.mdx"\n[published]\nexcerpt="Hello there."\n')
+        r = gate("changed", self.d)
+        self.assertIn("  new surface, covered by no round: [published] excerpt", r.stdout, r.stdout + r.stderr)
+
+    def test_changed_and_accept_without_a_closed_round_are_errors_not_tracebacks(self):
+        gate("snapshot", self.d, "1")
+        for args in (("changed", self.d), ("accept", self.d, "--index", "0", "--starts", "Text.", "--owner", "ok then")):
+            with self.subTest(cmd=args[0]):
+                r = gate(*args)
+                self.assertEqual(r.returncode, 1, r.stdout + r.stderr)
+                self.assertIn("no fact-check round has been closed", r.stdout)
+                self.assertNotIn("Traceback", r.stdout + r.stderr)
 
     def test_unknown_command_is_an_error_not_a_silent_check(self):
         r = gate("publish_check", self.d)

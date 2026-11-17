@@ -14,7 +14,7 @@ class ConfigError(ValueError):
 
 _REQUIRED = ("slug", "source", "rendered", "results", "build")
 _OPTIONAL_PATHS = ("sources", "charts", "docx", "mdx")
-_POST_KEYS = set(_REQUIRED) | set(_OPTIONAL_PATHS) | {"chart_dir", "extra", "site_public"}
+_POST_KEYS = set(_REQUIRED) | set(_OPTIONAL_PATHS) | {"chart_dir", "extra", "site_public", "restricted_inputs"}
 _SECTIONS = {"post", "allow", "claims", "pairs", "published"}
 
 
@@ -33,6 +33,7 @@ class Config:
     mdx: str = None
     site_public: str = None     # the site's public folder: each published image src resolves inside it
     extra: tuple = ()           # further (source, rendered) template pairs, e.g. the post README
+    restricted_inputs: tuple = ()   # sources whose terms bar redistribution: results.json then stays git-ignored
     allow: dict = field(default_factory=dict)
     claims: dict = field(default_factory=dict)
     pairs: dict = field(default_factory=dict)       # phrase -> {"reason": str, "paths": [result paths]}
@@ -85,6 +86,9 @@ def load(post_dir: str) -> Config:
     if not (isinstance(extra, list) and all(isinstance(e, list) and len(e) == 2
                                             and all(isinstance(x, str) and x.strip() for x in e) for e in extra)):
         raise ConfigError("[post] extra must be a list of [source, rendered] pairs")
+    restricted = post.get("restricted_inputs", [])
+    if not (isinstance(restricted, list) and all(isinstance(x, str) and x.strip() for x in restricted)):
+        raise ConfigError("[post] restricted_inputs must be a list of source names")
     p = lambda rel: os.path.normpath(os.path.join(post_dir, rel))
     published = raw.get("published", {})
     if not all(isinstance(v, str) and v.strip() for v in published.values()):
@@ -94,6 +98,6 @@ def load(post_dir: str) -> Config:
         results=p(post["results"]), build=tuple(p(b) for b in post["build"]),
         chart_dir=p(post.get("chart_dir", "charts")),
         **{k: (p(post[k]) if k in post else None) for k in _OPTIONAL_PATHS + ("site_public",)},
-        extra=tuple((p(a), p(b)) for a, b in extra),
+        extra=tuple((p(a), p(b)) for a, b in extra), restricted_inputs=tuple(restricted),
         allow=_reasons(raw.get("allow", {}), "allow"), claims=_reasons(raw.get("claims", {}), "claims"),
         pairs=_pairs(raw.get("pairs", {})), published=dict(published))
