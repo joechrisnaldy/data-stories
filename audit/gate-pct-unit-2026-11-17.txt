@@ -1,0 +1,286 @@
+The percent-unit rule of the blog gate, 2026-11-17. Branch gate/pct-unit from main at cca6fbe. Run with Python 3.13.14.
+
+The defect on record. On 2026-11-17 Post 31 (outlook-outage) rendered "In GWI's survey, 76.4 of internet users ...",
+"against 54.9 for WhatsApp", "In Indonesia the picture flips: 92.7 of internet users ..." and, in chart 2's alt text,
+"email 76.4 and WhatsApp 54.9 in GWI's surveyed markets, WhatsApp 92.7 in Indonesia". pct0 and pct1 print a bare number
+(gate/formats.py), and the full gate printed GATE PASSED. The word "percent" was added by hand the same day.
+
+The invariant is stated in gate/README.md (the numbers row of What it checks); its limits and known false positives
+are listed there too.
+
+How it was tested (gate/README.md, Changing the gate):
+- Tests first: the new self-tests in gate/tests/test_numbers_pairs.py (PercentUnitTest) and gate/tests/test_text_config.py,
+  each seen failing before the code it tests or under a deliberately wrong version of it. The self-test runs 363 tests
+  here (339 on main).
+- A replay on every post with a gate.toml, gate/replay/replay_units.py; its part 3 is an oracle written apart from the
+  rule's splitter.
+- The real defect replayed: a copy of Post 31 with its pre-fix words restored, re-rendered, and its mdx line removed, so
+  the published check is SKIPPED in both runs of section 1.
+- ONE attack round: five attackers (false negatives, false positives, crashes, splitter and coverage, harness and
+  evidence), each finding re-run by an independent skeptic, 31 findings. Fixed: every layout in which the defect on record
+  passed in the markdown the posts use (list items, a stop before a closing mark, table rows, whose column header may name
+  the unit, sentence openers, heading, image and quote lines, 'devs.', the ellipsis, code and HTML comments) and the
+  replay's mutants, which had been cut by the splitter under test. The rest is documented in gate/README.md.
+- ONE verification round: five verifiers re-ran every attack reproducer on the fixed code, and a sixth replayed every
+  recorded attack of the 2026-10-09 audit on Post 25 (gate/replay/replay_audit.py): no outcome differs from main's record
+  in audit/gate-replay-2026-11-17.txt. It upheld further shapes of the defect. Fixed after it, each with a test: a line
+  ending in a hard break, a sentence opening with anything but a lowercase letter, an escaped pipe in a table cell; and
+  three replay faults (part 2 honours a column header's unit; the oracle reads the ellipsis and 'devs.' as the rule does; a
+  miss counts as a known limit only when every boundary inside the rule's sentence opens lowercase). These last fixes had
+  no round of their own; the verification round's corpus of injected cases was re-run on them (section 4). Everything
+  else it upheld is documented in gate/README.md.
+- A security review before the commit found nothing above LOW. Two of the new regular expressions were quadratic on
+  adversarial text (a line holding tens of thousands of spaces; thousands of unclosed '<!--' openers). Both are bounded
+  now: a run of spaces starts once, and an unclosed comment or code fence is masked to the end of the text, as Markdown
+  reads it. The timings before and after are section 5.
+
+The outputs below are verbatim. Temporary folder names and the gate's own messages are as printed.
+
+== 1a. The pre-fix Post 31 copy under main's gate (cca6fbe)
+   (prefix-main.txt)
+gate      outlook-outage
+self-test 339 tests passed
+render    32 placeholders bound (10 results and 8 sources in the draft, 10 in published fields, 4 in other templates)
+rendered  ok
+fresh     ok      results and charts match a clean rebuild, and every template prints the same from both; two rebuilds match byte for byte
+numbers   ok      8 [allow] phrases, 21 chart literals, 8 further templates
+pairs     ok      0 [pairs] exemptions
+claims    ok      6 [claims] entries
+cite      ok
+sources   ok      5 stored documents verified
+panels    ok      3 panels
+style     ok      24 files, 54 rendered chart strings
+links     ok
+published SKIPPED   no MDX configured
+GATE PASSED
+exit 0
+
+== 1b. The pre-fix Post 31 copy under this branch
+   (prefix-new.txt)
+gate      outlook-outage
+self-test 363 tests passed
+render    32 placeholders bound (10 results and 8 sources in the draft, 10 in published fields, 4 in other templates)
+rendered  ok
+fresh     ok      results and charts match a clean rebuild, and every template prints the same from both; two rebuilds match byte for byte
+numbers   6 problem(s)
+            - {{shares.email_global:pct1}} prints a percent at line 39, but its sentence names no unit ('percent', 'per cent' or '%'): "In GWI's survey, 76.4 of internet users aged 16 and over in its surveyed markets said they"
+            - {{shares.whatsapp_global:pct1}} prints a percent at line 39, but its sentence names no unit ('percent', 'per cent' or '%'): "In GWI's survey, 76.4 of internet users aged 16 and over in its surveyed markets said they"
+            - {{shares.whatsapp_indonesia:pct1}} prints a percent at line 39, but its sentence names no unit ('percent', 'per cent' or '%'): 'In Indonesia the picture flips: 92.7 of internet users said they used WhatsApp in the past'
+            - {{shares.email_global:pct1}} prints a percent at [published] alt:oo-2-email-vs-whatsapp.png, but its sentence names no unit ('percent', 'per cent' or '%'): 'A bar chart of the share of internet users aged 16 and over who used email and WhatsApp in'
+            - {{shares.whatsapp_global:pct1}} prints a percent at [published] alt:oo-2-email-vs-whatsapp.png, but its sentence names no unit ('percent', 'per cent' or '%'): 'A bar chart of the share of internet users aged 16 and over who used email and WhatsApp in'
+            - {{shares.whatsapp_indonesia:pct1}} prints a percent at [published] alt:oo-2-email-vs-whatsapp.png, but its sentence names no unit ('percent', 'per cent' or '%'): 'A bar chart of the share of internet users aged 16 and over who used email and WhatsApp in'
+pairs     ok      0 [pairs] exemptions
+claims    ok      6 [claims] entries
+cite      ok
+sources   ok      5 stored documents verified
+panels    ok      3 panels
+style     ok      24 files, 54 rendered chart strings
+links     ok
+published SKIPPED   no MDX configured
+GATE FAILED: 6 problem(s)
+exit 1
+
+== 2. This branch's gate on the live post genz-house-chase
+   (genz-house-chase.txt)
+gate      genz-house-chase
+self-test 363 tests passed
+render    172 placeholders bound (106 results and 11 sources in the draft, 39 in published fields, 16 in other templates)
+rendered  ok
+fresh     ok      results and charts match a clean rebuild, and every template prints the same from both; two rebuilds match byte for byte
+numbers   ok      24 [allow] phrases, 53 chart literals, 9 further templates
+pairs     ok      0 [pairs] exemptions
+claims    ok      37 [claims] entries
+cite      ok
+sources   ok      7 stored documents verified
+panels    ok      4 panels
+style     ok      26 files, 93 rendered chart strings
+links     ok
+published ok      whole page, 7 templated fields, captions and images against the charts
+GATE PASSED
+exit 0
+
+== 2. This branch's gate on the live post jht-401k
+   (jht-401k.txt)
+gate      jht-401k
+self-test 363 tests passed
+render    91 placeholders bound (37 results and 14 sources in the draft, 28 in published fields, 12 in other templates)
+rendered  ok
+fresh     ok      results and charts match a clean rebuild, and every template prints the same from both; two rebuilds match byte for byte
+numbers   ok      34 [allow] phrases, 46 chart literals, 9 further templates
+pairs     ok      0 [pairs] exemptions
+claims    ok      4 [claims] entries
+cite      ok
+sources   ok      11 stored documents verified
+panels    ok      4 panels
+style     ok      32 files, 97 rendered chart strings
+links     ok
+published ok      whole page, 7 templated fields, captions and images against the charts
+GATE PASSED
+exit 0
+
+== 2. This branch's gate on the live post msci-fear-chain
+   (msci-fear-chain.txt)
+gate      msci-fear-chain
+self-test 363 tests passed
+render    235 placeholders bound (159 results and 1 sources in the draft, 51 in published fields, 24 in other templates)
+rendered  ok
+fresh     ok      results and charts match a clean rebuild, and every template prints the same from both; two rebuilds match byte for byte
+numbers   ok      33 [allow] phrases, 76 chart literals, 9 further templates
+pairs     ok      0 [pairs] exemptions
+claims    ok      4 [claims] entries
+cite      ok
+sources   ok      1 stored documents verified
+panels    ok      7 panels
+style     ok      39 files, 177 rendered chart strings
+links     ok
+published ok      whole page, 7 templated fields, captions and images against the charts
+GATE PASSED
+exit 0
+
+== 2. This branch's gate on the live post outlook-outage
+   (outlook-outage.txt)
+gate      outlook-outage
+self-test 363 tests passed
+render    31 placeholders bound (10 results and 8 sources in the draft, 9 in published fields, 4 in other templates)
+rendered  ok
+fresh     ok      results and charts match a clean rebuild, and every template prints the same from both; two rebuilds match byte for byte
+numbers   ok      8 [allow] phrases, 20 chart literals, 8 further templates
+pairs     ok      0 [pairs] exemptions
+claims    ok      6 [claims] entries
+cite      ok
+sources   ok      5 stored documents verified
+panels    ok      3 panels
+style     ok      29 files, 52 rendered chart strings
+links     ok
+published ok      whole page, 6 templated fields, captions and images against the charts
+GATE PASSED
+exit 0
+
+== 2. This branch's gate on the live post rent-vs-buy
+   (rent-vs-buy.txt)
+gate      rent-vs-buy
+self-test 363 tests passed
+render    232 placeholders bound (165 results and 2 sources in the draft, 48 in published fields, 17 in other templates)
+rendered  ok
+fresh     ok      results and charts match a clean rebuild, and every template prints the same from both; two rebuilds match byte for byte
+numbers   ok      16 [allow] phrases, 81 chart literals, 9 further templates
+pairs     ok      0 [pairs] exemptions
+claims    ok      42 [claims] entries
+cite      ok
+sources   ok      1 stored documents verified
+panels    ok      4 panels
+style     ok      27 files, 92 rendered chart strings
+links     ok
+published ok      whole page, 7 templated fields, captions and images against the charts
+GATE PASSED
+exit 0
+
+== 2. This branch's gate on the live post reversal-of-fortune
+   (reversal-of-fortune.txt)
+gate      reversal-of-fortune
+self-test 363 tests passed
+render    172 placeholders bound (118 results and 6 sources in the draft, 21 in published fields, 27 in other templates)
+rendered  ok
+fresh     ok      results and charts match a clean rebuild, and every template prints the same from both; two rebuilds match byte for byte
+numbers   ok      71 [allow] phrases, 52 chart literals, 9 further templates
+pairs     ok      2 [pairs] exemptions
+claims    ok      79 [claims] entries
+cite      ok
+sources   ok      3 stored documents verified
+panels    ok      6 panels
+style     ok      31 files, 127 rendered chart strings
+links     ok
+published ok      whole page, 7 templated fields, captions and images against the charts
+GATE PASSED
+exit 0
+
+== 2. This branch's gate on the live post safe-haven-retest
+   (safe-haven-retest.txt)
+gate      safe-haven-retest
+self-test 363 tests passed
+render    162 placeholders bound (110 results and 0 sources in the draft, 42 in published fields, 10 in other templates)
+rendered  ok
+fresh     ok      results and charts match a clean rebuild, and every template prints the same from both; two rebuilds match byte for byte
+numbers   ok      37 [allow] phrases, 48 chart literals, 9 further templates
+pairs     ok      1 [pairs] exemptions
+claims    ok      30 [claims] entries
+cite      ok
+sources   ok      0 stored documents verified
+panels    ok      6 panels
+style     ok      32 files, 109 rendered chart strings
+links     ok
+published ok      whole page, 7 templated fields, captions and images against the charts
+GATE PASSED
+exit 0
+
+== 3. The replay, python3 -B gate/replay/replay_units.py from Projects/analytics-blog
+   (replay.txt)
+
+7 posts; baseline failures 0; sentence mutants 119 of 119 caught; record mutants 119 of 119 caught (0 figure(s) covered by a column header, 0 known-limit record(s), 0 disagreement(s))
+REPLAY OK
+exit 0
+
+== 4. The verification round's injected cases, re-run on the last fixes (verifier E's runner)
+   (recheck-E.out)
+== live corpus: final replay, and do the oracle's records group figures as the rule's sentences do?
+7 posts; baseline failures 0; sentence mutants 119 of 119 caught; record mutants 119 of 119 caught (0 figure(s) covered by a column header, 0 known-limit record(s), 0 disagreement(s))
+REPLAY OK
+69 surfaces; 199 percent figures; 199 inside a mutated rule sentence; 199 inside a mutated oracle record
+figure groupings identical on 69 surfaces, different on 0
+== each case through the final rule alone (0 = the gate passes the bare figure)
+1 unit failure(s)  C0 leading-pipe table (control): rule units = ['| App | Share of users |', '|---|---|', '| Email | 76.4 percent |', '| WhatsApp | 54.9 |']
+0 unit failure(s)  C1 pipe-less GFM table: rule units = ['App | Share of users --- | --- Email | 76.4 percent WhatsApp | 54.9']
+1 unit failure(s)  C2 escaped pipe shifts the header column: rule units = ['| App | Share of users | Change, percent |', '|---|---|---|', '| Email \\| Gmail | 76.4 | n/a |']
+0 unit failure(s)  C3 stop before an HTML closing tag: rule units = ['<em>Email reached 76.4 percent of users.</em> WhatsApp reached 54.9 of users.']
+0 unit failure(s)  C4 setext heading: rule units = ['Email reached 76.4 percent === WhatsApp reached 54.9 of users.']
+1 unit failure(s)  C5 hard line break: rule units = ['Email: 76.4 percent of users\\', 'WhatsApp: 54.9 of users']
+1 unit failure(s)  C6 sentence opens with an uncased letter: rule units = ['Email reached 76.4 percent of users.', '微信 reached 54.9 of users.']
+1 unit failure(s)  C7 sentence opens with an inline HTML tag: rule units = ['Email reached 76.4 percent of users.', '<abbr>WA</abbr> reached 54.9 of users.']
+== replay, final gate, corpus + SHARED_NO_HEADER
+BASELINE FAILS  outlook-outage | docs/README.src.md | {{shares.whatsapp_global:pct1}} prints a percent at t, but its sentence names no unit ('percent', 'per cent' or '%'): 'WhatsApp: 54.9 of users'
+7 posts; baseline failures 1; sentence mutants 124 of 124 caught; record mutants 124 of 124 caught (0 figure(s) covered by a column header, 0 known-limit record(s), 0 disagreement(s))
+REPLAY FAILED
+== replay, final gate, corpus + ESCAPED_PIPE
+BASELINE FAILS  outlook-outage | docs/README.src.md | {{shares.email_global:pct1}} prints a percent at t, but its sentence names no unit ('percent', 'per cent' or '%'): '| Email \\| Gmail | 76.4 | n/a |'
+7 posts; baseline failures 1; sentence mutants 120 of 120 caught; record mutants 120 of 120 caught (0 figure(s) covered by a column header, 0 known-limit record(s), 0 disagreement(s))
+REPLAY FAILED
+== replay, final gate, corpus + HEADER_UNIT
+7 posts; baseline failures 0; sentence mutants 119 of 119 caught; record mutants 121 of 121 caught (2 figure(s) covered by a column header, 0 known-limit record(s), 0 disagreement(s))
+REPLAY OK
+== replay, final gate, corpus + OPENERS
+BASELINE FAILS  outlook-outage | docs/README.src.md | {{shares.whatsapp_global:pct1}} prints a percent at t, but its sentence names no unit ('percent', 'per cent' or '%'): '微信 reached 54.9 of users.'
+BASELINE FAILS  outlook-outage | docs/README.src.md | {{shares.whatsapp_global:pct1}} prints a percent at t, but its sentence names no unit ('percent', 'per cent' or '%'): '<abbr>WA</abbr> reached 54.9 of users.'
+7 posts; baseline failures 2; sentence mutants 123 of 123 caught; record mutants 123 of 123 caught (0 figure(s) covered by a column header, 0 known-limit record(s), 0 disagreement(s))
+REPLAY FAILED
+== replay, final gate, corpus + K1
+KNOWN LIMIT (record opens lowercase)  outlook-outage | docs/README.src.md | record: 'Weekly, 54.9 again.' | rule's sentence: 'Weekly, 54.9 again. it was 76.4 percent for email.' | not reported: {{shares.whatsapp_global:pct1}}
+7 posts; baseline failures 0; sentence mutants 120 of 120 caught; record mutants 120 of 121 caught (0 figure(s) covered by a column header, 1 known-limit record(s), 0 disagreement(s))
+REPLAY OK
+== replay, final gate, corpus + K2
+KNOWN LIMIT (record opens lowercase)  outlook-outage | docs/README.src.md | record: 'iMessage reached 54.9 of users.' | rule's sentence: 'Email reached 76.4 percent of users. iMessage reached 54.9 of users.' | not reported: {{shares.whatsapp_global:pct1}}
+7 posts; baseline failures 0; sentence mutants 120 of 120 caught; record mutants 120 of 121 caught (0 figure(s) covered by a column header, 1 known-limit record(s), 0 disagreement(s))
+REPLAY OK
+== replay, final gate, corpus + K3
+KNOWN LIMIT (record opens lowercase)  outlook-outage | docs/README.src.md | record: 'Weekly, 54.9 again.' | rule's sentence: 'Weekly, 54.9 again. it was 76.4 percent for email.' | not reported: {{shares.whatsapp_global:pct1}}
+7 posts; baseline failures 0; sentence mutants 121 of 121 caught; record mutants 121 of 122 caught (0 figure(s) covered by a column header, 1 known-limit record(s), 0 disagreement(s))
+REPLAY OK
+== replay, final gate, corpus + ELLIPSIS
+BASELINE FAILS  outlook-outage | docs/README.src.md | {{shares.whatsapp_global:pct1}} prints a percent at t, but its sentence names no unit ('percent', 'per cent' or '%'): 'WhatsApp reached 54.9 of users.'
+7 posts; baseline failures 1; sentence mutants 121 of 121 caught; record mutants 121 of 121 caught (0 figure(s) covered by a column header, 0 known-limit record(s), 0 disagreement(s))
+REPLAY FAILED
+== N2: the final gate with '…' taken out of the rule's _STOP (a regression of this round's fix), corpus + ELLIPSIS
+DISAGREEMENT  outlook-outage | docs/README.src.md | record: 'WhatsApp reached 54.9 of users.' | rule's sentence: 'Email reached 76.4 percent of users… WhatsApp reached 54.9 of users.' | not reported: {{shares.whatsapp_global:pct1}}
+7 posts; baseline failures 0; sentence mutants 120 of 120 caught; record mutants 120 of 121 caught (0 figure(s) covered by a column header, 0 known-limit record(s), 1 disagreement(s))
+REPLAY FAILED
+
+== 5a. The two inputs the security review flagged, timed on the code before the bound
+   (redos-before.txt)
+n=10000: spaces 0.165s, unterminated comments 1.076s, unterminated fences 0.001s
+n=20000: spaces 0.671s, unterminated comments 4.045s, unterminated fences 0.002s
+n=40000: spaces 2.633s, unterminated comments 16.233s, unterminated fences 0.002s
+
+== 5b. The same inputs on this branch
+   (redos-after.txt)
+n=10000: spaces 0.001s, unterminated comments 0.000s, unterminated fences 0.000s
+n=20000: spaces 0.002s, unterminated comments 0.001s, unterminated fences 0.002s
+n=40000: spaces 0.004s, unterminated comments 0.002s, unterminated fences 0.002s

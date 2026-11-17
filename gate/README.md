@@ -58,7 +58,8 @@ Every entry is counted on each run, and an entry that matches nothing fails as s
 | render, rendered | every figure in the draft and the `extra` templates is `{{key:fmt}}` resolved from `results.json` or `{{src:id.values.name:fmt}}` from a stored source, through a strict formatter that refuses values it cannot print honestly (no unsigned negative; no percent formatter on a key whose name says it is already in percent, such as
 `density_pct`, `pct_growth` or `growth_percent`); each rendered file is exactly a fresh render | numbers were typed and compared to `results.json` by membership |
 | numbers | no digit (including `.44` and `_0.44_`), number word (ordinals, "doubled", "-fold", "twice", "trillion", italic `_three_`) or Unicode fraction in the prose, headings, alt text, published fields, READMEs or chart-script strings is unbound, except `[allow]` phrases with a reason; no sign or percent (any spelling) is typed beside a placeholder; every figure a chart prints is a result at its printed precision, sign and percent read as written, and
-an `r = X` printed with an `n = Y` must come from one result object. Citation dates and their page locators in the forms `numbers.py` masks, URLs and the sequential markers of a numbered list are not quantities (a citation's names part is read); in READMEs only, neither are fenced code and inline code containing a letter | digits only; a number before a comma was invisible |
+an `r = X` printed with an `n = Y` must come from one result object; every sentence that prints a percent (a `pct0`/`pct1` placeholder, or a key named for a percent printed as a number; an ordinal, a fraction or a year is not one) names its unit at least once, 'percent', 'per cent' or '%', or 'point' or 'points' for a key in percentage points, outside URLs, link targets, code and HTML comments, where a list item, a table row (which may take the unit from its column's header), a heading, an image line and a quote line are sentences of their own, a line ending in a hard break ends one, and a stop ends one even
+before a closing mark. Citation dates and their page locators in the forms `numbers.py` masks, URLs and the sequential markers of a numbered list are not quantities (a citation's names part is read); in READMEs only, neither are fenced code and inline code containing a letter | digits only; a number before a comma was invisible; a percent printed as a bare number passed (Post 31, 2026-11-17) |
 | pairs | like-for-like figures from different samples in one paragraph each show their n (`sample` ids decide), in the draft, the README templates and the published fields | a phrase such as "on each side" silenced it |
 | claims | every universal, superlative (any -est word) or causal word, however it is quoted or italicised, in the prose, the reference list, the READMEs (code aside), on a chart or in a published field, sits inside a `[claims]` phrase naming its licence | not attempted |
 | cite | every segment of every in-text citation matches a reference entry and every entry is cited; page locators and APA dates are understood; nothing follows the reference list | one direction, parenthetical only, last segment only |
@@ -157,6 +158,15 @@ record. Everything else becomes a line in the next section or its own task.
 - `style` reads READMEs directly inside `data/` and `sources/`, not in folders below them.
 - A one-word hyphenated `[claims]` entry licenses every later use of that term.
 - A value already in percent whose key name does not say so is multiplied by 100 by `pct0`/`pct1`.
+- The percent-unit rule reads a unit named once as covering every percent figure in its sentence, so a second figure printed
+  bare beside a stated one passes ('76.4 percent of users, against 54.9 for WhatsApp' is the convention it allows). A sentence
+  that opens with a lowercase letter, or that follows a stop inside a link's text or a protected abbreviation ('et al.'), is
+  read as part of the one before it; a unit word in a citation's title, a link's text or an address written without
+  `https://` counts; for a key in percentage points any 'point' counts ('at that point'); in a joined placeholder only the
+  first key's unit is asked for. A table without leading pipes, a heading underlined with '===' or '---', and a
+  sentence that ends in a closing mark outside the splitter's set (an HTML tag, '~~', '»') join the next sentence;
+  a unit word in a reference-style link label, a double-backtick span or a '~~~' or indented code block counts.
+  Chart text is not read for units: a chart names its unit on the axis, and its figures are bound by value.
 - A quote whose number uses a mid-dot decimal or space-separated thousands (`11·38`, `1 234`) is not
   read as one number.
 - Setting `GATE_IN_SELFTEST` by hand skips the self-test and can still print GATE PASSED; it exists only
@@ -169,10 +179,21 @@ without the date; a citation that lists a year or a span and then a date of anot
 after a span), such as `(Smith, 2007, n.d., 2012)`, is reported although cite reads it, and giving each date its own
 segment, `(Smith, 2007; Smith, n.d.; Smith, 2012)`, clears it; in a README or a published field, a citation inside
 parentheses that also hold another pair, such as `(by the consumer price index (CPI); BPS, 2024)`, is reported, and
-moving the inner pair out, `(BPS, 2024; the consumer price index, CPI)`, clears it.
+moving the inner pair out, `(BPS, 2024; the consumer price index, CPI)`, clears it. The percent-unit rule's are cleared by
+rewording, never by `[allow]`: it asks for 'percent',
+'per cent' or '%' as written, so 'percentage', 'per-cent', 'per&nbsp;cent', '&#37;' and a full-width percent sign are reported,
+and so is a gap between two shares printed with `pct0`/`pct1` and named in points (emit it as a `_pp` key); a key whose name says
+`pc` (per capita) or `pp` (per person) is read as a percent or as points (rename the key); an abbreviation the splitter does not
+protect, such as `U.S.` or `p. 12`, or a quoted question, cuts a sentence in two; a '%' written directly after a link is masked
+with the link; a list item takes no unit from the line that introduces the list, and a table row none from a unit named
+once in the first column's header or in a caption above the table (name it in each column's header or in the cells); a
+hard-wrapped line that opens with a number and '.' or ')', the second '>' line of one quoted sentence and a wrapped image
+alt text are cut as sentences of their own; a percent figure inside a URL, a link target or code is still asked for a unit.
 - Analysis-code correctness beyond reproducibility, construction alternatives, variable definitions, and
   chart geometry. These are the next phase of the private defect ledger.
 
 Proof of the above: `audit/gate-replay-2026-10-09.txt`, the replay of every attack on the previous
 gate and on this gate's first version, against copies of Post 25. The publish rule of 2026-11-16 is
-replayed against the rule before it on six real posts in `audit/rounds-replay-2026-11-16.txt`.
+replayed against the rule before it on six real posts in `audit/rounds-replay-2026-11-16.txt`. The percent-unit
+rule of 2026-11-17 is replayed on every post with a gate.toml by `gate/replay/replay_units.py`, and the pre-fix Post 31
+against the gate before it, in `audit/gate-pct-unit-2026-11-17.txt`.

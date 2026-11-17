@@ -387,6 +387,160 @@ class NumbersTest(unittest.TestCase):
         self.assertTrue(num_fails("## Three things we learned\n\nText."))
 
 
+SHARES = {"shares": {"email": 0.764, "whatsapp": 0.549, "indonesia": 0.927},
+          "ci": {"mean_pct": -0.4, "lo_pct": -1.3, "hi_pct": 0.5},
+          "ranks": {"density_pct": 80, "income_pct": 20},
+          "gap": {"change_pp": 1.3, "first_pct": 12.1, "last_pct": 14.0},
+          "days": {"count": 17}}
+
+
+def unit_fails(src, readme=False):
+    """The failures that say a percent was printed with no unit in its sentence."""
+    return [f for f in fails_in(SHARES, src, readme) if "names no unit" in f]
+
+
+class PercentUnitTest(unittest.TestCase):
+    """pct0 and pct1 print a bare number: Post 31 printed '76.4 of internet users' and passed the gate."""
+
+    def test_post_31s_sentences_without_the_unit_fail(self):
+        # draft/outlook-break-or-blocker.src.md before the fix of 2026-11-17, figures and citations as written
+        src = ("In GWI's survey, {{shares.email:pct1}} of internet users in its surveyed markets said they used email "
+               "in the past month, against {{shares.whatsapp:pct1}} for WhatsApp (DataReportal, 2026a). In Indonesia "
+               "the picture flips: {{shares.indonesia:pct1}} of internet users said they used WhatsApp in the past "
+               "month (DataReportal, 2026b).")
+        self.assertEqual(len(unit_fails(src)), 3)
+
+    def test_post_31s_alt_text_without_the_unit_fails(self):
+        # the chart 2 alt template of the same day, checked as the published fields are: as a template
+        src = ("A bar chart of the share of internet users who used email and WhatsApp in the past month: email "
+               "{{shares.email:pct1}} and WhatsApp {{shares.whatsapp:pct1}} in GWI's surveyed markets, WhatsApp "
+               "{{shares.indonesia:pct1}} in Indonesia.")
+        self.assertEqual(len(unit_fails(src, readme=True)), 3)
+
+    def test_a_unit_named_once_covers_its_sentence(self):
+        # the conventions of the live posts: a range, a run sharing one unit, an interval after a stated mean
+        for src in ("Among householders under 25 it rose, from {{gap.first_pct:dec1}} to {{gap.last_pct:dec1}} percent.",
+                    "Bitcoin fell further in each: {{shares.email:pct0}} percent against the S&P 500's "
+                    "{{shares.whatsapp:pct0}}, then {{shares.indonesia:pct0}} against {{shares.whatsapp:pct0}}.",
+                    "Bitcoin averaged {{ci.mean_pct:signed1}} percent, with an interval from {{ci.lo_pct:signed1}} to "
+                    "{{ci.hi_pct:signed1}}, and it rose on {{days.count:int}} of the days.",
+                    "In GWI's survey, {{shares.email:pct1}} percent of internet users said they used email, against "
+                    "{{shares.whatsapp:pct1}} for WhatsApp."):
+            with self.subTest(src=src):
+                self.assertEqual(unit_fails(src), [])
+
+    def test_every_spelling_of_the_unit_counts(self):
+        for src in ("the worst {{shares.email:pct0}}% of days", "about {{shares.email:pct0}} per cent of it",
+                    "about {{shares.email:pct0}}&nbsp;percent of it", "a **{{shares.email:pct0}} percent** share"):
+            with self.subTest(src=src):
+                self.assertEqual(unit_fails(src), [])
+
+    def test_percentage_points_are_named_by_points(self):
+        self.assertEqual(unit_fails("after August, by {{gap.change_pp:dec1}} points."), [])
+        self.assertEqual(unit_fails("| Inflation speeds up | {{gap.change_pp:dec1}} points or more faster |"), [])
+        self.assertEqual(len(unit_fails("rates rose by {{gap.change_pp:dec1}} in the year after the slide.")), 1)
+
+    def test_a_percentile_rank_printed_as_an_ordinal_is_not_a_percent(self):
+        # Post 25: 'Sudan, 80th to 20th.' is a rank in percentiles, stated in the sentence before
+        self.assertEqual(unit_fails("Sudan, {{ranks.density_pct:ordinal0}} to {{ranks.income_pct:ordinal0}}."), [])
+
+    def test_a_unit_in_another_sentence_does_not_count(self):
+        src = "Email reached {{shares.email:pct1}} of users. WhatsApp reached {{shares.whatsapp:pct1}} percent."
+        self.assertEqual(len(unit_fails(src)), 1)
+
+    def test_percentage_points_do_not_name_a_percent(self):
+        src = "Email reached {{shares.email:pct1}} of users, up {{gap.change_pp:dec1}} percentage points."
+        self.assertEqual(len(unit_fails(src)), 1)
+
+    def test_a_unit_inside_a_link_or_url_does_not_count(self):
+        for src in ("Email reached {{shares.email:pct1}} of users ([the report](https://example.org/percent-of-users)).",
+                    "Email reached {{shares.email:pct1}} of users (https://example.org/percent-of-users)."):
+            with self.subTest(src=src):
+                self.assertEqual(len(unit_fails(src)), 1)
+
+    # The attack round of 2026-11-17 printed Post 31's own sentences through each layout below and passed the gate.
+    POST31_ITEMS = ("In its surveyed markets, {{shares.email:pct1}} of internet users said they used email (Kemp, 2026a).",
+                    "WhatsApp reached {{shares.whatsapp:pct1}} percent.",
+                    "In Indonesia, {{shares.indonesia:pct1}} of internet users said they used WhatsApp (Kemp, 2026b).")
+
+    def test_each_list_item_is_its_own_sentence(self):
+        for marker in ("- ", "* ", "+ "):
+            for intro in ("The shares:\n", "The shares:\n\n"):
+                src = intro + "\n".join(marker + item for item in self.POST31_ITEMS)
+                with self.subTest(src=src):
+                    self.assertEqual(len(unit_fails(src)), 2)
+                    self.assertEqual(len(unit_fails(src, readme=True)), 2)
+        numbered = "\n".join(f"{i}. {item}" for i, item in enumerate(self.POST31_ITEMS, 1))
+        self.assertEqual(len(unit_fails(numbered)), 2)
+
+    def test_a_stop_before_a_closing_mark_ends_the_sentence(self):
+        # rent-vs-buy and reversal-of-fortune open paragraphs with '**Lead.** Next', 84 times in the live templates
+        bare = "In Indonesia, {{shares.indonesia:pct1}} of internet users said they used WhatsApp"
+        for left, right in (("**", ".**"), ("_", "._"), ('"', '."'), ("“", ".”"), ("(", ".)"), ("*", ".*")):
+            src = f"{left}{bare}{right} In GWI's survey, {{{{shares.email:pct1}}}} percent used email."
+            with self.subTest(src=src):
+                self.assertEqual(len(unit_fails(src)), 1)
+
+    def test_each_table_row_is_its_own_sentence(self):
+        src = "| Service | Share |\n|---|---|\n| Email | {{shares.email:pct1}} percent |\n| WhatsApp | {{shares.whatsapp:pct1}} |"
+        self.assertEqual(len(unit_fails(src)), 1)
+        self.assertEqual(len(unit_fails(src, readme=True)), 1)
+
+    def test_a_column_header_names_the_unit_for_its_column(self):
+        self.assertEqual(unit_fails("| Service | Share (%) |\n|---|---|\n| Email | {{shares.email:pct1}} |\n"
+                                    "| WhatsApp | {{shares.whatsapp:pct1}} |"), [])
+        self.assertEqual(len(unit_fails("| Share (%) | Later |\n|---|---|\n| {{shares.email:pct1}} | "
+                                        "{{shares.whatsapp:pct1}} |")), 1)
+
+    def test_a_heading_image_or_quote_line_is_its_own_sentence(self):
+        for src in ("Email reached {{shares.email:pct1}} percent of users.\n![WhatsApp at {{shares.whatsapp:pct1}}](c.png)",
+                    "## Email at {{shares.email:pct1}} percent\nWhatsApp reached {{shares.whatsapp:pct1}} of users.",
+                    "Email reached {{shares.email:pct1}} percent of users.\n> WhatsApp reached {{shares.whatsapp:pct1}} of users."):
+            with self.subTest(src=src):
+                self.assertEqual(len(unit_fails(src)), 1)
+
+    def test_a_sentence_may_open_with_any_capital_quote_or_mark(self):
+        for opener in ("“WhatsApp”", "_WhatsApp_", "`WhatsApp`", "Émile's app", "**WhatsApp**"):
+            src = (f"Email reached {{{{shares.email:pct1}}}} percent of users. {opener} reached "
+                   "{{shares.whatsapp:pct1}} of users.")
+            with self.subTest(src=src):
+                self.assertEqual(len(unit_fails(src)), 1)
+
+    def test_a_word_that_ends_like_an_abbreviation_still_ends_its_sentence(self):
+        # 'devs.' holds 'vs.', which the splitter protects only as a word of its own
+        src = "Email reached {{shares.email:pct1}} percent of devs. WhatsApp reached {{shares.whatsapp:pct1}} of devs."
+        self.assertEqual(len(unit_fails(src)), 1)
+
+    def test_an_ellipsis_ends_a_sentence(self):
+        src = "Email reached {{shares.email:pct1}} percent of users… WhatsApp reached {{shares.whatsapp:pct1}} of users."
+        self.assertEqual(len(unit_fails(src)), 1)
+
+    def test_a_hard_line_break_ends_a_sentence(self):
+        # the verification round of 2026-11-17: key-figure lines joined by a hard break passed as one sentence
+        for brk in ("<br>", "<br />", "  ", "\\"):
+            src = (f"**Email:** {{{{shares.email:pct1}}}} of internet users{brk}\n"
+                   "**WhatsApp:** {{shares.whatsapp:pct1}} percent of internet users")
+            with self.subTest(brk=repr(brk)):
+                self.assertEqual(len(unit_fails(src)), 1)
+
+    def test_a_sentence_may_open_with_anything_but_a_lowercase_letter(self):
+        for opener in ("£5 plans", "«WhatsApp»", "&amp; WhatsApp", "#WhatsApp"):
+            src = (f"Email reached {{{{shares.email:pct1}}}} percent of users. {opener} reached "
+                   "{{shares.whatsapp:pct1}} of users.")
+            with self.subTest(opener=opener):
+                self.assertEqual(len(unit_fails(src)), 1)
+
+    def test_an_escaped_pipe_does_not_move_a_figure_to_another_column(self):
+        src = ("| App | Share of users | Change, percent |\n|---|---|---|\n"
+               "| Email \\| Gmail | {{shares.email:pct1}} | none |")
+        self.assertEqual(len(unit_fails(src)), 1)
+
+    def test_a_unit_in_code_or_a_comment_does_not_count(self):
+        self.assertEqual(len(unit_fails("Email reached {{shares.email:pct1}} of users; `make_charts.py` prints it "
+                                        "with `'%.1f'`.", readme=True)), 1)
+        self.assertEqual(len(unit_fails("Email reached {{shares.email:pct1}} of users. <!-- percent -->")), 1)
+
+
 class PairsTest(unittest.TestCase):
     def test_mixed_samples_with_both_n_pass(self):
         src = ("They correlate at {{col.r:signed2}} across {{col.n:int}} countries. The same thermometer "

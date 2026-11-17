@@ -2,14 +2,15 @@
 
 Digits are found regardless of what follows them, quantities written as words are found from a fixed
 lexicon, and a sign or a percent typed by hand next to a placeholder is reported, because each of those
-let a wrong figure through an earlier version (see audit/gate-replay-2026-10-09.txt).
+let a wrong figure through an earlier version (see audit/gate-replay-2026-10-09.txt). A sentence that prints a percent
+names its unit (audit/gate-pct-unit-2026-11-17.txt).
 """
 
 import os
 import re
 
 from gate.render import percent_unit
-from gate.text import body_and_refs, mask_spans, paragraphs
+from gate.text import body_and_refs, mask_spans, paragraphs, sentence_spans
 
 # A digit preceded by a letter, another digit or a dot belongs to a name or a number already being read
 # (ERA5, G20, PM2.5), so a number may only START after anything else, including '=' or '('.
@@ -196,6 +197,66 @@ def _beside(text: str, bindings, where) -> list:
     return fails
 
 
+# A figure printed as a percent: a pct0/pct1 placeholder, or a key named for a percentage printed as a number; a key
+# named for percentage points prints points. An ordinal ('the 80th'), a fraction or a year is not a percent.
+_NOT_A_NUMBER = ("ordinal0", "fraction", "year")
+_UNIT_NAMED = {"pct": re.compile(r"%|" + _EDGE_BEFORE + r"(?:per\s*cent|percent)" + _EDGE_AFTER, re.I),
+               "pp": re.compile(_EDGE_BEFORE + r"points?" + _EDGE_AFTER, re.I)}
+_UNIT_WORDS = {"pct": "'percent', 'per cent' or '%'", "pp": "'point' or 'points'"}
+
+
+def _printed_unit(b):
+    if b.fmt.startswith("pct"):
+        return "pct"
+    return None if b.fmt in _NOT_A_NUMBER else percent_unit(b.leaf)
+
+
+_NOT_PROSE = re.compile(r"^```.*?(?:^```|\Z)|`[^`\n]*`|<!--.*?(?:-->|\Z)", re.S | re.M)   # unclosed: to the end
+_PIPE = re.compile(r"(?<!\\)\|")                # a cell edge; an escaped pipe is cell text
+
+
+def _header_cell(printed: str, at: int):
+    """In a table row, the (start, end) of the header cell above the figure at `at`, else None."""
+    line = printed.rfind("\n", 0, at) + 1
+    if not printed[line:at].lstrip().startswith("|"):
+        return None
+    column, top = len(_PIPE.findall(printed, line, at)), line
+    while top > 0:
+        prev = printed.rfind("\n", 0, top - 1) + 1
+        if not printed[prev:top].lstrip().startswith("|"):
+            break
+        top = prev
+    end = printed.find("\n", top)
+    end = len(printed) if end == -1 else end
+    pipes = [m.start() for m in _PIPE.finditer(printed, top, end)]
+    return (pipes[column - 1] + 1, pipes[column]) if 0 < column < len(pipes) else None
+
+
+def _unitless(text: str, bindings, where) -> list:
+    """A sentence that prints a percent names its unit at least once. pct0 and pct1 print a bare number, and Post 31
+    printed '76.4 of internet users' through the gate (2026-11-17). Once per sentence, not per figure: the live posts
+    state the unit once for a range or a run ('from 12.1 to 14.0 percent'). A list item, a table row, a heading and
+    an image line are sentences of their own (text.sentence_spans), and a table row may take its unit from its
+    column's header. A URL, a link target, code and an HTML comment name nothing."""
+    bound = [b for b in bindings if b.end <= len(text)]
+    printed, origin = _printed(text, bound)
+    probe = mask_spans(printed, [m.span() for rx in (_URL, _LINK_TARGET, _NOT_PROSE) for m in rx.finditer(printed)])
+    spans = sentence_spans(printed)
+    fails, seen = [], set()
+    for b in sorted(bound, key=lambda b: b.start):
+        unit = _printed_unit(b)
+        if not unit or (b.start, b.end) in seen:
+            continue
+        seen.add((b.start, b.end))
+        at = origin.index((b.start, b.end))
+        a, e = next(((a, e) for a, e in spans if a <= at < e), (at, at))
+        cell = _header_cell(printed, at)
+        if not _UNIT_NAMED[unit].search(probe[a:e]) and not (cell and _UNIT_NAMED[unit].search(probe[cell[0]:cell[1]])):
+            fails.append(f"{text[b.start:b.end]} prints a percent at {where(b.start)}, but its sentence names no "
+                         f"unit ({_UNIT_WORDS[unit]}): {' '.join(printed[a:e].split())[:90]!r}")
+    return fails
+
+
 def check(source: str, bindings, allow: dict, extra: dict = None, templates=()) -> list:
     """Prose, plus extra hand-typed text (chart-script literals keyed by file:line), plus further templates
     as (label, text, bindings): published fields, extra templates, unconfigured READMEs."""
@@ -204,12 +265,14 @@ def check(source: str, bindings, allow: dict, extra: dict = None, templates=()) 
     body_where = lambda pos: f"line {_line_of(text, pos)}"
     fails = _scan(text, body_where, allow, used)
     fails += _beside(body_and_refs(source)[0], [b for b in bindings if b.end <= len(text)], body_where)
+    fails += _unitless(body_and_refs(source)[0], bindings, body_where)
     for label, lit in (extra or {}).items():
         fails += _scan(lit, lambda pos, label=label: label, allow, used)
     for label, tmpl, binds in templates:
         masked = _masked(tmpl, binds, readme=True)
         fails += _scan(masked, lambda pos, label=label: label, allow, used)
         fails += _beside(tmpl, binds, lambda pos, label=label: label)
+        fails += _unitless(tmpl, binds, lambda pos, label=label: label)
     for phrase in sorted(set(allow) - used):
         fails.append(f"[allow] entry {phrase!r} matches nothing in the prose: remove it")
     return fails

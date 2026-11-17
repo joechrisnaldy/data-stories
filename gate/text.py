@@ -37,6 +37,61 @@ def sentences(text: str):
     return [restore(p).strip() for p in parts if p.strip()]
 
 
+# The units the percent-unit rule reads, finer than paragraph_sentences (which the rounds use, and which stays as it
+# is): within a paragraph, a list item, a table row, a heading, an image line and a quote line each start a new one,
+# and a heading, an image line, a table row and a line ending in a hard break end with their line; a stop ends a
+# sentence even when closing marks follow it ('.**', '._', '."', '.)', '.[^1]'), and the next one may open with
+# anything but a lowercase letter. The attack and verification rounds of 2026-11-17 printed Post 31's bare
+# '76.4 of internet users' through each of those layouts with the rule's earlier splitters, which joined them.
+_BLOCK = re.compile(r"[ \t]*(?:[-*+][ \t]|\d+[.)][ \t]|\||>|#{1,6}(?=\s|$)|!\[)")
+_ONE_LINE = re.compile(r"[ \t]*(?:\||#{1,6}(?=\s|$)|!\[)")
+_STOP = re.compile(r"[.!?…][*_)\]\"'”’]*(?:\[\^[^\]\s]+\])?(?=\s)")
+_HARD_BREAK = re.compile(r"(?:<br\s*/?>|(?<! )[ ]{2,}|\\)$")       # a run starts once, so a long one is linear
+
+
+def _split(t: str, s: int, e: int) -> list:
+    spans, start = [], s
+    for m in _STOP.finditer(t, s, e):
+        nxt = m.end()
+        while nxt < e and t[nxt].isspace():
+            nxt += 1
+        if nxt < e and not t[nxt].islower():
+            spans.append((start, m.end()))
+            start = nxt
+    spans.append((start, e))
+    out = []
+    for a, b in spans:
+        while a < b and t[a].isspace():
+            a += 1
+        while b > a and t[b - 1].isspace():
+            b -= 1
+        if a < b:
+            out.append((a, b))
+    return out
+
+
+def sentence_spans(text: str):
+    """(start, end) offsets of each unit of the percent-unit rule (see above), in text order."""
+    protected = text
+    for a in _ABBREV:            # protected only as a word of its own ('devs.' keeps its stop); same length, so offsets hold
+        protected = re.sub(r"(?<![^\W\d_])" + re.escape(a), lambda m: m.group(0).replace(".", "\x00"), protected)
+    out = []
+    for a, b in paragraphs(protected):
+        cuts, pos = {a, b}, a
+        while pos < b:
+            end = protected.find("\n", pos, b)
+            end = b if end == -1 else end
+            if _BLOCK.match(protected, pos):
+                cuts.add(pos)
+            if _ONE_LINE.match(protected, pos) or _HARD_BREAK.search(protected, pos, end):
+                cuts.add(end)
+            pos = end + 1
+        bounds = sorted(cuts)
+        for s, e in zip(bounds, bounds[1:]):
+            out += _split(protected, s, e)
+    return out
+
+
 def mask_spans(text: str, spans) -> str:
     """Replace each (start, end) span with spaces, keeping every other offset unchanged."""
     chars = list(text)

@@ -5,7 +5,7 @@ import tempfile
 import unittest
 
 from gate.config import ConfigError, load
-from gate.text import body_and_refs, mask_spans, paragraphs, sentences
+from gate.text import body_and_refs, mask_spans, paragraph_sentences, paragraphs, sentence_spans, sentences
 
 
 class TextTest(unittest.TestCase):
@@ -26,6 +26,25 @@ class TextTest(unittest.TestCase):
     def test_sentences_survive_abbreviations_and_decimals(self):
         s = sentences("Dell et al. (2012) find 1.3 points. The gap is real. See e.g. this.")
         self.assertEqual(s, ["Dell et al. (2012) find 1.3 points.", "The gap is real.", "See e.g. this."])
+
+    def test_sentence_offsets_point_into_the_text(self):
+        t = "Dell et al. (2012) find 1.3 points. The gap\nis real.\n\nSee e.g. this. And 76.4 percent here!"
+        self.assertEqual([t[a:b] for a, b in sentence_spans(t)],
+                         ["Dell et al. (2012) find 1.3 points.", "The gap\nis real.", "See e.g. this.",
+                          "And 76.4 percent here!"])
+
+    def test_sentence_spans_split_where_paragraph_sentences_does_in_plain_prose(self):
+        for t in ("One. Two!  Three?\n\nIts line.", "No end", "Vs. the rest. (It) ends. \"Quoted\" 9 left. Dell et al. find it."):
+            with self.subTest(t=t):
+                self.assertEqual([" ".join(t[a:b].split()) for a, b in sentence_spans(t)], paragraph_sentences(t))
+
+    def test_sentence_spans_split_finer_than_paragraph_sentences_in_markdown(self):
+        # the unit rule's units: a list item, a table row, a heading or image line, and a stop before a closing mark
+        t = ("Lead in:\n- First item. Still first.\n- Second item\n| a | b |\n|---|---|\n| c | d |\n"
+             "## Heading\n**Bold lead.** Then “quoted” text. _Italic_ start, e.g. this.")
+        self.assertEqual([t[a:b] for a, b in sentence_spans(t)],
+                         ["Lead in:", "- First item.", "Still first.", "- Second item", "| a | b |", "|---|---|",
+                          "| c | d |", "## Heading", "**Bold lead.**", "Then “quoted” text.", "_Italic_ start, e.g. this."])
 
     def test_masking_preserves_length_and_offsets(self):
         t = "keep {{x.r:signed2}} keep"
