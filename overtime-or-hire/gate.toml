@@ -1,0 +1,48 @@
+# Gate configuration for Post 32. Run from Projects/analytics-blog:  python3 -m gate overtime-or-hire
+[post]
+slug = "two-12-hour-days-or-three-8-hour-days"
+source = "draft/two-12-hour-days-or-three-8-hour-days.src.md"
+rendered = "draft/two-12-hour-days-or-three-8-hour-days.md"
+results = "results.json"
+sources = "docs/sources.json"
+build = ["build_analysis.py"]
+charts = "make_charts.py"
+chart_dir = "charts"
+docx = "draft/two-12-hour-days-or-three-8-hour-days.docx"
+mdx = "../../joechrisnaldy-portfolio/site/src/content/blog/two-12-hour-days-or-three-8-hour-days.mdx"
+extra = [["docs/README.src.md", "README.md"], ["docs/data-README.src.md", "data/README.md"]]
+
+# ---------------------------------------------------------------------------------------------------
+# [allow]: words or digits that are not results. Every entry says why. Stale entries fail the gate.
+[allow]
+"June 2026" = "the month of the BLS release the costs come from (U.S. Bureau of Labor Statistics, 2026); a date, not a result"
+"28 October 2026" = "the date Indonesia's labour law was enacted and promulgated, printed on page 128 of the stored law; a date, not a result"
+"time and one-half their regular rates of pay" = "the FLSA overtime rate quoted from Fact Sheet #23 (U.S. Department of Labor, 2019b); build_analysis.py holds the rate beside the quoted words and stops if the fs23_overtime quote in docs/sources.json no longer contains them; the gate checks that quote against the stored copy"
+"billion to" = "the unit of the bound figure src:rand_loss.values.low_bn"
+"billion US dollars" = "the unit of the bound figure src:rand_loss.values.high_bn"
+"less than six hours" = "RAND's band of sleep, quoted from Hafner et al. (2016), PDF page 12; a category, not a result"
+"2015 prices" = "the price year of RAND's estimates, from the header of Table ES.2 (Hafner et al., 2016, PDF page 15); not a result"
+"seven to nine hours" = "RAND's comparison band of sleep, quoted from Hafner et al. (2016), PDF page 12; a category, not a result"
+
+# ---------------------------------------------------------------------------------------------------
+# [claims]: every universal, superlative or causal word sits inside a phrase naming its licence.
+[claims]
+"not what causes what" = "states the limit of the survey, which shows association only (the design's anti-goals: no causal claim from the time-use survey); no causal claim is made"
+"because weaker workers joined teams when more hours were needed than the top performers could handle" = "the study's own finding (3) in its abstract: Shangguan et al. (2021), page 2 (docs/provenance-audit.md, section 5)"
+"I counted every benefit as a cost per person" = "a modelling choice stated as one: model.py adds benefits per hour worked times the standard week for each person (nonexempt_week_cost, exempt_week_cost)"
+"counts every benefit as a cost per person" = "the same modelling choice: model.py nonexempt_week_cost and exempt_week_cost"
+
+# ---------------------------------------------------------------------------------------------------
+# [pairs]: a paragraph that sets figures from different samples side by side, with the reason.
+[pairs]
+
+# ---------------------------------------------------------------------------------------------------
+# [published]: a template for every text field of the live MDX front matter, and alt text per chart.
+[published]
+seoTitle = "{{scenario.long_people:capwords}} {{scenario.long_day:int}}-Hour Days or {{scenario.short_people:capwords}} {{scenario.short_day:int}}-Hour Days? Overtime vs Hiring"
+excerpt = "{{scenario.long_people:capwords}} people on {{scenario.long_day:int}}-hour days work the same hours as {{scenario.short_people:words}} on {{scenario.short_day:int}}-hour days. A test of sleep, output and cost, and of when hiring on merit pays."
+metaDescription = "{{scenario.long_people:capwords}} people on {{scenario.long_week:int}}-hour weeks match the hours of {{scenario.short_people:words}} on {{scenario.short_week:int}}-hour weeks, but on a historical output curve not their output. What that means for overtime and hiring."
+"alt:oh-1-sleep-by-hours.png" = "Bar charts by usual hours worked a week. People who usually work {{survey.gap.long_low:int}} hours or more sleep about {{survey.gap.sleep_min:dec0}} minutes a day less than those on {{survey.gap.short_low:int}} to {{survey.gap.short_high:int}} hours; time taking part in sports, exercise and recreation stays between {{survey.sports_low_min:dec0}} and {{survey.sports_high_min:dec0}} minutes a day with no steady pattern."
+"alt:oh-2-output-curve.png" = "A line chart of weekly output against hours worked a week, from Pencavel's estimates for British munition workers: output keeps pace with hours to {{curve.knot:int}} hours, then rises more slowly and peaks at about {{curve.peak:int}} hours; a {{scenario.long_week:int}}-hour week gives about {{curve.at_long:dec1}} productive hours."
+"alt:oh-3-cost-test.png" = "Bar charts. {{scenario.long_people:capwords}} people at {{scenario.long_week:int}} hours deliver about {{curve.long_team:dec0}} productive hours a week against {{curve.short_team:int}} for {{scenario.short_people:words}} at {{scenario.short_week:int}}. Per productive hour they cost {{nonexempt.long_per_hour:dec2}} against {{nonexempt.short_per_hour:dec2}} US dollars when overtime is owed, and {{exempt.long_per_hour:dec2}} against {{exempt.short_per_hour:dec2}} when pay is the same at any hours."
+"alt:oh-4-two-rules.png" = "Stacked bars of a {{scenario.long_week:int}}-hour week. In the US, {{rules.us.regular_hours:int}} regular hours and {{rules.us.overtime_hours:int}} at {{scenario.overtime_rate:dec1}} times the wage, {{rules.us.pay_in_hourly_wages:int}} hours of wages. In Indonesia, {{rules.indonesia.regular_hours:int}} regular hours, {{rules.indonesia.first_overtime_hours:int}} at {{rules.indonesia.first_hour_rate:dec1}} times and {{rules.indonesia.later_overtime_hours:int}} at {{rules.indonesia.later_rate:int}} times the wage, {{rules.indonesia.pay_in_hourly_wages:dec1}} hours of wages, past the weekly limit of {{rules.indonesia.week_limit:int}} hours."

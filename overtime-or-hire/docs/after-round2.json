@@ -1,0 +1,178 @@
+{
+ "round": 2,
+ "read": [
+  {
+   "sentence": "The survey groups exercise with sports and recreation, and the measure here is time spent taking part in them, not watching: it includes fishing, golf and bowling as well as running and weightlifting.",
+   "kind": "sentence",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The sentence is true. I wrote my own script (final-read/survey_recompute.py) and ran it on the raw zip, whose sha256 bf39ac14... matches the frozen copy. It keeps 45,081 people: TELFS 1, age 18 to 64, 2015 to 2024, with 2,337 'hours vary' and 5 zero-hours cases dropped, weighted by TUFNWGTP (TU20FWGT for 2020). Lexicon 1301 'Participating in Sports, Exercise, and Recreation' (lexiconnoex0324.txt:409) gives 16.09, 15.54, 18.06, 18.32 and 14.53 minutes a day across the five bands. Those round to the chart's 16, 16, 18, 18, 15 and to the paragraph's 'between 15 and 18'. The whole of category 13, which adds 1302 'Attending Sports/Recreational Events' (the 'Watching ...' codes, :457 on), gives 17.61, 17.04, 19.89, 20.14 and 16.37. So the measure really is taking part, not watching. Bowling (130107, :416), Fishing (130112, :421), Golfing (130114, :423), Running (130124, :434) and Weightlifting (130133, :443) are all 1301 codes. The BLS 2024 release (atus_06262025.txt:344-345, :456) also separates the category, which includes 'attending or watching', from 'Participating in sports, exercise, and recreation'. Chart 1's right panel reads 'Taking part in sports, exercise and recreation, minutes a day'. In the next sentence, 'time spent on it' still points at that activity.",
+   "date": "2026-11-18",
+   "seq": 8
+  },
+  {
+   "sentence": "![Sleep in hours a day, and time taking part in sports, exercise and recreation in minutes a day, by usual hours worked a week](../charts/oh-1-sleep-by-hours.png)",
+   "kind": "sentence",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The alt text matches the chart it labels. charts/oh-1-sleep-by-hours.png (sha256 97e7b7eb..., the same file as the site's public/images/blog copy and the chart the owner accepted) has a left panel titled 'Sleep, hours a day', a right panel titled 'Taking part in sports, exercise and recreation, minutes a day', and the x-axis 'Usual hours worked a week'. My recompute from the raw file gives sleep of 9.091, 8.700, 8.374, 8.167 and 7.819 hours (the chart shows 9.1, 8.7, 8.4, 8.2, 7.8). It gives t1301 of 16.09, 15.54, 18.06, 18.32 and 14.53 minutes (the chart shows 16, 16, 18, 18, 15). Units, series and grouping all agree.",
+   "date": "2026-11-18",
+   "seq": 8
+  },
+  {
+   "sentence": "**Exempt staff: put a price on long weeks.** Estimate what mistakes, sick days and quits cost you each week for each person on long weeks.",
+   "kind": "sentence",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The added words 'for each person on long weeks' put the estimate on the same unit as the threshold. The body states that threshold per long-hours worker (draft .md:57), and model.py:82-86 divides by long.people. My recompute (final-read/cost_recompute.py) uses the ECEC figures $54.00 = $36.97 + $17.03 from the stored release text and Pencavel's Table 4 column (ii) (dp8129.txt:1376-1399: b=126.089, c2=-4.533, H xmax 63). It gives a break-even of $846.64 per long-hours worker in the model's peak-63 form, or $845.10 with the exact coefficients. The round-2 wording left the unit open. A team-wide estimate would then be compared with one person's threshold, although the team-level break-even is $1,693.29, or 78.4% of one person's $2,160. The new wording closes that gap. One reading remains: a reader who also counts costs that 40-hour staff carry shifts the threshold (b=300 gives a total of $1,264 per worker). But the item's heading 'put a price on long weeks' frames the estimate as what long weeks add, which matches the body and the model. So the sentence is not false.",
+   "date": "2026-11-18",
+   "seq": 8
+  },
+  {
+   "sentence": "In the test, the break-even was about 39 percent of that person's weekly pay and benefits; above it, the extra hire costs less per unit of output.",
+   "kind": "sentence",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The figure and the logic check out. 846.64 / 2,160 = 39.20% in the model's peak-63 form, and 845.10 / 2,160 = 39.12% with Pencavel's exact column (ii) coefficients, so 'about 39 percent' holds either way. $2,160 = 40 x $54.00 is each exempt person's weekly pay and benefits at any hours (draft :55, where two people cost $4,320). 'that person' refers back to 'each person on long weeks' in the sentence before. Above the threshold the hire is cheaper per unit of output: at $897 per worker, Team A costs (4,320 + 1,794) / 111.357 = $54.90 per productive hour against Team B's $54.00. Below it, at $797, Team A costs $53.10.",
+   "date": "2026-11-18",
+   "seq": 8
+  },
+  {
+   "sentence": "The model treats Pencavel's curve as an assumption, counts every benefit as a cost per person, and leaves out vacancy time, ramp-up and management time on the hiring side.",
+   "kind": "sentence",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "'The model' now has a clear referent and the claims hold. model.py builds the Curve from Pencavel's knot and peak and uses it as an input (lines 6-8, 60-65). nonexempt_week_cost and exempt_week_cost charge benefits x benefit_hours per person (lines 75 and 79). The file has no vacancy, ramp-up or management-time term; payback_weeks (line 89) takes only a lump-sum hiring cost. The referent matches the heading 'About the data and the model' (draft :86), README.md:5 ('costs the model leaves out') and the MDX chart 3 caption ('The author's model.', line 76). 'RAND's model' (:25) cannot be the referent, because RAND does not use Pencavel's curve. One caveat: the payback's hiring cost is CAP's turnover cost, which CAP says reflects 'the slower productivity until the new employee gets up to speed' (cap-2012-turnover.txt). So ramp-up may be partly inside that input. That makes the stated omission, if anything, too broad rather than hiding a cost, and round 1's lenses noted the same point and confirmed.",
+   "date": "2026-11-18",
+   "seq": 8
+  },
+  {
+   "sentence": "[[published] alt:oh-1-sleep-by-hours.png] People who usually work 60 hours or more sleep about 53 minutes a day less than those on 35 to 40 hours; time taking part in sports, exercise and recreation stays between 15 and 18 minutes a day with no steady pattern.",
+   "kind": "sentence",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "Recomputed from the raw file, the sleep gap is 521.98 - 469.11 = 52.87 minutes a day between the 35-to-40 band and the 60-plus band, so 'about 53' holds (26,862 people in those two bands). The t1301 range is 14.53 to 18.32 minutes, which is 15 and 18 in whole minutes, as the chart labels show. The steps between bands are -0.55, +2.52, +0.25 and -3.78, which are not monotonic, so 'no steady pattern' holds. The live MDX alt (site .mdx:27) reads exactly this sentence, rendered from the gate.toml template. 'time taking part in' matches the chart's right-panel title, and t1301 is the participation code.",
+   "date": "2026-11-18",
+   "seq": 8
+  },
+  {
+   "sentence": "The survey groups exercise with sports and recreation: its category, sports, exercise and recreation, includes fishing, golf and bowling as well as running and weightlifting.",
+   "kind": "deletion",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The deletion was correct. The removed wording named the measure 'its category, sports, exercise and recreation'. That is the lexicon's major category 13 (lexiconnoex0324.txt:408), which the BLS release says includes attending or watching (atus_06262025.txt:344-345). For that category my recompute gives 17.61, 17.04, 19.89, 20.14 and 16.37 minutes, or 16 to 20 rounded, so the paragraph's 'between 15 and 18' was true only of 1301 (14.53 to 18.32). The replacement sentence keeps 'groups exercise with sports and recreation' and all five examples, and the paragraph's 'time spent on it' still has a referent. Nothing true was lost and nothing is left dangling.",
+   "date": "2026-11-18",
+   "seq": 8
+  },
+  {
+   "sentence": "![Sleep in hours a day, and sports, exercise and recreation in minutes a day, by usual hours worked a week](../charts/oh-1-sleep-by-hours.png)",
+   "kind": "deletion",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The deletion was correct. The current chart's right panel is titled 'Taking part in sports, exercise and recreation, minutes a day'. The removed alt used the bare category name, and that category's values (16 to 20 minutes by my recompute) are not the plotted ones. The replacement (row 24298) keeps the same structure, units and grouping, and names the series accurately. No other text depends on the removed alt.",
+   "date": "2026-11-18",
+   "seq": 8
+  },
+  {
+   "sentence": "**Exempt staff: put a price on long weeks.** Estimate what mistakes, sick days and quits cost you each week.",
+   "kind": "deletion",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The deletion was correct. The removed sentence asked for 'what mistakes, sick days and quits cost you each week' with no unit, while the threshold after it was per person ($846.64, or 39.2% of one person's $2,160). Under that wording, a team-wide estimate between about $846.64 and $1,693.29 passed the rule even though Team A was still cheaper. For example, $1,000 gives (4,320 + 1,000) / 111.357 = $47.77 per productive hour against $54.00. The replacement keeps every element and adds the per-person unit. The item's closing sentence, 'If you need more output than two people can give, hire anyway', does not depend on the removed words.",
+   "date": "2026-11-18",
+   "seq": 8
+  },
+  {
+   "sentence": "In the test, the break-even was about 39 percent of a person's weekly pay and benefits; above it, the extra hire costs less per unit of output.",
+   "kind": "deletion",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The deletion was correct. The replacement differs only in 'that person's' for 'a person's', which ties the 39% to the per-person estimate the previous sentence now asks for. The figure itself (39.1% to 39.2%, recomputed) and the 'above it' conclusion are unchanged and verified. Nothing in the paragraph pointed at the removed wording.",
+   "date": "2026-11-18",
+   "seq": 8
+  },
+  {
+   "sentence": "It treats Pencavel's curve as an assumption, counts every benefit as a cost per person, and leaves out vacancy time, ramp-up and management time on the hiring side.",
+   "kind": "deletion",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The deletion was correct. In the round-2 snapshot (2.json, About paragraph), the removed 'It treats ...' followed 'The survey figures are my analysis of the time-use survey's activity summary file'. That gave 'It' no antecedent that uses Pencavel's curve or benefits. The replacement says 'The model', which matches model.py and the section heading. The next sentence, 'This post is non-commercial; no publisher of these data endorses it', does not depend on the removed word.",
+   "date": "2026-11-18",
+   "seq": 8
+  },
+  {
+   "sentence": "[[published] alt:oh-1-sleep-by-hours.png] People who usually work 60 hours or more sleep about 53 minutes a day less than those on 35 to 40 hours; sports, exercise and recreation stays between 15 and 18 minutes a day with no steady pattern.",
+   "kind": "deletion",
+   "cut_of": null,
+   "verdict": "CONFIRMED",
+   "evidence": "The deletion was correct. The removed alt labelled the series with the name of category 13, whose values recompute to 16.37 to 20.14 minutes (16 to 20 rounded), while its 'between 15 and 18' is true only of 1301 (14.53 to 18.32). The replacement (row 60309) fixes the label and keeps the verified figures. The alt's first sentence, 'Bar charts by usual hours worked a week.', remains and does not depend on the removed one.",
+   "date": "2026-11-18",
+   "seq": 8
+  }
+ ],
+ "accepted": [
+  {
+   "item": "The survey groups exercise with sports and recreation, and the measure here is time spent taking part in them, not watching: it includes fishing, golf and bowling as well as running and weightlifting.",
+   "kind": "sentence",
+   "cut_of": null,
+   "sha": null,
+   "owner": "Accept the new wording (Recommended)",
+   "date": "2026-11-18",
+   "seq": 1
+  },
+  {
+   "item": "![Sleep in hours a day, and time taking part in sports, exercise and recreation in minutes a day, by usual hours worked a week](../charts/oh-1-sleep-by-hours.png)",
+   "kind": "sentence",
+   "cut_of": null,
+   "sha": null,
+   "owner": "Accept the new wording (Recommended)",
+   "date": "2026-11-18",
+   "seq": 2
+  },
+  {
+   "item": "**Exempt staff: put a price on long weeks.** Estimate what mistakes, sick days and quits cost you each week for each person on long weeks.",
+   "kind": "sentence",
+   "cut_of": null,
+   "sha": null,
+   "owner": "Accept the new wording (Recommended)",
+   "date": "2026-11-18",
+   "seq": 3
+  },
+  {
+   "item": "In the test, the break-even was about 39 percent of that person's weekly pay and benefits; above it, the extra hire costs less per unit of output.",
+   "kind": "sentence",
+   "cut_of": null,
+   "sha": null,
+   "owner": "Accept the new wording (Recommended)",
+   "date": "2026-11-18",
+   "seq": 4
+  },
+  {
+   "item": "The model treats Pencavel's curve as an assumption, counts every benefit as a cost per person, and leaves out vacancy time, ramp-up and management time on the hiring side.",
+   "kind": "sentence",
+   "cut_of": null,
+   "sha": null,
+   "owner": "Accept the new wording (Recommended)",
+   "date": "2026-11-18",
+   "seq": 5
+  },
+  {
+   "item": "[[published] alt:oh-1-sleep-by-hours.png] People who usually work 60 hours or more sleep about 53 minutes a day less than those on 35 to 40 hours; time taking part in sports, exercise and recreation stays between 15 and 18 minutes a day with no steady pattern.",
+   "kind": "sentence",
+   "cut_of": null,
+   "sha": null,
+   "owner": "Accept the new wording (Recommended)",
+   "date": "2026-11-18",
+   "seq": 6
+  },
+  {
+   "item": "charts/oh-1-sleep-by-hours.png",
+   "kind": "chart",
+   "cut_of": null,
+   "sha": "97e7b7eb2ab633115f309aac65bf950ea9a499d5ae2aac2dc149beef92a1afeb",
+   "owner": "Accept the new wording (Recommended)",
+   "date": "2026-11-18",
+   "seq": 7
+  }
+ ]
+}
